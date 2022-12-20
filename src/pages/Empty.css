@@ -1,0 +1,35 @@
+.pxl-20210309-203454756-1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 110px;
+  left: 103px;
+  border-radius: var(--br-2xs);
+  width: 180px;
+  height: 180px;
+  background-image: url(../../public/asserts/pxl202103092034547561@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.should-not-see-me {
+  position: absolute;
+  top: 317px;
+  left: 134px;
+  display: inline-block;
+  width: 119px;
+  height: 18px;
+}
+.empty {
+  position: relative;
+  background-color: var(--color-white1);
+  width: 100%;
+  height: 399px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--caption1-size);
+  color: var(--black-000000100);
+  font-family: var(--font-myriad-pro);
+}
