@@ -24,10 +24,10 @@ Bank of America
 1234 1234 1234 1234`}
       />
       <button
-        className="prepare-sell-order-button1"
+        className="prepare-sell-order-button2"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="utility-button">Sign and return</div>
+        <div className="utility-button1">Sign and return</div>
       </button>
     </div>
   );

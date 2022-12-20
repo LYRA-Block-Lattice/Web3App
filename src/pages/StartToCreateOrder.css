@@ -38,14 +38,14 @@
   width: 188px;
   flex-shrink: 0;
 }
-.prepare-sell-order-button14,
+.prepare-sell-order-button15,
 .starttocreateorder {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button14 {
+.prepare-sell-order-button15 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);

@@ -1,5 +1,5 @@
 .i-want-to-sell-token,
-.utility-button2 {
+.utility-button3 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -7,7 +7,7 @@
   display: inline-block;
   width: 184px;
 }
-.utility-button2 {
+.utility-button3 {
   font-size: var(--font-size-lg);
   font-family: var(--caption1);
   color: var(--color-white1);
@@ -15,7 +15,7 @@
   width: 113px;
   flex-shrink: 0;
 }
-.prepare-sell-order-button9 {
+.prepare-sell-order-button10 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);
@@ -32,7 +32,7 @@
   justify-content: center;
 }
 .or1,
-.utility-button3 {
+.utility-button4 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -40,7 +40,7 @@
   display: inline-block;
   width: 31px;
 }
-.utility-button3 {
+.utility-button4 {
   font-size: var(--body-s-size);
   font-family: var(--caption1);
   color: var(--color-white1);
@@ -91,14 +91,14 @@
   width: 188px;
   flex-shrink: 0;
 }
-.prepare-sell-order-button13,
+.prepare-sell-order-button14,
 .selectofferingandbiding {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button13 {
+.prepare-sell-order-button14 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);
