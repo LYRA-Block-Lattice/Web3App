@@ -11,7 +11,8 @@
   font-weight: 500;
   width: 296px;
 }
-.offering-for-biding {
+.offering-for-biding,
+.primary-button1 {
   width: 292px;
 }
 .primary-button1 {
@@ -23,14 +24,14 @@
   width: 188px;
   flex-shrink: 0;
 }
-.prepare-sell-order-button6,
+.prepare-sell-order-button7,
 .priceandcollateralform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button6 {
+.prepare-sell-order-button7 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);

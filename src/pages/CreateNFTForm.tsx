@@ -18,7 +18,7 @@ const CreateNFTForm: FunctionComponent = () => {
         type="text"
         placeholder="Select Local Image"
       />
-      <button className="prepare-sell-order-button5">
+      <button className="prepare-sell-order-button6">
         <div className="secondary-button2">Create NFT</div>
       </button>
     </div>

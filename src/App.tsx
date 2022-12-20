@@ -86,7 +86,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/selecttokentypetocreateorder":
+      case "/starttocreateorder":
         title = "";
         metaDescription = "";
         break;
@@ -167,10 +167,7 @@ function App() {
         element={<SelectOfferingAndBiding />}
       />
 
-      <Route
-        path="/selecttokentypetocreateorder"
-        element={<StartToCreateOrder />}
-      />
+      <Route path="/starttocreateorder" element={<StartToCreateOrder />} />
 
       <Route path="/transactionhistory" element={<TransactionHistory />} />
 

@@ -56,13 +56,13 @@
   width: 188px;
 }
 .createtokenform,
-.prepare-sell-order-button8 {
+.prepare-sell-order-button9 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button8 {
+.prepare-sell-order-button9 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);

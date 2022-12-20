@@ -27,7 +27,7 @@
 }
 .tot-description2,
 .tot-name,
-.utility-button1 {
+.utility-button2 {
   font-family: var(--caption1);
   flex-shrink: 0;
 }
@@ -46,7 +46,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.utility-button1 {
+.utility-button2 {
   position: relative;
   font-size: var(--font-size-sm);
   letter-spacing: 0.41px;
@@ -57,7 +57,7 @@
   display: inline-block;
   width: 113px;
 }
-.prepare-sell-order-button3 {
+.prepare-sell-order-button4 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);
@@ -94,13 +94,13 @@
   flex-shrink: 0;
 }
 .createtotform,
-.prepare-sell-order-button4 {
+.prepare-sell-order-button5 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button4 {
+.prepare-sell-order-button5 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);

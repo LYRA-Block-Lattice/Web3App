@@ -54,14 +54,14 @@
   width: 188px;
   flex-shrink: 0;
 }
-.prepare-sell-order-button2,
+.prepare-sell-order-button3,
 .previewsellorderform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button2 {
+.prepare-sell-order-button3 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);
