@@ -20,9 +20,9 @@ const StartToCreateOrder: FunctionComponent = () => {
         Chose the catalog of token
       </div>
       <div className="catalog-section">
-        <CatalogSelection iWantTo="Sell" />
+        <CatalogSelection iWantTo="Sell" tokenActionClicked={onTokenAction}/>
         <div className="line-div" />
-        <CatalogSelection iWantTo="Buy" />
+        <CatalogSelection iWantTo="Buy" tokenActionClicked={onTokenAction}/>
       </div>
       <button
         className="prepare-sell-order-button2"
