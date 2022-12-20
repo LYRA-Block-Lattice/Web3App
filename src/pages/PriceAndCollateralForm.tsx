@@ -25,7 +25,7 @@ const PriceAndCollateralForm: FunctionComponent = () => {
   };
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
-    navigate("/selecttokenfororder");
+    navigate("/previewsellorderform");
   }, [navigate]);
 
   return (

@@ -1,10 +1,12 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState, useCallback } from "react";
 import { Button, Menu, MenuItem } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "./CreateTOTForm.css";
 
 const CreateTOTForm: FunctionComponent = () => {
   const [selectTypeOfTOTAnchorEl, setSelectTypeOfTOTAnchorEl] =
     useState<HTMLElement | null>(null);
+  const navigate = useNavigate();
   const selectTypeOfTOTOpen = Boolean(selectTypeOfTOTAnchorEl);
   const handleSelectTypeOfTOTClick = (event: React.MouseEvent<HTMLElement>) => {
     setSelectTypeOfTOTAnchorEl(event.currentTarget);
@@ -12,6 +14,10 @@ const CreateTOTForm: FunctionComponent = () => {
   const handleSelectTypeOfTOTClose = () => {
     setSelectTypeOfTOTAnchorEl(null);
   };
+
+  const onPrepareSellOrderButtonClick = useCallback(() => {
+    navigate("/signtradesecretform");
+  }, [navigate]);
 
   return (
     <form className="createtotform">
@@ -41,7 +47,10 @@ const CreateTOTForm: FunctionComponent = () => {
         placeholder="Public Description, seen by everyone"
       />
       <input className="tot-name" type="text" placeholder="Total Supply" />
-      <button className="prepare-sell-order-button3">
+      <button
+        className="prepare-sell-order-button3"
+        onClick={onPrepareSellOrderButtonClick}
+      >
         <div className="utility-button1">Sign trade secret</div>
       </button>
       <div className="note-i-need-to-send-trade-sec">

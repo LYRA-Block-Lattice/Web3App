@@ -7,7 +7,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
-    navigate("/selecttokenfororder");
+    navigate("/createordersuccessform");
   }, [navigate]);
 
   return (

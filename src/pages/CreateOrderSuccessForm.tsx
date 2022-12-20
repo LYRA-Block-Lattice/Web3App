@@ -1,7 +1,14 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CreateOrderSuccessForm.css";
 
 const CreateOrderSuccessForm: FunctionComponent = () => {
+  const navigate = useNavigate();
+
+  const onPrepareSellOrderButtonClick = useCallback(() => {
+    navigate("/viewordersform");
+  }, [navigate]);
+
   return (
     <div className="createordersuccessform">
       <div className="success">Success!</div>
@@ -17,7 +24,10 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
       >
         View on block explorer
       </a>
-      <button className="prepare-sell-order-button">
+      <button
+        className="prepare-sell-order-button"
+        onClick={onPrepareSellOrderButtonClick}
+      >
         <div className="secondary-button">View my orders</div>
       </button>
     </div>

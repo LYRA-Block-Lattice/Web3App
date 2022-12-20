@@ -52,7 +52,6 @@
   z-index: 3;
   font-size: var(--body-s-size);
 }
-.nft-count,
 .nft-label {
   width: 100%;
   top: calc(50% - 19.5px);
@@ -105,14 +104,16 @@
 .orders-count,
 .orders-label {
   position: absolute;
+  display: inline-block;
+  font-family: var(--font-sf-pro-text);
+  text-align: left;
+}
+.orders-label {
   width: 100%;
   top: calc(50% - 20px);
   left: 0;
   font-size: var(--caption1-size);
-  display: inline-block;
-  font-family: var(--font-sf-pro-text);
   color: var(--color-gray-300);
-  text-align: left;
 }
 .orders-count {
   width: 23.81%;
@@ -411,7 +412,9 @@
   letter-spacing: -0.08px;
   width: 52.17px;
 }
-.group-div12,
+.group-div12 {
+  position: absolute;
+}
 .iconglyphstar-copy-23 {
   position: absolute;
   top: 1.04px;
@@ -584,7 +587,6 @@
   height: 16.59px;
 }
 .end-in-120011 {
-  position: absolute;
   top: 283px;
   left: 285.13px;
   letter-spacing: 0.41px;
@@ -594,7 +596,10 @@
   display: inline-block;
   width: 103.13px;
 }
-.group-div15,
+.end-in-120011,
+.group-div15 {
+  position: absolute;
+}
 .iconglyphstar-copy4 {
   position: absolute;
   top: 288.26px;
