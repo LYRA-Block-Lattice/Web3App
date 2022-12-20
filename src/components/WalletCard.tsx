@@ -3,7 +3,7 @@ import "./WalletCard.css";
 
 const WalletCard: FunctionComponent = () => {
   return (
-    <div className="frame-div20">
+    <div className="frame-div8">
       <img className="maps-icon" alt="" src="../asserts/maps.svg" />
     </div>
   );

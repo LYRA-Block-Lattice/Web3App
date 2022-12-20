@@ -27,7 +27,7 @@
 .frame-button {
   cursor: pointer;
   border: 0;
-  padding: 4px var(--padding-xs);
+  padding: 4px var(--padding-2xs);
   background-color: #efdede;
   margin: 0 !important;
   position: absolute;
