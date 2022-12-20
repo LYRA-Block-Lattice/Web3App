@@ -1,14 +1,7 @@
-import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { FunctionComponent } from "react";
 import "./SignTradeSecretForm.css";
 
 const SignTradeSecretForm: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onSignTradeSecretButtonClick = useCallback(() => {
-    navigate("/createtotform");
-  }, [navigate]);
-
   return (
     <div className="signtradesecretform">
       <div className="sign-trade-secret">Sign Trade Secret</div>
@@ -23,12 +16,8 @@ const SignTradeSecretForm: FunctionComponent = () => {
 Bank of America
 1234 1234 1234 1234`}
       />
-      <button
-        className="sign-trade-secret-button"
-        onClick={onSignTradeSecretButtonClick}
-      >
-        <div className="frame-div1" />
-        <div className="sign-and-return">Sign and return</div>
+      <button className="prepare-sell-order-button1">
+        <div className="utility-button">Sign and return</div>
       </button>
     </div>
   );
