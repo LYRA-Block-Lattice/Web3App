@@ -150,7 +150,7 @@
 .prepare-sell-order-button1 {
   cursor: pointer;
   border: 1px solid var(--black-000000100);
-  padding: var(--padding-sm);
+  padding: var(--padding-xs);
   background-color: var(--color-gray-500);
   position: absolute;
   top: 530px;

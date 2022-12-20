@@ -1,161 +1,11 @@
-.i-want-to-sell {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  display: inline-block;
-  width: 119px;
-}
-.material-symbolsgenerating-to-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.token {
-  position: relative;
-  font-size: var(--font-size-2xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  display: inline-block;
-  font-family: var(--caption1);
-  color: var(--black-000000100);
-  text-align: center;
-  width: 90px;
-}
-.frame-div5,
-.select-token-button2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.frame-div5 {
-  gap: var(--gap-lg);
-}
-.select-token-button2 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-2xl) var(--padding-xl);
-  background-color: var(--color-orange);
-  border-radius: var(--br-sm);
-  box-shadow: var(--effect);
-  width: 100px;
-  height: 90px;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-.nft {
-  position: relative;
-  font-size: var(--font-size-2xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  display: inline-block;
-  font-family: var(--caption1);
-  color: var(--color-white1);
-  text-align: center;
-  width: 90px;
-}
-.frame-div7,
-.select-nft-button {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.select-nft-button {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-2xs) 0;
-  background-color: var(--color-indigo);
-  border-radius: var(--br-sm);
-  width: 100px;
-  height: 90px;
-  box-sizing: border-box;
-}
-.frame-div7 {
-  width: 90px;
-  height: 56px;
-  gap: var(--gap-lg);
-}
-.frame-button1,
-.frame-button2 {
-  cursor: pointer;
-  border: 0;
-  border-radius: var(--br-sm);
-  width: 100px;
-  height: 90px;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  justify-content: center;
-}
-.frame-button1 {
-  padding: var(--padding-sm);
-  background-color: var(--color-subbrand);
-  box-shadow: var(--effect);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.frame-button2 {
-  padding: var(--padding-2xs) 0;
-  background-color: var(--color-coral);
-}
-.frame-button2,
-.frame-button3,
-.frame-div4,
-.tradecatalog {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.frame-button3 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-2xs) 0;
-  background-color: var(--color-green-100);
-  border-radius: var(--br-sm);
-  width: 100px;
-  height: 90px;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  justify-content: center;
-}
-.frame-div4,
-.tradecatalog {
-  justify-content: flex-start;
-}
-.tradecatalog {
-  background-color: var(--color-white1);
-  width: 110px;
-  overflow: hidden;
-  padding: var(--padding-sm) 11px;
-  box-sizing: border-box;
-  gap: var(--gap-sm);
-}
-.frame-div4 {
-  gap: var(--gap-xs);
-}
-.frame-div3,
-.tradecatalog1 {
-  background-color: var(--color-white1);
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
-.tradecatalog1 {
-  width: 105px;
-  flex-direction: column;
-  padding: var(--padding-sm) 0;
-  justify-content: flex-start;
-  gap: var(--gap-sm);
-}
 .frame-div3 {
+  background-color: var(--color-white1);
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
   padding: 0 8px;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
   gap: 18px;
 }
@@ -182,7 +32,7 @@
 .prepare-sell-order-button2 {
   cursor: pointer;
   border: 1px solid var(--black-000000100);
-  padding: var(--padding-sm);
+  padding: var(--padding-xs);
   background-color: var(--color-gray-500);
   border-radius: var(--br-md);
   width: 208px;
@@ -197,8 +47,4 @@
   flex-direction: column;
   padding: var(--padding-lg) 66px;
   gap: 15px;
-  text-align: center;
-  font-size: var(--body-s-size);
-  color: var(--black-000000100);
-  font-family: var(--caption1);
 }

@@ -23,7 +23,7 @@
 .prepare-sell-order-button {
   cursor: pointer;
   border: 1px solid var(--black-000000100);
-  padding: var(--padding-sm);
+  padding: var(--padding-xs);
   background-color: var(--color-gray-500);
   position: absolute;
   top: 529px;
@@ -69,7 +69,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-sm);
+  padding: var(--padding-xs);
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
