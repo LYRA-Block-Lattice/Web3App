@@ -1,38 +1,26 @@
-import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { FunctionComponent } from "react";
 import "./CreateNFTForm.css";
 
 const CreateNFTForm: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onRectangleButtonClick = useCallback(() => {
-    navigate("/selecttokenfororder");
-  }, [navigate]);
-
   return (
     <div className="createnftform">
       <div className="create-nft">Create NFT</div>
       <input className="nft-name" type="text" placeholder="NFT Name" />
       <input
-        className="nft-metadata-url"
-        type="text"
-        placeholder="Metadata URL"
-      />
-      <input
         className="nft-description"
         type="text"
         placeholder="Description"
       />
-      <button className="create-nft-button">
-        <button className="rectangle-button" onClick={onRectangleButtonClick} />
-        <div className="create-nft1">Create NFT</div>
-      </button>
+      <input className="nft-name" type="text" placeholder="Metadata URL" />
       <div className="or">or</div>
       <input
-        className="select-nft-image"
+        className="nft-name"
         type="text"
         placeholder="Select Local Image"
       />
+      <button className="prepare-sell-order-button5">
+        <div className="secondary-button2">Create NFT</div>
+      </button>
     </div>
   );
 };

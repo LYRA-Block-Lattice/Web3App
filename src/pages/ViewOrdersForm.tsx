@@ -1,13 +1,10 @@
 import { FunctionComponent, useCallback } from "react";
+import { Icon, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./ViewOrdersForm.css";
 
 const ViewOrdersForm: FunctionComponent = () => {
   const navigate = useNavigate();
-
-  const onNewTextClick = useCallback(() => {
-    navigate("/selecttokentypetocreateorder");
-  }, [navigate]);
 
   const onFrameButtonClick = useCallback(() => {
     navigate("/selecttokentypetocreateorder");
@@ -17,11 +14,11 @@ const ViewOrdersForm: FunctionComponent = () => {
     <div className="viewordersform">
       <div className="frame-div">
         <div className="view-orders">View Orders</div>
-        <button className="frame-button" onClick={onFrameButtonClick}>
-          <b className="new" onClick={onNewTextClick}>
-            New
-          </b>
-        </button>
+        <IconButton
+          className="frame-iconbutton"
+          color="primary"
+          onClick={onFrameButtonClick}
+        />
       </div>
       <div className="ordercard">
         <div className="great-nft">Great NFT</div>

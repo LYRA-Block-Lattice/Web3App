@@ -1,49 +1,31 @@
-.new,
 .view-orders {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
-  display: inline-block;
-}
-.view-orders {
   font-weight: 500;
+  display: inline-block;
   width: 144px;
   flex-shrink: 0;
   z-index: 0;
 }
-.new {
-  font-size: var(--font-size-lg);
-  font-family: var(--caption1);
-  color: #485342;
-  text-align: left;
-  cursor: pointer;
-}
-.frame-button,
-.frame-div {
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-}
-.frame-button {
-  cursor: pointer;
-  border: 0;
-  padding: 4px var(--padding-2xs);
-  background-color: #efdede;
+.frame-iconbutton {
   margin: 0 !important;
   position: absolute;
   top: 15px;
   right: 21px;
-  border-radius: var(--br-sm);
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
   z-index: 1;
 }
 .frame-div {
-  align-self: stretch;
   background-color: var(--color-white1);
+  width: 276px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
   padding: var(--padding-lg) var(--padding-md) var(--padding-lg)
     var(--padding-lg);
+  box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
