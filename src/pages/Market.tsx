@@ -121,7 +121,7 @@ const Market: FunctionComponent = () => {
         </div>
       </div>
       <div className="iconssection">
-        <div className="frame-div5">
+        <div className="frame-div4">
           <EntryButton
             homeIconInterlocution="../asserts/home--icon--interlocution.svg"
             ranking="DAO"
@@ -158,7 +158,7 @@ const Market: FunctionComponent = () => {
       </div>
       <div className="lasttransactions">
         <div className="recent-transaction">Recent transaction</div>
-        <div className="frame-div6">
+        <div className="frame-div5">
           <TxInfoBar
             buyTVAtSonyStore="Receive"
             component="From Harry James"

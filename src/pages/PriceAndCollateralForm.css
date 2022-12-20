@@ -57,19 +57,19 @@
 }
 .review-order-button {
   cursor: pointer;
-  border: 1px solid var(--black-000000100);
+  border: 0;
   padding: var(--padding-xs);
-  background-color: var(--color-gray-500);
+  background-color: var(--color-coral);
   position: absolute;
   top: 529px;
   left: 63px;
-  border-radius: var(--br-md);
-  box-sizing: border-box;
+  border-radius: var(--br-xl);
   width: 208px;
   height: 41px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
 }

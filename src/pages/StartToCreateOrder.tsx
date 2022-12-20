@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import IWantToSelectTokenComponent from "../components/IWantToSelectTokenComponent";
+import CatalogSelection from "../components/CatalogSelection";
 import "./StartToCreateOrder.css";
 
 const StartToCreateOrder: FunctionComponent = () => {
@@ -16,23 +16,19 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
-      <div className="frame-div3">
-        <IWantToSelectTokenComponent 
-          iWantToDo="Sell" 
-          tokenActionClicked={onTokenAction}
-          />
-        <IWantToSelectTokenComponent
-          iWantToDo="Get"
-          tokenActionClicked={onTokenAction}
-          tradeCatalogWidth="105px"
-          tradeCatalogPadding="var(--padding-xs) 0px"
-        />
+      <div className="chose-the-catalog-of-token">
+        Chose the catalog of token
+      </div>
+      <div className="catalog-section">
+        <CatalogSelection iWantTo="Sell" />
+        <div className="line-div" />
+        <CatalogSelection iWantTo="Buy" />
       </div>
       <button
         className="prepare-sell-order-button2"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <b className="prepare-tokens">Prepare Token(s)</b>
+        <b className="prepare-tokens">Prepare Tokens</b>
       </button>
     </div>
   );

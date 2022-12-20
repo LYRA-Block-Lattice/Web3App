@@ -23,10 +23,10 @@ const CreateNFTForm: FunctionComponent = () => {
         type="text"
         placeholder="Description"
       />
-      <div className="create-nft-button">
+      <button className="create-nft-button">
         <button className="rectangle-button" onClick={onRectangleButtonClick} />
         <div className="create-nft1">Create NFT</div>
-      </div>
+      </button>
       <div className="or">or</div>
       <input
         className="select-nft-image"
