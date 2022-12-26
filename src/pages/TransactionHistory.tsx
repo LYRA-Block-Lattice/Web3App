@@ -34,7 +34,11 @@ const TransactionHistory: FunctionComponent = () => {
           />
         </div>
       </div>
-      <img className="group-icon" alt="" src="../asserts/group-5.svg" />
+      <img
+        className="transactionhistory-child"
+        alt=""
+        src="../asserts/group-5.svg"
+      />
       <div className="all-transactions">All transactions</div>
       <div className="bars-navigation-bar-light">
         <div className="group2">
@@ -48,14 +52,14 @@ const TransactionHistory: FunctionComponent = () => {
         <img className="iconback1" alt="" />
         <b className="large-title">Transaction history</b>
       </div>
-      <div className="frame-div3">
+      <div className="receivedetailcard-parent">
         <div className="receivedetailcard">
           <div className="rectangle2" />
           <div className="group3">
             <b className="transfer-money">Receive</b>
             <div className="to-harry-james">From: Harry James</div>
           </div>
-          <div className="group-div">
+          <div className="successful-parent">
             <div className="successful">Successful</div>
             <img
               className="iconglyphstar"
@@ -63,7 +67,7 @@ const TransactionHistory: FunctionComponent = () => {
               src="../asserts/iconglyphstar.svg"
             />
           </div>
-          <div className="group-div1">
+          <div className="parent">
             <div className="div5">09/10/2018</div>
             <img
               className="iconglyphstar-copy"
@@ -71,7 +75,7 @@ const TransactionHistory: FunctionComponent = () => {
               src="../asserts/iconglyphstar-copy.svg"
             />
           </div>
-          <div className="group-div2">
+          <div className="container">
             <div className="div6">$200</div>
             <img
               className="iconglyphstar-copy-2"
@@ -92,7 +96,7 @@ const TransactionHistory: FunctionComponent = () => {
             <b className="transfer-money">Send</b>
             <div className="to-harry-james">To: Harry James</div>
           </div>
-          <div className="group-div">
+          <div className="successful-parent">
             <div className="successful">Successful</div>
             <img
               className="iconglyphstar"
@@ -100,7 +104,7 @@ const TransactionHistory: FunctionComponent = () => {
               src="../asserts/iconglyphstar.svg"
             />
           </div>
-          <div className="group-div1">
+          <div className="parent">
             <div className="div5">09/10/2018</div>
             <img
               className="iconglyphstar-copy"
@@ -108,7 +112,7 @@ const TransactionHistory: FunctionComponent = () => {
               src="../asserts/iconglyphstar-copy.svg"
             />
           </div>
-          <div className="group-div2">
+          <div className="container">
             <div className="div6">$200</div>
             <img
               className="iconglyphstar-copy-2"
@@ -117,7 +121,11 @@ const TransactionHistory: FunctionComponent = () => {
             />
           </div>
           <img className="path-icon" alt="" src="../asserts/path.svg" />
-          <img className="group-icon1" alt="" src="../asserts/group-4.svg" />
+          <img
+            className="senddetailcard-child"
+            alt=""
+            src="../asserts/group-4.svg"
+          />
         </div>
         <div className="receivedetailcard">
           <div className="rectangle2" />
@@ -125,7 +133,7 @@ const TransactionHistory: FunctionComponent = () => {
             <b className="transfer-money">Receive</b>
             <div className="to-harry-james">From: Harry James</div>
           </div>
-          <div className="group-div">
+          <div className="successful-parent">
             <div className="successful">Successful</div>
             <img
               className="iconglyphstar"
@@ -133,7 +141,7 @@ const TransactionHistory: FunctionComponent = () => {
               src="../asserts/iconglyphstar.svg"
             />
           </div>
-          <div className="group-div1">
+          <div className="parent">
             <div className="div5">09/10/2018</div>
             <img
               className="iconglyphstar-copy"
@@ -141,7 +149,7 @@ const TransactionHistory: FunctionComponent = () => {
               src="../asserts/iconglyphstar-copy.svg"
             />
           </div>
-          <div className="group-div2">
+          <div className="container">
             <div className="div6">$200</div>
             <img
               className="iconglyphstar-copy-2"
