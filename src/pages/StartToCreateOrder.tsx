@@ -7,7 +7,7 @@ const StartToCreateOrder: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
-    navigate("/selecttokenfororder");
+    navigate("/selltokentotoken");
   }, [navigate]);
 
   return (
@@ -19,10 +19,10 @@ const StartToCreateOrder: FunctionComponent = () => {
         <CatalogSelection iWantTo="I want to get:" />
       </div>
       <button
-        className="prepare-sell-order-button15"
+        className="prepare-sell-order-button18"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button3">Next</div>
+        <div className="primary-button10">Specify Token</div>
       </button>
     </div>
   );
