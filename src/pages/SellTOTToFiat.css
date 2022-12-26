@@ -10,27 +10,21 @@
   display: inline-block;
   width: 296px;
 }
-.selecttypeoftot1 {
-  height: 40px;
-  align-items: center;
-}
 .selecttypeoftot1,
 .tot-description4,
 .tot-name4 {
   background-color: var(--color-beige);
   border-radius: var(--br-sm);
   width: 301px;
+  height: 40px;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   padding: var(--padding-5xs);
   box-sizing: border-box;
-  justify-content: flex-start;
-}
-.tot-name4 {
-  height: 40px;
   align-items: center;
+  justify-content: flex-start;
 }
 .selecttypeoftot1 {
   gap: var(--gap-sm);
@@ -145,14 +139,6 @@
   color: var(--color-white1);
   text-align: center;
 }
-.priceandcollateralform5,
-.reviewtheorder5,
-.selltottofiat {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
 .reviewtheorder5 {
   cursor: pointer;
   border: 0;
@@ -161,14 +147,25 @@
   border-radius: var(--br-xl);
   height: 50px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
+}
+.reviewtheorder5:disabled {
+  background-color: var(--color-gray-200);
 }
 .priceandcollateralform5,
 .selltottofiat {
   background-color: var(--color-white1);
+  overflow: hidden;
+  display: flex;
   flex-direction: column;
   padding: var(--padding-lg) 0;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }

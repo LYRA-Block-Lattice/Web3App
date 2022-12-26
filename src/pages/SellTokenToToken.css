@@ -64,14 +64,6 @@
   text-align: center;
   display: inline-block;
 }
-.priceandcollateralform8,
-.reviewtheorder8,
-.selltokentotoken {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
 .reviewtheorder8 {
   cursor: pointer;
   border: 0;
@@ -80,14 +72,25 @@
   border-radius: var(--br-xl);
   height: 50px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
+}
+.reviewtheorder8:disabled {
+  background-color: var(--color-gray-200);
 }
 .priceandcollateralform8,
 .selltokentotoken {
   background-color: var(--color-white1);
+  overflow: hidden;
+  display: flex;
   flex-direction: column;
   padding: var(--padding-lg) 0;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }

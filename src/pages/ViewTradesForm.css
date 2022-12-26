@@ -24,64 +24,64 @@
 }
 .biding,
 .div,
-.fiat-usd {
-  position: absolute;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  display: inline-block;
-}
-.great-nft {
-  top: 17px;
-  left: 94px;
-}
+.fiat-usd,
 .great-nft,
 .open,
 .price,
 .selling,
 .status {
   position: absolute;
+  top: 17px;
+  left: 94px;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   display: inline-block;
 }
-.fiat-usd {
+.biding,
+.div,
+.fiat-usd,
+.open,
+.price,
+.selling,
+.status {
   top: 52px;
   left: 99px;
 }
-.open {
+.biding,
+.div,
+.open,
+.price,
+.selling,
+.status {
   top: 87px;
   left: 114px;
 }
-.div {
+.biding,
+.div,
+.price,
+.selling,
+.status {
   top: 115px;
   left: 113px;
 }
-.biding {
-  left: 12px;
-}
 .biding,
-.price {
-  width: 71px;
-}
-.selling {
-  top: 17px;
-  left: 12px;
-}
+.price,
 .selling,
 .status {
+  top: 17px;
+  left: 12px;
   width: 71px;
 }
-.biding {
+.biding,
+.price,
+.status {
   top: 52px;
 }
 .price,
 .status {
-  left: 15px;
-}
-.status {
   top: 87px;
+  left: 15px;
 }
 .price {
   top: 115px;

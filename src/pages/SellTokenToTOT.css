@@ -10,19 +10,14 @@
   display: inline-block;
   width: 296px;
 }
-.searchtokenbyname {
-  align-items: center;
-}
 .searchtokenbyname,
 .tot-description,
 .tot-name {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
-  justify-content: flex-start;
-}
-.tot-name {
   align-items: center;
+  justify-content: flex-start;
 }
 .searchtokenbyname {
   background-color: var(--color-white1);
@@ -38,12 +33,10 @@
   background-color: var(--color-beige);
   border-radius: var(--br-sm);
   width: 301px;
+  height: 40px;
   flex-shrink: 0;
   flex-direction: row;
   padding: var(--padding-5xs);
-}
-.tot-name {
-  height: 40px;
 }
 .tot-description {
   height: 124px;
@@ -143,14 +136,6 @@
   color: var(--color-white1);
   text-align: center;
 }
-.priceandcollateralform,
-.reviewtheorder,
-.selltokentotot {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
 .reviewtheorder {
   cursor: pointer;
   border: 0;
@@ -159,14 +144,25 @@
   border-radius: var(--br-xl);
   height: 50px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
+}
+.reviewtheorder:disabled {
+  background-color: var(--color-gray-200);
 }
 .priceandcollateralform,
 .selltokentotot {
   background-color: var(--color-white1);
+  overflow: hidden;
+  display: flex;
   flex-direction: column;
   padding: var(--padding-lg) 0;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }
