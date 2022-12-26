@@ -1,5 +1,5 @@
 import { setegid } from "process";
-import { FunctionComponent, useCallback, LegacyRef, useRef, useState } from "react";
+import { FunctionComponent, useCallback, LegacyRef, useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CatalogSelection from "../components/CatalogSelection";
 import "./StartToCreateOrder.css";
@@ -15,9 +15,41 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => { 
+    if(start != undefined && end != undefined) {
+      setDisabled(false);
+    }
+  }, [start, end]);
+
   const onPrepareSellOrderButtonClick = useCallback(() => {
-    navigate("/selltokentotoken");
-  }, [navigate]);
+    if(start == "Token" || start == "NFT")
+    {
+      if(end == "Token" || end == "NFT")
+        navigate("/selltokentotoken");
+      else if(end == "Fiat")
+        navigate("/selltokentofiat");
+      else
+        navigate("/selltokentotot");
+    }
+    else if(start == "Fiat")
+    {
+      if(end == "Token" || end == "NFT")
+        navigate("/sellfiattotoken");
+      else if(end == "Fiat")
+        navigate("/sellfiattofiat");
+      else
+        navigate("/sellfiattotot");
+    }
+    else
+    {
+      if(end == "Token" || end == "NFT")
+        navigate("/selltottotoken");
+      else if(end == "Fiat")
+        navigate("/selltottofiat");
+      else
+        navigate("/selltottotot");
+    }
+  }, [navigate, start, end]);
 
   const onTokenAction = (act:string | undefined, tok:string | undefined, xref: LegacyRef<HTMLButtonElement> | undefined) => {
     if(act === "Sell")
@@ -27,9 +59,6 @@ const StartToCreateOrder: FunctionComponent = () => {
     else
     {
       setEnd(tok);
-    }
-    if(isDisabled && start != undefined && end != undefined) {
-      setDisabled(false);
     }
     //
   };
