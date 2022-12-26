@@ -80,6 +80,7 @@ const Market: FunctionComponent = () => {
               <a className="balance-display-zone">
                 <b className="lyrbalance">120,000</b>
                 <b className="lyrlabel">LYR</b>
+                <div className="balance-display-zone-child" />
                 <b className="usdtbalance">5,000</b>
                 <b className="lyrlabel">USDT</b>
               </a>
