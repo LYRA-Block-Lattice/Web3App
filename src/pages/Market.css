@@ -13,27 +13,30 @@
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
 .lyrbalance {
-  width: 168px;
+  width: 228px;
+  height: 29px;
+  flex-shrink: 0;
 }
 .lyrlabel {
   font-size: var(--font-size-3xs);
   color: var(--color-gray-200);
   text-align: left;
-  margin-top: -6px;
+  margin-top: -4px;
 }
-.balance-display-zone,
-.usdtbalance {
+.balance-display-zone-child {
+  position: relative;
+  background-color: transparent;
+  width: 22px;
+  height: 20px;
   flex-shrink: 0;
-  display: flex;
-  align-items: flex-end;
+  margin-top: -4px;
 }
 .usdtbalance {
   position: relative;
   letter-spacing: 0.3px;
-  width: 168px;
-  height: 45px;
+  display: inline-block;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
-  margin-top: -6px;
+  margin-top: -4px;
 }
 .balance-display-zone {
   text-decoration: none;
@@ -42,11 +45,14 @@
   top: 58.5px;
   right: 147px;
   width: 228px;
+  flex-shrink: 0;
   overflow: hidden;
+  display: flex;
   flex-direction: column;
   padding: var(--padding-6xs) 0 var(--padding-6xs) var(--padding-4xs);
   box-sizing: border-box;
-  justify-content: flex-start;
+  align-items: flex-end;
+  justify-content: center;
   z-index: 1;
   color: inherit;
 }
