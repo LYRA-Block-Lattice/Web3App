@@ -15,7 +15,7 @@ const StartToCreateOrder: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
-    navigate("/selecttokenfororder");
+    navigate("/selltokentotoken");
   }, [navigate]);
 
   const onTokenAction = (act:string | undefined, tok:string | undefined, xref: LegacyRef<HTMLButtonElement> | undefined) => {
@@ -43,10 +43,10 @@ const StartToCreateOrder: FunctionComponent = () => {
         </Xwrapper>
       </div>
       <button
-        className="prepare-sell-order-button15"
+        className="prepare-sell-order-button18"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button3">Next</div>
+        <div className="primary-button10">Specify Token</div>
       </button>
     </div>
   );
