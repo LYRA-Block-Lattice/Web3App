@@ -11,7 +11,7 @@ const boxStyle = {border: "grey solid 2px", borderRadius: "10px", padding: "5px"
 const StartToCreateOrder: FunctionComponent = () => {
   const [start, setStart] = useState<string|undefined>();
   const [end, setEnd] = useState<string|undefined>();
-  const [isDisabled, setDisabled] = useState(true);
+  const [isDisabled, setDisabled] = useState<boolean>(true);
 
   const navigate = useNavigate();
 
@@ -28,8 +28,8 @@ const StartToCreateOrder: FunctionComponent = () => {
     {
       setEnd(tok);
     }
-    if(start != undefined && end != undefined) {
-      alert(`act is ${act} and token is ${tok}`);
+    if(isDisabled && start != undefined && end != undefined) {
+      setDisabled(false);
     }
     //
   };
@@ -41,9 +41,9 @@ const StartToCreateOrder: FunctionComponent = () => {
       <Xwrapper>
              <Xarrow showXarrow={start != null && end != null} start={`Sell-${start}`} end={`Get-${end}`}/>
         
-        <CatalogSelection iWantTo="Sell" tokenActionClicked={onTokenAction}/>
+        <CatalogSelection key="sell" iWantTo="Sell" tokenActionClicked={onTokenAction}/>
         <div className="catalog-section-child" />
-        <CatalogSelection iWantTo="Get" tokenActionClicked={onTokenAction}/>
+        <CatalogSelection key="get" iWantTo="Get" tokenActionClicked={onTokenAction}/>
         </Xwrapper>
       </div>
       <button
