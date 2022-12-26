@@ -11,6 +11,7 @@ const boxStyle = {border: "grey solid 2px", borderRadius: "10px", padding: "5px"
 const StartToCreateOrder: FunctionComponent = () => {
   const [start, setStart] = useState<string|undefined>();
   const [end, setEnd] = useState<string|undefined>();
+  const [isDisabled, setDisabled] = useState(true);
 
   const navigate = useNavigate();
 
@@ -27,7 +28,10 @@ const StartToCreateOrder: FunctionComponent = () => {
     {
       setEnd(tok);
     }
-    //alert(`act is ${act} and token is ${tok}`);
+    if(start != undefined && end != undefined) {
+      alert(`act is ${act} and token is ${tok}`);
+    }
+    //
   };
 
   return (
@@ -44,6 +48,7 @@ const StartToCreateOrder: FunctionComponent = () => {
       </div>
       <button
         className="prepare-sell-order-button18"
+        disabled={isDisabled}
         onClick={onPrepareSellOrderButtonClick}
       >
         <div className="primary-button10">Specify Token</div>
