@@ -36,13 +36,6 @@
   text-align: center;
   display: inline-block;
 }
-.prepare-sell-order-button18,
-.starttocreateorder {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
 .prepare-sell-order-button18 {
   cursor: pointer;
   border: 0;
@@ -51,18 +44,29 @@
   border-radius: var(--br-xl);
   height: 50px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
 }
 .prepare-sell-order-button18:hover {
   background-color: #8277e8;
 }
+.prepare-sell-order-button18:disabled {
+  background-color: var(--color-gray-200);
+}
 .starttocreateorder {
   position: relative;
   background-color: var(--color-white1);
   width: 100%;
+  overflow: hidden;
+  display: flex;
   flex-direction: column;
   padding: var(--padding-xl) 66px var(--padding-lg);
+  box-sizing: border-box;
+  align-items: center;
   justify-content: flex-start;
   gap: 21px;
   text-align: left;

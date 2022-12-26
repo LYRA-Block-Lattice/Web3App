@@ -30,14 +30,15 @@ body {
   --color-white1: #fff;
   --black-000000100: #000;
   --primary: #594ae2;
+  --color-gray-100: #e5e5e5;
+  --color-gray-200: #dfdfdf;
+  --color-gray-300: #b6e0ff;
+  --color-gray-11: #7f8592;
+  --color-black1: #1b2749;
   --color-beige: #f6ffde;
   --color-coral: #fa7268;
   --secondary: #ff4081;
   --tertiary: #1ec8a5;
-  --color-gray-100: #e5e5e5;
-  --color-gray-200: #b6e0ff;
-  --color-gray-11: #7f8592;
-  --color-black1: #1b2749;
   --color-green: #55b944;
 
   /* Gaps */

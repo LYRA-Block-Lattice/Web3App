@@ -1,24 +1,18 @@
-.selecttypeoftot2 {
-  height: 40px;
-  align-items: center;
-}
 .selecttypeoftot2,
 .tot-description5,
 .tot-name5 {
   background-color: var(--color-beige);
   border-radius: var(--br-sm);
   width: 301px;
+  height: 40px;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   padding: var(--padding-5xs);
   box-sizing: border-box;
-  justify-content: flex-start;
-}
-.tot-name5 {
-  height: 40px;
   align-items: center;
+  justify-content: flex-start;
 }
 .selecttypeoftot2 {
   gap: var(--gap-sm);
@@ -150,14 +144,6 @@
   color: var(--color-white1);
   text-align: center;
 }
-.priceandcollateralform6,
-.reviewtheorder6,
-.selltottotoken {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
 .reviewtheorder6 {
   cursor: pointer;
   border: 0;
@@ -166,14 +152,25 @@
   border-radius: var(--br-xl);
   height: 50px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
+}
+.reviewtheorder6:disabled {
+  background-color: var(--color-gray-200);
 }
 .priceandcollateralform6,
 .selltottotoken {
   background-color: var(--color-white1);
+  overflow: hidden;
+  display: flex;
   flex-direction: column;
   padding: var(--padding-lg) 0;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }
