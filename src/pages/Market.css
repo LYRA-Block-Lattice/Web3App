@@ -298,7 +298,7 @@
   display: inline-block;
   z-index: 0;
 }
-.parent4 {
+.frame-div {
   display: flex;
   flex-direction: column;
   padding: var(--padding-6xl) 0 var(--padding-4xs) var(--padding-4xs);

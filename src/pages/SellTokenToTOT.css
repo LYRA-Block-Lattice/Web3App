@@ -10,19 +10,14 @@
   display: inline-block;
   width: 296px;
 }
-.searchtokenbyname {
-  align-items: center;
-}
 .searchtokenbyname,
 .tot-description,
 .tot-name {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
-  justify-content: flex-start;
-}
-.tot-name {
   align-items: center;
+  justify-content: flex-start;
 }
 .searchtokenbyname {
   background-color: var(--color-white1);
@@ -38,12 +33,10 @@
   background-color: var(--color-beige);
   border-radius: var(--br-md);
   width: 301px;
+  height: 40px;
   flex-shrink: 0;
   flex-direction: row;
   padding: var(--padding-4xs);
-}
-.tot-name {
-  height: 40px;
 }
 .tot-description {
   height: 124px;

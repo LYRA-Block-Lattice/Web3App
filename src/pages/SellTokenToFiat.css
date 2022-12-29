@@ -43,6 +43,7 @@
   font-size: var(--body-s-size);
   background-color: var(--color-beige);
   border-radius: var(--br-md);
+  width: 301px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
@@ -52,9 +53,6 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
-}
-.sellatprice1 {
-  width: 301px;
 }
 .limitmin1 {
   width: 138px;

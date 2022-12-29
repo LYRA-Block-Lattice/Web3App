@@ -21,7 +21,7 @@ const ViewOrdersForm: FunctionComponent = () => {
         </button>
       </div>
       <div className="ordercard3">
-        <div className="frame-parent">
+        <div className="order-brief-section">
           <button className="order-banner-wrapper">
             <div className="order-banner">
               <button className="order-image">
@@ -46,7 +46,7 @@ const ViewOrdersForm: FunctionComponent = () => {
               </div>
             </div>
           </button>
-          <div className="frame-group">
+          <div className="frame-parent">
             <div className="btc-parent">
               <b className="btc">BTC</b>
               <img
@@ -60,94 +60,92 @@ const ViewOrdersForm: FunctionComponent = () => {
             <div className="btc">Amount: 3.2</div>
           </div>
         </div>
-        <div className="trade-table">
-          <div className="table">
-            <div className="row">
-              <div className="cell">
-                <div className="content">
-                  <div className="text">Buyer</div>
-                </div>
-              </div>
-              <div className="cell1">
-                <div className="content1">
-                  <div className="text1">Amount</div>
-                </div>
-              </div>
-              <div className="cell">
-                <div className="content">
-                  <div className="text">Time</div>
-                </div>
-              </div>
-              <div className="cell">
-                <div className="content1">
-                  <div className="text1">Status</div>
-                </div>
-              </div>
-              <div className="cell">
-                <div className="content1">
-                  <div className="text1">Action</div>
-                </div>
+        <div className="table-details-section">
+          <div className="row">
+            <div className="cell">
+              <div className="content">
+                <div className="text">Buyer</div>
               </div>
             </div>
-            <div className="row">
-              <div className="buyer-name-cell">
-                <div className="content1">
-                  <div className="text5">someone</div>
-                </div>
-              </div>
-              <div className="buyer-name-cell">
-                <div className="content1">
-                  <div className="text6">1.0</div>
-                </div>
-              </div>
-              <div className="buyer-name-cell">
-                <div className="content7">
-                  <div className="text5">3 hours ago</div>
-                </div>
-              </div>
-              <div className="buyer-name-cell">
-                <div className="content1">
-                  <div className="text5">Pending</div>
-                </div>
-              </div>
-              <div className="buyer-name-cell">
-                <div className="content1">
-                  <div className="text9" />
-                </div>
+            <div className="cell1">
+              <div className="content1">
+                <div className="text1">Amount</div>
               </div>
             </div>
-            <div className="row">
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            <div className="cell">
+              <div className="content">
+                <div className="text">Time</div>
               </div>
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            </div>
+            <div className="cell">
+              <div className="content1">
+                <div className="text1">Status</div>
               </div>
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            </div>
+            <div className="cell">
+              <div className="content1">
+                <div className="text1">Action</div>
               </div>
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="buyer-name-cell">
+              <div className="content1">
+                <div className="text5">someone</div>
               </div>
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content1">
+                <div className="text6">1.0</div>
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content7">
+                <div className="text5">3 hours ago</div>
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content1">
+                <div className="text5">Pending</div>
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content1">
+                <div className="text9" />
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="ordercard3">
-        <div className="frame-parent">
+        <div className="order-brief-section">
           <button className="order-banner-wrapper">
             <div className="order-banner">
               <button className="order-image">
@@ -172,7 +170,7 @@ const ViewOrdersForm: FunctionComponent = () => {
               </div>
             </div>
           </button>
-          <div className="frame-group">
+          <div className="frame-parent">
             <div className="btc-parent">
               <b className="btc">BTC</b>
               <img
@@ -186,87 +184,85 @@ const ViewOrdersForm: FunctionComponent = () => {
             <div className="btc">Amount: 3.2</div>
           </div>
         </div>
-        <div className="trade-table">
-          <div className="table">
-            <div className="row">
-              <div className="cell">
-                <div className="content">
-                  <div className="text">Buyer</div>
-                </div>
-              </div>
-              <div className="cell1">
-                <div className="content1">
-                  <div className="text1">Amount</div>
-                </div>
-              </div>
-              <div className="cell">
-                <div className="content">
-                  <div className="text">Time</div>
-                </div>
-              </div>
-              <div className="cell">
-                <div className="content1">
-                  <div className="text1">Status</div>
-                </div>
-              </div>
-              <div className="cell">
-                <div className="content1">
-                  <div className="text1">Action</div>
-                </div>
+        <div className="table-details-section">
+          <div className="row">
+            <div className="cell">
+              <div className="content">
+                <div className="text">Buyer</div>
               </div>
             </div>
-            <div className="row">
-              <div className="buyer-name-cell">
-                <div className="content1">
-                  <div className="text5">someone</div>
-                </div>
-              </div>
-              <div className="buyer-name-cell">
-                <div className="content1">
-                  <div className="text6">1.0</div>
-                </div>
-              </div>
-              <div className="buyer-name-cell">
-                <div className="content7">
-                  <div className="text5">3 hours ago</div>
-                </div>
-              </div>
-              <div className="buyer-name-cell">
-                <div className="content1">
-                  <div className="text5">Pending</div>
-                </div>
-              </div>
-              <div className="buyer-name-cell">
-                <div className="content1">
-                  <div className="text9" />
-                </div>
+            <div className="cell1">
+              <div className="content1">
+                <div className="text1">Amount</div>
               </div>
             </div>
-            <div className="row">
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            <div className="cell">
+              <div className="content">
+                <div className="text">Time</div>
               </div>
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            </div>
+            <div className="cell">
+              <div className="content1">
+                <div className="text1">Status</div>
               </div>
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            </div>
+            <div className="cell">
+              <div className="content1">
+                <div className="text1">Action</div>
               </div>
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="buyer-name-cell">
+              <div className="content1">
+                <div className="text5">someone</div>
               </div>
-              <div className="buyer-name-cell">
-                <div className="content10">
-                  <div className="text6" />
-                </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content1">
+                <div className="text6">1.0</div>
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content7">
+                <div className="text5">3 hours ago</div>
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content1">
+                <div className="text5">Pending</div>
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content1">
+                <div className="text9" />
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
+              </div>
+            </div>
+            <div className="buyer-name-cell">
+              <div className="content10">
+                <div className="text6" />
               </div>
             </div>
           </div>
