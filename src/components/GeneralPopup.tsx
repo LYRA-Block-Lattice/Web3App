@@ -36,7 +36,11 @@ const GeneralPopup: FunctionComponent<GeneralPopupType> = ({ onClose }) => {
     };
   }, []);
 
-  return <div className="generalpopup" data-animate-on-scroll />;
+  return (
+    <div className="generalpopup" data-animate-on-scroll>
+      <div className="hello-popup">Hello popup!</div>
+    </div>
+  );
 };
 
 export default GeneralPopup;
