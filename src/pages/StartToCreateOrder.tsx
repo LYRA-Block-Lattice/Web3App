@@ -19,10 +19,10 @@ const StartToCreateOrder: FunctionComponent = () => {
         <CatalogSelection iWantTo="I want to get:" />
       </div>
       <button
-        className="prepare-sell-order-button18"
+        className="prepare-sell-order-button16"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button10">Specify Token</div>
+        <div className="primary-button5">Specify Token</div>
       </button>
     </div>
   );

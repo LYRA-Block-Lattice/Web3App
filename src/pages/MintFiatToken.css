@@ -1,16 +1,22 @@
-.create-nft {
+.print-fiat-for-free {
   position: relative;
+  font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
+  font-family: var(--caption1);
+  color: var(--black-000000100);
+  text-align: left;
   display: inline-block;
   width: 296px;
 }
-.nft-description,
-.nft-name {
-  border: 0;
-  font-family: var(--caption1);
+.domain-name,
+.secondary-button {
   font-size: var(--body-s-size);
+  font-family: var(--caption1);
+}
+.domain-name {
+  border: 0;
   background-color: var(--color-beige);
   border-radius: var(--br-sm);
   width: 301px;
@@ -24,35 +30,23 @@
   align-items: center;
   justify-content: flex-start;
 }
-.nft-description {
-  height: 124px;
-  align-items: flex-start;
-}
-.or,
-.secondary-button7 {
+.secondary-button {
   position: relative;
-  font-size: var(--body-s-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
+  color: var(--color-white1);
   text-align: center;
   display: inline-block;
 }
-.or {
-  width: 31px;
-}
-.secondary-button7 {
-  font-family: var(--caption1);
-  color: var(--color-white1);
-}
-.createnftform,
-.prepare-sell-order-button15 {
+.mint-fiat-token,
+.prepare-sell-order-button {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button15 {
+.prepare-sell-order-button {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-3xl);
@@ -63,16 +57,12 @@
   flex-direction: row;
   justify-content: center;
 }
-.createnftform {
+.mint-fiat-token {
   position: relative;
   background-color: var(--color-white1);
   width: 100%;
   flex-direction: column;
-  padding: var(--padding-xl) var(--padding-sm);
+  padding: var(--padding-xl) var(--padding-md);
   justify-content: flex-start;
   gap: var(--gap-3xl);
-  text-align: left;
-  font-size: var(--font-size-5xl);
-  color: var(--black-000000100);
-  font-family: var(--caption1);
 }

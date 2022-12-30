@@ -1,13 +1,17 @@
-.create-nft {
+.create-tot {
   position: relative;
+  font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
+  font-family: var(--caption1);
+  color: var(--black-000000100);
+  text-align: left;
   display: inline-block;
   width: 296px;
 }
-.nft-description,
-.nft-name {
+.tot-description8,
+.tot-name6 {
   border: 0;
   font-family: var(--caption1);
   font-size: var(--body-s-size);
@@ -24,35 +28,64 @@
   align-items: center;
   justify-content: flex-start;
 }
-.nft-description {
+.tot-description8 {
   height: 124px;
   align-items: flex-start;
 }
-.or,
-.secondary-button7 {
+.utility-button8 {
   position: relative;
-  font-size: var(--body-s-size);
+  font-size: var(--font-size-base);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
+  font-family: var(--caption1);
+  color: var(--color-white1);
   text-align: center;
   display: inline-block;
 }
-.or {
-  width: 31px;
+.prepare-sell-order-button21 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-lg);
+  background-color: var(--tertiary);
+  border-radius: var(--br-xl);
+  height: 30px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
 }
-.secondary-button7 {
+.note-i-need-to-send-trade-sec6,
+.secondary-button10 {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
   font-family: var(--caption1);
-  color: var(--color-white1);
+  display: inline-block;
 }
-.createnftform,
-.prepare-sell-order-button15 {
+.note-i-need-to-send-trade-sec6 {
+  font-size: var(--font-size-base);
+  color: var(--black-000000100);
+  text-align: left;
+  width: 292px;
+}
+.secondary-button10 {
+  font-size: var(--body-s-size);
+  font-weight: 500;
+  color: var(--color-white1);
+  text-align: center;
+}
+.createtotform,
+.prepare-sell-order-button22 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button15 {
+.prepare-sell-order-button22 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-3xl);
@@ -63,7 +96,7 @@
   flex-direction: row;
   justify-content: center;
 }
-.createnftform {
+.createtotform {
   position: relative;
   background-color: var(--color-white1);
   width: 100%;
@@ -71,8 +104,4 @@
   padding: var(--padding-xl) var(--padding-sm);
   justify-content: flex-start;
   gap: var(--gap-3xl);
-  text-align: left;
-  font-size: var(--font-size-5xl);
-  color: var(--black-000000100);
-  font-family: var(--caption1);
 }
