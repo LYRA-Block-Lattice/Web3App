@@ -3,12 +3,13 @@ import "./GeneralPopup.css";
 
 type GeneralPopupType = {
   onClose?: () => void;
+  children?: React.ReactNode;
 };
 
-const GeneralPopup: FunctionComponent<GeneralPopupType> = ({ onClose }) => {
+const GeneralPopup: FunctionComponent<GeneralPopupType> = props => {
   return (
     <div className="generalpopup">
-      <div className="hello-popup">Hello popup!</div>
+      <div>{props.children}</div>
     </div>
   );
 };

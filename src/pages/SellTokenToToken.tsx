@@ -4,6 +4,7 @@ import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import { useNavigate } from "react-router-dom";
 import "./SellTokenToToken.css";
+import CreateNFTForm from "./CreateNFTForm";
 
 const SellTokenToToken: FunctionComponent = () => {
   const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
@@ -142,7 +143,9 @@ const SellTokenToToken: FunctionComponent = () => {
           placement="Centered"
           onOutsideClick={closeGeneralPopup}
         >
-          <GeneralPopup onClose={closeGeneralPopup} />
+          <GeneralPopup onClose={closeGeneralPopup}>
+            <CreateNFTForm />
+          </GeneralPopup>
         </PortalPopup>
       )}
     </>
