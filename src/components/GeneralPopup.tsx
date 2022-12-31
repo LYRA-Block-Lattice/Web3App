@@ -6,11 +6,7 @@ type GeneralPopupType = {
 };
 
 const GeneralPopup: FunctionComponent<GeneralPopupType> = ({ onClose }) => {
-  return (
-    <div className="generalpopup">
-      <div className="hello-popup">Hello popup!</div>
-    </div>
-  );
+  return <div className="generalpopup" />;
 };
 
 export default GeneralPopup;

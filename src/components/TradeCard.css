@@ -1,21 +1,21 @@
-.icbaseline-generating-tokens-icon1 {
+.icbaseline-generating-tokens-icon {
   position: relative;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.order-image-item {
+.order-image-child {
   position: relative;
   width: 19.5px;
   height: 7.36px;
   flex-shrink: 0;
 }
-.order-image1 {
+.order-image {
   cursor: pointer;
   border: 0;
   padding: 0;
-  background-color: var(--sell1);
+  background-color: var(--buy1);
   border-radius: var(--br-md) var(--br-md) 0 0;
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
   width: 110px;
@@ -27,7 +27,7 @@
   justify-content: center;
   gap: var(--gap-xs);
 }
-.open1 {
+.open {
   position: relative;
   font-size: var(--caption1-size);
   display: inline-block;
@@ -35,7 +35,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.order-status1 {
+.order-status {
   align-self: stretch;
   border-radius: 0 0 var(--br-md) var(--br-md);
   background-color: var(--info1);
@@ -46,35 +46,39 @@
   align-items: center;
   justify-content: center;
 }
-.banner-image1,
-.order-banner1 {
+.banner-image,
+.order-banner {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
-.order-banner1 {
+.order-banner {
   gap: var(--gap-0);
 }
-.banner-image1 {
+.banner-image {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
 }
-.frame-item {
+.trade {
+  position: relative;
+  display: inline-block;
+}
+.frame-child {
   position: relative;
   width: 12.5px;
   height: 7.36px;
   flex-shrink: 0;
 }
-.tetherusdt1 {
+.tetherusdt {
   position: relative;
   display: inline-block;
   text-align: left;
 }
-.sell-parent {
+.trade-parent {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -82,7 +86,7 @@
   gap: var(--gap-md);
   font-size: var(--font-size-xl);
 }
-.title-section-item {
+.title-section-child {
   position: relative;
   border-top: 1px solid var(--text-secondary1);
   box-sizing: border-box;
@@ -90,93 +94,88 @@
   height: 1px;
   flex-shrink: 0;
 }
-.am-container {
+.am-wrapper,
+.block1,
+.block2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.am-wrapper {
   align-self: stretch;
   background-color: var(--color-white1);
   overflow: hidden;
-  display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
   text-align: left;
 }
-.limit-min {
-  position: relative;
-  display: inline-block;
-}
-.block11,
-.block21 {
-  display: flex;
+.block1,
+.block2 {
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-0);
 }
-.block21 {
+.block2 {
   overflow: hidden;
   align-items: flex-end;
 }
-.details-section-item {
+.details-section-child {
   position: relative;
   width: 4px;
   height: 15px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.block31 {
+.block3 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-0);
 }
-.details-section1,
-.title-section1 {
+.details-section,
+.title-section {
   display: flex;
   justify-content: flex-start;
   gap: var(--gap-sm);
 }
-.details-section1 {
+.details-section {
   align-self: stretch;
   overflow: hidden;
   flex-direction: row;
   align-items: center;
 }
-.title-section1 {
+.title-section {
   border-radius: var(--br-xs) var(--br-xs) 0 0;
   flex-direction: column;
   align-items: flex-start;
 }
-.order-brief-section1 {
+.order-brief-section {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   gap: var(--gap-xl);
 }
-.width-controller1 {
+.width-controller {
   position: relative;
-  border-top: 1px solid var(--color-gray-700);
+  border-top: 1px solid var(--black-000000100);
   box-sizing: border-box;
   width: 365px;
   height: 1px;
   flex-shrink: 0;
 }
-.ordercard1,
-.trades-section1 {
+.ordercard,
+.trades-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.trades-section1 {
+.trades-section {
   align-self: stretch;
   height: 0;
   flex-shrink: 0;
   overflow: hidden;
 }
-.ordercard1 {
+.ordercard {
   border-radius: var(--br-md);
   background-color: var(--color-white1);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
