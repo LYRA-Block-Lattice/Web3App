@@ -1,23 +1,17 @@
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-200px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 .hello-popup {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   display: inline-block;
+  width: 404px;
+  height: 443px;
+  flex-shrink: 0;
 }
 .generalpopup {
   position: relative;
   background-color: var(--color-white1);
+  width: 370px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -25,14 +19,10 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  opacity: 0;
   max-width: 100%;
   max-height: 100%;
   text-align: center;
   font-size: var(--font-size-xl);
   color: var(--black-000000100);
   font-family: var(--caption1);
-}
-.generalpopup.animate {
-  animation: 1s ease 0s 1 normal forwards slide-in-top;
 }
