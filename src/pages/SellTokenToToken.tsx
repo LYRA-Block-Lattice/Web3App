@@ -24,7 +24,7 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
-        <form className="searchtokenbyname2">
+        <div className="searchtokenbyname2">
           <div className="to-sell-token">To Sell Token</div>
           <Autocomplete
             sx={{ width: 301 }}
@@ -66,7 +66,7 @@ const SellTokenToToken: FunctionComponent = () => {
             )}
             size="medium"
           />
-        </form>
+        </div>
         <div className="priceandcollateralform3">
           <div className="price-and-collateral3">Price and Collateral</div>
           <div className="set-the-price-1-offering-fo3">
