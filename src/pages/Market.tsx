@@ -210,8 +210,8 @@ const Market: FunctionComponent = () => {
           </button>
         </div>
       </div>
-      <div className="catalogselection-parent">
-        <div className="catalogselection">
+      <div className="catalogselectionhorizontal-parent">
+        <div className="catalogselectionhorizontal">
           <div className="tradecatalog">
             <button className="select-token-catalog-button">
               <img
@@ -283,7 +283,7 @@ const Market: FunctionComponent = () => {
                   <img
                     className="icbaseline-generating-tokens-icon"
                     alt=""
-                    src="../asserts/carbonuserservicedesk5.svg"
+                    src="../asserts/carbonuserservicedesk.svg"
                   />
                 </button>
                 <div className="order-status">

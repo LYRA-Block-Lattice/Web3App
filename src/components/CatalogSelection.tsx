@@ -10,7 +10,7 @@ const CatalogSelection: FunctionComponent<CatalogSelectionType> = ({
   iWantTo,
 }) => {
   return (
-    <div className="catalogselection1">
+    <div className="catalogselection">
       <div className="i-want-to-sell">{iWantTo}</div>
       <div className="tradecatalog1">
         <SelectTokenCatalogButton

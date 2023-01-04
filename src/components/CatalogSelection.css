@@ -6,7 +6,7 @@
   display: inline-block;
   width: 119px;
 }
-.catalogselection1,
+.catalogselection,
 .tradecatalog1 {
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
   box-sizing: border-box;
   gap: var(--gap-lg);
 }
-.catalogselection1 {
+.catalogselection {
   gap: var(--gap-4xs);
   text-align: center;
   font-size: var(--body-b-size);
