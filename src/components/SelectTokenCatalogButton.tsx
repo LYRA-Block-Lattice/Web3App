@@ -12,7 +12,7 @@ const SelectTokenCatalogButton: FunctionComponent<
   return (
     <button className="select-token-catalog-button5">
       <img
-        className="icbaseline-generating-tokens-icon5"
+        className="icbaseline-generating-tokens-icon3"
         alt=""
         src={icbaselineGeneratingToken}
       />
