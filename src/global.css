@@ -16,6 +16,7 @@ body {
   --font-sf-pro-text: "SF Pro Text";
 
   /* font sizes */
+  --font-size-3xs: 7px;
   --font-size-2xs: 10px;
   --caption1-size: 12px;
   --other-m-size: 13px;
@@ -40,8 +41,9 @@ body {
   --color-gray-500: #979797;
   --color-gray-1: #7f8592;
   --info1: #2196f3;
+  --text-primary-dark1: #424242;
   --color-black1: #1b2749;
-  --color-gray-900: rgba(255, 255, 255, 0);
+  --color-gray-1000: rgba(255, 255, 255, 0);
   --text-secondary1: rgba(0, 0, 0, 0.54);
   --primary: #594ae2;
   --sell1: #fa7268;

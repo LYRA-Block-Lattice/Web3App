@@ -274,20 +274,36 @@ const Market: FunctionComponent = () => {
       </div>
       <div className="catalogtab-parent">
         <div className="catalogtab">
-          <div className="token-wrapper">
+          <div className="token-parent">
             <b className="token">Token</b>
+            <div className="ellipse-parent">
+              <img
+                className="group-child"
+                alt=""
+                src="../asserts/ellipse-43.svg"
+              />
+              <div className="div3">18</div>
+            </div>
           </div>
-          <div className="token-wrapper">
+          <div className="nft-parent">
             <b className="token">NFT</b>
+            <div className="ellipse-parent">
+              <img
+                className="group-child"
+                alt=""
+                src="../asserts/ellipse-43.svg"
+              />
+              <div className="div3">18</div>
+            </div>
           </div>
-          <div className="token-wrapper">
-            <b className="token">Fiat</b>
+          <div className="fiat-wrapper">
+            <b className="fiat">Fiat</b>
           </div>
-          <div className="token-wrapper">
-            <b className="token">Goods</b>
+          <div className="fiat-wrapper">
+            <b className="fiat">Goods</b>
           </div>
-          <div className="token-wrapper">
-            <b className="token">Service</b>
+          <div className="fiat-wrapper">
+            <b className="fiat">Service</b>
           </div>
         </div>
         {items.map((blk) =>
