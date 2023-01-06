@@ -127,7 +127,7 @@
 }
 .descriptiontitle {
   border-radius: var(--br-md);
-  background-color: var(--color-gray-200);
+  background-color: var(--color-gray-300);
   padding: var(--padding-2xs) var(--padding-md);
   align-items: center;
   gap: var(--gap-lg);
