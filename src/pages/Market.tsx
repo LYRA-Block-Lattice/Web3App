@@ -236,8 +236,8 @@ const Market: FunctionComponent = () => {
           </button>
         </div>
       </div>
-      <div className="iconssection">
-        <div className="dao-button-parent">
+      <div className="iconssection1">
+        <div className="dex-button-parent">
           <button className="dao-button">
             <img
               className="home-icon-interlocution"

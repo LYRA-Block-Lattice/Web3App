@@ -54,7 +54,7 @@
   background-color: #8277e8;
 }
 .prepare-sell-order-button17:disabled {
-  background-color: var(--color-gray-300);
+  background-color: var(--color-gray-400);
 }
 .starttocreateorder {
   position: relative;

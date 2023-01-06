@@ -89,7 +89,7 @@
   justify-content: center;
 }
 .reviewtheorder:disabled {
-  background-color: var(--color-gray-300);
+  background-color: var(--color-gray-400);
 }
 .priceandcollateralform {
   background-color: var(--color-white1);
