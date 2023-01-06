@@ -24,23 +24,36 @@ const Market: FunctionComponent = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
+  // function to get json from rest api
+  const getJson = async (url: string) => {
+    const response = await fetch(url);
+    return response.json();
+  };
+
+  // function to get web content from rest api
+  const getWebContent = async (url: string) => {
+    const response = await fetch(url);
+    return response.text();
+  };
+
   useEffect(() => {
-    window.rrProxy.ReactRazor.Pages.Home.Interop.GetBalancesAsync(window.rrComponent)
+    const url = "https://devnet.lyra.live/api/Node/GetLastBlock?AccountId=LUTPLGNAP4vTzXh5tWVCmxUBh8zjGTR8PKsfA8E67QohNsd1U6nXPk4Q9jpFKsKfULaaT3hs6YK7WKm57QL5oarx8mZdbM";
+    getWebContent(url)
       .then((json) => JSON.parse(json))
+      .then(j => JSON.parse(j.blockData))
       .then((ret) => {
-        console.log(ret);
-        if (ret.result != null) {
-          setNftcnt(ret.result.filter((a) => a.token.startsWith("nft/")).length);
-          setTotcnt(ret.result.filter((a) => a.token.startsWith("tot/") || a.token.startsWith("svc/")).length);
-          setLyrbns(ret.result.find(a => a.token == "LYR")?.balance ?? 0);
-          setUsdt(ret.result.find(a => a.token == "tether/USDT")?.balance ?? 0);
-        }
+        //console.log(ret.Balances);
+        setNftcnt(Object.keys(ret.Balances).filter((a) => a.startsWith("nft/")).length);
+        setTotcnt(Object.keys(ret.Balances).filter((a) => a.startsWith("tot/") || a.startsWith("svc/")).length);
+        setLyrbns(Object.keys(ret.Balances).find(a => a == "LYR") === undefined ? 0 : ret.Balances["LYR"]/100000000);
+        setUsdt(Object.keys(ret.Balances).find(a => a == "tether/USDT") === undefined ? 0 : ret.Balances["tether/USDT"]/100000000);
       });
 
-    fetch("https://devnet.lyra.live/api/EC/Orders")
+    fetch("https://dealerdevnet.lyra.live/api/dealer/Orders")
       .then(res => res.json())
       .then(
         (result) => {
+          console.log("orders result", result);
           setIsLoaded(true);
           setItems(result);
         },
@@ -279,7 +292,7 @@ const Market: FunctionComponent = () => {
         </div>
         {items.map((blk) =>
           <SellItem
-            sellerName="A big seller"
+            sellerName={(blk as any).UserName}
             offering={(blk as any).Order.offering}
             biding={(blk as any).Order.biding}
             sellerRating="98%"

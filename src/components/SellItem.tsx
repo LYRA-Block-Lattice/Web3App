@@ -96,7 +96,7 @@ const SellItem: FunctionComponent<SellItemType> = ({
           src="../asserts/ellipse-1@2x.png"
         />
         <div className="a-big-seller-parent">
-          <b className="b">A big seller</b>
+          <b className="b">{sellerName}</b>
           <div className="the-first-dao">The First DAO</div>
         </div>
         <div className="wrapper">
