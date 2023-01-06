@@ -12,7 +12,7 @@ const CatalogSelection: FunctionComponent<CatalogSelectionType> = ({
   return (
     <div className="catalogselection">
       <div className="i-want-to">{iWantTo}</div>
-      <div className="tradecatalog1">
+      <div className="tradecatalog">
         <SelectTokenCatalogButton
           icbaselineGeneratingToken="../asserts/icbaselinegeneratingtokens.svg"
           token="Token"
