@@ -8,7 +8,7 @@ type SellItemType = {
   biding?: string;
   sellerRating?: string;
   lastUpdated?: string;
-  orderStatus?: string;
+  orderStatus?: OrderStatus;
   price?: string;
   amount?: string;
   limitMin?: string;
@@ -18,6 +18,13 @@ type SellItemType = {
   daoName?: string;
   tradeCount?: string;
 };
+
+enum OrderStatus {
+  Open = 0,
+  Partial = 10,
+  Closed = 30,
+  Delist = 50,
+}
 
 const SellItem: FunctionComponent<SellItemType> = ({
   sellerName,
@@ -58,7 +65,7 @@ const SellItem: FunctionComponent<SellItemType> = ({
               />
             </button>
             <div className="order-status2">
-              <b className="open2">{orderStatus}</b>
+              <b className="open2">{OrderStatus[orderStatus??OrderStatus.Closed]}</b>
             </div>
           </div>
         </button>
@@ -104,7 +111,7 @@ const SellItem: FunctionComponent<SellItemType> = ({
           <div className="the-first-dao">{daoName}</div>
         </div>
         <div className="frame-div">
-          <b className="b">98%</b>
+          <b className="b">{sellerRating}</b>
           <div className="the-first-dao">{tradeCount}</div>
         </div>
       </div>

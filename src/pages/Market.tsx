@@ -295,17 +295,17 @@ const Market: FunctionComponent = () => {
             sellerName={(blk as any).UserName}
             offering={(blk as any).Order.offering}
             biding={(blk as any).Order.biding}
-            sellerRating="98%"
+            sellerRating={Math.round((blk as any).Finished/(blk as any).Total*100) + "%"}
             lastUpdated={(blk as any).TimeStamp}
             orderStatus={(blk as any).UOStatus}
             price={(blk as any).Order.price}
-            amount="1113.2"
-            limitMin="3.2"
-            limitMax="3.2"
+            amount={(blk as any).Order.amount}
+            limitMin={(blk as any).Order.limitMin}
+            limitMax={(blk as any).Order.limitMax}
             sold="123"
             shelf="123"
             daoName="The First DAO"
-          tradeCount="1024 Trades"
+          tradeCount={(blk as any).Total + " Trades"}
         />
         )}
       </div>
