@@ -15,6 +15,8 @@ type SellItemType = {
   limitMax?: string;
   sold?: string;
   shelf?: string;
+  daoName?: string;
+  tradeCount?: string;
 };
 
 const SellItem: FunctionComponent<SellItemType> = ({
@@ -30,6 +32,8 @@ const SellItem: FunctionComponent<SellItemType> = ({
   limitMax,
   sold,
   shelf,
+  daoName,
+  tradeCount,
 }) => {
   return (
     <div className="ordercard2">
@@ -97,10 +101,11 @@ const SellItem: FunctionComponent<SellItemType> = ({
         />
         <div className="a-big-seller-parent">
           <b className="b">{sellerName}</b>
-          <div className="the-first-dao">The First DAO</div>
+          <div className="the-first-dao">{daoName}</div>
         </div>
-        <div className="wrapper">
+        <div className="frame-div">
           <b className="b">98%</b>
+          <div className="the-first-dao">{tradeCount}</div>
         </div>
       </div>
     </div>

@@ -102,8 +102,8 @@
 .token-lists {
   margin: 0 !important;
   position: absolute;
-  top: calc(50% + 45px);
-  left: calc(50% - 97.5px);
+  top: calc(50% + 60px);
+  left: calc(50% - 81px);
   overflow: hidden;
   align-items: center;
   justify-content: center;

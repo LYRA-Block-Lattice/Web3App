@@ -304,7 +304,9 @@ const Market: FunctionComponent = () => {
             limitMax="3.2"
             sold="123"
             shelf="123"
-          />
+            daoName="The First DAO"
+          tradeCount="1024 Trades"
+        />
         )}
       </div>
     </div>
