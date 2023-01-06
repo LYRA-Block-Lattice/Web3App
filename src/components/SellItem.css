@@ -182,7 +182,7 @@
   font-size: var(--caption1-size);
 }
 .a-big-seller-parent,
-.wrapper {
+.frame-div {
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -193,7 +193,7 @@
   padding: var(--padding-8xs) var(--padding-9xl) var(--padding-8xs) 0;
   align-items: flex-start;
 }
-.wrapper {
+.frame-div {
   padding: var(--padding-8xs) var(--padding-5xs);
   align-items: flex-end;
 }
