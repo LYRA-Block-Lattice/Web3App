@@ -9,7 +9,7 @@ import {
   Input,
   Icon,
   InputAdornment,
-  IconButton,
+  IconButton
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./OpenWallet.css";
@@ -54,7 +54,7 @@ const OpenWallet: FunctionComponent = () => {
                 <Icon>visibility</Icon>
               </IconButton>
             </InputAdornment>
-          ),
+          )
         }}
         label="Password"
         placeholder="Placeholder"
