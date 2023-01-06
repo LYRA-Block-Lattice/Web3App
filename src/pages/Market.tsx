@@ -1,10 +1,58 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SellItem from "../components/SellItem";
 import "./Market.css";
 
+interface customWindow extends Window {
+  rrComponent?: any;
+  rrProxy?: any;
+}
+declare const window: customWindow;
+
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
+
+  const [lyrbns, setLyrbns] = useState(0);
+  const [usdt, setUsdt] = useState(0);
+
+  const [nftcnt, setNftcnt] = useState(0);
+  const [totcnt, setTotcnt] = useState(0);
+  const [sellcnt, setSellcnt] = useState(0);
+  const [bidcnt, setBidcnt] = useState(0);
+
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    window.rrProxy.ReactRazor.Pages.Home.Interop.GetBalancesAsync(window.rrComponent)
+      .then((json) => JSON.parse(json))
+      .then((ret) => {
+        console.log(ret);
+        if (ret.result != null) {
+          setNftcnt(ret.result.filter((a) => a.token.startsWith("nft/")).length);
+          setTotcnt(ret.result.filter((a) => a.token.startsWith("tot/") || a.token.startsWith("svc/")).length);
+          setLyrbns(ret.result.find(a => a.token == "LYR")?.balance ?? 0);
+          setUsdt(ret.result.find(a => a.token == "tether/USDT")?.balance ?? 0);
+        }
+      });
+
+    fetch("https://devnet.lyra.live/api/EC/Orders")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      )
+  }, []);
 
   const onNFTCountClick = useCallback(() => {
     navigate("/redir");
@@ -74,22 +122,22 @@ const Market: FunctionComponent = () => {
             <div className="maps-parent">
               <img className="maps-icon" alt="" src="../asserts/maps.svg" />
               <a className="balance-display-zone">
-                <b className="usdtbalance">1,025,000</b>
+                <b className="usdtbalance">{lyrbns}</b>
                 <b className="lyrlabel">LYR</b>
                 <div className="balance-display-zone-child" />
-                <b className="usdtbalance">5,000</b>
+                <b className="usdtbalance">{usdt}</b>
                 <b className="lyrlabel">USDT</b>
               </a>
               <div className="token-lists">
                 <button className="go-nft-button" onClick={onGoNFTButtonClick}>
                   <button className="nft-count" onClick={onNFTCountClick}>
-                    12
+                    {nftcnt}
                   </button>
                   <b className="nft-label">NFT</b>
                 </button>
                 <button className="go-nft-button" onClick={onGoTOTButtonClick}>
                   <button className="tot-count" onClick={onTOTCountClick}>
-                    3
+                    {totcnt}
                   </button>
                   <b className="nft-label">TOT</b>
                 </button>
@@ -98,7 +146,7 @@ const Market: FunctionComponent = () => {
                   onClick={onGoSellingButtonClick}
                 >
                   <button className="tot-count" onClick={onSellingCountClick}>
-                    0
+                    {sellcnt}
                   </button>
                   <b className="nft-label">Selling</b>
                 </button>
@@ -107,7 +155,7 @@ const Market: FunctionComponent = () => {
                   onClick={onGoBuyingButtonClick}
                 >
                   <button className="tot-count" onClick={onBuyingCountClick}>
-                    0
+                    {bidcnt}
                   </button>
                   <b className="nft-label">Buying</b>
                 </button>
@@ -229,15 +277,22 @@ const Market: FunctionComponent = () => {
             <b className="token">Service</b>
           </div>
         </div>
-        <SellItem
-          offering="BTC"
-          biding="tether/USDT"
-          orderStatus="Open"
-          price="10,323"
-          amount="1113.2"
-          limitMin="3.2"
-          limitMax="3.2"
-        />
+        {items.map((blk) =>
+          <SellItem
+            sellerName="A big seller"
+            offering={(blk as any).Order.offering}
+            biding={(blk as any).Order.biding}
+            sellerRating="98%"
+            lastUpdated={(blk as any).TimeStamp}
+            orderStatus={(blk as any).UOStatus}
+            price={(blk as any).Order.price}
+            amount="1113.2"
+            limitMin="3.2"
+            limitMax="3.2"
+            sold="123"
+            shelf="123"
+          />
+        )}
       </div>
     </div>
   );
