@@ -1,6 +1,7 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import SellItem from "../components/SellItem";
+import DisplaySellItems from "../components/DisplaySellItems";
+
 import "./Market.css";
 
 interface customWindow extends Window {
@@ -20,10 +21,6 @@ const Market: FunctionComponent = () => {
   const [sellcnt, setSellcnt] = useState(0);
   const [bidcnt, setBidcnt] = useState(0);
 
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-
   // function to get json from rest api
   const getJson = async (url: string) => {
     const response = await fetch(url);
@@ -64,94 +61,6 @@ const Market: FunctionComponent = () => {
             : ret.Balances["tether/USDT"] / 100000000
         );
       });
-
-    fetch("https://dealerdevnet.lyra.live/api/dealer/Orders")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log("orders result", result);
-          setIsLoaded(true);
-          setItems(result);
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  }, []);
-
-  const [lyrbns, setLyrbns] = useState(0);
-  const [usdt, setUsdt] = useState(0);
-
-  const [nftcnt, setNftcnt] = useState(0);
-  const [totcnt, setTotcnt] = useState(0);
-  const [sellcnt, setSellcnt] = useState(0);
-  const [bidcnt, setBidcnt] = useState(0);
-
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-
-  // function to get json from rest api
-  const getJson = async (url: string) => {
-    const response = await fetch(url);
-    return response.json();
-  };
-
-  // function to get web content from rest api
-  const getWebContent = async (url: string) => {
-    const response = await fetch(url);
-    return response.text();
-  };
-
-  useEffect(() => {
-    const url =
-      "https://devnet.lyra.live/api/Node/GetLastBlock?AccountId=LUTPLGNAP4vTzXh5tWVCmxUBh8zjGTR8PKsfA8E67QohNsd1U6nXPk4Q9jpFKsKfULaaT3hs6YK7WKm57QL5oarx8mZdbM";
-    getWebContent(url)
-      .then((json) => JSON.parse(json))
-      .then((j) => JSON.parse(j.blockData))
-      .then((ret) => {
-        //console.log(ret.Balances);
-        setNftcnt(
-          Object.keys(ret.Balances).filter((a) => a.startsWith("nft/")).length
-        );
-        setTotcnt(
-          Object.keys(ret.Balances).filter(
-            (a) => a.startsWith("tot/") || a.startsWith("svc/")
-          ).length
-        );
-        setLyrbns(
-          Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
-            ? 0
-            : ret.Balances["LYR"] / 100000000
-        );
-        setUsdt(
-          Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
-            undefined
-            ? 0
-            : ret.Balances["tether/USDT"] / 100000000
-        );
-      });
-
-    fetch("https://dealerdevnet.lyra.live/api/dealer/Orders")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log("orders result", result);
-          setIsLoaded(true);
-          setItems(result);
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
   }, []);
 
   const onNFTCountTextClick = useCallback(() => {
@@ -385,28 +294,9 @@ const Market: FunctionComponent = () => {
             <b className="fiat">Service</b>
           </div>
         </div>
-        {items.map((blk) => (
-          <SellItem
-            key={(blk as any).AccountID}
-            sellerName={(blk as any).UserName}
-            offering={(blk as any).Order.offering}
-            biding={(blk as any).Order.biding}
-            sellerRating={
-              Math.round(((blk as any).Finished / (blk as any).Total) * 100) +
-              "%"
-            }
-            lastUpdated={(blk as any).TimeStamp}
-            orderStatus={(blk as any).UOStatus}
-            price={(blk as any).Order.price}
-            amount={(blk as any).Order.amount}
-            limitMin={(blk as any).Order.limitMin}
-            limitMax={(blk as any).Order.limitMax}
-            daoName="The First DAO"
-            tradeCount={(blk as any).Total + " Trades"}
-            iconSell="../asserts/icbaselinegeneratingtokens4.svg"
-            iconToGet="../asserts/carbonuserservicedesk4.svg"
-          />
-        ))}
+      </div>
+      <div>
+        <DisplaySellItems />
       </div>
     </div>
   );
