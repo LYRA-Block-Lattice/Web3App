@@ -13,10 +13,10 @@ type SellItemType = {
   amount?: string;
   limitMin?: string;
   limitMax?: string;
-  sold?: string;
-  shelf?: string;
   daoName?: string;
   tradeCount?: string;
+  iconSell?: string;
+  iconToGet?: string;
 };
 
 enum OrderStatus {
@@ -37,10 +37,10 @@ const SellItem: FunctionComponent<SellItemType> = ({
   amount,
   limitMin,
   limitMax,
-  sold,
-  shelf,
   daoName,
   tradeCount,
+  iconSell,
+  iconToGet,
 }) => {
   return (
     <div className="ordercard2">
@@ -51,7 +51,7 @@ const SellItem: FunctionComponent<SellItemType> = ({
               <img
                 className="icbaseline-generating-tokens-icon3"
                 alt=""
-                src="../asserts/icbaselinegeneratingtokens4.svg"
+                src={iconSell}
               />
               <img
                 className="order-image-inner"
@@ -61,7 +61,7 @@ const SellItem: FunctionComponent<SellItemType> = ({
               <img
                 className="icbaseline-generating-tokens-icon3"
                 alt=""
-                src="../asserts/carbonuserservicedesk4.svg"
+                src={iconToGet}
               />
             </button>
             <div className="order-status2">

@@ -48,10 +48,6 @@
   text-align: center;
 }
 .nft-count {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
   font-size: var(--font-size-3xl);
   letter-spacing: 3.5px;
   font-weight: 600;
@@ -60,6 +56,7 @@
   width: 24px;
   height: 21px;
   flex-shrink: 0;
+  cursor: pointer;
 }
 .nft-label {
   font-size: var(--font-size-2xs);
@@ -67,13 +64,13 @@
 }
 .go-nft-button,
 .tot-count {
+  flex-shrink: 0;
   cursor: pointer;
+}
+.go-nft-button {
   border: 0;
   padding: 0;
   background-color: transparent;
-  flex-shrink: 0;
-}
-.go-nft-button {
   width: 60px;
   height: 60px;
   display: flex;

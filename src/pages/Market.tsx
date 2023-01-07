@@ -83,7 +83,78 @@ const Market: FunctionComponent = () => {
       );
   }, []);
 
-  const onNFTCountClick = useCallback(() => {
+  const [lyrbns, setLyrbns] = useState(0);
+  const [usdt, setUsdt] = useState(0);
+
+  const [nftcnt, setNftcnt] = useState(0);
+  const [totcnt, setTotcnt] = useState(0);
+  const [sellcnt, setSellcnt] = useState(0);
+  const [bidcnt, setBidcnt] = useState(0);
+
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
+  // function to get json from rest api
+  const getJson = async (url: string) => {
+    const response = await fetch(url);
+    return response.json();
+  };
+
+  // function to get web content from rest api
+  const getWebContent = async (url: string) => {
+    const response = await fetch(url);
+    return response.text();
+  };
+
+  useEffect(() => {
+    const url =
+      "https://devnet.lyra.live/api/Node/GetLastBlock?AccountId=LUTPLGNAP4vTzXh5tWVCmxUBh8zjGTR8PKsfA8E67QohNsd1U6nXPk4Q9jpFKsKfULaaT3hs6YK7WKm57QL5oarx8mZdbM";
+    getWebContent(url)
+      .then((json) => JSON.parse(json))
+      .then((j) => JSON.parse(j.blockData))
+      .then((ret) => {
+        //console.log(ret.Balances);
+        setNftcnt(
+          Object.keys(ret.Balances).filter((a) => a.startsWith("nft/")).length
+        );
+        setTotcnt(
+          Object.keys(ret.Balances).filter(
+            (a) => a.startsWith("tot/") || a.startsWith("svc/")
+          ).length
+        );
+        setLyrbns(
+          Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
+            ? 0
+            : ret.Balances["LYR"] / 100000000
+        );
+        setUsdt(
+          Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
+            undefined
+            ? 0
+            : ret.Balances["tether/USDT"] / 100000000
+        );
+      });
+
+    fetch("https://dealerdevnet.lyra.live/api/dealer/Orders")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log("orders result", result);
+          setIsLoaded(true);
+          setItems(result);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
+  }, []);
+
+  const onNFTCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -91,7 +162,7 @@ const Market: FunctionComponent = () => {
     navigate("/redir");
   }, [navigate]);
 
-  const onTOTCountClick = useCallback(() => {
+  const onTOTCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -99,7 +170,7 @@ const Market: FunctionComponent = () => {
     navigate("/redir");
   }, [navigate]);
 
-  const onSellingCountClick = useCallback(() => {
+  const onSellingCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -107,7 +178,7 @@ const Market: FunctionComponent = () => {
     navigate("/viewordersform");
   }, [navigate]);
 
-  const onBuyingCountClick = useCallback(() => {
+  const onBuyingCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -159,33 +230,25 @@ const Market: FunctionComponent = () => {
               </a>
               <div className="token-lists">
                 <button className="go-nft-button" onClick={onGoNFTButtonClick}>
-                  <button className="nft-count" onClick={onNFTCountClick}>
-                    {nftcnt}
-                  </button>
+                  <div className="nft-count">{nftcnt}</div>
                   <b className="nft-label">NFT</b>
                 </button>
                 <button className="go-nft-button" onClick={onGoTOTButtonClick}>
-                  <button className="tot-count" onClick={onTOTCountClick}>
-                    {totcnt}
-                  </button>
+                  <div className="tot-count">{totcnt}</div>
                   <b className="nft-label">TOT</b>
                 </button>
                 <button
                   className="go-nft-button"
                   onClick={onGoSellingButtonClick}
                 >
-                  <button className="tot-count" onClick={onSellingCountClick}>
-                    {sellcnt}
-                  </button>
+                  <div className="tot-count">{sellcnt}</div>
                   <b className="nft-label">Selling</b>
                 </button>
                 <button
                   className="go-nft-button"
                   onClick={onGoBuyingButtonClick}
                 >
-                  <button className="tot-count" onClick={onBuyingCountClick}>
-                    {bidcnt}
-                  </button>
+                  <div className="tot-count">{bidcnt}</div>
                   <b className="nft-label">Buying</b>
                 </button>
               </div>
@@ -338,10 +401,10 @@ const Market: FunctionComponent = () => {
             amount={(blk as any).Order.amount}
             limitMin={(blk as any).Order.limitMin}
             limitMax={(blk as any).Order.limitMax}
-            sold="123"
-            shelf="123"
             daoName="The First DAO"
             tradeCount={(blk as any).Total + " Trades"}
+            iconSell="../asserts/icbaselinegeneratingtokens4.svg"
+            iconToGet="../asserts/carbonuserservicedesk4.svg"
           />
         ))}
       </div>
