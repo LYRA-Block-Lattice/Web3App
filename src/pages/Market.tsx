@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import SellItem from "../components/SellItem";
 import "./Market.css";
 
@@ -208,7 +208,7 @@ const Market: FunctionComponent = () => {
           </button>
         </div>
       </div>
-      <div className="catalogtab-parent">
+      <div className="tradableorderssection">
         <div className="catalogtab">
           <div className="token-parent">
             <b className="token">Token</b>
@@ -255,6 +255,83 @@ const Market: FunctionComponent = () => {
           iconSell="../asserts/icbaselinegeneratingtokens4.svg"
           iconToGet="../asserts/carbonuserservicedesk4.svg"
         />
+        <div className="ordercard">
+          <div className="order-brief-section">
+            <button className="banner-image">
+              <div className="order-banner">
+                <div className="order-image">
+                  <img
+                    className="icbaseline-generating-tokens-icon"
+                    alt=""
+                    src="../asserts/icbaselinegeneratingtokens5.svg"
+                  />
+                  <img
+                    className="order-image-child"
+                    alt=""
+                    src="../asserts/arrow-12.svg"
+                  />
+                  <img
+                    className="icbaseline-generating-tokens-icon"
+                    alt=""
+                    src="../asserts/carbonuserservicedesk5.svg"
+                  />
+                </div>
+                <div className="order-status">
+                  <b className="open">Open</b>
+                </div>
+              </div>
+            </button>
+            <Link className="title-section" to="/assertdetailview">
+              <div className="sell-parent">
+                <b className="btc">Sell</b>
+                <b className="btc">BTC</b>
+                <img
+                  className="frame-child"
+                  alt=""
+                  src="../asserts/arrow-22.svg"
+                />
+                <b className="tetherusdt1">tether/USDT</b>
+              </div>
+              <div className="details-section">
+                <div className="block3">
+                  <div className="btc">Amount</div>
+                  <div className="btc">Limit Min</div>
+                  <div className="btc">Limit Max</div>
+                </div>
+                <div className="block4">
+                  <div className="btc">1113.2</div>
+                  <div className="btc">1.2</div>
+                  <div className="btc">3.2</div>
+                </div>
+                <div className="block1">
+                  <div className="price">Price</div>
+                </div>
+                <div className="block2">
+                  <b className="btc">10,323</b>
+                </div>
+                <div className="details-section-child" />
+              </div>
+            </Link>
+          </div>
+          <div className="trades-section">
+            <div className="width-controller" />
+          </div>
+          <div className="userprofilesection">
+            <img
+              className="userprofilesection-child"
+              alt=""
+              src="../asserts/ellipse-1@2x.png"
+            />
+            <div className="a-big-seller-parent">
+              <b className="btc">A big seller</b>
+              <div className="the-first-dao">The First DAO</div>
+            </div>
+            <div className="parent">
+              <b className="btc">98%</b>
+              <div className="the-first-dao">1024 Trades</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

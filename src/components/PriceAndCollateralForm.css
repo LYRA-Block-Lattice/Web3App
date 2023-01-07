@@ -25,13 +25,6 @@
   border: 0;
   background-color: transparent;
 }
-.amount {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  display: inline-block;
-  width: 292px;
-}
 .limitoftrade {
   width: 322px;
   overflow: hidden;
@@ -43,6 +36,13 @@
   justify-content: center;
   gap: var(--gap-lg);
   font-size: var(--body-b-size);
+}
+.collateral-in-lyr {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  display: inline-block;
+  width: 292px;
 }
 .collateral-section,
 .collateral-worth-label {
