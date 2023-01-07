@@ -34,8 +34,8 @@ const Market: FunctionComponent = () => {
   };
 
   useEffect(() => {
-    const url =
-      "https://devnet.lyra.live/api/Node/GetLastBlock?AccountId=LUTPLGNAP4vTzXh5tWVCmxUBh8zjGTR8PKsfA8E67QohNsd1U6nXPk4Q9jpFKsKfULaaT3hs6YK7WKm57QL5oarx8mZdbM";
+    const netid = process.env.REACT_APP_NETWORK_ID;
+    const url = `https://${netid}.lyra.live/api/Node/GetLastBlock?AccountId=LUTPLGNAP4vTzXh5tWVCmxUBh8zjGTR8PKsfA8E67QohNsd1U6nXPk4Q9jpFKsKfULaaT3hs6YK7WKm57QL5oarx8mZdbM`;
     getWebContent(url)
       .then((json) => JSON.parse(json))
       .then((j) => JSON.parse(j.blockData))

@@ -1,5 +1,4 @@
-import { FunctionComponent, useCallback, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import SellItem from "../components/SellItem";
 
 // a function to display the sell items with error handling
