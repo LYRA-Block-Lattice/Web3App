@@ -47,7 +47,7 @@ const SellItem: FunctionComponent<SellItemType> = ({
       <div className="order-brief-section2">
         <button className="banner-image2">
           <div className="order-banner2">
-            <button className="order-image2">
+            <div className="order-image2">
               <img
                 className="icbaseline-generating-tokens-icon3"
                 alt=""
@@ -63,7 +63,7 @@ const SellItem: FunctionComponent<SellItemType> = ({
                 alt=""
                 src={iconToGet}
               />
-            </button>
+            </div>
             <div className="order-status2">
               <b className="open2">{OrderStatus[orderStatus??OrderStatus.Closed]}</b>
             </div>

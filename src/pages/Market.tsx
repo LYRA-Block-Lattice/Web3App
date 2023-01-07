@@ -103,7 +103,7 @@ const Market: FunctionComponent = () => {
     navigate("/redir");
   }, [navigate]);
 
-  const onQRCodeButtonContainerClick = useCallback(() => {
+  const onQRCodeButtonClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -168,10 +168,7 @@ const Market: FunctionComponent = () => {
             >
               My Primary Account
             </button>
-            <div
-              className="qrcode-button"
-              onClick={onQRCodeButtonContainerClick}
-            >
+            <button className="qrcode-button" onClick={onQRCodeButtonClick}>
               <div
                 className="qrcode-button-round"
                 onClick={onQRCodeButtonRoundClick}
@@ -181,7 +178,7 @@ const Market: FunctionComponent = () => {
                 alt=""
                 src="../asserts/qrcode-icon.svg"
               />
-            </div>
+            </button>
             <div className="wallet-decoration">LYRA WALLET</div>
             <div className="rectangle" />
             <div className="rectangle1" />
