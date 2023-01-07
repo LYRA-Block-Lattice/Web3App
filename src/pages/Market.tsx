@@ -6,7 +6,7 @@ import "./Market.css";
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
 
-  const onNFTCountClick = useCallback(() => {
+  const onNFTCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -14,7 +14,7 @@ const Market: FunctionComponent = () => {
     navigate("/redir");
   }, [navigate]);
 
-  const onTOTCountClick = useCallback(() => {
+  const onTOTCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -22,7 +22,7 @@ const Market: FunctionComponent = () => {
     navigate("/redir");
   }, [navigate]);
 
-  const onSellingCountClick = useCallback(() => {
+  const onSellingCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -30,7 +30,7 @@ const Market: FunctionComponent = () => {
     navigate("/viewordersform");
   }, [navigate]);
 
-  const onBuyingCountClick = useCallback(() => {
+  const onBuyingCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
 
@@ -82,33 +82,33 @@ const Market: FunctionComponent = () => {
               </a>
               <div className="token-lists">
                 <button className="go-nft-button" onClick={onGoNFTButtonClick}>
-                  <button className="nft-count" onClick={onNFTCountClick}>
+                  <div className="nft-count" onClick={onNFTCountTextClick}>
                     12
-                  </button>
+                  </div>
                   <b className="nft-label">NFT</b>
                 </button>
                 <button className="go-nft-button" onClick={onGoTOTButtonClick}>
-                  <button className="tot-count" onClick={onTOTCountClick}>
+                  <div className="tot-count" onClick={onTOTCountTextClick}>
                     3
-                  </button>
+                  </div>
                   <b className="nft-label">TOT</b>
                 </button>
                 <button
                   className="go-nft-button"
                   onClick={onGoSellingButtonClick}
                 >
-                  <button className="tot-count" onClick={onSellingCountClick}>
+                  <div className="tot-count" onClick={onSellingCountTextClick}>
                     0
-                  </button>
+                  </div>
                   <b className="nft-label">Selling</b>
                 </button>
                 <button
                   className="go-nft-button"
                   onClick={onGoBuyingButtonClick}
                 >
-                  <button className="tot-count" onClick={onBuyingCountClick}>
+                  <div className="tot-count" onClick={onBuyingCountTextClick}>
                     0
-                  </button>
+                  </div>
                   <b className="nft-label">Buying</b>
                 </button>
               </div>
@@ -255,6 +255,8 @@ const Market: FunctionComponent = () => {
           limitMax="3.2"
           daoName="The First DAO"
           tradeCount="1024 Trades"
+          iconSell="../asserts/icbaselinegeneratingtokens4.svg"
+          iconToGet="../asserts/carbonuserservicedesk4.svg"
         />
       </div>
     </div>
