@@ -23,7 +23,7 @@ enum OrderStatus {
   Open = 0,
   Partial = 10,
   Closed = 30,
-  Delist = 50,
+  Delist = 50
 }
 
 const SellItem: FunctionComponent<SellItemType> = ({
@@ -40,79 +40,85 @@ const SellItem: FunctionComponent<SellItemType> = ({
   daoName,
   tradeCount,
   iconSell,
-  iconToGet,
+  iconToGet
 }) => {
   return (
-    <div className="ordercard2">
-      <div className="order-brief-section2">
-        <button className="banner-image2">
-          <div className="order-banner2">
-            <div className="order-image2">
+    <div className="ordercard3">
+      <div className="order-brief-section3">
+        <button className="banner-image3">
+          <div className="order-banner3">
+            <div className="order-image3">
               <img
-                className="icbaseline-generating-tokens-icon3"
+                className="icbaseline-generating-tokens-icon4"
                 alt=""
                 src={iconSell}
               />
               <img
-                className="order-image-inner"
+                className="arrow-icon"
                 alt=""
                 src="../asserts/arrow-12.svg"
               />
               <img
-                className="icbaseline-generating-tokens-icon3"
+                className="icbaseline-generating-tokens-icon4"
                 alt=""
                 src={iconToGet}
               />
             </div>
-            <div className="order-status2">
-              <b className="open2">{OrderStatus[orderStatus??OrderStatus.Closed]}</b>
+            <div className="order-status3">
+              <b className="open3">
+                {OrderStatus[orderStatus ?? OrderStatus.Closed]}
+              </b>
             </div>
           </div>
         </button>
-        <Link className="title-section2" to="/assertdetailview">
-          <div className="sell-group">
-            <b className="b">Sell</b>
-            <b className="b">{offering}</b>
-            <img className="frame-inner" alt="" src="../asserts/arrow-22.svg" />
-            <b className="tetherusdt3">{biding}</b>
+        <Link className="title-section3" to="/assertdetailview">
+          <div className="sell-container">
+            <b className="sell3">Sell</b>
+            <b className="sell3">{offering}</b>
+            <img
+              className="frame-child1"
+              alt=""
+              src="../asserts/arrow-22.svg"
+            />
+            <b className="tetherusdt4">{biding}</b>
           </div>
-          <div className="details-section2">
-            <div className="block32">
-              <div className="b">Amount</div>
-              <div className="b">Limit Min</div>
-              <div className="b">Limit Max</div>
+          <div className="details-section3">
+            <div className="block33">
+              <div className="sell3">Amount</div>
+              <div className="sell3">Limit Min</div>
+              <div className="sell3">Limit Max</div>
             </div>
-            <div className="block42">
-              <div className="b">{amount}</div>
-              <div className="b">{limitMin}</div>
-              <div className="b">{limitMax}</div>
+            <div className="block43">
+              <div className="sell3">{amount}</div>
+              <div className="sell3">{limitMin}</div>
+              <div className="sell3">{limitMax}</div>
             </div>
-            <div className="block12">
-              <div className="price2">Price</div>
+            <div className="block13">
+              <div className="price3">Price</div>
             </div>
-            <div className="block22">
-              <b className="b">{price}</b>
+            <div className="block23">
+              <b className="sell3">{price}</b>
             </div>
-            <div className="details-section-inner" />
+            <div className="frame-div" />
           </div>
         </Link>
       </div>
-      <div className="trades-section2">
-        <div className="width-controller2" />
+      <div className="trades-section3">
+        <div className="width-controller3" />
       </div>
-      <div className="userprofilesection">
+      <div className="userprofilesection1">
         <img
-          className="userprofilesection-child"
+          className="userprofilesection-item"
           alt=""
           src="../asserts/ellipse-1@2x.png"
         />
-        <div className="a-big-seller-parent">
-          <b className="b">{sellerName}</b>
-          <div className="the-first-dao">{daoName}</div>
+        <div className="a-big-seller-group">
+          <b className="sell3">{sellerName}</b>
+          <div className="the-first-dao1">{daoName}</div>
         </div>
-        <div className="frame-div">
-          <b className="b">{sellerRating}</b>
-          <div className="the-first-dao">{tradeCount}</div>
+        <div className="parent5">
+          <b className="sell3">{sellerRating}</b>
+          <div className="the-first-dao1">{tradeCount}</div>
         </div>
       </div>
     </div>

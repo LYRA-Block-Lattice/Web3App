@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import DisplaySellItems from "../components/DisplaySellItems";
 
 import "./Market.css";
@@ -257,7 +257,7 @@ const Market: FunctionComponent = () => {
           </button>
         </div>
       </div>
-      <div className="catalogtab-parent">
+      <div className="tradableorderssection">
         <div className="catalogtab">
           <div className="token-parent">
             <b className="token">Token</b>
