@@ -12,11 +12,8 @@
   flex-shrink: 0;
 }
 .order-image2 {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: var(--text-primary-dark1);
   border-radius: var(--br-md) var(--br-md) 0 0;
+  background-color: var(--text-primary-dark1);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
   width: 110px;
   height: 50px;

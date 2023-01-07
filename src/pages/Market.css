@@ -166,13 +166,16 @@
   margin: 0 !important;
 }
 .qrcode-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
   top: 21.5px;
   right: 19.72px;
   width: 56.78px;
   height: 56.78px;
   flex-shrink: 0;
   overflow: hidden;
-  cursor: pointer;
   z-index: 2;
 }
 .wallet-decoration {
