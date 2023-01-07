@@ -37,20 +37,36 @@ const Market: FunctionComponent = () => {
   };
 
   useEffect(() => {
-    const url = "https://devnet.lyra.live/api/Node/GetLastBlock?AccountId=LUTPLGNAP4vTzXh5tWVCmxUBh8zjGTR8PKsfA8E67QohNsd1U6nXPk4Q9jpFKsKfULaaT3hs6YK7WKm57QL5oarx8mZdbM";
+    const url =
+      "https://devnet.lyra.live/api/Node/GetLastBlock?AccountId=LUTPLGNAP4vTzXh5tWVCmxUBh8zjGTR8PKsfA8E67QohNsd1U6nXPk4Q9jpFKsKfULaaT3hs6YK7WKm57QL5oarx8mZdbM";
     getWebContent(url)
       .then((json) => JSON.parse(json))
-      .then(j => JSON.parse(j.blockData))
+      .then((j) => JSON.parse(j.blockData))
       .then((ret) => {
         //console.log(ret.Balances);
-        setNftcnt(Object.keys(ret.Balances).filter((a) => a.startsWith("nft/")).length);
-        setTotcnt(Object.keys(ret.Balances).filter((a) => a.startsWith("tot/") || a.startsWith("svc/")).length);
-        setLyrbns(Object.keys(ret.Balances).find(a => a == "LYR") === undefined ? 0 : ret.Balances["LYR"]/100000000);
-        setUsdt(Object.keys(ret.Balances).find(a => a == "tether/USDT") === undefined ? 0 : ret.Balances["tether/USDT"]/100000000);
+        setNftcnt(
+          Object.keys(ret.Balances).filter((a) => a.startsWith("nft/")).length
+        );
+        setTotcnt(
+          Object.keys(ret.Balances).filter(
+            (a) => a.startsWith("tot/") || a.startsWith("svc/")
+          ).length
+        );
+        setLyrbns(
+          Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
+            ? 0
+            : ret.Balances["LYR"] / 100000000
+        );
+        setUsdt(
+          Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
+            undefined
+            ? 0
+            : ret.Balances["tether/USDT"] / 100000000
+        );
       });
 
     fetch("https://dealerdevnet.lyra.live/api/dealer/Orders")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
         (result) => {
           console.log("orders result", result);
@@ -64,7 +80,7 @@ const Market: FunctionComponent = () => {
           setIsLoaded(true);
           setError(error);
         }
-      )
+      );
   }, []);
 
   const onNFTCountClick = useCallback(() => {
@@ -306,12 +322,16 @@ const Market: FunctionComponent = () => {
             <b className="fiat">Service</b>
           </div>
         </div>
-        {items.map((blk) =>
+        {items.map((blk) => (
           <SellItem
+            key={(blk as any).AccountID}
             sellerName={(blk as any).UserName}
             offering={(blk as any).Order.offering}
             biding={(blk as any).Order.biding}
-            sellerRating={Math.round((blk as any).Finished/(blk as any).Total*100) + "%"}
+            sellerRating={
+              Math.round(((blk as any).Finished / (blk as any).Total) * 100) +
+              "%"
+            }
             lastUpdated={(blk as any).TimeStamp}
             orderStatus={(blk as any).UOStatus}
             price={(blk as any).Order.price}
@@ -321,9 +341,9 @@ const Market: FunctionComponent = () => {
             sold="123"
             shelf="123"
             daoName="The First DAO"
-          tradeCount={(blk as any).Total + " Trades"}
-        />
-        )}
+            tradeCount={(blk as any).Total + " Trades"}
+          />
+        ))}
       </div>
     </div>
   );
