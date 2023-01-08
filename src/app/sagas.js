@@ -70,6 +70,8 @@ function* restoreWallet(action) {
   var actId = LyraCrypto.GetAccountIdFromPrivateKey(action.payload.privateKey);
   var encData = AES.encrypt(action.payload.privateKey, action.payload.password);
 
+  var val = yield persist.checkData();
+
   let wds;
   if (val === null) {
     wds = {

@@ -27,6 +27,29 @@ const CreateWallet: FunctionComponent = () => {
     navigate("/openwallet");
   }, [navigate]);
 
+  const onWalletCreate = useCallback(() => {
+    // check if password and password2 equal
+    if (name != "" && password === password2) {
+      if (chkkey === "on" && pvk !== "") {
+        dispatch({
+          type: actionTypes.WALLET_RESTORE,
+          payload: {
+            name: name,
+            password: password,
+            privateKey: pvk
+          }
+        });
+      } else
+        dispatch({
+          type: actionTypes.WALLET_CREATE,
+          payload: {
+            name: name,
+            password: password
+          }
+        });
+    }
+  }, [dispatch, name, password, password2, chkkey, pvk]);
+
   return (
     <div className="createwallet">
       <b className="sign-up">Create Wallet</b>
@@ -107,18 +130,7 @@ const CreateWallet: FunctionComponent = () => {
         margin="none"
         onChange={(e) => setPvk(e.target.value)}
       />
-      <button
-        className="create-wallet"
-        onClick={() =>
-          dispatch({
-            type: actionTypes.WALLET_CREATE,
-            payload: {
-              name: name,
-              password: password
-            }
-          })
-        }
-      >
+      <button className="create-wallet" onClick={onWalletCreate}>
         <div className="button-shape" />
         <div className="createlabel">Create</div>
       </button>

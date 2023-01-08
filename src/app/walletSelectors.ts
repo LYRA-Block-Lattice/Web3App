@@ -4,10 +4,10 @@ import type { RootState } from "./store";
 import { IWalletState } from "./walletreducer";
 
 const getApp = (state: RootState) => state.app;
-const getWalletName = (app: IWalletState) => app.name;
+const getWalletNames = (state: RootState) => state.app.names;
 
 export const getWalletNamesSelector = createSelector(
-  getWalletName,
+  getWalletNames,
   (names) => names
 );
 

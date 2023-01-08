@@ -6,7 +6,7 @@ const initState = {
   loggedin: false,
   pending: false,
   error: null,
-  coins: [],
+  coins: []
 };
 
 const dexReducer = (state = initState, action) => {
@@ -18,12 +18,12 @@ const dexReducer = (state = initState, action) => {
     case actionTypes.DEX_ERROR:
       return {
         ...state,
-        error: action.payload,
+        error: action.payload
       };
     case actionTypes.DEX_ERROR_CLEAR:
       return {
         ...state,
-        error: null,
+        error: null
       };
     // case actionTypes.DEX_SIGNUP:
     //   return {
@@ -34,12 +34,12 @@ const dexReducer = (state = initState, action) => {
     case actionTypes.DEX_SIGNUP_OK:
       return {
         ...state,
-        signedup: true,
+        signedup: true
       };
     case actionTypes.DEX_SIGNIN:
       return {
         ...state,
-        error: null,
+        error: null
       };
     case actionTypes.DEX_SIGNIN_OK:
       return {
@@ -47,7 +47,7 @@ const dexReducer = (state = initState, action) => {
         userid: action.payload.result.name,
         loggedin: action.payload.token !== undefined,
         pending: false,
-        error: null,
+        error: null
       };
     case actionTypes.DEX_LOGOUT:
       return { ...state, userid: null, loggedin: false, errors: null };

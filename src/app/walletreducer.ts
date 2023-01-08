@@ -2,7 +2,7 @@ import { Interface } from "readline";
 import * as actionTypes from "./actionTypes";
 
 export interface IWalletInfo {
-  accountId: String;
+  accountId: String | undefined;
   balance: number;
   unrecvcnt: number;
   unrecvlyr: number;
@@ -51,7 +51,7 @@ const initState: IWalletState = {
   error: null
 };
 
-const walletReducer = (state = initState, action: IAction) => {
+const walletReducer = (state = initState, action: IAction): IWalletState => {
   if (action === undefined) {
     return state;
   }
@@ -87,7 +87,7 @@ const walletReducer = (state = initState, action: IAction) => {
       return {
         ...state,
         existing: action.payload !== undefined && action.payload !== null,
-        names: action.payload.wallets.map((a: any) => a.name)
+        names: action.payload?.wallets.map((a: any) => a.name)
       };
     case actionTypes.WALLET_RECEIVE:
     case actionTypes.WALLET_SEND:
@@ -122,7 +122,8 @@ const walletReducer = (state = initState, action: IAction) => {
       return {
         ...state,
         existing: true,
-        opening: false
+        opening: false,
+        names: action.payload?.wallets.map((a: any) => a.name)
       };
     case actionTypes.WALLET_REMOVE_DONE:
       return {
@@ -153,7 +154,12 @@ const walletReducer = (state = initState, action: IAction) => {
         ...state,
         opening: false,
         name: "",
-        wallet: {}
+        wallet: {
+          accountId: undefined,
+          balance: 0,
+          unrecvcnt: 0,
+          unrecvlyr: 0
+        }
       };
     case actionTypes.WALLET_OPEN_FAILED:
       return {
