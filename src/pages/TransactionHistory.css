@@ -16,7 +16,7 @@
   justify-content: center;
   gap: 22px;
 }
-.rectangle2 {
+.rectangle4 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -24,10 +24,10 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   background-color: var(--sell1);
 }
-.div8 {
+.div18 {
   position: absolute;
   top: calc(50% - 9px);
   left: 38.81%;
@@ -47,14 +47,14 @@
   overflow: hidden;
   max-height: 100%;
 }
-.group {
+.group1 {
   position: relative;
   width: 67px;
   height: 24px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.rectangle3 {
+.rectangle5 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -62,10 +62,10 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   background-color: rgba(223, 224, 229, 0.5);
 }
-.div9 {
+.div19 {
   position: absolute;
   top: calc(50% - 9px);
   left: 27.96%;
@@ -73,7 +73,7 @@
   line-height: 18px;
   font-weight: 500;
 }
-.group1,
+.group2,
 .iconglyphstar-copy-41 {
   position: absolute;
   overflow: hidden;
@@ -88,7 +88,7 @@
   max-width: 100%;
   max-height: 100%;
 }
-.group1 {
+.group2 {
   top: 0;
   left: 0;
   width: 93px;
@@ -111,7 +111,7 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
   color: var(--color-white1);
 }
 .all-transactions {
@@ -131,7 +131,7 @@
   justify-content: flex-start;
   font-size: var(--headline-s1-size);
 }
-.rectangle4 {
+.rectangle6 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -139,7 +139,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--color-white1);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
 }
@@ -160,7 +160,7 @@
   font-weight: 500;
   color: var(--color-gray-1);
 }
-.group2 {
+.group3 {
   position: absolute;
   height: 35.09%;
   width: 56.56%;
@@ -201,7 +201,7 @@
   left: 4.66%;
   overflow: hidden;
 }
-.div10 {
+.div20 {
   position: absolute;
   top: calc(50% - 9px);
   left: 23.4%;
@@ -209,12 +209,8 @@
   line-height: 18px;
   font-weight: 500;
 }
-.container,
 .iconglyphstar-copy {
   position: absolute;
-  overflow: hidden;
-}
-.iconglyphstar-copy {
   height: 88.89%;
   width: 17.02%;
   top: 5.56%;
@@ -222,18 +218,23 @@
   bottom: 5.56%;
   left: 0;
   max-width: 100%;
+  overflow: hidden;
   max-height: 100%;
 }
-.container {
+.div21,
+.parent1 {
+  position: absolute;
+}
+.parent1 {
   height: 15.79%;
   width: 27.41%;
   top: 70.18%;
   right: 33.24%;
   bottom: 14.04%;
   left: 39.36%;
+  overflow: hidden;
 }
-.div11 {
-  position: absolute;
+.div21 {
   top: calc(50% - 9px);
   left: 39.29%;
   letter-spacing: 0.41px;
@@ -252,7 +253,7 @@
   overflow: hidden;
   max-height: 100%;
 }
-.group-div,
+.parent2,
 .path-icon,
 .receive-icon {
   position: absolute;
@@ -309,7 +310,7 @@
 }
 .receivedetailcard-parent {
   align-items: flex-start;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   font-size: var(--other-m-size);
 }
 .transactionhistory {

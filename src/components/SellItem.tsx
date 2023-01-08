@@ -36,80 +36,76 @@ const SellItem: FunctionComponent<SellItemType> = ({
   iconToGet,
 }) => {
   return (
-    <div className="ordercard3">
-      <div className="order-brief-section3">
-        <button className="banner-image3">
-          <div className="order-banner3">
-            <div className="order-image3">
+    <div className="ordercard5">
+      <div className="order-brief-section5">
+        <button className="banner-image5">
+          <div className="order-banner5">
+            <div className="order-image5">
               <img
-                className="icbaseline-generating-tokens-icon4"
+                className="icbaseline-generating-tokens-icon6"
                 alt=""
                 src={iconSell}
               />
               <img
-                className="arrow-icon"
+                className="order-image-child3"
                 alt=""
-                src="../asserts/arrow-12.svg"
+                src="../asserts/arrow-1.svg"
               />
               <img
-                className="icbaseline-generating-tokens-icon4"
+                className="icbaseline-generating-tokens-icon6"
                 alt=""
                 src={iconToGet}
               />
             </div>
-            <div className="order-status3">
-              <b className="open3">{orderStatus}</b>
+            <div className="order-status5">
+              <b className="open5">{orderStatus}</b>
             </div>
           </div>
         </button>
-        <Link className="title-section3" to="/assertdetailview">
-          <div className="sell-container">
-            <b className="sell3">Sell</b>
-            <b className="sell3">{offering}</b>
-            <img
-              className="frame-child1"
-              alt=""
-              src="../asserts/arrow-22.svg"
-            />
-            <b className="tetherusdt4">{biding}</b>
+        <Link className="title-section5" to="/assertdetailview">
+          <div className="sell-parent2">
+            <b className="sell5">Sell</b>
+            <b className="sell5">{offering}</b>
+            <img className="frame-child3" alt="" src="../asserts/arrow-2.svg" />
+            <b className="tetherusdt6">{biding}</b>
           </div>
-          <div className="details-section3">
-            <div className="block33">
-              <div className="sell3">Amount</div>
-              <div className="sell3">Limit Min</div>
-              <div className="sell3">Limit Max</div>
+          <div className="details-section5">
+            <div className="block35">
+              <div className="sell5">Amount</div>
+              <div className="sell5">Limit Min</div>
+              <div className="sell5">Limit Max</div>
             </div>
-            <div className="block43">
-              <div className="sell3">{amount}</div>
-              <div className="sell3">{limitMin}</div>
-              <div className="sell3">{limitMax}</div>
+            <div className="block45">
+              <div className="sell5">{amount}</div>
+              <div className="sell5">{limitMin}</div>
+              <div className="sell5">{limitMax}</div>
             </div>
-            <div className="block13">
-              <div className="price3">Price</div>
+            <div className="block15">
+              <div className="price5">Price</div>
             </div>
-            <div className="block23">
-              <b className="sell3">{price}</b>
+            <div className="block25">
+              <b className="sell5">{price}</b>
             </div>
-            <div className="frame-div" />
+            <div className="details-section-child3" />
           </div>
         </Link>
       </div>
-      <div className="trades-section3">
-        <div className="width-controller3" />
+      <div className="trades-section5">
+        <div className="width-controller5" />
       </div>
-      <div className="userprofilesection1">
+      <div className="userprofilesection3">
         <img
-          className="userprofilesection-item"
+          className="userprofilesection-child1"
           alt=""
           src="../asserts/ellipse-1@2x.png"
         />
-        <div className="a-big-seller-group">
-          <b className="sell3">A big seller</b>
-          <div className="the-first-dao1">{daoName}</div>
+        <div className="a-big-seller-parent1">
+          <b className="sell5">A big seller</b>
+          <div className="the-first-dao3">{daoName}</div>
         </div>
-        <div className="parent5">
-          <b className="sell3">98%</b>
-          <div className="the-first-dao1">{tradeCount}</div>
+        <div className="parent7">
+          <b className="sell5">98%</b>
+          <div className="the-first-dao3">{tradeCount}</div>
         </div>
       </div>
     </div>

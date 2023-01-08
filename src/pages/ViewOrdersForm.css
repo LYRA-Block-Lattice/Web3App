@@ -21,7 +21,7 @@
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
   background-color: var(--tertiary);
-  border-radius: var(--br-2xl);
+  border-radius: var(--br-xl);
   height: 30px;
   overflow: hidden;
   display: flex;
@@ -53,7 +53,7 @@
   overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
-  gap: var(--gap-2xl);
+  gap: var(--gap-xl);
   text-align: left;
   font-size: var(--font-size-6xl);
   color: var(--black-000000100);

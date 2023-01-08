@@ -2,7 +2,7 @@
 .tot-description2,
 .tot-name3 {
   background-color: var(--color-beige);
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   width: 301px;
   height: 40px;
   flex-shrink: 0;
@@ -15,7 +15,7 @@
   justify-content: flex-start;
 }
 .selecttypeoftot {
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .tot-description2,
 .tot-name3 {
@@ -42,7 +42,7 @@
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
   background-color: var(--tertiary);
-  border-radius: var(--br-2xl);
+  border-radius: var(--br-xl);
   height: 30px;
   flex-shrink: 0;
   overflow: hidden;
@@ -76,8 +76,8 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
-  background-color: var(--secondary);
-  border-radius: var(--br-2xl);
+  background-color: var(--color-brown-200);
+  border-radius: var(--br-xl);
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
@@ -95,7 +95,7 @@
   padding: var(--padding-2xl) var(--padding-sm);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-3xl);
+  gap: var(--gap-2xl);
 }
 .to-get-tokennft {
   position: relative;
@@ -125,5 +125,5 @@
   width: 100%;
   padding: var(--padding-6xl) var(--padding-7xl);
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }

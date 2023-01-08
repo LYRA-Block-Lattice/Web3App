@@ -4,7 +4,8 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Empty from "./pages/Empty";
+import WalletHome from "./pages/WalletHome";
+import Market from "./pages/Market";
 import AssertDetailView from "./pages/AssertDetailView";
 import MintFiatToken from "./pages/MintFiatToken";
 import CreateTokenForm from "./pages/CreateTokenForm";
@@ -20,9 +21,10 @@ import PreviewSellOrderForm from "./pages/PreviewSellOrderForm";
 import CreateNFTForm from "./pages/CreateNFTForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
 import Redir from "./pages/Redir";
-import Market from "./pages/Market";
+import Empty from "./pages/Empty";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
+import Market1 from "./pages/Market1";
 import TransactionHistory from "./pages/TransactionHistory";
 import OldV1UI from "./pages/OldV1UI";
 import { useEffect } from "react";
@@ -44,6 +46,10 @@ function App() {
 
     switch (pathname) {
       case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/market":
         title = "";
         metaDescription = "";
         break;
@@ -107,7 +113,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/market":
+      case "/empty":
         title = "";
         metaDescription = "";
         break;
@@ -116,6 +122,10 @@ function App() {
         metaDescription = "";
         break;
       case "/open-wallet":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/market1":
         title = "";
         metaDescription = "";
         break;
@@ -145,7 +155,9 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Empty />} />
+      <Route path="/" element={<WalletHome />} />
+
+      <Route path="/market" element={<Market />} />
 
       <Route path="/assertdetailview1" element={<AssertDetailView />} />
 
@@ -180,11 +192,13 @@ function App() {
 
       <Route path="/redir" element={<Redir />} />
 
-      <Route path="/market" element={<Market />} />
+      <Route path="/empty" element={<Empty />} />
 
       <Route path="/create-wallet" element={<CreateWallet />} />
 
       <Route path="/open-wallet" element={<OpenWallet />} />
+
+      <Route path="/market1" element={<Market1 />} />
 
       <Route path="/transactionhistory" element={<TransactionHistory />} />
 
