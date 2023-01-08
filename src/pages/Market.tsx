@@ -291,8 +291,6 @@ const Market: FunctionComponent = () => {
             <b className="fiat">Service</b>
           </div>
         </div>
-      </div>
-      <div>
         <DisplaySellItems />
       </div>
     </div>
