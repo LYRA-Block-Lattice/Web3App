@@ -142,12 +142,11 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
       return {
         ...state,
         opening: true,
-        name: action.payload.wallets[0].name,
+        name: action.payload.name,
         wallet: {
           ...state.wallet,
-          accountId: action.payload.wallets[0].accountId
-        },
-        network: action.payload.pref.network
+          accountId: action.payload.accountId
+        }
       };
     case actionTypes.WALLET_CLOSED:
       return {

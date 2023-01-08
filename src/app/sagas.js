@@ -119,7 +119,9 @@ function* openWallet(action) {
   try {
     var pdata = yield persist.checkData();
     var wallets = pdata.wallets;
-    var decData = AES.decrypt(wallets[0].data, action.payload.password);
+
+    var exitsWallet = wallets.find((a) => a.name == action.payload.name);
+    var decData = AES.decrypt(exitsWallet.data, action.payload.password);
     if (decData === undefined) throw new Error("private key is invalid.");
 
     const prvKey = decData.toString(CryptoJS.enc.Utf8);
@@ -127,12 +129,19 @@ function* openWallet(action) {
     if (!LyraCrypto.isPrivateKeyValid(prvKey)) {
       throw new Error("private key is invalid.");
     } else {
-      yield put({ type: actionTypes.WALLET_OPEN_DONE, payload: pdata });
+      yield put({
+        type: actionTypes.WALLET_OPEN_DONE,
+        payload: {
+          name: action.payload.name,
+          accountId: exitsWallet.accountId,
+          privateKey: prvKey
+        }
+      });
       yield put({
         type: actionTypes.WSRPC_CREATE,
         payload: {
           network: pdata.pref.network,
-          accountId: wallets[0].accountId
+          accountId: exitsWallet.accountId
         }
       });
       sessionStorage.setItem(

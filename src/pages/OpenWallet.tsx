@@ -19,8 +19,6 @@ import "./OpenWallet.css";
 import * as actionTypes from "../app/actionTypes";
 import { getWalletNamesSelector } from "../app/walletSelectors";
 
-//const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
-
 const OpenWallet: FunctionComponent = () => {
   const navigate = useNavigate();
 
@@ -45,7 +43,7 @@ const OpenWallet: FunctionComponent = () => {
         password: password
       }
     });
-  }, [names, name, index]);
+  }, [names, name, index, password, dispatch]);
 
   return (
     <div className="openwallet">
@@ -69,7 +67,9 @@ const OpenWallet: FunctionComponent = () => {
           value={index.toString()}
         >
           {names?.map((name, index) => (
-            <MenuItem value={index}>{name}</MenuItem>
+            <MenuItem key={index} value={index}>
+              {name}
+            </MenuItem>
           ))}
         </Select>
         <FormHelperText />
@@ -96,7 +96,7 @@ const OpenWallet: FunctionComponent = () => {
         required
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button className="open-wallet-button">
+      <button className="open-wallet-button" onClick={onOpenWallet}>
         <div className="button-shape1" />
         <div className="label">Open</div>
       </button>
