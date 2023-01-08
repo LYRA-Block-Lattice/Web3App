@@ -21,7 +21,7 @@
   width: 18px;
   flex-shrink: 0;
   flex-direction: row;
-  padding: var(--padding-7xs) 0;
+  padding: var(--padding-6xs) 0;
   box-sizing: border-box;
 }
 .wallet-name-label {
@@ -72,10 +72,10 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--padding-7xs) var(--padding-5xs) 0;
+  padding: 0 var(--padding-6xs) var(--padding-5xs) 0;
   align-items: flex-end;
   justify-content: flex-start;
-  gap: var(--gap-4xs);
+  gap: var(--gap-3xs);
   color: inherit;
 }
 .qrcode-button-round {
@@ -120,7 +120,7 @@
 .qrcode-button-wrapper {
   background-color: var(--text-primary-dark);
   overflow: hidden;
-  padding: var(--padding-7xs) var(--padding-7xs) var(--padding-5xs)
+  padding: var(--padding-6xs) var(--padding-6xs) var(--padding-5xs)
     var(--padding-5xs);
 }
 .balance-display-zone-parent {
@@ -158,7 +158,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-4xs);
+  gap: var(--gap-3xs);
 }
 .tot-count {
   position: relative;
@@ -181,7 +181,7 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
-  gap: var(--gap-3xl);
+  gap: var(--gap-4xl);
 }
 .frame-parent,
 .wallet-card {
@@ -240,8 +240,8 @@
 .swap-button-parent {
   align-self: stretch;
   flex-direction: row;
-  padding: var(--padding-7xs) 0;
-  gap: var(--gap-md);
+  padding: var(--padding-6xs) 0;
+  gap: var(--gap-lg);
 }
 .iconssection,
 .iconssection-wrapper {
@@ -252,7 +252,7 @@
 .iconssection {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-gray-100);
-  padding: var(--padding-7xs) var(--padding-5xs);
+  padding: var(--padding-6xs) var(--padding-5xs);
   align-items: center;
   justify-content: center;
 }
@@ -269,8 +269,10 @@
 .div,
 .group-child {
   position: absolute;
-  top: calc(50% - 4px);
   left: calc(50% - 5.5px);
+}
+.group-child {
+  top: calc(50% - 4px);
   width: 11px;
   height: 11px;
 }
@@ -303,7 +305,7 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-7xs) 0;
+  padding: var(--padding-6xs) 0;
   box-sizing: border-box;
   align-items: flex-end;
   justify-content: center;
@@ -327,7 +329,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-7xs) 0;
+  padding: var(--padding-6xs) 0;
   box-sizing: border-box;
   align-items: flex-end;
   justify-content: center;
@@ -343,7 +345,7 @@
   overflow: hidden;
   flex-direction: row;
   justify-content: center;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
 }
 .tradableorderssection {
   align-self: stretch;
@@ -384,7 +386,7 @@
 .cus-parent {
   flex-direction: column;
   align-items: flex-end;
-  gap: var(--gap-4xs);
+  gap: var(--gap-3xs);
   text-align: right;
   font-size: var(--font-size-xl);
   color: var(--default-black);
@@ -393,7 +395,7 @@
   align-self: stretch;
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
 }
 .frame-child {
   position: relative;
@@ -409,7 +411,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-2xs);
+  gap: var(--gap-xs);
 }
 .tokendisplayitem {
   align-self: stretch;
@@ -417,7 +419,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-7xs);
+  padding: var(--padding-6xs);
   align-items: center;
   justify-content: center;
 }
@@ -427,7 +429,7 @@
   flex-direction: column;
   padding: var(--padding-5xs);
   justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .tokendisplayitem-parent {
   align-self: stretch;

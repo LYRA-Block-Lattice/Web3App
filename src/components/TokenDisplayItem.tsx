@@ -38,10 +38,10 @@ const TokenDisplayItem: FunctionComponent<TokenDisplayItemType> = ({
           <b className="lyra-coin">{coinName}</b>
           <div className="lyr-parent">
             <b className="lyr">{amountText}</b>
-            <b className="b7">{amountWorth}</b>
+            <b className="b1">{amountWorth}</b>
           </div>
         </div>
-        <div className="line-div" />
+        <div className="frame-item" />
       </div>
     </div>
   );
