@@ -25,17 +25,12 @@
   box-sizing: border-box;
 }
 .wallet-name-label1 {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
   position: relative;
   font-size: var(--font-size-4xl);
-  font-weight: 700;
+  display: inline-block;
   font-family: var(--font-sf-pro-text);
   color: var(--color-brown-200);
   text-align: right;
-  display: inline-block;
   width: 206px;
 }
 .balance-display-zone-inner {
@@ -49,14 +44,12 @@
 .lyrlabel1,
 .usdtbalance2 {
   position: relative;
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.3px;
   font-family: var(--font-sf-pro-text);
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
-}
-.usdtbalance2 {
-  font-size: var(--font-size-6xl);
   color: var(--color-white1);
   text-align: right;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
 .lyrlabel1 {
   font-size: var(--font-size-2xs);
@@ -172,7 +165,6 @@
 .searchsection {
   align-self: stretch;
   background-color: var(--color-white1);
-  padding: var(--padding-5xs);
   align-items: flex-start;
   justify-content: center;
 }
@@ -185,10 +177,8 @@
 .div2,
 .group-inner {
   position: absolute;
-  left: calc(50% - 5.5px);
-}
-.group-inner {
   top: calc(50% - 4px);
+  left: calc(50% - 5.5px);
   width: 11px;
   height: 11px;
 }
@@ -235,6 +225,13 @@
   letter-spacing: 0.41px;
   line-height: 18px;
 }
+.catalogtab1,
+.fiat-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .fiat-container {
   border-radius: var(--br-md) var(--br-md) 0 0;
   background-color: var(--text-secondary1);
@@ -242,32 +239,15 @@
   width: 80px;
   height: 32px;
   flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
   padding: var(--padding-6xs) 0;
   box-sizing: border-box;
   align-items: flex-end;
-  justify-content: center;
-}
-.catalogtab1,
-.tradableorderssection1 {
-  background-color: var(--color-gray-100);
 }
 .catalogtab1 {
+  background-color: var(--color-gray-100);
   width: 424px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
   gap: var(--gap-sm);
-}
-.tradableorderssection1 {
-  align-self: stretch;
-  border-radius: var(--br-sm);
-  padding: var(--padding-xs) var(--padding-5xs);
-  gap: var(--gap-lg);
 }
 .market,
 .orderandcatalog,
@@ -277,14 +257,26 @@
   align-items: center;
   justify-content: flex-start;
 }
+.tradableorderssection1 {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--color-gray-100);
+  padding: var(--padding-xs) var(--padding-5xs);
+  gap: var(--gap-lg);
+}
+.market,
+.orderandcatalog {
+  background-color: var(--color-white1);
+}
 .orderandcatalog {
   align-self: stretch;
-  background-color: var(--color-white1);
-  padding: var(--padding-5xs);
 }
 .market {
   position: relative;
   width: 100%;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  gap: var(--gap-lg);
   text-align: center;
   font-size: var(--font-size-xl);
   color: var(--color-white1);

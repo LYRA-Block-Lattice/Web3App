@@ -113,7 +113,8 @@
   align-items: center;
   gap: var(--gap-4xl);
 }
-.assertdetailview1 {
+.assertdetailview1,
+.descriptiontitle {
   flex-direction: column;
   align-items: flex-start;
 }
@@ -180,12 +181,10 @@
 .div6,
 .tetherusdt {
   position: relative;
+  font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-}
-.tetherusdt {
-  font-size: var(--font-size-xl);
 }
 .div6 {
   font-size: var(--caption1-size);

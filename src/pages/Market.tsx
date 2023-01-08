@@ -142,7 +142,7 @@ const Market: FunctionComponent = () => {
               className="balance-display-zone1"
               onClick={onBalanceDisplayZoneClick}
             >
-              <button className="wallet-name-label1">My Primary Account</button>
+              <b className="wallet-name-label1">My Primary Account</b>
               <div className="balance-display-zone-inner" />
               <b className="usdtbalance2">1,025,000</b>
               <b className="lyrlabel1">LYR</b>
