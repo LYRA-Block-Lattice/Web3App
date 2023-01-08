@@ -65,6 +65,7 @@
   flex-shrink: 0;
 }
 .balance-display-zone {
+  cursor: pointer;
   text-decoration: none;
   align-self: stretch;
   flex: 1;
