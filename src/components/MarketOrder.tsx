@@ -2,10 +2,17 @@ import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 import "./MarketOrder.css";
 
+enum OrderStatus {
+  Open = 0,
+  Partial = 10,
+  Closed = 30,
+  Delist = 50
+}
+
 type MarketOrderType = {
   offeringIcon?: string;
   bidingIcon?: string;
-  orderStatus?: string;
+  orderStatus?: OrderStatus;
   offering?: string;
   biding?: string;
   amount?: string;
@@ -16,6 +23,7 @@ type MarketOrderType = {
   daoName?: string;
   sellerRatings?: string;
   sellerTrades?: string;
+  lastUpdated?: string;
 };
 
 const MarketOrder: FunctionComponent<MarketOrderType> = ({
@@ -31,7 +39,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   sellerName,
   daoName,
   sellerRatings,
-  sellerTrades,
+  sellerTrades
 }) => {
   return (
     <div className="ordercard">
@@ -56,7 +64,9 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
               />
             </div>
             <div className="order-status">
-              <b className="open">{orderStatus}</b>
+              <b className="open">
+                {OrderStatus[orderStatus ?? OrderStatus.Closed]}
+              </b>
             </div>
           </div>
         </button>

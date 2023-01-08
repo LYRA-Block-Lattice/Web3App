@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SellItem from "../components/SellItem";
+import MarketOrder from "../components/MarketOrder";
 
 // a function to display the sell items with error handling
 export default function DisplaySellItems() {
@@ -35,12 +35,12 @@ export default function DisplaySellItems() {
     return (
       <>
         {items.map((blk) => (
-          <SellItem
+          <MarketOrder
             key={(blk as any).AccountID}
             sellerName={(blk as any).UserName}
             offering={(blk as any).Order.offering}
             biding={(blk as any).Order.biding}
-            sellerRating={
+            sellerRatings={
               Math.round(((blk as any).Finished / (blk as any).Total) * 100) +
               "%"
             }
@@ -51,9 +51,9 @@ export default function DisplaySellItems() {
             limitMin={(blk as any).Order.limitMin}
             limitMax={(blk as any).Order.limitMax}
             daoName="The First DAO"
-            tradeCount={(blk as any).Total + " Trades"}
-            iconSell="../asserts/icbaselinegeneratingtokens4.svg"
-            iconToGet="../asserts/carbonuserservicedesk4.svg"
+            sellerTrades={(blk as any).Total + " Trades"}
+            offeringIcon="../asserts/icbaselinegeneratingtokens4.svg"
+            bidingIcon="../asserts/carbonuserservicedesk4.svg"
           />
         ))}
       </>

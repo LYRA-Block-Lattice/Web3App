@@ -64,6 +64,10 @@ const Market: FunctionComponent = () => {
       });
   }, []);
 
+  const onBalanceDisplayZoneClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
   const onNFTCountTextClick = useCallback(() => {
     navigate("/redir");
   }, [navigate]);
@@ -199,38 +203,8 @@ const Market: FunctionComponent = () => {
               <b className="fiat1">Service</b>
             </div>
           </div>
-          <MarketOrder
-            offeringIcon="../asserts/icbaselinegeneratingtokens.svg"
-            bidingIcon="../asserts/carbonuserservicedesk.svg"
-            orderStatus="Open"
-            offering="BTC"
-            biding="tether/USDT"
-            amount="1113.2"
-            limitMin="1.2"
-            limitMax="3.2"
-            price="10,323"
-            sellerName="A big seller"
-            daoName="The First DAO"
-            sellerRatings="98%"
-            sellerTrades="1024 Trades"
-          />
-          <MarketOrder
-            offeringIcon="../asserts/icbaselinegeneratingtokens1.svg"
-            bidingIcon="../asserts/carbonuserservicedesk1.svg"
-            orderStatus="Open"
-            offering="BTC"
-            biding="tether/USDT"
-            amount="1113.2"
-            limitMin="1.2"
-            limitMax="3.2"
-            price="10,323"
-            sellerName="A big seller"
-            daoName="The First DAO"
-            sellerRatings="98%"
-            sellerTrades="1024 Trades"
-          />
+          <DisplaySellItems />
         </div>
-        <DisplaySellItems />
       </div>
     </div>
   );
