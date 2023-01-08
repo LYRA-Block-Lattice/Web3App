@@ -21,7 +21,7 @@ const SellTokenToTOT: FunctionComponent = () => {
     <>
       <div className="selltokentotot">
         <form className="searchtokenbyname">
-          <div className="sell">Sell</div>
+          <div className="to-get-totskusvc">Sell</div>
           <Autocomplete
             sx={{ width: 301 }}
             disablePortal
@@ -40,7 +40,7 @@ const SellTokenToTOT: FunctionComponent = () => {
           />
         </form>
         <form className="togettotform">
-          <div className="sell">To get [TOT/SKU/SVC]</div>
+          <div className="to-get-totskusvc">To get [TOT/SKU/SVC]</div>
           <input className="tot-name1" type="text" placeholder="Name" />
           <input
             className="tot-description"

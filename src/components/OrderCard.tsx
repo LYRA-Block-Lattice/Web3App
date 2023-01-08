@@ -58,61 +58,65 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
   }, [orderStatusBackgroundColor]);
 
   return (
-    <div className="ordercard2">
-      <div className="order-brief-section2">
-        <button className="banner-image2" onClick={toggle}>
-          <div className="order-banner2">
-            <button className="order-image2">
+    <div className="ordercard4">
+      <div className="order-brief-section4">
+        <button className="banner-image4" onClick={toggle}>
+          <div className="order-banner4">
+            <button className="order-image4">
               <img
-                className="icbaseline-generating-tokens-icon2"
+                className="icbaseline-generating-tokens-icon4"
                 alt=""
                 src={offeringImg}
               />
               <img
-                className="order-image-inner"
+                className="order-image-child2"
                 alt=""
-                src="../asserts/arrow-1.svg"
+                src="../asserts/arrow-12.svg"
               />
               <img
-                className="icbaseline-generating-tokens-icon2"
+                className="icbaseline-generating-tokens-icon4"
                 alt=""
                 src={bidingImg}
               />
             </button>
-            <div className="order-status2" style={orderStatusStyle}>
-              <b className="open2">{orderStatus}</b>
+            <div className="order-status4" style={orderStatusStyle}>
+              <b className="open4">{orderStatus}</b>
             </div>
           </div>
         </button>
-        <div className="title-section2">
-          <div className="sell-group">
+        <div className="title-section4">
+          <div className="sell-parent1">
             <b className="sold">Sell</b>
             <b className="sold">{offering}</b>
-            <img className="frame-inner" alt="" src="../asserts/arrow-2.svg" />
-            <b className="tetherusdt3">{biding}</b>
+            <img
+              className="frame-child2"
+              alt=""
+              src="../asserts/arrow-22.svg"
+            />
+            <b className="tetherusdt5">{biding}</b>
           </div>
           <div className="title-section-item" />
           <div className="am-container">
             <div className="sold">{time}</div>
           </div>
-          <div className="details-section2">
-            <div className="block12">
+          <div className="details-section4">
+            <div className="block14">
               <div className="sold">Price</div>
               <div className="sold">Limit Min</div>
               <div className="sold">Sold</div>
             </div>
-            <div className="block22">
+            <div className="block24">
               <div className="sold">{price}</div>
               <div className="sold">{limitMin}</div>
               <div className="sold">{sold}</div>
             </div>
-            <div className="details-section-inner" />
-            <div className="block32">
+            <div className="details-section-child2" />
+            <div className="block34">
               <div className="sold">Amount</div>
               <div className="sold">Limit Max</div>
               <div className="sold">Shelf</div>
             </div>
-            <div className="block22">
+            <div className="block24">
               <div className="sold">{amount}</div>
               <div className="sold">{limitMax}</div>
               <div className="sold">{shelf}</div>
@@ -120,8 +124,8 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
           </div>
         </div>
       </div>
-      <div className="trades-section2">
-        <div className="width-controller2">
+      <div className="trades-section4">
+        <div className="width-controller4">
           {showTradeTable ? <TableComponent data={trades} /> : null}
         </div>
       </div>

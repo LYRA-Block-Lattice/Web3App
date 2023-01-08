@@ -30,7 +30,7 @@
   height: 48px;
   flex-shrink: 0;
   justify-content: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .meka-legends {
   position: relative;
@@ -66,11 +66,11 @@
   justify-content: flex-start;
 }
 .asserttitleregion {
-  border-radius: var(--br-md);
+  border-radius: var(--br-sm);
   flex-direction: column;
   padding: var(--padding-5xs);
   align-items: flex-start;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .icon-park-solidblockchain-wrapper {
   height: 38px;
@@ -95,7 +95,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
 }
 .assertdetailview1,
 .assertstatssection {
@@ -104,13 +104,13 @@
   justify-content: flex-start;
 }
 .assertstatssection {
-  border-radius: var(--br-md) var(--br-md) 0 0;
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-white1);
   overflow: hidden;
   flex-direction: row;
   padding: var(--padding-5xs);
   align-items: center;
-  gap: 20px;
+  gap: var(--gap-3xl);
 }
 .assertdetailview1 {
   flex-direction: column;
@@ -126,11 +126,11 @@
   justify-content: flex-start;
 }
 .descriptiontitle {
-  border-radius: var(--br-md);
-  background-color: var(--color-gray-300);
+  border-radius: var(--br-sm);
+  background-color: var(--color-gray-400);
   padding: var(--padding-2xs) var(--padding-md);
   align-items: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   font-size: var(--font-size-6xl);
 }
 .descriptiondetails,
@@ -147,7 +147,7 @@
 .pricelabel {
   padding: 0 var(--padding-5xs);
 }
-.div {
+.div10 {
   position: relative;
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
@@ -168,7 +168,7 @@
   padding: var(--padding-sm) var(--padding-sm) var(--padding-sm)
     var(--padding-4xs);
   align-items: flex-end;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   font-size: var(--font-size-7xl);
 }
 .priceandbuyregion,
@@ -176,15 +176,15 @@
   align-items: flex-start;
 }
 .priceandbuyregion {
-  border-radius: var(--br-md);
+  border-radius: var(--br-sm);
   flex-direction: column;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .pricelabel1 {
   overflow: hidden;
   flex-direction: row;
 }
-.div2 {
+.div12 {
   position: relative;
   font-size: var(--caption1-size);
   letter-spacing: 0.41px;
@@ -197,7 +197,7 @@
   background-color: var(--color-white1);
   display: flex;
   justify-content: flex-start;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .priceandvaluelabel1 {
   overflow: hidden;
@@ -218,7 +218,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   text-align: center;
   font-size: var(--font-size-4xl);
 }
@@ -268,12 +268,12 @@
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);
   background-color: var(--primary);
-  border-radius: var(--br-2xl);
+  border-radius: var(--br-xl);
   height: 50px;
   flex-shrink: 0;
   flex-direction: row;
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .prepare-sell-order-button:hover {
   background-color: #766ae7;
