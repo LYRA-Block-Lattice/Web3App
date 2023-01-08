@@ -30,7 +30,7 @@
   height: 48px;
   flex-shrink: 0;
   justify-content: center;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .meka-legends {
   position: relative;
@@ -70,7 +70,7 @@
   flex-direction: column;
   padding: var(--padding-5xs);
   align-items: flex-start;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .icon-park-solidblockchain-wrapper {
   height: 38px;
@@ -95,10 +95,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
 }
 .assertdetailview1,
-.assertstatssection {
+.assertstatssection,
+.descriptiontitle {
   align-self: stretch;
   display: flex;
   justify-content: flex-start;
@@ -110,52 +111,44 @@
   flex-direction: row;
   padding: var(--padding-5xs);
   align-items: center;
-  gap: var(--gap-3xl);
+  gap: var(--gap-4xl);
 }
 .assertdetailview1 {
   flex-direction: column;
   align-items: flex-start;
 }
-.descriptiondetails,
-.descriptiontitle,
-.pricelabel {
-  align-self: stretch;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
 .descriptiontitle {
   border-radius: var(--br-sm);
   background-color: var(--color-gray-400);
+  overflow: hidden;
+  flex-direction: row;
   padding: var(--padding-2xs) var(--padding-md);
   align-items: center;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
   font-size: var(--font-size-6xl);
 }
 .descriptiondetails,
 .pricelabel {
-  background-color: var(--color-white1);
+  overflow: hidden;
+  flex-direction: row;
   align-items: flex-start;
 }
 .descriptiondetails {
+  align-self: stretch;
+  background-color: var(--color-white1);
   height: 93px;
   flex-shrink: 0;
+  display: flex;
   padding: var(--padding-lg) var(--padding-5xl);
   box-sizing: border-box;
+  justify-content: flex-start;
 }
 .pricelabel {
   padding: 0 var(--padding-5xs);
 }
-.div10 {
-  position: relative;
-  font-size: var(--font-size-xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-}
 .priceandbuyregion,
 .priceandvaluelabel,
+.pricelabel,
 .pricelabel1 {
   align-self: stretch;
   background-color: var(--color-white1);
@@ -168,7 +161,7 @@
   padding: var(--padding-sm) var(--padding-sm) var(--padding-sm)
     var(--padding-4xs);
   align-items: flex-end;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
   font-size: var(--font-size-7xl);
 }
 .priceandbuyregion,
@@ -178,18 +171,24 @@
 .priceandbuyregion {
   border-radius: var(--br-sm);
   flex-direction: column;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .pricelabel1 {
   overflow: hidden;
   flex-direction: row;
 }
-.div12 {
+.div6,
+.tetherusdt {
   position: relative;
-  font-size: var(--caption1-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
+}
+.tetherusdt {
+  font-size: var(--font-size-xl);
+}
+.div6 {
+  font-size: var(--caption1-size);
 }
 .priceandvaluelabel1,
 .setlimitsection {
@@ -197,7 +196,7 @@
   background-color: var(--color-white1);
   display: flex;
   justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .priceandvaluelabel1 {
   overflow: hidden;
@@ -218,7 +217,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
   text-align: center;
   font-size: var(--font-size-4xl);
 }
@@ -273,7 +272,7 @@
   flex-shrink: 0;
   flex-direction: row;
   box-sizing: border-box;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .prepare-sell-order-button:hover {
   background-color: #766ae7;

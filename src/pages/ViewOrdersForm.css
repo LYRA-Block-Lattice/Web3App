@@ -53,7 +53,7 @@
   overflow: hidden;
   flex-direction: column;
   justify-content: flex-start;
-  gap: var(--gap-xl);
+  gap: var(--gap-2xl);
   text-align: left;
   font-size: var(--font-size-6xl);
   color: var(--black-000000100);

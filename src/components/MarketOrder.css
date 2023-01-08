@@ -1,17 +1,17 @@
-.icbaseline-generating-tokens-icon6 {
+.icbaseline-generating-tokens-icon {
   position: relative;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.order-image-child3 {
+.order-image-child {
   position: relative;
   width: 19.5px;
   height: 7.36px;
   flex-shrink: 0;
 }
-.order-image5 {
+.order-image {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--text-primary-dark);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
@@ -22,83 +22,83 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-3xs);
+  gap: var(--gap-2xs);
 }
-.open5 {
+.open {
   position: relative;
   font-size: var(--caption1-size);
   font-family: var(--font-calibri);
   color: var(--color-white1);
   text-align: center;
 }
-.order-status5 {
+.order-status {
   align-self: stretch;
   border-radius: 0 0 var(--br-sm) var(--br-sm);
   background-color: var(--info);
   display: flex;
   flex-direction: row;
-  padding: var(--padding-9xs) var(--padding-10xs);
+  padding: var(--padding-8xs) var(--padding-9xs);
   align-items: center;
   justify-content: center;
 }
-.banner-image5,
-.order-banner5 {
+.banner-image,
+.order-banner {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
-.banner-image5 {
+.banner-image {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
   border-radius: var(--br-sm);
 }
-.frame-child3,
-.sell5 {
+.btc,
+.frame-inner {
   position: relative;
 }
-.frame-child3 {
+.frame-inner {
   width: 12.5px;
   height: 7.36px;
   flex-shrink: 0;
 }
-.tetherusdt6 {
+.tetherusdt1 {
   position: relative;
   text-align: left;
 }
-.block35,
-.block45,
-.sell-parent2 {
+.block3,
+.block4,
+.sell-parent {
   display: flex;
   justify-content: flex-start;
 }
-.sell-parent2 {
+.sell-parent {
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
 }
-.block35,
-.block45 {
+.block3,
+.block4 {
   overflow: hidden;
   flex-direction: column;
 }
-.block35 {
-  padding: 0 0 var(--padding-8xs);
+.block3 {
+  padding: 0 0 var(--padding-7xs);
   align-items: flex-start;
 }
-.block45 {
+.block4 {
   align-items: flex-end;
 }
-.price5 {
+.price {
   position: relative;
   display: inline-block;
   width: 66px;
 }
-.block15,
-.block25 {
+.block1,
+.block2 {
   width: 55px;
   flex-shrink: 0;
   display: flex;
@@ -106,52 +106,52 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.block25 {
+.block2 {
   width: 73px;
   overflow: hidden;
   align-items: flex-end;
   font-size: var(--font-size-5xl);
   color: var(--color-green-200);
 }
-.details-section-child3 {
+.details-section-child {
   position: relative;
   width: 4px;
   height: 15px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.details-section5,
-.title-section5 {
+.details-section,
+.title-section {
   display: flex;
   justify-content: flex-start;
 }
-.details-section5 {
+.details-section {
   align-self: stretch;
   overflow: hidden;
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-sm);
+  gap: var(--gap-md);
   font-size: var(--caption1-size);
 }
-.title-section5 {
+.title-section {
   cursor: pointer;
   text-decoration: none;
   flex: 1;
   border-radius: var(--br-2xs) var(--br-2xs) 0 0;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--gap-2xs);
+  gap: var(--gap-xs);
   color: inherit;
 }
-.order-brief-section5 {
+.order-brief-section {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-xl);
 }
-.width-controller5 {
+.width-controller {
   position: relative;
   border-top: 1px solid var(--black-000000100);
   box-sizing: border-box;
@@ -159,7 +159,7 @@
   height: 1px;
   flex-shrink: 0;
 }
-.trades-section5 {
+.trades-section {
   align-self: stretch;
   height: 0;
   flex-shrink: 0;
@@ -169,55 +169,55 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.userprofilesection-child1 {
+.userprofilesection-child {
   position: relative;
   width: 36px;
   height: 36px;
   flex-shrink: 0;
   object-fit: cover;
 }
-.the-first-dao3 {
+.the-first-dao {
   position: relative;
   font-size: var(--caption1-size);
 }
-.a-big-seller-parent1,
-.parent7 {
+.a-big-seller-parent,
+.parent5 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.a-big-seller-parent1 {
+.a-big-seller-parent {
   flex: 1;
-  padding: var(--padding-8xs) var(--padding-9xl) var(--padding-8xs) 0;
+  padding: var(--padding-7xs) var(--padding-9xl) var(--padding-7xs) 0;
   align-items: flex-start;
 }
-.parent7 {
-  padding: var(--padding-8xs) var(--padding-5xs);
+.parent5 {
+  padding: var(--padding-7xs) var(--padding-5xs);
   align-items: flex-end;
 }
-.ordercard5,
-.userprofilesection3 {
+.ordercard,
+.userprofilesection {
   background-color: var(--color-white1);
   display: flex;
   justify-content: flex-start;
 }
-.userprofilesection3 {
+.userprofilesection {
   align-self: stretch;
   overflow: hidden;
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
   font-size: var(--font-size-3xl);
 }
-.ordercard5 {
+.ordercard {
   border-radius: var(--br-sm);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-gray-200);
   flex-direction: column;
   padding: var(--padding-5xs);
   align-items: flex-start;
-  gap: var(--gap-5xs);
+  gap: var(--gap-4xs);
   text-align: right;
   font-size: var(--font-size-xl);
   color: var(--black-000000100);

@@ -1,11 +1,11 @@
-.icbaseline-generating-tokens-icon5 {
+.icbaseline-generating-tokens-icon3 {
   position: relative;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.token3 {
+.token2 {
   position: relative;
   font-size: var(--font-size-3xl);
   letter-spacing: 0.41px;
@@ -34,5 +34,5 @@
   height: 80px;
   flex-shrink: 0;
   box-sizing: border-box;
-  gap: var(--gap-3xs);
+  gap: var(--gap-2xs);
 }
