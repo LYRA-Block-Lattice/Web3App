@@ -15,7 +15,7 @@ const CreateWallet: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onOpenWalletLinkClick = useCallback(() => {
-    navigate("/open-wallet");
+    navigate("/openwallet");
   }, [navigate]);
 
   return (

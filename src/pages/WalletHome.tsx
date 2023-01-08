@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import "./WalletHome.css";
 
@@ -20,7 +20,7 @@ const WalletHome: FunctionComponent = () => {
         </div>
         <div className="frame-parent">
           <div className="balance-display-zone-parent">
-            <a className="balance-display-zone">
+            <Link className="balance-display-zone" to="/openwallet">
               <button className="wallet-name-label">My Primary Account</button>
               <div className="balance-display-zone-child" />
               <b className="usdtbalance">1,025,000</b>
@@ -28,7 +28,7 @@ const WalletHome: FunctionComponent = () => {
               <div className="balance-display-zone-item" />
               <b className="usdtbalance">5,000</b>
               <b className="lyrlabel">USDT</b>
-            </a>
+            </Link>
             <div className="qrcode-button-wrapper">
               <button className="qrcode-button">
                 <div className="qrcode-button-round" />
