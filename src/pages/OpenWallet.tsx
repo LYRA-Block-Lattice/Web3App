@@ -1,4 +1,5 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useState } from "react";
+import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import {
   FormControl,
   InputLabel,
@@ -14,8 +15,15 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./OpenWallet.css";
 
+//const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
 const OpenWallet: FunctionComponent = () => {
   const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  //const names = useAppSelector((state) => state.repo.names);
+  const dispatch = useDispatch();
 
   const onSignUpClick = useCallback(() => {
     navigate("/create-wallet");

@@ -4,21 +4,24 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import configureStore from "./pages/redux/store";
 import {
   CssBaseline,
   ThemeProvider,
   createTheme,
   StyledEngineProvider
 } from "@mui/material";
-
+import { store } from "./app/store";
 import "./global.css";
 
 const muiTheme = createTheme();
 
-const container = document.getElementById("root");
-const root = createRoot(container!);
-const store = configureStore();
+const container = document.getElementById("root")!;
+const root = createRoot(container);
+
+// // Infer the `RootState` and `AppDispatch` types from the store itself
+// export type RootState = ReturnType<typeof store.getState>;
+// // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+// export type AppDispatch = typeof store.dispatch;
 
 root.render(
   <Provider store={store}>

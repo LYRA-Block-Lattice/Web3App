@@ -1,4 +1,5 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   TextField,
   Input,
@@ -6,13 +7,20 @@ import {
   InputAdornment,
   IconButton,
   FormControlLabel,
-  Checkbox,
+  Checkbox
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./CreateWallet.css";
 
 const CreateWallet: FunctionComponent = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [chkkey, setChkkey] = useState("");
+  const [pvk, setPvk] = useState("");
 
   const onOpenWalletLinkClick = useCallback(() => {
     navigate("/openwallet");
@@ -31,6 +39,7 @@ const CreateWallet: FunctionComponent = () => {
         size="medium"
         margin="none"
         required
+        onChange={(e) => setName(e.target.value)}
       />
       <TextField
         className="wallet-name"
@@ -45,12 +54,13 @@ const CreateWallet: FunctionComponent = () => {
                 <Icon>visibility</Icon>
               </IconButton>
             </InputAdornment>
-          ),
+          )
         }}
         label="Password"
         size="medium"
         margin="none"
         required
+        onChange={(e) => setPassword(e.target.value)}
       />
       <TextField
         className="wallet-name"
@@ -65,17 +75,24 @@ const CreateWallet: FunctionComponent = () => {
                 <Icon>visibility</Icon>
               </IconButton>
             </InputAdornment>
-          ),
+          )
         }}
         label="Confirm password"
         size="medium"
         margin="none"
         required
+        onChange={(e) => setPassword2(e.target.value)}
       />
       <FormControlLabel
         label="I want to restore wallet by Private Key"
         labelPlacement="end"
-        control={<Checkbox color="primary" size="medium" />}
+        control={
+          <Checkbox
+            color="primary"
+            size="medium"
+            onChange={(e) => setChkkey(e.target.value)}
+          />
+        }
       />
       <TextField
         className="wallet-name"
@@ -87,8 +104,20 @@ const CreateWallet: FunctionComponent = () => {
         placeholder="Placeholder"
         size="medium"
         margin="none"
+        onChange={(e) => setPvk(e.target.value)}
       />
-      <button className="create-wallet">
+      <button
+        className="create-wallet"
+        // onClick={() =>
+        //   dispatch({
+        //     type: actionTypes.WALLET_CREATE,
+        //     payload: {
+        //       name: name,
+        //       password: password
+        //     }
+        //   })
+        // }
+      >
         <div className="button-shape" />
         <div className="createlabel">Create</div>
       </button>
