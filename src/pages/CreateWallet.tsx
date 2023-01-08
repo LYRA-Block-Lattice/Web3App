@@ -10,6 +10,7 @@ import {
   Checkbox
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import * as actionTypes from "../app/actionTypes";
 import "./CreateWallet.css";
 
 const CreateWallet: FunctionComponent = () => {
@@ -108,15 +109,15 @@ const CreateWallet: FunctionComponent = () => {
       />
       <button
         className="create-wallet"
-        // onClick={() =>
-        //   dispatch({
-        //     type: actionTypes.WALLET_CREATE,
-        //     payload: {
-        //       name: name,
-        //       password: password
-        //     }
-        //   })
-        // }
+        onClick={() =>
+          dispatch({
+            type: actionTypes.WALLET_CREATE,
+            payload: {
+              name: name,
+              password: password
+            }
+          })
+        }
       >
         <div className="button-shape" />
         <div className="createlabel">Create</div>
