@@ -9,9 +9,8 @@ export interface IWalletInfo {
   unrecvlyr: number;
   nftcnt: number;
   totcnt: number;
-  balances: [];
+  balances: {} | undefined;
 }
-
 export interface ITxInfo {
   tag: String | null;
   result: String | null;
@@ -43,7 +42,7 @@ const initState: IWalletState = {
     unrecvlyr: 0,
     nftcnt: 0,
     totcnt: 0,
-    balances: []
+    balances: undefined
   },
   network: "",
   existing: false,
