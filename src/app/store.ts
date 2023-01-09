@@ -46,12 +46,6 @@ export const history = createReduxHistory(store);
 // Run the saga
 sagaMiddleware.run(rootSaga);
 
-// export const store = configureStore({
-//   reducer: {
-//     counter: counterReducer
-//   }
-// });
-
 // load initial state
 store.dispatch({ type: "STORE_INIT" });
 

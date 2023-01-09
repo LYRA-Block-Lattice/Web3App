@@ -1,7 +1,10 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+
 import { getAppSelector } from "../app/selectors";
+import { store } from "../app/store";
+import { IWalletState } from "../app/walletreducer";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import "./WalletHome.css";
 
@@ -33,11 +36,15 @@ const WalletHome: FunctionComponent = () => {
     return response.text();
   };
 
-  useEffect(() => {
+  const unsubscribe = store.subscribe(() => {
+    loadBalance(store.getState().app);
+  });
+
+  const loadBalance = (app: IWalletState) => {
     const netid = app.network ?? process.env.REACT_APP_NETWORK_ID;
     if (app.wallet?.accountId === undefined) return;
-
     const url = `https://${netid}.lyra.live/api/Node/GetLastBlock?AccountId=${app.wallet.accountId}`;
+    // log url
     getWebContent(url)
       .then((json) => JSON.parse(json))
       .then((j) => JSON.parse(j.blockData))
@@ -63,7 +70,7 @@ const WalletHome: FunctionComponent = () => {
             : ret.Balances["tether/USDT"] / 100000000
         );
       });
-  }, []);
+  };
 
   const onSwapButtonClick = useCallback(() => {
     navigate("/market");
