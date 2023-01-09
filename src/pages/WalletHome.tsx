@@ -208,7 +208,7 @@ const WalletHome: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <div className="tokendisplayitem-parent">
+      <div className="coinlisting">
         <TokenDisplayItem
           coinIcon="../asserts/lyralogoblackicon@2x.png"
           coinName="Lyra Coin"
