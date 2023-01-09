@@ -1,76 +1,24 @@
+import { ActionTypes } from "@mui/base";
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import { getAppSelector } from "../app/selectors";
-import { store } from "../app/store";
-import { IWalletState } from "../app/walletreducer";
 import TokenDisplayItem from "../components/TokenDisplayItem";
+import * as actionTypes from "../app/actionTypes";
 import "./WalletHome.css";
 
 const WalletHome: FunctionComponent = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
 
-  const [lyrbns, setLyrbns] = useState(0);
-  const [usdt, setUsdt] = useState(0);
-
-  const [nftcnt, setNftcnt] = useState(0);
-  const [totcnt, setTotcnt] = useState(0);
   const [sellcnt, setSellcnt] = useState(0);
   const [bidcnt, setBidcnt] = useState(0);
 
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-
-  // function to get json from rest api
-  const getJson = async (url: string) => {
-    const response = await fetch(url);
-    return response.json();
-  };
-
-  // function to get web content from rest api
-  const getWebContent = async (url: string) => {
-    const response = await fetch(url);
-    return response.text();
-  };
-
-  const unsubscribe = store.subscribe(() => {
-    loadBalance(store.getState().app);
-  });
-
-  const loadBalance = (app: IWalletState) => {
-    const netid = app.network ?? process.env.REACT_APP_NETWORK_ID;
-    if (app.wallet?.accountId === undefined) return;
-    const url = `https://${netid}.lyra.live/api/Node/GetLastBlock?AccountId=${app.wallet.accountId}`;
-    // log url
-    getWebContent(url)
-      .then((json) => JSON.parse(json))
-      .then((j) => JSON.parse(j.blockData))
-      .then((ret) => {
-        //console.log(ret.Balances);
-        setNftcnt(
-          Object.keys(ret.Balances).filter((a) => a.startsWith("nft/")).length
-        );
-        setTotcnt(
-          Object.keys(ret.Balances).filter(
-            (a) => a.startsWith("tot/") || a.startsWith("svc/")
-          ).length
-        );
-        setLyrbns(
-          Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
-            ? 0
-            : ret.Balances["LYR"] / 100000000
-        );
-        setUsdt(
-          Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
-            undefined
-            ? 0
-            : ret.Balances["tether/USDT"] / 100000000
-        );
-      });
-  };
+  useEffect(() => {
+    dispatch({ type: actionTypes.WALLET_GET_BALANCE });
+  }, [dispatch]);
 
   const onSwapButtonClick = useCallback(() => {
     navigate("/market");
@@ -89,10 +37,10 @@ const WalletHome: FunctionComponent = () => {
             <Link className="balance-display-zone" to="/openwallet">
               <button className="wallet-name-label">{app.name}</button>
               <div className="balance-display-zone-child" />
-              <b className="usdtbalance">{lyrbns}</b>
+              <b className="usdtbalance">{app.wallet.balance}</b>
               <b className="lyrlabel">LYR</b>
               <div className="balance-display-zone-item" />
-              <b className="usdtbalance">{usdt}</b>
+              <b className="usdtbalance">{app.wallet.usdt}</b>
               <b className="lyrlabel">USDT</b>
             </Link>
             <div className="qrcode-button-wrapper">
@@ -108,11 +56,11 @@ const WalletHome: FunctionComponent = () => {
           </div>
           <div className="token-lists">
             <button className="go-nft-button">
-              <div className="nft-count">{nftcnt}</div>
+              <div className="nft-count">{app.wallet.nftcnt}</div>
               <b className="nft-label">NFT</b>
             </button>
             <button className="go-nft-button">
-              <div className="tot-count">{totcnt}</div>
+              <div className="tot-count">{app.wallet.totcnt}</div>
               <b className="nft-label">TOT</b>
             </button>
             <button className="go-nft-button">

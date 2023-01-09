@@ -4,8 +4,12 @@ import * as actionTypes from "./actionTypes";
 export interface IWalletInfo {
   accountId: String | undefined;
   balance: number;
+  usdt: number;
   unrecvcnt: number;
   unrecvlyr: number;
+  nftcnt: number;
+  totcnt: number;
+  balances: [];
 }
 
 export interface ITxInfo {
@@ -34,8 +38,12 @@ const initState: IWalletState = {
   wallet: {
     accountId: "",
     balance: 0,
+    usdt: 0,
     unrecvcnt: 0,
-    unrecvlyr: 0
+    unrecvlyr: 0,
+    nftcnt: 0,
+    totcnt: 0,
+    balances: []
   },
   network: "",
   existing: false,
@@ -63,7 +71,11 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
           ...state,
           wallet: {
             ...state.wallet,
-            balance: action.payload.balance["LYR"],
+            balance: action.payload.balance,
+            usdt: action.payload.usdt,
+            nftcnt: action.payload.nftcnt,
+            totcnt: action.payload.totcnt,
+            balances: action.payload.balances,
             unrecvcnt: action.payload.unreceived
               ? state.wallet.unrecvcnt + 1
               : 0,

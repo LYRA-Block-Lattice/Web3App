@@ -176,6 +176,50 @@ function* closeWallet() {
   yield put(push("/"));
 }
 
+function* getBalance(action) {
+  try {
+    var wds = yield persist.checkData();
+    if (wds === null || wds.network === null || wds.accountId === null) return;
+
+    const url = `https://${wds.network}.lyra.live/api/Node/GetLastBlock?AccountId=${wds.accountId}`;
+    const response = yield fetch(url);
+    var json = yield response.text();
+    var j = JSON.parse(json);
+    if (j.resultCode != 0) return;
+    var ret = JSON.parse(j.blockData);
+
+    yield put({
+      type: actionTypes.WALLET_BALANCE,
+      payload: {
+        accountId: wds.accountId,
+        nftcnt: Object.keys(ret.Balances).filter((a) => a.startsWith("nft/"))
+          .length,
+        totcnt: Object.keys(ret.Balances).filter(
+          (a) => a.startsWith("tot/") || a.startsWith("svc/")
+        ).length,
+        balance:
+          Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
+            ? 0
+            : ret.Balances["LYR"] / 100000000,
+        usdt:
+          Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
+          undefined
+            ? 0
+            : ret.Balances["tether/USDT"] / 100000000,
+        balances: Object.fromEntries(
+          Object.entries(ret.Balances).map(([k, v]) => [k, v / 100000000])
+        )
+        // TODO: set unreceived args
+      }
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.STORE_ERROR,
+      payload: error
+    });
+  }
+}
+
 function* receive(action) {
   try {
     if (ws.state === WebsocketReadyStates.CLOSED) {
@@ -367,6 +411,7 @@ function* dexSignUp(action) {
 export default function* rootSaga() {
   console.log("rootSaga is running.");
   yield takeLatest(actionTypes.STORE_INIT, checkWalletExists);
+  yield takeLatest(actionTypes.WALLET_GET_BALANCE, getBalance);
   yield takeEvery(actionTypes.WALLET_CREATE, createWallet);
   yield takeEvery(actionTypes.WALLET_RESTORE, restoreWallet);
   yield takeEvery(actionTypes.WALLET_REMOVE, removeWallet);
