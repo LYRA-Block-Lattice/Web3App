@@ -37,6 +37,7 @@ function* createWallet(action) {
       },
       wallets: [
         {
+          network: process.env.REACT_APP_NETWORK_ID,
           name: action.payload.name,
           accountId: w.accountId,
           data: encData.toString()
@@ -54,6 +55,7 @@ function* createWallet(action) {
     }
 
     val.wallets.push({
+      network: process.env.REACT_APP_NETWORK_ID,
       name: action.payload.name,
       accountId: w.accountId,
       data: encData.toString()
@@ -80,6 +82,7 @@ function* restoreWallet(action) {
       },
       wallets: [
         {
+          network: process.env.REACT_APP_NETWORK_ID,
           name: action.payload.name,
           accountId: actId,
           data: encData.toString()
@@ -131,11 +134,20 @@ function* openWallet(action) {
       yield put({
         type: actionTypes.WALLET_OPEN_DONE,
         payload: {
+          network: exitsWallet.network ?? process.env.REACT_APP_NETWORK_ID,
           name: action.payload.name,
           accountId: exitsWallet.accountId,
           privateKey: prvKey
         }
       });
+
+      // update storage
+      var wds = yield persist.checkData();
+      wds.network = exitsWallet.network ?? process.env.REACT_APP_NETWORK_ID;
+      wds.name = action.payload.name;
+      wds.accountId = exitsWallet.accountId;
+      yield persist.setData(wds);
+
       yield put({
         type: actionTypes.WSRPC_CREATE,
         payload: {

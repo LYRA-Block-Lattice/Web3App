@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MarketOrder from "../components/MarketOrder";
-import DisplaySellItems from "../components/DisplaySellItems";
+import DisplaySellItems from "../dup/DisplaySellItems";
 
 import "./Market.css";
 
@@ -33,36 +33,6 @@ const Market: FunctionComponent = () => {
     const response = await fetch(url);
     return response.text();
   };
-
-  useEffect(() => {
-    const netid = process.env.REACT_APP_NETWORK_ID;
-    const url = `https://${netid}.lyra.live/api/Node/GetLastBlock?AccountId=LUTPLGNAP4vTzXh5tWVCmxUBh8zjGTR8PKsfA8E67QohNsd1U6nXPk4Q9jpFKsKfULaaT3hs6YK7WKm57QL5oarx8mZdbM`;
-    getWebContent(url)
-      .then((json) => JSON.parse(json))
-      .then((j) => JSON.parse(j.blockData))
-      .then((ret) => {
-        //console.log(ret.Balances);
-        setNftcnt(
-          Object.keys(ret.Balances).filter((a) => a.startsWith("nft/")).length
-        );
-        setTotcnt(
-          Object.keys(ret.Balances).filter(
-            (a) => a.startsWith("tot/") || a.startsWith("svc/")
-          ).length
-        );
-        setLyrbns(
-          Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
-            ? 0
-            : ret.Balances["LYR"] / 100000000
-        );
-        setUsdt(
-          Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
-            undefined
-            ? 0
-            : ret.Balances["tether/USDT"] / 100000000
-        );
-      });
-  }, []);
 
   const onBalanceDisplayZoneClick = useCallback(() => {
     navigate("/");

@@ -50,7 +50,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/assertdetailview1":
+      case "/assertdetailview":
         title = "";
         metaDescription = "";
         break;
@@ -152,7 +152,7 @@ function App() {
 
       <Route path="/market" element={<Market />} />
 
-      <Route path="/assertdetailview1" element={<AssertDetailView />} />
+      <Route path="/assertdetailview" element={<AssertDetailView />} />
 
       <Route path="/mint-fiat-token" element={<MintFiatToken />} />
 

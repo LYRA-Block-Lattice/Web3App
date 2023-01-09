@@ -10,6 +10,7 @@ enum OrderStatus {
 }
 
 type MarketOrderType = {
+  orderId: string;
   offeringIcon?: string;
   bidingIcon?: string;
   orderStatus?: OrderStatus;
@@ -27,6 +28,7 @@ type MarketOrderType = {
 };
 
 const MarketOrder: FunctionComponent<MarketOrderType> = ({
+  orderId,
   offeringIcon,
   bidingIcon,
   orderStatus,
@@ -70,7 +72,10 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
             </div>
           </div>
         </button>
-        <Link className="title-section" to="/assertdetailview">
+        <Link
+          className="title-section"
+          to={`/assertdetailview?orderId=${orderId}`}
+        >
           <div className="sell-parent">
             <b className="btc">Sell</b>
             <b className="btc">{offering}</b>

@@ -37,6 +37,7 @@ export default function DisplaySellItems() {
         {items.map((blk) => (
           <MarketOrder
             key={(blk as any).AccountID}
+            orderId={(blk as any).AccountID}
             sellerName={(blk as any).UserName}
             offering={(blk as any).Order.offering}
             biding={(blk as any).Order.biding}
@@ -52,8 +53,8 @@ export default function DisplaySellItems() {
             limitMax={(blk as any).Order.limitMax}
             daoName="The First DAO"
             sellerTrades={(blk as any).Total + " Trades"}
-            offeringIcon="../asserts/icbaselinegeneratingtokens4.svg"
-            bidingIcon="../asserts/carbonuserservicedesk4.svg"
+            offeringIcon="../asserts/icbaselinegeneratingtokens.svg"
+            bidingIcon="../asserts/carbonuserservicedesk.svg"
           />
         ))}
       </>

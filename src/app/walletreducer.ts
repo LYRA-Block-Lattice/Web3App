@@ -87,7 +87,13 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
       return {
         ...state,
         existing: action.payload !== undefined && action.payload !== null,
-        names: action.payload?.wallets.map((a: any) => a.name)
+        names: action.payload?.wallets.map((a: any) => a.name),
+        name: action.payload?.name,
+        network: action.payload?.network,
+        wallet: {
+          ...state.wallet,
+          accountId: action.payload?.accountId
+        }
       };
     case actionTypes.WALLET_RECEIVE:
     case actionTypes.WALLET_SEND:
@@ -143,6 +149,7 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
         ...state,
         opening: true,
         name: action.payload.name,
+        network: action.payload.network,
         wallet: {
           ...state.wallet,
           accountId: action.payload.accountId
@@ -151,14 +158,7 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
     case actionTypes.WALLET_CLOSED:
       return {
         ...state,
-        opening: false,
-        name: "",
-        wallet: {
-          accountId: undefined,
-          balance: 0,
-          unrecvcnt: 0,
-          unrecvlyr: 0
-        }
+        opening: false
       };
     case actionTypes.WALLET_OPEN_FAILED:
       return {
