@@ -1,12 +1,23 @@
-import { FunctionComponent, useCallback, LegacyRef, useRef, useState, useEffect } from "react";
+import {
+  FunctionComponent,
+  useCallback,
+  LegacyRef,
+  useRef,
+  useState,
+  useEffect
+} from "react";
 import { useNavigate } from "react-router-dom";
 import CatalogSelection from "../components/CatalogSelection";
 import "./StartToCreateOrder.css";
-import Xarrow, { Xwrapper } from 'react-xarrows';
+import Xarrow, { Xwrapper } from "react-xarrows";
 
-const boxStyle = { border: "grey solid 2px", borderRadius: "10px", padding: "5px" };
+const boxStyle = {
+  border: "grey solid 2px",
+  borderRadius: "10px",
+  padding: "5px"
+};
 
-const typeMap = {
+const typeMap: { [index: string]: any } = {
   Token: "Token",
   NFT: "NFT",
   Fiat: "Fiat",
@@ -56,11 +67,14 @@ const StartToCreateOrder: FunctionComponent = () => {
     //}
   }, [navigate, start, end]);
 
-  const onTokenAction = (act: string | undefined, tok: string | undefined, xref: LegacyRef<HTMLButtonElement> | undefined) => {
+  const onTokenAction = (
+    act: string | undefined,
+    tok: string | undefined,
+    xref: LegacyRef<HTMLButtonElement> | undefined
+  ) => {
     if (act === "Sell") {
       setStart(tok);
-    }
-    else {
+    } else {
       setEnd(tok);
     }
     //
@@ -72,11 +86,23 @@ const StartToCreateOrder: FunctionComponent = () => {
       <div className="catalog-section">
         <Xwrapper>
           <div style={{ zIndex: 3 }}>
-            <Xarrow showXarrow={start != null && end != null} start={`Sell-${start}`} end={`Get-${end}`} />
+            <Xarrow
+              showXarrow={start != null && end != null}
+              start={`Sell-${start}`}
+              end={`Get-${end}`}
+            />
           </div>
-          <CatalogSelection key="sell" iWantTo="Sell" tokenActionClicked={onTokenAction} />
+          <CatalogSelection
+            key="sell"
+            iWantTo="Sell"
+            tokenActionClicked={onTokenAction}
+          />
           <div className="catalog-section-child" />
-          <CatalogSelection key="get" iWantTo="Get" tokenActionClicked={onTokenAction} />
+          <CatalogSelection
+            key="get"
+            iWantTo="Get"
+            tokenActionClicked={onTokenAction}
+          />
         </Xwrapper>
       </div>
       <button

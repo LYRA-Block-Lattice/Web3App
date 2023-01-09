@@ -1,6 +1,8 @@
 ﻿import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import "./SearchTokenInput.css";
+import { useSelector } from "react-redux";
+import { getAppSelector } from "../app/selectors";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -33,7 +35,7 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
   cat,
   ownOnly,
   onTokenSelect,
-  val,
+  val
 }) => {
   const [defval, setDefval] = useState<IToken>();
   const [options, setOptions] = useState<IToken[]>([]);
@@ -41,14 +43,10 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
   const [balance, setBalance] = useState<IBalance[]>([]);
   // balance of selected token
   const [selbalance, setSelbalance] = useState<number | undefined>(0);
+  const app = useSelector(getAppSelector);
 
   async function getTokens() {
-    let str = await window.rrProxy.ReactRazor.Pages.Home.Interop.GetBalancesAsync(window.rrComponent);
-    var ret = JSON.parse(str);
-    if (ret.ret == "Success") {
-      var tkns = ret.result;
-      setBalance(tkns);
-    }    
+    setBalance(app.wallet.balances);
   }
 
   useEffect(() => {
@@ -56,73 +54,92 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
   }, []);
 
   const searchToken = (searchTerm: string, cat: string) => {
-    if (ownOnly && cat != "Fiat") { // search in wallet/balance
-      window.rrProxy.ReactRazor.Pages.Home.Interop.SearchTokenForAccountAsync(window.rrComponent, searchTerm, cat)
-        .then(function (response: string) {
-          return JSON.parse(response);
-        })
+    if (ownOnly && cat != "Fiat") {
+      // search in wallet/balance
+      var url = `https://${app.network}.lyra.live/api/Node/FindTokensForAccount?accountId=${app.wallet.accountId}&q=${searchTerm}&cat=${cat}`;
+      fetch(url)
+        .then(
+          (response) => response.text(),
+          (err) => {
+            console.log("err: " + err);
+          }
+        )
+        .then((txt) => JSON.parse(txt!))
+        .then(
+          function (ret: []) {
+            setOptions(ret);
+          },
+          (err) => {
+            console.log("err: " + err);
+          }
+        );
+    } else {
+      var url = `https://${app.network}.lyra.live/api/Node/FindTokens?q=${searchTerm}&cat=${cat}`;
+      fetch(url)
+        .then(
+          (response) => response.text(),
+          (err) => {
+            console.log("err: " + err);
+          }
+        )
+        .then((txt) => JSON.parse(txt!))
         .then(function (ret: []) {
-          setOptions(ret);
-        });
-    }
-    else {
-      window.rrProxy.ReactRazor.Pages.Home.Interop.SearchTokenAsync(window.rrComponent, searchTerm, cat)
-        .then(function (response: string) {
-          return JSON.parse(response);
-        })
-        .then(function (ret : []) {
           setOptions(ret);
         });
     }
   };
 
-  const onGetTokenInputChange = useCallback((event: any, value: string) => {
-    if (value) {
-      getTokens();
+  const onGetTokenInputChange = useCallback(
+    (event: any, value: string) => {
+      if (value) {
+        getTokens();
 
-      onTokenSelect(value);
-      searchToken(value, cat);
+        onTokenSelect(value);
+        searchToken(value, cat);
 
-      if (balance?.find(a => a.token == value)) {
-        setSelbalance(balance?.find(a => a.token == value)?.balance)
+        if (balance?.find((a) => a.token == value)) {
+          setSelbalance(balance?.find((a) => a.token == value)?.balance);
+        } else {
+          // for nft/tot, its the name
+          let ticker = options.find((a) => a.name == value)?.token;
+          setSelbalance(balance?.find((a) => a.token == ticker)?.balance);
+        }
+      } else {
+        onTokenSelect("");
+        setOptions([]);
+        setSelbalance(0);
       }
-      else {
-        // for nft/tot, its the name
-        let ticker = options.find(a => a.name == value)?.token;
-        setSelbalance(balance?.find(a => a.token == ticker)?.balance)
-      }
-    } else {
-      onTokenSelect("");
-      setOptions([]);
-      setSelbalance(0);
-    }
-  }, [options]);
+    },
+    [options]
+  );
 
-    return (
-      <div>
-        <div className="sell2">To {dir} {cat}</div>
-        <Autocomplete
-          sx={{ width: 301 }}
-          disablePortal
-          defaultValue={val}
-          options={options}
-          onInputChange={onGetTokenInputChange}
-          getOptionLabel={(option) => option.name}
-          renderInput={(params: any) => (
-            <TextField
-              {...params}
-              color="primary"
-              label="Token Name"
-              variant="outlined"
-              placeholder=""
-              helperText=""
-            />
-          )}
-          size="medium"
-        />
-        <div>Balance: {selbalance}</div>
+  return (
+    <div>
+      <div className="sell2">
+        To {dir} {cat}
       </div>
-    );
-}
+      <Autocomplete
+        sx={{ width: 301 }}
+        disablePortal
+        defaultValue={val}
+        options={options}
+        onInputChange={onGetTokenInputChange}
+        getOptionLabel={(option) => option.name}
+        renderInput={(params: any) => (
+          <TextField
+            {...params}
+            color="primary"
+            label="Token Name"
+            variant="outlined"
+            placeholder=""
+            helperText=""
+          />
+        )}
+        size="medium"
+      />
+      <div>Balance: {selbalance}</div>
+    </div>
+  );
+};
 
 export default SearchTokenInput;
