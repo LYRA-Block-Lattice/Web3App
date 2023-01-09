@@ -1,5 +1,5 @@
 import { FunctionComponent, useCallback, useState } from "react";
-import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   FormControl,
   InputLabel,
