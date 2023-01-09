@@ -10,6 +10,18 @@ const Market: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
+  const onSwapButtonClick = useCallback(() => {
+    navigate("/starttocreateorder");
+  }, [navigate]);
+
+  const onSwapButton1Click = useCallback(() => {
+    navigate("/viewordersform");
+  }, [navigate]);
+
+  const onDEXButtonClick = useCallback(() => {
+    navigate("/viewtradesform");
+  }, [navigate]);
+
   return (
     <div className="market">
       <div className="wallet-card1">
@@ -43,10 +55,48 @@ const Market: FunctionComponent = () => {
           </div>
         </div>
       </div>
+      <div className="iconssection-container">
+        <div className="iconssection1">
+          <div className="swap-button-group">
+            <button className="swap-button2" onClick={onSwapButtonClick}>
+              <img
+                className="home-icon-interlocution6"
+                alt=""
+                src="../asserts/home--icon--interlocution6.svg"
+              />
+              <div className="ranking6">New Sell</div>
+            </button>
+            <button className="swap-button2" onClick={onSwapButton1Click}>
+              <img
+                className="home-icon-interlocution6"
+                alt=""
+                src="../asserts/home--icon--interlocution7.svg"
+              />
+              <div className="ranking6">My Orders</div>
+            </button>
+            <button className="swap-button2" onClick={onDEXButtonClick}>
+              <img
+                className="home-icon-interlocution6"
+                alt=""
+                src="../asserts/home--icon--interlocution8.svg"
+              />
+              <div className="ranking6">My Trades</div>
+            </button>
+            <button className="swap-button2">
+              <img
+                className="home-icon-interlocution6"
+                alt=""
+                src="../asserts/home--icon--interlocution9.svg"
+              />
+              <div className="ranking9">ODR</div>
+            </button>
+          </div>
+        </div>
+      </div>
       <div className="searchsection">
         <input
           className="searchsection-child"
-          type="text"
+          type="search"
           placeholder="Search products/token/NFT/TOT etc."
         />
       </div>

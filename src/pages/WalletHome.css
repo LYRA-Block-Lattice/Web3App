@@ -251,7 +251,7 @@
   flex-direction: column;
 }
 .iconssection {
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  border-radius: var(--br-sm);
   background-color: var(--color-gray-100);
   padding: var(--padding-6xs) var(--padding-5xs);
   align-items: center;
@@ -350,7 +350,7 @@
   align-self: stretch;
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   flex-direction: column;
-  padding: var(--padding-xs) var(--padding-5xs);
+  padding: var(--padding-xs) var(--padding-5xs) 0;
   justify-content: flex-start;
   text-align: center;
   font-size: var(--font-size-xl);
@@ -422,16 +422,16 @@
   align-items: center;
   justify-content: center;
 }
-.tokendisplayitem-parent,
+.coinlisting,
 .wallethome {
   display: flex;
   flex-direction: column;
-  padding: var(--padding-5xs);
   justify-content: flex-start;
   gap: var(--gap-lg);
 }
-.tokendisplayitem-parent {
+.coinlisting {
   align-self: stretch;
+  padding: 0 var(--padding-5xs) var(--padding-5xs);
   align-items: flex-start;
   text-align: left;
   font-size: var(--font-size-3xl);
@@ -441,7 +441,7 @@
   position: relative;
   background-color: var(--color-white1);
   width: 100%;
-  height: 789px;
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: center;
   text-align: right;
