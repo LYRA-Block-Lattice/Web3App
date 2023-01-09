@@ -1,5 +1,5 @@
 import { put, takeLatest, takeEvery, getContext } from "redux-saga/effects";
-//import { push } from "connected-react-router";
+import { push } from "redux-first-history";
 import { LyraCrypto } from "lyra-crypto";
 import AES from "crypto-js/aes";
 import CryptoJS from "crypto-js";
@@ -63,7 +63,7 @@ function* createWallet(action) {
   yield persist.setData(wds);
   yield put({ type: actionTypes.WALLET_CREATE_DONE, payload: wds });
 
-  //yield put(push("/wallet/open"));
+  yield put(push("/"));
 }
 
 function* restoreWallet(action) {
@@ -106,8 +106,7 @@ function* restoreWallet(action) {
 
   yield persist.setData(wds);
   yield put({ type: actionTypes.WALLET_RESTORE_DONE, payload: wds });
-
-  //yield put(push("/wallet/open"));
+  yield put(push("/openwallet"));
 }
 
 function* removeWallet(action) {
@@ -149,7 +148,7 @@ function* openWallet(action) {
         JSON.stringify({ pass: action.payload.password, pvt: prvKey })
       );
 
-      //yield put(push("/wallet"));
+      yield put(push("/#"));
     }
   } catch (err) {
     yield put({ type: actionTypes.WALLET_OPEN_FAILED, payload: err });
@@ -162,7 +161,7 @@ function* closeWallet() {
   yield ws.close();
   ws = null;
   yield put({ type: actionTypes.WALLET_CLOSED });
-  //yield put(push("/"));
+  yield put(push("/"));
 }
 
 function* receive(action) {
@@ -324,7 +323,7 @@ function* dexSignIn(action) {
 
     yield put({ type: actionTypes.DEX_SIGNIN_OK, payload: data });
 
-    //yield put(push("/swap"));
+    yield put(push("/swap"));
   } catch (error) {
     console.log(error);
     yield put({
@@ -343,7 +342,7 @@ function* dexSignUp(action) {
 
     yield put({ type: actionTypes.DEX_SIGNUP_OK, payload: data });
 
-    //yield put(push("/swap"));
+    yield put(push("/swap"));
   } catch (error) {
     console.log(error);
     yield put({

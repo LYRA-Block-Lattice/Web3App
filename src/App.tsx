@@ -1,9 +1,5 @@
-import {
-  Routes,
-  Route,
-  useNavigationType,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import WalletHome from "./pages/WalletHome";
 import Market from "./pages/Market";
 import AssertDetailView from "./pages/AssertDetailView";
@@ -27,10 +23,12 @@ import OpenWallet from "./pages/OpenWallet";
 import TransactionHistory from "./pages/TransactionHistory";
 import OldV1UI from "./pages/OldV1UI";
 import { useEffect } from "react";
+import { getRouterSelector } from "./app/selectors";
 
 function App() {
-  const action = useNavigationType();
-  const location = useLocation();
+  const router = useSelector(getRouterSelector);
+  const action = router.action;
+  const location = router.location;
   const pathname = location.pathname;
 
   useEffect(() => {

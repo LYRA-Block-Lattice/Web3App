@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 import "./OpenWallet.css";
 
 import * as actionTypes from "../app/actionTypes";
-import { getWalletNamesSelector } from "../app/walletSelectors";
+import { getWalletNamesSelector } from "../app/selectors";
 
 const OpenWallet: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -66,7 +66,7 @@ const OpenWallet: FunctionComponent = () => {
           onChange={handleChange}
           value={index.toString()}
         >
-          {names?.map((name, index) => (
+          {names?.map((name: any, index: any) => (
             <MenuItem key={index} value={index}>
               {name}
             </MenuItem>
