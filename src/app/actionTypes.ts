@@ -1,5 +1,8 @@
 // have a look on https://github.com/erikras/ducks-modular-redux
 
+export const ERROR = "ERROR";
+export const ERROR_CLEAR = "ERROR_CLEAR";
+
 export const STORE_ERROR = "STORE_ERROR";
 
 export const STORE_INIT = "STORE_INIT";

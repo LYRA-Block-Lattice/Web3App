@@ -89,6 +89,16 @@ function* receive(action) {
 
 function* send(action) {
   try {
+    if (ws === undefined) {
+      // wallet was not open.
+      yield put({
+        type: actionTypes.ERROR,
+        payload: { error: "Wallet was not open." }
+      });
+
+      return;
+    }
+
     if (ws.state === WebsocketReadyStates.CLOSED) {
       yield ws.open();
     }
@@ -110,7 +120,7 @@ function* send(action) {
     yield put({
       type: actionTypes.WSRPC_CALL_FAILED,
       payload: {
-        error: error,
+        error: error.error.message,
         tag: action.payload.tag
       }
     });

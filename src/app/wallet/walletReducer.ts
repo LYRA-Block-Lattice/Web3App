@@ -30,7 +30,7 @@ export interface IWalletState {
   opening: Boolean;
   password: String;
   tx: ITxInfo;
-  error: {} | null;
+  error: string | null;
 }
 
 export interface IAction {
@@ -227,6 +227,16 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
           unrecvcnt: 0,
           unrecvlyr: 0
         }
+      };
+    case actionTypes.ERROR:
+      return {
+        ...state,
+        error: action.payload.error
+      };
+    case actionTypes.ERROR_CLEAR:
+      return {
+        ...state,
+        error: null
       };
     default: {
       return state;
