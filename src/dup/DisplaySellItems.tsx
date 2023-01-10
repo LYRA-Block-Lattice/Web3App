@@ -10,21 +10,16 @@ export default function DisplaySellItems() {
   useEffect(() => {
     fetch("https://dealerdevnet.lyra.live/api/dealer/Orders")
       .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log("Got orders result", result);
-          setIsLoaded(true);
-          setItems(result);
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          console.log("Error loading orders!", error);
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
+      .then((result) => {
+        console.log("Got orders result", result);
+        setIsLoaded(true);
+        setItems(result);
+      })
+      .catch((error) => {
+        console.log("Error loading orders! Check network connection.", error);
+        setIsLoaded(true);
+        setError(error);
+      });
   }, []);
 
   if (error) {
@@ -34,7 +29,7 @@ export default function DisplaySellItems() {
   } else {
     return (
       <>
-        {items.map((blk) => (
+        {items?.map((blk) => (
           <MarketOrder
             key={(blk as any).AccountID}
             orderId={(blk as any).AccountID}

@@ -1,5 +1,7 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { getAppSelector } from "../app/selectors";
 import DisplaySellItems from "../dup/DisplaySellItems";
 
 import "./Market.css";
@@ -12,6 +14,7 @@ declare const window: customWindow;
 
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
+  const app = useSelector(getAppSelector);
 
   const onBalanceDisplayZoneClick = useCallback(() => {
     navigate("/");
@@ -43,9 +46,9 @@ const Market: FunctionComponent = () => {
               className="balance-display-zone1"
               onClick={onBalanceDisplayZoneClick}
             >
-              <b className="wallet-name-label1">My Primary Account</b>
+              <b className="wallet-name-label1">{app.name}</b>
               <div className="balance-display-zone-inner" />
-              <b className="usdtbalance2">1,025,000</b>
+              <b className="usdtbalance2">{app.wallet.balance}</b>
               <b className="lyrlabel1">LYR</b>
               <div className="rectangle-div" />
             </button>
