@@ -43,13 +43,13 @@
   text-align: center;
 }
 .createnftform,
-.prepare-sell-order-button16 {
+.prepare-sell-order-button17 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button16 {
+.prepare-sell-order-button17 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);

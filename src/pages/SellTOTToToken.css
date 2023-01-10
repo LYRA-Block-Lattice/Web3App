@@ -37,7 +37,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button9 {
+.prepare-sell-order-button10 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -72,7 +72,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button10 {
+.prepare-sell-order-button11 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
