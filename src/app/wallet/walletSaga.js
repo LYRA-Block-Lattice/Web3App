@@ -138,7 +138,7 @@ function* createWS() {
   ws = new JsonRpcWebsocket(url, requestTimeoutMs, (error) => {
     console.log("websocket error", error);
     // reconnect
-    dispatch({ type: actionTypes.WSRPC_CLOSED, payload: error });
+    dispatch({ type: actionTypes.WSRPC_CLOSED, payload: error.message });
   });
 
   try {
