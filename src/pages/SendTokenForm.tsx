@@ -5,6 +5,9 @@ import "./SendTokenForm.css";
 const SendTokenForm: FunctionComponent = () => {
   return (
     <div className="sendtokenform">
+      <div className="asserttitlesection">
+        <div className="send-token">Send Token</div>
+      </div>
       <Autocomplete
         sx={{ width: 301 }}
         disablePortal

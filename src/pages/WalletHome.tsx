@@ -10,7 +10,7 @@ const WalletHome: FunctionComponent = () => {
     navigate("/market");
   }, [navigate]);
 
-  const onMintButtonClick = useCallback(() => {
+  const onSendButtonClick = useCallback(() => {
     navigate("/sendtokenform");
   }, [navigate]);
 
@@ -83,7 +83,7 @@ const WalletHome: FunctionComponent = () => {
               />
               <div className="ranking">Swap</div>
             </button>
-            <button className="swap-button" onClick={onMintButtonClick}>
+            <button className="swap-button" onClick={onSendButtonClick}>
               <img
                 className="home-icon-interlocution"
                 alt=""
