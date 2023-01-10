@@ -45,6 +45,10 @@ const OpenWallet: FunctionComponent = () => {
     });
   }, [names, name, index, password, dispatch]);
 
+  const onSignUpClick = useCallback(() => {
+    navigate("/create-wallet");
+  }, [navigate]);
+
   return (
     <div className="openwallet">
       <b className="sign-in">Open Wallet</b>
@@ -101,7 +105,7 @@ const OpenWallet: FunctionComponent = () => {
         <div className="label">Open</div>
       </button>
       <div className="sign-up-parent">
-        <button className="sign-up1" onClick={onOpenWallet}>
+        <button className="sign-up1" onClick={onSignUpClick}>
           Create Wallet
         </button>
         <button className="forgot-password-copy">Forgot password?</button>

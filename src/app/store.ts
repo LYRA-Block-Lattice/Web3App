@@ -33,7 +33,8 @@ const { createReduxHistory, routerMiddleware, routerReducer } =
 
 const persistConfig = {
   key: "root",
-  storage
+  storage,
+  blacklist: ["router"]
 };
 
 const rootReducer = combineReducers({

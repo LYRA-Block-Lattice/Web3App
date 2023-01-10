@@ -3,8 +3,8 @@ import { push } from "redux-first-history";
 import { LyraCrypto } from "lyra-crypto";
 
 import * as actionTypes from "../actionTypes";
-import persist from "../../lyra/persist";
-import * as Dex from "../../lyra/dexapi";
+import persist from "../lyra/persist";
+import * as Dex from "../lyra/dexapi";
 
 import {
   JsonRpcWebsocket,
@@ -108,10 +108,10 @@ function* send(action) {
       action.payload.destaddr,
       action.payload.tokenname
     ]);
-    yield put({
-      type: actionTypes.WALLET_BALANCE,
-      payload: balanceResp.result
-    });
+    // yield put({
+    //   type: actionTypes.WALLET_BALANCE,
+    //   payload: balanceResp.result
+    // });
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
       payload: { tag: action.payload.tag }
@@ -128,10 +128,10 @@ function* send(action) {
 }
 
 function* createWS() {
-  console.log("creating ws for", network);
   var url = "wss://testnet.lyra.live/api/v1/socket";
   if (network === "mainnet") url = "wss://mainnet.lyra.live/api/v1/socket";
-  if (network === "devnet") url = "wss://localhost:4504/api/v1/socket";
+  if (network === "devnet") url = "wss://devnet.lyra.live/api/v1/socket";
+  console.log(`creating ws for ${network} using url ${url}`);
 
   const requestTimeoutMs = 10000;
 

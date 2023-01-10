@@ -17,6 +17,7 @@ const WalletHome: FunctionComponent = () => {
   const [bidcnt, setBidcnt] = useState(0);
 
   useEffect(() => {
+    dispatch({ type: actionTypes.SIGNALR_CONNECT });
     dispatch({ type: actionTypes.WALLET_GET_BALANCE });
   }, [dispatch]);
 
