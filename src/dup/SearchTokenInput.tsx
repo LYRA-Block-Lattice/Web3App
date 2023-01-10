@@ -11,7 +11,7 @@ interface customWindow extends Window {
 }
 declare const window: customWindow;
 
-interface IToken {
+export interface IToken {
   token: string;
   domain: string;
   isTOT: boolean;

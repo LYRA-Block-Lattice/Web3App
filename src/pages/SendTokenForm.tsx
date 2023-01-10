@@ -1,25 +1,22 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import "./SendTokenForm.css";
+import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
 
 const SendTokenForm: FunctionComponent = () => {
+  const onSellChange = (value: any) => {
+    console.log("onSellChange: " + value);
+  };
+
   return (
     <div className="sendtokenform">
-      <Autocomplete
-        sx={{ width: 301 }}
-        disablePortal
-        options={["aaa", "bbb", "ccc"]}
-        renderInput={(params: any) => (
-          <TextField
-            {...params}
-            color="primary"
-            label="Token Name"
-            variant="outlined"
-            placeholder=""
-            helperText=""
-          />
-        )}
-        size="medium"
+      <SearchTokenInput
+        key="tosend"
+        val={{ token: "LYR", name: "LYR" } as IToken}
+        dir="Sell"
+        cat="Token"
+        ownOnly={true}
+        onTokenSelect={onSellChange}
       />
       <TextField
         className="tokentosell"

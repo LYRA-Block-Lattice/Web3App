@@ -5,20 +5,13 @@ import PortalPopup from "../components/PortalPopup";
 import { useSearchParams } from "react-router-dom";
 import PriceAndCollateralForm from "../components/PriceAndCollateralForm";
 import "./SellTokenToToken.css";
-import SearchTokenInput from "../dup/SearchTokenInput";
+import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
 
 interface customWindow extends Window {
   rrComponent?: any;
   rrProxy?: any;
 }
 declare const window: customWindow;
-
-interface IToken {
-  token: string;
-  domain: string;
-  isTOT: boolean;
-  name: string;
-}
 
 const SellTokenToToken: FunctionComponent = () => {
   //const [isDisabled, setDisabled] = useState<boolean>(false);
