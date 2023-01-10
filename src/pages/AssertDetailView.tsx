@@ -129,7 +129,7 @@ const AssertDetailView: FunctionComponent = () => {
         </div>
         <div className="makeofferbutton">
           <button
-            className="prepare-sell-order-button"
+            className="prepare-sell-order-button1"
             onClick={onPrepareSellOrderButtonClick}
           >
             <img
@@ -137,7 +137,7 @@ const AssertDetailView: FunctionComponent = () => {
               alt=""
               src="../asserts/evapricetagsoutline.svg"
             />
-            <div className="primary-button">Make offer</div>
+            <div className="primary-button1">Make offer</div>
           </button>
         </div>
         <div className="descriptiontitle">

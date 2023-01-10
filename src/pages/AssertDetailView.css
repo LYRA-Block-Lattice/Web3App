@@ -243,7 +243,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.primary-button {
+.primary-button1 {
   position: relative;
   font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
@@ -254,14 +254,14 @@
   text-align: center;
 }
 .makeofferbutton,
-.prepare-sell-order-button {
+.prepare-sell-order-button1 {
   align-self: stretch;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button {
+.prepare-sell-order-button1 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);
@@ -273,8 +273,8 @@
   box-sizing: border-box;
   gap: var(--gap-lg);
 }
-.prepare-sell-order-button:hover {
-  background-color: #766ae7;
+.prepare-sell-order-button1:hover {
+  background-color: var(--color-indigo-100);
 }
 .makeofferbutton {
   background-color: var(--color-white1);

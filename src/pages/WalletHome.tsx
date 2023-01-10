@@ -10,6 +10,10 @@ const WalletHome: FunctionComponent = () => {
     navigate("/market");
   }, [navigate]);
 
+  const onMintButtonClick = useCallback(() => {
+    navigate("/sendtokenform");
+  }, [navigate]);
+
   return (
     <div className="wallethome">
       <div className="wallet-card">
@@ -79,13 +83,13 @@ const WalletHome: FunctionComponent = () => {
               />
               <div className="ranking">Swap</div>
             </button>
-            <button className="swap-button">
+            <button className="swap-button" onClick={onMintButtonClick}>
               <img
                 className="home-icon-interlocution"
                 alt=""
                 src="../asserts/home--icon--interlocution2.svg"
               />
-              <div className="ranking">DEX</div>
+              <div className="ranking">Send</div>
             </button>
             <button className="swap-button">
               <img
@@ -93,7 +97,7 @@ const WalletHome: FunctionComponent = () => {
                 alt=""
                 src="../asserts/home--icon--interlocution3.svg"
               />
-              <div className="ranking">DAO</div>
+              <div className="ranking">DEX</div>
             </button>
             <button className="swap-button">
               <img
@@ -101,7 +105,7 @@ const WalletHome: FunctionComponent = () => {
                 alt=""
                 src="../asserts/home--icon--interlocution4.svg"
               />
-              <div className="ranking">Staking</div>
+              <div className="ranking">DAO</div>
             </button>
             <button className="swap-button">
               <img
@@ -109,7 +113,7 @@ const WalletHome: FunctionComponent = () => {
                 alt=""
                 src="../asserts/home--icon--interlocution5.svg"
               />
-              <div className="ranking">Mint</div>
+              <div className="ranking">Staking</div>
             </button>
           </div>
         </div>

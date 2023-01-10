@@ -5,6 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import WalletHome from "./pages/WalletHome";
+import SendTokenForm from "./pages/SendTokenForm";
 import Market from "./pages/Market";
 import AssertDetailView from "./pages/AssertDetailView";
 import MintFiatToken from "./pages/MintFiatToken";
@@ -45,6 +46,10 @@ function App() {
 
     switch (pathname) {
       case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/sendtokenform":
         title = "";
         metaDescription = "";
         break;
@@ -151,6 +156,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<WalletHome />} />
+
+      <Route path="/sendtokenform" element={<SendTokenForm />} />
 
       <Route path="/market" element={<Market />} />
 

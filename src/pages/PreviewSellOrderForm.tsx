@@ -38,10 +38,10 @@ Bank of America
         }
       />
       <button
-        className="prepare-sell-order-button15"
+        className="prepare-sell-order-button16"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button1">Place Order</div>
+        <div className="primary-button2">Place Order</div>
       </button>
     </div>
   );
