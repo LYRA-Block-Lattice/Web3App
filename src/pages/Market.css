@@ -147,14 +147,14 @@
   padding: var(--padding-5xs);
   box-sizing: border-box;
 }
-.home-icon-interlocution6 {
+.home-icon-interlocution10 {
   position: relative;
   width: 40px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.ranking6 {
+.ranking10 {
   position: relative;
   font-size: var(--caption1-size);
   line-height: 18px;
@@ -162,7 +162,7 @@
   color: var(--black-000000100);
   text-align: left;
 }
-.swap-button2 {
+.dex-button {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -177,7 +177,7 @@
   align-items: center;
   justify-content: center;
 }
-.ranking9 {
+.ranking13 {
   position: relative;
   font-size: var(--other-m-size);
   line-height: 18px;
@@ -185,7 +185,7 @@
   color: var(--black-000000100);
   text-align: left;
 }
-.swap-button-group {
+.swap-button-container {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -195,12 +195,12 @@
   gap: var(--gap-lg);
 }
 .iconssection-container,
-.iconssection1 {
+.iconssection2 {
   align-self: stretch;
   display: flex;
   flex-direction: column;
 }
-.iconssection1 {
+.iconssection2 {
   border-radius: var(--br-sm);
   background-color: var(--color-gray-100);
   padding: var(--padding-6xs) var(--padding-5xs);
