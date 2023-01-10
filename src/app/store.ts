@@ -48,10 +48,13 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // Create the saga middleware
+const context = {
+  Market: marketApi,
+  dispatch: {}
+};
+
 const sagaMiddleware = createSagaMiddleware({
-  context: {
-    Market: marketApi
-  }
+  context
 });
 
 const preloadedState = {};
@@ -71,6 +74,8 @@ export const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
   preloadedState
 });
+
+context.dispatch = store.dispatch;
 
 export const persistor = persistStore(store);
 
