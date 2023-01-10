@@ -21,11 +21,12 @@ import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 
+import * as marketApi from "./market/marketApi";
 import walletReducer from "./wallet/walletReducer";
 import dexReducer from "./wallet/dexReducer";
 import counterReducer from "../features/counter/counterSlice";
-
 import rootSaga from "./sagas";
+import marketReducer from "./market/marketReducer";
 
 const { createReduxHistory, routerMiddleware, routerReducer } =
   createReduxHistoryContext({ history: createBrowserHistory() });
@@ -37,6 +38,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   app: walletReducer,
+  market: marketReducer,
   dex: dexReducer,
   counter: counterReducer,
   router: routerReducer
@@ -45,7 +47,11 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // Create the saga middleware
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware({
+  context: {
+    Market: marketApi
+  }
+});
 
 const preloadedState = {};
 

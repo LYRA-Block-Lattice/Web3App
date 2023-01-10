@@ -15,6 +15,11 @@ const getApp = (state: RootState) => state.app;
 // export it as a selector
 export const getAppSelector = createSelector(getApp, (app) => app);
 
+// get market state
+const getMarket = (state: RootState) => state.market;
+// export it as a selector
+export const getMarketSelector = createSelector(getMarket, (market) => market);
+
 // get router properties from state
 const getRouter = (state: RootState) => state.router;
 // export it as a selector

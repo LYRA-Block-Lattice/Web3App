@@ -2,10 +2,12 @@ import * as actionTypes from "../actionTypes";
 import { IAction } from "../wallet/walletReducer";
 
 export interface IMarketState {
+  orders: [];
   error: {} | null;
 }
 
 const initState: IMarketState = {
+  orders: [],
   error: null
 };
 
@@ -15,9 +17,10 @@ const marketReducer = (state = initState, action: IAction): IMarketState => {
   }
 
   switch (action.type) {
-    case actionTypes.WALLET_CHANGE_NETWORK:
+    case actionTypes.MARKET_GET_ORDERS_SUCCESS:
       return {
-        ...state
+        ...state,
+        orders: action.payload
       };
     default: {
       return state;
