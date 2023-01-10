@@ -1,6 +1,5 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import MarketOrder from "../components/MarketOrder";
 import DisplaySellItems from "../dup/DisplaySellItems";
 
 import "./Market.css";
@@ -13,26 +12,6 @@ declare const window: customWindow;
 
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
-
-  const [lyrbns, setLyrbns] = useState(0);
-  const [usdt, setUsdt] = useState(0);
-
-  const [nftcnt, setNftcnt] = useState(0);
-  const [totcnt, setTotcnt] = useState(0);
-  const [sellcnt, setSellcnt] = useState(0);
-  const [bidcnt, setBidcnt] = useState(0);
-
-  // function to get json from rest api
-  const getJson = async (url: string) => {
-    const response = await fetch(url);
-    return response.json();
-  };
-
-  // function to get web content from rest api
-  const getWebContent = async (url: string) => {
-    const response = await fetch(url);
-    return response.text();
-  };
 
   const onBalanceDisplayZoneClick = useCallback(() => {
     navigate("/");
