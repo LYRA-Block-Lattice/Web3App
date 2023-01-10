@@ -4,6 +4,7 @@ export const STORE_ERROR = "STORE_ERROR";
 
 export const STORE_INIT = "STORE_INIT";
 export const STORE_INIT_DONE = "STORE_INIT_DONE";
+export const STORE_SAVE_PREF = "STORE_SAVE_PREF";
 
 export const WALLET_CREATE = "WALLET_CREATE";
 export const WALLET_CREATE_DONE = "WALLET_CREATE_DONE";

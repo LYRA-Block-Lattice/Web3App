@@ -6,14 +6,13 @@ import CryptoJS from "crypto-js";
 
 import * as actionTypes from "../actionTypes";
 import persist from "../../lyra/persist";
-import { IAction } from "../walletreducer";
 
 function* checkWalletExists() {
   const data = yield persist.checkData();
   yield put({ type: actionTypes.STORE_INIT_DONE, payload: data });
 }
 
-function* createWallet(action: IAction) {
+function* createWallet(action) {
   var w = LyraCrypto.GenerateWallet();
   var encData = AES.encrypt(w.privateKey, action.payload.password);
 
@@ -180,4 +179,5 @@ export default function* persistSaga() {
   yield takeEvery(actionTypes.WALLET_REMOVE, removeWallet);
   yield takeEvery(actionTypes.WALLET_OPEN, openWallet);
   yield takeEvery(actionTypes.WALLET_CLOSE, closeWallet);
+  yield takeEvery(actionTypes.STORE_SAVE_PREF, savePref);
 }
