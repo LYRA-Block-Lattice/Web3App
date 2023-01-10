@@ -66,39 +66,39 @@ const Market: FunctionComponent = () => {
         </div>
       </div>
       <div className="iconssection-container">
-        <div className="iconssection1">
-          <div className="swap-button-group">
-            <button className="swap-button2" onClick={onSwapButtonClick}>
+        <div className="iconssection2">
+          <div className="swap-button-container">
+            <button className="dex-button" onClick={onSwapButtonClick}>
               <img
-                className="home-icon-interlocution6"
+                className="home-icon-interlocution10"
                 alt=""
-                src="../asserts/home--icon--interlocution6.svg"
+                src="../asserts/home--icon--interlocution10.svg"
               />
-              <div className="ranking6">New Sell</div>
+              <div className="ranking10">New Sell</div>
             </button>
-            <button className="swap-button2" onClick={onSwapButton1Click}>
+            <button className="dex-button" onClick={onSwapButton1Click}>
               <img
-                className="home-icon-interlocution6"
+                className="home-icon-interlocution10"
                 alt=""
-                src="../asserts/home--icon--interlocution7.svg"
+                src="../asserts/home--icon--interlocution11.svg"
               />
-              <div className="ranking6">My Orders</div>
+              <div className="ranking10">My Orders</div>
             </button>
-            <button className="swap-button2" onClick={onDEXButtonClick}>
+            <button className="dex-button" onClick={onDEXButtonClick}>
               <img
-                className="home-icon-interlocution6"
+                className="home-icon-interlocution10"
                 alt=""
-                src="../asserts/home--icon--interlocution8.svg"
+                src="../asserts/home--icon--interlocution12.svg"
               />
-              <div className="ranking6">My Trades</div>
+              <div className="ranking10">My Trades</div>
             </button>
-            <button className="swap-button2">
+            <button className="dex-button">
               <img
-                className="home-icon-interlocution6"
+                className="home-icon-interlocution10"
                 alt=""
-                src="../asserts/home--icon--interlocution9.svg"
+                src="../asserts/home--icon--interlocution13.svg"
               />
-              <div className="ranking9">ODR</div>
+              <div className="ranking13">ODR</div>
             </button>
           </div>
         </div>
