@@ -10,6 +10,9 @@ const SendTokenForm: FunctionComponent = () => {
 
   return (
     <div className="sendtokenform">
+      <div className="asserttitlesection">
+        <div className="send-token">Send Token</div>
+      </div>
       <SearchTokenInput
         key="tosend"
         val={{ token: "LYR", name: "LYR" } as IToken}

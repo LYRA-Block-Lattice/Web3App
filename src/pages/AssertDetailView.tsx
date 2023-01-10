@@ -26,7 +26,7 @@ const AssertDetailView: FunctionComponent = () => {
               />
             </div>
           </div>
-          <div className="asserttitlesection">
+          <div className="asserttitlesection1">
             <div className="meka-legends">Meka Legends # 500</div>
           </div>
           <div className="assertownersection">
