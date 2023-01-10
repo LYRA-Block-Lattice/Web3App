@@ -30,11 +30,12 @@ const WalletHome: FunctionComponent = () => {
     else {
       return (
         <>
-          {Object.keys(app.wallet.balances).map((a) => (
+          {app.wallet.balances.map((a) => (
             <TokenDisplayItem
+              key={a.token}
               coinIcon="../asserts/lyralogoblackicon@2x.png"
-              coinName={a}
-              amountText={app.wallet.balances[a]}
+              coinName={a.token}
+              amountText={a.balance?.toString()}
               amountWorth="$2"
             />
           ))}

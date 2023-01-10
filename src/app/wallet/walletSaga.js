@@ -46,9 +46,11 @@ function* getBalance(action) {
           undefined
             ? 0
             : ret.Balances["tether/USDT"] / 100000000,
-        balances: Object.fromEntries(
-          Object.entries(ret.Balances).map(([k, v]) => [k, v / 100000000])
-        )
+        balances: Object.entries(ret.Balances).map(([k, v]) => [
+          k,
+          v / 100000000
+        ])
+
         // TODO: set unreceived args
       }
     });

@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { PersistGate } from "redux-persist/integration/react";
 import reportWebVitals from "./reportWebVitals";
 import { Provider, connect } from "react-redux";
 import { HistoryRouter as Router } from "redux-first-history/rr6";
-import { store, history } from "./app/store";
+import { store, persistor, history } from "./app/store";
 import {
   CssBaseline,
   ThemeProvider,
@@ -25,14 +26,16 @@ const container = document.getElementById("root")!;
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={muiTheme}>
-          <CssBaseline />
-          <App />
-        </ThemeProvider>
-      </StyledEngineProvider>
-    </Router>
+    <PersistGate loading={null} persistor={persistor}>
+      <Router history={history}>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={muiTheme}>
+            <CssBaseline />
+            <App />
+          </ThemeProvider>
+        </StyledEngineProvider>
+      </Router>
+    </PersistGate>
   </Provider>,
   container
 );

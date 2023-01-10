@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
+
 import WalletHome from "./pages/WalletHome";
 import Market from "./pages/Market";
 import AssertDetailView from "./pages/AssertDetailView";
@@ -29,7 +30,7 @@ function App() {
   const router = useSelector(getRouterSelector);
   const action = router.action;
   const location = router.location;
-  const pathname = location.pathname;
+  const pathname = location!.pathname;
 
   useEffect(() => {
     if (action !== "POP") {

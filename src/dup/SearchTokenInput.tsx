@@ -3,17 +3,13 @@ import { Autocomplete, TextField } from "@mui/material";
 import "./SearchTokenInput.css";
 import { useSelector } from "react-redux";
 import { getAppSelector } from "../app/selectors";
+import { IBalance } from "../app/wallet/walletReducer";
 
 interface customWindow extends Window {
   rrComponent?: any;
   rrProxy?: any;
 }
 declare const window: customWindow;
-
-interface IBalance {
-  token: string;
-  balance: number;
-}
 
 interface IToken {
   token: string;
