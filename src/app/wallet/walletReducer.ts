@@ -1,5 +1,5 @@
 import { Interface } from "readline";
-import * as actionTypes from "./actionTypes";
+import * as actionTypes from "../actionTypes";
 
 export interface IWalletInfo {
   accountId: String | undefined;

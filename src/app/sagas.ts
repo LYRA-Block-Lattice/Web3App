@@ -1,10 +1,11 @@
 import { all, call, spawn } from "redux-saga/effects";
-import persistSaga from "./api/persistSaga";
-import walletSaga from "./api/walletSaga";
+import marketSaga from "./market/marketSaga";
+import persistSaga from "./storage/persistSaga";
+import walletSaga from "./wallet/walletSaga";
 
 export default function* rootSaga() {
   console.log("rootSaga is running.");
-  const sagas = [persistSaga, walletSaga];
+  const sagas = [persistSaga, walletSaga, marketSaga];
 
   yield all(
     sagas.map((saga) =>

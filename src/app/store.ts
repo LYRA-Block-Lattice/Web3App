@@ -10,8 +10,8 @@ import { createBrowserHistory } from "history";
 import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
 
-import walletReducer from "./walletreducer";
-import dexReducer from "./dexreducer";
+import walletReducer from "./wallet/walletReducer";
+import dexReducer from "./wallet/dexReducer";
 import counterReducer from "../features/counter/counterSlice";
 
 import rootSaga from "./sagas";

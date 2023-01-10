@@ -48,3 +48,6 @@ export const DEX_SIGNUP = "DEX_SIGNUP";
 export const DEX_SIGNUP_OK = "DEX_SIGNUP_OK";
 export const DEX_SIGNIN = "DEX_SIGNIN";
 export const DEX_SIGNIN_OK = "DEX_SIGNIN_OK";
+
+export const MARKET_GET_ORDERS = "MARKET_GET_ORDERS";
+export const MARKET_GET_ORDERS_SUCCESS = "MARKET_GET_ORDERS_SUCCESS";
