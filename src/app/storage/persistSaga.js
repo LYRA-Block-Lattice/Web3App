@@ -137,13 +137,13 @@ function* openWallet(action) {
       wds.accountId = exitsWallet.accountId;
       yield persist.setData(wds);
 
-      yield put({
-        type: actionTypes.WSRPC_CREATE,
-        payload: {
-          network: pdata.pref.network,
-          accountId: exitsWallet.accountId
-        }
-      });
+      // yield put({
+      //   type: actionTypes.WSRPC_CREATE,
+      //   payload: {
+      //     network: pdata.pref.network,
+      //     accountId: exitsWallet.accountId
+      //   }
+      // });
       sessionStorage.setItem(
         "token",
         JSON.stringify({ pass: action.payload.password, pvt: prvKey })

@@ -11,7 +11,6 @@ import {
   WebsocketReadyStates
 } from "jsonrpc-client-websocket";
 
-let ws;
 let dispatch;
 
 function* getBalance(action) {
@@ -62,19 +61,9 @@ function* getBalance(action) {
 
 function* receive(action) {
   try {
-    if (ws === undefined) {
-      // wallet was not open.
-      yield put({
-        type: actionTypes.ERROR,
-        payload: { error: "Wallet was not open." }
-      });
+    dispatch = yield getContext("dispatch");
+    const ws = yield createWS();
 
-      return;
-    }
-
-    if (ws.state === WebsocketReadyStates.CLOSED) {
-      yield ws.open();
-    }
     const accountId = action.payload;
     const balanceResp = yield ws.call("Receive", [accountId]);
     yield put({
@@ -98,19 +87,9 @@ function* receive(action) {
 
 function* send(action) {
   try {
-    if (ws === undefined) {
-      // wallet was not open.
-      yield put({
-        type: actionTypes.ERROR,
-        payload: { error: "Wallet was not open." }
-      });
+    dispatch = yield getContext("dispatch");
+    const ws = yield createWS();
 
-      return;
-    }
-
-    if (ws.state === WebsocketReadyStates.CLOSED) {
-      yield ws.open();
-    }
     const balanceResp = yield ws.call("Send", [
       action.payload.accountId,
       action.payload.amount,
@@ -145,7 +124,7 @@ function* createWS() {
 
   const requestTimeoutMs = 10000;
 
-  ws = new JsonRpcWebsocket(url, requestTimeoutMs, (error) => {
+  const ws = new JsonRpcWebsocket(url, requestTimeoutMs, (error) => {
     console.log("websocket error", error);
     // reconnect
     dispatch({ type: actionTypes.WSRPC_CLOSED, payload: error.message });
@@ -213,12 +192,8 @@ function* createWS() {
     yield put({ type: actionTypes.WSRPC_STATUS_FAILED, payload: error });
   }
 
-  yield put({ type: actionTypes.WSRPC_CREATED });
-}
-
-function* wsrpc(action) {
-  dispatch = yield getContext("dispatch");
-  yield createWS();
+  return ws;
+  //yield put({ type: actionTypes.WSRPC_CREATED });
 }
 
 function* dexSignIn(action) {
@@ -260,7 +235,7 @@ export default function* walletSaga() {
   console.log("walletSaga is running.");
 
   yield takeLatest(actionTypes.WALLET_GET_BALANCE, getBalance);
-  yield takeEvery(actionTypes.WSRPC_CREATE, wsrpc);
+  //yield takeEvery(actionTypes.WSRPC_CREATE, wsrpc);
   yield takeEvery(actionTypes.WSRPC_CLOSED, createWS);
   yield takeEvery(actionTypes.WALLET_RECEIVE, receive);
   yield takeEvery(actionTypes.WALLET_SEND, send);
