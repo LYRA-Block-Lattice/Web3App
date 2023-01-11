@@ -15,6 +15,7 @@ declare const window: customWindow;
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
   const app = useSelector(getAppSelector);
+  const [cat, setCat] = useState("");
 
   const onBalanceDisplayZoneClick = useCallback(() => {
     navigate("/");
@@ -113,7 +114,7 @@ const Market: FunctionComponent = () => {
       <div className="orderandcatalog">
         <div className="tradableorderssection1">
           <div className="catalogtab1">
-            <button className="tokentab1">
+            <button className="tokentab1" onClick={() => setCat("")}>
               <b className="token1">Token</b>
               <div className="ellipse-container">
                 <img
@@ -124,7 +125,7 @@ const Market: FunctionComponent = () => {
                 <div className="div2">18</div>
               </div>
             </button>
-            <button className="nft-tab1">
+            <button className="nft-tab1" onClick={() => setCat("nft/")}>
               <b className="token1">NFT</b>
               <div className="ellipse-container">
                 <img
@@ -135,13 +136,13 @@ const Market: FunctionComponent = () => {
                 <div className="div2">18</div>
               </div>
             </button>
-            <button className="fiat-tab1">
+            <button className="fiat-tab1" onClick={() => setCat("fiat/")}>
               <b className="fiat1">Fiat</b>
             </button>
-            <button className="fiat-tab1">
+            <button className="fiat-tab1" onClick={() => setCat("tot/")}>
               <b className="fiat1">Goods</b>
             </button>
-            <button className="fiat-tab1">
+            <button className="fiat-tab1" onClick={() => setCat("svc/")}>
               <b className="fiat1">Service</b>
             </button>
           </div>
