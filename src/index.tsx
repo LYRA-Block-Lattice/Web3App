@@ -1,6 +1,4 @@
-import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import { PersistGate } from "redux-persist/integration/react";
 import reportWebVitals from "./reportWebVitals";
 import { Provider, connect } from "react-redux";
@@ -13,7 +11,7 @@ import {
   StyledEngineProvider
 } from "@mui/material";
 import "./global.css";
-import { ToastContainer } from "react-toastify";
+import Shell from "./Shell";
 
 const muiTheme = createTheme();
 
@@ -32,8 +30,7 @@ ReactDOM.render(
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={muiTheme}>
             <CssBaseline />
-            <App />
-            <ToastContainer theme="colored" />
+            <Shell />
           </ThemeProvider>
         </StyledEngineProvider>
       </Router>

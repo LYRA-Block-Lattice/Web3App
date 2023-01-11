@@ -1,8 +1,5 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
-
 import "./SendTokenForm.css";
 import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,14 +17,6 @@ const SendTokenForm: FunctionComponent = () => {
   const [sel, setSel] = useState("");
   const [dst, setDst] = useState("");
   const [amount, setAmount] = useState(0);
-
-  useEffect(() => {
-    if (app.error != null) {
-      toast.error(app.error, {
-        onClose: () => dispatch({ type: "ERROR_CLEAR" })
-      });
-    }
-  }, [app.error]);
 
   const onSelectChange = useCallback(
     (value: any) => {
