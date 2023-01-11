@@ -45,7 +45,12 @@ const SendTokenForm: FunctionComponent = () => {
     dispatch({ type: "ERROR_CLEAR" });
     dispatch({
       type: WALLET_SEND,
-      payload: { tokenname: sel, destaddr: dst, amount: amount }
+      payload: {
+        accountId: app.wallet.accountId,
+        tokenname: sel,
+        destaddr: dst,
+        amount: amount
+      }
     });
   }, [sel, dst, amount]);
 
@@ -90,7 +95,6 @@ const SendTokenForm: FunctionComponent = () => {
       <button className="prepare-sell-order-button" onClick={doSend}>
         <div className="primary-button">Send</div>
       </button>
-      <ToastContainer theme="colored" />
     </div>
   );
 };

@@ -12,8 +12,6 @@ import {
 } from "jsonrpc-client-websocket";
 
 let ws;
-let network;
-let accountId;
 let dispatch;
 
 function* getBalance(action) {
@@ -64,12 +62,23 @@ function* getBalance(action) {
 
 function* receive(action) {
   try {
+    if (ws === undefined) {
+      // wallet was not open.
+      yield put({
+        type: actionTypes.ERROR,
+        payload: { error: "Wallet was not open." }
+      });
+
+      return;
+    }
+
     if (ws.state === WebsocketReadyStates.CLOSED) {
       yield ws.open();
     }
+    const accountId = action.payload;
     const balanceResp = yield ws.call("Receive", [accountId]);
     yield put({
-      type: actionTypes.WALLET_BALANCE,
+      type: actionTypes.WALLET_GET_BALANCE,
       payload: balanceResp.result
     });
     yield put({
@@ -103,7 +112,7 @@ function* send(action) {
       yield ws.open();
     }
     const balanceResp = yield ws.call("Send", [
-      accountId,
+      action.payload.accountId,
       action.payload.amount,
       action.payload.destaddr,
       action.payload.tokenname
@@ -120,7 +129,7 @@ function* send(action) {
     yield put({
       type: actionTypes.WSRPC_CALL_FAILED,
       payload: {
-        error: error.error.message,
+        error: error.message ?? error.error.message,
         tag: action.payload.tag
       }
     });
@@ -129,6 +138,7 @@ function* send(action) {
 
 function* createWS() {
   var url = "wss://testnet.lyra.live/api/v1/socket";
+  const network = process.env.REACT_APP_NETWORK_ID;
   if (network === "mainnet") url = "wss://mainnet.lyra.live/api/v1/socket";
   if (network === "devnet") url = "wss://devnet.lyra.live/api/v1/socket";
   console.log(`creating ws for ${network} using url ${url}`);
@@ -207,10 +217,7 @@ function* createWS() {
 }
 
 function* wsrpc(action) {
-  network = action.payload.network;
-  accountId = action.payload.accountId;
   dispatch = yield getContext("dispatch");
-
   yield createWS();
 }
 

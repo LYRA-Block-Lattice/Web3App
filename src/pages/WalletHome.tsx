@@ -31,6 +31,13 @@ const WalletHome: FunctionComponent = () => {
     navigate("/sendtokenform");
   }, [navigate]);
 
+  const onReceiveButtonClick = useCallback(() => {
+    dispatch({
+      type: actionTypes.WALLET_RECEIVE,
+      payload: app.wallet.accountId
+    });
+  }, [navigate]);
+
   const openFrame = useCallback(() => {
     setFrameOpen(true);
   }, []);
@@ -137,7 +144,7 @@ const WalletHome: FunctionComponent = () => {
                 />
                 <div className="ranking">Send</div>
               </button>
-              <button className="swap-button">
+              <button className="swap-button" onClick={onReceiveButtonClick}>
                 <img
                   className="home-icon-interlocution"
                   alt=""

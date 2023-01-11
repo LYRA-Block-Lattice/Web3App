@@ -46,6 +46,15 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
   }
 
   useEffect(() => {
+    // set selbalance if val is specified
+    if (val) {
+      setDefval(val);
+      var b = app.wallet.balances.find((a) => a.token == val.token);
+      if (b) {
+        setSelbalance(b.balance);
+      }
+    }
+
     getTokens();
   }, []);
 
@@ -133,7 +142,7 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
         )}
         size="medium"
       />
-      <div>Balance: {selbalance}</div>
+      <div className="balance">Balance: {selbalance}</div>
     </div>
   );
 };

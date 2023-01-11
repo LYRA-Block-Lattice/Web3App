@@ -13,6 +13,7 @@ import {
   StyledEngineProvider
 } from "@mui/material";
 import "./global.css";
+import { ToastContainer } from "react-toastify";
 
 const muiTheme = createTheme();
 
@@ -32,6 +33,7 @@ ReactDOM.render(
           <ThemeProvider theme={muiTheme}>
             <CssBaseline />
             <App />
+            <ToastContainer theme="colored" />
           </ThemeProvider>
         </StyledEngineProvider>
       </Router>
