@@ -306,10 +306,8 @@
 .transactionhistory {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-}
-.receivedetailcard-parent {
   align-items: flex-start;
+  justify-content: flex-start;
   gap: var(--gap-lg);
   font-size: var(--other-m-size);
 }
@@ -321,7 +319,7 @@
   padding: var(--padding-md) 0;
   box-sizing: border-box;
   align-items: center;
-  gap: 9px;
+  gap: var(--gap-md);
   text-align: left;
   font-size: var(--caption1-size);
   color: var(--color-black1);

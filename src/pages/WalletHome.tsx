@@ -1,7 +1,7 @@
 import { FunctionComponent, useState, useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import ExtraWalletButtons from "../components/ExtraWalletButtons";
+import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
 
 import { getAppSelector } from "../app/selectors";
@@ -12,7 +12,7 @@ import { IBalance } from "../app/wallet/walletReducer";
 
 const WalletHome: FunctionComponent = () => {
   const navigate = useNavigate();
-  const [isFrameOpen, setFrameOpen] = useState(false);
+  const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
   const [cat, setCat] = useState("");
@@ -52,12 +52,19 @@ const WalletHome: FunctionComponent = () => {
     });
   }, [navigate]);
 
-  const openFrame = useCallback(() => {
-    setFrameOpen(true);
+  const onReceiveButtonClick = useCallback(() => {
+    dispatch({
+      type: actionTypes.WALLET_RECEIVE,
+      payload: app.wallet.accountId
+    });
+  }, [navigate]);
+
+  const openSideMenuPopup = useCallback(() => {
+    setSideMenuPopupOpen(true);
   }, []);
 
-  const closeFrame = useCallback(() => {
-    setFrameOpen(false);
+  const closeSideMenuPopup = useCallback(() => {
+    setSideMenuPopupOpen(false);
   }, []);
 
   const showTokens = () => {
@@ -166,7 +173,7 @@ const WalletHome: FunctionComponent = () => {
                 />
                 <div className="ranking">Receive</div>
               </button>
-              <button className="swap-button" onClick={openFrame}>
+              <button className="swap-button" onClick={openSideMenuPopup}>
                 <img
                   className="home-icon-interlocution"
                   alt=""
@@ -216,13 +223,13 @@ const WalletHome: FunctionComponent = () => {
         </div>
         <div className="coinlisting">{showTokens()}</div>
       </div>
-      {isFrameOpen && (
+      {isSideMenuPopupOpen && (
         <PortalDrawer
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Right"
-          onOutsideClick={closeFrame}
+          onOutsideClick={closeSideMenuPopup}
         >
-          <ExtraWalletButtons onClose={closeFrame} />
+          <SideMenuPopup onClose={closeSideMenuPopup} />
         </PortalDrawer>
       )}
     </>
