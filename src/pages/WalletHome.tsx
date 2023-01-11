@@ -8,12 +8,14 @@ import { getAppSelector } from "../app/selectors";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import * as actionTypes from "../app/actionTypes";
 import "./WalletHome.css";
+import { IBalance } from "../app/wallet/walletReducer";
 
 const WalletHome: FunctionComponent = () => {
   const navigate = useNavigate();
   const [isFrameOpen, setFrameOpen] = useState(false);
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
+  const [cat, setCat] = useState("");
 
   const [sellcnt, setSellcnt] = useState(0);
   const [bidcnt, setBidcnt] = useState(0);
@@ -22,6 +24,18 @@ const WalletHome: FunctionComponent = () => {
     dispatch({ type: actionTypes.SIGNALR_CONNECT });
     dispatch({ type: actionTypes.WALLET_GET_BALANCE });
   }, [dispatch]);
+
+  const ofCatalog = (list: IBalance[]) => {
+    if (cat === "")
+      return list.filter(
+        (a) =>
+          !a.token.startsWith("fiat/") &&
+          !a.token.startsWith("nft/") &&
+          !a.token.startsWith("tot/") &&
+          !a.token.startsWith("svc/")
+      );
+    else return app.wallet.balances.filter((a) => a.token.startsWith(cat));
+  };
 
   const onSwapButtonClick = useCallback(() => {
     navigate("/market");
@@ -52,7 +66,7 @@ const WalletHome: FunctionComponent = () => {
     else {
       return (
         <>
-          {app.wallet.balances.map((a) => (
+          {ofCatalog(app.wallet.balances).map((a) => (
             <TokenDisplayItem
               key={a.token}
               coinIcon="../asserts/lyralogoblackicon@2x.png"
@@ -166,7 +180,7 @@ const WalletHome: FunctionComponent = () => {
         <div className="tradableorderssection-parent">
           <div className="tradableorderssection">
             <div className="catalogtab">
-              <button className="tokentab">
+              <button className="tokentab" onClick={() => setCat("")}>
                 <b className="token">Token</b>
                 <div className="ellipse-parent">
                   <img
@@ -177,7 +191,7 @@ const WalletHome: FunctionComponent = () => {
                   <div className="div">18</div>
                 </div>
               </button>
-              <button className="nft-tab">
+              <button className="nft-tab" onClick={() => setCat("nft/")}>
                 <b className="token">NFT</b>
                 <div className="ellipse-parent">
                   <img
@@ -188,13 +202,13 @@ const WalletHome: FunctionComponent = () => {
                   <div className="div">18</div>
                 </div>
               </button>
-              <button className="fiat-tab">
+              <button className="fiat-tab" onClick={() => setCat("fiat/")}>
                 <b className="fiat">Fiat</b>
               </button>
-              <button className="fiat-tab">
+              <button className="fiat-tab" onClick={() => setCat("tot/")}>
                 <b className="fiat">Goods</b>
               </button>
-              <button className="fiat-tab">
+              <button className="fiat-tab" onClick={() => setCat("svc/")}>
                 <b className="fiat">Service</b>
               </button>
             </div>
