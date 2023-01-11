@@ -124,78 +124,80 @@ const WalletHome: FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <div className="tradableorderssection">
-          <div className="catalogtab">
-            <div className="token-parent">
-              <b className="token">Token</b>
-              <div className="ellipse-parent">
-                <img
-                  className="group-child"
-                  alt=""
-                  src="../asserts/ellipse-43.svg"
-                />
-                <div className="div">18</div>
-              </div>
-            </div>
-            <div className="nft-parent">
-              <b className="token">NFT</b>
-              <div className="ellipse-parent">
-                <img
-                  className="group-child"
-                  alt=""
-                  src="../asserts/ellipse-43.svg"
-                />
-                <div className="div">18</div>
-              </div>
-            </div>
-            <div className="fiat-wrapper">
-              <b className="fiat">Fiat</b>
-            </div>
-            <div className="fiat-wrapper">
-              <b className="fiat">Goods</b>
-            </div>
-            <div className="fiat-wrapper">
-              <b className="fiat">Service</b>
-            </div>
-          </div>
-        </div>
-        <div className="coinlisting">
-          <TokenDisplayItem
-            coinIcon="../asserts/lyralogoblackicon@2x.png"
-            coinName="Lyra Coin"
-            amountText="1,234,525 LYR"
-            amountWorth="$2,183"
-          />
-          <div className="tokendisplayitem">
-            <div className="frame-group">
-              <div className="lyralogoblueicon-parent">
-                <img
-                  className="lyralogoblueicon"
-                  alt=""
-                  src="../asserts/lyralogoblueicon@2x.png"
-                />
-                <b className="custom-coin">Custom Coin</b>
-                <div className="cus-parent">
-                  <b className="cus">1,234,525 CUS</b>
-                  <b className="b">$2,183</b>
+        <div className="tradableorderssection-parent">
+          <div className="tradableorderssection">
+            <div className="catalogtab">
+              <button className="tokentab">
+                <b className="token">Token</b>
+                <div className="ellipse-parent">
+                  <img
+                    className="group-child"
+                    alt=""
+                    src="../asserts/ellipse-43.svg"
+                  />
+                  <div className="div">18</div>
                 </div>
-              </div>
-              <div className="frame-child" />
+              </button>
+              <button className="nft-tab">
+                <b className="token">NFT</b>
+                <div className="ellipse-parent">
+                  <img
+                    className="group-child"
+                    alt=""
+                    src="../asserts/ellipse-43.svg"
+                  />
+                  <div className="div">18</div>
+                </div>
+              </button>
+              <button className="fiat-tab">
+                <b className="fiat">Fiat</b>
+              </button>
+              <button className="fiat-tab">
+                <b className="fiat">Goods</b>
+              </button>
+              <button className="fiat-tab">
+                <b className="fiat">Service</b>
+              </button>
             </div>
           </div>
-          <TokenDisplayItem
-            coinIcon="../asserts/logosbitcoin.svg"
-            coinName="BitCoin"
-            amountText="1.2345 BTC"
-            amountWorth="$20,183"
-            lyraLogoBlackIconObjectFit="unset"
-          />
-          <TokenDisplayItem
-            coinIcon="../asserts/mask-group@2x.png"
-            coinName="T-Shirt Blue"
-            amountText="3 Items"
-            amountWorth="$20,183"
-          />
+          <div className="coinlisting">
+            <TokenDisplayItem
+              coinIcon="../asserts/lyralogoblackicon@2x.png"
+              coinName="Lyra Coin"
+              amountText="1,234,525 LYR"
+              amountWorth="$2,183"
+            />
+            <div className="tokendisplayitem">
+              <div className="frame-group">
+                <div className="lyralogoblueicon-parent">
+                  <img
+                    className="lyralogoblueicon"
+                    alt=""
+                    src="../asserts/lyralogoblueicon@2x.png"
+                  />
+                  <b className="custom-coin">Custom Coin</b>
+                  <div className="cus-parent">
+                    <b className="cus">1,234,525 CUS</b>
+                    <b className="b">$2,183</b>
+                  </div>
+                </div>
+                <div className="frame-child" />
+              </div>
+            </div>
+            <TokenDisplayItem
+              coinIcon="../asserts/logosbitcoin.svg"
+              coinName="BitCoin"
+              amountText="1.2345 BTC"
+              amountWorth="$20,183"
+              lyraLogoBlackIconObjectFit="unset"
+            />
+            <TokenDisplayItem
+              coinIcon="../asserts/mask-group@2x.png"
+              coinName="T-Shirt Blue"
+              amountText="3 Items"
+              amountWorth="$20,183"
+            />
+          </div>
         </div>
       </div>
       {isFrameOpen && (
