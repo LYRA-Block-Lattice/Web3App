@@ -5,13 +5,20 @@ import PortalPopup from "../components/PortalPopup";
 import { useSearchParams } from "react-router-dom";
 import PriceAndCollateralForm from "../components/PriceAndCollateralForm";
 import "./SellTokenToToken.css";
-import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
+import SearchTokenInput from "../dup/SearchTokenInput";
 
 interface customWindow extends Window {
   rrComponent?: any;
   rrProxy?: any;
 }
 declare const window: customWindow;
+
+interface IToken {
+  token: string;
+  domain: string;
+  isTOT: boolean;
+  name: string;
+}
 
 const SellTokenToToken: FunctionComponent = () => {
   //const [isDisabled, setDisabled] = useState<boolean>(false);
@@ -23,7 +30,7 @@ const SellTokenToToken: FunctionComponent = () => {
   const [toget, setToget] = useState("tether/USDT");
   const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
 
-  const [val, setVal] = useState<IToken | null>();
+  const [val, setVal] = useState<IToken>();
 
   const onSellChange = useCallback(
     (value: any) => {
@@ -69,7 +76,7 @@ const SellTokenToToken: FunctionComponent = () => {
             onTokenSelect={onSellChange}
           />
           <button
-            className="prepare-sell-order-button12"
+            className="prepare-sell-order-button11"
             onClick={openGeneralPopup}
           >
             <div className="utility-button4">Mint to sell</div>

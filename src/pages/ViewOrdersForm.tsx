@@ -1,10 +1,69 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import OrderCard from "../components/OrderCard";
 import "./ViewOrdersForm.css";
 
+interface customWindow extends Window {
+  rrComponent?: any;
+  rrProxy?: any;
+}
+declare const window: customWindow;
+
+interface IOrder {
+  orderid: string;
+  time: string;
+  status: string;
+  offering: string;
+  biding: string;
+  price: number;
+  amount: number;
+  limitmin: number;
+  limitmax: number;
+  sold: number;
+  shelf: number;
+}
+
+const icons = {
+  Token: "_content/ReactRazor/asserts/icbaselinegeneratingtokens.svg",
+  NFT: "_content/ReactRazor/asserts/mapartgallery.svg",
+  Fiat: "_content/ReactRazor/asserts/fluentemojihighcontrastdollarbanknote.svg",
+  Goods: "_content/ReactRazor/asserts/mditruckdelivery.svg",
+  Service: "_content/ReactRazor/asserts/carbonuserservicedesk.svg"
+};
+
+const geticon = (ticker: string) => {
+  if (ticker.startsWith("nft/")) return icons["NFT"];
+  if (ticker.startsWith("fiat/")) return icons["Fiat"];
+  if (ticker.startsWith("tot/") || ticker.startsWith("sku/"))
+    return icons["Goods"];
+  if (ticker.startsWith("svc/")) return icons["Service"];
+  return icons["Token"];
+};
+
 const ViewOrdersForm: FunctionComponent = () => {
   const navigate = useNavigate();
+  const [orders, setOrders] = useState<IOrder[]>([]);
+
+  useEffect(() => {
+    window.rrProxy.ReactRazor.Pages.Home.Interop.GetOrdersAsync(
+      window.rrComponent
+    ).then(function (resp: any) {
+      var ret = JSON.parse(resp);
+      if (ret.ret == "Success") {
+        setOrders(ret.result);
+      } else {
+        window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
+          window.rrComponent,
+          "Warning",
+          ret.msg
+        );
+      }
+    });
+  }, []);
+
+  function truncate(str: any, n: any) {
+    return str.length > n ? str.slice(0, n - 1) + "..." : str;
+  }
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
     navigate("/starttocreateorder");
@@ -15,27 +74,32 @@ const ViewOrdersForm: FunctionComponent = () => {
       <div className="view-orders-parent">
         <div className="view-orders">View Orders</div>
         <button
-          className="prepare-sell-order-button13"
+          className="prepare-sell-order-button12"
           onClick={onPrepareSellOrderButtonClick}
         >
           <div className="utility-button5">New</div>
         </button>
       </div>
-      <OrderCard
-        offering="BTC"
-        biding="tether/USDT"
-        orderStatus="Open"
-        offeringImg="../asserts/icbaselinegeneratingtokens.svg"
-        bidingImg="../asserts/carbonuserservicedesk.svg"
-        time="12/29/2022 10:25:37 AM"
-        price="10,323"
-        amount="1113.2"
-        limitMin="3.3"
-        limitMax="4.3"
-        sold="12"
-        shelf="123"
-        orderStatusBackgroundColor="#2196F3"
-      />
+      {orders.map((order) => (
+        <OrderCard
+          //orderid={order.orderid!}
+          offering={order.offering}
+          biding={order.biding}
+          orderStatus={order.status}
+          offeringImg={geticon(order.offering)}
+          bidingImg={geticon(order.biding)}
+          time={order.time}
+          price={order.price.toString()}
+          amount={order.amount.toString()}
+          limitMin={order.limitmin.toString()}
+          limitMax={order.limitmax.toString()}
+          sold={order.sold.toString()}
+          shelf={order.shelf.toString()}
+          orderStatusBackgroundColor={
+            order.status == "Open" ? "#2196F3" : "gray"
+          }
+        />
+      ))}
     </div>
   );
 };
