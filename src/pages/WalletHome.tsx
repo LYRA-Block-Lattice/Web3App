@@ -1,13 +1,13 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ExtraWalletButtons from "../components/ExtraWalletButtons";
+import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import "./WalletHome.css";
 
 const WalletHome: FunctionComponent = () => {
   const navigate = useNavigate();
-  const [isFrameOpen, setFrameOpen] = useState(false);
+  const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
 
   const onSwapButtonClick = useCallback(() => {
     navigate("/market");
@@ -17,12 +17,12 @@ const WalletHome: FunctionComponent = () => {
     navigate("/sendtokenform");
   }, [navigate]);
 
-  const openFrame = useCallback(() => {
-    setFrameOpen(true);
+  const openSideMenuPopup = useCallback(() => {
+    setSideMenuPopupOpen(true);
   }, []);
 
-  const closeFrame = useCallback(() => {
-    setFrameOpen(false);
+  const closeSideMenuPopup = useCallback(() => {
+    setSideMenuPopupOpen(false);
   }, []);
 
   return (
@@ -113,7 +113,7 @@ const WalletHome: FunctionComponent = () => {
                 />
                 <div className="ranking">Receive</div>
               </button>
-              <button className="swap-button" onClick={openFrame}>
+              <button className="swap-button" onClick={openSideMenuPopup}>
                 <img
                   className="home-icon-interlocution"
                   alt=""
@@ -200,13 +200,13 @@ const WalletHome: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      {isFrameOpen && (
+      {isSideMenuPopupOpen && (
         <PortalDrawer
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Right"
-          onOutsideClick={closeFrame}
+          onOutsideClick={closeSideMenuPopup}
         >
-          <ExtraWalletButtons onClose={closeFrame} />
+          <SideMenuPopup onClose={closeSideMenuPopup} />
         </PortalDrawer>
       )}
     </>

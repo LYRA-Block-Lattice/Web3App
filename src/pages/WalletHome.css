@@ -59,7 +59,7 @@
 }
 .balance-display-zone-item {
   position: relative;
-  background-color: var(--color-gray-1300);
+  background-color: var(--color-gray-1400);
   width: 22px;
   height: 2px;
   flex-shrink: 0;
@@ -76,7 +76,7 @@
   padding: 0 var(--padding-6xs) var(--padding-5xs) 0;
   align-items: flex-end;
   justify-content: flex-start;
-  gap: var(--gap-3xs);
+  gap: var(--gap-4xs);
   color: inherit;
 }
 .qrcode-button-round {
@@ -87,7 +87,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--br-2xl);
+  border-radius: var(--br-3xl);
   background-color: var(--color-pink);
   opacity: 0.5;
   mix-blend-mode: normal;
@@ -159,7 +159,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-3xs);
+  gap: var(--gap-4xs);
 }
 .tot-count {
   position: relative;
@@ -252,7 +252,7 @@
 }
 .iconssection {
   border-radius: var(--br-sm);
-  background-color: var(--color-gray-100);
+  background-color: var(--color-gray-200);
   padding: var(--padding-6xs) var(--padding-5xs);
   align-items: center;
   justify-content: center;
@@ -366,7 +366,7 @@
 }
 .catalogtab,
 .tradableorderssection {
-  background-color: var(--color-gray-100);
+  background-color: var(--color-gray-200);
   display: flex;
   align-items: center;
 }
@@ -375,7 +375,7 @@
   overflow: hidden;
   flex-direction: row;
   justify-content: center;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
 }
 .tradableorderssection {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
@@ -414,7 +414,7 @@
 .cus-parent {
   flex-direction: column;
   align-items: flex-end;
-  gap: var(--gap-3xs);
+  gap: var(--gap-4xs);
   text-align: right;
   font-size: var(--font-size-xl);
   color: var(--default-black);
@@ -423,11 +423,11 @@
   align-self: stretch;
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
 }
 .frame-child {
   position: relative;
-  border-top: 1px solid var(--color-gray-300);
+  border-top: 1px solid var(--color-gray-400);
   box-sizing: border-box;
   width: 156px;
   height: 1px;
@@ -439,7 +439,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-xs);
+  gap: var(--gap-2xs);
 }
 .tokendisplayitem {
   align-self: stretch;

@@ -19,7 +19,7 @@
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-xs);
+  gap: var(--gap-2xs);
 }
 .sellatprice {
   border: 0;
@@ -61,7 +61,7 @@
 .collateral-section {
   flex-direction: column;
   padding: var(--padding-5xs);
-  gap: var(--gap-5xs);
+  gap: var(--gap-6xs);
 }
 .primary-button4 {
   position: relative;
@@ -89,7 +89,7 @@
   justify-content: center;
 }
 .reviewtheorder:disabled {
-  background-color: var(--color-gray-500);
+  background-color: var(--color-gray-600);
 }
 .priceandcollateralform {
   background-color: var(--color-white1);

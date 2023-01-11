@@ -95,7 +95,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
 }
 .assertdetailview1,
 .assertstatssection,
@@ -120,7 +120,7 @@
 }
 .descriptiontitle {
   border-radius: var(--br-sm);
-  background-color: var(--color-gray-400);
+  background-color: var(--color-gray-500);
   overflow: hidden;
   flex-direction: row;
   padding: var(--padding-2xs) var(--padding-md);

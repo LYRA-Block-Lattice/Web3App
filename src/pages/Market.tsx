@@ -30,7 +30,7 @@ const Market: FunctionComponent = () => {
             <div className="rectangle1" />
           </div>
         </div>
-        <div className="frame-div">
+        <div className="wallet-card-inner1">
           <div className="balance-display-zone-group">
             <button
               className="balance-display-zone1"
@@ -56,39 +56,39 @@ const Market: FunctionComponent = () => {
         </div>
       </div>
       <div className="iconssection-container">
-        <div className="iconssection2">
-          <div className="swap-button-container">
+        <div className="iconssection1">
+          <div className="swap-button-group">
             <button className="dex-button" onClick={onSwapButtonClick}>
               <img
-                className="home-icon-interlocution10"
+                className="home-icon-interlocution5"
                 alt=""
-                src="../asserts/home--icon--interlocution10.svg"
+                src="../asserts/home--icon--interlocution5.svg"
               />
-              <div className="ranking10">New Sell</div>
+              <div className="ranking5">New Sell</div>
             </button>
             <button className="dex-button" onClick={onSwapButton1Click}>
               <img
-                className="home-icon-interlocution10"
+                className="home-icon-interlocution5"
                 alt=""
-                src="../asserts/home--icon--interlocution11.svg"
+                src="../asserts/home--icon--interlocution6.svg"
               />
-              <div className="ranking10">My Orders</div>
+              <div className="ranking5">My Orders</div>
             </button>
             <button className="dex-button" onClick={onDEXButtonClick}>
               <img
-                className="home-icon-interlocution10"
+                className="home-icon-interlocution5"
                 alt=""
-                src="../asserts/home--icon--interlocution12.svg"
+                src="../asserts/home--icon--interlocution7.svg"
               />
-              <div className="ranking10">My Trades</div>
+              <div className="ranking5">My Trades</div>
             </button>
             <button className="dex-button">
               <img
-                className="home-icon-interlocution10"
+                className="home-icon-interlocution5"
                 alt=""
-                src="../asserts/home--icon--interlocution13.svg"
+                src="../asserts/home--icon--interlocution8.svg"
               />
-              <div className="ranking13">ODR</div>
+              <div className="ranking8">ODR</div>
             </button>
           </div>
         </div>
