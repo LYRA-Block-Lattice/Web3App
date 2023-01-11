@@ -1,5 +1,4 @@
 import { FunctionComponent } from "react";
-import "antd/dist/antd.min.css";
 import { Input } from "antd";
 import {
   DownOutlined,
@@ -24,7 +23,7 @@ import {
   SearchOutlined,
   SendOutlined,
   ShareAltOutlined,
-  UserOutlined,
+  UserOutlined
 } from "@ant-design/icons";
 import "./TransactionHistory.css";
 
