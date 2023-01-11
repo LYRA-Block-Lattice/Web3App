@@ -52,13 +52,6 @@ const WalletHome: FunctionComponent = () => {
     });
   }, [navigate]);
 
-  const onReceiveButtonClick = useCallback(() => {
-    dispatch({
-      type: actionTypes.WALLET_RECEIVE,
-      payload: app.wallet.accountId
-    });
-  }, [navigate]);
-
   const openSideMenuPopup = useCallback(() => {
     setSideMenuPopupOpen(true);
   }, []);

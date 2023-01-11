@@ -2,17 +2,9 @@ import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { TextField, Autocomplete } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./PriceAndCollateralForm.css";
-
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
-
-interface IDao {
-  name: string;
-  daoId: string;
-}
+import { useDispatch, useSelector } from "react-redux";
+import * as actionTypes from "../app/actionTypes";
+import { getMarketSelector } from "../app/selectors";
 
 type PriceAndCollateralFormType = {
   offering?: string;
@@ -24,50 +16,32 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   biding
 }) => {
   const navigate = useNavigate();
-  const [daos, setDaos] = useState<IDao[]>([]);
+  const dispatch = useDispatch();
+  const market = useSelector(getMarketSelector);
+
   const [price, setPrice] = useState<number>(0);
   const [count, setCount] = useState<number>(0);
   const [limitmin, setLimitmin] = useState<number>(0);
   const [limitmax, setLimitmax] = useState<number>(0);
   const [collateral, setCollateral] = useState<number>(0);
   const [daoId, setDaoId] = useState("");
-  const [dealerid, setDealerid] = useState("");
-
-  async function init() {
-    let dlr =
-      await window.rrProxy.ReactRazor.Pages.Home.Interop.GetCurrentDealerAsync(
-        window.rrComponent
-      );
-    setDealerid(dlr);
-  }
 
   useEffect(() => {
-    init();
+    dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: "" });
+    dispatch({ type: actionTypes.MARKET_GET_DEALER });
   }, []);
 
   const searchDao = (searchTerm: any) => {
-    window.rrProxy.ReactRazor.Pages.Home.Interop.SearchDaoAsync(
-      window.rrComponent,
-      searchTerm
-    )
-      .then(function (response: any) {
-        return JSON.parse(response);
-      })
-      .then(function (myJson: any) {
-        console.log("search term: " + searchTerm + ", results: ", myJson);
-        setDaos(myJson);
-      });
+    dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: searchTerm });
   };
 
   const onDaoSearchChange = useCallback(
     (event: any, value: any, reason: any) => {
       if (value) {
         searchDao(value);
-      } else {
-        setDaos([]);
       }
     },
-    [daos]
+    [market.daos]
   );
 
   const onReviewTheOrderClick = useCallback(() => {
@@ -83,14 +57,23 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       collateral: collateral,
       secret: undefined,
       daoid: daoId,
-      dealerid: dealerid,
+      dealerid: market.dealerId,
       limitmin: limitmin,
       limitmax: limitmax
     };
     navigate(
       "/previewsellorderform/?data=" + encodeURIComponent(JSON.stringify(obj))
     );
-  }, [navigate, offering, biding, price, count, collateral, daoId, dealerid]);
+  }, [
+    navigate,
+    offering,
+    biding,
+    price,
+    count,
+    collateral,
+    daoId,
+    market.dealerId
+  ]);
 
   return (
     <div className="priceandcollateralform">
@@ -177,9 +160,10 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       <Autocomplete
         sx={{ width: 301 }}
         disablePortal
-        options={daos}
+        options={market.daos}
         onInputChange={onDaoSearchChange}
-        onChange={(event, value) => setDaoId(value?.daoId!)}
+        //onChange={(event, value) => setDaoId(value?.daoId!)}
+        isOptionEqualToValue={(option, value) => option.name === value.name}
         getOptionLabel={(option) => option.name}
         renderInput={(params: any) => (
           <TextField

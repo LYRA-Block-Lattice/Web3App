@@ -1,5 +1,4 @@
 import { put, takeLatest, takeEvery, getContext } from "redux-saga/effects";
-import { push } from "redux-first-history";
 import * as actionTypes from "../actionTypes";
 
 function* getOrders(action) {
@@ -11,8 +10,27 @@ function* getOrders(action) {
   });
 }
 
+function* getDealer(action) {
+  const market = yield getContext("Market");
+  const brief = yield market.fetchDealer();
+  yield put({
+    type: actionTypes.MARKET_GET_DEALER_OK,
+    payload: brief
+  });
+}
+
+function* findDao(action) {
+  const bc = yield getContext("Blockchain");
+  const dao = yield bc.searchDao(action.payload);
+  yield put({
+    type: actionTypes.BLOCKCHAIN_FIND_DAO_OK,
+    payload: dao.data
+  });
+}
+
 export default function* marketSaga() {
   console.log("marketSaga is running.");
 
-  yield takeLatest(actionTypes.MARKET_GET_ORDERS, getOrders);
+  yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);
+  yield takeEvery(actionTypes.BLOCKCHAIN_FIND_DAO, findDao);
 }

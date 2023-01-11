@@ -1,11 +1,15 @@
 import axios from "axios";
 
-const API = axios.create({
-  baseURL: `https://dealer${process.env.REACT_APP_NETWORK_ID}.lyra.live/api/dealer`
+const APIv1 = axios.create({
+  baseURL: `https://${process.env.REACT_APP_NETWORK_ID}.lyra.live/api/node`
 });
 
-export const fetchOrders = () => API.get("/Orders");
-export const fetchDealer = () => API.get("/Dealer");
+const APIv2 = axios.create({
+  baseURL: `https://${process.env.REACT_APP_NETWORK_ID}.lyra.live/api/EC`
+});
+
+export const searchDao = (q: string) => APIv1.get("/FindDaos?q=" + q);
+// export const fetchDealer = () => API.get("/Dealer");
 
 // API.interceptors.request.use((req) => {
 //   if (localStorage.getItem("profile")) {

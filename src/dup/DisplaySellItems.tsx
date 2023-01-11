@@ -1,4 +1,3 @@
-import { error } from "console";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector, getMarketSelector } from "../app/selectors";

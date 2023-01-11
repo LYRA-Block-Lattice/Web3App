@@ -6,12 +6,6 @@ import DisplaySellItems from "../dup/DisplaySellItems";
 
 import "./Market.css";
 
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
-
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
   const app = useSelector(getAppSelector);
@@ -146,9 +140,9 @@ const Market: FunctionComponent = () => {
               <b className="fiat1">Service</b>
             </button>
           </div>
-          <DisplaySellItems />
         </div>
       </div>
+      <DisplaySellItems />
     </div>
   );
 };
