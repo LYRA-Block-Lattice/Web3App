@@ -113,7 +113,7 @@ const Market: FunctionComponent = () => {
       <div className="orderandcatalog">
         <div className="tradableorderssection1">
           <div className="catalogtab1">
-            <div className="token-group">
+            <button className="tokentab1">
               <b className="token1">Token</b>
               <div className="ellipse-container">
                 <img
@@ -123,8 +123,8 @@ const Market: FunctionComponent = () => {
                 />
                 <div className="div2">18</div>
               </div>
-            </div>
-            <div className="nft-group">
+            </button>
+            <button className="nft-tab1">
               <b className="token1">NFT</b>
               <div className="ellipse-container">
                 <img
@@ -134,16 +134,16 @@ const Market: FunctionComponent = () => {
                 />
                 <div className="div2">18</div>
               </div>
-            </div>
-            <div className="fiat-container">
+            </button>
+            <button className="fiat-tab1">
               <b className="fiat1">Fiat</b>
-            </div>
-            <div className="fiat-container">
+            </button>
+            <button className="fiat-tab1">
               <b className="fiat1">Goods</b>
-            </div>
-            <div className="fiat-container">
+            </button>
+            <button className="fiat-tab1">
               <b className="fiat1">Service</b>
-            </div>
+            </button>
           </div>
           <DisplaySellItems />
         </div>

@@ -163,38 +163,40 @@ const WalletHome: FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <div className="tradableorderssection">
-          <div className="catalogtab">
-            <div className="token-parent">
-              <b className="token">Token</b>
-              <div className="ellipse-parent">
-                <img
-                  className="group-child"
-                  alt=""
-                  src="../asserts/ellipse-43.svg"
-                />
-                <div className="div">18</div>
-              </div>
-            </div>
-            <div className="nft-parent">
-              <b className="token">NFT</b>
-              <div className="ellipse-parent">
-                <img
-                  className="group-child"
-                  alt=""
-                  src="../asserts/ellipse-43.svg"
-                />
-                <div className="div">18</div>
-              </div>
-            </div>
-            <div className="fiat-wrapper">
-              <b className="fiat">Fiat</b>
-            </div>
-            <div className="fiat-wrapper">
-              <b className="fiat">Goods</b>
-            </div>
-            <div className="fiat-wrapper">
-              <b className="fiat">Service</b>
+        <div className="tradableorderssection-parent">
+          <div className="tradableorderssection">
+            <div className="catalogtab">
+              <button className="tokentab">
+                <b className="token">Token</b>
+                <div className="ellipse-parent">
+                  <img
+                    className="group-child"
+                    alt=""
+                    src="../asserts/ellipse-43.svg"
+                  />
+                  <div className="div">18</div>
+                </div>
+              </button>
+              <button className="nft-tab">
+                <b className="token">NFT</b>
+                <div className="ellipse-parent">
+                  <img
+                    className="group-child"
+                    alt=""
+                    src="../asserts/ellipse-43.svg"
+                  />
+                  <div className="div">18</div>
+                </div>
+              </button>
+              <button className="fiat-tab">
+                <b className="fiat">Fiat</b>
+              </button>
+              <button className="fiat-tab">
+                <b className="fiat">Goods</b>
+              </button>
+              <button className="fiat-tab">
+                <b className="fiat">Service</b>
+              </button>
             </div>
           </div>
         </div>

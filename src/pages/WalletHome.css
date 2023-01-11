@@ -263,8 +263,12 @@
 }
 .token {
   position: relative;
+  font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
+  font-family: var(--headline-s1);
+  color: var(--color-white1);
+  text-align: center;
   z-index: 0;
 }
 .div,
@@ -277,8 +281,12 @@
 }
 .div {
   top: calc(50% - 7px);
+  font-size: var(--font-size-3xs);
   letter-spacing: 0.41px;
   line-height: 18px;
+  font-family: var(--headline-s1);
+  color: var(--color-white1);
+  text-align: center;
   display: inline-block;
   width: 10px;
   height: 12px;
@@ -292,35 +300,34 @@
   height: 14px;
   flex-shrink: 0;
   z-index: 1;
-  font-size: var(--font-size-3xs);
 }
-.nft-parent,
-.token-parent {
-  border-radius: var(--br-md) var(--br-md) 0 0;
+.tokentab {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-6xs) 0;
   background-color: var(--text-secondary1);
+  border-radius: var(--br-md) var(--br-md) 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 80px;
   height: 32px;
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-6xs) 0;
   box-sizing: border-box;
   align-items: flex-end;
   justify-content: center;
+}
+.fiat,
+.nft-tab,
+.tokentab {
   position: relative;
 }
-.nft-parent {
-  overflow: hidden;
-}
-.fiat {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-}
-.fiat-wrapper {
-  border-radius: var(--br-md) var(--br-md) 0 0;
+.nft-tab {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-6xs) 0;
   background-color: var(--text-secondary1);
+  border-radius: var(--br-md) var(--br-md) 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 80px;
   height: 32px;
@@ -328,7 +335,31 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: flex-end;
+  justify-content: center;
+}
+.fiat {
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-family: var(--headline-s1);
+  color: var(--color-white1);
+  text-align: center;
+}
+.fiat-tab {
+  cursor: pointer;
+  border: 0;
   padding: var(--padding-6xs) 0;
+  background-color: var(--text-secondary1);
+  border-radius: var(--br-md) var(--br-md) 0 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 80px;
+  height: 32px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
   box-sizing: border-box;
   align-items: flex-end;
   justify-content: center;
@@ -347,14 +378,12 @@
   gap: var(--gap-sm);
 }
 .tradableorderssection {
-  align-self: stretch;
   border-radius: var(--br-sm) var(--br-sm) 0 0;
+  width: 455px;
   flex-direction: column;
   padding: var(--padding-xs) var(--padding-5xs) 0;
+  box-sizing: border-box;
   justify-content: flex-start;
-  text-align: center;
-  font-size: var(--font-size-xl);
-  font-family: var(--headline-s1);
 }
 .lyralogoblueicon {
   position: relative;
@@ -414,7 +443,6 @@
 }
 .tokendisplayitem {
   align-self: stretch;
-  background-color: var(--color-white1);
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -423,16 +451,22 @@
   justify-content: center;
 }
 .coinlisting,
+.tradableorderssection-parent,
 .wallethome {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }
 .coinlisting {
-  align-self: stretch;
+  background-color: var(--color-white1);
+  width: 455px;
   padding: 0 var(--padding-5xs) var(--padding-5xs);
-  align-items: flex-start;
+  box-sizing: border-box;
+}
+.tradableorderssection-parent,
+.wallethome {
   text-align: left;
   font-size: var(--font-size-3xl);
   color: var(--black-000000100);
