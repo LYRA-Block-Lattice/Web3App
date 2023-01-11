@@ -177,7 +177,7 @@ function* createWS() {
   });
 
   try {
-    const response = yield ws.call("Status", ["3.3.0.0", network]);
+    const response = yield ws.call("Status", ["3.6.6.0", network]);
     yield put({ type: actionTypes.WSRPC_STATUS_SUCCESS, payload: response });
 
     yield ws.call("Monitor", [accountId]);
@@ -231,6 +231,36 @@ function* dexSignUp(action) {
   }
 }
 
+function* mintToken(action) {
+  try {
+    dispatch = yield getContext("dispatch");
+    const ws = yield createWS();
+
+    const balanceResp = yield ws.call("Token", [
+      action.payload.accountId,
+      action.payload.name,
+      action.payload.domain,
+      action.payload.supply
+    ]);
+    yield put({
+      type: actionTypes.WALLET_RECEIVE,
+      payload: balanceResp.result
+    });
+    yield put({
+      type: actionTypes.WSRPC_CALL_SUCCESS,
+      payload: { tag: action.payload.tag }
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.WSRPC_CALL_FAILED,
+      payload: {
+        error: error.message ?? error.error.message,
+        tag: action.payload.tag
+      }
+    });
+  }
+}
+
 export default function* walletSaga() {
   console.log("walletSaga is running.");
 
@@ -243,4 +273,7 @@ export default function* walletSaga() {
   // DeX
   yield takeEvery(actionTypes.DEX_SIGNIN, dexSignIn);
   yield takeEvery(actionTypes.DEX_SIGNUP, dexSignUp);
+
+  // Mint
+  yield takeEvery(actionTypes.WALLET_MINT_TOKEN, mintToken);
 }

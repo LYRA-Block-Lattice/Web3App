@@ -1,12 +1,9 @@
 import { FunctionComponent, useCallback, useState } from "react";
 import { TextField } from "@mui/material";
 import "./CreateTokenForm.css";
-
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
+import { useDispatch, useSelector } from "react-redux";
+import * as actionTypes from "../app/actionTypes";
+import { getAppSelector } from "../app/selectors";
 
 type TokenMintProps = {
   onClose?: (ticker?: string) => void;
@@ -15,6 +12,9 @@ type TokenMintProps = {
 };
 
 const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
+  const dispatch = useDispatch();
+  const app = useSelector(getAppSelector);
+
   const [name, setName] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
   const [domain, setDomain] = useState<string>("");
@@ -22,34 +22,44 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
 
   const onMintClick = useCallback(() => {
     console.log("mint token.");
-    window.rrProxy.ReactRazor.Pages.Home.Interop.MintTokenAsync(
-      window.rrComponent,
-      name,
-      domain,
-      desc,
-      supply
-    )
-      .then(function (response: any) {
-        return JSON.parse(response);
-      })
-      .then(function (result: any) {
-        if (result.ret == "Success") {
-          let tickr = `${domain}/${name}`;
-          window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-            window.rrComponent,
-            "Success",
-            tickr + " is ready for use."
-          );
-          props.onClose!(tickr);
-        } else {
-          window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-            window.rrComponent,
-            "Warning",
-            result.msg
-          );
-          props.onClose!();
-        }
-      });
+    dispatch({
+      type: actionTypes.WALLET_MINT_TOKEN,
+      payload: {
+        accountId: app.wallet.accountId,
+        name: name,
+        desc: desc,
+        domain: domain,
+        supply: supply
+      }
+    });
+    // window.rrProxy.ReactRazor.Pages.Home.Interop.MintTokenAsync(
+    //   window.rrComponent,
+    //   name,
+    //   domain,
+    //   desc,
+    //   supply
+    // )
+    //   .then(function (response: any) {
+    //     return JSON.parse(response);
+    //   })
+    //   .then(function (result: any) {
+    //     if (result.ret == "Success") {
+    //       let tickr = `${domain}/${name}`;
+    //       window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
+    //         window.rrComponent,
+    //         "Success",
+    //         tickr + " is ready for use."
+    //       );
+    //       props.onClose!(tickr);
+    //     } else {
+    //       window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
+    //         window.rrComponent,
+    //         "Warning",
+    //         result.msg
+    //       );
+    //       props.onClose!();
+    //     }
+    //   });
   }, [name, desc, domain, supply]);
 
   return (
