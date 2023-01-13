@@ -33,6 +33,39 @@ function* findDao(action) {
   });
 }
 
+// this function creates an event channel from a given event hub
+// Setup subscription to incoming `OnEvent` events
+function createDealerEventsChannel(hubConnection) {
+  // `eventChannel` takes a subscriber function
+  // the subscriber function takes an `emit` argument to put messages onto the channel
+  return eventChannel((emit) => {
+    const dealerEventHandler = (event) => {
+      // puts event payload into the channel
+      // this allows a Saga to take this payload from the returned channel
+      emit(event);
+    };
+
+    // const errorHandler = (errorEvent) => {
+    //   // create an Error object and put it into the channel
+    //   emit(new Error(errorEvent.reason));
+    // };
+
+    // setup the subscription
+    connection.on("OnEvent", async (message) => {
+      console.log("Dealer SignalR OnEvent", message);
+      dealerEventHandler(JSON.parse(message.json));
+    });
+
+    // the subscriber must return an unsubscribe function
+    // this will be invoked when the saga calls `channel.close` method
+    const unsubscribe = () => {
+      connection.close();
+    };
+
+    return unsubscribe;
+  });
+}
+
 function* setupDealerEvents(action) {
   const url = `https://dealer${process.env.REACT_APP_NETWORK_ID}.lyra.live/hub`;
   console.log(
@@ -72,15 +105,17 @@ function* setupDealerEvents(action) {
         SignType: "der"
       });
 
-      connection.on("OnEvent", async (message) => {
-        console.log("Dealer SignalR OnEvent", message);
-        await put({ type: actionTypes.BLOCKCHAIN_EVENT, payload: message });
-      });
+      // connection.on("OnEvent", async (message) => {
+      //   console.log("Dealer SignalR OnEvent", message);
+      //   await put({ type: actionTypes.BLOCKCHAIN_EVENT, payload: message });
+      // });
     } catch (error) {
       console.log("SignalR error", error);
       connection = undefined;
     }
   }
+
+  return connection;
 }
 
 export default function* marketSaga() {
