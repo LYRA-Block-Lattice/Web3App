@@ -25,9 +25,9 @@
   justify-content: center;
   gap: 29px;
 }
-.primary-button3 {
+.primary-button4 {
   position: relative;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -35,7 +35,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button18 {
+.prepare-sell-order-button19 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);
@@ -50,10 +50,10 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button18:hover {
+.prepare-sell-order-button19:hover {
   background-color: #8277e8;
 }
-.prepare-sell-order-button18:disabled {
+.prepare-sell-order-button19:disabled {
   background-color: var(--color-gray-600);
 }
 .starttocreateorder {
@@ -69,7 +69,7 @@
   justify-content: flex-start;
   gap: 21px;
   text-align: left;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
   font-family: var(--headline-s1);
 }

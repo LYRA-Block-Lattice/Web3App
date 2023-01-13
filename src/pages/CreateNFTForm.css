@@ -10,6 +10,12 @@
   border: 0;
   background-color: transparent;
 }
+.createnftform-child {
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
 .or {
   position: relative;
   font-size: var(--body-b-size);
@@ -43,13 +49,13 @@
   text-align: center;
 }
 .createnftform,
-.prepare-sell-order-button17 {
+.prepare-sell-order-button18 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button17 {
+.prepare-sell-order-button18 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
@@ -69,7 +75,7 @@
   justify-content: flex-start;
   gap: var(--gap-3xl);
   text-align: left;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
   font-family: var(--headline-s1);
 }

@@ -110,7 +110,7 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
         margin="none"
         onChange={(e) => setSupply(+e.target.value)}
       />
-      <button className="prepare-sell-order-button2" onClick={onMintClick}>
+      <button className="prepare-sell-order-button4" onClick={onMintClick}>
         <div className="secondary-button1">Mint Token</div>
       </button>
     </div>

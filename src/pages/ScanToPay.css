@@ -1,25 +1,35 @@
-.send-token {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-}
-.asserttitlesection {
+.scan-to-pay {
   align-self: stretch;
-  background-color: var(--color-white1);
-  height: 48px;
+  position: relative;
+  letter-spacing: -0.01em;
+  line-height: 29.93px;
+  font-weight: 600;
+}
+.image-1-icon {
+  position: relative;
+  width: 187px;
+  height: 189px;
   flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
 }
-.tokentosell {
+.lv3nd5bii1ahj7x5axdq2oradop1cd {
+  cursor: pointer;
   border: 0;
+  padding: 0;
   background-color: transparent;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--caption1-size);
+  text-decoration: underline;
+  letter-spacing: -0.01em;
+  line-height: 29.93px;
+  font-weight: 100;
+  font-family: var(--base-1-semibold);
+  color: var(--black-000000100);
+  text-align: center;
+  display: inline-block;
 }
-.primary-button1 {
+.primary-button {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -29,14 +39,14 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button1,
-.sendtokenform {
+.prepare-sell-order-button,
+.scantopay {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button1 {
+.prepare-sell-order-button {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);
@@ -47,10 +57,10 @@
   flex-direction: row;
   justify-content: center;
 }
-.prepare-sell-order-button1:hover {
+.prepare-sell-order-button:hover {
   background-color: var(--color-indigo-100);
 }
-.sendtokenform {
+.scantopay {
   position: relative;
   background-color: var(--color-white1);
   width: 100%;
@@ -58,8 +68,8 @@
   padding: var(--padding-5xs);
   justify-content: flex-start;
   gap: var(--gap-6xl);
-  text-align: left;
-  font-size: var(--font-size-8xl);
+  text-align: center;
+  font-size: var(--font-size-4xl);
   color: var(--black-000000100);
-  font-family: var(--headline-s1);
+  font-family: var(--base-1-semibold);
 }

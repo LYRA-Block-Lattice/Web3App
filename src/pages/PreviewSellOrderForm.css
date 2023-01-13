@@ -39,11 +39,11 @@
   justify-content: flex-start;
 }
 .confirm-before-create-order,
-.primary-button2 {
+.primary-button3 {
   position: relative;
 }
-.primary-button2 {
-  font-size: var(--font-size-4xl);
+.primary-button3 {
+  font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -51,14 +51,14 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button16,
+.prepare-sell-order-button17,
 .previewsellorderform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button16 {
+.prepare-sell-order-button17 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);
@@ -78,7 +78,7 @@
   justify-content: flex-start;
   gap: var(--gap-3xl);
   text-align: left;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
   font-family: var(--headline-s1);
 }

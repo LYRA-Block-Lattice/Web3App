@@ -31,7 +31,7 @@
   align-items: center;
   gap: var(--gap-2xl);
   text-align: left;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
   font-family: var(--headline-s1);
 }

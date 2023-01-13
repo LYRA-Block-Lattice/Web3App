@@ -177,6 +177,16 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         margin="none"
         onChange={(e) => setDesc(e.target.value)}
       />
+      <img
+        className="createnftform-child"
+        alt=""
+        src="../asserts/frame-627115@2x.png"
+      />
+      <img
+        className="createnftform-child"
+        alt=""
+        src="../asserts/frame-627115@2x.png"
+      />
       <TextField
         className="nft-name"
         sx={{ width: 301 }}
@@ -196,7 +206,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         type="file"
         onChange={handleFileChange}
       />
-      <button className="prepare-sell-order-button16" onClick={onMintClick}>
+      <button className="prepare-sell-order-button18" onClick={onMintClick}>
         <div className="secondary-button7">Create NFT</div>
       </button>
     </div>

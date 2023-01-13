@@ -30,7 +30,7 @@
   padding: 0;
   background-color: transparent;
   position: relative;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-5xl);
   font-weight: 700;
   font-family: var(--font-sf-pro-text);
   color: var(--color-brown-200);
@@ -479,7 +479,7 @@
   box-sizing: border-box;
   align-items: center;
   text-align: right;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   color: var(--color-white1);
   font-family: var(--font-sf-pro-text);
 }

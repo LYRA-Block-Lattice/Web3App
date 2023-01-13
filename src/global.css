@@ -27,10 +27,11 @@ body {
   --font-size-xl: 16px;
   --headline-s1-size: 17px;
   --font-size-3xl: 18px;
-  --font-size-4xl: 20px;
-  --font-size-5xl: 22px;
-  --font-size-6xl: 24px;
-  --font-size-7xl: 30px;
+  --font-size-4xl: 18.7px;
+  --font-size-5xl: 20px;
+  --font-size-6xl: 22px;
+  --font-size-7xl: 24px;
+  --font-size-8xl: 30px;
   --large-title-size: 34px;
 
   /* Colors */
@@ -76,6 +77,7 @@ body {
   --gap-3xl: 18px;
   --gap-4xl: 20px;
   --gap-5xl: 26px;
+  --gap-6xl: 30px;
 
   /* Paddings */
   --padding-9xs: 2px;
