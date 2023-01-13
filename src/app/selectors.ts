@@ -10,6 +10,11 @@ export const getWalletNamesSelector = createSelector(
   (names) => names
 );
 
+// get authenticate state, i.e. whether user has opened wallet
+const getAuth = (state: RootState) => state.auth;
+// export it as a selector
+export const getAuthSelector = createSelector(getAuth, (auth) => auth);
+
 // get app state
 const getApp = (state: RootState) => state.app;
 // export it as a selector

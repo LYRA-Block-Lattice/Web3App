@@ -1,11 +1,43 @@
-import { FunctionComponent, useEffect } from "react";
+import {
+  Collapse,
+  Divider,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  ListSubheader
+} from "@mui/material";
+import { FunctionComponent, useCallback, useEffect } from "react";
 import "./SideMenuPopup.css";
+import SendIcon from "@mui/icons-material/Send";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import DraftsIcon from "@mui/icons-material/Drafts";
+import React from "react";
+import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
+import { useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
+import * as actionTypes from "../app/actionTypes";
 
 type SideMenuPopupType = {
   onClose?: () => void;
 };
 
 const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
+  const dispatch = useDispatch();
+  const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
+
+  const [open, setOpen] = React.useState(true);
+
+  const closeWallet = useCallback(() => {
+    dispatch({ type: actionTypes.WALLET_CLOSE });
+  }, []);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
       "[data-animate-on-scroll]"
@@ -21,7 +53,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
         }
       },
       {
-        threshold: 0.15,
+        threshold: 0.15
       }
     );
 
@@ -43,7 +75,58 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
           <img className="vector-icon" alt="" src="../asserts/vector.svg" />
           <div className="lyra-ecommerce">Lyra eCommerce</div>
         </div>
-        <div className="administration">
+        <List
+          sx={{ width: "100%", maxWidth: 360 }}
+          component="nav"
+          aria-labelledby="nested-list-subheader"
+          // subheader={
+          //   <ListSubheader component="div" id="nested-list-subheader">
+          //     Nested List Items
+          //   </ListSubheader>
+          // }
+        >
+          <ListItemButton>
+            <ListItemIcon>
+              <SendIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Sent mail" />
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon>
+              <DraftsIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Drafts" />
+          </ListItemButton>
+          <ListItemButton onClick={handleClick}>
+            <ListItemIcon>
+              <InboxIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary="Inbox" />
+            {open ? <ExpandLess /> : <ExpandMore />}
+          </ListItemButton>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              <ListItemButton sx={{ pl: 4 }}>
+                <ListItemIcon sx={{ color: "white" }}>
+                  <StarBorder />
+                </ListItemIcon>
+                <ListItemText primary="Starred" />
+              </ListItemButton>
+            </List>
+          </Collapse>
+          {auth?.hasKey && (
+            <React.Fragment>
+              <Divider sx={{ color: "white" }} />
+              <ListItemButton onClick={closeWallet}>
+                <ListItemIcon>
+                  <SendIcon sx={{ color: "white" }} />
+                </ListItemIcon>
+                <ListItemText primary="Close Wallet" />
+              </ListItemButton>
+            </React.Fragment>
+          )}
+        </List>
+        {/* <div className="administration">
           <div className="component-2variant3">
             <div className="nav-item">
               <div className="administration">
@@ -234,7 +317,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

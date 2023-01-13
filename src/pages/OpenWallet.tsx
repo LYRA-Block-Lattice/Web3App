@@ -13,7 +13,7 @@ import {
   IconButton,
   SelectChangeEvent
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "./OpenWallet.css";
 
 import * as actionTypes from "../app/actionTypes";
@@ -21,6 +21,7 @@ import { getWalletNamesSelector } from "../app/selectors";
 
 const OpenWallet: FunctionComponent = () => {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams({});
 
   const [name, setName] = useState("");
   const [index, setIndex] = useState<number>(0);
@@ -40,7 +41,8 @@ const OpenWallet: FunctionComponent = () => {
       type: actionTypes.WALLET_OPEN,
       payload: {
         name: names[index],
-        password: password
+        password: password,
+        ret: searchParams.get("ret")
       }
     });
   }, [names, name, index, password, dispatch]);

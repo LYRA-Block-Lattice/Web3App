@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getAppSelector } from "../app/selectors";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
 import DisplaySellItems from "../dup/DisplaySellItems";
 
 import "./Market.css";
@@ -9,14 +9,16 @@ import "./Market.css";
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
   const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
   const [cat, setCat] = useState("");
 
   const onBalanceDisplayZoneClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
 
-  const onSwapButtonClick = useCallback(() => {
-    navigate("/starttocreateorder");
+  const onNewSell = useCallback(() => {
+    if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
+    else navigate("/starttocreateorder");
   }, [navigate]);
 
   const onSwapButton1Click = useCallback(() => {
@@ -63,7 +65,7 @@ const Market: FunctionComponent = () => {
       <div className="iconssection-container">
         <div className="iconssection1">
           <div className="swap-button-group">
-            <button className="dex-button" onClick={onSwapButtonClick}>
+            <button className="dex-button" onClick={onNewSell}>
               <img
                 className="home-icon-interlocution5"
                 alt=""

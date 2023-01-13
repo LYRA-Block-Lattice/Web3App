@@ -149,7 +149,7 @@ function* openWallet(action) {
         JSON.stringify({ pass: action.payload.password, pvt: prvKey })
       );
 
-      yield put(push("/#"));
+      yield put(push(action.payload.ret ?? "/"));
     }
   } catch (err) {
     yield put({ type: actionTypes.WALLET_OPEN_FAILED, payload: err });
@@ -159,8 +159,7 @@ function* openWallet(action) {
 function* closeWallet() {
   console.log("closing wallet");
   sessionStorage.setItem("token", null);
-  yield ws.close();
-  ws = null;
+
   yield put({ type: actionTypes.WALLET_CLOSED });
   yield put(push("/"));
 }

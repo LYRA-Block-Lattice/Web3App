@@ -1,11 +1,40 @@
 import axios from "axios";
 
-const API = axios.create({
+const Block_API_v1 = axios.create({
+  baseURL: `https://${process.env.REACT_APP_NETWORK_ID}.lyra.live/api/node`
+});
+
+const Block_API_v2 = axios.create({
+  baseURL: `https://${process.env.REACT_APP_NETWORK_ID}.lyra.live/api/EC`
+});
+
+const Dealer_API = axios.create({
   baseURL: `https://dealer${process.env.REACT_APP_NETWORK_ID}.lyra.live/api/dealer`
 });
 
-export const fetchOrders = () => API.get("/Orders");
-export const fetchDealer = () => API.get("/Dealer");
+const Start_API = axios.create({
+  baseURL: `https://start${process.env.REACT_APP_NETWORK_ID}.lyra.live/api`
+});
+
+// Blockchain API V1
+export const searchDao = (q: string) => Block_API_v1.get("/FindDaos?q=" + q);
+
+// Blockchain API V2
+
+// Dealer API
+export const fetchOrders = () => Dealer_API.get("/Orders");
+export const fetchDealer = () => Dealer_API.get("/Dealer");
+export const uploadFile = (
+  file: any,
+  accountId: string,
+  signature: string,
+  tradeId: string
+) =>
+  Dealer_API.post("/UploadFile", file, {
+    params: { accountId, signature, tradeId }
+  });
+
+// Starter API
 
 // API.interceptors.request.use((req) => {
 //   if (localStorage.getItem("profile")) {

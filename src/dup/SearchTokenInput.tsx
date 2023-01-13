@@ -129,6 +129,7 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
         defaultValue={val}
         options={options}
         onInputChange={onGetTokenInputChange}
+        isOptionEqualToValue={(option, value) => option.name === value.name}
         getOptionLabel={(option) => option.name}
         renderInput={(params: any) => (
           <TextField

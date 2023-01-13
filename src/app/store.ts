@@ -20,14 +20,15 @@ import { createBrowserHistory } from "history";
 import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+import storageSession from "redux-persist/lib/storage/session";
 
 import * as marketApi from "./market/marketApi";
-import * as blockchainApi from "./market/blockchainApi";
 import walletReducer from "./wallet/walletReducer";
 import dexReducer from "./wallet/dexReducer";
 import counterReducer from "../features/counter/counterSlice";
 import rootSaga from "./sagas";
 import marketReducer from "./market/marketReducer";
+import authReducer from "./wallet/authReducer";
 
 const { createReduxHistory, routerMiddleware, routerReducer } =
   createReduxHistoryContext({ history: createBrowserHistory() });
@@ -35,10 +36,17 @@ const { createReduxHistory, routerMiddleware, routerReducer } =
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["router"]
+  blacklist: ["router", "auth"]
+};
+
+// after opening wallet, private key is stored in session storage.
+const authPersistConfig = {
+  key: "auth",
+  storage: storageSession
 };
 
 const rootReducer = combineReducers({
+  auth: persistReducer(authPersistConfig, authReducer),
   app: walletReducer,
   market: marketReducer,
   dex: dexReducer,
@@ -51,7 +59,6 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 // Create the saga middleware
 const context = {
   Market: marketApi,
-  Blockchain: blockchainApi,
   dispatch: {}
 };
 

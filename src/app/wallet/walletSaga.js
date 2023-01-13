@@ -12,6 +12,8 @@ import {
 } from "jsonrpc-client-websocket";
 
 let dispatch;
+let accountId; // show balance, etc.
+let pvtKey; // after open wallet.
 
 function* getBalance(action) {
   try {

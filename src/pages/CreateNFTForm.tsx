@@ -1,6 +1,7 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import { TextField } from "@mui/material";
 import "./CreateNFTForm.css";
+import * as marketApi from "../app/market/marketApi";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -37,6 +38,50 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
       reader.readAsArrayBuffer(file);
     });
   }
+
+  // sha256 hash of the file
+  const [hash, setHash] = useState<string>("");
+
+  // calculate sha256 hash of binary data
+  const sha256 = async (data: ArrayBuffer) => {
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+    return hashHex;
+  };
+
+  // get file data from form file input
+  const handleFileChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = event.target.files![0];
+    const data = await readFileData(event);
+    const hash = await sha256(data);
+    setHash(hash);
+    // sign the hash using LyraCrypto api
+    // const userToken = JSON.parse(sessionStorage.getItem("token"));
+    // var signt = LyraCrypto.Sign(msg, userToken.pvt);
+
+    // send file to server
+    //const json = await marketApi.uploadFile(file, hash);
+  };
+
+  // const handleSubmit = async (event) => {
+  //   setStatus(""); // Reset status
+  //   event.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append("avatar", file);
+  //   formData.append("name", name);
+  //   const resp = await axios.post(UPLOAD_ENDPOINT, formData, {
+  //     headers: {
+  //       "content-type": "multipart/form-data",
+  //       Authorization: `Bearer ${userInfo.token}`
+  //     }
+  //   });
+  //   setStatus(resp.status === 200 ? "Thank you!" : "Error.");
+  // };
 
   const changeHandler = (event: any) => {
     console.log(event.target.files);
@@ -149,7 +194,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
       <input
         className="select-nft-image"
         type="file"
-        onChange={changeHandler}
+        onChange={handleFileChange}
       />
       <button className="prepare-sell-order-button16" onClick={onMintClick}>
         <div className="secondary-button7">Create NFT</div>
