@@ -110,7 +110,7 @@
   width: 73px;
   overflow: hidden;
   align-items: flex-end;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-6xl);
   color: var(--color-green-200);
 }
 .details-section-child {

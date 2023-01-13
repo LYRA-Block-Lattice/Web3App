@@ -26,7 +26,7 @@
 }
 .wallet-name-label1 {
   position: relative;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-5xl);
   display: inline-block;
   font-family: var(--font-sf-pro-text);
   color: var(--color-brown-200);
@@ -44,7 +44,7 @@
 .lyrlabel1,
 .usdtbalance2 {
   position: relative;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   letter-spacing: 0.3px;
   font-family: var(--font-sf-pro-text);
   color: var(--color-white1);

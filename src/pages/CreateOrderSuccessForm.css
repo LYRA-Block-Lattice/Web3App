@@ -1,6 +1,6 @@
 .success {
   position: relative;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -46,13 +46,13 @@
   text-align: center;
 }
 .createordersuccessform,
-.prepare-sell-order-button14 {
+.prepare-sell-order-button15 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button14 {
+.prepare-sell-order-button15 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);

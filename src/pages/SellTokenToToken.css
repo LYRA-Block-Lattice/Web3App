@@ -7,7 +7,7 @@
   font-family: var(--headline-s1);
 }
 .to-sell-token {
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
   text-align: left;
   display: inline-block;
@@ -18,7 +18,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button12 {
+.prepare-sell-order-button13 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);

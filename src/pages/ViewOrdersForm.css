@@ -16,7 +16,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button13 {
+.prepare-sell-order-button14 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -55,7 +55,7 @@
   justify-content: flex-start;
   gap: var(--gap-2xl);
   text-align: left;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
   font-family: var(--headline-s1);
 }

@@ -5,6 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import WalletHome from "./pages/WalletHome";
+import ScanToPay from "./pages/ScanToPay";
 import SendTokenForm from "./pages/SendTokenForm";
 import Market from "./pages/Market";
 import AssertDetailView from "./pages/AssertDetailView";
@@ -46,6 +47,10 @@ function App() {
 
     switch (pathname) {
       case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/scantopay":
         title = "";
         metaDescription = "";
         break;
@@ -156,6 +161,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<WalletHome />} />
+
+      <Route path="/scantopay" element={<ScanToPay />} />
 
       <Route path="/sendtokenform" element={<SendTokenForm />} />
 

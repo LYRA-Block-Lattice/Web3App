@@ -37,7 +37,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button10 {
+.prepare-sell-order-button11 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -72,7 +72,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button11 {
+.prepare-sell-order-button12 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
@@ -99,7 +99,7 @@
 }
 .to-get-tokennft {
   position: relative;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-7xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;

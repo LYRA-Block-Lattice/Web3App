@@ -25,6 +25,11 @@ const CreateNFTForm: FunctionComponent = () => {
         label="Description"
         margin="none"
       />
+      <img
+        className="createnftform-child"
+        alt=""
+        src="../asserts/frame-627115@2x.png"
+      />
       <TextField
         className="nft-name"
         sx={{ width: 301 }}
@@ -38,7 +43,7 @@ const CreateNFTForm: FunctionComponent = () => {
       />
       <div className="or">or</div>
       <input className="select-nft-image" type="file" />
-      <button className="prepare-sell-order-button17">
+      <button className="prepare-sell-order-button18">
         <div className="secondary-button7">Create NFT</div>
       </button>
     </div>

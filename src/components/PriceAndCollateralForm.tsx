@@ -105,7 +105,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
             color="primary"
             label="Find DAO"
             variant="outlined"
-            placeholder=""
+            placeholder="Search DAO by the name"
             helperText="Select DAO the order will be created in"
             required
           />
@@ -117,7 +117,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         dealer.
       </div>
       <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
-        <div className="primary-button4">Review the Order</div>
+        <div className="primary-button5">Review the Order</div>
       </button>
     </div>
   );
