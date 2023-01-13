@@ -209,6 +209,7 @@ function App() {
       <Route path="/transactionhistory" element={<TransactionHistory />} />
 
       <Route path="/oldv1ui" element={<OldV1UI />} />
+      <Route path="/scantopay" element={<ScanToPay />} />
     </Routes>
   );
 }

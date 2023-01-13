@@ -47,6 +47,11 @@ const WalletHome: FunctionComponent = () => {
     else navigate("/sendtokenform");
   }, [navigate]);
 
+  const scanToPay = useCallback(() => {
+    if (!auth.accountId) navigate("/openwallet?ret=/scantopay");
+    else navigate("/scantopay");
+  }, [navigate]);
+
   const onReceiveButtonClick = useCallback(() => {
     if (!auth.hasKey) navigate("/openwallet");
     else
@@ -105,7 +110,7 @@ const WalletHome: FunctionComponent = () => {
                 <b className="lyrlabel">USDT</b>
               </Link>
               <div className="qrcode-button-wrapper">
-                <button className="qrcode-button">
+                <button className="qrcode-button" onClick={scanToPay}>
                   <div className="qrcode-button-round" />
                   <img
                     className="qrcode-icon"
