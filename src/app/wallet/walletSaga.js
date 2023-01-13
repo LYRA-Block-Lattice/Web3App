@@ -11,10 +11,6 @@ import {
   WebsocketReadyStates
 } from "jsonrpc-client-websocket";
 
-let dispatch;
-let accountId; // show balance, etc.
-let pvtKey; // after open wallet.
-
 function* getBalance(action) {
   try {
     var wds = yield persist.checkData();
@@ -63,10 +59,10 @@ function* getBalance(action) {
 
 function* receive(action) {
   try {
-    dispatch = yield getContext("dispatch");
-    const ws = yield createWS();
-
     const accountId = action.payload;
+
+    const ws = yield createWS(accountId);
+
     const balanceResp = yield ws.call("Receive", [accountId]);
     yield put({
       type: actionTypes.WALLET_GET_BALANCE,
@@ -90,7 +86,7 @@ function* receive(action) {
 function* send(action) {
   try {
     dispatch = yield getContext("dispatch");
-    const ws = yield createWS();
+    const ws = yield createWS(action.payload.accountId);
 
     const balanceResp = yield ws.call("Send", [
       action.payload.accountId,
@@ -117,7 +113,7 @@ function* send(action) {
   }
 }
 
-function* createWS() {
+function* createWS(accountId) {
   var url = "wss://testnet.lyra.live/api/v1/socket";
   const network = process.env.REACT_APP_NETWORK_ID;
   if (network === "mainnet") url = "wss://mainnet.lyra.live/api/v1/socket";
@@ -182,14 +178,15 @@ function* createWS() {
     const response = yield ws.call("Status", ["3.6.6.0", network]);
     yield put({ type: actionTypes.WSRPC_STATUS_SUCCESS, payload: response });
 
-    yield ws.call("Monitor", [accountId]);
+    // we do all event by the events api
+    //yield ws.call("Monitor", [accountId]);
 
     // and balance
-    const balanceResp = yield ws.call("Balance", [accountId]);
-    yield put({
-      type: actionTypes.WALLET_BALANCE,
-      payload: balanceResp.result
-    });
+    // const balanceResp = yield ws.call("Balance", [accountId]);
+    // yield put({
+    //   type: actionTypes.WALLET_BALANCE,
+    //   payload: balanceResp.result
+    // });
   } catch (error) {
     yield put({ type: actionTypes.WSRPC_STATUS_FAILED, payload: error });
   }
@@ -236,7 +233,7 @@ function* dexSignUp(action) {
 function* mintToken(action) {
   try {
     dispatch = yield getContext("dispatch");
-    const ws = yield createWS();
+    const ws = yield createWS(action.payload.accountId);
 
     const balanceResp = yield ws.call("Token", [
       action.payload.accountId,

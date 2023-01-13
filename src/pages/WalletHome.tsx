@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
 
-import { getAppSelector } from "../app/selectors";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import * as actionTypes from "../app/actionTypes";
 import "./WalletHome.css";
@@ -15,6 +15,7 @@ const WalletHome: FunctionComponent = () => {
   const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
   const [cat, setCat] = useState("");
 
   const [sellcnt, setSellcnt] = useState(0);
@@ -22,7 +23,7 @@ const WalletHome: FunctionComponent = () => {
 
   useEffect(() => {
     dispatch({ type: actionTypes.SIGNALR_CONNECT });
-    dispatch({ type: actionTypes.WALLET_GET_BALANCE });
+    if (auth.hasKey) dispatch({ type: actionTypes.WALLET_GET_BALANCE });
   }, [dispatch]);
 
   const ofCatalog = (list: IBalance[]) => {
@@ -42,14 +43,17 @@ const WalletHome: FunctionComponent = () => {
   }, [navigate]);
 
   const onSendButtonClick = useCallback(() => {
-    navigate("/sendtokenform");
+    if (!auth.hasKey) navigate("/openwallet?ret=/sendtokenform");
+    else navigate("/sendtokenform");
   }, [navigate]);
 
   const onReceiveButtonClick = useCallback(() => {
-    dispatch({
-      type: actionTypes.WALLET_RECEIVE,
-      payload: app.wallet.accountId
-    });
+    if (!auth.hasKey) navigate("/openwallet");
+    else
+      dispatch({
+        type: actionTypes.WALLET_RECEIVE,
+        payload: auth.accountId
+      });
   }, [navigate]);
 
   const openSideMenuPopup = useCallback(() => {

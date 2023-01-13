@@ -179,8 +179,8 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         size="medium"
       />
       <div className="amount">
-        Current dealer is [dealer name]. You will contact buyers through the
-        dealer.
+        Current dealer is [{market.dealerName}]. You will contact buyers through
+        the dealer.
       </div>
       <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
         <div className="primary-button3">Review the Order</div>

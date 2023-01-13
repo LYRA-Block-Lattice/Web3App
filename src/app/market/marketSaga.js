@@ -15,12 +15,15 @@ function* getDealer(action) {
   const brief = yield market.fetchDealer();
   yield put({
     type: actionTypes.MARKET_GET_DEALER_OK,
-    payload: brief
+    payload: {
+      AccountId: brief.data.AccountId,
+      Name: brief.data.Name
+    }
   });
 }
 
 function* findDao(action) {
-  const bc = yield getContext("Blockchain");
+  const bc = yield getContext("Market");
   const dao = yield bc.searchDao(action.payload);
   yield put({
     type: actionTypes.BLOCKCHAIN_FIND_DAO_OK,
@@ -33,4 +36,5 @@ export default function* marketSaga() {
 
   yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);
   yield takeEvery(actionTypes.BLOCKCHAIN_FIND_DAO, findDao);
+  yield takeEvery(actionTypes.MARKET_GET_DEALER, getDealer);
 }

@@ -9,6 +9,7 @@ export interface IDao {
 export interface IMarketState {
   orders: [];
   dealerId: string;
+  dealerName: string;
   daos: IDao[];
   error: {} | null;
 }
@@ -17,6 +18,7 @@ const initState: IMarketState = {
   orders: [],
   daos: [],
   dealerId: "",
+  dealerName: "",
   error: null
 };
 
@@ -34,7 +36,8 @@ const marketReducer = (state = initState, action: IAction): IMarketState => {
     case actionTypes.MARKET_GET_DEALER_OK:
       return {
         ...state,
-        dealerId: action.payload.AccountId
+        dealerId: action.payload.AccountId,
+        dealerName: action.payload.Name
       };
     case actionTypes.BLOCKCHAIN_FIND_DAO_OK:
       return {
