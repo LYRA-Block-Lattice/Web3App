@@ -69,6 +69,14 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
   }
 
   switch (action.type) {
+    case actionTypes.BLOCKCHAIN_EVENT:
+      if (action.payload.event === "newblock") {
+        return {
+          ...state
+        };
+      } else {
+        return state;
+      }
     case actionTypes.WALLET_BALANCE:
       if (action.payload.balance !== undefined) {
         return {

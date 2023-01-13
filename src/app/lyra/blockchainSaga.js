@@ -4,10 +4,13 @@ import * as actionTypes from "../actionTypes";
 
 let connection;
 
-function* Setup(action) {
+function* Setup(action) {}
+
+export default function* blockchainSaga() {
+  console.log("blockchainSaga is running.");
+  /*
   const url = `https://${process.env.REACT_APP_NETWORK_ID}.lyra.live/events`;
-  //const url = `https://localhost:4504/events`;
-  console.log("Setup SignalR with... ", url);
+  console.log("Setup Lyra blockchain events SignalR with... ", url);
   if (connection === undefined) {
     try {
       connection = new HubConnectionBuilder()
@@ -20,18 +23,15 @@ function* Setup(action) {
         .build();
 
       yield connection.start();
-      connection.on("OnEvent", (message) => {
+      connection.on("OnEvent", async (message) => {
         console.log("SignalR OnEvent", message);
+        await put({ type: actionTypes.BLOCKCHAIN_EVENT, payload: message });
       });
     } catch (error) {
       console.log("SignalR error", error);
       connection = undefined;
     }
-  }
-}
-
-export default function* blockchainSaga() {
-  console.log("blockchainSaga is running.");
+  }*/
 
   yield takeEvery(actionTypes.SIGNALR_CONNECT, Setup);
 }

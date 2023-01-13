@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useState } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   FormControl,
@@ -17,7 +17,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import "./OpenWallet.css";
 
 import * as actionTypes from "../app/actionTypes";
-import { getWalletNamesSelector } from "../app/selectors";
+import { getAuthSelector, getWalletNamesSelector } from "../app/selectors";
 
 const OpenWallet: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -28,6 +28,7 @@ const OpenWallet: FunctionComponent = () => {
   const [password, setPassword] = useState("");
   const names = useSelector(getWalletNamesSelector);
   const dispatch = useDispatch();
+  const auth = useSelector(getAuthSelector);
 
   const handleChange = (event: SelectChangeEvent) => {
     setIndex(+event.target.value);
@@ -50,6 +51,11 @@ const OpenWallet: FunctionComponent = () => {
   const onSignUpClick = useCallback(() => {
     navigate("/create-wallet");
   }, [navigate]);
+
+  useEffect(() => {
+    if (auth.accountId != undefined && names && names.length > 0)
+      setIndex(names.findIndex((a) => a == auth.walletName));
+  }, [dispatch, auth.accountId, names]);
 
   return (
     <div className="openwallet">

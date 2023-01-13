@@ -2,6 +2,7 @@ import * as actionTypes from "../actionTypes";
 
 const initState = {
   accountId: null,
+  walletName: null,
   hasKey: false
 };
 
@@ -15,7 +16,8 @@ const authReducer = (state = initState, action: any) => {
       return {
         ...state,
         hasKey: true,
-        accountId: action.payload.accountId
+        accountId: action.payload.accountId,
+        walletName: action.payload.name
       };
     case actionTypes.WALLET_CLOSED:
       return {

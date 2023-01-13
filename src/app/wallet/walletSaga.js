@@ -85,7 +85,6 @@ function* receive(action) {
 
 function* send(action) {
   try {
-    dispatch = yield getContext("dispatch");
     const ws = yield createWS(action.payload.accountId);
 
     const balanceResp = yield ws.call("Send", [
@@ -102,6 +101,7 @@ function* send(action) {
       type: actionTypes.WSRPC_CALL_SUCCESS,
       payload: { tag: action.payload.tag }
     });
+    yield ws.close();
   } catch (error) {
     yield put({
       type: actionTypes.WSRPC_CALL_FAILED,
@@ -123,7 +123,7 @@ function* createWS(accountId) {
   const requestTimeoutMs = 10000;
 
   const ws = new JsonRpcWebsocket(url, requestTimeoutMs, (error) => {
-    console.log("websocket error", error);
+    console.log("json ws websocket error", error);
     // reconnect
     //dispatch({ type: actionTypes.WSRPC_CLOSED, payload: error.message });
   });

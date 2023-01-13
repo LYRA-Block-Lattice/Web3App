@@ -20,6 +20,7 @@ const Start_API = axios.create({
 export const searchDao = (q: string) => Block_API_v1.get("/FindDaos?q=" + q);
 
 // Blockchain API V2
+export const lastServiceHash = () => Block_API_v2.get("/ServiceHash");
 
 // Dealer API
 export const fetchOrders = () => Dealer_API.get("/Orders");
