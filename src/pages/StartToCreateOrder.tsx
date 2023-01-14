@@ -8,7 +8,6 @@ import {
 } from "react";
 import { useNavigate } from "react-router-dom";
 import CatalogSelection from "../components/CatalogSelection";
-import { useNavigate } from "react-router-dom";
 import "./StartToCreateOrder.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
 

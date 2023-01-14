@@ -18,7 +18,7 @@ const Shell: FunctionComponent = () => {
   }, [app.error]);
 
   useEffect(() => {
-    if (app.event != null) {
+    if (app.event != null && app.event.change != "None") {
       toast.success(app.event?.msg);
     }
   }, [app.event]);

@@ -14,6 +14,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
   const [searchParams, setSearchParams] = useSearchParams({});
   const data = decodeURIComponent(searchParams.get("data")!);
   const obj = JSON.parse(data);
+  console.log("order is", obj);
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
     window.rrProxy.ReactRazor.Pages.Home.Interop.CreateOrderAsync(
@@ -59,24 +60,24 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       <div className="preview-sell-order">Preview Sell Order</div>
       <div className="im-selling">I’m selling:</div>
       <div className="nft-name">
-        <div className="nft-name1">NFT Name</div>
+        <div className="nft-name1">{obj.selltoken}</div>
       </div>
       <div className="im-selling">Buyer will pay me by:</div>
       <div className="nft-name">
-        <div className="nft-name1">Token Name</div>
+        <div className="nft-name1">{obj.gettoken}</div>
       </div>
       <div className="im-selling">Price, amount, and I’ll get:</div>
       <div className="nft-name-parent">
         <div className="nft-name3">
-          <div className="price">Price</div>
+          <div className="price">{obj.price}</div>
         </div>
         <div className="x">X</div>
         <div className="nft-name3">
-          <div className="price">Amount</div>
+          <div className="price">{obj.count}</div>
         </div>
         <div className="x">=</div>
         <div className="nft-name3">
-          <div className="price">Total</div>
+          <div className="price">{obj.price * obj.count}</div>
         </div>
       </div>
       <div className="im-selling">
@@ -92,7 +93,9 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       </div>
       <div className="im-selling">The trade will be protected by:</div>
       <div className="nft-name">
-        <div className="lyr-worth-10000">1,000,000 LYR, worth $10,000</div>
+        <div className="lyr-worth-10000">
+          {obj.collateral} LYR, worth $10,000
+        </div>
       </div>
       <FormControlLabel
         className="confirm-before-create-order"
