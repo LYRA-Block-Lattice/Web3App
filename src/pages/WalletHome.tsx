@@ -6,16 +6,8 @@ import TokenDisplayItem from "../components/TokenDisplayItem";
 import "./WalletHome.css";
 
 const WalletHome: FunctionComponent = () => {
-  const navigate = useNavigate();
   const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
-
-  const onSwapButtonClick = useCallback(() => {
-    navigate("/market");
-  }, [navigate]);
-
-  const onSendButtonClick = useCallback(() => {
-    navigate("/sendtokenform");
-  }, [navigate]);
+  const navigate = useNavigate();
 
   const openSideMenuPopup = useCallback(() => {
     setSideMenuPopupOpen(true);
@@ -24,6 +16,14 @@ const WalletHome: FunctionComponent = () => {
   const closeSideMenuPopup = useCallback(() => {
     setSideMenuPopupOpen(false);
   }, []);
+
+  const onSwapButtonClick = useCallback(() => {
+    navigate("/market");
+  }, [navigate]);
+
+  const onSendButtonClick = useCallback(() => {
+    navigate("/sendtokenform");
+  }, [navigate]);
 
   return (
     <>

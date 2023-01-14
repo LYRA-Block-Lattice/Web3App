@@ -41,7 +41,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
       <div className="frame-container">
         <div className="vector-parent">
           <img className="vector-icon" alt="" src="../asserts/vector.svg" />
-          <div className="lyra-ecommerce">Lyra eCommerce</div>
+          <div className="lyra-web3-ecommerce">Lyra Web3 eCommerce</div>
         </div>
         <div className="administration">
           <div className="component-2variant3">

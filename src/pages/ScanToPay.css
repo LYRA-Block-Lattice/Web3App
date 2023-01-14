@@ -29,7 +29,7 @@
   text-align: center;
   display: inline-block;
 }
-.primary-button {
+.primary-button4 {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -39,14 +39,14 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button,
+.prepare-sell-order-button19,
 .scantopay {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button {
+.prepare-sell-order-button19 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);
@@ -57,7 +57,7 @@
   flex-direction: row;
   justify-content: center;
 }
-.prepare-sell-order-button:hover {
+.prepare-sell-order-button19:hover {
   background-color: var(--color-indigo-100);
 }
 .scantopay {
