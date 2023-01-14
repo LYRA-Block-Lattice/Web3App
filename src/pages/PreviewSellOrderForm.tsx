@@ -69,6 +69,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         size="medium"
         margin="none"
         disabled
+        value={obj.selltoken}
       />
       <div className="im-selling">Buyer will pay me by:</div>
       <TextField
@@ -85,7 +86,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       <div className="im-selling">Price, amount, and I’ll get:</div>
       <div className="nft-name-parent">
         <TextField
-          className="nft-name"
+          className="nft-name2"
           color="primary"
           variant="outlined"
           type="number"
@@ -96,7 +97,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         />
         <div className="x">X</div>
         <TextField
-          className="nft-name"
+          className="nft-name2"
           color="primary"
           variant="outlined"
           type="number"
@@ -107,7 +108,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         />
         <div className="x">=</div>
         <TextField
-          className="nft-name"
+          className="nft-name2"
           color="primary"
           variant="outlined"
           type="number"

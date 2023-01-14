@@ -17,6 +17,11 @@
   border: 0;
   background-color: transparent;
 }
+.nft-name2 {
+  border: 0;
+  background-color: transparent;
+  width: 100px;
+}
 .x {
   position: relative;
   letter-spacing: 0.41px;
