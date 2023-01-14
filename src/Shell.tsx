@@ -17,10 +17,16 @@ const Shell: FunctionComponent = () => {
     }
   }, [app.error]);
 
+  useEffect(() => {
+    if (app.event != null) {
+      toast.success(app.event?.msg);
+    }
+  }, [app.event]);
+
   return (
     <div>
       <App />
-      <ToastContainer theme="colored" />
+      <ToastContainer theme="colored" position="bottom-left" />
     </div>
   );
 };
