@@ -20,6 +20,12 @@ export interface ITxInfo {
   tag: String | null;
   result: String | null;
 }
+
+export interface ITxEvent {
+  change: String; // like Received, Sent, etc.
+  msg: String;
+  time: number;
+}
 export interface IWalletState {
   wallet: IWalletInfo;
   network: String;
@@ -31,6 +37,7 @@ export interface IWalletState {
   password: String;
   tx: ITxInfo;
   error: string | null;
+  event: ITxEvent;
 }
 
 export interface IAction {
@@ -60,7 +67,12 @@ const initState: IWalletState = {
     tag: null,
     result: null
   },
-  error: null
+  error: null,
+  event: {
+    change: "None",
+    msg: "Start",
+    time: new Date().getTime()
+  }
 };
 
 const walletReducer = (state = initState, action: IAction): IWalletState => {
@@ -70,9 +82,15 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
 
   switch (action.type) {
     case actionTypes.BLOCKCHAIN_EVENT:
-      if (action.payload.event === "newblock") {
+      if (action.payload.evtType === 1) {
+        const { ChangeType, about } = JSON.parse(action.payload.json);
         return {
-          ...state
+          ...state,
+          event: {
+            change: ChangeType,
+            msg: `${ChangeType} to my ${about}}`,
+            time: new Date().getTime()
+          }
         };
       } else {
         return state;
