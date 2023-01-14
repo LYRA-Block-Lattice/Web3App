@@ -37,9 +37,9 @@ const SellTOTToTOT: FunctionComponent = () => {
             Note: This [tot/sku/svc] share the same trade secret of selling
             item.
           </div>
-          <div className="prepare-sell-order-button9">
+          <button className="prepare-sell-order-button9">
             <div className="secondary-button4">Create TOT</div>
-          </div>
+          </button>
         </form>
         <PriceAndCollateralForm offering="offering" biding="biding" />
       </div>
