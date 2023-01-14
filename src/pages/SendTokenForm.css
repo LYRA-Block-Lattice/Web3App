@@ -19,7 +19,7 @@
   border: 0;
   background-color: transparent;
 }
-.primary-button1 {
+.primary-button {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -29,14 +29,14 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button1,
+.prepare-sell-order-button,
 .sendtokenform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button1 {
+.prepare-sell-order-button {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);
@@ -47,7 +47,7 @@
   flex-direction: row;
   justify-content: center;
 }
-.prepare-sell-order-button1:hover {
+.prepare-sell-order-button:hover {
   background-color: var(--color-indigo-100);
 }
 .sendtokenform {

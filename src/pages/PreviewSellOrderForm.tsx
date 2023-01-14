@@ -57,20 +57,42 @@ const PreviewSellOrderForm: FunctionComponent = () => {
   return (
     <div className="previewsellorderform">
       <div className="preview-sell-order">Preview Sell Order</div>
-      <div className="ill-sell-count-container">
-        <p className="ill-sell-count">
-          I’ll sell {obj.count} of {obj.selltoken}.
-        </p>
-        <p className="ill-sell-count">
-          I want buyer pay me by {obj.gettoken} on price {obj.price}
-        </p>
-        <p className="ill-sell-count">
-          Order will be created in DAO {obj.daoid}
-        </p>
-        <p className="ill-sell-count">
-          I'll contact buyers through dealer {obj.dealerid}
-        </p>
-        <ShowTS />
+      <div className="im-selling">I’m selling:</div>
+      <div className="nft-name">
+        <div className="nft-name1">NFT Name</div>
+      </div>
+      <div className="im-selling">Buyer will pay me by:</div>
+      <div className="nft-name">
+        <div className="nft-name1">Token Name</div>
+      </div>
+      <div className="im-selling">Price, amount, and I’ll get:</div>
+      <div className="nft-name-parent">
+        <div className="nft-name3">
+          <div className="price">Price</div>
+        </div>
+        <div className="x">X</div>
+        <div className="nft-name3">
+          <div className="price">Amount</div>
+        </div>
+        <div className="x">=</div>
+        <div className="nft-name3">
+          <div className="price">Total</div>
+        </div>
+      </div>
+      <div className="im-selling">
+        I’ll share the trade secret of bellow with buyer:
+      </div>
+      <div className="tot-description4">
+        <div className="please-pay-to-container">
+          <p className="please-pay-to">Please pay to my bank account number:</p>
+          <p className="please-pay-to">&nbsp;</p>
+          <p className="please-pay-to">Bank of America</p>
+          <p className="p">1234 1234 1234 1234</p>
+        </div>
+      </div>
+      <div className="im-selling">The trade will be protected by:</div>
+      <div className="nft-name">
+        <div className="lyr-worth-10000">1,000,000 LYR, worth $10,000</div>
       </div>
       <FormControlLabel
         className="confirm-before-create-order"
@@ -81,10 +103,10 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         }
       />
       <button
-        className="prepare-sell-order-button17"
+        className="prepare-sell-order-button16"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button3">Place Order</div>
+        <div className="primary-button2">Place Order</div>
       </button>
     </div>
   );

@@ -1,12 +1,8 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent } from "react";
 import { Box, Slider } from "@mui/material";
 import "./AssertDetailView.css";
 
 const AssertDetailView: FunctionComponent = () => {
-  const onPrepareSellOrderButtonClick = useCallback(() => {
-    // Please sync "SelectTokenForOrder" to the project
-  }, []);
-
   return (
     <div className="assertdetailview">
       <div className="assertdetailview1">
@@ -128,17 +124,14 @@ const AssertDetailView: FunctionComponent = () => {
           <input className="selectedamount" type="number" placeholder="150" />
         </div>
         <div className="makeofferbutton">
-          <button
-            className="prepare-sell-order-button2"
-            onClick={onPrepareSellOrderButtonClick}
-          >
+          <div className="prepare-sell-order-button1">
             <img
               className="material-symbolsshare-icon"
               alt=""
               src="../asserts/evapricetagsoutline.svg"
             />
-            <div className="primary-button2">Make offer</div>
-          </button>
+            <div className="meka-legends">Make offer</div>
+          </div>
         </div>
         <div className="descriptiontitle">
           <img

@@ -73,7 +73,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
       <div className="frame-container">
         <div className="vector-parent">
           <img className="vector-icon" alt="" src="../asserts/vector.svg" />
-          <div className="lyra-ecommerce">Lyra eCommerce</div>
+          <div className="lyra-web3-ecommerce">Lyra Web3 eCommerce</div>
         </div>
         <List
           sx={{ width: "100%", maxWidth: 360 }}

@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 
 import WalletHome from "./pages/WalletHome";
-import ScanToPay from "./pages/ScanToPay";
 import SendTokenForm from "./pages/SendTokenForm";
 import Market from "./pages/Market";
 import AssertDetailView from "./pages/AssertDetailView";
@@ -23,6 +22,7 @@ import Redir from "./pages/Redir";
 import Empty from "./pages/Empty";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
+import ScanToPay from "./pages/ScanToPay";
 import TransactionHistory from "./pages/TransactionHistory";
 import OldV1UI from "./pages/OldV1UI";
 import { useEffect } from "react";
@@ -46,10 +46,6 @@ function App() {
 
     switch (pathname) {
       case "/":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/scantopay":
         title = "";
         metaDescription = "";
         break;
@@ -133,6 +129,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/scantopay":
+        title = "";
+        metaDescription = "";
+        break;
       case "/transactionhistory":
         title = "";
         metaDescription = "";
@@ -160,8 +160,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<WalletHome />} />
-
-      <Route path="/scantopay" element={<ScanToPay />} />
 
       <Route path="/sendtokenform" element={<SendTokenForm />} />
 
@@ -205,6 +203,8 @@ function App() {
       <Route path="/create-wallet" element={<CreateWallet />} />
 
       <Route path="/openwallet" element={<OpenWallet />} />
+
+      <Route path="/scantopay" element={<ScanToPay />} />
 
       <Route path="/transactionhistory" element={<TransactionHistory />} />
 

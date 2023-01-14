@@ -11,7 +11,6 @@ import "./WalletHome.css";
 import { IBalance } from "../app/wallet/walletReducer";
 
 const WalletHome: FunctionComponent = () => {
-  const navigate = useNavigate();
   const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);

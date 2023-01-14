@@ -8,6 +8,7 @@ import {
 } from "react";
 import { useNavigate } from "react-router-dom";
 import CatalogSelection from "../components/CatalogSelection";
+import { useNavigate } from "react-router-dom";
 import "./StartToCreateOrder.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
 
@@ -106,11 +107,11 @@ const StartToCreateOrder: FunctionComponent = () => {
         </Xwrapper>
       </div>
       <button
-        className="prepare-sell-order-button19"
+        className="prepare-sell-order-button18"
         disabled={isDisabled}
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button4">Specify Token</div>
+        <div className="primary-button3">Specify Token</div>
       </button>
     </div>
   );

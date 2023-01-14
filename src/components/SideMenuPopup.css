@@ -14,16 +14,17 @@
   height: 28px;
   flex-shrink: 0;
 }
-.lyra-ecommerce {
+.lyra-web3-ecommerce {
   position: relative;
   letter-spacing: -0.01em;
   line-height: 29.93px;
   font-weight: 600;
 }
 .vector-parent {
-  width: 207px;
+  align-self: stretch;
   display: flex;
   flex-direction: row;
+  padding: 0 0 var(--padding-5xs);
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-md);
