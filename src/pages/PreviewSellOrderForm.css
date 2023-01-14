@@ -11,21 +11,20 @@
   font-weight: 500;
   width: 296px;
 }
-.im-selling {
-  width: 292px;
-}
-.nft-name,
+.im-selling,
 .nft-name1 {
-  flex-shrink: 0;
+  width: 292px;
 }
 .nft-name1 {
   width: 143px;
+  flex-shrink: 0;
 }
 .nft-name {
   border-radius: var(--br-xs);
   background-color: var(--color-beige);
   width: 301px;
   height: 40px;
+  flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;

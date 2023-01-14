@@ -151,7 +151,7 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
           <div className="note-i-need">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <div className="prepare-sell-order-button5" onClick={onMintClick}>
+          <button className="prepare-sell-order-button5" onClick={onMintClick}>
             <div className="secondary-button2">Create TOT</div>
           </button>
         </div>

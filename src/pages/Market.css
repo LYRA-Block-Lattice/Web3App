@@ -44,14 +44,12 @@
 .lyrlabel1,
 .usdtbalance2 {
   position: relative;
+  font-size: var(--font-size-7xl);
   letter-spacing: 0.3px;
   font-family: var(--font-sf-pro-text);
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
-}
-.usdtbalance2 {
-  font-size: var(--font-size-7xl);
   color: var(--color-white1);
   text-align: right;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
 .lyrlabel1 {
   font-size: var(--font-size-2xs);
@@ -248,10 +246,8 @@
 .div2,
 .group-inner {
   position: absolute;
-  left: calc(50% - 5.5px);
-}
-.group-inner {
   top: calc(50% - 4px);
+  left: calc(50% - 5.5px);
   width: 11px;
   height: 11px;
 }

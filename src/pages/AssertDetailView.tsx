@@ -124,14 +124,14 @@ const AssertDetailView: FunctionComponent = () => {
           <input className="selectedamount" type="number" placeholder="150" />
         </div>
         <div className="makeofferbutton">
-          <div className="prepare-sell-order-button1">
+          <button className="prepare-sell-order-button1">
             <img
               className="material-symbolsshare-icon"
               alt=""
               src="../asserts/evapricetagsoutline.svg"
             />
-            <div className="meka-legends">Make offer</div>
-          </div>
+            <div className="primary-button1">Make offer</div>
+          </button>
         </div>
         <div className="descriptiontitle">
           <img

@@ -47,9 +47,9 @@ const SellTOTToToken: FunctionComponent = () => {
           <div className="note-i-need3">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <div className="prepare-sell-order-button11">
+          <button className="prepare-sell-order-button11">
             <div className="secondary-button5">Create TOT</div>
-          </div>
+          </button>
         </form>
         <form className="searchtokenbyname1">
           <div className="to-get-tokennft">To get Token/NFT</div>
