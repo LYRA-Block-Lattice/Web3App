@@ -69,3 +69,6 @@ export const SIGNALR_CONNECT = "SIGNALR_CONNECT";
 
 // events from blockchain
 export const BLOCKCHAIN_EVENT = "BLOCKCHAIN_EVENT";
+
+// Dealer
+export const DEALER_JOIN = "DEALER_JOIN"; // join dealer room
