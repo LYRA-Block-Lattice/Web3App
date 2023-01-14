@@ -64,6 +64,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
+        defaultValue="LYR"
         type="text"
         label="Token Name"
         size="medium"
@@ -77,6 +78,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
+        defaultValue="LYR"
         type="text"
         label="Token Name"
         size="medium"
@@ -89,6 +91,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
           className="nft-name2"
           color="primary"
           variant="outlined"
+          defaultValue="12"
           type="number"
           label="Price"
           size="medium"
@@ -100,6 +103,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
           className="nft-name2"
           color="primary"
           variant="outlined"
+          defaultValue="12"
           type="number"
           label="Amount"
           size="medium"
@@ -111,6 +115,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
           className="nft-name2"
           color="primary"
           variant="outlined"
+          defaultValue="12"
           type="number"
           label="Total"
           size="medium"
@@ -125,7 +130,9 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
+        defaultValue="Trade Secret"
         multiline
+        rows={6}
         label={`Please pay to my bank account number:
 
 Bank of America
@@ -146,10 +153,10 @@ Bank of America
         }
       />
       <button
-        className="prepare-sell-order-button16"
+        className="prepare-sell-order-button"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button2">Place Order</div>
+        <div className="primary-button">Place Order</div>
       </button>
     </div>
   );
