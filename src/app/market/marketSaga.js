@@ -1,4 +1,12 @@
-import { put, takeLatest, takeEvery, getContext } from "redux-saga/effects";
+import {
+  put,
+  call,
+  take,
+  takeLatest,
+  takeEvery,
+  getContext
+} from "redux-saga/effects";
+import { eventChannel } from "redux-saga";
 import { HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
 import { LyraCrypto } from "lyra-crypto";
 import * as actionTypes from "../actionTypes";
@@ -118,11 +126,27 @@ function* setupDealerEvents(action) {
   return connection;
 }
 
+function* setup(action) {
+  const connection = yield setupDealerEvents(action);
+  if (connection) {
+    const channel = yield call(createDealerEventsChannel, connection);
+    try {
+      while (true) {
+        // take(END) will cause the saga to terminate by jumping to the finally block
+        let event = yield take(channel);
+        yield put({ type: actionTypes.BLOCKCHAIN_EVENT, payload: event });
+      }
+    } finally {
+      console.log("dealer event channel terminated");
+    }
+  }
+}
+
 export default function* marketSaga() {
   console.log("marketSaga is running.");
 
   // every time the user open wallet, we need to setup the SignalR connection
-  yield takeEvery(actionTypes.WALLET_OPEN_DONE, setupDealerEvents);
+  yield takeEvery(actionTypes.WALLET_OPEN_DONE, setup);
 
   yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);
   yield takeEvery(actionTypes.BLOCKCHAIN_FIND_DAO, findDao);
