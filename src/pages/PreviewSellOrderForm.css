@@ -1,5 +1,6 @@
 .im-selling,
-.preview-sell-order {
+.preview-sell-order,
+.token-name {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -10,42 +11,100 @@
   font-weight: 500;
   width: 296px;
 }
-.im-selling {
+.im-selling,
+.token-name {
   width: 292px;
 }
+.token-name {
+  width: 143px;
+  flex-shrink: 0;
+}
 .nft-name {
-  border: 0;
-  background-color: transparent;
-}
-.x {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-}
-.nft-name-parent,
-.nft-name5 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.nft-name-parent {
-  align-self: stretch;
-  justify-content: center;
-  gap: var(--gap-lg);
-}
-.nft-name5 {
   border-radius: var(--br-xs);
   background-color: var(--color-beige);
   width: 301px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
   padding: var(--padding-5xs);
   box-sizing: border-box;
+  align-items: center;
   justify-content: flex-start;
   font-size: var(--body-b-size);
 }
+.price {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  display: inline-block;
+  width: 63px;
+  flex-shrink: 0;
+}
+.nft-name2 {
+  border-radius: var(--br-xs);
+  background-color: var(--color-beige);
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+.x {
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+}
+.nft-name-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-lg);
+  font-size: var(--body-b-size);
+}
+.please-pay-to {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.p {
+  margin: 0;
+}
+.please-pay-to-container {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  display: inline-block;
+  width: 255px;
+  flex-shrink: 0;
+}
+.tot-description {
+  border-radius: var(--br-xs);
+  background-color: var(--color-beige);
+  width: 301px;
+  height: 124px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--body-b-size);
+}
+.lyr-worth-10000 {
+  letter-spacing: 0.41px;
+  line-height: 18px;
+}
 .confirm-before-create-order,
+.lyr-worth-10000,
 .primary-button {
   position: relative;
 }
