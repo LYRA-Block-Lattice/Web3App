@@ -31,7 +31,6 @@ const SendTokenForm: FunctionComponent = () => {
   );
 
   const doSend = useCallback(() => {
-    dispatch({ type: "ERROR_CLEAR" });
     dispatch({
       type: WALLET_SEND,
       payload: {

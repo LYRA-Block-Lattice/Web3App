@@ -72,3 +72,6 @@ export const BLOCKCHAIN_EVENT = "BLOCKCHAIN_EVENT";
 
 // Dealer
 export const DEALER_JOIN = "DEALER_JOIN"; // join dealer room
+
+// Universal Order
+export const WALLET_CREATE_ORDER = "WALLET_CREATE_ORDER";

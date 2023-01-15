@@ -20,35 +20,48 @@ function* getBalance(action) {
     const response = yield fetch(url);
     var json = yield response.text();
     var j = JSON.parse(json);
-    if (j.resultCode != 0) return;
-    var ret = JSON.parse(j.blockData);
+    if (j.resultCode != 0) {
+      yield put({
+        type: actionTypes.WALLET_BALANCE,
+        payload: {
+          accountId: wds.accountId,
+          nftcnt: 0,
+          totcnt: 0,
+          balance: 0,
+          usdt: 0,
+          balances: []
+        }
+      });
+    } else {
+      var ret = JSON.parse(j.blockData);
 
-    yield put({
-      type: actionTypes.WALLET_BALANCE,
-      payload: {
-        accountId: wds.accountId,
-        nftcnt: Object.keys(ret.Balances).filter((a) => a.startsWith("nft/"))
-          .length,
-        totcnt: Object.keys(ret.Balances).filter(
-          (a) => a.startsWith("tot/") || a.startsWith("svc/")
-        ).length,
-        balance:
-          Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
-            ? 0
-            : ret.Balances["LYR"] / 100000000,
-        usdt:
-          Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
-          undefined
-            ? 0
-            : ret.Balances["tether/USDT"] / 100000000,
-        balances: Object.entries(ret.Balances).map(([k, v]) => [
-          k,
-          v / 100000000
-        ])
+      yield put({
+        type: actionTypes.WALLET_BALANCE,
+        payload: {
+          accountId: wds.accountId,
+          nftcnt: Object.keys(ret.Balances).filter((a) => a.startsWith("nft/"))
+            .length,
+          totcnt: Object.keys(ret.Balances).filter(
+            (a) => a.startsWith("tot/") || a.startsWith("svc/")
+          ).length,
+          balance:
+            Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
+              ? 0
+              : ret.Balances["LYR"] / 100000000,
+          usdt:
+            Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
+            undefined
+              ? 0
+              : ret.Balances["tether/USDT"] / 100000000,
+          balances: Object.entries(ret.Balances).map(([k, v]) => [
+            k,
+            v / 100000000
+          ])
 
-        // TODO: set unreceived args
-      }
-    });
+          // TODO: set unreceived args
+        }
+      });
+    }
   } catch (error) {
     yield put({
       type: actionTypes.STORE_ERROR,
@@ -120,7 +133,7 @@ function* createWS(accountId) {
   if (network === "devnet") url = "wss://devnet.lyra.live/api/v1/socket";
   console.log(`creating ws for ${network} using url ${url}`);
 
-  const requestTimeoutMs = 10000;
+  const requestTimeoutMs = 30000;
 
   const ws = new JsonRpcWebsocket(url, requestTimeoutMs, (error) => {
     console.log("json ws websocket error", error);
@@ -260,11 +273,34 @@ function* mintToken(action) {
   }
 }
 
+function* createOrder(action) {
+  try {
+    const ws = yield createWS(action.payload.accountId);
+
+    const balanceResp = yield ws.call("CreateOrder", [
+      action.payload.accountId,
+      JSON.stringify(action.payload.order)
+    ]);
+    console.log("createOrder", balanceResp);
+    yield put({
+      type: actionTypes.WSRPC_CALL_SUCCESS,
+      payload: balanceResp
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.WSRPC_CALL_FAILED,
+      payload: {
+        error: error.message ?? error.error.message,
+        tag: action.payload.tag
+      }
+    });
+  }
+}
+
 export default function* walletSaga() {
   console.log("walletSaga is running.");
 
   yield takeLatest(actionTypes.WALLET_GET_BALANCE, getBalance);
-  //yield takeEvery(actionTypes.WSRPC_CREATE, wsrpc);
   yield takeEvery(actionTypes.WSRPC_CLOSED, createWS);
   yield takeEvery(actionTypes.WALLET_RECEIVE, receive);
   yield takeEvery(actionTypes.WALLET_SEND, send);
@@ -275,4 +311,7 @@ export default function* walletSaga() {
 
   // Mint
   yield takeEvery(actionTypes.WALLET_MINT_TOKEN, mintToken);
+
+  // UniOrder
+  yield takeEvery(actionTypes.WALLET_CREATE_ORDER, createOrder);
 }

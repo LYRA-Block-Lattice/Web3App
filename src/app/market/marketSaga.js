@@ -27,7 +27,7 @@ function* getDealer(action) {
   yield put({
     type: actionTypes.MARKET_GET_DEALER_OK,
     payload: {
-      AccountId: brief.data.AccountId,
+      AccountId: brief.data.ServiceAccountId,
       Name: brief.data.Name
     }
   });

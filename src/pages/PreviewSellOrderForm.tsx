@@ -1,37 +1,44 @@
 import { FunctionComponent, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { TextField, FormControlLabel, Checkbox } from "@mui/material";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import "./PreviewSellOrderForm.css";
-
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
+import { WALLET_CREATE_ORDER } from "../app/actionTypes";
+import { getAppSelector } from "../app/selectors";
 
 const PreviewSellOrderForm: FunctionComponent = () => {
+  const dispatch = useDispatch();
+  const app = useSelector(getAppSelector);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
+
   const data = decodeURIComponent(searchParams.get("data")!);
   const obj = JSON.parse(data);
   console.log("order is", obj);
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
-    window.rrProxy.ReactRazor.Pages.Home.Interop.CreateOrderAsync(
-      window.rrComponent,
-      data
-    ).then(function (response: any) {
-      var ret = JSON.parse(response);
-      if (ret.ret == "Success") {
-        navigate("/createordersuccessform?tx=" + ret.txhash);
-      } else {
-        window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-          window.rrComponent,
-          "Warning",
-          ret.msg
-        );
+    dispatch({
+      type: WALLET_CREATE_ORDER,
+      payload: {
+        accountId: app.wallet.accountId,
+        order: obj
       }
     });
+    // window.rrProxy.ReactRazor.Pages.Home.Interop.CreateOrderAsync(
+    //   window.rrComponent,
+    //   data
+    // ).then(function (response: any) {
+    //   var ret = JSON.parse(response);
+    //   if (ret.ret == "Success") {
+    //     navigate("/createordersuccessform?tx=" + ret.txhash);
+    //   } else {
+    //     window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
+    //       window.rrComponent,
+    //       "Warning",
+    //       ret.msg
+    //     );
+    //   }
+    // });
   }, [navigate]);
 
   function ShowTS(props: any) {
@@ -64,7 +71,6 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
-        defaultValue="LYR"
         type="text"
         label="Token Name"
         size="medium"
@@ -78,12 +84,12 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
-        defaultValue="LYR"
         type="text"
         label="Token Name"
         size="medium"
         margin="none"
         disabled
+        value={obj.gettoken}
       />
       <div className="im-selling">Price, amount, and I’ll get:</div>
       <div className="nft-name-parent">
@@ -91,36 +97,36 @@ const PreviewSellOrderForm: FunctionComponent = () => {
           className="nft-name2"
           color="primary"
           variant="outlined"
-          defaultValue="12"
           type="number"
           label="Price"
           size="medium"
           margin="none"
           disabled
+          value={obj.price}
         />
         <div className="x">X</div>
         <TextField
           className="nft-name2"
           color="primary"
           variant="outlined"
-          defaultValue="12"
           type="number"
           label="Amount"
           size="medium"
           margin="none"
           disabled
+          value={obj.count}
         />
         <div className="x">=</div>
         <TextField
           className="nft-name2"
           color="primary"
           variant="outlined"
-          defaultValue="12"
           type="number"
           label="Total"
           size="medium"
           margin="none"
           disabled
+          value={obj.price * obj.count}
         />
       </div>
       <div className="im-selling">
@@ -130,19 +136,19 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
-        defaultValue="Trade Secret"
         multiline
         rows={6}
-        label={`Please pay to my bank account number:
-
-Bank of America
-1234 1234 1234 1234`}
+        label={`Trade Secret`}
         margin="none"
         disabled
+        value={obj.secret}
       />
       <div className="im-selling">The trade will be protected by:</div>
       <div className="nft-name5">
         <div className="x">1,000,000 LYR, worth $10,000</div>
+      </div>
+      <div className="nft-name5">
+        <div className="x">Dao ID: {obj.daoid}</div>
       </div>
       <FormControlLabel
         className="confirm-before-create-order"

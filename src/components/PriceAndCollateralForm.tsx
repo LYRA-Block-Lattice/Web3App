@@ -162,7 +162,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         disablePortal
         options={market.daos}
         onInputChange={onDaoSearchChange}
-        //onChange={(event, value) => setDaoId(value?.daoId!)}
+        onChange={(event, value) => setDaoId(value?.daoId!)}
         isOptionEqualToValue={(option, value) => option.name === value.name}
         getOptionLabel={(option) => option.name}
         renderInput={(params: any) => (
