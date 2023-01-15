@@ -67,11 +67,11 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       <div className="preview-sell-order">Preview Sell Order</div>
       <div className="im-selling">I’m selling:</div>
       <div className="nft-name">
-        <div className="token-name">Token Name</div>
+        <div className="token-name1">Token Name</div>
       </div>
       <div className="im-selling">Buyer will pay me by:</div>
       <div className="nft-name">
-        <div className="token-name">Token Name</div>
+        <div className="token-name1">Token Name</div>
       </div>
       <div className="im-selling">Price, amount, and I’ll get:</div>
       <div className="nft-name-parent">
@@ -90,7 +90,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       <div className="im-selling">
         I’ll share the trade secret of bellow with buyer:
       </div>
-      <div className="tot-description">
+      <div className="tot-description4">
         <div className="please-pay-to-container">
           <p className="please-pay-to">Please pay to my bank account number:</p>
           <p className="please-pay-to">&nbsp;</p>
@@ -111,10 +111,10 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         }
       />
       <button
-        className="prepare-sell-order-button"
+        className="prepare-sell-order-button16"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button">Place Order</div>
+        <div className="primary-button2">Place Order</div>
       </button>
     </div>
   );
