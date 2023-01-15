@@ -20,7 +20,8 @@ function* getBalance(action) {
     const response = yield fetch(url);
     var json = yield response.text();
     var j = JSON.parse(json);
-    if (j.resultCode != 0) {
+    // deal with real empty wallet. otherwise just ignore and use the saved data.
+    if (j.resultMessage == "Block not found") {
       yield put({
         type: actionTypes.WALLET_BALANCE,
         payload: {
