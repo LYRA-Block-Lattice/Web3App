@@ -67,24 +67,24 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       <div className="preview-sell-order">Preview Sell Order</div>
       <div className="im-selling">I’m selling:</div>
       <div className="nft-name">
-        <div className="token-name1">Token Name</div>
+        <div className="token-name1">{obj.selltoken}</div>
       </div>
       <div className="im-selling">Buyer will pay me by:</div>
       <div className="nft-name">
-        <div className="token-name1">Token Name</div>
+        <div className="token-name1">{obj.gettoken}</div>
       </div>
       <div className="im-selling">Price, amount, and I’ll get:</div>
       <div className="nft-name-parent">
         <div className="nft-name2">
-          <div className="price">Price</div>
+          <div className="price">{obj.price}</div>
         </div>
         <div className="x">X</div>
         <div className="nft-name2">
-          <div className="price">Amount</div>
+          <div className="price">{obj.count}</div>
         </div>
         <div className="x">=</div>
         <div className="nft-name2">
-          <div className="price">Total</div>
+          <div className="price">{obj.price * obj.count}</div>
         </div>
       </div>
       <div className="im-selling">
@@ -99,8 +99,11 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         </div>
       </div>
       <div className="im-selling">The trade will be protected by:</div>
-      <div className="nft-name5">
+      <div className="nft-name">
         <div className="x">1,000,000 LYR, worth $10,000</div>
+      </div>
+      <div className="nft-name">
+        <div className="x">dealer: {obj.dealerid}</div>
       </div>
       <FormControlLabel
         className="confirm-before-create-order"

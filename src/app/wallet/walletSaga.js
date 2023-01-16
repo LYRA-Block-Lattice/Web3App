@@ -246,7 +246,7 @@ function* dexSignUp(action) {
 
 function* mintToken(action) {
   try {
-    dispatch = yield getContext("dispatch");
+    //dispatch = yield getContext("dispatch");
     const ws = yield createWS(action.payload.accountId);
 
     const balanceResp = yield ws.call("Token", [

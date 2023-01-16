@@ -36,7 +36,7 @@ const marketReducer = (state = initState, action: IAction): IMarketState => {
     case actionTypes.MARKET_GET_DEALER_OK:
       return {
         ...state,
-        dealerId: action.payload.AccountId,
+        dealerId: action.payload.ServiceId,
         dealerName: action.payload.Name
       };
     case actionTypes.BLOCKCHAIN_FIND_DAO_OK:
