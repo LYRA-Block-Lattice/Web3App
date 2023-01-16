@@ -1,4 +1,5 @@
 import { createSelector } from "reselect";
+import { IAppNotifyState } from "./lyra/notifyReducer";
 
 import type { RootState } from "./store";
 
@@ -19,6 +20,11 @@ export const getAuthSelector = createSelector(getAuth, (auth) => auth);
 const getApp = (state: RootState) => state.app;
 // export it as a selector
 export const getAppSelector = createSelector(getApp, (app) => app);
+
+// get notify state
+const getNotify = (state: RootState) => state.notify;
+// export it as a selector
+export const getNotifySelector = createSelector(getNotify, (notify) => notify);
 
 // get market state
 const getMarket = (state: RootState) => state.market;

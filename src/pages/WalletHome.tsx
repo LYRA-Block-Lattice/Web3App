@@ -71,7 +71,7 @@ const WalletHome: FunctionComponent = () => {
   }, []);
 
   const showTokens = () => {
-    console.log("in use call back to showTokens", app?.wallet?.balances);
+    //console.log("in use call back to showTokens", app?.wallet?.balances);
     if (app.wallet.balances === undefined) return <div>No coins.</div>;
     else {
       return (

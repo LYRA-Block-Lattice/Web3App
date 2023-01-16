@@ -29,6 +29,7 @@ import counterReducer from "../features/counter/counterSlice";
 import rootSaga from "./sagas";
 import marketReducer from "./market/marketReducer";
 import authReducer from "./wallet/authReducer";
+import notifyReducer from "./lyra/notifyReducer";
 
 const { createReduxHistory, routerMiddleware, routerReducer } =
   createReduxHistoryContext({ history: createBrowserHistory() });
@@ -36,7 +37,7 @@ const { createReduxHistory, routerMiddleware, routerReducer } =
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["router", "auth"]
+  blacklist: ["router", "auth", "notify"]
 };
 
 // after opening wallet, private key is stored in session storage.
@@ -48,6 +49,7 @@ const authPersistConfig = {
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   app: walletReducer,
+  notify: notifyReducer,
   market: marketReducer,
   dex: dexReducer,
   counter: counterReducer,

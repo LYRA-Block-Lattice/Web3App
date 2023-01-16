@@ -20,12 +20,6 @@ export interface ITxInfo {
   tag: String | null;
   result: String | null;
 }
-
-export interface ITxEvent {
-  change: String; // like Received, Sent, etc.
-  msg: String;
-  time: number;
-}
 export interface IWalletState {
   wallet: IWalletInfo;
   network: String;
@@ -36,8 +30,6 @@ export interface IWalletState {
   opening: Boolean;
   password: String;
   tx: ITxInfo;
-  error: string | null;
-  event: ITxEvent;
 }
 
 export interface IAction {
@@ -66,12 +58,6 @@ const initState: IWalletState = {
   tx: {
     tag: null,
     result: null
-  },
-  error: null,
-  event: {
-    change: "None",
-    msg: "Start",
-    time: new Date().getTime()
   }
 };
 
@@ -81,20 +67,6 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
   }
 
   switch (action.type) {
-    case actionTypes.BLOCKCHAIN_EVENT:
-      if (action.payload.evtType === 1) {
-        const { ChangeType, about } = JSON.parse(action.payload.json);
-        return {
-          ...state,
-          event: {
-            change: ChangeType,
-            msg: `${ChangeType} to my ${about}}`,
-            time: new Date().getTime()
-          }
-        };
-      } else {
-        return state;
-      }
     case actionTypes.WALLET_BALANCE:
       if (action.payload.balance !== undefined) {
         return {
@@ -144,7 +116,6 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
     case actionTypes.WALLET_SEND:
       return {
         ...state,
-        error: null,
         tx: {
           tag: action.payload.tag,
           result: "pending"
@@ -153,7 +124,6 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
     case actionTypes.WSRPC_CALL_SUCCESS:
       return {
         ...state,
-        error: null,
         tx: {
           tag: action.payload.tag,
           result: "success"
@@ -162,7 +132,6 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
     case actionTypes.WSRPC_CALL_FAILED:
       return {
         ...state,
-        error: action.payload.error,
         tx: {
           tag: action.payload.tag,
           result: "failed"
@@ -186,8 +155,7 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
       return {
         ...state,
         opening: false,
-        name: "",
-        error: null
+        name: ""
       };
     case actionTypes.WALLET_OPEN_DONE:
       return {
@@ -208,8 +176,8 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
     case actionTypes.WALLET_OPEN_FAILED:
       return {
         ...state,
-        opening: false,
-        error: action.payload
+        opening: false
+        //error: action.payload
       };
     case actionTypes.WSRPC_SERVER_NOTIFY_RECV:
       return {
@@ -253,16 +221,6 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
           unrecvcnt: 0,
           unrecvlyr: 0
         }
-      };
-    case actionTypes.ERROR:
-      return {
-        ...state,
-        error: action.payload.error
-      };
-    case actionTypes.ERROR_CLEAR:
-      return {
-        ...state,
-        error: null
       };
     default: {
       return state;

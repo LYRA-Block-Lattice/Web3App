@@ -1,27 +1,27 @@
 import { FunctionComponent, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import App from "./App";
-import { getAppSelector } from "./app/selectors";
+import { getNotifySelector } from "./app/selectors";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
 const Shell: FunctionComponent = () => {
   const dispatch = useDispatch();
-  const app = useSelector(getAppSelector);
+  const notify = useSelector(getNotifySelector);
 
   useEffect(() => {
-    if (app.error != null) {
-      toast.error(app.error, {
+    if (notify.error != null) {
+      toast.error(notify.error, {
         onClose: () => dispatch({ type: "ERROR_CLEAR" })
       });
     }
-  }, [app.error]);
+  }, [notify.error]);
 
   useEffect(() => {
-    if (app.event != null && app.event.change != "None") {
-      toast.success(app.event?.msg);
+    if (notify.event != null && notify.event.change != "None") {
+      toast.success(notify.event?.msg);
     }
-  }, [app.event]);
+  }, [notify.event]);
 
   return (
     <div>

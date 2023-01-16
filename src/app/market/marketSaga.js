@@ -112,7 +112,7 @@ function createDealerEventsChannel(hubConnection) {
     // };
 
     // setup the subscription
-    connection.on("OnEvent", async (message) => {
+    hubConnection.on("OnEvent", async (message) => {
       console.log("Dealer SignalR OnEvent", message);
       dealerEventHandler(message);
     });
@@ -120,7 +120,7 @@ function createDealerEventsChannel(hubConnection) {
     // the subscriber must return an unsubscribe function
     // this will be invoked when the saga calls `channel.close` method
     const unsubscribe = () => {
-      connection.close();
+      hubConnection.close();
     };
 
     return unsubscribe;
@@ -128,7 +128,7 @@ function createDealerEventsChannel(hubConnection) {
 }
 
 function* setup(action) {
-  const connection = yield setupDealerEvents(action);
+  connection = yield setupDealerEvents(action);
   if (connection) {
     const channel = yield call(createDealerEventsChannel, connection);
     try {
