@@ -298,6 +298,30 @@ function* createOrder(action) {
   }
 }
 
+function* createTrade(action) {
+  try {
+    const ws = yield createWS(action.payload.accountId);
+
+    const balanceResp = yield ws.call("CreateTrade", [
+      action.payload.accountId,
+      JSON.stringify(action.payload.trade)
+    ]);
+    console.log("createTrade", balanceResp);
+    yield put({
+      type: actionTypes.WSRPC_CALL_SUCCESS,
+      payload: balanceResp
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.WSRPC_CALL_FAILED,
+      payload: {
+        error: error.message ?? error.error.message,
+        tag: action.payload.tag
+      }
+    });
+  }
+}
+
 export default function* walletSaga() {
   console.log("walletSaga is running.");
 
@@ -315,4 +339,5 @@ export default function* walletSaga() {
 
   // UniOrder
   yield takeEvery(actionTypes.WALLET_CREATE_ORDER, createOrder);
+  yield takeEvery(actionTypes.WALLET_CREATE_TRADE, createTrade);
 }

@@ -77,3 +77,4 @@ export const DEALER_JOIN = "DEALER_JOIN"; // join dealer room
 
 // Universal Order
 export const WALLET_CREATE_ORDER = "WALLET_CREATE_ORDER";
+export const WALLET_CREATE_TRADE = "WALLET_CREATE_TRADE";

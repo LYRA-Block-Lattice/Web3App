@@ -1,15 +1,19 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
 import "./AssertDetailView.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";
 import { getAppSelector, getMarketSelector } from "../app/selectors";
-import { MARKET_GET_ORDER_BY_ID } from "../app/actionTypes";
+import {
+  MARKET_GET_ORDER_BY_ID,
+  WALLET_CREATE_TRADE
+} from "../app/actionTypes";
 
 const AssertDetailView: FunctionComponent = () => {
   const dispatch = useDispatch();
   const market = useSelector(getMarketSelector);
+  const app = useSelector(getAppSelector);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
 
@@ -28,12 +32,48 @@ const AssertDetailView: FunctionComponent = () => {
     }
   }, [dispatch, searchParams]);
 
+  const onMakeOfferButtonClick = useCallback(() => {
+    const order = market.order?.Blocks[0].Order;
+    if (!order) {
+      dispatch({
+        type: "ERROR",
+        payload: {
+          error: "Order not found"
+        }
+      });
+      return;
+    }
+    dispatch({
+      type: WALLET_CREATE_TRADE,
+      payload: {
+        accountId: app.wallet.accountId,
+        trade: {
+          daoId: order.daoId,
+          dealerId: order.dealerId,
+          orderId: market.order?.Blocks[0].AccountID,
+          orderOwnerId: market.order?.Blocks[0].OwnerAccountId,
+
+          offby: order.offerby,
+          offering: order.offering,
+          bidby: order.bidby,
+          biding: order.biding,
+
+          price: order.price,
+          cltamt: 100,
+          payVia: "Meka",
+          amount: buyAmount,
+          pay: order.price * buyAmount
+        }
+      }
+    });
+  }, [navigate, buyAmount, dispatch, app.wallet.accountId, market.order]);
+
   return (
     <div className="assertdetailview">
       <div className="assertdetailview1">
         <div className="asserttitleregion">
           <div className="assertauthorsection">
-            <div className="a-legend-nft">{market.order.User.UserName}</div>
+            <div className="a-legend-nft">{market.order?.User.UserName}</div>
             <div className="material-symbolsshare-parent">
               <img
                 className="material-symbolsshare-icon"
@@ -48,11 +88,11 @@ const AssertDetailView: FunctionComponent = () => {
             </div>
           </div>
           <div className="asserttitlesection1">
-            <div className="meka-legends">{market.order.Blocks[1].Ticker}</div>
+            <div className="meka-legends">{market.order?.Blocks[1].Ticker}</div>
           </div>
           <div className="assertownersection">
             <div className="meka-legends">
-              Owner {market.order.User.UserName}
+              Owner {market.order?.User.UserName}
             </div>
           </div>
         </div>
@@ -107,7 +147,7 @@ const AssertDetailView: FunctionComponent = () => {
       </div>
       <div className="descriptiondetails">
         <div className="meka-legends">
-          {market.order.Blocks[1].Description ?? "[empty]"}
+          {market.order?.Blocks[1].Description ?? "[empty]"}
         </div>
       </div>
       <div className="descriptiontitle">
@@ -125,8 +165,8 @@ const AssertDetailView: FunctionComponent = () => {
           </div>
           <div className="priceandvaluelabel">
             <div className="meka-legends">
-              {market.order.Blocks[0].Order.price}{" "}
-              {market.order.Blocks[2].Ticker}
+              {market.order?.Blocks[0].Order.price}{" "}
+              {market.order?.Blocks[2].Ticker}
             </div>
             <div className="tetherusdt">$ 0</div>
           </div>
@@ -138,8 +178,8 @@ const AssertDetailView: FunctionComponent = () => {
             </div>
             <div className="priceandvaluelabel1">
               <div className="meka-legends">
-                {market.order.Blocks[0].Order.limitMin} -{" "}
-                {market.order.Blocks[0].Order.limitMax}
+                {market.order?.Blocks[0].Order.limitMin} -{" "}
+                {market.order?.Blocks[0].Order.limitMax}
               </div>
               <div className="tetherusdt">tether/USDT</div>
               <div className="div6">$0 ~ 0</div>
@@ -151,8 +191,8 @@ const AssertDetailView: FunctionComponent = () => {
               <Slider
                 color="primary"
                 orientation="horizontal"
-                min={market.order.Blocks[0].Order.limitMin}
-                max={market.order.Blocks[0].Order.limitMax}
+                min={market.order?.Blocks[0].Order.limitMin}
+                max={market.order?.Blocks[0].Order.limitMax}
                 onChange={(e, v) => setBuyAmount(v as number)}
               />
             </Box>
@@ -161,13 +201,16 @@ const AssertDetailView: FunctionComponent = () => {
           <input
             className="selectedamount"
             type="number"
-            placeholder={market.order.Blocks[0].Order.limitMin}
+            placeholder={market.order?.Blocks[0].Order.limitMin}
             value={buyAmount}
             onChange={(e) => console.log(e)}
           />
         </div>
         <div className="makeofferbutton">
-          <button className="prepare-sell-order-button1">
+          <button
+            className="prepare-sell-order-button1"
+            onClick={onMakeOfferButtonClick}
+          >
             <img
               className="material-symbolsshare-icon"
               alt=""

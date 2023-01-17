@@ -1,6 +1,10 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import CSS, { Property } from "csstype";
 import "./MarketOrder.css";
+import TableComponent, {
+  TableComponentProps
+} from "../components/TableComponent";
 
 enum OrderStatus {
   Open = 0,
@@ -25,6 +29,9 @@ type MarketOrderType = {
   sellerRatings?: string;
   sellerTrades?: string;
   lastUpdated?: string;
+
+  /** Style props */
+  orderStatusBackgroundColor?: Property.BackgroundColor;
 };
 
 const MarketOrder: FunctionComponent<MarketOrderType> = ({
@@ -41,12 +48,27 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   sellerName,
   daoName,
   sellerRatings,
-  sellerTrades
+  sellerTrades,
+  orderStatusBackgroundColor
 }) => {
+  const [trades, setTrades] = useState<any[]>([]);
+  const [showTradeTable, setShowTradeTable] = useState(true);
+
+  const toggle = useCallback(() => {
+    setTrades(datasrc);
+    setShowTradeTable(!showTradeTable);
+  }, [showTradeTable]);
+
+  const orderStatusStyle: CSS.Properties = useMemo(() => {
+    return {
+      backgroundColor: orderStatusBackgroundColor
+    };
+  }, [orderStatusBackgroundColor]);
+
   return (
     <div className="ordercard">
       <div className="order-brief-section">
-        <button className="banner-image">
+        <button className="banner-image" onClick={toggle}>
           <div className="order-banner">
             <div className="order-image">
               <img
@@ -65,7 +87,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
                 src={bidingIcon}
               />
             </div>
-            <div className="order-status">
+            <div className="order-status" style={orderStatusStyle}>
               <b className="open">
                 {OrderStatus[orderStatus ?? OrderStatus.Closed]}
               </b>
@@ -121,8 +143,36 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           <div className="the-first-dao">{sellerTrades}</div>
         </div>
       </div>
+      <div>
+        <div>
+          {showTradeTable ? (
+            <TableComponent key={orderId} data={trades} />
+          ) : null}
+        </div>
+      </div>
     </div>
   );
 };
 
 export default MarketOrder;
+
+const datasrc = [
+  {
+    name: "Marcel",
+    surname: "Michau",
+    age: "24",
+    gender: "Male"
+  },
+  {
+    name: "Joe",
+    surname: "Bloggs",
+    age: "27",
+    gender: "Male"
+  },
+  {
+    name: "Jane",
+    surname: "Doe",
+    age: "22",
+    gender: "Female"
+  }
+];
