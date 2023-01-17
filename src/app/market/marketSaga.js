@@ -22,6 +22,14 @@ function* getOrders(action) {
   });
 }
 
+function* getOrderById(action) {
+  const order = yield marketApi.fetchOrderById(action.payload.orderId);
+  yield put({
+    type: actionTypes.MARKET_GET_ORDER_BY_ID_SUCCESS,
+    payload: order.data
+  });
+}
+
 function* getDealer(action) {
   const brief = yield marketApi.fetchDealer();
   yield put({
@@ -150,6 +158,7 @@ export default function* marketSaga() {
   yield takeEvery(actionTypes.WALLET_OPEN_DONE, setup);
 
   yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);
+  yield takeEvery(actionTypes.MARKET_GET_ORDER_BY_ID, getOrderById);
   yield takeEvery(actionTypes.BLOCKCHAIN_FIND_DAO, findDao);
   yield takeEvery(actionTypes.MARKET_GET_DEALER, getDealer);
 }

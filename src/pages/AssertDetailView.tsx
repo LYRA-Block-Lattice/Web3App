@@ -1,14 +1,39 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import { Box, Slider } from "@mui/material";
 import "./AssertDetailView.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { useSearchParams } from "react-router-dom";
+import { getAppSelector, getMarketSelector } from "../app/selectors";
+import { MARKET_GET_ORDER_BY_ID } from "../app/actionTypes";
 
 const AssertDetailView: FunctionComponent = () => {
+  const dispatch = useDispatch();
+  const market = useSelector(getMarketSelector);
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams({});
+
+  // variable for buyAmount
+  const [buyAmount, setBuyAmount] = useState(0);
+
+  useEffect(() => {
+    const orderId = searchParams.get("orderId");
+    if (orderId) {
+      dispatch({
+        type: MARKET_GET_ORDER_BY_ID,
+        payload: {
+          orderId: orderId
+        }
+      });
+    }
+  }, [dispatch, searchParams]);
+
   return (
     <div className="assertdetailview">
       <div className="assertdetailview1">
         <div className="asserttitleregion">
           <div className="assertauthorsection">
-            <div className="a-legend-nft">A legend NFT author</div>
+            <div className="a-legend-nft">{market.order.User.UserName}</div>
             <div className="material-symbolsshare-parent">
               <img
                 className="material-symbolsshare-icon"
@@ -23,10 +48,12 @@ const AssertDetailView: FunctionComponent = () => {
             </div>
           </div>
           <div className="asserttitlesection1">
-            <div className="meka-legends">Meka Legends # 500</div>
+            <div className="meka-legends">{market.order.Blocks[1].Ticker}</div>
           </div>
           <div className="assertownersection">
-            <div className="meka-legends">Owner someone</div>
+            <div className="meka-legends">
+              Owner {market.order.User.UserName}
+            </div>
           </div>
         </div>
         <div className="asserttitleregion">
@@ -79,7 +106,9 @@ const AssertDetailView: FunctionComponent = () => {
         <div className="meka-legends">Description</div>
       </div>
       <div className="descriptiondetails">
-        <div className="meka-legends">By A great designer</div>
+        <div className="meka-legends">
+          {market.order.Blocks[1].Description ?? "[empty]"}
+        </div>
       </div>
       <div className="descriptiontitle">
         <img
@@ -95,8 +124,11 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="meka-legends">Current Price</div>
           </div>
           <div className="priceandvaluelabel">
-            <div className="meka-legends">0.0325 ETH</div>
-            <div className="tetherusdt">$86.20</div>
+            <div className="meka-legends">
+              {market.order.Blocks[0].Order.price}{" "}
+              {market.order.Blocks[2].Ticker}
+            </div>
+            <div className="tetherusdt">$ 0</div>
           </div>
         </div>
         <div className="selectamountsection">
@@ -105,9 +137,12 @@ const AssertDetailView: FunctionComponent = () => {
               <div className="meka-legends">Available to buy</div>
             </div>
             <div className="priceandvaluelabel1">
-              <div className="meka-legends">100 - 200</div>
+              <div className="meka-legends">
+                {market.order.Blocks[0].Order.limitMin} -{" "}
+                {market.order.Blocks[0].Order.limitMax}
+              </div>
               <div className="tetherusdt">tether/USDT</div>
-              <div className="div6">$40 ~ 84.20</div>
+              <div className="div6">$0 ~ 0</div>
             </div>
           </div>
           <div className="limitadjustsection">
@@ -115,13 +150,21 @@ const AssertDetailView: FunctionComponent = () => {
             <Box className="slidercontinuous">
               <Slider
                 color="primary"
-                defaultValue={20}
                 orientation="horizontal"
+                min={market.order.Blocks[0].Order.limitMin}
+                max={market.order.Blocks[0].Order.limitMax}
+                onChange={(e, v) => setBuyAmount(v as number)}
               />
             </Box>
             <div className="meka-legends">Max</div>
           </div>
-          <input className="selectedamount" type="number" placeholder="150" />
+          <input
+            className="selectedamount"
+            type="number"
+            placeholder={market.order.Blocks[0].Order.limitMin}
+            value={buyAmount}
+            onChange={(e) => console.log(e)}
+          />
         </div>
         <div className="makeofferbutton">
           <button className="prepare-sell-order-button1">

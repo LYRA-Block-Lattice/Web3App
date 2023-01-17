@@ -12,6 +12,7 @@ export interface IMarketState {
   dealerName: string;
   daos: IDao[];
   error: {} | null;
+  order: any;
 }
 
 const initState: IMarketState = {
@@ -19,7 +20,8 @@ const initState: IMarketState = {
   daos: [],
   dealerId: "",
   dealerName: "",
-  error: null
+  error: null,
+  order: null
 };
 
 const marketReducer = (state = initState, action: IAction): IMarketState => {
@@ -28,6 +30,11 @@ const marketReducer = (state = initState, action: IAction): IMarketState => {
   }
 
   switch (action.type) {
+    case actionTypes.MARKET_GET_ORDER_BY_ID_SUCCESS:
+      return {
+        ...state,
+        order: action.payload
+      };
     case actionTypes.MARKET_GET_ORDERS_SUCCESS:
       return {
         ...state,

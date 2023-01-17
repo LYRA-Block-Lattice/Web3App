@@ -24,6 +24,8 @@ export const lastServiceHash = () => Block_API_v2.get("/ServiceHash");
 
 // Dealer API
 export const fetchOrders = () => Dealer_API.get("/Orders");
+export const fetchOrderById = (orderId: string) =>
+  Dealer_API.get("/Order?orderId=" + orderId);
 export const fetchDealer = () => Dealer_API.get("/Dealer");
 export const uploadFile = (
   file: any,
