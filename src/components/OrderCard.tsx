@@ -62,7 +62,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
       <div className="order-brief-section2">
         <button className="banner-image2" onClick={toggle}>
           <div className="order-banner2">
-            <button className="order-image2">
+            <div className="order-image2">
               <img
                 className="icbaseline-generating-tokens-icon2"
                 alt=""
@@ -78,7 +78,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
                 alt=""
                 src={bidingImg}
               />
-            </button>
+            </div>
             <div className="order-status2" style={orderStatusStyle}>
               <b className="open2">{orderStatus}</b>
             </div>

@@ -6,8 +6,23 @@ export interface IDao {
   daoId: string;
 }
 
+interface IOrder {
+  orderid: string;
+  time: string;
+  status: string;
+  offering: string;
+  biding: string;
+  price: number;
+  amount: number;
+  limitmin: number;
+  limitmax: number;
+  sold: number;
+  shelf: number;
+}
+
 export interface IMarketState {
   orders: [];
+  ownOrders: IOrder[];
   dealerId: string;
   dealerName: string;
   daos: IDao[];
@@ -17,6 +32,7 @@ export interface IMarketState {
 
 const initState: IMarketState = {
   orders: [],
+  ownOrders: [],
   daos: [],
   dealerId: "",
   dealerName: "",
@@ -39,6 +55,11 @@ const marketReducer = (state = initState, action: IAction): IMarketState => {
       return {
         ...state,
         orders: action.payload
+      };
+    case actionTypes.MARKET_GET_OWN_ORDERS_SUCCESS:
+      return {
+        ...state,
+        ownOrders: action.payload
       };
     case actionTypes.MARKET_GET_DEALER_OK:
       return {

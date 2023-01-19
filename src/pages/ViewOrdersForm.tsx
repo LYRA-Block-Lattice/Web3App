@@ -1,7 +1,10 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import OrderCard from "../components/OrderCard";
 import "./ViewOrdersForm.css";
+import { MARKET_GET_OWN_ORDERS } from "../app/actionTypes";
+import { getAuthSelector, getMarketSelector } from "../app/selectors";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -9,26 +12,12 @@ interface customWindow extends Window {
 }
 declare const window: customWindow;
 
-interface IOrder {
-  orderid: string;
-  time: string;
-  status: string;
-  offering: string;
-  biding: string;
-  price: number;
-  amount: number;
-  limitmin: number;
-  limitmax: number;
-  sold: number;
-  shelf: number;
-}
-
 const icons = {
-  Token: "_content/ReactRazor/asserts/icbaselinegeneratingtokens.svg",
-  NFT: "_content/ReactRazor/asserts/mapartgallery.svg",
-  Fiat: "_content/ReactRazor/asserts/fluentemojihighcontrastdollarbanknote.svg",
-  Goods: "_content/ReactRazor/asserts/mditruckdelivery.svg",
-  Service: "_content/ReactRazor/asserts/carbonuserservicedesk.svg"
+  Token: "../asserts/icbaselinegeneratingtokens.svg",
+  NFT: "../asserts/mapartgallery.svg",
+  Fiat: "../asserts/fluentemojihighcontrastdollarbanknote.svg",
+  Goods: "../asserts/mditruckdelivery.svg",
+  Service: "../asserts/carbonuserservicedesk.svg"
 };
 
 const geticon = (ticker: string) => {
@@ -42,23 +31,29 @@ const geticon = (ticker: string) => {
 
 const ViewOrdersForm: FunctionComponent = () => {
   const navigate = useNavigate();
-  const [orders, setOrders] = useState<IOrder[]>([]);
+  const dispatch = useDispatch();
+  const auth = useSelector(getAuthSelector);
+  const market = useSelector(getMarketSelector);
 
   useEffect(() => {
-    window.rrProxy.ReactRazor.Pages.Home.Interop.GetOrdersAsync(
-      window.rrComponent
-    ).then(function (resp: any) {
-      var ret = JSON.parse(resp);
-      if (ret.ret == "Success") {
-        setOrders(ret.result);
-      } else {
-        window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-          window.rrComponent,
-          "Warning",
-          ret.msg
-        );
-      }
+    dispatch({
+      type: MARKET_GET_OWN_ORDERS,
+      payload: { accountId: auth.accountId }
     });
+    // window.rrProxy.ReactRazor.Pages.Home.Interop.GetOrdersAsync(
+    //   window.rrComponent
+    // ).then(function (resp: any) {
+    //   var ret = JSON.parse(resp);
+    //   if (ret.ret == "Success") {
+    //     setOrders(ret.result);
+    //   } else {
+    //     window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
+    //       window.rrComponent,
+    //       "Warning",
+    //       ret.msg
+    //     );
+    //   }
+    // });
   }, []);
 
   function truncate(str: any, n: any) {
@@ -80,9 +75,9 @@ const ViewOrdersForm: FunctionComponent = () => {
           <div className="utility-button5">New</div>
         </button>
       </div>
-      {orders.map((order) => (
+      {market.ownOrders.map((order) => (
         <OrderCard
-          //orderid={order.orderid!}
+          key={order.orderid!}
           offering={order.offering}
           biding={order.biding}
           orderStatus={order.status}
