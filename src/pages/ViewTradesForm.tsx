@@ -1,23 +1,44 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { MARKET_GET_OWN_TRADES } from "../app/actionTypes";
+import { getAuthSelector, getMarketSelector } from "../app/selectors";
 import TradeCard from "../components/TradeCard";
 import "./ViewTradesForm.css";
+import { getTickerIcon, OrderStatus } from "../app/market/marketReducer";
 
 const ViewTradesForm: FunctionComponent = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const auth = useSelector(getAuthSelector);
+  const market = useSelector(getMarketSelector);
+
+  useEffect(() => {
+    dispatch({
+      type: MARKET_GET_OWN_TRADES,
+      payload: { accountId: auth.accountId }
+    });
+  }, []);
+
   return (
     <div className="viewtradesform">
       <div className="view-trades-wrapper">
         <div className="view-trades">View Trades</div>
       </div>
-      <TradeCard
-        tradeStatus="Open"
-        biding="BTC"
-        offering="tether/USDT"
-        time="12/29/2022 10:25:37 AM"
-        price="10,323"
-        amount="1113.2"
-        bidingImg="../asserts/icbaselinegeneratingtokens.svg"
-        offeringImg="../asserts/carbonuserservicedesk.svg"
-      />
+      {market.ownTrades?.map((trade: any) => (
+        <TradeCard
+          key={trade.tradeId}
+          dir={trade.dir}
+          tradeStatus={trade.status}
+          biding={trade.biding}
+          offering={trade.offering}
+          time={trade.time}
+          price={trade.price}
+          amount={trade.amount}
+          bidingImg={getTickerIcon(trade.biding)}
+          offeringImg={getTickerIcon(trade.offering)}
+        />
+      ))}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import "./MarketOrder.css";
 import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
+import { OrderStatus } from "../app/market/marketReducer";
 
 type MarketOrderType = {
   orderId: string;

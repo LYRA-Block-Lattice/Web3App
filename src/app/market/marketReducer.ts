@@ -1,12 +1,36 @@
 import * as actionTypes from "../actionTypes";
 import { IAction } from "../wallet/walletReducer";
 
+const icons = {
+  Token: "../asserts/icbaselinegeneratingtokens.svg",
+  NFT: "../asserts/mapartgallery.svg",
+  Fiat: "../asserts/fluentemojihighcontrastdollarbanknote.svg",
+  Goods: "../asserts/mditruckdelivery.svg",
+  Service: "../asserts/carbonuserservicedesk.svg"
+};
+
+export const getTickerIcon = (ticker: string) => {
+  if (ticker.startsWith("nft/")) return icons["NFT"];
+  if (ticker.startsWith("fiat/")) return icons["Fiat"];
+  if (ticker.startsWith("tot/") || ticker.startsWith("sku/"))
+    return icons["Goods"];
+  if (ticker.startsWith("svc/")) return icons["Service"];
+  return icons["Token"];
+};
+
 export interface IDao {
   name: string;
   daoId: string;
 }
 
-interface IOrder {
+export enum OrderStatus {
+  Open = 0,
+  Partial = 10,
+  Closed = 30,
+  Delist = 50
+}
+
+export interface IOrder {
   orderid: string;
   time: string;
   status: string;
@@ -23,6 +47,7 @@ interface IOrder {
 export interface IMarketState {
   orders: [];
   ownOrders: IOrder[];
+  ownTrades: [];
   dealerId: string;
   dealerName: string;
   daos: IDao[];
@@ -33,6 +58,7 @@ export interface IMarketState {
 const initState: IMarketState = {
   orders: [],
   ownOrders: [],
+  ownTrades: [],
   daos: [],
   dealerId: "",
   dealerName: "",
@@ -60,6 +86,11 @@ const marketReducer = (state = initState, action: IAction): IMarketState => {
       return {
         ...state,
         ownOrders: action.payload
+      };
+    case actionTypes.MARKET_GET_OWN_TRADES_SUCCESS:
+      return {
+        ...state,
+        ownTrades: action.payload
       };
     case actionTypes.MARKET_GET_DEALER_OK:
       return {

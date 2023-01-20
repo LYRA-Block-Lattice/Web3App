@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import "./TradeCard.css";
 
 type TradeCardType = {
+  dir: string;
   tradeStatus?: string;
   biding?: string;
   offering?: string;
@@ -13,6 +14,7 @@ type TradeCardType = {
 };
 
 const TradeCard: FunctionComponent<TradeCardType> = ({
+  dir,
   tradeStatus,
   biding,
   offering,
@@ -20,7 +22,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   price,
   amount,
   bidingImg,
-  offeringImg,
+  offeringImg
 }) => {
   return (
     <div className="ordercard1">
@@ -51,7 +53,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
         </button>
         <div className="title-section1">
           <div className="trade-parent">
-            <b className="trade">Trade</b>
+            <b className="trade">{dir}</b>
             <b className="trade">{biding}</b>
             <img className="arrow-icon" alt="" src="../asserts/arrow-22.svg" />
             <b className="tetherusdt2">{offering}</b>

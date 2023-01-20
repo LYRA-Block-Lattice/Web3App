@@ -1,14 +1,16 @@
 import axios from "axios";
 
-axios.interceptors.request.use((request) => {
-  console.log("Starting Request", JSON.stringify(request, null, 2));
-  return request;
-});
+export const InitAxios = () => {
+  axios.interceptors.request.use((request) => {
+    console.log("Starting Request", JSON.stringify(request, null, 2));
+    return request;
+  });
 
-axios.interceptors.response.use((response) => {
-  console.log("Response:", JSON.stringify(response, null, 2));
-  return response;
-});
+  axios.interceptors.response.use((response) => {
+    console.log("Response:", JSON.stringify(response, null, 2));
+    return response;
+  });
+};
 
 const Block_API_v1 = axios.create({
   baseURL: `https://${process.env.REACT_APP_NETWORK_ID}.lyra.live/api/node`
@@ -34,10 +36,16 @@ export const lastServiceHash = () => Block_API_v2.get("/ServiceHash");
 
 // Dealer API
 export const fetchOrders = () => Dealer_API.get("/Orders");
+
 export const fetchOrderById = (orderId: string) =>
   Dealer_API.get("/Order?orderId=" + orderId);
+
 export const fetchOrdersByOwner = (owner: string) =>
   Dealer_API.get("/OrdersByOwner?ownerId=" + owner);
+
+export const fetchTradesByOwner = (owner: string) =>
+  Dealer_API.get("/TradesByOwner?ownerId=" + owner);
+
 export const fetchDealer = () => Dealer_API.get("/Dealer");
 export const uploadFile = (
   file: any,

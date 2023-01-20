@@ -30,6 +30,14 @@ function* getOwnOrders(action) {
   });
 }
 
+function* getOwnTrades(action) {
+  const trades = yield marketApi.fetchTradesByOwner(action.payload.accountId);
+  yield put({
+    type: actionTypes.MARKET_GET_OWN_TRADES_SUCCESS,
+    payload: trades.data
+  });
+}
+
 function* getOrderById(action) {
   const order = yield marketApi.fetchOrderById(action.payload.orderId);
   yield put({
@@ -162,11 +170,14 @@ function* setup(action) {
 export default function* marketSaga() {
   console.log("marketSaga is running.");
 
+  marketApi.InitAxios();
+
   // every time the user open wallet, we need to setup the SignalR connection
   yield takeEvery(actionTypes.WALLET_OPEN_DONE, setup);
 
   yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);
   yield takeEvery(actionTypes.MARKET_GET_OWN_ORDERS, getOwnOrders);
+  yield takeEvery(actionTypes.MARKET_GET_OWN_TRADES, getOwnTrades);
   yield takeEvery(actionTypes.MARKET_GET_ORDER_BY_ID, getOrderById);
   yield takeEvery(actionTypes.BLOCKCHAIN_FIND_DAO, findDao);
   yield takeEvery(actionTypes.MARKET_GET_DEALER, getDealer);

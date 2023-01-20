@@ -5,29 +5,13 @@ import OrderCard from "../components/OrderCard";
 import "./ViewOrdersForm.css";
 import { MARKET_GET_OWN_ORDERS } from "../app/actionTypes";
 import { getAuthSelector, getMarketSelector } from "../app/selectors";
+import { getTickerIcon } from "../app/market/marketReducer";
 
 interface customWindow extends Window {
   rrComponent?: any;
   rrProxy?: any;
 }
 declare const window: customWindow;
-
-const icons = {
-  Token: "../asserts/icbaselinegeneratingtokens.svg",
-  NFT: "../asserts/mapartgallery.svg",
-  Fiat: "../asserts/fluentemojihighcontrastdollarbanknote.svg",
-  Goods: "../asserts/mditruckdelivery.svg",
-  Service: "../asserts/carbonuserservicedesk.svg"
-};
-
-const geticon = (ticker: string) => {
-  if (ticker.startsWith("nft/")) return icons["NFT"];
-  if (ticker.startsWith("fiat/")) return icons["Fiat"];
-  if (ticker.startsWith("tot/") || ticker.startsWith("sku/"))
-    return icons["Goods"];
-  if (ticker.startsWith("svc/")) return icons["Service"];
-  return icons["Token"];
-};
 
 const ViewOrdersForm: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -81,8 +65,8 @@ const ViewOrdersForm: FunctionComponent = () => {
           offering={order.offering}
           biding={order.biding}
           orderStatus={order.status}
-          offeringImg={geticon(order.offering)}
-          bidingImg={geticon(order.biding)}
+          offeringImg={getTickerIcon(order.offering)}
+          bidingImg={getTickerIcon(order.biding)}
           time={order.time}
           price={order.price.toString()}
           amount={order.amount.toString()}
