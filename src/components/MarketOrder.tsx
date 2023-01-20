@@ -6,13 +6,6 @@ import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
 
-enum OrderStatus {
-  Open = 0,
-  Partial = 10,
-  Closed = 30,
-  Delist = 50
-}
-
 type MarketOrderType = {
   orderId: string;
   offeringIcon?: string;
@@ -55,7 +48,6 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   const [showTradeTable, setShowTradeTable] = useState(true);
 
   const toggle = useCallback(() => {
-    setTrades(datasrc);
     setShowTradeTable(!showTradeTable);
   }, [showTradeTable]);
 
@@ -155,24 +147,3 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
 };
 
 export default MarketOrder;
-
-const datasrc = [
-  {
-    name: "Marcel",
-    surname: "Michau",
-    age: "24",
-    gender: "Male"
-  },
-  {
-    name: "Joe",
-    surname: "Bloggs",
-    age: "27",
-    gender: "Male"
-  },
-  {
-    name: "Jane",
-    surname: "Doe",
-    age: "22",
-    gender: "Female"
-  }
-];
