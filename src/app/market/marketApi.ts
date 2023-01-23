@@ -47,14 +47,11 @@ export const fetchTradesByOwner = (owner: string) =>
   Dealer_API.get("/TradesByOwner?ownerId=" + owner);
 
 export const fetchDealer = () => Dealer_API.get("/Dealer");
-export const uploadFile = (
-  file: any,
-  accountId: string,
-  signature: string,
-  tradeId: string
-) =>
-  Dealer_API.post("/UploadFile", file, {
-    params: { accountId, signature, tradeId }
+export const uploadFile = (formData: FormData) =>
+  Dealer_API.post("/UploadFile", formData, {
+    headers: {
+      "Content-Type": "multipart/form-data"
+    }
   });
 
 // Starter API

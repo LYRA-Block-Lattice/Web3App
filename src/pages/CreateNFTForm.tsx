@@ -2,12 +2,12 @@ import { FunctionComponent, useState, useCallback } from "react";
 import { TextField } from "@mui/material";
 import "./CreateNFTForm.css";
 import * as marketApi from "../app/market/marketApi";
-
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
+import { useDispatch, useSelector } from "react-redux";
+import { MARKET_UPLOAD_FILE } from "../app/actionTypes";
+import { getAppSelector } from "../app/selectors";
+import { LyraCrypto } from "lyra-crypto";
+import axios from "axios";
+import base58 from "bs58";
 
 type TokenMintProps = {
   onClose?: (ticker?: string) => void;
@@ -20,6 +20,11 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
   const [desc, setDesc] = useState<string>("");
   const [url, setUrl] = useState<string>("");
   const [supply, setSupply] = useState<number>(1);
+
+  const [imgsrc, setImgsrc] = useState("../asserts/frame-627115@2x.png");
+
+  const dispatch = useDispatch();
+  const app = useSelector(getAppSelector);
 
   function readFileData(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files![0];
@@ -39,27 +44,61 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
     });
   }
 
-  // sha256 hash of the file
-  const [hash, setHash] = useState<string>("");
-
   // calculate sha256 hash of binary data
-  const sha256 = async (data: ArrayBuffer) => {
+  const sha256 = async (data: any) => {
     const hashBuffer = await crypto.subtle.digest("SHA-256", data);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray
-      .map((b) => b.toString(16).padStart(2, "0"))
-      .join("");
-    return hashHex;
+    // const hashHex = hashArray
+    //   .map((b) => b.toString(16).padStart(2, "0"))
+    //   .join("");
+    const hashStr = base58.encode(hashArray);
+    return hashStr;
   };
 
   // get file data from form file input
+  // redux can't handle big binary data. so upload file to server first
   const handleFileChange = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = event.target.files![0];
     const data = await readFileData(event);
+
+    // first sha256 the file
     const hash = await sha256(data);
-    setHash(hash);
+
+    // sign the hash with lyraCrypto
+    const userToken = JSON.parse(sessionStorage.getItem("token")!);
+    const signt = LyraCrypto.Sign(hash, userToken.pvt);
+
+    //console.log(`hash: ${hash} signt: ${signt} by ${userToken.pvt}`);
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("accountId", app.wallet.accountId as string);
+    formData.append("signature", signt);
+    formData.append("signatureType", "der");
+
+    try {
+      const response = await marketApi.uploadFile(formData);
+      console.log(response);
+      setImgsrc(response.data.url);
+
+      // create metadata
+    } catch (error) {
+      console.log(error);
+    }
+
+    // dispatch({
+    //   type: MARKET_UPLOAD_FILE,
+    //   payload: {
+    //     accountId:
+    //     name: file.name,
+    //     data: data
+    //   }
+    // });
+
+    //const hash = await sha256(data);
+    //setHash(hash);
     // sign the hash using LyraCrypto api
     // const userToken = JSON.parse(sessionStorage.getItem("token"));
     // var signt = LyraCrypto.Sign(msg, userToken.pvt);
@@ -123,34 +162,34 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
 
   const onMintClick = useCallback(() => {
     console.log("mint NFT.");
-    window.rrProxy.ReactRazor.Pages.Home.Interop.MintNFTAsync(
-      window.rrComponent,
-      name,
-      desc,
-      supply,
-      url
-    )
-      .then(function (response: any) {
-        return JSON.parse(response);
-      })
-      .then(function (result: any) {
-        if (result.ret == "Success") {
-          let tickr = result.result;
-          window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-            window.rrComponent,
-            "Success",
-            tickr + " is ready for use."
-          );
-          props.onClose!(tickr);
-        } else {
-          window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-            window.rrComponent,
-            "Warning",
-            result.msg
-          );
-          props.onClose!();
-        }
-      });
+    // window.rrProxy.ReactRazor.Pages.Home.Interop.MintNFTAsync(
+    //   window.rrComponent,
+    //   name,
+    //   desc,
+    //   supply,
+    //   url
+    // )
+    //   .then(function (response: any) {
+    //     return JSON.parse(response);
+    //   })
+    //   .then(function (result: any) {
+    //     if (result.ret == "Success") {
+    //       let tickr = result.result;
+    //       window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
+    //         window.rrComponent,
+    //         "Success",
+    //         tickr + " is ready for use."
+    //       );
+    //       props.onClose!(tickr);
+    //     } else {
+    //       window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
+    //         window.rrComponent,
+    //         "Warning",
+    //         result.msg
+    //       );
+    //       props.onClose!();
+    //     }
+    //   });
   }, [name, desc, url, supply]);
 
   return (
@@ -177,16 +216,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         margin="none"
         onChange={(e) => setDesc(e.target.value)}
       />
-      <img
-        className="createnftform-child"
-        alt=""
-        src="../asserts/frame-627115@2x.png"
-      />
-      <img
-        className="createnftform-child"
-        alt=""
-        src="../asserts/frame-627115@2x.png"
-      />
+      <img className="createnftform-child" alt="" src={imgsrc} />
       <TextField
         className="nft-metadata-url"
         sx={{ width: 301 }}

@@ -7,7 +7,7 @@ export interface IBalance {
 }
 
 export interface IWalletInfo {
-  accountId: String | undefined;
+  accountId: string | undefined;
   balance: number;
   usdt: number;
   unrecvcnt: number;
@@ -17,8 +17,8 @@ export interface IWalletInfo {
   balances: IBalance[];
 }
 export interface ITxInfo {
-  tag: String | null;
-  result: String | null;
+  tag: string | null;
+  result: string | null;
 }
 export interface IWalletState {
   wallet: IWalletInfo;

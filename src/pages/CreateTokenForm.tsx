@@ -32,34 +32,6 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
         supply: supply
       }
     });
-    // window.rrProxy.ReactRazor.Pages.Home.Interop.MintTokenAsync(
-    //   window.rrComponent,
-    //   name,
-    //   domain,
-    //   desc,
-    //   supply
-    // )
-    //   .then(function (response: any) {
-    //     return JSON.parse(response);
-    //   })
-    //   .then(function (result: any) {
-    //     if (result.ret == "Success") {
-    //       let tickr = `${domain}/${name}`;
-    //       window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-    //         window.rrComponent,
-    //         "Success",
-    //         tickr + " is ready for use."
-    //       );
-    //       props.onClose!(tickr);
-    //     } else {
-    //       window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-    //         window.rrComponent,
-    //         "Warning",
-    //         result.msg
-    //       );
-    //       props.onClose!();
-    //     }
-    //   });
   }, [name, desc, domain, supply]);
 
   return (

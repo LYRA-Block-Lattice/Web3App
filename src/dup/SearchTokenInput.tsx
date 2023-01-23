@@ -4,13 +4,6 @@ import "./SearchTokenInput.css";
 import { useSelector } from "react-redux";
 import { getAppSelector } from "../app/selectors";
 import { IBalance } from "../app/wallet/walletReducer";
-
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
-
 export interface IToken {
   token: string;
   domain: string;

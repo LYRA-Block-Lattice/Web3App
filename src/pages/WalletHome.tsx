@@ -81,8 +81,10 @@ const WalletHome: FunctionComponent = () => {
               key={a.token}
               coinIcon="../asserts/lyralogoblackicon@2x.png"
               coinName={a.token}
-              amountText={a.balance?.toString()}
-              amountWorth="$2"
+              amountText={a.balance?.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })}
+              amountWorth=""
             />
           ))}
         </>

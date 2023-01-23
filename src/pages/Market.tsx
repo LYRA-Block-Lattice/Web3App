@@ -45,7 +45,11 @@ const Market: FunctionComponent = () => {
             >
               <b className="wallet-name-label1">{app.name}</b>
               <div className="balance-display-zone-inner" />
-              <b className="usdtbalance2">{app.wallet.balance}</b>
+              <b className="usdtbalance2">
+                {app.wallet.balance.toLocaleString(undefined, {
+                  maximumFractionDigits: 2
+                })}
+              </b>
               <b className="lyrlabel1">LYR</b>
               <div className="rectangle-div" />
             </button>
