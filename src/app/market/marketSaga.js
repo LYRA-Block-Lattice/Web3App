@@ -167,34 +167,6 @@ function* setup(action) {
   }
 }
 
-// calculate sha256 hash of binary data
-const sha256 = async (data) => {
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hashHex = hashArray
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-  return hashHex;
-};
-
-function* uploadFile(action) {
-  // first sha256 the file
-  const hash = yield sha256(action.payload.data);
-  // sign the hash with lyraCrypto
-  const userToken = JSON.parse(sessionStorage.getItem("token"));
-  const signt = LyraCrypto.Sign(hash, userToken.pvt);
-
-  const ret = yield marketApi.uploadFile(
-    action.payload.accountId,
-    action.payload.data,
-    signt
-  );
-  yield put({
-    type: actionTypes.MARKET_UPLOAD_FILE_SUCCESS,
-    payload: ret.data
-  });
-}
-
 export default function* marketSaga() {
   console.log("marketSaga is running.");
 

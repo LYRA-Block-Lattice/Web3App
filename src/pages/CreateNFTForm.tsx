@@ -84,6 +84,26 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
       setImgsrc(response.data.url);
 
       // create metadata
+      var lsb = await marketApi.lastServiceHash();
+
+      var input = `${app.wallet.accountId as string}:${lsb.data}:${
+        response.data.url
+      }`;
+
+      const apisign = LyraCrypto.Sign(input, userToken.pvt);
+      // log input
+      console.log(`input: ${input} apisign: ${apisign} by ${userToken.pvt}`);
+
+      var ret = await marketApi.createNFTMeta(
+        app.wallet.accountId as string,
+        apisign,
+        name,
+        desc,
+        response.data.url
+      );
+
+      console.log(ret);
+      setUrl(ret.data.url);
     } catch (error) {
       console.log(error);
     }

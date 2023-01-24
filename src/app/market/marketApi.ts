@@ -25,7 +25,7 @@ const Dealer_API = axios.create({
 });
 
 const Start_API = axios.create({
-  baseURL: `https://start${process.env.REACT_APP_NETWORK_ID}.lyra.live/api`
+  baseURL: `https://start${process.env.REACT_APP_NETWORK_ID}.lyra.live/svc`
 });
 
 // Blockchain API V1
@@ -55,6 +55,29 @@ export const uploadFile = (formData: FormData) =>
   });
 
 // Starter API
+export const createNFTMeta = (
+  accountId: string,
+  signature: string,
+  name: string,
+  description: string,
+  imgUrl: string
+) =>
+  Start_API.post(
+    "/CreateMetaHosted",
+    {
+      accountId: accountId,
+      signature: signature,
+      signatureType: "der",
+      name: name,
+      description: description,
+      imgUrl: imgUrl
+    },
+    {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+  );
 
 // API.interceptors.request.use((req) => {
 //   if (localStorage.getItem("profile")) {
