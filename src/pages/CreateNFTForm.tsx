@@ -82,61 +82,9 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
       const response = await marketApi.uploadFile(formData);
       console.log(response);
       setImgsrc(response.data.url);
-
-      // create metadata
-      var lsb = await marketApi.lastServiceHash();
-
-      var input = `${app.wallet.accountId as string}:${lsb.data}:${
-        response.data.url
-      }`;
-
-      const apisign = LyraCrypto.Sign(input, userToken.pvt);
-      // log input
-      console.log(`input: ${input} apisign: ${apisign} by ${userToken.pvt}`);
-
-      var ret = await marketApi.createNFTMeta(
-        app.wallet.accountId as string,
-        apisign,
-        name,
-        desc,
-        response.data.url
-      );
-
-      console.log(ret);
-      setUrl(ret.data.url);
-
-      // mint NFT
-      dispatch({
-        type: WALLET_MINT_NFT,
-        payload: {
-          accountId: app.wallet.accountId as string,
-          name: name,
-          description: desc,
-          supply: supply,
-          metadataUrl: ret.data.url
-        }
-      });
     } catch (error) {
       console.log(error);
     }
-
-    // dispatch({
-    //   type: MARKET_UPLOAD_FILE,
-    //   payload: {
-    //     accountId:
-    //     name: file.name,
-    //     data: data
-    //   }
-    // });
-
-    //const hash = await sha256(data);
-    //setHash(hash);
-    // sign the hash using LyraCrypto api
-    // const userToken = JSON.parse(sessionStorage.getItem("token"));
-    // var signt = LyraCrypto.Sign(msg, userToken.pvt);
-
-    // send file to server
-    //const json = await marketApi.uploadFile(file, hash);
   };
 
   // const handleSubmit = async (event) => {
@@ -192,37 +140,41 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
     //   });
   };
 
-  const onMintClick = useCallback(() => {
+  const onMintClick = useCallback(async () => {
     console.log("mint NFT.");
-    // window.rrProxy.ReactRazor.Pages.Home.Interop.MintNFTAsync(
-    //   window.rrComponent,
-    //   name,
-    //   desc,
-    //   supply,
-    //   url
-    // )
-    //   .then(function (response: any) {
-    //     return JSON.parse(response);
-    //   })
-    //   .then(function (result: any) {
-    //     if (result.ret == "Success") {
-    //       let tickr = result.result;
-    //       window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-    //         window.rrComponent,
-    //         "Success",
-    //         tickr + " is ready for use."
-    //       );
-    //       props.onClose!(tickr);
-    //     } else {
-    //       window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-    //         window.rrComponent,
-    //         "Warning",
-    //         result.msg
-    //       );
-    //       props.onClose!();
-    //     }
-    //   });
-  }, [name, desc, url, supply]);
+    // create metadata
+    var lsb = await marketApi.lastServiceHash();
+
+    var input = `${app.wallet.accountId as string}:${lsb.data}:${imgsrc}`;
+
+    const userToken = JSON.parse(sessionStorage.getItem("token")!);
+    const apisign = LyraCrypto.Sign(input, userToken.pvt);
+    // log input
+    console.log(`input: ${input} apisign: ${apisign} by ${userToken.pvt}`);
+
+    var ret = await marketApi.createNFTMeta(
+      app.wallet.accountId as string,
+      apisign,
+      name,
+      desc,
+      imgsrc
+    );
+
+    console.log(ret);
+    setUrl(ret.data.url);
+
+    // mint NFT
+    dispatch({
+      type: WALLET_MINT_NFT,
+      payload: {
+        accountId: app.wallet.accountId as string,
+        name: name,
+        description: desc,
+        supply: supply,
+        metadataUrl: ret.data.url
+      }
+    });
+  }, [name, desc, url, supply, imgsrc]);
 
   return (
     <div className="createnftform">
