@@ -274,6 +274,37 @@ function* mintToken(action) {
   }
 }
 
+function* mintNFT(action) {
+  try {
+    //dispatch = yield getContext("dispatch");
+    const ws = yield createWS(action.payload.accountId);
+
+    const balanceResp = yield ws.call("MintNFT", [
+      action.payload.accountId,
+      action.payload.name,
+      action.payload.description,
+      action.payload.supply,
+      action.payload.metadataUrl
+    ]);
+    yield put({
+      type: actionTypes.WALLET_RECEIVE,
+      payload: balanceResp.result
+    });
+    yield put({
+      type: actionTypes.WSRPC_CALL_SUCCESS,
+      payload: { tag: action.payload.tag }
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.WSRPC_CALL_FAILED,
+      payload: {
+        error: error.message ?? error.error.message,
+        tag: action.payload.tag
+      }
+    });
+  }
+}
+
 function* createOrder(action) {
   try {
     const ws = yield createWS(action.payload.accountId);
@@ -336,6 +367,7 @@ export default function* walletSaga() {
 
   // Mint
   yield takeEvery(actionTypes.WALLET_MINT_TOKEN, mintToken);
+  yield takeEvery(actionTypes.WALLET_MINT_NFT, mintNFT);
 
   // UniOrder
   yield takeEvery(actionTypes.WALLET_CREATE_ORDER, createOrder);

@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 import "./CreateNFTForm.css";
 import * as marketApi from "../app/market/marketApi";
 import { useDispatch, useSelector } from "react-redux";
-import { MARKET_UPLOAD_FILE } from "../app/actionTypes";
+import { MARKET_UPLOAD_FILE, WALLET_MINT_NFT } from "../app/actionTypes";
 import { getAppSelector } from "../app/selectors";
 import { LyraCrypto } from "lyra-crypto";
 import axios from "axios";
@@ -104,6 +104,18 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
 
       console.log(ret);
       setUrl(ret.data.url);
+
+      // mint NFT
+      dispatch({
+        type: WALLET_MINT_NFT,
+        payload: {
+          accountId: app.wallet.accountId as string,
+          name: name,
+          description: desc,
+          supply: supply,
+          metadataUrl: ret.data.url
+        }
+      });
     } catch (error) {
       console.log(error);
     }
