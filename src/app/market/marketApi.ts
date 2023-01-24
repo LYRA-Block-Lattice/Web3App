@@ -33,6 +33,8 @@ export const searchDao = (q: string) => Block_API_v1.get("/FindDaos?q=" + q);
 
 // Blockchain API V2
 export const lastServiceHash = () => Block_API_v2.get("/ServiceHash");
+export const getBalance = (accountId: string) =>
+  Block_API_v2.get("/Balance?accountId=" + accountId);
 
 // Dealer API
 export const fetchOrders = () => Dealer_API.get("/Orders");

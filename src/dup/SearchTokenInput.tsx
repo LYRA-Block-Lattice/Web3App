@@ -42,9 +42,9 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
     // set selbalance if val is specified
     if (val) {
       setDefval(val);
-      var b = app.wallet.balances.find((a) => a.token == val.token);
+      var b = app.wallet.balances.find((a) => a.Ticker == val.token);
       if (b) {
-        setSelbalance(b.balance);
+        setSelbalance(b.Balance);
       }
     }
 
@@ -95,12 +95,12 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
         onTokenSelect(value);
         searchToken(value, cat);
 
-        if (balance?.find((a) => a.token == value)) {
-          setSelbalance(balance?.find((a) => a.token == value)?.balance);
+        if (balance?.find((a) => a.Ticker == value)) {
+          setSelbalance(balance?.find((a) => a.Ticker == value)?.Balance);
         } else {
           // for nft/tot, its the name
           let ticker = options.find((a) => a.name == value)?.token;
-          setSelbalance(balance?.find((a) => a.token == ticker)?.balance);
+          setSelbalance(balance?.find((a) => a.Ticker == ticker)?.Balance);
         }
       } else {
         onTokenSelect("");

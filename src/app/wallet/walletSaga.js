@@ -5,6 +5,7 @@ import { LyraCrypto } from "lyra-crypto";
 import * as actionTypes from "../actionTypes";
 import persist from "../lyra/persist";
 import * as Dex from "../lyra/dexapi";
+import * as marketApi from "../market/marketApi";
 
 import {
   JsonRpcWebsocket,
@@ -16,12 +17,28 @@ function* getBalance(action) {
     var wds = yield persist.checkData();
     if (wds === null || wds.network === null || wds.accountId === null) return;
 
-    const url = `https://${wds.network}.lyra.live/api/Node/GetLastBlock?AccountId=${wds.accountId}`;
-    const response = yield fetch(url);
-    var json = yield response.text();
-    var j = JSON.parse(json);
-    // deal with real empty wallet. otherwise just ignore and use the saved data.
-    if (j.resultMessage == "Block not found") {
+    // const url = `https://${wds.network}.lyra.live/api/Node/GetLastBlock?AccountId=${wds.accountId}`;
+    // const response = yield fetch(url);
+    // var json = yield response.text();
+    // var j = JSON.parse(json);
+    try {
+      const ret = yield marketApi.getBalance(wds.accountId);
+
+      yield put({
+        type: actionTypes.WALLET_BALANCE,
+        payload: {
+          accountId: wds.accountId,
+          nftcnt: ret.data.filter((a) => a.Domain == "nft").length,
+          totcnt: ret.data.filter((a) => a.Domain == "tot" || a.Domain == "svc")
+            .length,
+          balance: ret.data.find((a) => a.Ticker == "LYR").Balance ?? 0,
+          usdt: ret.data.find((a) => a.Ticker == "tether/USDT").Balance ?? 0,
+          balances: ret.data
+
+          // TODO: set unreceived args
+        }
+      });
+    } catch (error) {
       yield put({
         type: actionTypes.WALLET_BALANCE,
         payload: {
@@ -33,35 +50,8 @@ function* getBalance(action) {
           balances: []
         }
       });
-    } else {
-      var ret = JSON.parse(j.blockData);
 
-      yield put({
-        type: actionTypes.WALLET_BALANCE,
-        payload: {
-          accountId: wds.accountId,
-          nftcnt: Object.keys(ret.Balances).filter((a) => a.startsWith("nft/"))
-            .length,
-          totcnt: Object.keys(ret.Balances).filter(
-            (a) => a.startsWith("tot/") || a.startsWith("svc/")
-          ).length,
-          balance:
-            Object.keys(ret.Balances).find((a) => a == "LYR") === undefined
-              ? 0
-              : ret.Balances["LYR"] / 100000000,
-          usdt:
-            Object.keys(ret.Balances).find((a) => a == "tether/USDT") ===
-            undefined
-              ? 0
-              : ret.Balances["tether/USDT"] / 100000000,
-          balances: Object.entries(ret.Balances).map(([k, v]) => [
-            k,
-            v / 100000000
-          ])
-
-          // TODO: set unreceived args
-        }
-      });
+      throw error;
     }
   } catch (error) {
     yield put({

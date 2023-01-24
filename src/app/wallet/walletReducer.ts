@@ -2,8 +2,14 @@ import { Interface } from "readline";
 import * as actionTypes from "../actionTypes";
 
 export interface IBalance {
-  token: string;
-  balance: number;
+  Author: string;
+  TIme: Date;
+  Balance: number;
+  Ticker: string;
+  Domain: string;
+  Desc: string;
+  Name: string | undefined;
+  Url: string | undefined;
 }
 
 export interface IWalletInfo {
@@ -77,10 +83,7 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
             usdt: action.payload.usdt,
             nftcnt: action.payload.nftcnt,
             totcnt: action.payload.totcnt,
-            balances: action.payload.balances.map((a: any) => ({
-              token: a[0],
-              balance: a[1]
-            })),
+            balances: action.payload.balances,
             unrecvcnt: action.payload.unreceived
               ? state.wallet.unrecvcnt + 1
               : 0,

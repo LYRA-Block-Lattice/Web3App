@@ -31,12 +31,12 @@ const WalletHome: FunctionComponent = () => {
     if (cat === "")
       return list.filter(
         (a) =>
-          !a.token.startsWith("fiat/") &&
-          !a.token.startsWith("nft/") &&
-          !a.token.startsWith("tot/") &&
-          !a.token.startsWith("svc/")
+          !a.Ticker.startsWith("fiat/") &&
+          !a.Ticker.startsWith("nft/") &&
+          !a.Ticker.startsWith("tot/") &&
+          !a.Ticker.startsWith("svc/")
       );
-    else return app.wallet.balances.filter((a) => a.token.startsWith(cat));
+    else return app.wallet.balances.filter((a) => a.Ticker.startsWith(cat));
   };
 
   const onSwapButtonClick = useCallback(() => {
@@ -78,10 +78,10 @@ const WalletHome: FunctionComponent = () => {
         <>
           {ofCatalog(app.wallet.balances).map((a) => (
             <TokenDisplayItem
-              key={a.token}
+              key={a.Ticker}
               coinIcon="../asserts/lyralogoblackicon@2x.png"
-              coinName={a.token}
-              amountText={a.balance?.toLocaleString(undefined, {
+              coinName={a.Name ?? a.Ticker}
+              amountText={a.Balance?.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
               amountWorth=""
