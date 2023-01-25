@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
+import WalletCard from "../components/WalletCard";
+import { useNavigate } from "react-router-dom";
 
 import { getAppSelector, getAuthSelector } from "../app/selectors";
 import TokenDisplayItem from "../components/TokenDisplayItem";
@@ -95,54 +97,7 @@ const WalletHome: FunctionComponent = () => {
   return (
     <>
       <div className="wallethome">
-        <div className="wallet-card">
-          <div className="wallet-card-inner">
-            <div className="rectangle-wrapper">
-              <div className="rectangle" />
-            </div>
-          </div>
-          <div className="frame-parent">
-            <div className="balance-display-zone-parent">
-              <Link className="balance-display-zone" to="/openwallet">
-                <button className="wallet-name-label">{app.name}</button>
-                <div className="balance-display-zone-child" />
-                <b className="usdtbalance">{app.wallet.balance}</b>
-                <b className="lyrlabel">LYR</b>
-                <div className="balance-display-zone-item" />
-                <b className="usdtbalance">{app.wallet.usdt}</b>
-                <b className="lyrlabel">USDT</b>
-              </Link>
-              <div className="qrcode-button-wrapper">
-                <button className="qrcode-button" onClick={scanToPay}>
-                  <div className="qrcode-button-round" />
-                  <img
-                    className="qrcode-icon"
-                    alt=""
-                    src="../asserts/qrcode-icon.svg"
-                  />
-                </button>
-              </div>
-            </div>
-            <div className="token-lists">
-              <button className="go-nft-button">
-                <div className="nft-count">{app.wallet.nftcnt}</div>
-                <b className="nft-label">NFT</b>
-              </button>
-              <button className="go-nft-button">
-                <div className="tot-count">{app.wallet.totcnt}</div>
-                <b className="nft-label">TOT</b>
-              </button>
-              <button className="go-nft-button">
-                <div className="tot-count">{sellcnt}</div>
-                <b className="nft-label">Selling</b>
-              </button>
-              <button className="go-nft-button">
-                <div className="tot-count">{bidcnt}</div>
-                <b className="nft-label">Buying</b>
-              </button>
-            </div>
-          </div>
-        </div>
+        <WalletCard />
         <div className="iconssection-wrapper">
           <div className="iconssection">
             <div className="swap-button-parent">
