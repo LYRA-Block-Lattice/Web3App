@@ -1,9 +1,13 @@
 import { FunctionComponent, useCallback } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
 import "./PrimaryAccountCard.css";
 
 const PrimaryAccountCard: FunctionComponent = () => {
   const navigate = useNavigate();
+  const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
 
   const onBalanceDisplayZoneClick = useCallback(() => {
     navigate("/");
@@ -22,9 +26,13 @@ const PrimaryAccountCard: FunctionComponent = () => {
             className="balance-display-zone1"
             onClick={onBalanceDisplayZoneClick}
           >
-            <b className="wallet-name-label1">My Primary Account</b>
+            <b className="wallet-name-label1">{app.name}</b>
             <div className="balance-display-zone-inner" />
-            <b className="usdtbalance2">1,025,000</b>
+            <b className="usdtbalance2">
+              {app.wallet.balance.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })}
+            </b>
             <b className="lyrlabel1">LYR</b>
             <div className="rectangle-div" />
           </button>

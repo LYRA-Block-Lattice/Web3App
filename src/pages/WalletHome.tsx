@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
 import WalletCard from "../components/WalletCard";
-import { useNavigate } from "react-router-dom";
 
 import { getAppSelector, getAuthSelector } from "../app/selectors";
 import TokenDisplayItem from "../components/TokenDisplayItem";
