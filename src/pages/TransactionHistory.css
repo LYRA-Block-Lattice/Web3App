@@ -16,7 +16,7 @@
   justify-content: center;
   gap: 22px;
 }
-.rectangle2 {
+.rectangle {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -54,7 +54,7 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.rectangle3 {
+.rectangle1 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -131,7 +131,7 @@
   justify-content: flex-start;
   font-size: var(--headline-s1-size);
 }
-.rectangle4 {
+.rectangle2 {
   position: absolute;
   height: 100%;
   width: 100%;

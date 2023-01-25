@@ -1,0 +1,194 @@
+.rectangle5 {
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-brown-200);
+  width: 5px;
+}
+.rectangle-wrapper,
+.wallet-card-inner {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rectangle-wrapper {
+  overflow: hidden;
+  flex-direction: column;
+}
+.wallet-card-inner {
+  background-color: var(--text-primary-dark1);
+  width: 18px;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padding-6xs) 0;
+  box-sizing: border-box;
+}
+.wallet-name-label {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+  font-family: var(--font-sf-pro-text);
+  color: var(--color-brown-200);
+  text-align: right;
+  display: inline-block;
+  width: 206px;
+}
+.balance-display-zone-child {
+  position: relative;
+  border-top: 1px solid var(--info1);
+  box-sizing: border-box;
+  width: 126px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.lyrlabel,
+.usdtbalance {
+  position: relative;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
+}
+.lyrlabel {
+  font-size: var(--font-size-2xs);
+  color: var(--color-brown-200);
+  text-align: left;
+}
+.balance-display-zone-item {
+  position: relative;
+  background-color: var(--color-gray-1400);
+  width: 22px;
+  height: 2px;
+  flex-shrink: 0;
+}
+.balance-display-zone {
+  cursor: pointer;
+  text-decoration: none;
+  align-self: stretch;
+  flex: 1;
+  background-color: var(--text-primary-dark1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-6xs) var(--padding-5xs) 0;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+  color: inherit;
+}
+.qrcode-button-round {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-3xl);
+  background-color: var(--color-pink);
+  opacity: 0.5;
+  mix-blend-mode: normal;
+}
+.qrcode-icon {
+  position: absolute;
+  top: 14.33px;
+  right: 14.07px;
+  width: 29px;
+  height: 29px;
+}
+.qrcode-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 56.78px;
+  height: 56.78px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.balance-display-zone-parent,
+.qrcode-button-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.qrcode-button-wrapper {
+  background-color: var(--text-primary-dark1);
+  overflow: hidden;
+  padding: var(--padding-6xs) var(--padding-6xs) var(--padding-5xs)
+    var(--padding-5xs);
+}
+.balance-display-zone-parent {
+  flex: 1;
+}
+.nft-count,
+.nft-label {
+  position: relative;
+  font-family: var(--font-sf-pro-text);
+  text-align: center;
+}
+.nft-count {
+  font-size: var(--font-size-3xl);
+  letter-spacing: 3.5px;
+  font-weight: 600;
+  color: var(--color-white1);
+}
+.nft-label {
+  font-size: var(--font-size-2xs);
+  color: var(--color-brown-200);
+}
+.go-nft-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-4xs);
+}
+.token-lists {
+  align-self: stretch;
+  background-color: var(--text-primary-dark1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: var(--gap-4xl);
+}
+.frame-container,
+.wallet-card {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-container {
+  flex: 1;
+  flex-direction: column;
+}
+.wallet-card {
+  border-radius: var(--br-sm);
+  background-color: var(--text-primary-dark1);
+  height: 217px;
+  flex-shrink: 0;
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  text-align: right;
+  font-size: var(--font-size-7xl);
+  color: var(--color-white1);
+  font-family: var(--font-sf-pro-text);
+}

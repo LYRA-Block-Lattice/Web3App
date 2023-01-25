@@ -49,7 +49,7 @@ const TransactionHistory: FunctionComponent = () => {
       </div>
       <div className="group-parent">
         <div className="group">
-          <div className="rectangle2" />
+          <div className="rectangle" />
           <div className="div8">$200</div>
           <img
             className="iconglyphstar-copy-4"
@@ -59,7 +59,7 @@ const TransactionHistory: FunctionComponent = () => {
         </div>
         <div className="group-4-copy">
           <div className="group1">
-            <div className="rectangle3" />
+            <div className="rectangle1" />
             <div className="div9">9/10/2018</div>
             <img
               className="iconglyphstar-copy-41"
@@ -74,7 +74,7 @@ const TransactionHistory: FunctionComponent = () => {
       </div>
       <div className="receivedetailcard-parent">
         <div className="receivedetailcard">
-          <div className="rectangle4" />
+          <div className="rectangle2" />
           <div className="group2">
             <b className="transfer-money">Receive</b>
             <div className="to-harry-james">From: Harry James</div>
@@ -111,7 +111,7 @@ const TransactionHistory: FunctionComponent = () => {
           />
         </div>
         <div className="receivedetailcard">
-          <div className="rectangle4" />
+          <div className="rectangle2" />
           <div className="group2">
             <b className="transfer-money">Send</b>
             <div className="to-harry-james">To: Harry James</div>
@@ -148,7 +148,7 @@ const TransactionHistory: FunctionComponent = () => {
           />
         </div>
         <div className="receivedetailcard">
-          <div className="rectangle4" />
+          <div className="rectangle2" />
           <div className="group2">
             <b className="transfer-money">Receive</b>
             <div className="to-harry-james">From: Harry James</div>

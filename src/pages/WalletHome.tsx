@@ -1,7 +1,8 @@
 import { FunctionComponent, useState, useCallback } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
+import WalletCard from "../components/WalletCard";
+import { useNavigate } from "react-router-dom";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import "./WalletHome.css";
 
@@ -28,56 +29,7 @@ const WalletHome: FunctionComponent = () => {
   return (
     <>
       <div className="wallethome">
-        <div className="wallet-card">
-          <div className="wallet-card-inner">
-            <div className="rectangle-wrapper">
-              <div className="rectangle" />
-            </div>
-          </div>
-          <div className="frame-parent">
-            <div className="balance-display-zone-parent">
-              <Link className="balance-display-zone" to="/openwallet">
-                <button className="wallet-name-label">
-                  My Primary Account
-                </button>
-                <div className="balance-display-zone-child" />
-                <b className="usdtbalance">1,025,000</b>
-                <b className="lyrlabel">LYR</b>
-                <div className="balance-display-zone-item" />
-                <b className="usdtbalance">5,000</b>
-                <b className="lyrlabel">USDT</b>
-              </Link>
-              <div className="qrcode-button-wrapper">
-                <button className="qrcode-button">
-                  <div className="qrcode-button-round" />
-                  <img
-                    className="qrcode-icon"
-                    alt=""
-                    src="../asserts/qrcode-icon.svg"
-                  />
-                </button>
-              </div>
-            </div>
-            <div className="token-lists">
-              <button className="go-nft-button">
-                <div className="nft-count">12</div>
-                <b className="nft-label">NFT</b>
-              </button>
-              <button className="go-nft-button">
-                <div className="tot-count">3</div>
-                <b className="nft-label">TOT</b>
-              </button>
-              <button className="go-nft-button">
-                <div className="tot-count">0</div>
-                <b className="nft-label">Selling</b>
-              </button>
-              <button className="go-nft-button">
-                <div className="tot-count">0</div>
-                <b className="nft-label">Buying</b>
-              </button>
-            </div>
-          </div>
-        </div>
+        <WalletCard />
         <div className="iconssection-wrapper">
           <div className="iconssection">
             <div className="swap-button-parent">
@@ -168,7 +120,7 @@ const WalletHome: FunctionComponent = () => {
               amountWorth="$2,183"
             />
             <div className="tokendisplayitem">
-              <div className="frame-group">
+              <div className="frame-parent">
                 <div className="lyralogoblueicon-parent">
                   <img
                     className="lyralogoblueicon"
