@@ -31,12 +31,12 @@ const WalletHome: FunctionComponent = () => {
     if (cat === "")
       return list.filter(
         (a) =>
-          !a.Ticker.startsWith("fiat/") &&
-          !a.Ticker.startsWith("nft/") &&
-          !a.Ticker.startsWith("tot/") &&
-          !a.Ticker.startsWith("svc/")
+          a.Domain != "fiat" &&
+          a.Domain != "nft" &&
+          a.Domain != "tot" &&
+          a.Domain != "svc"
       );
-    else return app.wallet.balances.filter((a) => a.Ticker.startsWith(cat));
+    else return app.wallet.balances.filter((a) => a.Domain == cat);
   };
 
   const onSwapButtonClick = useCallback(() => {
@@ -203,7 +203,7 @@ const WalletHome: FunctionComponent = () => {
                   <div className="div">18</div>
                 </div>
               </button>
-              <button className="nft-tab" onClick={() => setCat("nft/")}>
+              <button className="nft-tab" onClick={() => setCat("nft")}>
                 <b className="token">NFT</b>
                 <div className="ellipse-parent">
                   <img
@@ -214,13 +214,13 @@ const WalletHome: FunctionComponent = () => {
                   <div className="div">18</div>
                 </div>
               </button>
-              <button className="fiat-tab" onClick={() => setCat("fiat/")}>
+              <button className="fiat-tab" onClick={() => setCat("fiat")}>
                 <b className="fiat">Fiat</b>
               </button>
-              <button className="fiat-tab" onClick={() => setCat("tot/")}>
+              <button className="fiat-tab" onClick={() => setCat("tot")}>
                 <b className="fiat">Goods</b>
               </button>
-              <button className="fiat-tab" onClick={() => setCat("svc/")}>
+              <button className="fiat-tab" onClick={() => setCat("svc")}>
                 <b className="fiat">Service</b>
               </button>
             </div>
