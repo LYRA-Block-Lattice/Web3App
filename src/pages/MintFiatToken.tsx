@@ -1,19 +1,10 @@
 import { FunctionComponent, useState, useCallback, useEffect } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import "./MintFiatToken.css";
-
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
-
-interface IToken {
-  token: string;
-  domain: string;
-  isTOT: boolean;
-  name: string;
-}
+import { useDispatch, useSelector } from "react-redux";
+import { getAppSelector } from "../app/selectors";
+import { IBalance } from "../app/wallet/walletReducer";
+import { WALLET_PRINT_FIAT } from "../app/actionTypes";
 
 type TokenMintProps = {
   onClose?: (ticker?: string) => void;
@@ -22,18 +13,14 @@ type TokenMintProps = {
 };
 
 const MintFiatToken: FunctionComponent<TokenMintProps> = (props) => {
+  const app = useSelector(getAppSelector);
+  const dispatch = useDispatch();
   const [name, setName] = useState<string>("");
   const [supply, setSupply] = useState<number>(0);
-  const [options, setOptions] = useState<IToken[]>([]);
+  const [options, setOptions] = useState<IBalance[]>([]);
 
-  async function getTokens() {
-    let t = await window.rrProxy.ReactRazor.Pages.Home.Interop.SearchTokenAsync(
-      window.rrComponent,
-      "fiat/",
-      "Fiat"
-    );
-    var tkns = JSON.parse(t);
-    setOptions(tkns);
+  function getTokens() {
+    setOptions(app.wallet.balances.filter((a) => a.Domain == "fiat"));
   }
 
   useEffect(() => {
@@ -42,32 +29,14 @@ const MintFiatToken: FunctionComponent<TokenMintProps> = (props) => {
 
   const onMintClick = useCallback(() => {
     console.log("printing fiat...");
-    window.rrProxy.ReactRazor.Pages.Home.Interop.PrintFiatAsync(
-      window.rrComponent,
-      name,
-      supply
-    )
-      .then(function (response: any) {
-        return JSON.parse(response);
-      })
-      .then(function (result: any) {
-        if (result.ret == "Success") {
-          let tickr = name;
-          window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-            window.rrComponent,
-            "Success",
-            tickr + " is ready for use."
-          );
-          props.onClose!(tickr);
-        } else {
-          window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-            window.rrComponent,
-            "Warning",
-            result.msg
-          );
-          props.onClose!();
-        }
-      });
+    dispatch({
+      type: WALLET_PRINT_FIAT,
+      payload: {
+        accountId: app.wallet.accountId,
+        ticker: name,
+        amount: supply
+      }
+    });
   }, [name, supply]);
 
   const onGetTokenInputChange = useCallback(
@@ -91,7 +60,7 @@ const MintFiatToken: FunctionComponent<TokenMintProps> = (props) => {
           disablePortal
           options={options}
           onInputChange={onGetTokenInputChange}
-          getOptionLabel={(option) => option.name}
+          getOptionLabel={(option) => option.Ticker}
           renderInput={(params: any) => (
             <TextField
               {...params}
