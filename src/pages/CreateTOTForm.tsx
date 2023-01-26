@@ -37,10 +37,13 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
   // signature for trade secret.
   const [tssign, setTssign] = useState<string | undefined>(undefined);
 
-  const totTypeChanged = (e: any) => {
-    e.preventDefault();
-    setTott(e.target.value);
-  };
+  const totTypeChanged = useCallback(
+    (e: any) => {
+      e.preventDefault();
+      setTott(e.target.value);
+    },
+    [tott]
+  );
 
   const [isSignTradeSecretPopupOpen, setSignTradeSecretPopupOpen] =
     useState(false);
