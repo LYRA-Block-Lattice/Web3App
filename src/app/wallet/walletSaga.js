@@ -295,6 +295,38 @@ function* mintNFT(action) {
   }
 }
 
+function* mintTOT(action) {
+  try {
+    //dispatch = yield getContext("dispatch");
+    const ws = yield createWS(action.payload.accountId);
+
+    const balanceResp = yield ws.call("CreateTOT", [
+      action.payload.accountId,
+      action.payload.type,
+      action.payload.name,
+      action.payload.description,
+      action.payload.supply,
+      action.payload.tradeSecretSignature
+    ]);
+    yield put({
+      type: actionTypes.WALLET_RECEIVE,
+      payload: balanceResp.result
+    });
+    yield put({
+      type: actionTypes.WSRPC_CALL_SUCCESS,
+      payload: { tag: action.payload.tag }
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.WSRPC_CALL_FAILED,
+      payload: {
+        error: error.message ?? error.error.message,
+        tag: action.payload.tag
+      }
+    });
+  }
+}
+
 function* printFiat(action) {
   try {
     //dispatch = yield getContext("dispatch");
@@ -387,6 +419,7 @@ export default function* walletSaga() {
   // Mint
   yield takeEvery(actionTypes.WALLET_MINT_TOKEN, mintToken);
   yield takeEvery(actionTypes.WALLET_MINT_NFT, mintNFT);
+  yield takeEvery(actionTypes.WALLET_MINT_TOT, mintTOT);
   yield takeEvery(actionTypes.WALLET_PRINT_FIAT, printFiat);
 
   // UniOrder

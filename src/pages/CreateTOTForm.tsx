@@ -10,12 +10,8 @@ import {
 import SignTradeSecretPopup from "../components/SignTradeSecretPopup";
 import PortalPopup from "../components/PortalPopup";
 import "./CreateTOTForm.css";
-
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
+import { useDispatch, useSelector } from "react-redux";
+import { getAppSelector } from "../app/selectors";
 
 type TokenMintProps = {
   onClose?: (ticker?: string) => void;
@@ -23,13 +19,16 @@ type TokenMintProps = {
   tag?: string;
 };
 
-const holdTypes = {
+const holdTypes: any = {
   Goods: "TOT",
   Service: "SVC",
   "Generic Trade only Token": "TOT"
 };
 
 const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
+  const app = useSelector(getAppSelector);
+  const dispatch = useDispatch();
+
   const [tott, setTott] = useState("Goods");
   const [name, setName] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
@@ -56,36 +55,18 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
 
   const onMintClick = useCallback(() => {
     console.log("Creating TOT...");
-    window.rrProxy.ReactRazor.Pages.Home.Interop.CreateTOTAsync(
-      window.rrComponent,
-      "", //holdTypes[tott],
-      name,
-      desc,
-      supply,
-      tssign
-    )
-      .then(function (response: any) {
-        return JSON.parse(response);
-      })
-      .then(function (result: any) {
-        if (result.ret == "Success") {
-          let tickr = result.result;
-          window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-            window.rrComponent,
-            "Success",
-            tickr + " is ready for use."
-          );
-          props.onClose!(tickr);
-        } else {
-          window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-            window.rrComponent,
-            "Warning",
-            result.msg
-          );
-          props.onClose!();
-        }
-      });
-  }, [name, desc, supply]);
+    dispatch({
+      type: "WALLET_MINT_TOT",
+      payload: {
+        accountId: app.wallet.accountId,
+        type: holdTypes[tott],
+        name: name,
+        description: desc,
+        supply: supply,
+        tradeSecretSignature: tssign
+      }
+    });
+  }, [tott, name, desc, supply, tssign]);
 
   return (
     <>
