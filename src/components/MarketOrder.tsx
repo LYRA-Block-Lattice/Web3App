@@ -23,6 +23,7 @@ type MarketOrderType = {
   sellerRatings?: string;
   sellerTrades?: string;
   lastUpdated?: string;
+  time?: any;
 
   /** Style props */
   orderStatusBackgroundColor?: Property.BackgroundColor;
@@ -43,6 +44,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   daoName,
   sellerRatings,
   sellerTrades,
+  time,
   orderStatusBackgroundColor
 }) => {
   const [trades, setTrades] = useState<any[]>([]);
@@ -97,6 +99,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
             <img className="frame-inner" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt1">{biding}</b>
           </div>
+          <div>{time.DateTime}</div>
           <div className="details-section">
             <div className="block3">
               <div className="btc">Amount</div>

@@ -15,7 +15,7 @@ type SearchTokenInputProps = {
   dir: string;
   cat: string;
   ownOnly: boolean;
-  onTokenSelect: (token: string) => void;
+  onTokenSelect: (name: string | undefined, ticker: string | undefined) => void;
   val: IToken;
 };
 
@@ -92,18 +92,23 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
       if (value) {
         getTokens();
 
-        onTokenSelect(value);
         searchToken(value, cat);
 
-        if (balance?.find((a) => a.Ticker == value)) {
-          setSelbalance(balance?.find((a) => a.Ticker == value)?.Balance);
+        var tok = balance?.find((a) => a.Ticker == value);
+        if (tok) {
+          setSelbalance(tok.Balance);
+          onTokenSelect(tok.Name, tok.Ticker);
         } else {
           // for nft/tot, its the name
           let ticker = options.find((a) => a.name == value)?.token;
-          setSelbalance(balance?.find((a) => a.Ticker == ticker)?.Balance);
+          let tok2 = balance?.find((a) => a.Ticker == ticker);
+          if (tok2) {
+            setSelbalance(tok2?.Balance);
+            onTokenSelect(tok2?.Name, tok2.Ticker);
+          }
         }
       } else {
-        onTokenSelect("");
+        onTokenSelect(undefined, undefined);
         setOptions([]);
         setSelbalance(0);
       }

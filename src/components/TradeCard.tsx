@@ -27,7 +27,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   return (
     <div className="ordercard1">
       <div className="order-brief-section1">
-        <button className="banner-image1">
+        <div className="banner-image1">
           <div className="order-banner1">
             <button className="order-image1">
               <img
@@ -50,7 +50,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
               <b className="open1">{tradeStatus}</b>
             </div>
           </div>
-        </button>
+        </div>
         <div className="title-section1">
           <div className="trade-parent">
             <b className="trade">{dir}</b>

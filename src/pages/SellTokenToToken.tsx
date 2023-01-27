@@ -26,8 +26,8 @@ const SellTokenToToken: FunctionComponent = () => {
   const catsell = decodeURIComponent(searchParams.get("sell")!);
   const catget = decodeURIComponent(searchParams.get("get")!);
 
-  const [tosell, setTosell] = useState("LYR");
-  const [toget, setToget] = useState("tether/USDT");
+  const [tosell, setTosell] = useState<string | undefined>();
+  const [toget, setToget] = useState<string | undefined>();
   const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
 
   const [val, setVal] = useState<IToken>();
@@ -73,7 +73,7 @@ const SellTokenToToken: FunctionComponent = () => {
             dir="Sell"
             cat={catsell}
             ownOnly={true}
-            onTokenSelect={onSellChange}
+            onTokenSelect={(name, ticker) => setTosell(ticker)}
           />
           <button
             className="prepare-sell-order-button12"
@@ -88,7 +88,7 @@ const SellTokenToToken: FunctionComponent = () => {
             dir="Get"
             cat={catget}
             ownOnly={false}
-            onTokenSelect={setToget}
+            onTokenSelect={(name, ticker) => setToget(ticker)}
           />
         </div>
         <PriceAndCollateralForm offering={tosell} biding={toget} />

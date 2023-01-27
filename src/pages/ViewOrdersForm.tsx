@@ -59,7 +59,7 @@ const ViewOrdersForm: FunctionComponent = () => {
           <div className="utility-button5">New</div>
         </button>
       </div>
-      {market.ownOrders.map((order) => (
+      {market.ownOrders?.map((order) => (
         <OrderCard
           key={order.orderid!}
           offering={order.offering}

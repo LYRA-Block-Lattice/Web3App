@@ -37,7 +37,8 @@ export const getBalance = (accountId: string) =>
   Block_API_v2.get("/Balance?accountId=" + accountId);
 
 // Dealer API
-export const fetchOrders = () => Dealer_API.get("/Orders");
+export const fetchOrders = (catalog: string | undefined) =>
+  Dealer_API.get("/Orders?catalog=" + catalog);
 
 export const fetchOrderById = (orderId: string) =>
   Dealer_API.get("/Order?orderId=" + orderId);

@@ -81,7 +81,7 @@ const Market: FunctionComponent = () => {
       <div className="orderandcatalog">
         <div className="tradableorderssection1">
           <div className="catalogtab1">
-            <button className="tokentab1" onClick={() => setCat("")}>
+            <button className="tokentab1" onClick={() => setCat("Token")}>
               <b className="token1">Token</b>
               <div className="ellipse-container">
                 <img
@@ -92,7 +92,7 @@ const Market: FunctionComponent = () => {
                 <div className="div2">18</div>
               </div>
             </button>
-            <button className="nft-tab1" onClick={() => setCat("nft/")}>
+            <button className="nft-tab1" onClick={() => setCat("NFT")}>
               <b className="token1">NFT</b>
               <div className="ellipse-container">
                 <img
@@ -103,19 +103,19 @@ const Market: FunctionComponent = () => {
                 <div className="div2">18</div>
               </div>
             </button>
-            <button className="fiat-tab1" onClick={() => setCat("fiat/")}>
+            <button className="fiat-tab1" onClick={() => setCat("Fiat")}>
               <b className="fiat1">Fiat</b>
             </button>
-            <button className="fiat-tab1" onClick={() => setCat("tot/")}>
+            <button className="fiat-tab1" onClick={() => setCat("Goods")}>
               <b className="fiat1">Goods</b>
             </button>
-            <button className="fiat-tab1" onClick={() => setCat("svc/")}>
+            <button className="fiat-tab1" onClick={() => setCat("Service")}>
               <b className="fiat1">Service</b>
             </button>
           </div>
         </div>
       </div>
-      <DisplaySellItems />
+      <DisplaySellItems cat={cat} />
     </div>
   );
 };

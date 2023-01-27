@@ -45,7 +45,7 @@ export interface IOrder {
 }
 
 export interface IMarketState {
-  orders: [];
+  orders: any;
   ownOrders: IOrder[];
   ownTrades: [];
   dealerId: string;
@@ -56,7 +56,7 @@ export interface IMarketState {
 }
 
 const initState: IMarketState = {
-  orders: [],
+  orders: {},
   ownOrders: [],
   ownTrades: [],
   daos: [],
