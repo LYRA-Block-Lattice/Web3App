@@ -5,6 +5,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import "./PreviewSellOrderForm.css";
 import { WALLET_CREATE_ORDER } from "../app/actionTypes";
 import { getAppSelector } from "../app/selectors";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 const PreviewSellOrderForm: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -64,6 +65,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
 
   return (
     <div className="previewsellorderform">
+      <PrimaryAccountCard />
       <div className="preview-sell-order">Preview Sell Order</div>
       <div className="im-selling">I’m selling:</div>
       <div className="nft-name">

@@ -73,7 +73,12 @@ const AssertDetailView: FunctionComponent = () => {
       <div className="assertdetailview1">
         <div className="asserttitleregion">
           <div className="assertauthorsection">
-            <div className="a-legend-nft">{market.order?.User.UserName}</div>
+            <div className="a-legend-nft">
+              Author:{" "}
+              {market.order?.Users?.lengh > 1
+                ? market.order?.Users[1].UserName
+                : market.order?.Users[0].UserName}
+            </div>
             <div className="material-symbolsshare-parent">
               <img
                 className="material-symbolsshare-icon"
@@ -88,11 +93,14 @@ const AssertDetailView: FunctionComponent = () => {
             </div>
           </div>
           <div className="asserttitlesection1">
-            <div className="meka-legends">{market.order?.Blocks[1].Ticker}</div>
+            <div className="meka-legends">
+              {market.order?.Blocks[1].Custom1 ??
+                market.order?.Blocks[1].Ticker}
+            </div>
           </div>
           <div className="assertownersection">
             <div className="meka-legends">
-              Owner {market.order?.User.UserName}
+              Owner: {market.order?.Users[0].UserName}
             </div>
           </div>
         </div>
@@ -107,7 +115,7 @@ const AssertDetailView: FunctionComponent = () => {
           <img
             className="titlebannerregion-child"
             alt=""
-            src="../asserts/frame-61@2x.png"
+            src={market.order?.Meta?.image ?? "../asserts/frame-61@2x.png"}
           />
         </div>
         <div className="assertstatssection">

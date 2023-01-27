@@ -6,6 +6,7 @@ import "./ViewOrdersForm.css";
 import { MARKET_GET_OWN_ORDERS } from "../app/actionTypes";
 import { getAuthSelector, getMarketSelector } from "../app/selectors";
 import { getTickerIcon } from "../app/market/marketReducer";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -50,6 +51,7 @@ const ViewOrdersForm: FunctionComponent = () => {
 
   return (
     <div className="viewordersform">
+      <PrimaryAccountCard />
       <div className="view-orders-parent">
         <div className="view-orders">View Orders</div>
         <button

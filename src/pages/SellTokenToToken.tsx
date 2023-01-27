@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router-dom";
 import PriceAndCollateralForm from "../components/PriceAndCollateralForm";
 import "./SellTokenToToken.css";
 import SearchTokenInput from "../dup/SearchTokenInput";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -66,6 +67,7 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
+        <PrimaryAccountCard />
         <div className="searchtokenbyname2">
           <SearchTokenInput
             key="tosell"

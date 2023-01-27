@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import CatalogSelection from "../components/CatalogSelection";
 import "./StartToCreateOrder.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 const boxStyle = {
   border: "grey solid 2px",
@@ -82,6 +83,7 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
+      <PrimaryAccountCard />
       <div className="choose-the-catalog">Choose the catalog</div>
       <div className="catalog-section">
         <Xwrapper>

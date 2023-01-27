@@ -6,6 +6,7 @@ import { getAuthSelector, getMarketSelector } from "../app/selectors";
 import TradeCard from "../components/TradeCard";
 import "./ViewTradesForm.css";
 import { getTickerIcon, OrderStatus } from "../app/market/marketReducer";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 const ViewTradesForm: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const ViewTradesForm: FunctionComponent = () => {
 
   return (
     <div className="viewtradesform">
+      <PrimaryAccountCard />
       <div className="view-trades-wrapper">
         <div className="view-trades">View Trades</div>
       </div>
