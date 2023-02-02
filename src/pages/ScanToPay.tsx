@@ -26,10 +26,7 @@ const ScanToPay: FunctionComponent = () => {
       {/* <img className="image-1-icon" alt="" src="../asserts/qrimg@2x.png" /> */}
       <QRCode value={auth.accountId!} />
       <div className="scan-to-pay">My address is:</div>
-      <button
-        className="lv3nd5bii1ahj7x5axdq2oradop1cd"
-        onClick={onCopyAddress}
-      >
+      <button className="prepare-sell-order-button13" onClick={onCopyAddress}>
         {auth.accountId}
       </button>
       <button className="prepare-sell-order-button" onClick={onScan}>

@@ -53,7 +53,7 @@
 }
 .iconssection1 {
   border-radius: var(--br-sm);
-  background-color: var(--color-gray-200);
+  background-color: var(--color-whitesmoke-200);
   padding: var(--padding-6xs) var(--padding-5xs);
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@
 }
 .searchsection-child {
   border: 0;
-  background-color: var(--color-beige);
+  background-color: var(--color-lightyellow);
   flex: 1;
   border-radius: 60px;
   height: 47px;
@@ -174,7 +174,7 @@
 }
 .catalogtab1,
 .tradableorderssection1 {
-  background-color: var(--color-gray-200);
+  background-color: var(--color-whitesmoke-200);
 }
 .catalogtab1 {
   width: 424px;
@@ -202,7 +202,7 @@
 .tradableorderssection2 {
   align-self: stretch;
   border-radius: 0 0 var(--br-sm) var(--br-sm);
-  background-color: var(--color-gray-200);
+  background-color: var(--color-whitesmoke-200);
   padding: var(--padding-xs) var(--padding-5xs);
   gap: var(--gap-lg);
 }

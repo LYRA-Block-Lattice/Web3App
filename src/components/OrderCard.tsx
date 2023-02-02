@@ -57,6 +57,10 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
     };
   }, [orderStatusBackgroundColor]);
 
+  const onBannerImageClick = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   return (
     <div className="ordercard2">
       <div className="order-brief-section2">

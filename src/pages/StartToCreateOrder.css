@@ -35,7 +35,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button18 {
+.prepare-sell-order-button12 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);
@@ -50,11 +50,11 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button18:hover {
+.prepare-sell-order-button12:hover {
   background-color: #8277e8;
 }
-.prepare-sell-order-button18:disabled {
-  background-color: var(--color-gray-600);
+.prepare-sell-order-button12:disabled {
+  background-color: var(--color-gainsboro-400);
 }
 .starttocreateorder {
   position: relative;

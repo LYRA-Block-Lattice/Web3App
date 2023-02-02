@@ -1,5 +1,5 @@
 .to-sell-token,
-.utility-button4 {
+.utility-button1 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -13,12 +13,12 @@
   display: inline-block;
   width: 296px;
 }
-.utility-button4 {
+.utility-button1 {
   font-size: var(--font-size-xl);
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button12 {
+.prepare-sell-order-button6 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -41,7 +41,7 @@
   height: 1px;
   flex-shrink: 0;
 }
-.searchtokenbyname2,
+.searchtokenbyname,
 .selltokentotoken {
   background-color: var(--color-white1);
   overflow: hidden;

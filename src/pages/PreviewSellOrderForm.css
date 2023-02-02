@@ -21,7 +21,7 @@
 }
 .nft-name {
   border-radius: var(--br-xs);
-  background-color: var(--color-beige);
+  background-color: var(--color-lightyellow);
   width: 301px;
   height: 40px;
   flex-shrink: 0;
@@ -44,7 +44,7 @@
 }
 .nft-name2 {
   border-radius: var(--br-xs);
-  background-color: var(--color-beige);
+  background-color: var(--color-lightyellow);
   height: 40px;
   overflow: hidden;
   display: flex;
@@ -84,9 +84,9 @@
   width: 255px;
   flex-shrink: 0;
 }
-.tot-description4 {
+.tot-description1 {
   border-radius: var(--br-xs);
-  background-color: var(--color-beige);
+  background-color: var(--color-lightyellow);
   width: 301px;
   height: 124px;
   flex-shrink: 0;
@@ -117,14 +117,14 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button16,
+.prepare-sell-order-button10,
 .previewsellorderform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button16 {
+.prepare-sell-order-button10 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-6xl);

@@ -10,7 +10,7 @@ const PrimaryAccountCard: FunctionComponent = () => {
   const auth = useSelector(getAuthSelector);
 
   const onBalanceDisplayZoneClick = useCallback(() => {
-    navigate("/");
+    navigate("/wallethome");
   }, [navigate]);
 
   const scanToPay = useCallback(() => {

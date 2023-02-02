@@ -42,7 +42,7 @@
 }
 .frame-item {
   position: relative;
-  border-top: 1px solid var(--color-gray-400);
+  border-top: 1px solid var(--color-gainsboro-200);
   box-sizing: border-box;
   width: 156px;
   height: 1px;

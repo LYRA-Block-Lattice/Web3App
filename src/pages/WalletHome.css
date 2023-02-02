@@ -45,7 +45,7 @@
 }
 .iconssection {
   border-radius: var(--br-sm);
-  background-color: var(--color-gray-200);
+  background-color: var(--color-whitesmoke-200);
   padding: var(--padding-6xs) var(--padding-5xs);
   align-items: center;
   justify-content: center;
@@ -159,7 +159,7 @@
 }
 .catalogtab,
 .tradableorderssection {
-  background-color: var(--color-gray-200);
+  background-color: var(--color-whitesmoke-200);
   display: flex;
   align-items: center;
 }
@@ -220,7 +220,7 @@
 }
 .frame-child {
   position: relative;
-  border-top: 1px solid var(--color-gray-400);
+  border-top: 1px solid var(--color-gainsboro-200);
   box-sizing: border-box;
   width: 156px;
   height: 1px;

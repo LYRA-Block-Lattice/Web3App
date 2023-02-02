@@ -29,10 +29,10 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
         View on block explorer
       </a>
       <button
-        className="prepare-sell-order-button14"
+        className="prepare-sell-order-button8"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="secondary-button6">View my orders</div>
+        <div className="secondary-button3">View my orders</div>
       </button>
     </div>
   );

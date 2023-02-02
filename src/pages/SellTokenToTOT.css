@@ -10,26 +10,26 @@
   display: inline-block;
   width: 296px;
 }
-.searchtokenbyname,
-.tot-description,
+.searchtokenbyname1,
+.tot-description2,
 .tot-name1 {
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.searchtokenbyname {
+.searchtokenbyname1 {
   background-color: var(--color-white1);
   flex-direction: column;
   padding: var(--padding-2xl) var(--padding-xs);
   gap: var(--gap-5xl);
 }
-.tot-description,
+.tot-description2,
 .tot-name1 {
   border: 0;
   font-family: var(--headline-s1);
   font-size: var(--body-b-size);
-  background-color: var(--color-beige);
+  background-color: var(--color-lightyellow);
   border-radius: var(--br-xs);
   width: 301px;
   height: 40px;
@@ -38,11 +38,11 @@
   padding: var(--padding-5xs);
   box-sizing: border-box;
 }
-.tot-description {
+.tot-description2 {
   height: 124px;
   align-items: flex-start;
 }
-.utility-button1 {
+.utility-button4 {
   position: relative;
   font-size: var(--font-size-base);
   letter-spacing: 0.41px;
@@ -52,7 +52,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button6 {
+.prepare-sell-order-button14 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -68,7 +68,7 @@
   justify-content: center;
 }
 .note-i-need1,
-.secondary-button3 {
+.secondary-button5 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -81,17 +81,17 @@
   display: inline-block;
   width: 292px;
 }
-.secondary-button3 {
+.secondary-button5 {
   font-size: var(--body-b-size);
   font-weight: 500;
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button7 {
+.prepare-sell-order-button15 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
-  background-color: var(--color-brown-200);
+  background-color: var(--color-deeppink);
   border-radius: var(--br-xl);
   height: 40px;
   flex-shrink: 0;
