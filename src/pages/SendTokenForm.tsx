@@ -61,7 +61,7 @@ const SendTokenForm: FunctionComponent = () => {
       <SearchTokenInput
         key="tosend"
         val={val}
-        dir="Sell"
+        dir="Send"
         cat="Token"
         ownOnly={true}
         onTokenSelect={onSelectChange}

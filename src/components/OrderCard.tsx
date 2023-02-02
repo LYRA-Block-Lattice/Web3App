@@ -1,4 +1,10 @@
-import { FunctionComponent, useMemo, useState, useEffect } from "react";
+import {
+  FunctionComponent,
+  useMemo,
+  useState,
+  useEffect,
+  useCallback
+} from "react";
 import CSS, { Property } from "csstype";
 import "./OrderCard.css";
 

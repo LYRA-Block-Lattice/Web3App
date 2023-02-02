@@ -33,28 +33,27 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
       <div className="order-brief-section1">
         <button className="banner-image1" onClick={onBannerImageClick}>
           <div className="order-banner1">
-            <button className="order-image1">
-              <img
-                className="icbaseline-generating-tokens-icon1"
-                alt=""
-                src={bidingImg}
-              />
-              <img
-                className="order-image-item"
-                alt=""
-                src="../asserts/arrow-12.svg"
-              />
-              <img
-                className="icbaseline-generating-tokens-icon1"
-                alt=""
-                src={offeringImg}
-              />
-            </button>
+            <img
+              className="icbaseline-generating-tokens-icon1"
+              alt=""
+              src={bidingImg}
+            />
+            <img
+              className="order-image-item"
+              alt=""
+              src="../asserts/arrow-12.svg"
+            />
+            <img
+              className="icbaseline-generating-tokens-icon1"
+              alt=""
+              src={offeringImg}
+            />
+
             <div className="order-status1">
               <b className="open1">{tradeStatus}</b>
             </div>
           </div>
-        </div>
+        </button>
         <div className="title-section1">
           <div className="trade-parent">
             <b className="trade">{dir}</b>
@@ -82,9 +81,6 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
             </div>
           </div>
         </div>
-      </div>
-      <div className="trades-section1">
-        <div className="width-controller1" />
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ function* getBalance(action) {
           totcnt: ret.data.filter((a) => a.Domain == "tot" || a.Domain == "svc")
             .length,
           balance: ret.data.find((a) => a.Ticker == "LYR").Balance ?? 0,
-          usdt: ret.data.find((a) => a.Ticker == "tether/USDT").Balance ?? 0,
+          usdt: ret.data.find((a) => a.Ticker == "tether/USDT")?.Balance ?? 0,
           balances: ret.data
 
           // TODO: set unreceived args
