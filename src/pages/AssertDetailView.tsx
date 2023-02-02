@@ -9,6 +9,7 @@ import {
   MARKET_GET_ORDER_BY_ID,
   WALLET_CREATE_TRADE
 } from "../app/actionTypes";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 const AssertDetailView: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -70,6 +71,7 @@ const AssertDetailView: FunctionComponent = () => {
 
   return (
     <div className="assertdetailview">
+      <PrimaryAccountCard />
       <div className="assertdetailview1">
         <div className="asserttitleregion">
           <div className="assertauthorsection">

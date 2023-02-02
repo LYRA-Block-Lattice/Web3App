@@ -13,6 +13,11 @@ const PrimaryAccountCard: FunctionComponent = () => {
     navigate("/");
   }, [navigate]);
 
+  const scanToPay = useCallback(() => {
+    if (!auth.accountId) navigate("/openwallet?ret=/scantopay");
+    else navigate("/scantopay");
+  }, [navigate]);
+
   return (
     <div className="wallet-card1">
       <div className="wallet-card-child">
@@ -37,7 +42,7 @@ const PrimaryAccountCard: FunctionComponent = () => {
             <div className="rectangle-div" />
           </button>
           <div className="qrcode-button-container">
-            <button className="qrcode-button1">
+            <button className="qrcode-button1" onClick={scanToPay}>
               <div className="qrcode-button-round1" />
               <img
                 className="qrcode-icon1"

@@ -4,6 +4,7 @@ import { getAuthSelector } from "../app/selectors";
 import "./ScanToPay.css";
 import { ToastContainer, toast } from "react-toastify";
 import QRCode from "react-qr-code";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 const ScanToPay: FunctionComponent = () => {
   const auth = useSelector(getAuthSelector);
@@ -20,6 +21,7 @@ const ScanToPay: FunctionComponent = () => {
 
   return (
     <div className="scantopay">
+      <PrimaryAccountCard />
       <div className="scan-to-pay">Scan to pay me</div>
       {/* <img className="image-1-icon" alt="" src="../asserts/qrimg@2x.png" /> */}
       <QRCode value={auth.accountId!} />

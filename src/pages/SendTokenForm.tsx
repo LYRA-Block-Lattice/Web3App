@@ -5,6 +5,7 @@ import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
 import { useDispatch, useSelector } from "react-redux";
 import { WALLET_SEND } from "../app/actionTypes";
 import { getAppSelector } from "../app/selectors";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 const SendTokenForm: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -14,15 +15,15 @@ const SendTokenForm: FunctionComponent = () => {
     token: "LYR",
     name: "LYR"
   } as IToken);
-  const [sel, setSel] = useState("");
+  const [sel, setSel] = useState("LYR");
   const [dst, setDst] = useState("");
   const [amount, setAmount] = useState(0);
 
   const onSelectChange = useCallback(
-    (value: any) => {
-      console.log("onSelectChange: " + value);
-      if (value) {
-        setSel(value);
+    (name: string | undefined, ticker: string | undefined) => {
+      console.log("onSelectChange: " + ticker);
+      if (ticker) {
+        setSel(ticker);
       } else {
         setSel("");
       }
@@ -31,19 +32,29 @@ const SendTokenForm: FunctionComponent = () => {
   );
 
   const doSend = useCallback(() => {
-    dispatch({
-      type: WALLET_SEND,
-      payload: {
-        accountId: app.wallet.accountId,
-        tokenname: sel,
-        destaddr: dst,
-        amount: amount
-      }
-    });
+    if (sel) {
+      dispatch({
+        type: WALLET_SEND,
+        payload: {
+          accountId: app.wallet.accountId,
+          tokenname: sel,
+          destaddr: dst,
+          amount: amount
+        }
+      });
+    } else {
+      dispatch({
+        type: "ERROR",
+        payload: {
+          error: "Token not selected"
+        }
+      });
+    }
   }, [sel, dst, amount]);
 
   return (
     <div className="sendtokenform">
+      <PrimaryAccountCard />
       <div className="asserttitlesection">
         <div className="send-token">Send Token</div>
       </div>

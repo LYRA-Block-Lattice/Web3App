@@ -25,6 +25,7 @@ import OpenWallet from "./pages/OpenWallet";
 import ScanToPay from "./pages/ScanToPay";
 import TransactionHistory from "./pages/TransactionHistory";
 import OldV1UI from "./pages/OldV1UI";
+import About from "./pages/About";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
 
@@ -210,6 +211,7 @@ function App() {
 
       <Route path="/oldv1ui" element={<OldV1UI />} />
       <Route path="/scantopay" element={<ScanToPay />} />
+      <Route path="/about" element={<About />} />
     </Routes>
   );
 }

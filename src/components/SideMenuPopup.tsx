@@ -125,6 +125,14 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
               </ListItemButton>
             </React.Fragment>
           )}
+          <ListItemButton>
+            <ListItemIcon>
+              <DraftsIcon sx={{ color: "white" }} />
+            </ListItemIcon>
+            <a href="/about">
+              <ListItemText primary="About" />
+            </a>
+          </ListItemButton>
         </List>
         {/* <div className="administration">
           <div className="component-2variant3">
