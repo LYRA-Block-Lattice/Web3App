@@ -19,7 +19,7 @@ const WalletHome: FunctionComponent = () => {
   }, []);
 
   const onSwapButtonClick = useCallback(() => {
-    navigate("/market");
+    navigate("/");
   }, [navigate]);
 
   const onSendButtonClick = useCallback(() => {

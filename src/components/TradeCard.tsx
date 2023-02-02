@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
 import "./TradeCard.css";
 
 type TradeCardType = {
@@ -22,10 +22,14 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   bidingImg,
   offeringImg,
 }) => {
+  const onBannerImageClick = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   return (
     <div className="ordercard1">
       <div className="order-brief-section1">
-        <button className="banner-image1">
+        <button className="banner-image1" onClick={onBannerImageClick}>
           <div className="order-banner1">
             <button className="order-image1">
               <img

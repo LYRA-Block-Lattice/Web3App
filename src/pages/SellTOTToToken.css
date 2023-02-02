@@ -1,7 +1,7 @@
 .selecttypeoftot,
-.tot-description2,
+.tot-description4,
 .tot-name3 {
-  background-color: var(--color-beige);
+  background-color: var(--color-lightyellow);
   border-radius: var(--br-xs);
   width: 301px;
   height: 40px;
@@ -17,17 +17,17 @@
 .selecttypeoftot {
   gap: var(--gap-lg);
 }
-.tot-description2,
+.tot-description4,
 .tot-name3 {
   border: 0;
   font-family: var(--headline-s1);
   font-size: var(--body-b-size);
 }
-.tot-description2 {
+.tot-description4 {
   height: 124px;
   align-items: flex-start;
 }
-.utility-button3 {
+.utility-button6 {
   position: relative;
   font-size: var(--font-size-base);
   letter-spacing: 0.41px;
@@ -37,7 +37,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button10 {
+.prepare-sell-order-button18 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -53,7 +53,7 @@
   justify-content: center;
 }
 .note-i-need3,
-.secondary-button5 {
+.secondary-button7 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -66,17 +66,17 @@
   display: inline-block;
   width: 292px;
 }
-.secondary-button5 {
+.secondary-button7 {
   font-size: var(--body-b-size);
   font-weight: 500;
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button11 {
+.prepare-sell-order-button19 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
-  background-color: var(--color-brown-200);
+  background-color: var(--color-deeppink);
   border-radius: var(--br-xl);
   height: 40px;
   flex-shrink: 0;
@@ -109,7 +109,7 @@
   display: inline-block;
   width: 296px;
 }
-.searchtokenbyname1,
+.searchtokenbyname2,
 .selltottotoken {
   background-color: var(--color-white1);
   overflow: hidden;

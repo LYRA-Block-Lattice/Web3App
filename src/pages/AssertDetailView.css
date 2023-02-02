@@ -120,7 +120,7 @@
 }
 .descriptiontitle {
   border-radius: var(--br-sm);
-  background-color: var(--color-gray-500);
+  background-color: var(--color-gainsboro-300);
   overflow: hidden;
   flex-direction: row;
   padding: var(--padding-2xs) var(--padding-md);
@@ -274,7 +274,7 @@
   gap: var(--gap-lg);
 }
 .prepare-sell-order-button1:hover {
-  background-color: var(--color-indigo-100);
+  background-color: var(--color-mediumslateblue-100);
 }
 .makeofferbutton {
   background-color: var(--color-white1);

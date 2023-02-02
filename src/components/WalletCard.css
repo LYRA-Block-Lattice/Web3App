@@ -2,7 +2,7 @@
   flex: 1;
   position: relative;
   border-radius: var(--br-3xs);
-  background-color: var(--color-brown-200);
+  background-color: var(--color-deeppink);
   width: 5px;
 }
 .rectangle-wrapper,
@@ -33,7 +33,7 @@
   font-size: var(--font-size-5xl);
   font-weight: 700;
   font-family: var(--font-sf-pro-text);
-  color: var(--color-brown-200);
+  color: var(--color-deeppink);
   text-align: right;
   display: inline-block;
   width: 206px;
@@ -54,12 +54,12 @@
 }
 .lyrlabel {
   font-size: var(--font-size-2xs);
-  color: var(--color-brown-200);
+  color: var(--color-deeppink);
   text-align: left;
 }
 .balance-display-zone-item {
   position: relative;
-  background-color: var(--color-gray-1400);
+  background-color: var(--color-gainsboro-500);
   width: 22px;
   height: 2px;
   flex-shrink: 0;
@@ -88,7 +88,7 @@
   bottom: 0;
   left: 0;
   border-radius: var(--br-3xl);
-  background-color: var(--color-pink);
+  background-color: var(--color-silver-100);
   opacity: 0.5;
   mix-blend-mode: normal;
 }
@@ -141,7 +141,7 @@
 }
 .nft-label {
   font-size: var(--font-size-2xs);
-  color: var(--color-brown-200);
+  color: var(--color-deeppink);
 }
 .go-nft-button {
   cursor: pointer;

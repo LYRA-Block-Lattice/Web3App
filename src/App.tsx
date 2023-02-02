@@ -4,16 +4,13 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
+import Market from "./pages/Market";
 import WalletHome from "./pages/WalletHome";
 import SendTokenForm from "./pages/SendTokenForm";
-import Market from "./pages/Market";
 import AssertDetailView from "./pages/AssertDetailView";
 import MintFiatToken from "./pages/MintFiatToken";
 import CreateTokenForm from "./pages/CreateTokenForm";
 import CreateTOTForm from "./pages/CreateTOTForm";
-import SellTokenToTOT from "./pages/SellTokenToTOT";
-import SellTOTToTOT from "./pages/SellTOTToTOT";
-import SellTOTToToken from "./pages/SellTOTToToken";
 import SellTokenToToken from "./pages/SellTokenToToken";
 import ViewTradesForm from "./pages/ViewTradesForm";
 import ViewOrdersForm from "./pages/ViewOrdersForm";
@@ -22,10 +19,13 @@ import PreviewSellOrderForm from "./pages/PreviewSellOrderForm";
 import CreateNFTForm from "./pages/CreateNFTForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
 import Redir from "./pages/Redir";
-import Empty from "./pages/Empty";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
 import ScanToPay from "./pages/ScanToPay";
+import SellTokenToTOT from "./pages/SellTokenToTOT";
+import SellTOTToTOT from "./pages/SellTOTToTOT";
+import SellTOTToToken from "./pages/SellTOTToToken";
+import Empty from "./pages/Empty";
 import TransactionHistory from "./pages/TransactionHistory";
 import OldV1UI from "./pages/OldV1UI";
 import { useEffect } from "react";
@@ -50,11 +50,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/sendtokenform":
+      case "/wallethome":
         title = "";
         metaDescription = "";
         break;
-      case "/market":
+      case "/sendtokenform":
         title = "";
         metaDescription = "";
         break;
@@ -71,18 +71,6 @@ function App() {
         metaDescription = "";
         break;
       case "/createtotform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/selltokentotot":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/selltottotot":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/selltottotoken":
         title = "";
         metaDescription = "";
         break;
@@ -118,10 +106,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/empty":
-        title = "";
-        metaDescription = "";
-        break;
       case "/create-wallet":
         title = "";
         metaDescription = "";
@@ -131,6 +115,22 @@ function App() {
         metaDescription = "";
         break;
       case "/scantopay":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/selltokentotot":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/selltottotot":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/selltottotoken":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/empty":
         title = "";
         metaDescription = "";
         break;
@@ -160,11 +160,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<WalletHome />} />
+      <Route path="/" element={<Market />} />
+
+      <Route path="/wallethome" element={<WalletHome />} />
 
       <Route path="/sendtokenform" element={<SendTokenForm />} />
-
-      <Route path="/market" element={<Market />} />
 
       <Route path="/assertdetailview1" element={<AssertDetailView />} />
 
@@ -173,12 +173,6 @@ function App() {
       <Route path="/createtokenform" element={<CreateTokenForm />} />
 
       <Route path="/createtotform" element={<CreateTOTForm />} />
-
-      <Route path="/selltokentotot" element={<SellTokenToTOT />} />
-
-      <Route path="/selltottotot" element={<SellTOTToTOT />} />
-
-      <Route path="/selltottotoken" element={<SellTOTToToken />} />
 
       <Route path="/selltokentotoken" element={<SellTokenToToken />} />
 
@@ -199,13 +193,19 @@ function App() {
 
       <Route path="/redir" element={<Redir />} />
 
-      <Route path="/empty" element={<Empty />} />
-
       <Route path="/create-wallet" element={<CreateWallet />} />
 
       <Route path="/openwallet" element={<OpenWallet />} />
 
       <Route path="/scantopay" element={<ScanToPay />} />
+
+      <Route path="/selltokentotot" element={<SellTokenToTOT />} />
+
+      <Route path="/selltottotot" element={<SellTOTToTOT />} />
+
+      <Route path="/selltottotoken" element={<SellTOTToToken />} />
+
+      <Route path="/empty" element={<Empty />} />
 
       <Route path="/transactionhistory" element={<TransactionHistory />} />
 

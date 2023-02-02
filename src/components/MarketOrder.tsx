@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./MarketOrder.css";
 
@@ -33,10 +33,14 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   sellerRatings,
   sellerTrades,
 }) => {
+  const onBannerImageClick = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   return (
     <div className="ordercard">
       <div className="order-brief-section">
-        <button className="banner-image">
+        <button className="banner-image" onClick={onBannerImageClick}>
           <div className="order-banner">
             <div className="order-image">
               <img

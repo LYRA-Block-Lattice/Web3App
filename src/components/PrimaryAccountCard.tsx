@@ -6,7 +6,7 @@ const PrimaryAccountCard: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onBalanceDisplayZoneClick = useCallback(() => {
-    navigate("/");
+    navigate("/wallethome");
   }, [navigate]);
 
   return (

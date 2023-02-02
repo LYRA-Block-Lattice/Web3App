@@ -1,4 +1,4 @@
-import { FunctionComponent, useMemo } from "react";
+import { FunctionComponent, useMemo, useCallback } from "react";
 import CSS, { Property } from "csstype";
 import "./OrderCard.css";
 
@@ -41,10 +41,14 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
     };
   }, [orderStatusBackgroundColor]);
 
+  const onBannerImageClick = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   return (
     <div className="ordercard2">
       <div className="order-brief-section2">
-        <button className="banner-image2">
+        <button className="banner-image2" onClick={onBannerImageClick}>
           <div className="order-banner2">
             <button className="order-image2">
               <img

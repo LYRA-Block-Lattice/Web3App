@@ -116,7 +116,7 @@
   max-width: 90%;
   text-align: left;
   font-size: var(--body-b-size);
-  color: var(--color-gray-100);
+  color: var(--color-whitesmoke-100);
   font-family: var(--base-1-semibold);
 }
 .sidemenupopup.animate {

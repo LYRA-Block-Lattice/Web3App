@@ -120,7 +120,7 @@ const Market: FunctionComponent = () => {
             sellerTrades="1024 Trades"
           />
           <MarketOrder
-            offeringIcon="icbaselinegeneratingtokens1.svg"
+            offeringIcon="../asserts/icbaselinegeneratingtokens1.svg"
             bidingIcon="../asserts/carbonuserservicedesk1.svg"
             orderStatus="Open"
             offering="BTC"

@@ -38,7 +38,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       <div className="im-selling">
         I’ll share the trade secret of bellow with buyer:
       </div>
-      <div className="tot-description4">
+      <div className="tot-description1">
         <div className="please-pay-to-container">
           <p className="please-pay-to">Please pay to my bank account number:</p>
           <p className="please-pay-to">&nbsp;</p>
@@ -59,7 +59,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         }
       />
       <button
-        className="prepare-sell-order-button16"
+        className="prepare-sell-order-button10"
         onClick={onPrepareSellOrderButtonClick}
       >
         <div className="primary-button2">Place Order</div>
