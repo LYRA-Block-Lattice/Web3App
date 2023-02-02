@@ -18,6 +18,7 @@ import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
 import * as actionTypes from "../app/actionTypes";
+import { Link } from "react-router-dom";
 
 type SideMenuPopupType = {
   onClose?: () => void;
@@ -129,9 +130,9 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
             <ListItemIcon>
               <DraftsIcon sx={{ color: "white" }} />
             </ListItemIcon>
-            <a href="/about">
+            <Link to="/about">
               <ListItemText primary="About" />
-            </a>
+            </Link>
           </ListItemButton>
         </List>
         {/* <div className="administration">
