@@ -107,7 +107,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="priceandvaluelabel1">
               <div className="meka-legends">100 - 200</div>
               <div className="tetherusdt">tether/USDT</div>
-              <div className="div6">$40 ~ 84.20</div>
+              <div className="div8">$40 ~ 84.20</div>
             </div>
           </div>
           <div className="limitadjustsection">

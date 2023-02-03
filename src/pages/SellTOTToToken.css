@@ -9,7 +9,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
@@ -29,7 +29,7 @@
 }
 .utility-button6 {
   position: relative;
-  font-size: var(--font-size-base);
+  font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -40,7 +40,7 @@
 .prepare-sell-order-button18 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-xl);
+  padding: var(--padding-6xs) var(--padding-lg);
   background-color: var(--tertiary);
   border-radius: var(--br-xl);
   height: 30px;
@@ -60,7 +60,7 @@
   font-family: var(--headline-s1);
 }
 .note-i-need3 {
-  font-size: var(--font-size-base);
+  font-size: var(--body-semibold-size);
   color: var(--black-000000100);
   text-align: left;
   display: inline-block;
@@ -75,7 +75,7 @@
 .prepare-sell-order-button19 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-4xl);
+  padding: var(--padding-6xs) var(--padding-3xl);
   background-color: var(--color-deeppink);
   border-radius: var(--br-xl);
   height: 40px;
@@ -92,7 +92,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-2xl) var(--padding-sm);
+  padding: var(--padding-xl) var(--padding-xs);
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-3xl);
@@ -115,7 +115,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-2xl) var(--padding-xs);
+  padding: var(--padding-xl) var(--padding-2xs);
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-5xl);
@@ -123,7 +123,7 @@
 .selltottotoken {
   position: relative;
   width: 100%;
-  padding: var(--padding-6xl) var(--padding-7xl);
+  padding: var(--padding-5xl) var(--padding-6xl);
   box-sizing: border-box;
   gap: var(--gap-lg);
 }

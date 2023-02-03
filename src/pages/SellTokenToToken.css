@@ -21,7 +21,7 @@
 .prepare-sell-order-button6 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-xl);
+  padding: var(--padding-6xs) var(--padding-lg);
   background-color: var(--tertiary);
   border-radius: var(--br-xl);
   height: 30px;
@@ -47,7 +47,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-2xl) var(--padding-xs);
+  padding: var(--padding-xl) var(--padding-2xs);
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-5xl);
@@ -55,7 +55,7 @@
 .selltokentotoken {
   position: relative;
   width: 100%;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   gap: var(--gap-lg);
 }

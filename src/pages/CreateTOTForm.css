@@ -16,7 +16,7 @@
 }
 .utility-button {
   position: relative;
-  font-size: var(--font-size-base);
+  font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -27,7 +27,7 @@
 .prepare-sell-order-button4 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-xl);
+  padding: var(--padding-6xs) var(--padding-lg);
   background-color: var(--tertiary);
   border-radius: var(--br-xl);
   height: 30px;
@@ -47,7 +47,7 @@
   font-family: var(--headline-s1);
 }
 .note-i-need {
-  font-size: var(--font-size-base);
+  font-size: var(--body-semibold-size);
   color: var(--black-000000100);
   text-align: left;
   display: inline-block;
@@ -62,7 +62,7 @@
 .prepare-sell-order-button5 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-4xl);
+  padding: var(--padding-6xs) var(--padding-3xl);
   background-color: var(--color-deeppink);
   border-radius: var(--br-xl);
   height: 40px;
@@ -83,7 +83,7 @@
 }
 .createtottosellform {
   flex-direction: column;
-  padding: var(--padding-2xl) var(--padding-sm);
+  padding: var(--padding-xl) var(--padding-xs);
   justify-content: flex-start;
   gap: var(--gap-3xl);
 }
@@ -91,7 +91,7 @@
   position: relative;
   width: 100%;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   justify-content: center;
 }

@@ -20,7 +20,7 @@
   align-items: center;
 }
 .material-symbolsshare-parent {
-  padding: var(--padding-3xs);
+  padding: var(--padding-4xs);
   justify-content: flex-end;
   gap: 24px;
 }
@@ -55,7 +55,7 @@
 }
 .assertownersection {
   height: 24px;
-  font-size: var(--font-size-base);
+  font-size: var(--body-semibold-size);
 }
 .assertownersection,
 .asserttitleregion,
@@ -68,7 +68,7 @@
 .asserttitleregion {
   border-radius: var(--br-sm);
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   align-items: flex-start;
   gap: var(--gap-lg);
 }
@@ -77,7 +77,7 @@
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-5xs) 0;
+  padding: var(--padding-6xs) 0;
   box-sizing: border-box;
   align-items: center;
 }
@@ -109,7 +109,7 @@
   background-color: var(--color-white1);
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   align-items: center;
   gap: var(--gap-4xl);
 }
@@ -123,7 +123,7 @@
   background-color: var(--color-gainsboro-300);
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-2xs) var(--padding-md);
+  padding: var(--padding-3xs) var(--padding-sm);
   align-items: center;
   gap: var(--gap-lg);
   font-size: var(--font-size-7xl);
@@ -140,12 +140,12 @@
   height: 93px;
   flex-shrink: 0;
   display: flex;
-  padding: var(--padding-lg) var(--padding-5xl);
+  padding: var(--padding-md) var(--padding-4xl);
   box-sizing: border-box;
   justify-content: flex-start;
 }
 .pricelabel {
-  padding: 0 var(--padding-5xs);
+  padding: 0 var(--padding-6xs);
 }
 .priceandbuyregion,
 .priceandvaluelabel,
@@ -159,8 +159,8 @@
 .priceandvaluelabel {
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-sm) var(--padding-sm) var(--padding-sm)
-    var(--padding-4xs);
+  padding: var(--padding-xs) var(--padding-xs) var(--padding-xs)
+    var(--padding-5xs);
   align-items: flex-end;
   gap: var(--gap-lg);
   font-size: var(--font-size-8xl);
@@ -178,7 +178,7 @@
   overflow: hidden;
   flex-direction: row;
 }
-.div6,
+.div8,
 .tetherusdt {
   position: relative;
   font-size: var(--font-size-xl);
@@ -186,7 +186,7 @@
   line-height: 18px;
   font-weight: 500;
 }
-.div6 {
+.div8 {
   font-size: var(--caption1-size);
 }
 .priceandvaluelabel1,
@@ -200,7 +200,7 @@
 .priceandvaluelabel1 {
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-5xs) 0;
+  padding: var(--padding-6xs) 0;
   align-items: flex-end;
   font-size: var(--font-size-7xl);
 }
@@ -226,7 +226,7 @@
   align-self: stretch;
   background-color: var(--color-white1);
   display: flex;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
 }
 .selectedamount {
   border: 0;
@@ -264,7 +264,7 @@
 .prepare-sell-order-button1 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-6xl);
+  padding: var(--padding-6xs) var(--padding-5xl);
   background-color: var(--primary);
   border-radius: var(--br-xl);
   height: 50px;
@@ -279,7 +279,7 @@
 .makeofferbutton {
   background-color: var(--color-white1);
   flex-direction: column;
-  padding: var(--padding-3xs);
+  padding: var(--padding-4xs);
 }
 .assertdetailview,
 .buysection {
@@ -290,13 +290,13 @@
 }
 .buysection {
   align-self: stretch;
-  padding: var(--padding-5xs) 0 0;
+  padding: var(--padding-6xs) 0 0;
 }
 .assertdetailview {
   position: relative;
   background-color: var(--color-white1);
   width: 100%;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   text-align: left;
   font-size: var(--font-size-xl);

@@ -24,15 +24,15 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       <div className="im-selling">Price, amount, and I’ll get:</div>
       <div className="nft-name-parent">
         <div className="nft-name2">
-          <div className="price">Price</div>
+          <div className="amount">Price</div>
         </div>
         <div className="x">X</div>
         <div className="nft-name2">
-          <div className="price">Amount</div>
+          <div className="amount">Amount</div>
         </div>
         <div className="x">=</div>
         <div className="nft-name2">
-          <div className="price">Total</div>
+          <div className="amount">Total</div>
         </div>
       </div>
       <div className="im-selling">

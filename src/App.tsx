@@ -5,6 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Market from "./pages/Market";
+import MiscComponents from "./pages/MiscComponents";
 import SendTokenForm from "./pages/SendTokenForm";
 import WalletHome from "./pages/WalletHome";
 import AssertDetailView from "./pages/AssertDetailView";
@@ -21,6 +22,7 @@ import StartToCreateOrder from "./pages/StartToCreateOrder";
 import Redir from "./pages/Redir";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
+import About from "./pages/About";
 import ScanToPay from "./pages/ScanToPay";
 import SellTokenToTOT from "./pages/SellTokenToTOT";
 import SellTOTToTOT from "./pages/SellTOTToTOT";
@@ -47,6 +49,10 @@ function App() {
 
     switch (pathname) {
       case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/misccomponents":
         title = "";
         metaDescription = "";
         break;
@@ -114,6 +120,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/about":
+        title = "";
+        metaDescription = "";
+        break;
       case "/scantopay":
         title = "";
         metaDescription = "";
@@ -162,6 +172,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Market />} />
 
+      <Route path="/misccomponents" element={<MiscComponents />} />
+
       <Route path="/sendtokenform" element={<SendTokenForm />} />
 
       <Route path="/wallethome" element={<WalletHome />} />
@@ -196,6 +208,8 @@ function App() {
       <Route path="/create-wallet" element={<CreateWallet />} />
 
       <Route path="/openwallet" element={<OpenWallet />} />
+
+      <Route path="/about" element={<About />} />
 
       <Route path="/scantopay" element={<ScanToPay />} />
 

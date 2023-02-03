@@ -45,14 +45,14 @@
 }
 .swap-button-parent {
   flex-direction: row;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   gap: var(--gap-lg);
 }
 .iconssection {
   border-radius: var(--br-sm);
   background-color: var(--color-whitesmoke-200);
   flex-direction: column;
-  padding: var(--padding-6xs) var(--padding-5xs);
+  padding: var(--padding-7xs) var(--padding-6xs);
 }
 .iconssection-wrapper {
   width: 449px;
@@ -73,7 +73,7 @@
   flex: 1;
   border-radius: 60px;
   height: 47px;
-  padding: 0 0 0 var(--padding-3xs);
+  padding: 0 0 0 var(--padding-4xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
@@ -127,7 +127,7 @@
 .tokentab {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   background-color: var(--text-secondary1);
   border-radius: var(--br-md) var(--br-md) 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -148,7 +148,7 @@
 .nft-tab {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   background-color: var(--text-secondary1);
   border-radius: var(--br-md) var(--br-md) 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -173,7 +173,7 @@
 .fiat-tab {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   background-color: var(--text-secondary1);
   border-radius: var(--br-md) var(--br-md) 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -203,7 +203,7 @@
 .tradableorderssection {
   align-self: stretch;
   border-radius: var(--br-sm) var(--br-sm) 0 0;
-  padding: var(--padding-xs) var(--padding-5xs) 0;
+  padding: var(--padding-2xs) var(--padding-6xs) 0;
 }
 .market,
 .orderandcatalog,
@@ -218,7 +218,7 @@
   align-self: stretch;
   border-radius: 0 0 var(--br-sm) var(--br-sm);
   background-color: var(--color-whitesmoke-200);
-  padding: var(--padding-xs) var(--padding-5xs);
+  padding: var(--padding-2xs) var(--padding-6xs);
   gap: var(--gap-lg);
 }
 .market,
@@ -229,7 +229,7 @@
 .market {
   position: relative;
   width: 100%;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   gap: var(--gap-lg);
 }

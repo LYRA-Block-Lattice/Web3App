@@ -21,7 +21,7 @@
   width: 18px;
   flex-shrink: 0;
   flex-direction: row;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   box-sizing: border-box;
 }
 .wallet-name-label {
@@ -52,7 +52,7 @@
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
 .lyrlabel {
-  font-size: var(--font-size-2xs);
+  font-size: var(--uppercase-small-size);
   color: var(--color-deeppink);
   text-align: left;
 }
@@ -66,7 +66,7 @@
 .balance-display-zone {
   cursor: pointer;
   border: 0;
-  padding: 0 var(--padding-6xs) var(--padding-5xs) 0;
+  padding: 0 var(--padding-7xs) var(--padding-6xs) 0;
   background-color: var(--text-primary-dark1);
   align-self: stretch;
   flex: 1;
@@ -119,8 +119,8 @@
 .qrcode-button-wrapper {
   background-color: var(--text-primary-dark1);
   overflow: hidden;
-  padding: var(--padding-6xs) var(--padding-6xs) var(--padding-5xs)
-    var(--padding-5xs);
+  padding: var(--padding-7xs) var(--padding-7xs) var(--padding-6xs)
+    var(--padding-6xs);
 }
 .balance-display-zone-parent {
   flex: 1;
@@ -144,6 +144,6 @@
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
 }

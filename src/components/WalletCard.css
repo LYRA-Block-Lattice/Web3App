@@ -21,7 +21,7 @@
   width: 18px;
   flex-shrink: 0;
   flex-direction: row;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   box-sizing: border-box;
 }
 .wallet-name-label1 {
@@ -60,7 +60,7 @@
 }
 .usdtlabel {
   position: relative;
-  font-size: var(--font-size-2xs);
+  font-size: var(--uppercase-small-size);
   letter-spacing: 0.3px;
   color: var(--color-deeppink);
   text-align: left;
@@ -75,7 +75,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--padding-6xs) var(--padding-5xs) 0;
+  padding: 0 var(--padding-7xs) var(--padding-6xs) 0;
   align-items: flex-end;
   justify-content: flex-start;
   gap: var(--gap-4xs);
@@ -123,8 +123,8 @@
 .qrcode-button-container {
   background-color: var(--text-primary-dark1);
   overflow: hidden;
-  padding: var(--padding-6xs) var(--padding-6xs) var(--padding-5xs)
-    var(--padding-5xs);
+  padding: var(--padding-7xs) var(--padding-7xs) var(--padding-6xs)
+    var(--padding-6xs);
 }
 .balance-display-zone-group {
   flex: 1;
@@ -142,7 +142,7 @@
   color: var(--color-white1);
 }
 .nft-label {
-  font-size: var(--font-size-2xs);
+  font-size: var(--uppercase-small-size);
   color: var(--color-deeppink);
 }
 .go-nft-button {
@@ -187,7 +187,7 @@
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   text-align: right;
   font-size: var(--font-size-7xl);

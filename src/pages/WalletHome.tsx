@@ -1,22 +1,14 @@
 import { FunctionComponent, useState, useCallback } from "react";
-import SideMenuPopup from "../components/SideMenuPopup";
-import PortalDrawer from "../components/PortalDrawer";
 import WalletCard from "../components/WalletCard";
 import { useNavigate } from "react-router-dom";
+import SideMenuPopup from "../components/SideMenuPopup";
+import PortalDrawer from "../components/PortalDrawer";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import "./WalletHome.css";
 
 const WalletHome: FunctionComponent = () => {
-  const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
   const navigate = useNavigate();
-
-  const openSideMenuPopup = useCallback(() => {
-    setSideMenuPopupOpen(true);
-  }, []);
-
-  const closeSideMenuPopup = useCallback(() => {
-    setSideMenuPopupOpen(false);
-  }, []);
+  const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
 
   const onSwapButtonClick = useCallback(() => {
     navigate("/");
@@ -25,6 +17,14 @@ const WalletHome: FunctionComponent = () => {
   const onSendButtonClick = useCallback(() => {
     navigate("/sendtokenform");
   }, [navigate]);
+
+  const openSideMenuPopup = useCallback(() => {
+    setSideMenuPopupOpen(true);
+  }, []);
+
+  const closeSideMenuPopup = useCallback(() => {
+    setSideMenuPopupOpen(false);
+  }, []);
 
   return (
     <>
@@ -87,7 +87,7 @@ const WalletHome: FunctionComponent = () => {
                     alt=""
                     src="../asserts/ellipse-43.svg"
                   />
-                  <div className="div2">18</div>
+                  <div className="div4">18</div>
                 </div>
               </button>
               <button className="nft-tab1">
@@ -98,7 +98,7 @@ const WalletHome: FunctionComponent = () => {
                     alt=""
                     src="../asserts/ellipse-43.svg"
                   />
-                  <div className="div2">18</div>
+                  <div className="div4">18</div>
                 </div>
               </button>
               <button className="fiat-tab1">
@@ -123,9 +123,9 @@ const WalletHome: FunctionComponent = () => {
               <div className="frame-group">
                 <div className="lyralogoblueicon-parent">
                   <img
-                    className="lyralogoblueicon"
+                    className="lyralogoblueicon3"
                     alt=""
-                    src="../asserts/lyralogoblueicon@2x.png"
+                    src="../asserts/lyralogoblueicon4@2x.png"
                   />
                   <b className="custom-coin">Custom Coin</b>
                   <div className="cus-parent">
