@@ -1,22 +1,22 @@
-.rectangle6 {
+.rectangle5 {
   flex: 1;
   position: relative;
   border-radius: var(--br-3xs);
   background-color: var(--color-deeppink);
   width: 5px;
 }
-.rectangle-container,
-.wallet-card-child {
+.rectangle-wrapper,
+.wallet-card-inner {
   align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.rectangle-container {
+.rectangle-wrapper {
   overflow: hidden;
   flex-direction: column;
 }
-.wallet-card-child {
+.wallet-card-inner {
   background-color: var(--text-primary-dark1);
   width: 18px;
   flex-shrink: 0;
@@ -24,7 +24,7 @@
   padding: var(--padding-6xs) 0;
   box-sizing: border-box;
 }
-.wallet-name-label1 {
+.wallet-name-label {
   position: relative;
   font-size: var(--font-size-5xl);
   display: inline-block;
@@ -33,7 +33,7 @@
   text-align: right;
   width: 206px;
 }
-.balance-display-zone-inner {
+.balance-display-zone-child {
   position: relative;
   border-top: 1px solid var(--info1);
   box-sizing: border-box;
@@ -41,8 +41,8 @@
   height: 1px;
   flex-shrink: 0;
 }
-.lyrlabel1,
-.usdtbalance2 {
+.lyrlabel,
+.usdtbalance {
   position: relative;
   font-size: var(--font-size-7xl);
   letter-spacing: 0.3px;
@@ -51,19 +51,19 @@
   text-align: right;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
-.lyrlabel1 {
+.lyrlabel {
   font-size: var(--font-size-2xs);
   color: var(--color-deeppink);
   text-align: left;
 }
-.rectangle-div {
+.balance-display-zone-item {
   position: relative;
   background-color: var(--color-gainsboro-500);
   width: 22px;
   height: 2px;
   flex-shrink: 0;
 }
-.balance-display-zone1 {
+.balance-display-zone {
   cursor: pointer;
   border: 0;
   padding: 0 var(--padding-6xs) var(--padding-5xs) 0;
@@ -77,7 +77,7 @@
   justify-content: flex-start;
   gap: var(--gap-4xs);
 }
-.qrcode-button-round1 {
+.qrcode-button-round {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -90,14 +90,14 @@
   opacity: 0.5;
   mix-blend-mode: normal;
 }
-.qrcode-icon1 {
+.qrcode-icon {
   position: absolute;
   top: 14.33px;
   right: 14.07px;
   width: 29px;
   height: 29px;
 }
-.qrcode-button1 {
+.qrcode-button {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -108,37 +108,38 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.balance-display-zone-group,
-.qrcode-button-container {
+.balance-display-zone-parent,
+.qrcode-button-wrapper {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-end;
 }
-.qrcode-button-container {
+.qrcode-button-wrapper {
   background-color: var(--text-primary-dark1);
   overflow: hidden;
   padding: var(--padding-6xs) var(--padding-6xs) var(--padding-5xs)
     var(--padding-5xs);
 }
-.balance-display-zone-group {
+.balance-display-zone-parent {
   flex: 1;
 }
-.wallet-card-inner1,
-.wallet-card1 {
-  align-self: stretch;
+.wallet-card,
+.wallet-card-child {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.wallet-card-inner1 {
+.wallet-card-child {
+  align-self: stretch;
   flex: 1;
   flex-direction: column;
 }
-.wallet-card1 {
+.wallet-card {
   border-radius: var(--br-sm);
   background-color: var(--text-primary-dark1);
+  width: 449px;
   height: 94px;
   flex-shrink: 0;
   overflow: hidden;

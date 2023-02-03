@@ -68,7 +68,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-2xl) var(--padding-md);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: center;

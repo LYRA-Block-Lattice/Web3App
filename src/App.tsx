@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
-
-import WalletHome from "./pages/WalletHome";
 import SendTokenForm from "./pages/SendTokenForm";
+import WalletHome from "./pages/WalletHome";
 import AssertDetailView from "./pages/AssertDetailView";
 import MintFiatToken from "./pages/MintFiatToken";
 import CreateTokenForm from "./pages/CreateTokenForm";
@@ -50,11 +49,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/wallethome":
+      case "/sendtokenform":
         title = "";
         metaDescription = "";
         break;
-      case "/sendtokenform":
+      case "/wallethome":
         title = "";
         metaDescription = "";
         break;
@@ -162,9 +161,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Market />} />
 
-      <Route path="/wallethome" element={<WalletHome />} />
-
       <Route path="/sendtokenform" element={<SendTokenForm />} />
+
+      <Route path="/wallethome" element={<WalletHome />} />
 
       <Route path="/assertdetailview" element={<AssertDetailView />} />
 

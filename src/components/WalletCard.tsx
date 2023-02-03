@@ -18,36 +18,36 @@ const WalletCard: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="wallet-card">
-      <div className="wallet-card-inner">
-        <div className="rectangle-wrapper">
-          <div className="rectangle5" />
+    <div className="wallet-card1">
+      <div className="wallet-card-inner1">
+        <div className="rectangle-container">
+          <div className="rectangle6" />
         </div>
       </div>
       <div className="frame-container">
-        <div className="balance-display-zone-parent">
-          <Link className="balance-display-zone" to="/openwallet">
-            <button className="wallet-name-label">{app.name}</button>
-            <div className="balance-display-zone-child" />
-            <b className="usdtbalance">
+        <div className="balance-display-zone-group">
+          <Link className="balance-display-zone1" to="/openwallet">
+            <button className="wallet-name-label1">{app.name}</button>
+            <div className="balance-display-zone-inner" />
+            <b className="usdtbalance1">
               {app.wallet.balance.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
-            <b className="lyrlabel">LYR</b>
-            <div className="balance-display-zone-item" />
-            <b className="usdtbalance">
+            <b className="usdtlabel">LYR</b>
+            <div className="rectangle-div" />
+            <b className="usdtbalance1">
               {app.wallet.usdt.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
-            <b className="lyrlabel">USDT</b>
+            <b className="usdtlabel">USDT</b>
           </Link>
-          <div className="qrcode-button-wrapper">
-            <button className="qrcode-button" onClick={scanToPay}>
-              <div className="qrcode-button-round" />
+          <div className="qrcode-button-container">
+            <button className="qrcode-button1" onClick={scanToPay}>
+              <div className="qrcode-button-round1" />
               <img
-                className="qrcode-icon"
+                className="qrcode-icon1"
                 alt=""
                 src="../asserts/qrcode-icon.svg"
               />

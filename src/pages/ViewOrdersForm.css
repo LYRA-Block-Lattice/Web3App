@@ -34,6 +34,7 @@
 .viewordersform {
   background-color: var(--color-white1);
   display: flex;
+  box-sizing: border-box;
   align-items: center;
 }
 .view-orders-parent {
@@ -43,7 +44,6 @@
   flex-direction: row;
   padding: var(--padding-2xl) var(--padding-md) var(--padding-2xl)
     var(--padding-2xl);
-  box-sizing: border-box;
   justify-content: center;
   gap: 130px;
 }
@@ -52,6 +52,7 @@
   width: 100%;
   overflow: hidden;
   flex-direction: column;
+  padding: var(--padding-5xs);
   justify-content: flex-start;
   gap: var(--gap-2xl);
   text-align: left;

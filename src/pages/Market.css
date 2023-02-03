@@ -1,11 +1,11 @@
-.home-icon-interlocution5 {
+.home-icon-interlocution {
   position: relative;
   width: 40px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.ranking5 {
+.ranking {
   position: relative;
   font-size: var(--caption1-size);
   line-height: 18px;
@@ -13,7 +13,7 @@
   color: var(--black-000000100);
   text-align: left;
 }
-.dex-button {
+.swap-button {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
 }
-.ranking8 {
+.ranking3 {
   position: relative;
   font-size: var(--other-m-size);
   line-height: 18px;
@@ -36,29 +36,28 @@
   color: var(--black-000000100);
   text-align: left;
 }
-.swap-button-group {
+.iconssection,
+.swap-button-parent {
   align-self: stretch;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swap-button-parent {
   flex-direction: row;
   padding: var(--padding-6xs) 0;
-  align-items: center;
-  justify-content: center;
   gap: var(--gap-lg);
 }
-.iconssection-container,
-.iconssection1 {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-}
-.iconssection1 {
+.iconssection {
   border-radius: var(--br-sm);
   background-color: var(--color-whitesmoke-200);
+  flex-direction: column;
   padding: var(--padding-6xs) var(--padding-5xs);
-  align-items: center;
-  justify-content: center;
 }
-.iconssection-container {
+.iconssection-wrapper {
+  width: 449px;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -80,12 +79,12 @@
   justify-content: flex-start;
 }
 .searchsection {
-  align-self: stretch;
   background-color: var(--color-white1);
+  width: 449px;
   align-items: flex-start;
   justify-content: center;
 }
-.token1 {
+.token {
   position: relative;
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
@@ -95,15 +94,15 @@
   text-align: center;
   z-index: 0;
 }
-.div2,
-.group-inner {
+.div,
+.group-child {
   position: absolute;
   top: calc(50% - 4px);
   left: calc(50% - 5.5px);
   width: 11px;
   height: 11px;
 }
-.div2 {
+.div {
   top: calc(50% - 7px);
   font-size: var(--font-size-3xs);
   letter-spacing: 0.41px;
@@ -115,7 +114,7 @@
   width: 10px;
   height: 12px;
 }
-.ellipse-container {
+.ellipse-parent {
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 14px);
@@ -125,8 +124,7 @@
   flex-shrink: 0;
   z-index: 1;
 }
-.nft-tab1,
-.tokentab1 {
+.tokentab {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) 0;
@@ -141,13 +139,30 @@
   box-sizing: border-box;
   align-items: flex-end;
   justify-content: center;
+}
+.fiat,
+.nft-tab,
+.tokentab {
   position: relative;
 }
-.nft-tab1 {
+.nft-tab {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-6xs) 0;
+  background-color: var(--text-secondary1);
+  border-radius: var(--br-md) var(--br-md) 0 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 80px;
+  height: 32px;
+  flex-shrink: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: flex-end;
+  justify-content: center;
 }
-.fiat1 {
-  position: relative;
+.fiat {
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -155,7 +170,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.fiat-tab1 {
+.fiat-tab {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) 0;
@@ -172,11 +187,11 @@
   align-items: flex-end;
   justify-content: center;
 }
-.catalogtab1,
-.tradableorderssection1 {
+.catalogtab,
+.tradableorderssection {
   background-color: var(--color-whitesmoke-200);
 }
-.catalogtab1 {
+.catalogtab {
   width: 424px;
   overflow: hidden;
   display: flex;
@@ -185,21 +200,21 @@
   justify-content: center;
   gap: var(--gap-xs);
 }
-.tradableorderssection1 {
+.tradableorderssection {
   align-self: stretch;
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   padding: var(--padding-xs) var(--padding-5xs) 0;
 }
 .market,
 .orderandcatalog,
-.tradableorderssection1,
-.tradableorderssection2 {
+.tradableorderssection,
+.tradableorderssection1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
-.tradableorderssection2 {
+.tradableorderssection1 {
   align-self: stretch;
   border-radius: 0 0 var(--br-sm) var(--br-sm);
   background-color: var(--color-whitesmoke-200);
@@ -209,9 +224,7 @@
 .market,
 .orderandcatalog {
   background-color: var(--color-white1);
-}
-.orderandcatalog {
-  align-self: stretch;
+  width: 449px;
 }
 .market {
   position: relative;

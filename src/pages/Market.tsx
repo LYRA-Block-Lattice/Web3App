@@ -33,40 +33,40 @@ const Market: FunctionComponent = () => {
   return (
     <div className="market">
       <PrimaryAccountCard />
-      <div className="iconssection-container">
-        <div className="iconssection1">
-          <div className="swap-button-group">
-            <button className="dex-button" onClick={onNewSell}>
+      <div className="iconssection-wrapper">
+        <div className="iconssection">
+          <div className="swap-button-parent">
+            <button className="swap-button" onClick={onNewSell}>
               <img
-                className="home-icon-interlocution5"
+                className="home-icon-interlocution"
                 alt=""
-                src="../asserts/home--icon--interlocution5.svg"
+                src="../asserts/home--icon--interlocution.svg"
               />
-              <div className="ranking5">New Sell</div>
+              <div className="ranking">New Sell</div>
             </button>
-            <button className="dex-button" onClick={onSwapButton1Click}>
+            <button className="swap-button" onClick={onSwapButton1Click}>
               <img
-                className="home-icon-interlocution5"
+                className="home-icon-interlocution"
                 alt=""
-                src="../asserts/home--icon--interlocution6.svg"
+                src="../asserts/home--icon--interlocution1.svg"
               />
-              <div className="ranking5">My Orders</div>
+              <div className="ranking">My Orders</div>
             </button>
-            <button className="dex-button" onClick={onDEXButtonClick}>
+            <button className="swap-button" onClick={onDEXButtonClick}>
               <img
-                className="home-icon-interlocution5"
+                className="home-icon-interlocution"
                 alt=""
-                src="../asserts/home--icon--interlocution7.svg"
+                src="../asserts/home--icon--interlocution2.svg"
               />
-              <div className="ranking5">My Trades</div>
+              <div className="ranking">My Trades</div>
             </button>
-            <button className="dex-button">
+            <button className="swap-button">
               <img
-                className="home-icon-interlocution5"
+                className="home-icon-interlocution"
                 alt=""
-                src="../asserts/home--icon--interlocution8.svg"
+                src="../asserts/home--icon--interlocution3.svg"
               />
-              <div className="ranking8">ODR</div>
+              <div className="ranking3">ODR</div>
             </button>
           </div>
         </div>
@@ -79,38 +79,38 @@ const Market: FunctionComponent = () => {
         />
       </div>
       <div className="orderandcatalog">
-        <div className="tradableorderssection1">
-          <div className="catalogtab1">
-            <button className="tokentab1" onClick={() => setCat("Token")}>
-              <b className="token1">Token</b>
-              <div className="ellipse-container">
+        <div className="tradableorderssection">
+          <div className="catalogtab">
+            <button className="tokentab" onClick={() => setCat("Token")}>
+              <b className="token">Token</b>
+              <div className="ellipse-parent">
                 <img
-                  className="group-inner"
+                  className="group-child"
                   alt=""
                   src="../asserts/ellipse-43.svg"
                 />
-                <div className="div2">18</div>
+                <div className="div">18</div>
               </div>
             </button>
-            <button className="nft-tab1" onClick={() => setCat("NFT")}>
-              <b className="token1">NFT</b>
-              <div className="ellipse-container">
+            <button className="nft-tab" onClick={() => setCat("NFT")}>
+              <b className="token">NFT</b>
+              <div className="ellipse-parent">
                 <img
-                  className="group-inner"
+                  className="group-child"
                   alt=""
                   src="../asserts/ellipse-43.svg"
                 />
-                <div className="div2">18</div>
+                <div className="div">18</div>
               </div>
             </button>
-            <button className="fiat-tab1" onClick={() => setCat("Fiat")}>
-              <b className="fiat1">Fiat</b>
+            <button className="fiat-tab" onClick={() => setCat("Fiat")}>
+              <b className="fiat">Fiat</b>
             </button>
-            <button className="fiat-tab1" onClick={() => setCat("Goods")}>
-              <b className="fiat1">Goods</b>
+            <button className="fiat-tab" onClick={() => setCat("Goods")}>
+              <b className="fiat">Goods</b>
             </button>
-            <button className="fiat-tab1" onClick={() => setCat("Service")}>
-              <b className="fiat1">Service</b>
+            <button className="fiat-tab" onClick={() => setCat("Service")}>
+              <b className="fiat">Service</b>
             </button>
           </div>
         </div>
