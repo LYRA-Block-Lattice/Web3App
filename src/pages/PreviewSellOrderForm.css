@@ -20,28 +20,11 @@
   flex-shrink: 0;
 }
 .nft-name {
-  border-radius: var(--br-xs);
-  background-color: var(--color-lightyellow);
   width: 301px;
-  height: 40px;
   flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-5xs);
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: flex-start;
   font-size: var(--body-b-size);
 }
-.price {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  display: inline-block;
-  width: 63px;
-  flex-shrink: 0;
-}
+.nft-name,
 .nft-name2 {
   border-radius: var(--br-xs);
   background-color: var(--color-lightyellow);
@@ -49,16 +32,24 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
 }
+.amount,
 .x {
   position: relative;
-  font-size: var(--font-size-base);
   letter-spacing: 0.41px;
   line-height: 18px;
+}
+.x {
+  font-size: var(--body-semibold-size);
+}
+.amount {
+  display: inline-block;
+  width: 63px;
+  flex-shrink: 0;
 }
 .nft-name-parent {
   align-self: stretch;
@@ -93,7 +84,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
@@ -127,7 +118,7 @@
 .prepare-sell-order-button10 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-6xl);
+  padding: var(--padding-6xs) var(--padding-5xl);
   background-color: var(--primary);
   border-radius: var(--br-xl);
   height: 50px;
@@ -140,11 +131,11 @@
   background-color: var(--color-white1);
   width: 100%;
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   justify-content: flex-start;
   gap: 15px;
   text-align: left;
-  font-size: var(--font-size-base);
+  font-size: var(--body-semibold-size);
   color: var(--black-000000100);
   font-family: var(--headline-s1);
 }

@@ -34,7 +34,7 @@
 .swap-button-group {
   align-self: stretch;
   flex-direction: row;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   gap: var(--gap-lg);
 }
 .iconssection-container,
@@ -46,7 +46,7 @@
 .iconssection1 {
   border-radius: var(--br-sm);
   background-color: var(--color-whitesmoke-200);
-  padding: var(--padding-6xs) var(--padding-5xs);
+  padding: var(--padding-7xs) var(--padding-6xs);
   align-items: center;
   justify-content: center;
 }
@@ -64,7 +64,7 @@
   text-align: center;
   z-index: 0;
 }
-.div2,
+.div4,
 .group-inner {
   position: absolute;
   top: calc(50% - 4px);
@@ -72,7 +72,7 @@
   width: 11px;
   height: 11px;
 }
-.div2 {
+.div4 {
   top: calc(50% - 7px);
   font-size: var(--font-size-3xs);
   letter-spacing: 0.41px;
@@ -98,7 +98,7 @@
 .tokentab1 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   background-color: var(--text-secondary1);
   border-radius: var(--br-md) var(--br-md) 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -127,7 +127,7 @@
 .fiat-tab1 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-7xs) 0;
   background-color: var(--text-secondary1);
   border-radius: var(--br-md) var(--br-md) 0 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -158,11 +158,11 @@
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   width: 455px;
   flex-direction: column;
-  padding: var(--padding-xs) var(--padding-5xs) 0;
+  padding: var(--padding-2xs) var(--padding-6xs) 0;
   box-sizing: border-box;
   justify-content: flex-start;
 }
-.lyralogoblueicon {
+.lyralogoblueicon3 {
   position: relative;
   width: 32px;
   height: 32px;
@@ -223,14 +223,14 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-6xs);
+  padding: var(--padding-7xs);
   align-items: center;
   justify-content: center;
 }
 .coinlisting {
   background-color: var(--color-white1);
   width: 455px;
-  padding: 0 var(--padding-5xs) var(--padding-5xs);
+  padding: 0 var(--padding-6xs) var(--padding-6xs);
   box-sizing: border-box;
 }
 .coinlisting,
@@ -246,7 +246,7 @@
   position: relative;
   background-color: var(--color-white1);
   width: 100%;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   box-sizing: border-box;
   align-items: center;
   text-align: left;

@@ -154,7 +154,7 @@ const WalletHome: FunctionComponent = () => {
                     alt=""
                     src="../asserts/ellipse-43.svg"
                   />
-                  <div className="div2">18</div>
+                  <div className="div4">18</div>
                 </div>
               </button>
               <button className="nft-tab1" onClick={() => setCat("nft")}>
@@ -165,7 +165,7 @@ const WalletHome: FunctionComponent = () => {
                     alt=""
                     src="../asserts/ellipse-43.svg"
                   />
-                  <div className="div2">18</div>
+                  <div className="div4">18</div>
                 </div>
               </button>
               <button className="fiat-tab1" onClick={() => setCat("fiat")}>

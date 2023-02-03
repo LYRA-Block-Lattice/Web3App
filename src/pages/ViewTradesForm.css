@@ -19,8 +19,8 @@
   height: 52px;
   flex-shrink: 0;
   flex-direction: row;
-  padding: var(--padding-2xl) var(--padding-md) var(--padding-2xl)
-    var(--padding-2xl);
+  padding: var(--padding-xl) var(--padding-sm) var(--padding-xl)
+    var(--padding-xl);
   align-items: flex-start;
 }
 .viewtradesform {
@@ -28,7 +28,7 @@
   width: 100%;
   overflow: hidden;
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-6xs);
   align-items: center;
   gap: var(--gap-2xl);
   text-align: left;

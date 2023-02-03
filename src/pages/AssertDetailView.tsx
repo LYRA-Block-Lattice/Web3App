@@ -192,7 +192,7 @@ const AssertDetailView: FunctionComponent = () => {
                 {market.order?.Blocks[0].Order.limitMax}
               </div>
               <div className="tetherusdt">tether/USDT</div>
-              <div className="div6">$0 ~ 0</div>
+              <div className="div8">$0 ~ 0</div>
             </div>
           </div>
           <div className="limitadjustsection">
