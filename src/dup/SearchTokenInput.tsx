@@ -100,8 +100,11 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
           onTokenSelect(tok.Name, tok.Ticker);
         } else {
           // for nft/tot, its the name
-          let ticker = options.find((a) => a.name == value)?.token;
-          let tok2 = balance?.find((a) => a.Ticker == ticker);
+          let tkn = options.find((a) => a.name == value);
+          if (tkn) {
+            onTokenSelect(tkn.name, tkn.token);
+          }
+          let tok2 = balance?.find((a) => a.Ticker == tkn?.token);
           if (tok2) {
             setSelbalance(tok2?.Balance);
             onTokenSelect(tok2?.Name, tok2.Ticker);
