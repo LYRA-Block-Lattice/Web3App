@@ -10,6 +10,7 @@ import TokenDisplayItem from "../components/TokenDisplayItem";
 import * as actionTypes from "../app/actionTypes";
 import "./WalletHome.css";
 import { IBalance } from "../app/wallet/walletReducer";
+import NFTInWalletDisplay from "../components/NFTInWalletDisplay";
 
 const WalletHome: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -77,17 +78,24 @@ const WalletHome: FunctionComponent = () => {
     else {
       return (
         <>
-          {ofCatalog(app.wallet.balances).map((a) => (
-            <TokenDisplayItem
-              key={a.Ticker}
-              coinIcon="../asserts/lyralogoblackicon@2x.png"
-              coinName={a.Name ?? a.Ticker}
-              amountText={a.Balance?.toLocaleString(undefined, {
-                maximumFractionDigits: 2
-              })}
-              amountWorth=""
-            />
-          ))}
+          {ofCatalog(app.wallet.balances).map((a) => {
+            switch (a.Domain) {
+              case "nft":
+                return <NFTInWalletDisplay key={a.Ticker} tok={a} />;
+              default:
+                return (
+                  <TokenDisplayItem
+                    key={a.Ticker}
+                    coinIcon="../asserts/lyralogoblackicon@2x.png"
+                    coinName={a.Name ?? a.Ticker}
+                    amountText={a.Balance?.toLocaleString(undefined, {
+                      maximumFractionDigits: 2
+                    })}
+                    amountWorth=""
+                  />
+                );
+            }
+          })}
         </>
       );
     }

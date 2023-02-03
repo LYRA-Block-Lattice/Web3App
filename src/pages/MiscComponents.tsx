@@ -56,7 +56,6 @@ const MiscComponents: FunctionComponent = () => {
         </div>
       </div>
       <div className="nft-showing-item-group">
-        <NFTInWalletDisplay />
         <div className="nft-showing-item">
           <div className="lyralogoblueicon-wrapper">
             <img

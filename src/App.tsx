@@ -26,7 +26,6 @@ import SellTOTToToken from "./pages/SellTOTToToken";
 import Empty from "./pages/Empty";
 import TransactionHistory from "./pages/TransactionHistory";
 import OldV1UI from "./pages/OldV1UI";
-import About from "./pages/About";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
 
