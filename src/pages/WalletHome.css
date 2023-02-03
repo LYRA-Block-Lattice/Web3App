@@ -1,11 +1,11 @@
-.home-icon-interlocution {
+.home-icon-interlocution4 {
   position: relative;
   width: 40px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.ranking {
+.ranking4 {
   position: relative;
   font-size: var(--other-m-size);
   line-height: 18px;
@@ -13,13 +13,13 @@
   color: var(--black-000000100);
   text-align: left;
 }
-.swap-button,
-.swap-button-parent {
+.send-button,
+.swap-button-group {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.swap-button {
+.send-button {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -31,30 +31,30 @@
   flex-shrink: 0;
   flex-direction: column;
 }
-.swap-button-parent {
+.swap-button-group {
   align-self: stretch;
   flex-direction: row;
   padding: var(--padding-6xs) 0;
   gap: var(--gap-lg);
 }
-.iconssection,
-.iconssection-wrapper {
+.iconssection-container,
+.iconssection1 {
   align-self: stretch;
   display: flex;
   flex-direction: column;
 }
-.iconssection {
+.iconssection1 {
   border-radius: var(--br-sm);
   background-color: var(--color-whitesmoke-200);
   padding: var(--padding-6xs) var(--padding-5xs);
   align-items: center;
   justify-content: center;
 }
-.iconssection-wrapper {
+.iconssection-container {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.token {
+.token1 {
   position: relative;
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
@@ -64,15 +64,15 @@
   text-align: center;
   z-index: 0;
 }
-.div,
-.group-child {
+.div2,
+.group-inner {
   position: absolute;
   top: calc(50% - 4px);
   left: calc(50% - 5.5px);
   width: 11px;
   height: 11px;
 }
-.div {
+.div2 {
   top: calc(50% - 7px);
   font-size: var(--font-size-3xs);
   letter-spacing: 0.41px;
@@ -84,7 +84,7 @@
   width: 10px;
   height: 12px;
 }
-.ellipse-parent {
+.ellipse-container {
   position: absolute;
   margin: 0 !important;
   top: calc(50% - 14px);
@@ -94,7 +94,8 @@
   flex-shrink: 0;
   z-index: 1;
 }
-.tokentab {
+.nft-tab1,
+.tokentab1 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) 0;
@@ -109,30 +110,13 @@
   box-sizing: border-box;
   align-items: flex-end;
   justify-content: center;
-}
-.fiat,
-.nft-tab,
-.tokentab {
   position: relative;
 }
-.nft-tab {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-6xs) 0;
-  background-color: var(--text-secondary1);
-  border-radius: var(--br-md) var(--br-md) 0 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 80px;
-  height: 32px;
-  flex-shrink: 0;
+.nft-tab1 {
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: flex-end;
-  justify-content: center;
 }
-.fiat {
+.fiat1 {
+  position: relative;
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -140,7 +124,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.fiat-tab {
+.fiat-tab1 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) 0;
@@ -157,20 +141,20 @@
   align-items: flex-end;
   justify-content: center;
 }
-.catalogtab,
-.tradableorderssection {
+.catalogtab1,
+.tradableorderssection2 {
   background-color: var(--color-whitesmoke-200);
   display: flex;
   align-items: center;
 }
-.catalogtab {
+.catalogtab1 {
   width: 424px;
   overflow: hidden;
   flex-direction: row;
   justify-content: center;
   gap: var(--gap-xs);
 }
-.tradableorderssection {
+.tradableorderssection2 {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   width: 455px;
   flex-direction: column;
@@ -226,7 +210,7 @@
   height: 1px;
   flex-shrink: 0;
 }
-.frame-parent {
+.frame-group {
   flex: 1;
   display: flex;
   flex-direction: column;

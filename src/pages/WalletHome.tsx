@@ -30,85 +30,85 @@ const WalletHome: FunctionComponent = () => {
     <>
       <div className="wallethome">
         <WalletCard />
-        <div className="iconssection-wrapper">
-          <div className="iconssection">
-            <div className="swap-button-parent">
-              <button className="swap-button" onClick={onSwapButtonClick}>
+        <div className="iconssection-container">
+          <div className="iconssection1">
+            <div className="swap-button-group">
+              <button className="send-button" onClick={onSwapButtonClick}>
                 <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution.svg"
-                />
-                <div className="ranking">Market</div>
-              </button>
-              <button className="swap-button">
-                <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution1.svg"
-                />
-                <div className="ranking">Swap</div>
-              </button>
-              <button className="swap-button" onClick={onSendButtonClick}>
-                <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution2.svg"
-                />
-                <div className="ranking">Send</div>
-              </button>
-              <button className="swap-button">
-                <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution3.svg"
-                />
-                <div className="ranking">Receive</div>
-              </button>
-              <button className="swap-button" onClick={openSideMenuPopup}>
-                <img
-                  className="home-icon-interlocution"
+                  className="home-icon-interlocution4"
                   alt=""
                   src="../asserts/home--icon--interlocution4.svg"
                 />
-                <div className="ranking">More...</div>
+                <div className="ranking4">Market</div>
+              </button>
+              <button className="send-button">
+                <img
+                  className="home-icon-interlocution4"
+                  alt=""
+                  src="../asserts/home--icon--interlocution5.svg"
+                />
+                <div className="ranking4">Swap</div>
+              </button>
+              <button className="send-button" onClick={onSendButtonClick}>
+                <img
+                  className="home-icon-interlocution4"
+                  alt=""
+                  src="../asserts/home--icon--interlocution6.svg"
+                />
+                <div className="ranking4">Send</div>
+              </button>
+              <button className="send-button">
+                <img
+                  className="home-icon-interlocution4"
+                  alt=""
+                  src="../asserts/home--icon--interlocution7.svg"
+                />
+                <div className="ranking4">Receive</div>
+              </button>
+              <button className="send-button" onClick={openSideMenuPopup}>
+                <img
+                  className="home-icon-interlocution4"
+                  alt=""
+                  src="../asserts/home--icon--interlocution8.svg"
+                />
+                <div className="ranking4">More...</div>
               </button>
             </div>
           </div>
         </div>
         <div className="tradableorderssection-parent">
-          <div className="tradableorderssection">
-            <div className="catalogtab">
-              <button className="tokentab">
-                <b className="token">Token</b>
-                <div className="ellipse-parent">
+          <div className="tradableorderssection2">
+            <div className="catalogtab1">
+              <button className="tokentab1">
+                <b className="token1">Token</b>
+                <div className="ellipse-container">
                   <img
-                    className="group-child"
+                    className="group-inner"
                     alt=""
                     src="../asserts/ellipse-43.svg"
                   />
-                  <div className="div">18</div>
+                  <div className="div2">18</div>
                 </div>
               </button>
-              <button className="nft-tab">
-                <b className="token">NFT</b>
-                <div className="ellipse-parent">
+              <button className="nft-tab1">
+                <b className="token1">NFT</b>
+                <div className="ellipse-container">
                   <img
-                    className="group-child"
+                    className="group-inner"
                     alt=""
                     src="../asserts/ellipse-43.svg"
                   />
-                  <div className="div">18</div>
+                  <div className="div2">18</div>
                 </div>
               </button>
-              <button className="fiat-tab">
-                <b className="fiat">Fiat</b>
+              <button className="fiat-tab1">
+                <b className="fiat1">Fiat</b>
               </button>
-              <button className="fiat-tab">
-                <b className="fiat">Goods</b>
+              <button className="fiat-tab1">
+                <b className="fiat1">Goods</b>
               </button>
-              <button className="fiat-tab">
-                <b className="fiat">Service</b>
+              <button className="fiat-tab1">
+                <b className="fiat1">Service</b>
               </button>
             </div>
           </div>
@@ -120,7 +120,7 @@ const WalletHome: FunctionComponent = () => {
               amountWorth="$2,183"
             />
             <div className="tokendisplayitem">
-              <div className="frame-parent">
+              <div className="frame-group">
                 <div className="lyralogoblueicon-parent">
                   <img
                     className="lyralogoblueicon"

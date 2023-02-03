@@ -63,7 +63,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-3xl) 66px var(--padding-2xl);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;

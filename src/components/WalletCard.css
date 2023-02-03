@@ -1,22 +1,22 @@
-.rectangle5 {
+.rectangle6 {
   flex: 1;
   position: relative;
   border-radius: var(--br-3xs);
   background-color: var(--color-deeppink);
   width: 5px;
 }
-.rectangle-wrapper,
-.wallet-card-inner {
+.rectangle-container,
+.wallet-card-inner1 {
   align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.rectangle-wrapper {
+.rectangle-container {
   overflow: hidden;
   flex-direction: column;
 }
-.wallet-card-inner {
+.wallet-card-inner1 {
   background-color: var(--text-primary-dark1);
   width: 18px;
   flex-shrink: 0;
@@ -24,7 +24,7 @@
   padding: var(--padding-6xs) 0;
   box-sizing: border-box;
 }
-.wallet-name-label {
+.wallet-name-label1 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -38,7 +38,7 @@
   display: inline-block;
   width: 206px;
 }
-.balance-display-zone-child {
+.balance-display-zone-inner {
   position: relative;
   border-top: 1px solid var(--info1);
   box-sizing: border-box;
@@ -46,25 +46,27 @@
   height: 1px;
   flex-shrink: 0;
 }
-.lyrlabel,
-.usdtbalance {
+.usdtbalance1 {
   position: relative;
   letter-spacing: 0.3px;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
-.lyrlabel {
-  font-size: var(--font-size-2xs);
-  color: var(--color-deeppink);
-  text-align: left;
-}
-.balance-display-zone-item {
+.rectangle-div {
   position: relative;
   background-color: var(--color-gainsboro-500);
   width: 22px;
   height: 2px;
   flex-shrink: 0;
 }
-.balance-display-zone {
+.usdtlabel {
+  position: relative;
+  font-size: var(--font-size-2xs);
+  letter-spacing: 0.3px;
+  color: var(--color-deeppink);
+  text-align: left;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
+}
+.balance-display-zone1 {
   cursor: pointer;
   text-decoration: none;
   align-self: stretch;
@@ -79,7 +81,7 @@
   gap: var(--gap-4xs);
   color: inherit;
 }
-.qrcode-button-round {
+.qrcode-button-round1 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -92,14 +94,14 @@
   opacity: 0.5;
   mix-blend-mode: normal;
 }
-.qrcode-icon {
+.qrcode-icon1 {
   position: absolute;
   top: 14.33px;
   right: 14.07px;
   width: 29px;
   height: 29px;
 }
-.qrcode-button {
+.qrcode-button1 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -110,21 +112,21 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.balance-display-zone-parent,
-.qrcode-button-wrapper {
+.balance-display-zone-group,
+.qrcode-button-container {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-end;
 }
-.qrcode-button-wrapper {
+.qrcode-button-container {
   background-color: var(--text-primary-dark1);
   overflow: hidden;
   padding: var(--padding-6xs) var(--padding-6xs) var(--padding-5xs)
     var(--padding-5xs);
 }
-.balance-display-zone-parent {
+.balance-display-zone-group {
   flex: 1;
 }
 .nft-count,
@@ -168,7 +170,7 @@
   gap: var(--gap-4xl);
 }
 .frame-container,
-.wallet-card {
+.wallet-card1 {
   align-self: stretch;
   display: flex;
   align-items: flex-start;
@@ -178,7 +180,7 @@
   flex: 1;
   flex-direction: column;
 }
-.wallet-card {
+.wallet-card1 {
   border-radius: var(--br-sm);
   background-color: var(--text-primary-dark1);
   height: 217px;

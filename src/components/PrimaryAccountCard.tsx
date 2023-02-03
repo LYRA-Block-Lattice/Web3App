@@ -10,29 +10,29 @@ const PrimaryAccountCard: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="wallet-card1">
-      <div className="wallet-card-child">
-        <div className="rectangle-container">
-          <div className="rectangle6" />
+    <div className="wallet-card">
+      <div className="wallet-card-inner">
+        <div className="rectangle-wrapper">
+          <div className="rectangle5" />
         </div>
       </div>
-      <div className="wallet-card-inner1">
-        <div className="balance-display-zone-group">
+      <div className="wallet-card-child">
+        <div className="balance-display-zone-parent">
           <button
-            className="balance-display-zone1"
+            className="balance-display-zone"
             onClick={onBalanceDisplayZoneClick}
           >
-            <b className="wallet-name-label1">My Primary Account</b>
-            <div className="balance-display-zone-inner" />
-            <b className="usdtbalance2">1,025,000</b>
-            <b className="lyrlabel1">LYR</b>
-            <div className="rectangle-div" />
+            <b className="wallet-name-label">My Primary Account</b>
+            <div className="balance-display-zone-child" />
+            <b className="usdtbalance">1,025,000</b>
+            <b className="lyrlabel">LYR</b>
+            <div className="balance-display-zone-item" />
           </button>
-          <div className="qrcode-button-container">
-            <button className="qrcode-button1">
-              <div className="qrcode-button-round1" />
+          <div className="qrcode-button-wrapper">
+            <button className="qrcode-button">
+              <div className="qrcode-button-round" />
               <img
-                className="qrcode-icon1"
+                className="qrcode-icon"
                 alt=""
                 src="../asserts/qrcode-icon.svg"
               />

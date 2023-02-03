@@ -55,7 +55,7 @@
 .selltokentotoken {
   position: relative;
   width: 100%;
-  padding: var(--padding-6xl) var(--padding-7xl);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   gap: var(--gap-lg);
 }

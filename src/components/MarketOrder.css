@@ -57,10 +57,10 @@
   border-radius: var(--br-sm);
 }
 .btc,
-.frame-inner {
+.frame-item {
   position: relative;
 }
-.frame-inner {
+.frame-item {
   width: 12.5px;
   height: 7.36px;
   flex-shrink: 0;
