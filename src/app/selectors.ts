@@ -31,6 +31,11 @@ const getMarket = (state: RootState) => state.market;
 // export it as a selector
 export const getMarketSelector = createSelector(getMarket, (market) => market);
 
+// get orders from market state with category
+export const getOrdersByCatalog = (cat: string) => (store: RootState) => {
+  return store.market.orders[cat ?? "ALL"];
+};
+
 // get router properties from state
 const getRouter = (state: RootState) => state.router;
 // export it as a selector

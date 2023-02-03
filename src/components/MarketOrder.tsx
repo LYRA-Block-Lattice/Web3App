@@ -48,7 +48,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   orderStatusBackgroundColor
 }) => {
   const [trades, setTrades] = useState<any[]>([]);
-  const [showTradeTable, setShowTradeTable] = useState(true);
+  const [showTradeTable, setShowTradeTable] = useState(false);
 
   const toggle = useCallback(() => {
     setShowTradeTable(!showTradeTable);

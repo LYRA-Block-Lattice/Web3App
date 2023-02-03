@@ -80,7 +80,10 @@ const marketReducer = (state = initState, action: IAction): IMarketState => {
     case actionTypes.MARKET_GET_ORDERS_SUCCESS:
       return {
         ...state,
-        orders: action.payload
+        orders: {
+          ...state.orders,
+          [action.payload.cat ?? "ALL"]: action.payload.data
+        }
       };
     case actionTypes.MARKET_GET_OWN_ORDERS_SUCCESS:
       return {

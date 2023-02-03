@@ -18,7 +18,10 @@ function* getOrders(action) {
   const orders = yield marketApi.fetchOrders(action.payload.cat);
   yield put({
     type: actionTypes.MARKET_GET_ORDERS_SUCCESS,
-    payload: orders.data
+    payload: {
+      cat: action.payload.cat,
+      data: orders.data
+    }
   });
 }
 
