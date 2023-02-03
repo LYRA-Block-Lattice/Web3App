@@ -24,6 +24,9 @@ const About: FunctionComponent = () => {
           Github Repo
         </a>
       </div>
+      <div className="web3-ecommerce-on">
+        © Copyright 2023 Lyra Live Inc., All Rights Reserved.
+      </div>
     </div>
   );
 };
