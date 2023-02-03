@@ -78,24 +78,26 @@ const WalletHome: FunctionComponent = () => {
     else {
       return (
         <>
-          {ofCatalog(app.wallet.balances).map((a) => {
-            switch (a.Domain) {
-              case "nft":
-                return <NFTInWalletDisplay key={a.Ticker} tok={a} />;
-              default:
-                return (
-                  <TokenDisplayItem
-                    key={a.Ticker}
-                    coinIcon="../asserts/lyralogoblackicon@2x.png"
-                    coinName={a.Name ?? a.Ticker}
-                    amountText={a.Balance?.toLocaleString(undefined, {
-                      maximumFractionDigits: 2
-                    })}
-                    amountWorth=""
-                  />
-                );
-            }
-          })}
+          {ofCatalog(app.wallet.balances)
+            .filter((a) => a.Balance > 0)
+            .map((a) => {
+              switch (a.Domain) {
+                case "nft":
+                  return <NFTInWalletDisplay key={a.Ticker} tok={a} />;
+                default:
+                  return (
+                    <TokenDisplayItem
+                      key={a.Ticker}
+                      coinIcon="../asserts/lyralogoblackicon@2x.png"
+                      coinName={a.Name ?? a.Ticker}
+                      amountText={a.Balance?.toLocaleString(undefined, {
+                        maximumFractionDigits: 2
+                      })}
+                      amountWorth=""
+                    />
+                  );
+              }
+            })}
         </>
       );
     }

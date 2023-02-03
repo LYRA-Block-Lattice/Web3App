@@ -139,7 +139,7 @@
 .wallet-card {
   border-radius: var(--br-sm);
   background-color: var(--text-primary-dark1);
-  width: 449px;
+  width: 100%;
   height: 94px;
   flex-shrink: 0;
   overflow: hidden;
