@@ -5,27 +5,31 @@
   flex-shrink: 0;
   object-fit: cover;
 }
+.lyralogoblueicon-wrapper1,
+.put-your-product3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 .lyralogoblueicon-wrapper1 {
   border-radius: var(--br-sm);
   background-color: var(--color-white1);
   width: 162px;
   height: 162px;
-  flex-shrink: 0;
-  display: flex;
   flex-direction: row;
   padding: var(--padding-8xl);
   box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
 }
 .put-your-product3 {
   position: relative;
+  font-size: var(--body-semibold-size);
   line-height: 16px;
-  text-transform: uppercase;
   font-weight: 600;
-  display: inline-block;
+  font-family: var(--font-roboto);
+  color: var(--text-dark-60);
+  text-align: center;
   width: 155px;
-  flex-shrink: 0;
 }
 .name-bm3 {
   width: 155px;
@@ -45,10 +49,10 @@
   align-items: center;
 }
 .nft-showing-item3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
   align-items: flex-end;
   gap: var(--gap-sm);
-  text-align: center;
-  font-size: var(--uppercase-small-size);
-  color: var(--text-dark-60);
-  font-family: var(--body-semibold);
 }

@@ -78,28 +78,35 @@
 }
 .put-your-product2 {
   position: relative;
+  font-size: var(--body-semibold-size);
   line-height: 16px;
-  text-transform: uppercase;
   font-weight: 600;
-  display: inline-block;
-  width: 155px;
+  font-family: var(--font-roboto);
+  color: var(--text-dark-60);
+  text-align: center;
+  display: flex;
+  justify-content: center;
   flex-shrink: 0;
 }
-.content2 {
+.content2,
+.put-your-product2 {
   width: 155px;
+  align-items: center;
+}
+.content2,
+.misccomponents,
+.nft-showing-item2 {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
 }
-.misccomponents,
-.nft-showing-item-group {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-5xl);
-  text-align: center;
+.nft-showing-item2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  align-items: flex-end;
+  gap: var(--gap-sm);
 }
 .misccomponents {
   position: relative;
@@ -107,7 +114,6 @@
   width: 100%;
   height: 1414px;
   overflow: hidden;
-  flex-direction: column;
   padding: var(--padding-6xs);
   box-sizing: border-box;
   align-items: center;
@@ -115,5 +121,5 @@
   text-align: left;
   font-size: var(--uppercase-small-size);
   color: var(--text-dark-60);
-  font-family: var(--body-semibold);
+  font-family: var(--uppercase-small);
 }
