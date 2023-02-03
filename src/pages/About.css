@@ -1,4 +1,40 @@
-/* style for About.tsx */
+.lyra-web3-app {
+  font-size: 32px;
+}
+.github-repo,
+.lyra-web3-app,
+.web3-ecommerce-on {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+}
+.github-repo {
+  text-decoration: underline;
+  color: #0029ff;
+}
+.about,
+.network-parent {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.network-parent {
+  padding: var(--padding-5xs) 48px;
+  justify-content: flex-start;
+  gap: var(--gap-lg);
+}
 .about {
-  color: red;
+  position: relative;
+  background-color: var(--color-white1);
+  width: 100%;
+  height: 459px;
+  padding: var(--padding-5xs);
+  box-sizing: border-box;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--black-000000100);
+  font-family: var(--font-sf-pro-text);
 }

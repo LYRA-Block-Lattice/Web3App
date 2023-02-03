@@ -1,19 +1,28 @@
-// React component to show an About page, display app name and version.
+import { FunctionComponent } from "react";
+import "./About.css";
 
-const About = () => {
+const About: FunctionComponent = () => {
   return (
     <div className="about">
-      <div className="about-title">
-        <div className="about-title-text">
-          {process.env.REACT_APP_NETWORK_ID}
-        </div>
-        <div className="about-title-text">{process.env.REACT_APP_NAME}</div>
-        <div className="about-title-text">{process.env.REACT_APP_VERSION}</div>
+      <b className="lyra-web3-app">Lyra Web3 App</b>
+      <div className="web3-ecommerce-on">
+        Web3 eCommerce on Lyra blockchain with KYC-less secured transaction
+        built-in.
       </div>
-      <div className="about-content">
-        <div className="about-content-text">
-          This is a Web3 eCommerce application for the Lyra blockchain.
+      <div className="network-parent">
+        <div className="web3-ecommerce-on">
+          Network: {process.env.REACT_APP_NETWORK_ID}
         </div>
+        <div className="web3-ecommerce-on">
+          Version: {process.env.REACT_APP_VERSION}
+        </div>
+        <a
+          className="github-repo"
+          href="https://github.com/LYRA-Block-Lattice/Web3App"
+          target="_blank"
+        >
+          Github Repo
+        </a>
       </div>
     </div>
   );
