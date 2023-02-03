@@ -88,6 +88,7 @@
   max-height: 100%;
   object-fit: cover;
 }
+.assertstatssection,
 .icoutline-remove-red-eye-parent {
   background-color: var(--color-white1);
   overflow: hidden;
@@ -97,26 +98,18 @@
   justify-content: flex-start;
   gap: var(--gap-xs);
 }
-.assertdetailview1,
-.assertstatssection,
-.descriptiontitle {
-  align-self: stretch;
-  display: flex;
-  justify-content: flex-start;
-}
 .assertstatssection {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
-  background-color: var(--color-white1);
-  overflow: hidden;
-  flex-direction: row;
   padding: var(--padding-6xs);
-  align-items: center;
   gap: var(--gap-4xl);
 }
 .assertdetailview1,
 .descriptiontitle {
+  align-self: stretch;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 .descriptiontitle {
   border-radius: var(--br-sm);
