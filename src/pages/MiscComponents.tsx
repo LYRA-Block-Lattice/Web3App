@@ -69,7 +69,6 @@ const MiscComponents: FunctionComponent = () => {
           </div>
         </div>
         <div className="nft-showing-item-parent">
-          <NFTInWalletDisplay />
           <button className="nft-showing-item2" onClick={openGeneralPopup1}>
             <div className="lyralogoblueicon-wrapper">
               <img

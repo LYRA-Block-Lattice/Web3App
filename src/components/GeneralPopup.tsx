@@ -4,6 +4,7 @@ import MintFiatToken from "../pages/MintFiatToken";
 import CreateTokenForm from "../pages/CreateTokenForm";
 import CreateTOTForm from "../pages/CreateTOTForm";
 import CreateNFTForm from "../pages/CreateNFTForm";
+import NFTFullScreenDisplay from "../dup/NFTFullScreenDisplay";
 
 type GeneralPopupType = {
   onClose?: (ticker?: string) => void;
@@ -18,7 +19,8 @@ const GeneralPopup: FunctionComponent<GeneralPopupType> = (props) => {
     NFT: CreateNFTForm,
     TOT: CreateTOTForm,
     Goods: CreateTOTForm,
-    Service: CreateTOTForm
+    Service: CreateTOTForm,
+    NFTFD: NFTFullScreenDisplay
   };
 
   const TagName = components[props.tag || "Token"];
@@ -26,7 +28,7 @@ const GeneralPopup: FunctionComponent<GeneralPopupType> = (props) => {
   return (
     <div className="generalpopup">
       {props.children}
-      <TagName onClose={props.onClose} />
+      {props.tag ? <TagName onClose={props.onClose} /> : <></>}
     </div>
   );
 };
