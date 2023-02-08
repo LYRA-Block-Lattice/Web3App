@@ -55,6 +55,7 @@ const OpenWallet: FunctionComponent = () => {
   useEffect(() => {
     if (auth.accountId != undefined && names && names.length > 0)
       setIndex(names.findIndex((a) => a == auth.walletName));
+    else navigate("/create-wallet");
   }, [dispatch, auth.accountId, names]);
 
   return (

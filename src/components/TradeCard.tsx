@@ -2,7 +2,6 @@ import { FunctionComponent, useCallback } from "react";
 import "./TradeCard.css";
 
 type TradeCardType = {
-  dir: string;
   tradeStatus?: string;
   biding?: string;
   offering?: string;
@@ -11,10 +10,10 @@ type TradeCardType = {
   amount?: string;
   bidingImg?: string;
   offeringImg?: string;
+  dir: string;
 };
 
 const TradeCard: FunctionComponent<TradeCardType> = ({
-  dir,
   tradeStatus,
   biding,
   offering,
@@ -22,65 +21,70 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   price,
   amount,
   bidingImg,
-  offeringImg
+  offeringImg,
+  dir
 }) => {
   const onBannerImageClick = useCallback(() => {
     //TODO: toggle the bellow table
   }, []);
 
   return (
-    <div className="ordercard1">
-      <div className="order-brief-section1">
-        <button className="banner-image1" onClick={onBannerImageClick}>
-          <div className="order-banner1">
-            <img
-              className="icbaseline-generating-tokens-icon1"
-              alt=""
-              src={bidingImg}
-            />
-            <img
-              className="order-image-item"
-              alt=""
-              src="../asserts/arrow-12.svg"
-            />
-            <img
-              className="icbaseline-generating-tokens-icon1"
-              alt=""
-              src={offeringImg}
-            />
-
-            <div className="order-status1">
-              <b className="open1">{tradeStatus}</b>
+    <div className="ordercard">
+      <div className="order-brief-section">
+        <button className="banner-image" onClick={onBannerImageClick}>
+          <div className="order-banner">
+            <button className="order-image">
+              <img
+                className="icbaseline-generating-tokens-icon"
+                alt=""
+                src={bidingImg}
+              />
+              <img
+                className="order-image-child"
+                alt=""
+                src="../asserts/arrow-1.svg"
+              />
+              <img
+                className="icbaseline-generating-tokens-icon"
+                alt=""
+                src={offeringImg}
+              />
+            </button>
+            <div className="order-status">
+              <b className="open">{tradeStatus}</b>
             </div>
           </div>
         </button>
-        <div className="title-section1">
+        <div className="title-section">
           <div className="trade-parent">
             <b className="trade">{dir}</b>
             <b className="trade">{biding}</b>
-            <img className="arrow-icon" alt="" src="../asserts/arrow-22.svg" />
-            <b className="tetherusdt2">{offering}</b>
+            <img className="frame-item" alt="" src="../asserts/arrow-2.svg" />
+            <b className="tetherusdt1">{offering}</b>
           </div>
           <div className="title-section-child" />
           <div className="am-wrapper">
             <div className="trade">{time}</div>
           </div>
-          <div className="details-section1">
-            <div className="block11">
+          <div className="details-section">
+            <div className="block1">
               <div className="trade">Price</div>
             </div>
-            <div className="block21">
+            <div className="block2">
               <div className="trade">{price}</div>
             </div>
-            <div className="details-section-item" />
-            <div className="block31">
+            <div className="details-section-child" />
+            <div className="block3">
               <div className="trade">Amount</div>
             </div>
-            <div className="block21">
+            <div className="block2">
               <div className="trade">{amount}</div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="trades-section">
+        <div className="width-controller" />
       </div>
     </div>
   );
