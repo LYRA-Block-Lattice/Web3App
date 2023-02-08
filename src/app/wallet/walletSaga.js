@@ -28,9 +28,11 @@ function* getBalance(action) {
         type: actionTypes.WALLET_BALANCE,
         payload: {
           accountId: wds.accountId,
-          nftcnt: ret.data.filter((a) => a.Domain == "nft").length,
-          totcnt: ret.data.filter((a) => a.Domain == "tot" || a.Domain == "svc")
+          nftcnt: ret.data.filter((a) => a.Balance > 0 && a.Domain == "nft")
             .length,
+          totcnt: ret.data.filter(
+            (a) => a.Balance > 0 && (a.Domain == "tot" || a.Domain == "svc")
+          ).length,
           balance: ret.data.find((a) => a.Ticker == "LYR").Balance ?? 0,
           usdt: ret.data.find((a) => a.Ticker == "tether/USDT")?.Balance ?? 0,
           balances: ret.data

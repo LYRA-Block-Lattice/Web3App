@@ -25,7 +25,7 @@ export default function DisplaySellItems(props: any) {
 
   return (
     <>
-      {orders?.Orders.map((blk: any) => (
+      {orders?.Orders.filter((a: any) => a.Order.amount > 0).map((blk: any) => (
         <MarketOrder
           key={blk.AccountID}
           orderId={blk.AccountID}
