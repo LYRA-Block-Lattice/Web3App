@@ -1,7 +1,10 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import "./TradeDetails.css";
 
 const TradeDetails: FunctionComponent = () => {
+  const [searchParams, setSearchParams] = useSearchParams({});
+
   const onPrepareSellOrderButtonClick = useCallback(() => {
     //TODO: Close the trade
   }, []);
@@ -13,6 +16,9 @@ const TradeDetails: FunctionComponent = () => {
   const onPrepareSellOrderButton2Click = useCallback(() => {
     //TODO: Add comment to the trade
   }, []);
+
+  // load the trade details via market api on page load
+  useEffect(() => {}, []);
 
   return (
     <div className="tradedetails">
