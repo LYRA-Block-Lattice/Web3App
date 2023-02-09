@@ -116,7 +116,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         }
       />
       <button
-        className="prepare-sell-order-button10"
+        className="prepare-sell-order-button13"
         onClick={onPrepareSellOrderButtonClick}
       >
         <div className="primary-button2">Place Order</div>

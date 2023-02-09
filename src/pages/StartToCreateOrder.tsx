@@ -108,7 +108,7 @@ const StartToCreateOrder: FunctionComponent = () => {
         </Xwrapper>
       </div>
       <button
-        className="prepare-sell-order-button12"
+        className="prepare-sell-order-button15"
         disabled={isDisabled}
         onClick={onPrepareSellOrderButtonClick}
       >

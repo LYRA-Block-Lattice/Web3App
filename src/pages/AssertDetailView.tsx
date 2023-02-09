@@ -218,7 +218,7 @@ const AssertDetailView: FunctionComponent = () => {
         </div>
         <div className="makeofferbutton">
           <button
-            className="prepare-sell-order-button1"
+            className="prepare-sell-order-button4"
             onClick={onMakeOfferButtonClick}
           >
             <img
