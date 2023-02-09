@@ -3,6 +3,159 @@
   letter-spacing: 0.41px;
   line-height: 41px;
 }
+.frame-item,
+.illus1-child {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.illus1-child {
+  height: 78.89%;
+  width: 99.75%;
+  top: 11.06%;
+  right: 0;
+  bottom: 10.05%;
+  left: 0.25%;
+  opacity: 0.08;
+  mix-blend-mode: normal;
+}
+.frame-item {
+  height: 88.36%;
+  width: 98.35%;
+  top: 0.17%;
+  right: 0.23%;
+  bottom: 11.47%;
+  left: 1.42%;
+}
+.r {
+  letter-spacing: -0.08px;
+}
+.e {
+  letter-spacing: -0.09px;
+}
+.t {
+  letter-spacing: -0.11px;
+}
+.a {
+  letter-spacing: -0.03px;
+}
+.cc {
+  letter-spacing: -0.05px;
+}
+.create-account {
+  position: absolute;
+  width: 18.85%;
+  top: calc(50% - 43.68px);
+  left: 43.46%;
+  display: inline-block;
+  height: 14px;
+}
+.fill-43-icon {
+  position: absolute;
+  height: 2.99%;
+  width: 13.36%;
+  top: 73.42%;
+  right: 40.72%;
+  bottom: 23.59%;
+  left: 45.93%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.email-address-icon {
+  position: relative;
+  width: 17.85px;
+  height: 1.94px;
+}
+.youremailgmailc-icon {
+  position: relative;
+  width: 24.55px;
+  height: 2.45px;
+}
+.frame-inner {
+  position: absolute;
+  height: 8.4%;
+  width: 24.79%;
+  top: 38.5%;
+  right: 34.08%;
+  bottom: 53.1%;
+  left: 41.13%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.your-text-icon {
+  position: relative;
+  width: 11.05px;
+  height: 1.83px;
+}
+.group-icon {
+  position: absolute;
+  height: 8.33%;
+  width: 24.79%;
+  top: 47.23%;
+  right: 34.08%;
+  bottom: 44.44%;
+  left: 41.13%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.your-city-icon {
+  position: relative;
+  width: 11.21px;
+  height: 2.44px;
+}
+.frame-child1 {
+  position: absolute;
+  height: 8.11%;
+  width: 24.79%;
+  top: 55.89%;
+  right: 34.08%;
+  bottom: 36%;
+  left: 41.13%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.entry-password-icon {
+  position: relative;
+  width: 19.2px;
+  height: 2.44px;
+}
+.frame-child2,
+.group-parent {
+  position: absolute;
+  overflow: hidden;
+}
+.frame-child2 {
+  height: 61.15%;
+  width: 70.96%;
+  top: 38.6%;
+  right: 29.04%;
+  bottom: 0.25%;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+.group-parent {
+  height: 75.63%;
+  width: 75.8%;
+  top: 12.06%;
+  right: 12.1%;
+  bottom: 12.31%;
+  left: 12.1%;
+}
+.illus1 {
+  position: relative;
+  width: 252px;
+  height: 252px;
+  flex-shrink: 0;
+  font-size: 6.03px;
+  color: #34336c;
+  font-family: var(--font-montserrat);
+}
 .wallet-name {
   border: 0;
   background-color: transparent;

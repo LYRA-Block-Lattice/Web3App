@@ -1,5 +1,4 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import "./TradeCard.css";
 
 type TradeCardType = {
@@ -23,18 +22,16 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   bidingImg,
   offeringImg,
 }) => {
-  const navigate = useNavigate();
-
   const onBannerImageClick = useCallback(() => {
-    navigate("/tradedetails");
-  }, [navigate]);
+    //TODO: toggle the bellow table
+  }, []);
 
   return (
     <div className="ordercard1">
       <div className="order-brief-section1">
         <button className="banner-image1" onClick={onBannerImageClick}>
           <div className="order-banner1">
-            <button className="order-image1">
+            <div className="order-image1">
               <img
                 className="icbaseline-generating-tokens-icon1"
                 alt=""
@@ -50,7 +47,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
                 alt=""
                 src={offeringImg}
               />
-            </button>
+            </div>
             <div className="order-status1">
               <b className="open1">{tradeStatus}</b>
             </div>
@@ -60,7 +57,11 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
           <div className="trade-parent">
             <b className="trade">Trade</b>
             <b className="trade">{biding}</b>
-            <img className="arrow-icon" alt="" src="../asserts/arrow-22.svg" />
+            <img
+              className="frame-child3"
+              alt=""
+              src="../asserts/arrow-22.svg"
+            />
             <b className="tetherusdt2">{offering}</b>
           </div>
           <div className="title-section-child" />

@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Myriad+Pro:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
@@ -19,6 +20,7 @@ body {
   --base-1-semibold: Inter;
   --font-roboto: Roboto;
   --uppercase-small: Poppins;
+  --font-montserrat: Montserrat;
   --font-myriad-pro: "Myriad Pro";
 
   /* font sizes */

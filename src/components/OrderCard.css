@@ -12,11 +12,8 @@
   flex-shrink: 0;
 }
 .order-image2 {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: var(--sell1);
   border-radius: var(--br-sm) var(--br-sm) 0 0;
+  background-color: var(--sell1);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
   width: 110px;
   height: 50px;
@@ -58,7 +55,7 @@
   padding: 0;
   background-color: transparent;
 }
-.frame-child1 {
+.frame-child4 {
   position: relative;
   width: 12.5px;
   height: 7.36px;

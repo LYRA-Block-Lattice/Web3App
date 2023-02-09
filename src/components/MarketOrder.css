@@ -56,11 +56,11 @@
   background-color: transparent;
   border-radius: var(--br-sm);
 }
-.btc,
-.frame-item {
+.arrow-icon,
+.btc {
   position: relative;
 }
-.frame-item {
+.arrow-icon {
   width: 12.5px;
   height: 7.36px;
   flex-shrink: 0;
