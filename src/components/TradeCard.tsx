@@ -12,6 +12,7 @@ type TradeCardType = {
   bidingImg?: string;
   offeringImg?: string;
   dir: string;
+  tradeId: string;
 };
 
 const TradeCard: FunctionComponent<TradeCardType> = ({
@@ -23,12 +24,13 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   amount,
   bidingImg,
   offeringImg,
-  dir
+  dir,
+  tradeId
 }) => {
   const navigate = useNavigate();
 
   const onBannerImageClick = useCallback(() => {
-    navigate("/tradedetails");
+    navigate("/tradedetails?tradeId=" + tradeId);
   }, [navigate]);
 
   return (

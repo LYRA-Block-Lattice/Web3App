@@ -39,6 +39,7 @@ const ViewTradesForm: FunctionComponent = () => {
           amount={trade.amount}
           bidingImg={getTickerIcon(trade.biding)}
           offeringImg={getTickerIcon(trade.offering)}
+          tradeId={trade.tradeId}
         />
       ))}
     </div>
