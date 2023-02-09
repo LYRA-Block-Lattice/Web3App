@@ -1,5 +1,5 @@
 .to-sell-token,
-.utility-button1 {
+.utility-button4 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -13,12 +13,12 @@
   display: inline-block;
   width: 296px;
 }
-.utility-button1 {
+.utility-button4 {
   font-size: var(--font-size-xl);
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button6 {
+.prepare-sell-order-button9 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);

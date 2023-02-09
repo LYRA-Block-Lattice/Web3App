@@ -247,14 +247,14 @@
   text-align: center;
 }
 .makeofferbutton,
-.prepare-sell-order-button1 {
+.prepare-sell-order-button4 {
   align-self: stretch;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button1 {
+.prepare-sell-order-button4 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
@@ -266,7 +266,7 @@
   box-sizing: border-box;
   gap: var(--gap-lg);
 }
-.prepare-sell-order-button1:hover {
+.prepare-sell-order-button4:hover {
   background-color: var(--color-mediumslateblue-100);
 }
 .makeofferbutton {

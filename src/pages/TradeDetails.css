@@ -1,0 +1,72 @@
+.the-dao-name {
+  position: relative;
+  font-size: var(--font-size-7xl);
+}
+.tradedetails-child {
+  position: relative;
+  border: 1px solid var(--black-000000100);
+  box-sizing: border-box;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.trade-id {
+  position: relative;
+}
+.lawhkiuw8bhbmrdpdnd6 {
+  position: relative;
+  text-decoration: underline;
+  color: inherit;
+}
+.trade-id-parent {
+  gap: var(--gap-lg);
+}
+.status-wrapper,
+.trade-id-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.utility-button {
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--headline-s1);
+  color: var(--color-white1);
+  text-align: center;
+}
+.prepare-sell-order-button,
+.tradedetails {
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+}
+.prepare-sell-order-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-6xs) var(--padding-lg);
+  background-color: var(--tertiary);
+  border-radius: var(--br-xl);
+  height: 30px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.tradedetails {
+  position: relative;
+  background-color: var(--color-white1);
+  width: 100%;
+  flex-direction: column;
+  padding: var(--padding-6xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-4xl);
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--black-000000100);
+  font-family: var(--base-1-semibold);
+}

@@ -14,7 +14,7 @@
   border: 0;
   background-color: transparent;
 }
-.utility-button {
+.utility-button3 {
   position: relative;
   font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
@@ -24,7 +24,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button4 {
+.prepare-sell-order-button7 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
@@ -59,7 +59,7 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button5 {
+.prepare-sell-order-button8 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);

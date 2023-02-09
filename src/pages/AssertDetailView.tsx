@@ -124,7 +124,7 @@ const AssertDetailView: FunctionComponent = () => {
           <input className="selectedamount" type="number" placeholder="150" />
         </div>
         <div className="makeofferbutton">
-          <button className="prepare-sell-order-button1">
+          <button className="prepare-sell-order-button4">
             <img
               className="material-symbolsshare-icon"
               alt=""

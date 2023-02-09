@@ -5,6 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Market from "./pages/Market";
+import TradeDetails from "./pages/TradeDetails";
 import MiscComponents from "./pages/MiscComponents";
 import SendTokenForm from "./pages/SendTokenForm";
 import WalletHome from "./pages/WalletHome";
@@ -49,6 +50,10 @@ function App() {
 
     switch (pathname) {
       case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/tradedetails":
         title = "";
         metaDescription = "";
         break;
@@ -171,6 +176,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Market />} />
+
+      <Route path="/tradedetails" element={<TradeDetails />} />
 
       <Route path="/misccomponents" element={<MiscComponents />} />
 

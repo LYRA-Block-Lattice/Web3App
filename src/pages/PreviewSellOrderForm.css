@@ -108,14 +108,14 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button10,
+.prepare-sell-order-button13,
 .previewsellorderform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button10 {
+.prepare-sell-order-button13 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);

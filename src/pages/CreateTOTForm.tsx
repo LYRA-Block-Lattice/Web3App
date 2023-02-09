@@ -71,15 +71,15 @@ const CreateTOTForm: FunctionComponent = () => {
             margin="none"
           />
           <button
-            className="prepare-sell-order-button4"
+            className="prepare-sell-order-button7"
             onClick={openSignTradeSecretPopup}
           >
-            <div className="utility-button">Sign trade secret</div>
+            <div className="utility-button3">Sign trade secret</div>
           </button>
           <div className="note-i-need">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <button className="prepare-sell-order-button5">
+          <button className="prepare-sell-order-button8">
             <div className="secondary-button2">Create TOT</div>
           </button>
         </form>

@@ -29,14 +29,14 @@
   color: var(--color-white1);
   text-align: center;
 }
-.prepare-sell-order-button,
+.prepare-sell-order-button3,
 .sendtokenform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button {
+.prepare-sell-order-button3 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
@@ -47,7 +47,7 @@
   flex-direction: row;
   justify-content: center;
 }
-.prepare-sell-order-button:hover {
+.prepare-sell-order-button3:hover {
   background-color: var(--color-mediumslateblue-100);
 }
 .sendtokenform {

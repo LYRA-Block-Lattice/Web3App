@@ -38,10 +38,10 @@ const SellTokenToToken: FunctionComponent = () => {
             size="medium"
           />
           <button
-            className="prepare-sell-order-button6"
+            className="prepare-sell-order-button9"
             onClick={openGeneralPopup}
           >
-            <div className="utility-button1">Mint to sell</div>
+            <div className="utility-button4">Mint to sell</div>
           </button>
           <div className="searchtokenbyname-child" />
           <div className="to-sell-token">To Get Fiat</div>
