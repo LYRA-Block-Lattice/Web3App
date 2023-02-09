@@ -1,5 +1,4 @@
 import { FunctionComponent, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 import "./TradeCard.css";
 
 type TradeCardType = {
@@ -27,18 +26,16 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   dir,
   tradeId
 }) => {
-  const navigate = useNavigate();
-
   const onBannerImageClick = useCallback(() => {
     navigate("/tradedetails?tradeId=" + tradeId);
   }, [navigate]);
 
   return (
-    <div className="ordercard">
-      <div className="order-brief-section">
-        <button className="banner-image" onClick={onBannerImageClick}>
-          <div className="order-banner">
-            <button className="order-image">
+    <div className="ordercard1">
+      <div className="order-brief-section1">
+        <button className="banner-image1" onClick={onBannerImageClick}>
+          <div className="order-banner1">
+            <div className="order-image1">
               <img
                 className="icbaseline-generating-tokens-icon"
                 alt=""
@@ -54,9 +51,9 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
                 alt=""
                 src={offeringImg}
               />
-            </button>
-            <div className="order-status">
-              <b className="open">{tradeStatus}</b>
+            </div>
+            <div className="order-status1">
+              <b className="open1">{tradeStatus}</b>
             </div>
           </div>
         </button>
@@ -64,8 +61,12 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
           <div className="trade-parent">
             <b className="trade">{dir}</b>
             <b className="trade">{biding}</b>
-            <img className="frame-item" alt="" src="../asserts/arrow-2.svg" />
-            <b className="tetherusdt1">{offering}</b>
+            <img
+              className="frame-child3"
+              alt=""
+              src="../asserts/arrow-22.svg"
+            />
+            <b className="tetherusdt2">{offering}</b>
           </div>
           <div className="title-section-child" />
           <div className="am-wrapper">

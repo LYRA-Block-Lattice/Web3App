@@ -16,9 +16,9 @@ import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
 import PreviewSellOrderForm from "./pages/PreviewSellOrderForm";
 import CreateNFTForm from "./pages/CreateNFTForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
-import Redir from "./pages/Redir";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
+import Redir from "./pages/Redir";
 import About from "./pages/About";
 import ScanToPay from "./pages/ScanToPay";
 import SellTokenToTOT from "./pages/SellTokenToTOT";
@@ -111,15 +111,15 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/redir":
-        title = "";
-        metaDescription = "";
-        break;
       case "/create-wallet":
         title = "";
         metaDescription = "";
         break;
       case "/openwallet":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/redir":
         title = "";
         metaDescription = "";
         break;
@@ -208,11 +208,11 @@ function App() {
 
       <Route path="/starttocreateorder" element={<StartToCreateOrder />} />
 
-      <Route path="/redir" element={<Redir />} />
-
       <Route path="/create-wallet" element={<CreateWallet />} />
 
       <Route path="/openwallet" element={<OpenWallet />} />
+
+      <Route path="/redir" element={<Redir />} />
 
       <Route path="/about" element={<About />} />
 

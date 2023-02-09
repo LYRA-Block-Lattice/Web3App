@@ -101,7 +101,7 @@
   flex-shrink: 0;
   color: var(--color-gray-1);
 }
-.group-parent {
+.group-group {
   height: 46px;
   flex-shrink: 0;
   overflow: hidden;

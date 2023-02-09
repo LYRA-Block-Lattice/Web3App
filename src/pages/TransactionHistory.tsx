@@ -46,7 +46,7 @@ const TransactionHistory: FunctionComponent = () => {
           src="../asserts/advanced-filter.svg"
         />
       </div>
-      <div className="group-parent">
+      <div className="group-group">
         <div className="group">
           <div className="rectangle" />
           <div className="div10">$200</div>
