@@ -11,6 +11,7 @@ import "./OrderCard.css";
 import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
+import { useNavigate } from "react-router";
 
 type OrderCardType = {
   offering?: string;
@@ -25,6 +26,7 @@ type OrderCardType = {
   limitMax?: string;
   sold?: string;
   shelf?: string;
+  orderId: string;
 
   /** Style props */
   orderStatusBackgroundColor?: Property.BackgroundColor;
@@ -43,8 +45,11 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
   limitMax,
   sold,
   shelf,
+  orderId,
   orderStatusBackgroundColor
 }) => {
+  const navigate = useNavigate();
+
   const [trades, setTrades] = useState<any[]>([]);
   const [showTradeTable, setShowTradeTable] = useState(false);
 
