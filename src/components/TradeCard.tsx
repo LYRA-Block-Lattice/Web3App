@@ -60,7 +60,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
             </div>
           </div>
         </button>
-        <div className="title-section">
+        <a className="title-section1">
           <div className="trade-parent">
             <b className="trade">{dir}</b>
             <b className="trade">{biding}</b>
@@ -90,7 +90,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
               <div className="trade">{amount}</div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
       <div className="trades-section">
         <div className="width-controller" />

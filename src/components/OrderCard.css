@@ -132,9 +132,11 @@
   align-items: center;
 }
 .title-section2 {
+  text-decoration: none;
   border-radius: var(--br-2xs) var(--br-2xs) 0 0;
   flex-direction: column;
   align-items: flex-start;
+  color: inherit;
 }
 .order-brief-section2 {
   display: flex;
