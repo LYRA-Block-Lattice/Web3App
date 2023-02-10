@@ -1,9 +1,12 @@
-import { FunctionComponent, useCallback, useEffect } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { blockExplorerUrlBase } from "../app/market/marketApi";
 import "./TradeDetails.css";
 
 const TradeDetails: FunctionComponent = () => {
   const [searchParams, setSearchParams] = useSearchParams({});
+  const [link, setLink] = useState("");
+  const [shortId, setShortId] = useState("");
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
     //TODO: Close the trade
@@ -18,7 +21,13 @@ const TradeDetails: FunctionComponent = () => {
   }, []);
 
   // load the trade details via market api on page load
-  useEffect(() => {}, []);
+  useEffect(() => {
+    var tradeId = searchParams.get("tradeId");
+    if (tradeId) {
+      setLink(blockExplorerUrlBase() + tradeId);
+      setShortId(tradeId.substring(0, 8) + "..." + tradeId.substring(80));
+    }
+  }, []);
 
   return (
     <div className="tradedetails">
@@ -26,12 +35,8 @@ const TradeDetails: FunctionComponent = () => {
       <div className="tradedetails-child" />
       <div className="trade-id-parent">
         <div className="trade-id">Trade ID:</div>
-        <a
-          className="lawhkiuw8bhbmrdpdnd6"
-          href="https://nebulatestnet.lyra.live/showblock/LAWhKiUW8BFurACRRRRDVbGBk4XkRuQixybk775G7xvqTGZNASRaYxeWr2We4KfDXUAGDJcZRK84CaimWkDChbMrDPdnD6"
-          target="_blank"
-        >
-          LAWhKiUW8B...hbMrDPdnD6
+        <a className="lawhkiuw8bhbmrdpdnd6" href={link} target="_blank">
+          {shortId}
         </a>
       </div>
       <div className="status-wrapper">

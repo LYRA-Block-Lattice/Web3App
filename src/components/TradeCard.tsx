@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router";
 import "./TradeCard.css";
 
 type TradeCardType = {
@@ -26,6 +27,8 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   dir,
   tradeId
 }) => {
+  const navigate = useNavigate();
+
   const onBannerImageClick = useCallback(() => {
     navigate("/tradedetails?tradeId=" + tradeId);
   }, [navigate]);

@@ -28,6 +28,17 @@ const Start_API = axios.create({
   baseURL: `https://start${process.env.REACT_APP_NETWORK_ID}.lyra.live/svc`
 });
 
+export const blockExplorerUrlBase = () => {
+  switch (process.env.REACT_APP_NETWORK_ID) {
+    case "testnet":
+      return "https://nebulatestnet.lyra.live/showblock/";
+    case "mainnet":
+      return "https://nebula.lyra.live/showblock/";
+    default:
+      return "https://localhost:5201/showblock/";
+  }
+};
+
 // Blockchain API V1
 export const searchDao = (q: string) => Block_API_v1.get("/FindDaos?q=" + q);
 // Get a Tx block by AccountId
