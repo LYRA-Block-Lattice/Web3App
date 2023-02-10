@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router";
+import { getBlockExplorerUrl } from "../app/market/marketApi";
 import "./TradeCard.css";
 
 type TradeCardType = {
@@ -60,7 +61,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
             </div>
           </div>
         </button>
-        <a className="title-section1">
+        <a className="title-section1" onClick={onBannerImageClick}>
           <div className="trade-parent">
             <b className="trade">{dir}</b>
             <b className="trade">{biding}</b>

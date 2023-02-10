@@ -79,6 +79,7 @@ const ViewOrdersForm: FunctionComponent = () => {
           orderStatusBackgroundColor={
             order.status == "Open" ? "#2196F3" : "gray"
           }
+          orderId={order.orderid!}
         />
       ))}
     </div>

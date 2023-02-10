@@ -28,14 +28,14 @@ const Start_API = axios.create({
   baseURL: `https://start${process.env.REACT_APP_NETWORK_ID}.lyra.live/svc`
 });
 
-export const blockExplorerUrlBase = () => {
+export const getBlockExplorerUrl = (id: string) => {
   switch (process.env.REACT_APP_NETWORK_ID) {
     case "testnet":
-      return "https://nebulatestnet.lyra.live/showblock/";
+      return "https://nebulatestnet.lyra.live/showblock/" + id;
     case "mainnet":
-      return "https://nebula.lyra.live/showblock/";
+      return "https://nebula.lyra.live/showblock/" + id;
     default:
-      return "https://localhost:5201/showblock/";
+      return "https://localhost:5201/showblock/" + id;
   }
 };
 

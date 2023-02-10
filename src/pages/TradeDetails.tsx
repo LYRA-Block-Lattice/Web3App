@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { blockExplorerUrlBase } from "../app/market/marketApi";
+import { getBlockExplorerUrl } from "../app/market/marketApi";
 import "./TradeDetails.css";
 
 const TradeDetails: FunctionComponent = () => {
@@ -24,7 +24,7 @@ const TradeDetails: FunctionComponent = () => {
   useEffect(() => {
     var tradeId = searchParams.get("tradeId");
     if (tradeId) {
-      setLink(blockExplorerUrlBase() + tradeId);
+      setLink(getBlockExplorerUrl(tradeId));
       setShortId(tradeId.substring(0, 8) + "..." + tradeId.substring(80));
     }
   }, []);

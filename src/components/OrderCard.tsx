@@ -12,6 +12,7 @@ import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
 import { useNavigate } from "react-router";
+import { getBlockExplorerUrl } from "../app/market/marketApi";
 
 type OrderCardType = {
   offering?: string;
@@ -99,7 +100,11 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
             </div>
           </div>
         </button>
-        <a className="title-section2">
+        <a
+          className="title-section2"
+          target="_blank"
+          href={getBlockExplorerUrl(orderId)}
+        >
           <div className="sell-group">
             <b className="sold">Sell</b>
             <b className="sold">{offering}</b>
