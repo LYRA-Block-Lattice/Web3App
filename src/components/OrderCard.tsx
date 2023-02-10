@@ -72,7 +72,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
             </div>
           </div>
         </button>
-        <div className="title-section2">
+        <a className="title-section2">
           <div className="sell-group">
             <b className="sold">Sell</b>
             <b className="sold">{offering}</b>
@@ -110,7 +110,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
               <div className="sold">{shelf}</div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
       <div className="trades-section2">
         <div className="width-controller2" />
