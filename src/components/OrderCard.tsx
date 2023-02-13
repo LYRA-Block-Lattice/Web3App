@@ -12,7 +12,7 @@ import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
 import { useNavigate } from "react-router";
-import { getBlockExplorerUrl } from "../app/market/marketApi";
+import { getBlockExplorerUrl, getTradeForOrder } from "../app/market/marketApi";
 
 type OrderCardType = {
   offering?: string;
@@ -54,12 +54,13 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
   const [trades, setTrades] = useState<any[]>([]);
   const [showTradeTable, setShowTradeTable] = useState(false);
 
-  // useEffect(() => {
-  //   setTrades(data);
-  // }, []);
+  useEffect(() => {
+    getTradeForOrder(orderId).then((ret) => {
+      setTrades(ret.data);
+    });
+  }, []);
 
   const toggle = () => {
-    setTrades(datasrc);
     setShowTradeTable(!showTradeTable);
   };
 
@@ -154,24 +155,3 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
 };
 
 export default OrderCard;
-
-const datasrc = [
-  {
-    name: "Marcel",
-    surname: "Michau",
-    age: "24",
-    gender: "Male"
-  },
-  {
-    name: "Joe",
-    surname: "Bloggs",
-    age: "27",
-    gender: "Male"
-  },
-  {
-    name: "Jane",
-    surname: "Doe",
-    age: "22",
-    gender: "Female"
-  }
-];

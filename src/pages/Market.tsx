@@ -18,8 +18,9 @@ const Market: FunctionComponent = () => {
   }, [navigate]);
 
   const onNewSell = useCallback(() => {
-    if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
-    else navigate("/starttocreateorder");
+    //if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
+    //else
+    navigate("/starttocreateorder");
   }, [navigate]);
 
   const onSwapButton1Click = useCallback(() => {

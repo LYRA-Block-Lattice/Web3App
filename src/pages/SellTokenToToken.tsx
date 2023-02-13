@@ -2,11 +2,13 @@ import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import PriceAndCollateralForm from "../components/PriceAndCollateralForm";
 import "./SellTokenToToken.css";
 import SearchTokenInput from "../dup/SearchTokenInput";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
+import { useSelector } from "react-redux";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -22,6 +24,10 @@ interface IToken {
 }
 
 const SellTokenToToken: FunctionComponent = () => {
+  const navigate = useNavigate();
+  const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
+
   //const [isDisabled, setDisabled] = useState<boolean>(false);
   const [searchParams, setSearchParams] = useSearchParams({});
   const catsell = decodeURIComponent(searchParams.get("sell")!);
@@ -46,7 +52,8 @@ const SellTokenToToken: FunctionComponent = () => {
   );
 
   const openGeneralPopup = useCallback(() => {
-    setGeneralPopupOpen(true);
+    if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
+    else setGeneralPopupOpen(true);
   }, []);
 
   const closeGeneralPopup = useCallback(

@@ -4,12 +4,13 @@ import { TextField, FormControlLabel, Checkbox } from "@mui/material";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import "./PreviewSellOrderForm.css";
 import { WALLET_CREATE_ORDER } from "../app/actionTypes";
-import { getAppSelector } from "../app/selectors";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 const PreviewSellOrderForm: FunctionComponent = () => {
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
 
@@ -18,13 +19,15 @@ const PreviewSellOrderForm: FunctionComponent = () => {
   console.log("order is", obj);
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
-    dispatch({
-      type: WALLET_CREATE_ORDER,
-      payload: {
-        accountId: app.wallet.accountId,
-        order: obj
-      }
-    });
+    if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
+    else
+      dispatch({
+        type: WALLET_CREATE_ORDER,
+        payload: {
+          accountId: app.wallet.accountId,
+          order: obj
+        }
+      });
     // window.rrProxy.ReactRazor.Pages.Home.Interop.CreateOrderAsync(
     //   window.rrComponent,
     //   data

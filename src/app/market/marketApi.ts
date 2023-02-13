@@ -44,6 +44,8 @@ export const searchDao = (q: string) => Block_API_v1.get("/FindDaos?q=" + q);
 // Get a Tx block by AccountId
 export const getTxBlockByAccountId = (accountId: string) =>
   Block_API_v1.get("/GetTxBlockByAccountId?accountId=" + accountId);
+export const getTradeForOrder = (orderId: string) =>
+  Block_API_v1.get("/FindUniTradeForOrder?orderid=" + orderId);
 
 // Blockchain API V2
 export const lastServiceHash = () => Block_API_v2.get("/ServiceHash");
