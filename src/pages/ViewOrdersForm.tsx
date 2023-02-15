@@ -5,8 +5,11 @@ import OrderCard from "../components/OrderCard";
 import "./ViewOrdersForm.css";
 import { MARKET_GET_OWN_ORDERS } from "../app/actionTypes";
 import { getAuthSelector, getMarketSelector } from "../app/selectors";
-import { getTickerIcon } from "../app/market/marketReducer";
+import { getTickerIcon, IOrder } from "../app/market/marketReducer";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
+import React from "react";
+import { Tab, Tabs } from "@mui/material";
+import { set } from "immer/dist/internal";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -19,6 +22,23 @@ const ViewOrdersForm: FunctionComponent = () => {
   const dispatch = useDispatch();
   const auth = useSelector(getAuthSelector);
   const market = useSelector(getMarketSelector);
+
+  const [value, setValue] = React.useState(0);
+  const [odrs, setOdrs] = useState<IOrder[]>([]);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    event.preventDefault();
+    console.log(newValue);
+    setValue(newValue);
+    if (newValue == 0) {
+      setOdrs(market.ownOrders!);
+    } else {
+      var arr = ["Open", "Partial", "Closed", "Dispute"];
+      setOdrs(
+        market.ownOrders!.filter((order) => order.status == arr[newValue - 1])
+      );
+    }
+  };
 
   useEffect(() => {
     dispatch({
@@ -61,7 +81,14 @@ const ViewOrdersForm: FunctionComponent = () => {
           <div className="utility-button5">New</div>
         </button>
       </div>
-      {market.ownOrders?.map((order) => (
+      <Tabs value={value} onChange={handleChange} centered>
+        <Tab label="All" />
+        <Tab label="Open" />
+        <Tab label="Partial" />
+        <Tab label="Closed" />
+        <Tab label="Dispute" />
+      </Tabs>
+      {odrs?.map((order) => (
         <OrderCard
           key={order.orderid!}
           offering={order.offering}

@@ -51,7 +51,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         <>
           <div>
             <p className="ill-send-trade">
-              I’ll send trade secret to buyer privately as bellow:
+              I'll send trade secret to buyer privately as bellow:
             </p>
           </div>
           <textarea
