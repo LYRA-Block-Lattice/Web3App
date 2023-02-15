@@ -147,29 +147,59 @@
 }
 .width-controller2 {
   position: relative;
-  border-top: 1px solid var(--color-gray-200);
+  border-top: 1px solid var(--black-000000100);
   box-sizing: border-box;
   width: 365px;
   height: 1px;
   flex-shrink: 0;
 }
-.ordercard2,
 .trades-section2 {
+  align-self: stretch;
+  flex-shrink: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.trades-section2 {
-  align-self: stretch;
-  flex-shrink: 0;
+.mini-button {
+  position: relative;
+  font-size: var(--caption1-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--headline-s1);
+  color: var(--color-white1);
+  text-align: center;
+}
+.delist-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-6xs) var(--padding-lg);
+  background-color: var(--text-primary-dark1);
+  border-radius: var(--br-xl);
+  height: 24px;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.itemactions,
+.ordercard2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-lg);
 }
 .ordercard2 {
   border-radius: var(--br-sm);
   background-color: var(--color-white1);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-darkgray);
+  flex-direction: column;
   padding: var(--padding-6xs);
   gap: var(--gap-5xs);
   text-align: right;
