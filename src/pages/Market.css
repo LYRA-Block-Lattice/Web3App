@@ -7,9 +7,9 @@
 }
 .ranking {
   position: relative;
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   line-height: 18px;
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
   color: var(--black-000000100);
   text-align: left;
 }
@@ -17,7 +17,7 @@
   cursor: pointer;
   border: 0;
   padding: 0;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   border-radius: var(--br-sm);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 60px;
@@ -30,9 +30,9 @@
 }
 .ranking3 {
   position: relative;
-  font-size: var(--other-m-size);
+  font-size: var(--regular-body-size);
   line-height: 18px;
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
   color: var(--black-000000100);
   text-align: left;
 }
@@ -46,7 +46,7 @@
 .swap-button-parent {
   flex-direction: row;
   padding: var(--padding-7xs) 0;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .iconssection {
   border-radius: var(--br-sm);
@@ -79,7 +79,7 @@
   justify-content: flex-start;
 }
 .searchsection {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 449px;
   align-items: flex-start;
   justify-content: center;
@@ -89,8 +89,8 @@
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
   z-index: 0;
 }
@@ -107,8 +107,8 @@
   font-size: var(--font-size-3xs);
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
   display: inline-block;
   width: 10px;
@@ -166,8 +166,8 @@
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .fiat-tab {
@@ -219,11 +219,11 @@
   border-radius: 0 0 var(--br-sm) var(--br-sm);
   background-color: var(--color-whitesmoke-200);
   padding: var(--padding-2xs) var(--padding-6xs);
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .market,
 .orderandcatalog {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 449px;
 }
 .market {
@@ -231,5 +231,5 @@
   width: 100%;
   padding: var(--padding-6xs);
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }

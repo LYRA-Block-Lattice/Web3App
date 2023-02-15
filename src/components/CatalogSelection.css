@@ -14,17 +14,17 @@
   justify-content: flex-start;
 }
 .tradecatalog {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 110px;
   overflow: hidden;
   padding: var(--padding-2xl) var(--padding-5xs) var(--padding-6xs);
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .catalogselection {
   gap: var(--gap-6xs);
   text-align: center;
-  font-size: var(--body-b-size);
+  font-size: var(--body-s-size);
   color: var(--black-000000100);
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }

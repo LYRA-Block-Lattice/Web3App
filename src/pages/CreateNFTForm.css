@@ -18,7 +18,7 @@
 }
 .or {
   position: relative;
-  font-size: var(--body-b-size);
+  font-size: var(--body-s-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -40,12 +40,12 @@
 }
 .secondary-button4 {
   position: relative;
-  font-size: var(--body-b-size);
+  font-size: var(--body-s-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .createnftform,
@@ -60,7 +60,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);
   background-color: var(--color-deeppink);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 40px;
   flex-shrink: 0;
   flex-direction: row;
@@ -68,14 +68,14 @@
 }
 .createnftform {
   position: relative;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 100%;
   flex-direction: column;
   padding: var(--padding-6xs);
   justify-content: flex-start;
-  gap: var(--gap-3xl);
+  gap: var(--gap-2xl);
   text-align: left;
   font-size: var(--font-size-7xl);
   color: var(--black-000000100);
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }

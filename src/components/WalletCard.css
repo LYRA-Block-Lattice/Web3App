@@ -1,4 +1,4 @@
-.rectangle6 {
+.rectangle1 {
   flex: 1;
   position: relative;
   border-radius: var(--br-3xs);
@@ -89,7 +89,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--br-3xl);
+  border-radius: var(--br-2xl);
   background-color: var(--color-silver-100);
   opacity: 0.5;
   mix-blend-mode: normal;
@@ -139,7 +139,7 @@
   font-size: var(--font-size-3xl);
   letter-spacing: 3.5px;
   font-weight: 600;
-  color: var(--color-white1);
+  color: var(--color-white);
 }
 .nft-label {
   font-size: var(--uppercase-small-size);
@@ -167,7 +167,7 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
-  gap: var(--gap-4xl);
+  gap: var(--gap-3xl);
 }
 .frame-container,
 .wallet-card1 {
@@ -191,6 +191,6 @@
   box-sizing: border-box;
   text-align: right;
   font-size: var(--font-size-7xl);
-  color: var(--color-white1);
+  color: var(--color-white);
   font-family: var(--font-sf-pro-text);
 }

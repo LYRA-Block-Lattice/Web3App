@@ -34,8 +34,8 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-lg);
-  font-size: var(--body-b-size);
+  gap: var(--gap-md);
+  font-size: var(--body-s-size);
 }
 .collateral-in-lyr {
   position: relative;
@@ -56,7 +56,7 @@
   flex-direction: row;
   padding: 0 var(--padding-6xs);
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .collateral-section {
   flex-direction: column;
@@ -69,8 +69,8 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .reviewtheorder {
@@ -78,7 +78,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
   background-color: var(--primary);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
   overflow: hidden;
@@ -92,7 +92,7 @@
   background-color: var(--color-gainsboro-400);
 }
 .priceandcollateralform {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 373px;
   overflow: hidden;
   display: flex;
@@ -101,9 +101,9 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-3xl);
+  gap: var(--gap-2xl);
   text-align: left;
   font-size: var(--body-semibold-size);
   color: var(--black-000000100);
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }

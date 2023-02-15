@@ -105,7 +105,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           <b className="btc">{sellerName}</b>
           <div className="the-first-dao">{daoName}</div>
         </div>
-        <div className="parent5">
+        <div className="parent">
           <b className="btc">{sellerRatings}</b>
           <div className="the-first-dao">{sellerTrades}</div>
         </div>

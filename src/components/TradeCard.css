@@ -26,9 +26,9 @@
 }
 .open1 {
   position: relative;
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   font-family: var(--font-calibri);
-  color: var(--color-white1);
+  color: var(--color-white);
   text-align: center;
 }
 .order-status1 {
@@ -93,7 +93,7 @@
 }
 .am-wrapper {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   overflow: hidden;
   flex-direction: row;
   text-align: left;
@@ -144,7 +144,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
 }
 .width-controller1 {
   position: relative;
@@ -166,12 +166,12 @@
 }
 .mini-button {
   position: relative;
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .delist-button {
@@ -179,7 +179,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
   background-color: var(--text-primary-dark1);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 24px;
   overflow: hidden;
   display: flex;
@@ -191,21 +191,23 @@
 .itemactions,
 .ordercard1 {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-lg);
+}
+.itemactions {
+  flex-direction: row;
+  padding: var(--padding-7xs) var(--padding-7xs) 0;
+  gap: var(--gap-md);
 }
 .ordercard1 {
   border-radius: var(--br-sm);
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-darkgray);
   flex-direction: column;
   padding: var(--padding-6xs);
-  gap: var(--gap-2xs);
   text-align: right;
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   color: var(--black-000000100);
   font-family: var(--font-calibri);
 }

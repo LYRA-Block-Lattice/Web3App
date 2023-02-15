@@ -4,7 +4,7 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
   color: var(--black-000000100);
   text-align: left;
   display: inline-block;
@@ -13,8 +13,8 @@
 .tot-description3,
 .tot-name2 {
   border: 0;
-  font-family: var(--headline-s1);
-  font-size: var(--body-b-size);
+  font-family: var(--caption);
+  font-size: var(--body-s-size);
   background-color: var(--color-lightyellow);
   border-radius: var(--br-xs);
   width: 301px;
@@ -38,8 +38,8 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .prepare-sell-order-button19 {
@@ -47,7 +47,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
   background-color: var(--tertiary);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 30px;
   flex-shrink: 0;
   overflow: hidden;
@@ -62,7 +62,7 @@
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }
 .note-i-need2 {
   font-size: var(--body-semibold-size);
@@ -72,9 +72,9 @@
   width: 292px;
 }
 .secondary-button6 {
-  font-size: var(--body-b-size);
+  font-size: var(--body-s-size);
   font-weight: 500;
-  color: var(--color-white1);
+  color: var(--color-white);
   text-align: center;
 }
 .prepare-sell-order-button20 {
@@ -82,7 +82,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);
   background-color: var(--color-deeppink);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
@@ -94,19 +94,19 @@
 }
 .selltottotot,
 .togettotform1 {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: var(--padding-xl) var(--padding-xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-3xl);
+  gap: var(--gap-2xl);
 }
 .selltottotot {
   position: relative;
   width: 100%;
   padding: var(--padding-5xl) var(--padding-6xl);
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }

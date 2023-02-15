@@ -26,9 +26,9 @@
 }
 .open {
   position: relative;
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   font-family: var(--font-calibri);
-  color: var(--color-white1);
+  color: var(--color-white);
   text-align: center;
 }
 .order-status {
@@ -131,7 +131,7 @@
   flex-direction: row;
   align-items: center;
   gap: var(--gap-sm);
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
 }
 .title-section {
   cursor: pointer;
@@ -149,7 +149,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
 }
 .width-controller {
   position: relative;
@@ -178,10 +178,10 @@
 }
 .the-first-dao {
   position: relative;
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
 }
 .a-big-seller-parent,
-.parent5 {
+.parent {
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -192,13 +192,13 @@
   padding: var(--padding-8xs) var(--padding-9xl) var(--padding-8xs) 0;
   align-items: flex-start;
 }
-.parent5 {
+.parent {
   padding: var(--padding-8xs) var(--padding-6xs);
   align-items: flex-end;
 }
 .ordercard,
 .userprofilesection {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   display: flex;
   justify-content: flex-start;
 }

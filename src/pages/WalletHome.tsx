@@ -123,7 +123,7 @@ const WalletHome: FunctionComponent = () => {
               <div className="frame-group">
                 <div className="lyralogoblueicon-parent">
                   <img
-                    className="lyralogoblueicon3"
+                    className="lyralogoblueicon4"
                     alt=""
                     src="../asserts/lyralogoblueicon4@2x.png"
                   />

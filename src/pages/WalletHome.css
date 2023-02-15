@@ -7,9 +7,9 @@
 }
 .ranking4 {
   position: relative;
-  font-size: var(--other-m-size);
+  font-size: var(--regular-body-size);
   line-height: 18px;
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
   color: var(--black-000000100);
   text-align: left;
 }
@@ -23,7 +23,7 @@
   cursor: pointer;
   border: 0;
   padding: 0;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   border-radius: var(--br-sm);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 60px;
@@ -35,7 +35,7 @@
   align-self: stretch;
   flex-direction: row;
   padding: var(--padding-7xs) 0;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .iconssection-container,
 .iconssection1 {
@@ -59,8 +59,8 @@
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
   z-index: 0;
 }
@@ -77,8 +77,8 @@
   font-size: var(--font-size-3xs);
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
   display: inline-block;
   width: 10px;
@@ -120,8 +120,8 @@
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .fiat-tab1 {
@@ -162,7 +162,7 @@
   box-sizing: border-box;
   justify-content: flex-start;
 }
-.lyralogoblueicon3 {
+.lyralogoblueicon4 {
   position: relative;
   width: 32px;
   height: 32px;
@@ -180,7 +180,7 @@
   position: relative;
 }
 .b {
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   color: var(--text-secondary1);
 }
 .cus-parent,
@@ -228,7 +228,7 @@
   justify-content: center;
 }
 .coinlisting {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 455px;
   padding: 0 var(--padding-6xs) var(--padding-6xs);
   box-sizing: border-box;
@@ -240,11 +240,11 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .wallethome {
   position: relative;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 100%;
   padding: var(--padding-6xs);
   box-sizing: border-box;

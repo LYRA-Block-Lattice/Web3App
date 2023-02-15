@@ -11,8 +11,8 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   display: inline-block;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
   width: 71px;
 }
