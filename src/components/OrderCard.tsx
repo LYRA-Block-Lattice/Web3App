@@ -145,18 +145,24 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
           </div>
         </a>
       </div>
-      <div className="trades-section2">
-        <div className="width-controller2">
-          {showTradeTable ? <TableComponent data={trades} /> : null}
+      {orderStatus == "Partial" || orderStatus == "Delist" ? (
+        <div className="trades-section2">
+          <div className="width-controller2">
+            {showTradeTable ? <TableComponent data={trades} /> : null}
+          </div>
         </div>
-      </div>
+      ) : null}
       <div className="itemactions1">
-        <button className="delist-button1">
-          <div className="mini-button4">Delist</div>
-        </button>
-        <button className="delist-button1">
-          <div className="mini-button4">Close</div>
-        </button>
+        {orderStatus === "Partial" ? (
+          <button className="delist-button1">
+            <div className="mini-button4">Delist</div>
+          </button>
+        ) : null}
+        {orderStatus === "Delist" ? (
+          <button className="delist-button1">
+            <div className="mini-button4">Close</div>
+          </button>
+        ) : null}
       </div>
     </div>
   );

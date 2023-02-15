@@ -61,6 +61,12 @@ const ViewOrdersForm: FunctionComponent = () => {
     // });
   }, []);
 
+  useEffect(() => {
+    if (value == 0) {
+      setOdrs(market.ownOrders!);
+    }
+  }, [market.ownOrders]);
+
   function truncate(str: any, n: any) {
     return str.length > n ? str.slice(0, n - 1) + "..." : str;
   }
