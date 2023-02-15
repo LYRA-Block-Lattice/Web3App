@@ -154,26 +154,56 @@
   height: 1px;
   flex-shrink: 0;
 }
-.ordercard1,
-.trades-section1 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
 .trades-section1 {
   align-self: stretch;
   height: 0;
   flex-shrink: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mini-button {
+  position: relative;
+  font-size: var(--caption1-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--headline-s1);
+  color: var(--color-white1);
+  text-align: center;
+}
+.delist-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-6xs) var(--padding-lg);
+  background-color: var(--text-primary-dark1);
+  border-radius: var(--br-xl);
+  height: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.itemactions,
+.ordercard1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-lg);
 }
 .ordercard1 {
   border-radius: var(--br-sm);
   background-color: var(--color-white1);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-darkgray);
+  flex-direction: column;
   padding: var(--padding-6xs);
-  gap: var(--gap-5xs);
+  gap: var(--gap-2xs);
   text-align: right;
   font-size: var(--caption1-size);
   color: var(--black-000000100);
