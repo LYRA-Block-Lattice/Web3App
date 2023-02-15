@@ -115,6 +115,14 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
       <div className="trades-section2">
         <div className="width-controller2" />
       </div>
+      <div className="itemactions">
+        <button className="delist-button">
+          <div className="mini-button">Delist</div>
+        </button>
+        <button className="delist-button">
+          <div className="mini-button">Close</div>
+        </button>
+      </div>
     </div>
   );
 };
