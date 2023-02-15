@@ -22,7 +22,7 @@ const PrimaryAccountCard: FunctionComponent = () => {
     <div className="wallet-card">
       <div className="wallet-card-inner">
         <div className="rectangle-wrapper">
-          <div className="rectangle5" />
+          <div className="rectangle" />
         </div>
       </div>
       <div className="wallet-card-child">

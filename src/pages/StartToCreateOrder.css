@@ -31,8 +31,8 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .prepare-sell-order-button15 {
@@ -40,7 +40,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
   background-color: var(--primary);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
   overflow: hidden;
@@ -58,7 +58,7 @@
 }
 .starttocreateorder {
   position: relative;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -71,5 +71,5 @@
   text-align: left;
   font-size: var(--font-size-7xl);
   color: var(--black-000000100);
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }

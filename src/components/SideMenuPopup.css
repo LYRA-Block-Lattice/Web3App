@@ -27,9 +27,9 @@
   padding: 0 0 var(--padding-6xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: 9px;
   font-size: var(--font-size-4xl);
-  color: var(--color-white1);
+  color: var(--color-white);
 }
 .administration-1-icon {
   position: absolute;
@@ -79,7 +79,7 @@
   padding: var(--padding-4xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
 }
 .component-2variant3 {
   width: 236px;
@@ -103,11 +103,11 @@
   flex-shrink: 0;
   overflow-y: auto;
   padding: 0 0 6px;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .sidemenupopup {
   position: relative;
-  border-radius: var(--br-2xl) 0 0 var(--br-2xl);
+  border-radius: var(--br-xl) 0 0 var(--br-xl);
   background-color: var(--black-000000100);
   overflow: hidden;
   padding: 26px;
@@ -115,7 +115,7 @@
   height: 100%;
   max-width: 90%;
   text-align: left;
-  font-size: var(--body-b-size);
+  font-size: var(--body-s-size);
   color: var(--color-whitesmoke-100);
   font-family: var(--base-1-semibold);
 }

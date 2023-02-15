@@ -1,11 +1,19 @@
 import { FunctionComponent, useState, useCallback } from "react";
-import NFTInWalletDisplay from "../components/NFTInWalletDisplay";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import "./MiscComponents.css";
 
 const MiscComponents: FunctionComponent = () => {
+  const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
   const [isGeneralPopup1Open, setGeneralPopup1Open] = useState(false);
+
+  const openGeneralPopup = useCallback(() => {
+    setGeneralPopupOpen(true);
+  }, []);
+
+  const closeGeneralPopup = useCallback(() => {
+    setGeneralPopupOpen(false);
+  }, []);
 
   const openGeneralPopup1 = useCallback(() => {
     setGeneralPopup1Open(true);
@@ -69,6 +77,22 @@ const MiscComponents: FunctionComponent = () => {
           </div>
         </div>
         <div className="nft-showing-item-parent">
+          <button className="nft-showing-item2" onClick={openGeneralPopup}>
+            <div className="lyralogoblueicon-wrapper">
+              <img
+                className="lyralogoblueicon"
+                alt=""
+                src="../asserts/lyralogoblueicon@2x.png"
+              />
+            </div>
+            <div className="content2">
+              <div className="name-bm">
+                <div className="put-your-product2">
+                  put your product name here or go!
+                </div>
+              </div>
+            </div>
+          </button>
           <button className="nft-showing-item2" onClick={openGeneralPopup1}>
             <div className="lyralogoblueicon-wrapper">
               <img
@@ -87,6 +111,15 @@ const MiscComponents: FunctionComponent = () => {
           </button>
         </div>
       </div>
+      {isGeneralPopupOpen && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+          onOutsideClick={closeGeneralPopup}
+        >
+          <GeneralPopup onClose={closeGeneralPopup} />
+        </PortalPopup>
+      )}
       {isGeneralPopup1Open && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"

@@ -25,7 +25,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   background-color: var(--sell1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
@@ -34,12 +34,12 @@
   width: 90.67%;
   top: calc(50% - 11px);
   left: 4.66%;
-  font-size: var(--headline-s1-size);
+  font-size: var(--headline-s-size);
   letter-spacing: 0.41px;
   line-height: 22px;
   font-weight: 600;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
   display: inline-block;
 }
@@ -61,17 +61,17 @@
 .sign-up1 {
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
   text-align: center;
   display: inline-block;
 }
 .sign-up1 {
-  font-size: var(--body-b-size);
+  font-size: var(--body-s-size);
   font-weight: 600;
-  color: var(--color-gray-1);
+  color: #7f8592;
 }
 .forgot-password-copy {
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   font-weight: 500;
   color: rgba(127, 133, 146, 0.5);
 }
@@ -87,7 +87,7 @@
 }
 .openwallet {
   position: relative;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 100%;
   flex-direction: column;
   padding: var(--padding-6xs);
@@ -96,5 +96,5 @@
   text-align: center;
   font-size: var(--large-title-size);
   color: var(--sell1);
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }

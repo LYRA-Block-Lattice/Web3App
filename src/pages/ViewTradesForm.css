@@ -9,7 +9,7 @@
 }
 .view-trades-wrapper,
 .viewtradesform {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   display: flex;
   box-sizing: border-box;
   justify-content: flex-start;
@@ -30,9 +30,9 @@
   flex-direction: column;
   padding: var(--padding-6xs);
   align-items: center;
-  gap: var(--gap-2xl);
+  gap: var(--gap-xl);
   text-align: left;
   font-size: var(--font-size-7xl);
   color: var(--black-000000100);
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }

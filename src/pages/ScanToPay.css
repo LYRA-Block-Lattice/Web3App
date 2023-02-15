@@ -19,7 +19,7 @@
   background-color: transparent;
   align-self: stretch;
   position: relative;
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   text-decoration: underline;
   letter-spacing: -0.01em;
   line-height: 29.93px;
@@ -35,8 +35,8 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .prepare-sell-order-button16,
@@ -51,7 +51,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
   background-color: var(--primary);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
   flex-direction: row;
@@ -62,12 +62,12 @@
 }
 .scantopay {
   position: relative;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 100%;
   flex-direction: column;
   padding: var(--padding-6xs);
   justify-content: flex-start;
-  gap: var(--gap-6xl);
+  gap: var(--gap-5xl);
   text-align: center;
   font-size: var(--font-size-4xl);
   color: var(--black-000000100);

@@ -4,7 +4,7 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }
 .to-sell-token {
   font-size: var(--font-size-7xl);
@@ -15,7 +15,7 @@
 }
 .utility-button4 {
   font-size: var(--font-size-xl);
-  color: var(--color-white1);
+  color: var(--color-white);
   text-align: center;
 }
 .prepare-sell-order-button9 {
@@ -23,7 +23,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
   background-color: var(--tertiary);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 30px;
   flex-shrink: 0;
   overflow: hidden;
@@ -43,19 +43,19 @@
 }
 .searchtokenbyname,
 .selltokentotoken {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: var(--padding-xl) var(--padding-2xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-5xl);
+  gap: var(--gap-4xl);
 }
 .selltokentotoken {
   position: relative;
   width: 100%;
   padding: var(--padding-6xs);
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }

@@ -12,8 +12,8 @@
 }
 .utility-button5 {
   font-size: var(--font-size-xl);
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .prepare-sell-order-button10 {
@@ -21,7 +21,7 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
   background-color: var(--tertiary);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 30px;
   overflow: hidden;
   display: flex;
@@ -32,7 +32,7 @@
 }
 .view-orders-parent,
 .viewordersform {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   display: flex;
   box-sizing: border-box;
   align-items: center;
@@ -54,9 +54,9 @@
   flex-direction: column;
   padding: var(--padding-6xs);
   justify-content: flex-start;
-  gap: var(--gap-2xl);
+  gap: var(--gap-xl);
   text-align: left;
   font-size: var(--font-size-7xl);
   color: var(--black-000000100);
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }

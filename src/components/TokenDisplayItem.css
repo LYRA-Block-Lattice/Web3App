@@ -18,7 +18,7 @@
   font-weight: 500;
 }
 .b3 {
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
   color: var(--text-secondary1);
 }
 .lyr-parent,
@@ -58,7 +58,7 @@
 }
 .tokendisplayitem1 {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   overflow: hidden;
   display: flex;
   flex-direction: row;

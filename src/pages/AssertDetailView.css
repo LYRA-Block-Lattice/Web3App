@@ -26,11 +26,11 @@
 }
 .assertauthorsection {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   height: 48px;
   flex-shrink: 0;
   justify-content: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .meka-legends {
   position: relative;
@@ -47,7 +47,7 @@
 }
 .asserttitlesection1 {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   height: 48px;
   display: flex;
   justify-content: flex-start;
@@ -61,7 +61,7 @@
 .asserttitleregion,
 .icon-park-solidblockchain-wrapper {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   display: flex;
   justify-content: flex-start;
 }
@@ -70,7 +70,7 @@
   flex-direction: column;
   padding: var(--padding-6xs);
   align-items: flex-start;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .icon-park-solidblockchain-wrapper {
   height: 38px;
@@ -90,7 +90,7 @@
 }
 .assertstatssection,
 .icoutline-remove-red-eye-parent {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -101,7 +101,7 @@
 .assertstatssection {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   padding: var(--padding-6xs);
-  gap: var(--gap-4xl);
+  gap: var(--gap-3xl);
 }
 .assertdetailview1,
 .descriptiontitle {
@@ -118,7 +118,7 @@
   flex-direction: row;
   padding: var(--padding-3xs) var(--padding-sm);
   align-items: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   font-size: var(--font-size-7xl);
 }
 .descriptiondetails,
@@ -129,7 +129,7 @@
 }
 .descriptiondetails {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   height: 93px;
   flex-shrink: 0;
   display: flex;
@@ -145,7 +145,7 @@
 .pricelabel,
 .pricelabel1 {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   display: flex;
   justify-content: flex-start;
 }
@@ -155,7 +155,7 @@
   padding: var(--padding-xs) var(--padding-xs) var(--padding-xs)
     var(--padding-5xs);
   align-items: flex-end;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   font-size: var(--font-size-8xl);
 }
 .priceandbuyregion,
@@ -165,7 +165,7 @@
 .priceandbuyregion {
   border-radius: var(--br-sm);
   flex-direction: column;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .pricelabel1 {
   overflow: hidden;
@@ -180,15 +180,15 @@
   font-weight: 500;
 }
 .div8 {
-  font-size: var(--caption1-size);
+  font-size: var(--caption-size);
 }
 .priceandvaluelabel1,
 .setlimitsection {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   display: flex;
   justify-content: flex-start;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .priceandvaluelabel1 {
   overflow: hidden;
@@ -209,7 +209,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   text-align: center;
   font-size: var(--font-size-5xl);
 }
@@ -217,14 +217,14 @@
 .selectamountsection,
 .selectedamount {
   align-self: stretch;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   display: flex;
   padding: var(--padding-6xs);
 }
 .selectedamount {
   border: 0;
   font-weight: 500;
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
   font-size: var(--font-size-5xl);
   overflow: hidden;
   flex-direction: row;
@@ -242,8 +242,8 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--headline-s1);
-  color: var(--color-white1);
+  font-family: var(--caption);
+  color: var(--color-white);
   text-align: center;
 }
 .makeofferbutton,
@@ -259,18 +259,18 @@
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
   background-color: var(--primary);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
   flex-direction: row;
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .prepare-sell-order-button4:hover {
   background-color: var(--color-mediumslateblue-100);
 }
 .makeofferbutton {
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   flex-direction: column;
   padding: var(--padding-4xs);
 }
@@ -287,12 +287,12 @@
 }
 .assertdetailview {
   position: relative;
-  background-color: var(--color-white1);
+  background-color: var(--color-white);
   width: 100%;
   padding: var(--padding-6xs);
   box-sizing: border-box;
   text-align: left;
   font-size: var(--font-size-xl);
   color: var(--black-000000100);
-  font-family: var(--headline-s1);
+  font-family: var(--caption);
 }

@@ -15,7 +15,7 @@ body {
 :root {
   /* fonts */
   --font-calibri: Calibri;
-  --headline-s1: "SF Pro Display";
+  --caption: "SF Pro Display";
   --font-sf-pro-text: "SF Pro Text";
   --base-1-semibold: Inter;
   --font-roboto: Roboto;
@@ -26,12 +26,12 @@ body {
   /* font sizes */
   --font-size-3xs: 7px;
   --uppercase-small-size: 10px;
-  --caption1-size: 12px;
-  --other-m-size: 13px;
+  --caption-size: 12px;
+  --regular-body-size: 13px;
   --body-semibold-size: 14px;
-  --body-b-size: 15px;
+  --body-s-size: 15px;
   --font-size-xl: 16px;
-  --headline-s1-size: 17px;
+  --headline-s-size: 17px;
   --font-size-3xl: 18px;
   --font-size-4xl: 18.7px;
   --font-size-5xl: 20px;
@@ -41,7 +41,7 @@ body {
   --large-title-size: 34px;
 
   /* Colors */
-  --color-white1: #fff;
+  --color-white: #fff;
   --color-whitesmoke-100: #f5f4f5;
   --color-whitesmoke-200: #eee;
   --color-gainsboro-100: #e3e4e5;
@@ -54,7 +54,7 @@ body {
   --info1: #2196f3;
   --text-primary-dark1: #424242;
   --default-black: #272c34;
-  --color-black1: #1b2749;
+  --color-black: #1b2749;
   --text-secondary1: rgba(0, 0, 0, 0.54);
   --color-lightyellow: #f6ffde;
   --color-silver-100: rgba(209, 190, 190, 0.47);
@@ -67,7 +67,6 @@ body {
   --color-darkgray: #979797;
   --buy1: #7ed321;
   --sell1: #fa7268;
-  --color-gray-1: #7f8592;
 
   /* Gaps */
   --gap-6xs: 1px;
@@ -77,14 +76,13 @@ body {
   --gap-2xs: 5px;
   --gap-xs: 6px;
   --gap-sm: 8px;
-  --gap-md: 9px;
-  --gap-lg: 10px;
-  --gap-xl: 12px;
-  --gap-2xl: 16px;
-  --gap-3xl: 18px;
-  --gap-4xl: 20px;
-  --gap-5xl: 26px;
-  --gap-6xl: 30px;
+  --gap-md: 10px;
+  --gap-lg: 12px;
+  --gap-xl: 16px;
+  --gap-2xl: 18px;
+  --gap-3xl: 20px;
+  --gap-4xl: 26px;
+  --gap-5xl: 30px;
 
   /* Paddings */
   --padding-10xs: 2px;
@@ -116,8 +114,7 @@ body {
   --br-xs: 8px;
   --br-sm: 10px;
   --br-md: 12px;
-  --br-lg: 21px;
-  --br-xl: 25px;
-  --br-2xl: 26px;
-  --br-3xl: 32.5px;
+  --br-lg: 25px;
+  --br-xl: 26px;
+  --br-2xl: 32.5px;
 }

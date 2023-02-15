@@ -25,7 +25,6 @@ import SellTokenToTOT from "./pages/SellTokenToTOT";
 import SellTOTToTOT from "./pages/SellTOTToTOT";
 import SellTOTToToken from "./pages/SellTOTToToken";
 import Empty from "./pages/Empty";
-import TransactionHistory from "./pages/TransactionHistory";
 import OldV1UI from "./pages/OldV1UI";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
@@ -147,10 +146,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/transactionhistory":
-        title = "";
-        metaDescription = "";
-        break;
       case "/oldv1ui":
         title = "";
         metaDescription = "";
@@ -225,8 +220,6 @@ function App() {
       <Route path="/selltottotoken" element={<SellTOTToToken />} />
 
       <Route path="/empty" element={<Empty />} />
-
-      <Route path="/transactionhistory" element={<TransactionHistory />} />
 
       <Route path="/oldv1ui" element={<OldV1UI />} />
       <Route path="/scantopay" element={<ScanToPay />} />
