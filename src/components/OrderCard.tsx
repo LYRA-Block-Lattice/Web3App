@@ -150,12 +150,12 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
           {showTradeTable ? <TableComponent data={trades} /> : null}
         </div>
       </div>
-      <div className="itemactions">
-        <button className="delist-button">
-          <div className="mini-button">Delist</div>
+      <div className="itemactions1">
+        <button className="delist-button1">
+          <div className="mini-button4">Delist</div>
         </button>
-        <button className="delist-button">
-          <div className="mini-button">Close</div>
+        <button className="delist-button1">
+          <div className="mini-button4">Close</div>
         </button>
       </div>
     </div>
