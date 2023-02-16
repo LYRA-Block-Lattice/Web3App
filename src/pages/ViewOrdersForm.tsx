@@ -17,6 +17,8 @@ interface customWindow extends Window {
 }
 declare const window: customWindow;
 
+const arr = ["Open", "Partial", "Delist", "Closed", "Dispute"];
+
 const ViewOrdersForm: FunctionComponent = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -33,7 +35,6 @@ const ViewOrdersForm: FunctionComponent = () => {
     if (newValue == 0) {
       setOdrs(market.ownOrders!);
     } else {
-      var arr = ["Open", "Partial", "Closed", "Dispute"];
       setOdrs(
         market.ownOrders!.filter((order) => order.status == arr[newValue - 1])
       );
@@ -45,25 +46,15 @@ const ViewOrdersForm: FunctionComponent = () => {
       type: MARKET_GET_OWN_ORDERS,
       payload: { accountId: auth.accountId }
     });
-    // window.rrProxy.ReactRazor.Pages.Home.Interop.GetOrdersAsync(
-    //   window.rrComponent
-    // ).then(function (resp: any) {
-    //   var ret = JSON.parse(resp);
-    //   if (ret.ret == "Success") {
-    //     setOrders(ret.result);
-    //   } else {
-    //     window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-    //       window.rrComponent,
-    //       "Warning",
-    //       ret.msg
-    //     );
-    //   }
-    // });
   }, []);
 
   useEffect(() => {
     if (value == 0) {
       setOdrs(market.ownOrders!);
+    } else {
+      setOdrs(
+        market.ownOrders!.filter((order) => order.status == arr[value - 1])
+      );
     }
   }, [market.ownOrders]);
 
@@ -91,6 +82,7 @@ const ViewOrdersForm: FunctionComponent = () => {
         <Tab label="All" />
         <Tab label="Open" />
         <Tab label="Partial" />
+        <Tab label="Delist" />
         <Tab label="Closed" />
         <Tab label="Dispute" />
       </Tabs>
@@ -113,6 +105,7 @@ const ViewOrdersForm: FunctionComponent = () => {
             order.status == "Open" ? "#2196F3" : "gray"
           }
           orderId={order.orderid!}
+          daoId={order.daoid!}
         />
       ))}
     </div>

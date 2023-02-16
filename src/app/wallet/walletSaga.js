@@ -382,6 +382,64 @@ function* createOrder(action) {
   }
 }
 
+function* delistOrder(action) {
+  try {
+    const ws = yield createWS(action.payload.accountId);
+
+    const balanceResp = yield ws.call("DelistOrder", [
+      action.payload.accountId,
+      action.payload.daoId,
+      action.payload.orderId
+    ]);
+    console.log("delistOrder", balanceResp);
+    yield put({
+      type: actionTypes.WSRPC_CALL_SUCCESS,
+      payload: balanceResp
+    });
+    yield put({
+      type: MARKET_GET_OWN_ORDERS,
+      payload: { accountId: action.payload.accountId }
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.WSRPC_CALL_FAILED,
+      payload: {
+        error: error.message ?? error.error.message,
+        tag: action.payload.tag
+      }
+    });
+  }
+}
+
+function* closeOrder(action) {
+  try {
+    const ws = yield createWS(action.payload.accountId);
+
+    const balanceResp = yield ws.call("CloseOrder", [
+      action.payload.accountId,
+      action.payload.daoId,
+      action.payload.orderId
+    ]);
+    console.log("delistOrder", balanceResp);
+    yield put({
+      type: actionTypes.WSRPC_CALL_SUCCESS,
+      payload: balanceResp
+    });
+    yield put({
+      type: MARKET_GET_OWN_ORDERS,
+      payload: { accountId: action.payload.accountId }
+    });
+  } catch (error) {
+    yield put({
+      type: actionTypes.WSRPC_CALL_FAILED,
+      payload: {
+        error: error.message ?? error.error.message,
+        tag: action.payload.tag
+      }
+    });
+  }
+}
+
 function* createTrade(action) {
   try {
     const ws = yield createWS(action.payload.accountId);
@@ -426,5 +484,7 @@ export default function* walletSaga() {
 
   // UniOrder
   yield takeEvery(actionTypes.WALLET_CREATE_ORDER, createOrder);
+  yield takeEvery(actionTypes.WALLET_DELIST_ORDER, delistOrder);
+  yield takeEvery(actionTypes.WALLET_CLOSE_ORDER, closeOrder);
   yield takeEvery(actionTypes.WALLET_CREATE_TRADE, createTrade);
 }

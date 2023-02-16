@@ -31,6 +31,7 @@ export enum OrderStatus {
 }
 
 export interface IOrder {
+  daoid: string;
   orderid: string;
   time: string;
   status: string;

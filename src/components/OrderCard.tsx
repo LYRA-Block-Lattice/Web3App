@@ -5,6 +5,7 @@ import {
   useEffect,
   useCallback
 } from "react";
+import * as actionTypes from "../app/actionTypes";
 import CSS, { Property } from "csstype";
 import "./OrderCard.css";
 
@@ -13,6 +14,8 @@ import TableComponent, {
 } from "../components/TableComponent";
 import { useNavigate } from "react-router";
 import { getBlockExplorerUrl, getTradeForOrder } from "../app/market/marketApi";
+import { useDispatch, useSelector } from "react-redux";
+import { getAppSelector } from "../app/selectors";
 
 type OrderCardType = {
   offering?: string;
@@ -27,6 +30,7 @@ type OrderCardType = {
   limitMax?: string;
   sold?: string;
   shelf?: string;
+  daoId: string;
   orderId: string;
 
   /** Style props */
@@ -46,10 +50,13 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
   limitMax,
   sold,
   shelf,
+  daoId,
   orderId,
   orderStatusBackgroundColor
 }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const app = useSelector(getAppSelector);
 
   const [trades, setTrades] = useState<any[]>([]);
   const [showTradeTable, setShowTradeTable] = useState(false);
@@ -73,6 +80,30 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
   const onBannerImageClick = useCallback(() => {
     //TODO: toggle the bellow table
   }, []);
+
+  const onDelist = useCallback(() => {
+    console.log("delist order.");
+    dispatch({
+      type: actionTypes.WALLET_DELIST_ORDER,
+      payload: {
+        daoId: daoId,
+        orderId: orderId,
+        accountId: app.wallet.accountId
+      }
+    });
+  }, [daoId, orderId]);
+
+  const onCloseOrder = useCallback(() => {
+    console.log("close order.");
+    dispatch({
+      type: actionTypes.WALLET_CLOSE_ORDER,
+      payload: {
+        daoId: daoId,
+        orderId: orderId,
+        accountId: app.wallet.accountId
+      }
+    });
+  }, [daoId, orderId]);
 
   return (
     <div className="ordercard2">
@@ -154,12 +185,12 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
       ) : null}
       <div className="itemactions1">
         {orderStatus === "Partial" ? (
-          <button className="delist-button1">
+          <button className="delist-button1" onClick={onDelist}>
             <div className="mini-button4">Delist</div>
           </button>
         ) : null}
         {orderStatus === "Delist" ? (
-          <button className="delist-button1">
+          <button className="delist-button1" onClick={onCloseOrder}>
             <div className="mini-button4">Close</div>
           </button>
         ) : null}
