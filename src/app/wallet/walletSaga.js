@@ -7,10 +7,11 @@ import persist from "../lyra/persist";
 import * as Dex from "../lyra/dexapi";
 import * as marketApi from "../market/marketApi";
 
-import {
-  JsonRpcWebsocket,
-  WebsocketReadyStates
-} from "jsonrpc-client-websocket";
+function getWallet() {
+  const userToken = JSON.parse(sessionStorage.getItem("token"));
+  const wallet = new LyraApi(network, userToken.pvt);
+  return wallet;
+}
 
 function* getBalance(action) {
   try {
@@ -67,9 +68,12 @@ function* receive(action) {
   try {
     const accountId = action.payload;
 
-    const ws = yield createWS(accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("Receive", [accountId]);
+    const balanceResp = yield wallet.receive();
     yield put({
       type: actionTypes.WALLET_GET_BALANCE,
       payload: balanceResp.result
@@ -91,14 +95,16 @@ function* receive(action) {
 
 function* send(action) {
   try {
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("Send", [
-      action.payload.accountId,
+    const balanceResp = yield wallet.send(
       action.payload.amount,
       action.payload.destaddr,
       action.payload.tokenname
-    ]);
+    );
     // yield put({
     //   type: actionTypes.WALLET_BALANCE,
     //   payload: balanceResp.result
@@ -118,7 +124,7 @@ function* send(action) {
     });
   }
 }
-
+/*
 function* createWS(accountId) {
   var url = "wss://testnet.lyra.live/api/v1/socket";
   const network = process.env.REACT_APP_NETWORK_ID;
@@ -199,7 +205,7 @@ function* createWS(accountId) {
 
   return ws;
   //yield put({ type: actionTypes.WSRPC_CREATED });
-}
+}*/
 
 function* dexSignIn(action) {
   try {
@@ -238,15 +244,16 @@ function* dexSignUp(action) {
 
 function* mintToken(action) {
   try {
-    //dispatch = yield getContext("dispatch");
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("Token", [
-      action.payload.accountId,
+    const balanceResp = yield wallet.mintToken(
       action.payload.name,
       action.payload.domain,
       action.payload.supply
-    ]);
+    );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
       payload: balanceResp.result
@@ -268,16 +275,17 @@ function* mintToken(action) {
 
 function* mintNFT(action) {
   try {
-    //dispatch = yield getContext("dispatch");
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("MintNFT", [
-      action.payload.accountId,
+    const balanceResp = yield wallet.MintNFT(
       action.payload.name,
       action.payload.description,
       action.payload.supply,
       action.payload.metadataUrl
-    ]);
+    );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
       payload: balanceResp.result
@@ -299,17 +307,18 @@ function* mintNFT(action) {
 
 function* mintTOT(action) {
   try {
-    //dispatch = yield getContext("dispatch");
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("CreateTOT", [
-      action.payload.accountId,
+    const balanceResp = yield wallet.mintTOT(
       action.payload.type,
       action.payload.name,
       action.payload.description,
       action.payload.supply,
       action.payload.tradeSecretSignature
-    ]);
+    );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
       payload: balanceResp.result
@@ -331,14 +340,15 @@ function* mintTOT(action) {
 
 function* printFiat(action) {
   try {
-    //dispatch = yield getContext("dispatch");
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("PrintFiat", [
-      action.payload.accountId,
+    const balanceResp = yield wallet.printFiat(
       action.payload.ticker,
       action.payload.amount
-    ]);
+    );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
       payload: balanceResp.result
@@ -360,12 +370,12 @@ function* printFiat(action) {
 
 function* createOrder(action) {
   try {
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("CreateOrder", [
-      action.payload.accountId,
-      JSON.stringify(action.payload.order)
-    ]);
+    const balanceResp = yield wallet.createOrder(action.payload.order);
     console.log("createOrder", balanceResp);
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
@@ -384,13 +394,15 @@ function* createOrder(action) {
 
 function* delistOrder(action) {
   try {
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("DelistOrder", [
-      action.payload.accountId,
+    const balanceResp = yield wallet.delistOrder(
       action.payload.daoId,
       action.payload.orderId
-    ]);
+    );
     console.log("delistOrder", balanceResp);
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
@@ -413,13 +425,15 @@ function* delistOrder(action) {
 
 function* closeOrder(action) {
   try {
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("CloseOrder", [
-      action.payload.accountId,
+    const balanceResp = yield wallet.closeOrder(
       action.payload.daoId,
       action.payload.orderId
-    ]);
+    );
     console.log("delistOrder", balanceResp);
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
@@ -442,12 +456,12 @@ function* closeOrder(action) {
 
 function* createTrade(action) {
   try {
-    const ws = yield createWS(action.payload.accountId);
+    const wallet = getWallet();
+    if (wallet.accountId !== accountId) {
+      throw new Error("Invalid account id");
+    }
 
-    const balanceResp = yield ws.call("CreateTrade", [
-      action.payload.accountId,
-      JSON.stringify(action.payload.trade)
-    ]);
+    const balanceResp = yield wallet.createTrade(action.payload.trade);
     console.log("createTrade", balanceResp);
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
