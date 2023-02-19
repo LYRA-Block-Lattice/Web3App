@@ -4,10 +4,10 @@ import "./CreateNFTForm.css";
 import { useDispatch, useSelector } from "react-redux";
 import { MARKET_UPLOAD_FILE, WALLET_MINT_NFT } from "../app/actionTypes";
 import { getAppSelector } from "../app/selectors";
-import { LyraCrypto } from "lyra-crypto";
+import { LyraCrypto } from "../app/blockchain/lyra-crypto";
 import axios from "axios";
 import base58 from "bs58";
-import { BlockchainAPI } from "lyra-crypto";
+import { BlockchainAPI } from "../app/blockchain/blockchain-api";
 
 type TokenMintProps = {
   onClose?: (ticker?: string) => void;

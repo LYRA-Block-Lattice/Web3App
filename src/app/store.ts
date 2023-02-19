@@ -22,7 +22,7 @@ import logger from "redux-logger";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 import storageSession from "redux-persist/lib/storage/session";
 
-import { BlockchainAPI } from "lyra-crypto";
+import { BlockchainAPI } from "./blockchain/blockchain-api";
 import walletReducer from "./wallet/walletReducer";
 import dexReducer from "./wallet/dexReducer";
 import counterReducer from "../features/counter/counterSlice";

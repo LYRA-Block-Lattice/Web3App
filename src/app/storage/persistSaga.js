@@ -1,6 +1,6 @@
 import { put, takeLatest, takeEvery, getContext } from "redux-saga/effects";
 import { push } from "redux-first-history";
-import { LyraCrypto } from "lyra-crypto";
+import { LyraCrypto } from "../blockchain/lyra-crypto";
 import AES from "crypto-js/aes";
 import CryptoJS from "crypto-js";
 

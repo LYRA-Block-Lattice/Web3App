@@ -13,7 +13,7 @@ import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
 import { useNavigate } from "react-router";
-import { BlockchainAPI } from "lyra-crypto";
+import { BlockchainAPI } from "../app/blockchain/blockchain-api";
 import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector } from "../app/selectors";
 

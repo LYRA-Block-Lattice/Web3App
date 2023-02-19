@@ -1,7 +1,6 @@
 import { put, takeLatest, takeEvery, getContext } from "redux-saga/effects";
 import { push } from "redux-first-history";
-import { LyraCrypto } from "lyra-crypto";
-import { BlockchainAPI } from "lyra-crypto";
+import { BlockchainAPI } from "../blockchain/blockchain-api";
 
 import * as actionTypes from "../actionTypes";
 import persist from "../lyra/persist";

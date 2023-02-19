@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { BlockchainAPI } from "lyra-crypto";
+import { BlockchainAPI } from "../app/blockchain/blockchain-api";
 import "./TradeDetails.css";
 
 const TradeDetails: FunctionComponent = () => {

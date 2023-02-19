@@ -8,9 +8,9 @@ import {
 } from "redux-saga/effects";
 import { eventChannel } from "redux-saga";
 import { HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
-import { LyraCrypto } from "lyra-crypto";
+import { LyraCrypto } from "../blockchain/lyra-crypto";
 import * as actionTypes from "../actionTypes";
-import { BlockchainAPI } from "lyra-crypto";
+import { BlockchainAPI } from "../blockchain/blockchain-api";
 
 let connection;
 
