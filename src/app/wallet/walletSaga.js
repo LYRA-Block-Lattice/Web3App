@@ -6,6 +6,7 @@ import { BlockchainAPI } from "../blockchain/blockchain-api";
 import * as actionTypes from "../actionTypes";
 import persist from "../lyra/persist";
 import * as Dex from "../lyra/dexapi";
+import { ContractTypes } from "../blockchain";
 
 function getWallet() {
   const userToken = JSON.parse(sessionStorage.getItem("token"));
@@ -243,18 +244,26 @@ function* dexSignUp(action) {
 function* mintToken(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 
     const balanceResp = yield wallet.mintToken(
       action.payload.name,
       action.payload.domain,
-      action.payload.supply
+      action.payload.desc,
+      8,
+      action.payload.supply,
+      true,
+      null,
+      null,
+      null,
+      ContractTypes.Cryptocurrency,
+      null
     );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
-      payload: balanceResp.result
+      payload: balanceResp
     });
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
