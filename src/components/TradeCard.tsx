@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { useNavigate } from "react-router";
-import { getBlockExplorerUrl } from "../app/market/marketApi";
+import { BlockchainAPI } from "lyra-crypto";
 import "./TradeCard.css";
 
 type TradeCardType = {

@@ -1,13 +1,13 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import { TextField } from "@mui/material";
 import "./CreateNFTForm.css";
-import * as marketApi from "../app/market/marketApi";
 import { useDispatch, useSelector } from "react-redux";
 import { MARKET_UPLOAD_FILE, WALLET_MINT_NFT } from "../app/actionTypes";
 import { getAppSelector } from "../app/selectors";
 import { LyraCrypto } from "lyra-crypto";
 import axios from "axios";
 import base58 from "bs58";
+import { BlockchainAPI } from "lyra-crypto";
 
 type TokenMintProps = {
   onClose?: (ticker?: string) => void;
@@ -79,9 +79,9 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
     formData.append("signatureType", "der");
 
     try {
-      const response = await marketApi.uploadFile(formData);
+      const response = await BlockchainAPI.uploadFile(formData);
       console.log(response);
-      setImgsrc(response.data.url);
+      setImgsrc(response.url);
     } catch (error) {
       console.log(error);
     }
@@ -143,7 +143,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
   const onMintClick = useCallback(async () => {
     console.log("mint NFT.");
     // create metadata
-    var lsb = await marketApi.lastServiceHash();
+    var lsb = await BlockchainAPI.lastServiceHash();
 
     var input = `${app.wallet.accountId as string}:${lsb.data}:${imgsrc}`;
 
@@ -152,7 +152,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
     // log input
     console.log(`input: ${input} apisign: ${apisign} by ${userToken.pvt}`);
 
-    var ret = await marketApi.createNFTMeta(
+    var ret = await BlockchainAPI.createNFTMeta(
       app.wallet.accountId as string,
       apisign,
       name,
@@ -161,7 +161,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
     );
 
     console.log(ret);
-    setUrl(ret.data.url);
+    setUrl(ret.url);
 
     // mint NFT
     dispatch({
@@ -171,7 +171,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         name: name,
         description: desc,
         supply: supply,
-        metadataUrl: ret.data.url
+        metadataUrl: ret.url
       }
     });
   }, [name, desc, url, supply, imgsrc]);

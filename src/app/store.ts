@@ -22,7 +22,7 @@ import logger from "redux-logger";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 import storageSession from "redux-persist/lib/storage/session";
 
-import * as marketApi from "./market/marketApi";
+import { BlockchainAPI } from "lyra-crypto";
 import walletReducer from "./wallet/walletReducer";
 import dexReducer from "./wallet/dexReducer";
 import counterReducer from "../features/counter/counterSlice";
@@ -60,7 +60,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // Create the saga middleware
 const context = {
-  Market: marketApi,
+  Market: BlockchainAPI,
   dispatch: {}
 };
 

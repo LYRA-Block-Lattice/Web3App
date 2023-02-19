@@ -13,7 +13,7 @@ import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
 import { useNavigate } from "react-router";
-import { getBlockExplorerUrl, getTradeForOrder } from "../app/market/marketApi";
+import { BlockchainAPI } from "lyra-crypto";
 import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector } from "../app/selectors";
 
@@ -62,7 +62,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
   const [showTradeTable, setShowTradeTable] = useState(false);
 
   useEffect(() => {
-    getTradeForOrder(orderId).then((ret) => {
+    BlockchainAPI.getTradeForOrder(orderId).then((ret) => {
       setTrades(ret.data);
     });
   }, []);
@@ -135,7 +135,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
         <a
           className="title-section2"
           target="_blank"
-          href={getBlockExplorerUrl(orderId)}
+          href={BlockchainAPI.getBlockExplorerUrl(orderId)}
         >
           <div className="sell-group">
             <b className="sold">Sell</b>

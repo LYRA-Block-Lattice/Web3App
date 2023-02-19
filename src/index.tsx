@@ -14,6 +14,10 @@ import {
 import "./global.css";
 import Shell from "./Shell";
 
+// init lyra library
+import { BlockchainAPI } from "lyra-crypto";
+BlockchainAPI.setNetworkId(process.env.REACT_APP_NETWORK_ID || "testnet");
+
 const muiTheme = createTheme();
 
 const container = document.getElementById("root")!;

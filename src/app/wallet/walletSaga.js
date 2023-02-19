@@ -1,11 +1,11 @@
 import { put, takeLatest, takeEvery, getContext } from "redux-saga/effects";
 import { push } from "redux-first-history";
 import { LyraCrypto } from "lyra-crypto";
+import { BlockchainAPI } from "lyra-crypto";
 
 import * as actionTypes from "../actionTypes";
 import persist from "../lyra/persist";
 import * as Dex from "../lyra/dexapi";
-import * as marketApi from "../market/marketApi";
 
 function getWallet() {
   const userToken = JSON.parse(sessionStorage.getItem("token"));
@@ -23,7 +23,7 @@ function* getBalance(action) {
     // var json = yield response.text();
     // var j = JSON.parse(json);
     try {
-      const ret = yield marketApi.getBalance(wds.accountId);
+      const ret = yield BlockchainAPI.getBalance(wds.accountId);
 
       yield put({
         type: actionTypes.WALLET_BALANCE,
@@ -482,7 +482,7 @@ export default function* walletSaga() {
   console.log("walletSaga is running.");
 
   yield takeLatest(actionTypes.WALLET_GET_BALANCE, getBalance);
-  yield takeEvery(actionTypes.WSRPC_CLOSED, createWS);
+  //yield takeEvery(actionTypes.WSRPC_CLOSED, createWS);
   yield takeEvery(actionTypes.WALLET_RECEIVE, receive);
   yield takeEvery(actionTypes.WALLET_SEND, send);
 

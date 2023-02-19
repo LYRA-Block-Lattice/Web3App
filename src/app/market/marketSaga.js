@@ -10,12 +10,12 @@ import { eventChannel } from "redux-saga";
 import { HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
 import { LyraCrypto } from "lyra-crypto";
 import * as actionTypes from "../actionTypes";
-import * as marketApi from "./marketApi";
+import { BlockchainAPI } from "lyra-crypto";
 
 let connection;
 
 function* getOrders(action) {
-  const orders = yield marketApi.fetchOrders(action.payload.cat);
+  const orders = yield BlockchainAPI.fetchOrders(action.payload.cat);
   yield put({
     type: actionTypes.MARKET_GET_ORDERS_SUCCESS,
     payload: {
@@ -26,7 +26,9 @@ function* getOrders(action) {
 }
 
 function* getOwnOrders(action) {
-  const orders = yield marketApi.fetchOrdersByOwner(action.payload.accountId);
+  const orders = yield BlockchainAPI.fetchOrdersByOwner(
+    action.payload.accountId
+  );
   yield put({
     type: actionTypes.MARKET_GET_OWN_ORDERS_SUCCESS,
     payload: orders.data
@@ -34,7 +36,9 @@ function* getOwnOrders(action) {
 }
 
 function* getOwnTrades(action) {
-  const trades = yield marketApi.fetchTradesByOwner(action.payload.accountId);
+  const trades = yield BlockchainAPI.fetchTradesByOwner(
+    action.payload.accountId
+  );
   yield put({
     type: actionTypes.MARKET_GET_OWN_TRADES_SUCCESS,
     payload: trades.data
@@ -42,7 +46,7 @@ function* getOwnTrades(action) {
 }
 
 function* getOrderById(action) {
-  const order = yield marketApi.fetchOrderById(action.payload.orderId);
+  const order = yield BlockchainAPI.fetchOrderById(action.payload.orderId);
   yield put({
     type: actionTypes.MARKET_GET_ORDER_BY_ID_SUCCESS,
     payload: order.data
@@ -50,7 +54,7 @@ function* getOrderById(action) {
 }
 
 function* getDealer(action) {
-  const brief = yield marketApi.fetchDealer();
+  const brief = yield BlockchainAPI.fetchDealer();
   yield put({
     type: actionTypes.MARKET_GET_DEALER_OK,
     payload: {
@@ -62,7 +66,7 @@ function* getDealer(action) {
 }
 
 function* findDao(action) {
-  const dao = yield marketApi.searchDao(action.payload);
+  const dao = yield BlockchainAPI.searchDao(action.payload);
   yield put({
     type: actionTypes.BLOCKCHAIN_FIND_DAO_OK,
     payload: dao.data
@@ -99,7 +103,7 @@ function* setupDealerEvents(action) {
       yield connection.start();
 
       const userToken = JSON.parse(sessionStorage.getItem("token"));
-      var ret = yield marketApi.lastServiceHash();
+      var ret = yield BlockchainAPI.lastServiceHash();
       var signt = LyraCrypto.Sign(ret.data, userToken.pvt);
 
       yield connection.send("Join", {
@@ -172,8 +176,6 @@ function* setup(action) {
 
 export default function* marketSaga() {
   console.log("marketSaga is running.");
-
-  marketApi.InitAxios();
 
   // every time the user open wallet, we need to setup the SignalR connection
   yield takeEvery(actionTypes.WALLET_OPEN_DONE, setup);

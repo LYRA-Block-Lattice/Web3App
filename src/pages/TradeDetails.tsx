@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getBlockExplorerUrl } from "../app/market/marketApi";
+import { BlockchainAPI } from "lyra-crypto";
 import "./TradeDetails.css";
 
 const TradeDetails: FunctionComponent = () => {
@@ -24,7 +24,7 @@ const TradeDetails: FunctionComponent = () => {
   useEffect(() => {
     var tradeId = searchParams.get("tradeId");
     if (tradeId) {
-      setLink(getBlockExplorerUrl(tradeId));
+      setLink(BlockchainAPI.getBlockExplorerUrl(tradeId));
       setShortId(tradeId.substring(0, 8) + "..." + tradeId.substring(80));
     }
   }, []);
