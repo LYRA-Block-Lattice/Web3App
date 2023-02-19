@@ -97,7 +97,7 @@ export class LyraApi {
     while (true) {
       try {
         var unrecv = await BlockchainAPI.getUnreceived(this.accountId);
-        //console.log("changes", unrecv.data);
+        //console.log("changes", unrecv);
 
         if (unrecv.resultCode == 0) {
           // success.
@@ -105,16 +105,16 @@ export class LyraApi {
           var sb = JSON.parse(lsb.blockData);
 
           var ret = await BlockchainAPI.GetLastBlock(this.accountId);
-          //console.log("last block", ret.data);
+          //console.log("last block", ret);
           var receiveBlock =
             ret.resultCode == 0
               ? new ReceiveTransferBlock(ret.blockData)
               : new OpenWithReceiveTransferBlock(undefined);
 
-          receiveBlock.SourceHash = unrecv.data.sourceHash;
+          receiveBlock.SourceHash = unrecv.sourceHash;
 
           const changesArray: [string, number][] = Object.entries(
-            unrecv.data.transfer.changes
+            unrecv.transfer.changes
           );
           //console.log("changesArray", changesArray);
           changesArray.forEach(([key, value]) => {
@@ -139,14 +139,10 @@ export class LyraApi {
           }
         } else {
           // no new unreceived block.
-          return unrecv.data;
+          return unrecv;
         }
       } catch (error) {
         console.log("receive error", error);
-        if (error instanceof AxiosError) {
-          console.log("detailed AxiosError", error.response?.data.errors);
-        }
-
         throw error;
       }
     }
@@ -158,12 +154,12 @@ export class LyraApi {
 
       let dictionary = Object.assign(
         {},
-        ...ret.data.map((x: any) => ({ [x.Ticker]: x.Balance }))
+        ...ret.map((x: any) => ({ [x.Ticker]: x.Balance }))
       );
       //console.log("dictionary", dictionary);
 
       return {
-        data: ret.data,
+        data: ret,
         balance: dictionary
       };
     } catch (error) {
@@ -179,7 +175,7 @@ export class LyraApi {
         end,
         count
       );
-      return hists.data;
+      return hists;
     } catch (error) {
       console.log("history error", error);
       throw error;
@@ -391,7 +387,7 @@ export class LyraApi {
       this.accountId,
       symbol
     );
-    if (existsWalletRet.data.resultCode != 0) {
+    if (existsWalletRet.resultCode != 0) {
       const crwlt: LyraContractABI = {
         svcReq: BrokerActions.BRK_FIAT_CRACT,
         targetAccountId: LyraGlobal.GUILDACCOUNTID,
@@ -407,7 +403,7 @@ export class LyraApi {
       return result;
     }
 
-    return existsWalletRet.data;
+    return existsWalletRet;
   }
 
   async printFiat(symbol: string, count: number): Promise<APIResult> {

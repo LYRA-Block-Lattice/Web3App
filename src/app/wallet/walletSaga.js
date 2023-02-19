@@ -1,5 +1,6 @@
 import { put, takeLatest, takeEvery, getContext } from "redux-saga/effects";
 import { push } from "redux-first-history";
+import { LyraApi } from "../blockchain/lyra-api";
 import { BlockchainAPI } from "../blockchain/blockchain-api";
 
 import * as actionTypes from "../actionTypes";
@@ -8,7 +9,7 @@ import * as Dex from "../lyra/dexapi";
 
 function getWallet() {
   const userToken = JSON.parse(sessionStorage.getItem("token"));
-  const wallet = new LyraApi(network, userToken.pvt);
+  const wallet = new LyraApi(BlockchainAPI.networkid, userToken.pvt);
   return wallet;
 }
 
@@ -28,14 +29,13 @@ function* getBalance(action) {
         type: actionTypes.WALLET_BALANCE,
         payload: {
           accountId: wds.accountId,
-          nftcnt: ret.data.filter((a) => a.Balance > 0 && a.Domain == "nft")
-            .length,
-          totcnt: ret.data.filter(
+          nftcnt: ret.filter((a) => a.Balance > 0 && a.Domain == "nft").length,
+          totcnt: ret.filter(
             (a) => a.Balance > 0 && (a.Domain == "tot" || a.Domain == "svc")
           ).length,
-          balance: ret.data.find((a) => a.Ticker == "LYR").Balance ?? 0,
-          usdt: ret.data.find((a) => a.Ticker == "tether/USDT")?.Balance ?? 0,
-          balances: ret.data
+          balance: ret.find((a) => a.Ticker == "LYR").Balance ?? 0,
+          usdt: ret.find((a) => a.Ticker == "tether/USDT")?.Balance ?? 0,
+          balances: ret
 
           // TODO: set unreceived args
         }
@@ -95,7 +95,7 @@ function* receive(action) {
 function* send(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 
@@ -112,7 +112,6 @@ function* send(action) {
       type: actionTypes.WSRPC_CALL_SUCCESS,
       payload: { tag: action.payload.tag }
     });
-    yield ws.close();
   } catch (error) {
     yield put({
       type: actionTypes.WSRPC_CALL_FAILED,
@@ -217,7 +216,7 @@ function* dexSignIn(action) {
     console.log(error);
     yield put({
       type: actionTypes.DEX_ERROR,
-      payload: error.response ? error.response.data.message : error.message
+      payload: error.response ? error.response.message : error.message
     });
   }
 }
@@ -236,7 +235,7 @@ function* dexSignUp(action) {
     console.log(error);
     yield put({
       type: actionTypes.DEX_ERROR,
-      payload: error.response ? error.response.data.message : error.message
+      payload: error.response ? error.response.message : error.message
     });
   }
 }

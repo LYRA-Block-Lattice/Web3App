@@ -24,7 +24,6 @@
     "bs58": "^5.0.0",
     "buffer": "^6.0.3",
     "crypto-js": "^4.1.1",
-    "dotenv": "^16.0.3",
     "env-cmd": "^10.1.0",
     "json-stable-stringify": "^1.0.2",
     "jsonrpc-client-websocket": "^1.5.2",

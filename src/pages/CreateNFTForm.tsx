@@ -76,7 +76,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
     formData.append("file", file);
     formData.append("accountId", app.wallet.accountId as string);
     formData.append("signature", signt);
-    formData.append("signatureType", "der");
+    formData.append("signatureType", "p1393");
 
     try {
       const response = await BlockchainAPI.uploadFile(formData);

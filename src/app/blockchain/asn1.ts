@@ -1,4 +1,5 @@
 import * as bigintConversion from "bigint-conversion";
+import { Buffer } from "buffer";
 
 export function decodeASN1Sequence(encoded: string): bigint[] {
   const integers: bigint[] = [];

@@ -13,10 +13,9 @@ import {
 } from "@mui/material";
 import "./global.css";
 import Shell from "./Shell";
-
-// init lyra library
 import { BlockchainAPI } from "./app/blockchain/blockchain-api";
-BlockchainAPI.setNetworkId(process.env.REACT_APP_NETWORK_ID || "testnet");
+
+BlockchainAPI.setNetworkId(process.env.REACT_APP_NETWORK_ID);
 
 const muiTheme = createTheme();
 

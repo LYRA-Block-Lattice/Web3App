@@ -9,8 +9,8 @@ export class BlockchainAPI {
   static Dealer_API: string;
   static Start_API: string;
 
-  static setNetworkId = (id: string) => {
-    BlockchainAPI.networkid = id;
+  static setNetworkId = (id: string | undefined) => {
+    BlockchainAPI.networkid = id || "devnet";
 
     BlockchainAPI.Block_API_v1 = `https://${this.networkid}.lyra.live/api/node`;
     BlockchainAPI.Block_API_v2 = `https://${this.networkid}.lyra.live/api/EC`;
@@ -179,7 +179,7 @@ export class BlockchainAPI {
     const data = {
       [accountId]: accountId,
       [signature]: signature,
-      signatureType: "der",
+      signatureType: "p1393",
       name: name,
       description: description,
       imgUrl: imgUrl
