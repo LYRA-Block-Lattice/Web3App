@@ -187,7 +187,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
-  background-color: var(--primary);
+  background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;

@@ -247,18 +247,18 @@
   text-align: center;
 }
 .makeofferbutton,
-.prepare-sell-order-button4 {
+.prepare-sell-order-button5 {
   align-self: stretch;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button4 {
+.prepare-sell-order-button5 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
-  background-color: var(--primary);
+  background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
@@ -266,7 +266,7 @@
   box-sizing: border-box;
   gap: var(--gap-md);
 }
-.prepare-sell-order-button4:hover {
+.prepare-sell-order-button5:hover {
   background-color: var(--color-mediumslateblue-100);
 }
 .makeofferbutton {

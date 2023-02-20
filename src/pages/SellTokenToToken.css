@@ -1,5 +1,5 @@
 .to-sell-token,
-.utility-button4 {
+.utility-button {
   position: relative;
   font-size: var(--font-size-7xl);
   letter-spacing: 0.41px;
@@ -9,12 +9,18 @@
   color: var(--black-000000100);
   text-align: left;
 }
-.utility-button4 {
+.utility-button {
   font-size: var(--font-size-xl);
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button9 {
+.prepare-sell-order-button,
+.to-sell-token-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.prepare-sell-order-button {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
@@ -22,17 +28,11 @@
   border-radius: var(--br-lg);
   height: 30px;
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
   box-sizing: border-box;
-  align-items: center;
   justify-content: flex-start;
 }
 .to-sell-token-parent {
   width: 320px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
 }
 .to-get-fiat {

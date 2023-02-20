@@ -33,22 +33,22 @@ const TradeDetails: FunctionComponent = () => {
       </div>
       <div className="trade-id-parent">
         <button
-          className="prepare-sell-order-button"
+          className="prepare-sell-order-button1"
           onClick={onPrepareSellOrderButtonClick}
         >
-          <div className="utility-button">Close</div>
+          <div className="utility-button1">Close</div>
         </button>
         <button
-          className="prepare-sell-order-button"
+          className="prepare-sell-order-button1"
           onClick={onPrepareSellOrderButton1Click}
         >
-          <div className="utility-button">Complain</div>
+          <div className="utility-button1">Complain</div>
         </button>
         <button
-          className="prepare-sell-order-button"
+          className="prepare-sell-order-button1"
           onClick={onPrepareSellOrderButton2Click}
         >
-          <div className="utility-button">Comment</div>
+          <div className="utility-button1">Comment</div>
         </button>
       </div>
     </div>
