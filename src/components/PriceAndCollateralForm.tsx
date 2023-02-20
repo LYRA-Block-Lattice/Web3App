@@ -5,6 +5,8 @@ import "./PriceAndCollateralForm.css";
 import { useDispatch, useSelector } from "react-redux";
 import * as actionTypes from "../app/actionTypes";
 import { getMarketSelector, getNotifySelector } from "../app/selectors";
+import { IDao } from "../app/market/marketReducer";
+import { LyraGlobal } from "../app/blockchain/blocks/block";
 
 type PriceAndCollateralFormType = {
   offering?: string;
@@ -26,14 +28,36 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   const [limitmin, setLimitmin] = useState<number>(0);
   const [limitmax, setLimitmax] = useState<number>(0);
   const [collateral, setCollateral] = useState<number>(0);
-  const [daoId, setDaoId] = useState("");
+  const [dao, setDao] = useState<IDao | null>(null);
 
+  const [pricedollar, setPriceDollar] = useState<number>(0);
   const [eqdollar, setEQDollar] = useState<number>(0);
 
   useEffect(() => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: "" });
     dispatch({ type: actionTypes.MARKET_GET_DEALER });
   }, []);
+
+  //update info on dao selected
+  useEffect(() => {
+    if (dao != undefined && dao != null) {
+    }
+  }, [dao]);
+
+  useEffect(() => {
+    if (price > 0 && notify.prices != undefined && biding != undefined) {
+      var ticker = biding;
+      if (ticker.startsWith("tether/")) ticker = ticker.replace("tether/", "");
+      if (ticker.startsWith("fiat/"))
+        ticker = ticker.replace("fiat/", "").toLowerCase();
+      const quote = notify.prices.find((a) => a.ticker == ticker);
+      if (quote === undefined) setPriceDollar(0);
+      else {
+        let priced = price * quote.price;
+        setPriceDollar(priced);
+      }
+    } else setPriceDollar(0);
+  }, [price, biding]);
 
   useEffect(() => {
     if (eqprice > 0 && notify.prices != undefined) {
@@ -68,7 +92,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       count: count,
       collateral: collateral,
       secret: undefined,
-      daoid: daoId,
+      daoid: dao?.daoId,
       dealerid: market.dealerId,
       limitmin: limitmin,
       limitmax: limitmax
@@ -83,7 +107,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
     price,
     count,
     collateral,
-    daoId,
+    dao?.daoId,
     market.dealerId
   ]);
 
@@ -104,7 +128,12 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
           onChange={(e) => setPrice(+e.target.value)}
         />
         <div className="worth-in-dollar-100-wrapper">
-          <div className="worth-in-dollar">Worth in dollar: $100</div>
+          <div className="worth-in-dollar">
+            Worth in dollar: ${" "}
+            {pricedollar.toLocaleString(undefined, {
+              maximumFractionDigits: 2
+            })}
+          </div>
         </div>
       </div>
       <div className="sellatprice-parent">
@@ -173,7 +202,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         disablePortal
         options={market.daos}
         onInputChange={onDaoSearchChange}
-        onChange={(event, value) => setDaoId(value?.daoId!)}
+        onChange={(event, value) => setDao(value)}
         isOptionEqualToValue={(option, value) => option.name === value.name}
         getOptionLabel={(option) => option.name}
         renderInput={(params: any) => (
@@ -192,17 +221,19 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       <div className="collateralcount1">
         <div className="collateral-worth-label5">
           <div className="worth-in-dollar">
-            Collateral 120%, in LYR: 100 LYR
+            Collateral {dao?.sellerPar}%, eq: 100 LYR
           </div>
           <div className="worth-in-dollar">$ 103</div>
         </div>
         <div className="collateral-worth-label5">
-          <div className="worth-in-dollar">DAO fee 1% in LYR: 100 LYR</div>
+          <div className="worth-in-dollar">
+            DAO fee {dao?.sellerFeeRatio}% eq: 100 LYR
+          </div>
           <div className="worth-in-dollar">$ 103</div>
         </div>
         <div className="collateral-worth-label5">
           <div className="worth-in-dollar">
-            Network fee 0.2% in LYR: 100 LYR
+            Network fee {LyraGlobal.OfferingNetworkFeeRatio}% eq: 100 LYR
           </div>
           <div className="worth-in-dollar">$ 103</div>
         </div>

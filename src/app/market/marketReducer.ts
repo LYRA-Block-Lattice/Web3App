@@ -21,6 +21,12 @@ export const getTickerIcon = (ticker: string) => {
 export interface IDao {
   name: string;
   daoId: string;
+  seats: number;
+  shareRito: number;
+  sellerPar: number;
+  sellerFeeRatio: number;
+  buyerPar: number;
+  buyerFeeRatio: number;
 }
 
 export enum OrderStatus {

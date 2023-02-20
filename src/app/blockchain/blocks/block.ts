@@ -19,6 +19,8 @@ export class LyraGlobal {
   static readonly GUILDACCOUNTID =
     "L8cqJqYPyx9NjiRYf8KyCjBaCmqdgvZJtEkZ7M9Hf7LnzQU3DamcurxeDEkws9HXPjLaGi9CVgcRwdCp377xLEB1qcX15";
 
+  static readonly OfferingNetworkFeeRatio = 0.002;
+  static readonly BidingNetworkFeeRatio = 0;
   static GetListingFeeFor = () => 10;
 }
 
