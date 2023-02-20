@@ -39,14 +39,14 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button16,
+.prepare-sell-order-button12,
 .scantopay {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button16 {
+.prepare-sell-order-button12 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
@@ -57,7 +57,7 @@
   flex-direction: row;
   justify-content: center;
 }
-.prepare-sell-order-button16:hover {
+.prepare-sell-order-button12:hover {
   background-color: var(--color-mediumslateblue-100);
 }
 .scantopay {

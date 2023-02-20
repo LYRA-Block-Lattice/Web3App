@@ -1,33 +1,47 @@
+.create-and-sell {
+  position: relative;
+  font-size: var(--font-size-7xl);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--caption);
+  color: var(--black-000000100);
+  text-align: left;
+  display: inline-block;
+  width: 296px;
+}
 .selecttypeoftot,
 .tot-description4,
-.tot-name3 {
+.tot-supply {
   background-color: var(--color-lightyellow);
   border-radius: var(--br-xs);
   width: 301px;
-  height: 40px;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   padding: var(--padding-6xs);
   box-sizing: border-box;
-  align-items: center;
   justify-content: flex-start;
 }
 .selecttypeoftot {
+  height: 40px;
+  align-items: center;
   gap: var(--gap-md);
 }
 .tot-description4,
-.tot-name3 {
+.tot-supply {
   border: 0;
   font-family: var(--caption);
   font-size: var(--body-s-size);
-}
-.tot-description4 {
   height: 124px;
   align-items: flex-start;
 }
-.utility-button9 {
+.tot-supply {
+  height: 40px;
+  align-items: center;
+}
+.utility-button7 {
   position: relative;
   font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
@@ -37,7 +51,7 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button21 {
+.prepare-sell-order-button17 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
@@ -52,27 +66,27 @@
   align-items: center;
   justify-content: center;
 }
-.note-i-need3,
-.secondary-button7 {
+.note-i-need2,
+.secondary-button5 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-family: var(--caption);
 }
-.note-i-need3 {
+.note-i-need2 {
   font-size: var(--body-semibold-size);
   color: var(--black-000000100);
   text-align: left;
   display: inline-block;
   width: 292px;
 }
-.secondary-button7 {
+.secondary-button5 {
   font-size: var(--body-s-size);
   font-weight: 500;
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button22 {
+.prepare-sell-order-button18 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);
@@ -87,7 +101,9 @@
   align-items: center;
   justify-content: center;
 }
-.createtottosellform1 {
+.createtottosellform,
+.searchtokenbyname1,
+.selltottotoken {
   background-color: var(--color-white);
   overflow: hidden;
   display: flex;
@@ -97,27 +113,9 @@
   justify-content: flex-start;
   gap: var(--gap-2xl);
 }
-.to-get-tokennft {
-  position: relative;
-  font-size: var(--font-size-7xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--caption);
-  color: var(--black-000000100);
-  text-align: left;
-  display: inline-block;
-  width: 296px;
-}
-.searchtokenbyname2,
+.searchtokenbyname1,
 .selltottotoken {
-  background-color: var(--color-white);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
   padding: var(--padding-xl) var(--padding-2xs);
-  align-items: center;
-  justify-content: flex-start;
   gap: var(--gap-4xl);
 }
 .selltottotoken {

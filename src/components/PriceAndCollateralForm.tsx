@@ -78,16 +78,9 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   return (
     <div className="priceandcollateralform">
       <div className="price-and-collateral">Price and Collateral</div>
-      <div className="set-the-price-one-parent">
-        <div className="set-the-price">Set the price, one</div>
-        <div className="set-the-price">{offering}</div>
-        <div className="set-the-price">for</div>
-        <div className="set-the-price">{biding}</div>
-        <div className="set-the-price">:</div>
-      </div>
       <TextField
         className="sellatprice"
-        sx={{ width: 301 }}
+        sx={{ width: 320 }}
         color="primary"
         variant="outlined"
         type="number"
@@ -97,10 +90,25 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         margin="none"
         onChange={(e) => setPrice(+e.target.value)}
       />
-      <div className="amount">Amount:</div>
+      <div className="sellatprice-parent">
+        <TextField
+          className="sellatprice"
+          sx={{ width: 320 }}
+          color="primary"
+          variant="outlined"
+          type="number"
+          label="Equivalence price calculated by LYR"
+          placeholder="1.0"
+          size="medium"
+          margin="none"
+        />
+        <div className="worth-in-dollar-100-wrapper">
+          <div className="worth-in-dollar">Worth in dollar: $100</div>
+        </div>
+      </div>
       <TextField
         className="sellatprice"
-        sx={{ width: 301 }}
+        sx={{ width: 320 }}
         color="primary"
         variant="outlined"
         type="number"
@@ -123,7 +131,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
           margin="none"
           onChange={(e) => setLimitmin(+e.target.value)}
         />
-        <div className="set-the-price">-</div>
+        <div className="worth-in-dollar">-</div>
         <TextField
           className="sellatprice"
           sx={{ width: 138 }}
@@ -137,28 +145,8 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
           onChange={(e) => setLimitmax(+e.target.value)}
         />
       </div>
-      <div className="amount">Collateral (in LYR):</div>
-      <div className="collateral-section">
-        <TextField
-          className="sellatprice"
-          sx={{ width: 301 }}
-          color="primary"
-          variant="outlined"
-          type="text"
-          label="Provide a guarantee for the trade"
-          placeholder="100"
-          size="medium"
-          margin="none"
-          onChange={(e) => setCollateral(+e.target.value)}
-        />
-        <div className="collateral-worth-label">
-          <div className="set-the-price">Total worth in USD:</div>
-          <div className="set-the-price">$103</div>
-        </div>
-      </div>
-      <div className="amount">Create order in DAO:</div>
       <Autocomplete
-        sx={{ width: 301 }}
+        sx={{ width: 320 }}
         disablePortal
         options={market.daos}
         onInputChange={onDaoSearchChange}
@@ -169,18 +157,32 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
           <TextField
             {...params}
             color="primary"
-            label="Find DAO"
+            label="Select DAO witch the order will be created in"
             variant="outlined"
-            placeholder="Search DAO by the name"
-            helperText="Select DAO the order will be created in"
+            placeholder=""
+            helperText=""
             required
           />
         )}
         size="medium"
       />
-      <div className="amount">
-        Current dealer is [{market.dealerName}]. You will contact buyers through
-        the dealer.
+      <div className="collateralcount1">
+        <div className="collateral-worth-label5">
+          <div className="worth-in-dollar">
+            Collateral 120%, in LYR: 100 LYR
+          </div>
+          <div className="worth-in-dollar">$ 103</div>
+        </div>
+        <div className="collateral-worth-label5">
+          <div className="worth-in-dollar">DAO fee 1% in LYR: 100 LYR</div>
+          <div className="worth-in-dollar">$ 103</div>
+        </div>
+        <div className="collateral-worth-label5">
+          <div className="worth-in-dollar">
+            Network fee 0.2% in LYR: 100 LYR
+          </div>
+          <div className="worth-in-dollar">$ 103</div>
+        </div>
       </div>
       <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
         <div className="primary-button5">Review the Order</div>

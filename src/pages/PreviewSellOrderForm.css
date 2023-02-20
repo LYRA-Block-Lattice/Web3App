@@ -1,33 +1,28 @@
+.preview-sell-order {
+  font-size: var(--font-size-7xl);
+  font-weight: 500;
+}
 .im-selling,
 .preview-sell-order,
-.token-name1 {
+.token-name {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   display: inline-block;
+  width: 300px;
 }
-.preview-sell-order {
-  font-size: var(--font-size-7xl);
-  font-weight: 500;
-  width: 296px;
-}
-.im-selling,
-.token-name1 {
-  width: 292px;
-}
-.token-name1 {
+.token-name {
   width: 143px;
   flex-shrink: 0;
 }
 .nft-name {
-  width: 301px;
+  width: 320px;
   flex-shrink: 0;
   font-size: var(--body-s-size);
 }
 .nft-name,
 .nft-name2 {
   border-radius: var(--br-xs);
-  background-color: var(--color-lightyellow);
   height: 40px;
   overflow: hidden;
   display: flex;
@@ -60,6 +55,15 @@
   gap: var(--gap-md);
   font-size: var(--body-s-size);
 }
+.ill-share-the {
+  position: absolute;
+  top: 0;
+  left: 0.5px;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  display: inline-block;
+  width: 300px;
+}
 .please-pay-to {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -76,11 +80,12 @@
   flex-shrink: 0;
 }
 .tot-description1 {
+  position: absolute;
+  top: 33px;
+  left: 0;
   border-radius: var(--br-xs);
-  background-color: var(--color-lightyellow);
   width: 301px;
   height: 124px;
-  flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -90,12 +95,72 @@
   justify-content: flex-start;
   font-size: var(--body-s-size);
 }
-.lyr-worth-10000 {
+.tradesecretsection {
+  position: relative;
+  width: 301px;
+  height: 157px;
+  flex-shrink: 0;
+}
+.collateral-worth-label {
+  width: 283px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.price-10-tetherusdt {
+  position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
 }
+.collateral-worth-label1,
+.collateral-worth-label2,
+.collateralcount {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.collateral-worth-label2,
+.collateralcount {
+  width: 283px;
+  gap: var(--gap-md);
+}
+.collateralcount {
+  border-radius: var(--br-xs);
+  background-color: var(--color-gray-200);
+  width: 320px;
+  flex-direction: column;
+  padding: var(--padding-6xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-2xs);
+}
+.nft-name-group,
+.nft-name6 {
+  display: flex;
+  justify-content: flex-start;
+}
+.nft-name6 {
+  border-radius: var(--br-xs);
+  width: 320px;
+  height: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-6xs);
+  box-sizing: border-box;
+  align-items: center;
+}
+.nft-name-group {
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--body-s-size);
+}
 .confirm-before-create-order,
-.lyr-worth-10000,
 .primary-button2 {
   position: relative;
 }
@@ -108,14 +173,14 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button13,
+.prepare-sell-order-button9,
 .previewsellorderform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button13 {
+.prepare-sell-order-button9 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);

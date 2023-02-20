@@ -67,7 +67,7 @@ const MiscComponents: FunctionComponent = () => {
                 <img
                   className="press-area-icon"
                   alt=""
-                  src="../asserts/press-area.svg"
+                  src="../asserts/press-area1.svg"
                 />
               </div>
               <div className="price">

@@ -39,7 +39,7 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
     <div className="createtokenform">
       <div className="mint-token">Mint Token</div>
       <TextField
-        className="token-name"
+        className="total-supply"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -50,7 +50,7 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
         onChange={(e) => setName(e.target.value)}
       />
       <TextField
-        className="token-name"
+        className="total-supply"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -72,7 +72,7 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
         onChange={(e) => setDesc(e.target.value)}
       />
       <TextField
-        className="token-name"
+        className="total-supply"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -83,8 +83,8 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
         margin="none"
         onChange={(e) => setSupply(+e.target.value)}
       />
-      <button className="prepare-sell-order-button6" onClick={onMintClick}>
-        <div className="secondary-button1">Mint Token</div>
+      <button className="prepare-sell-order-button19" onClick={onMintClick}>
+        <div className="secondary-button6">Mint Token</div>
       </button>
     </div>
   );

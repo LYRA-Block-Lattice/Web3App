@@ -74,8 +74,8 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
   return (
     <>
       <div className="createtotform">
-        <div className="createtottosellform">
-          <div className="create-and-sell">Create and Sell [TOT/SKU]</div>
+        <form className="createtottosellform1">
+          <div className="create-and-sell1">Create and Sell [TOT/SKU]</div>
           <FormControl sx={{ width: 301 }} variant="outlined">
             <InputLabel color="primary">Select Type of TOT</InputLabel>
             <Select
@@ -93,7 +93,7 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
             <FormHelperText />
           </FormControl>
           <TextField
-            className="tot-name"
+            className="tot-name3"
             sx={{ width: 301 }}
             color="primary"
             variant="outlined"
@@ -115,7 +115,7 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
             onChange={(e) => setDesc(e.target.value)}
           />
           <TextField
-            className="tot-name"
+            className="tot-name3"
             sx={{ width: 301 }}
             color="primary"
             variant="outlined"
@@ -127,16 +127,16 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
             onChange={(e) => setSupply(+e.target.value)}
           />
           <button
-            className="prepare-sell-order-button7"
+            className="prepare-sell-order-button20"
             onClick={openSignTradeSecretPopup}
           >
-            <div className="utility-button3">Sign trade secret</div>
+            <div className="utility-button8">Sign trade secret</div>
           </button>
-          <div className="note-i-need">
+          <div className="note-i-need3">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <button className="prepare-sell-order-button8" onClick={onMintClick}>
-            <div className="secondary-button2">Create TOT</div>
+          <button className="prepare-sell-order-button21" onClick={onMintClick}>
+            <div className="secondary-button7">Create TOT</div>
           </button>
         </div>
       </div>

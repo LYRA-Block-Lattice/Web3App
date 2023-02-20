@@ -1,31 +1,26 @@
 .to-sell-token,
-.utility-button4 {
+.utility-button9 {
   position: relative;
+  font-size: var(--font-size-7xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-}
-.to-sell-token {
-  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
   text-align: left;
-  display: inline-block;
-  width: 296px;
 }
-.utility-button4 {
+.utility-button9 {
   font-size: var(--font-size-xl);
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button9 {
+.prepare-sell-order-button22 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
   background-color: var(--tertiary);
   border-radius: var(--br-lg);
   height: 30px;
-  flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -33,15 +28,26 @@
   align-items: center;
   justify-content: flex-start;
 }
-.searchtokenbyname-child {
-  position: relative;
-  border-top: 1px solid var(--black-000000100);
-  box-sizing: border-box;
-  width: 203px;
-  height: 1px;
-  flex-shrink: 0;
+.to-sell-token-parent {
+  width: 320px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-.searchtokenbyname,
+.to-get-fiat {
+  position: relative;
+  font-size: var(--font-size-7xl);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--caption);
+  color: var(--black-000000100);
+  text-align: left;
+  display: inline-block;
+  width: 320px;
+}
+.searchtokenbyname2,
 .selltokentotoken {
   background-color: var(--color-white);
   overflow: hidden;

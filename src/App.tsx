@@ -7,9 +7,6 @@ import SendTokenForm from "./pages/SendTokenForm";
 import WalletHome from "./pages/WalletHome";
 import AssertDetailView from "./pages/AssertDetailView";
 import MintFiatToken from "./pages/MintFiatToken";
-import CreateTokenForm from "./pages/CreateTokenForm";
-import CreateTOTForm from "./pages/CreateTOTForm";
-import SellTokenToToken from "./pages/SellTokenToToken";
 import ViewTradesForm from "./pages/ViewTradesForm";
 import ViewOrdersForm from "./pages/ViewOrdersForm";
 import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
@@ -25,6 +22,9 @@ import SellTokenToTOT from "./pages/SellTokenToTOT";
 import SellTOTToTOT from "./pages/SellTOTToTOT";
 import SellTOTToToken from "./pages/SellTOTToToken";
 import Empty from "./pages/Empty";
+import CreateTokenForm from "./pages/CreateTokenForm";
+import CreateTOTForm from "./pages/CreateTOTForm";
+import SellTokenToToken from "./pages/SellTokenToToken";
 import OldV1UI from "./pages/OldV1UI";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
@@ -71,18 +71,6 @@ function App() {
         metaDescription = "";
         break;
       case "/mint-fiat-token":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createtokenform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createtotform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/selltokentotoken":
         title = "";
         metaDescription = "";
         break;
@@ -146,6 +134,18 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/createtokenform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/createtotform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/selltokentotoken":
+        title = "";
+        metaDescription = "";
+        break;
       case "/oldv1ui":
         title = "";
         metaDescription = "";
@@ -182,12 +182,6 @@ function App() {
 
       <Route path="/mint-fiat-token" element={<MintFiatToken />} />
 
-      <Route path="/createtokenform" element={<CreateTokenForm />} />
-
-      <Route path="/createtotform" element={<CreateTOTForm />} />
-
-      <Route path="/selltokentotoken" element={<SellTokenToToken />} />
-
       <Route path="/viewtradesform" element={<ViewTradesForm />} />
 
       <Route path="/viewordersform" element={<ViewOrdersForm />} />
@@ -220,6 +214,12 @@ function App() {
       <Route path="/selltottotoken" element={<SellTOTToToken />} />
 
       <Route path="/empty" element={<Empty />} />
+
+      <Route path="/createtokenform" element={<CreateTokenForm />} />
+
+      <Route path="/createtotform" element={<CreateTOTForm />} />
+
+      <Route path="/selltokentotoken" element={<SellTokenToToken />} />
 
       <Route path="/oldv1ui" element={<OldV1UI />} />
       <Route path="/scantopay" element={<ScanToPay />} />
