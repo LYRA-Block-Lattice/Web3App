@@ -27,11 +27,17 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   const [count, setCount] = useState<number>(0);
   const [limitmin, setLimitmin] = useState<number>(0);
   const [limitmax, setLimitmax] = useState<number>(0);
-  const [collateral, setCollateral] = useState<number>(0);
   const [dao, setDao] = useState<IDao | null>(null);
 
   const [pricedollar, setPriceDollar] = useState<number>(0);
   const [eqdollar, setEQDollar] = useState<number>(0);
+
+  const [collateraldollar, setCollateralDollar] = useState<number>(0);
+  const [collaterallyr, setCollateralLYR] = useState<number>(0);
+  const [daofeelyr, setDaoFeeLYR] = useState<number>(0);
+  const [daofeedollar, setDaoFeeDollar] = useState<number>(0);
+  const [netfeelyr, setNetFeeLYR] = useState<number>(0);
+  const [netfeedollar, setNetFeeDollar] = useState<number>(0);
 
   useEffect(() => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: "" });
@@ -64,8 +70,26 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       let eqdollar =
         eqprice * notify.prices.find((a) => a.ticker == "LYR")!.price;
       setEQDollar(eqdollar);
-    }
+    } else setEQDollar(0);
   }, [eqprice]);
+
+  useEffect(() => {
+    if (eqdollar > 0 && count > 0 && dao != undefined && dao != null) {
+      setCollateralDollar((eqdollar * count * dao.sellerPar) / 100);
+      setCollateralLYR((eqprice * count * dao.sellerPar) / 100);
+      setDaoFeeLYR(eqprice * count * dao.sellerFeeRatio);
+      setDaoFeeDollar(eqdollar * count * dao.sellerFeeRatio);
+      setNetFeeLYR(eqprice * count * LyraGlobal.OfferingNetworkFeeRatio);
+      setNetFeeDollar(eqdollar * count * LyraGlobal.OfferingNetworkFeeRatio);
+    } else {
+      setCollateralDollar(0);
+      setCollateralLYR(0);
+      setDaoFeeLYR(0);
+      setDaoFeeDollar(0);
+      setNetFeeLYR(0);
+      setNetFeeDollar(0);
+    }
+  }, [eqdollar, count, dao]);
 
   const searchDao = (searchTerm: any) => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: searchTerm });
@@ -90,7 +114,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       gettoken: togettoken,
       price: price,
       count: count,
-      collateral: collateral,
+      collateral: collaterallyr + daofeelyr + netfeelyr,
       secret: undefined,
       daoid: dao?.daoId,
       dealerid: market.dealerId,
@@ -106,7 +130,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
     biding,
     price,
     count,
-    collateral,
+    collaterallyr,
     dao?.daoId,
     market.dealerId
   ]);
@@ -221,29 +245,50 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       <div className="collateralcount1">
         <div className="sellatprice-parent">
           <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">Collateral value: 120%</div>
-            <div className="worth-in-dollar">1234 LYR</div>
+            <div className="worth-in-dollar">
+              Collateral value: {dao?.sellerPar}%
+            </div>
+            <div className="worth-in-dollar">{collaterallyr} LYR</div>
           </div>
           <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">$ 103</div>
+            <div className="worth-in-dollar">
+              ${" "}
+              {collateraldollar.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })}
+            </div>
           </div>
         </div>
         <div className="sellatprice-parent">
           <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">DAO fee: 1%</div>
-            <div className="worth-in-dollar">1234 LYR</div>
+            <div className="worth-in-dollar">
+              DAO fee: {(dao?.sellerFeeRatio ?? 0) * 100}%
+            </div>
+            <div className="worth-in-dollar">{daofeelyr} LYR</div>
           </div>
           <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">$ 103</div>
+            <div className="worth-in-dollar">
+              ${" "}
+              {daofeedollar.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })}
+            </div>
           </div>
         </div>
         <div className="sellatprice-parent">
           <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">Network fee 0.2%</div>
-            <div className="worth-in-dollar">1234 LYR</div>
+            <div className="worth-in-dollar">
+              Network fee: {LyraGlobal.OfferingNetworkFeeRatio * 100}%
+            </div>
+            <div className="worth-in-dollar">{netfeelyr} LYR</div>
           </div>
           <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">$ 103</div>
+            <div className="worth-in-dollar">
+              ${" "}
+              {netfeedollar.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })}
+            </div>
           </div>
         </div>
       </div>
