@@ -21,7 +21,7 @@ export class LyraGlobal {
 
   static readonly OfferingNetworkFeeRatio = 0.002;
   static readonly BidingNetworkFeeRatio = 0;
-  static GetListingFeeFor = () => 10;
+  static GetListingFeeFor = () => 100;
 }
 
 export class Block {

@@ -1,7 +1,49 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { WALLET_CREATE_ORDER } from "../app/actionTypes";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
 import "./SellFlow.css";
 
 const SellFlow: FunctionComponent = () => {
+  const dispatch = useDispatch();
+  const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams({});
+
+  const data = decodeURIComponent(searchParams.get("data")!);
+  const obj = JSON.parse(data);
+  console.log("order is", obj);
+
+  const onPrepareSellOrderButtonClick = useCallback(() => {
+    if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
+    else {
+      dispatch({
+        type: WALLET_CREATE_ORDER,
+        payload: {
+          accountId: app.wallet.accountId,
+          order: obj
+        }
+      });
+    }
+
+    // window.rrProxy.ReactRazor.Pages.Home.Interop.CreateOrderAsync(
+    //   window.rrComponent,
+    //   data
+    // ).then(function (response: any) {
+    //   var ret = JSON.parse(response);
+    //   if (ret.ret == "Success") {
+    //     navigate("/createordersuccessform?tx=" + ret.txhash);
+    //   } else {
+    //     window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
+    //       window.rrComponent,
+    //       "Warning",
+    //       ret.msg
+    //     );
+    //   }
+    // });
+  }, [navigate]);
   return (
     <div className="sellflow">
       <div className="group">
@@ -42,13 +84,22 @@ const SellFlow: FunctionComponent = () => {
         <div className="rectangle1" />
         <div className="text6">My Wallet</div>
       </div>
-      <div className="offeringlabel">10 test/BTC</div>
-      <div className="sellforlabel">
-        <div className="bidinglabel">1000 tether/USDT</div>
+      <div className="offeringlabel">
+        {obj.count} {obj.selltoken}
       </div>
-      <div className="ordercollateral">1024 LYR</div>
-      <div className="returncollateral">1000 LYR</div>
-      <button className="prepare-sell-order-button">
+      <div className="sellforlabel">
+        <div className="bidinglabel">
+          {obj.price * obj.count} {obj.gettoken}
+        </div>
+      </div>
+      <div className="ordercollateral">{obj.collateral} LYR</div>
+      <div className="returncollateral">
+        {obj.collateral - obj.daofee - obj.netfee} LYR
+      </div>
+      <button
+        className="prepare-sell-order-button"
+        onClick={onPrepareSellOrderButtonClick}
+      >
         <div className="primary-button">Place sell order</div>
       </button>
       <div className="group7">

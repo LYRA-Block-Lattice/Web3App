@@ -39,6 +39,9 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   const [netfeelyr, setNetFeeLYR] = useState<number>(0);
   const [netfeedollar, setNetFeeDollar] = useState<number>(0);
 
+  const [totallyr, setTotalLYR] = useState<number>(0);
+  const [totaldollar, setTotalDollar] = useState<number>(0);
+
   useEffect(() => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: "" });
     dispatch({ type: actionTypes.MARKET_GET_DEALER });
@@ -91,6 +94,18 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
     }
   }, [eqdollar, count, dao]);
 
+  useEffect(() => {
+    setTotalLYR(collaterallyr + daofeelyr + netfeelyr);
+    setTotalDollar(collateraldollar + daofeedollar + netfeedollar);
+  }, [
+    collateraldollar,
+    collaterallyr,
+    daofeedollar,
+    daofeelyr,
+    netfeedollar,
+    netfeelyr
+  ]);
+
   const searchDao = (searchTerm: any) => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: searchTerm });
   };
@@ -114,16 +129,18 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       gettoken: togettoken,
       price: price,
       count: count,
-      collateral: collaterallyr + daofeelyr + netfeelyr,
+      collateral: totallyr,
       secret: undefined,
       daoid: dao?.daoId,
       dealerid: market.dealerId,
       limitmin: limitmin,
-      limitmax: limitmax
+      limitmax: limitmax,
+      eqprice: eqprice,
+      daofee: daofeelyr,
+      netfee: netfeelyr,
+      payby: ["Default"]
     };
-    navigate(
-      "/previewsellorderform/?data=" + encodeURIComponent(JSON.stringify(obj))
-    );
+    navigate("/sellflow?data=" + encodeURIComponent(JSON.stringify(obj)));
   }, [
     navigate,
     offering,
@@ -132,7 +149,13 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
     count,
     collaterallyr,
     dao?.daoId,
-    market.dealerId
+    market.dealerId,
+    totallyr,
+    limitmin,
+    limitmax,
+    eqprice,
+    daofeelyr,
+    netfeelyr
   ]);
 
   return (
@@ -248,7 +271,12 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
             <div className="worth-in-dollar">
               Collateral value: {dao?.sellerPar}%
             </div>
-            <div className="worth-in-dollar">{collaterallyr} LYR</div>
+            <div className="worth-in-dollar">
+              {collaterallyr.toLocaleString(undefined, {
+                maximumFractionDigits: 4
+              })}{" "}
+              LYR
+            </div>
           </div>
           <div className="collateral-worth-label6">
             <div className="worth-in-dollar">
@@ -264,7 +292,12 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
             <div className="worth-in-dollar">
               DAO fee: {(dao?.sellerFeeRatio ?? 0) * 100}%
             </div>
-            <div className="worth-in-dollar">{daofeelyr} LYR</div>
+            <div className="worth-in-dollar">
+              {daofeelyr.toLocaleString(undefined, {
+                maximumFractionDigits: 4
+              })}{" "}
+              LYR
+            </div>
           </div>
           <div className="collateral-worth-label6">
             <div className="worth-in-dollar">
@@ -280,20 +313,40 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
             <div className="worth-in-dollar">
               Network fee: {LyraGlobal.OfferingNetworkFeeRatio * 100}%
             </div>
-            <div className="worth-in-dollar">{netfeelyr} LYR</div>
+            <div className="worth-in-dollar">
+              {netfeelyr.toLocaleString(undefined, {
+                maximumFractionDigits: 4
+              })}{" "}
+              LYR
+            </div>
           </div>
           <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">$ 103</div>
+            <div className="worth-in-dollar">
+              ${" "}
+              {netfeedollar.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })}
+            </div>
           </div>
         </div>
         <div className="collateralcount-child" />
         <div className="sellatprice-parent">
           <div className="collateral-worth-label11">
-            <div className="worth-in-dollar">1234 LYR</div>
+            <div className="worth-in-dollar">
+              {totallyr.toLocaleString(undefined, {
+                maximumFractionDigits: 4
+              })}{" "}
+              LYR
+            </div>
           </div>
           <div className="collateral-worth-label12">
             <div className="worth-in-dollar">Total:</div>
-            <div className="div20">$ 103</div>
+            <div className="div20">
+              ${" "}
+              {totaldollar.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })}
+            </div>
           </div>
         </div>
       </div>

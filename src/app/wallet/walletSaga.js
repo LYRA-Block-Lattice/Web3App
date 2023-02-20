@@ -71,7 +71,7 @@ function* receive(action) {
     const accountId = action.payload;
 
     const wallet = getWallet();
-    if (wallet.accountId !== action.payload.accountId) {
+    if (wallet.accountId !== action.payload) {
       throw new Error("Invalid account id");
     }
 
@@ -265,7 +265,7 @@ function* mintToken(action) {
     );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
-      payload: balanceResp
+      payload: action.payload.accountId
     });
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
@@ -297,7 +297,7 @@ function* mintNFT(action) {
     );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
-      payload: balanceResp.result
+      payload: action.payload.accountId
     });
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
@@ -330,7 +330,7 @@ function* mintTOT(action) {
     );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
-      payload: balanceResp.result
+      payload: action.payload.accountId
     });
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
@@ -360,7 +360,7 @@ function* printFiat(action) {
     );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
-      payload: balanceResp.result
+      payload: action.payload.accountId
     });
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
@@ -396,10 +396,10 @@ function* createOrder(action) {
     order.eqprice = action.payload.order.eqprice;
     order.limitMax = action.payload.order.limitmax;
     order.limitMin = action.payload.order.limitmin;
-    order.payBy = action.payload.order.payBy;
+    order.payBy = action.payload.order.payby;
     order.cltamt = action.payload.order.collateral;
 
-    const balanceResp = yield wallet.createOrder(action.payload.order);
+    const balanceResp = yield wallet.createOrder(order);
     console.log("createOrder", balanceResp);
     yield put({
       type: actionTypes.WSRPC_CALL_SUCCESS,
