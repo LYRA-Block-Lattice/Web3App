@@ -5,7 +5,11 @@ import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
 import WalletCard from "../components/WalletCard";
 
-import { getAppSelector, getAuthSelector } from "../app/selectors";
+import {
+  getAppSelector,
+  getAuthSelector,
+  getNotifySelector
+} from "../app/selectors";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import * as actionTypes from "../app/actionTypes";
 import "./WalletHome.css";
@@ -19,6 +23,8 @@ const WalletHome: FunctionComponent = () => {
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
   const auth = useSelector(getAuthSelector);
+  const notify = useSelector(getNotifySelector);
+
   const [cat, setCat] = useState("");
 
   const [sellcnt, setSellcnt] = useState(0);
@@ -26,7 +32,7 @@ const WalletHome: FunctionComponent = () => {
 
   useEffect(() => {
     dispatch({ type: actionTypes.SIGNALR_CONNECT });
-    if (auth.hasKey) dispatch({ type: actionTypes.WALLET_GET_BALANCE });
+    dispatch({ type: actionTypes.WALLET_GET_BALANCE });
   }, [dispatch]);
 
   const ofCatalog = (list: IBalance[]) => {
@@ -72,6 +78,21 @@ const WalletHome: FunctionComponent = () => {
     setSideMenuPopupOpen(false);
   }, []);
 
+  function getWorth(token: IBalance): string {
+    var ticker = token.Ticker;
+    if (ticker.startsWith("tether/")) ticker = ticker.replace("tether/", "");
+    if (ticker.startsWith("fiat/"))
+      ticker = ticker.replace("fiat/", "").toLowerCase();
+    const price = notify.prices?.find((a) => a.ticker == ticker)?.price;
+    if (price === undefined) return "";
+    return (
+      "$" +
+      (price * token.Balance).toLocaleString(undefined, {
+        maximumFractionDigits: 2
+      })
+    );
+  }
+
   const showTokens = () => {
     //console.log("in use call back to showTokens", app?.wallet?.balances);
     if (app.wallet.balances === undefined) return <div>No coins.</div>;
@@ -93,7 +114,7 @@ const WalletHome: FunctionComponent = () => {
                       amountText={a.Balance?.toLocaleString(undefined, {
                         maximumFractionDigits: 2
                       })}
-                      amountWorth=""
+                      amountWorth={getWorth(a)}
                     />
                   );
               }

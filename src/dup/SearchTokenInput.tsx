@@ -121,11 +121,8 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
 
   return (
     <div>
-      <div className="sell2">
-        To {dir} {cat}
-      </div>
       <Autocomplete
-        sx={{ width: 301 }}
+        sx={{ width: 320 }}
         disablePortal
         defaultValue={val}
         options={options}

@@ -7,9 +7,15 @@ export interface ITxEvent {
   time: number;
 }
 
+export interface IPriceQuote {
+  ticker: string;
+  price: number;
+}
+
 export interface IAppNotifyState {
   error: string | null;
   event: ITxEvent;
+  prices: IPriceQuote[] | null;
 }
 
 const initState: IAppNotifyState = {
@@ -18,7 +24,8 @@ const initState: IAppNotifyState = {
     change: "None",
     msg: "Start",
     time: new Date().getTime()
-  }
+  },
+  prices: null
 };
 
 const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
@@ -38,9 +45,24 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
             time: new Date().getTime()
           }
         };
+      } else if (action.payload.evtType === 3) {
+        // price quote
+        const quote = JSON.parse(action.payload.json);
+        return {
+          ...state,
+          prices: quote.Prices
+        };
       } else {
         return state;
       }
+    case actionTypes.MARKET_GET_PRICES_SUCCESS:
+      return {
+        ...state,
+        prices: Object.entries(action.payload.prices).map(([key, value]) => ({
+          ticker: key,
+          price: value as number
+        }))
+      };
     case actionTypes.WSRPC_CALL_FAILED:
       return {
         ...state,

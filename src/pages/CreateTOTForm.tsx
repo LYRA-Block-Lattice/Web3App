@@ -74,7 +74,7 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
   return (
     <>
       <div className="createtotform">
-        <form className="createtottosellform1">
+        <div className="createtottosellform1">
           <div className="create-and-sell1">Create and Sell [TOT/SKU]</div>
           <FormControl sx={{ width: 301 }} variant="outlined">
             <InputLabel color="primary">Select Type of TOT</InputLabel>

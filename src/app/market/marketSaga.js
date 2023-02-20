@@ -65,6 +65,20 @@ function* getDealer(action) {
   });
 }
 
+function* getPrices(action) {
+  const quoteRet = yield BlockchainAPI.getPrices();
+  if (quoteRet.resultCode === 0) {
+    yield put({
+      type: actionTypes.MARKET_GET_PRICES_SUCCESS,
+      payload: {
+        prices: JSON.parse(quoteRet.jsonString)
+      }
+    });
+  } else {
+    console.log("getPrices failed", quoteRet.resultCode);
+  }
+}
+
 function* findDao(action) {
   const dao = yield BlockchainAPI.searchDao(action.payload);
   yield put({
@@ -176,10 +190,12 @@ function* setup(action) {
 
 export default function* marketSaga() {
   console.log("marketSaga is running.");
+  // get price quote on startup
 
   // every time the user open wallet, we need to setup the SignalR connection
   yield takeEvery(actionTypes.WALLET_OPEN_DONE, setup);
 
+  yield takeEvery(actionTypes.MARKET_GET_PRICES, getPrices);
   yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);
   yield takeEvery(actionTypes.MARKET_GET_OWN_ORDERS, getOwnOrders);
   yield takeEvery(actionTypes.MARKET_GET_OWN_TRADES, getOwnTrades);

@@ -76,6 +76,15 @@ const SellTokenToToken: FunctionComponent = () => {
       <div className="selltokentotoken">
         <PrimaryAccountCard />
         <div className="searchtokenbyname2">
+          <div className="to-sell-token-parent">
+            <div className="to-sell-token">To Sell Token</div>
+            <button
+              className="prepare-sell-order-button22"
+              onClick={openGeneralPopup}
+            >
+              <div className="utility-button9">Mint</div>
+            </button>
+          </div>
           <SearchTokenInput
             key="tosell"
             val={val!}
@@ -84,13 +93,6 @@ const SellTokenToToken: FunctionComponent = () => {
             ownOnly={true}
             onTokenSelect={(name, ticker) => setTosell(ticker)}
           />
-          <button
-            className="prepare-sell-order-button9"
-            onClick={openGeneralPopup}
-          >
-            <div className="utility-button4">Mint to sell</div>
-          </button>
-          <div className="searchtokenbyname-child" />
           <SearchTokenInput
             key="toget"
             val={val!}

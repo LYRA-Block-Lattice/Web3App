@@ -1,4 +1,9 @@
-import { AuthorizationAPIResult, BlockAPIResult } from "./blocks/meta";
+import {
+  APIResult,
+  AuthorizationAPIResult,
+  BlockAPIResult,
+  SimpleJsonAPIResult
+} from "./blocks/meta";
 import ky from "ky-universal";
 
 export class BlockchainAPI {
@@ -143,6 +148,8 @@ export class BlockchainAPI {
     this.fetchJson<any>(`${this.Block_API_v2}/Balance?accountId=${accountId}`);
 
   // Dealer API
+  static getPrices = () =>
+    this.fetchJson<SimpleJsonAPIResult>(`${this.Dealer_API}/GetPrices`);
   static fetchOrders = (catalog: string | undefined) =>
     this.fetchJson<any>(`${this.Dealer_API}/Orders?catalog=${catalog}`);
 

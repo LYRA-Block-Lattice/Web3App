@@ -539,6 +539,13 @@ export class BlockAPIResult extends APIResult {
   public ResultBlockType!: BlockTypes;
 }
 
+export class SimpleJsonAPIResult extends APIResult {
+  public jsonString!: string;
+  public get data(): any {
+    return JSON.parse(this.jsonString);
+  }
+}
+
 export class LyraContractABI {
   svcReq!: string;
   targetAccountId!: string;

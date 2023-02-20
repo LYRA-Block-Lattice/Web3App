@@ -9,6 +9,12 @@ import persist from "../lyra/persist";
 
 function* checkWalletExists() {
   const data = yield persist.checkData();
+
+  if (data?.accountId !== undefined) {
+    yield put({ type: actionTypes.WALLET_GET_BALANCE });
+  }
+  // whatever, get prices quote
+  yield put({ type: actionTypes.MARKET_GET_PRICES });
   yield put({ type: actionTypes.STORE_INIT_DONE, payload: data });
 }
 
