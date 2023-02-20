@@ -141,7 +141,12 @@ export const SearchTokenInput: FunctionComponent<SearchTokenInputProps> = ({
         )}
         size="medium"
       />
-      <div className="balance">Balance: {selbalance}</div>
+      <div className="balance">
+        Balance:{" "}
+        {(selbalance ?? 0).toLocaleString(undefined, {
+          maximumFractionDigits: 2
+        })}
+      </div>
     </div>
   );
 };

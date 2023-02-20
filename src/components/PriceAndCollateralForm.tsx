@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./PriceAndCollateralForm.css";
 import { useDispatch, useSelector } from "react-redux";
 import * as actionTypes from "../app/actionTypes";
-import { getMarketSelector } from "../app/selectors";
+import { getMarketSelector, getNotifySelector } from "../app/selectors";
 
 type PriceAndCollateralFormType = {
   offering?: string;
@@ -18,18 +18,30 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const market = useSelector(getMarketSelector);
+  const notify = useSelector(getNotifySelector);
 
   const [price, setPrice] = useState<number>(0);
+  const [eqprice, setEQPrice] = useState<number>(0);
   const [count, setCount] = useState<number>(0);
   const [limitmin, setLimitmin] = useState<number>(0);
   const [limitmax, setLimitmax] = useState<number>(0);
   const [collateral, setCollateral] = useState<number>(0);
   const [daoId, setDaoId] = useState("");
 
+  const [eqdollar, setEQDollar] = useState<number>(0);
+
   useEffect(() => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: "" });
     dispatch({ type: actionTypes.MARKET_GET_DEALER });
   }, []);
+
+  useEffect(() => {
+    if (eqprice > 0 && notify.prices != undefined) {
+      let eqdollar =
+        eqprice * notify.prices.find((a) => a.ticker == "LYR")!.price;
+      setEQDollar(eqdollar);
+    }
+  }, [eqprice]);
 
   const searchDao = (searchTerm: any) => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: searchTerm });
@@ -101,9 +113,15 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
           placeholder="1.0"
           size="medium"
           margin="none"
+          onChange={(e) => setEQPrice(+e.target.value)}
         />
         <div className="worth-in-dollar-100-wrapper">
-          <div className="worth-in-dollar">Worth in dollar: $100</div>
+          <div className="worth-in-dollar">
+            Worth in dollar: ${" "}
+            {eqdollar.toLocaleString(undefined, {
+              maximumFractionDigits: 2
+            })}
+          </div>
         </div>
       </div>
       <TextField
