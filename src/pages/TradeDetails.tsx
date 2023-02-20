@@ -47,19 +47,19 @@ const TradeDetails: FunctionComponent = () => {
           className="prepare-sell-order-button1"
           onClick={onPrepareSellOrderButtonClick}
         >
-          <div className="utility-button1">Close</div>
+          <div className="utility-button">Close</div>
         </button>
         <button
           className="prepare-sell-order-button1"
           onClick={onPrepareSellOrderButton1Click}
         >
-          <div className="utility-button1">Complain</div>
+          <div className="utility-button">Complain</div>
         </button>
         <button
           className="prepare-sell-order-button1"
           onClick={onPrepareSellOrderButton2Click}
         >
-          <div className="utility-button1">Comment</div>
+          <div className="utility-button">Comment</div>
         </button>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
-import SellTokenToToken from "./pages/SellTokenToToken";
+import SellFlow from "./pages/SellFlow";
 import TradeDetails from "./pages/TradeDetails";
 import MiscComponents from "./pages/MiscComponents";
 import SendTokenForm from "./pages/SendTokenForm";
@@ -10,6 +10,7 @@ import AssertDetailView from "./pages/AssertDetailView";
 import MintFiatToken from "./pages/MintFiatToken";
 import CreateTokenForm from "./pages/CreateTokenForm";
 import CreateTOTForm from "./pages/CreateTOTForm";
+import SellTokenToToken from "./pages/SellTokenToToken";
 import ViewTradesForm from "./pages/ViewTradesForm";
 import ViewOrdersForm from "./pages/ViewOrdersForm";
 import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
@@ -50,7 +51,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/selltokentotoken":
+      case "/sellflow":
         title = "";
         metaDescription = "";
         break;
@@ -83,6 +84,10 @@ function App() {
         metaDescription = "";
         break;
       case "/createtotform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/selltokentotoken":
         title = "";
         metaDescription = "";
         break;
@@ -170,7 +175,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Market />} />
 
-      <Route path="/selltokentotoken" element={<SellTokenToToken />} />
+      <Route path="/sellflow" element={<SellFlow />} />
 
       <Route path="/tradedetails" element={<TradeDetails />} />
 
@@ -187,6 +192,8 @@ function App() {
       <Route path="/createtokenform" element={<CreateTokenForm />} />
 
       <Route path="/createtotform" element={<CreateTOTForm />} />
+
+      <Route path="/selltokentotoken" element={<SellTokenToToken />} />
 
       <Route path="/viewtradesform" element={<ViewTradesForm />} />
 

@@ -8,7 +8,7 @@
     opacity: 1;
   }
 }
-.vector-icon {
+.vector-icon8 {
   position: relative;
   width: 31.39px;
   height: 28px;
@@ -110,7 +110,7 @@
   border-radius: var(--br-xl) 0 0 var(--br-xl);
   background-color: var(--black-000000100);
   overflow: hidden;
-  padding: 26px;
+  padding: var(--padding-5xl);
   opacity: 0;
   height: 100%;
   max-width: 90%;

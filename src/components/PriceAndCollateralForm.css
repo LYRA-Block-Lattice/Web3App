@@ -32,32 +32,64 @@
 .sellatprice-parent {
   flex-direction: column;
 }
+.collateral-worth-label5 {
+  align-items: center;
+  justify-content: space-between;
+}
 .collateral-worth-label5,
 .collateral-worth-label6,
-.collateralcount1,
 .limitoftrade {
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 }
 .limitoftrade {
+  align-items: center;
+  justify-content: space-between;
   width: 320px;
   padding: var(--padding-6xs) 0;
   box-sizing: border-box;
   font-size: var(--body-s-size);
 }
 .collateral-worth-label5,
-.collateral-worth-label6,
-.collateralcount1 {
+.collateral-worth-label6 {
   width: 300px;
 }
-.collateral-worth-label6,
-.collateralcount1 {
+.collateral-worth-label6 {
   align-items: flex-start;
   justify-content: flex-end;
   font-size: var(--uppercase-small-size);
+}
+.collateralcount-child {
+  position: relative;
+  border-top: 1px solid var(--black-000000100);
+  box-sizing: border-box;
+  width: 299px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.collateral-worth-label11 {
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.div20 {
+  position: relative;
+  font-size: var(--uppercase-small-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+}
+.collateral-worth-label12,
+.collateralcount1 {
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 .collateralcount1 {
   border-radius: var(--br-xs);
@@ -70,7 +102,7 @@
   gap: var(--gap-2xs);
   font-size: var(--body-semibold-size);
 }
-.primary-button5 {
+.primary-button6 {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -83,8 +115,8 @@
 .reviewtheorder {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-5xl);
-  background-color: var(--primary1);
+  padding: var(--padding-6xs) var(--padding-6xl);
+  background-color: var(--primary);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;

@@ -283,17 +283,22 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
             <div className="worth-in-dollar">{netfeelyr} LYR</div>
           </div>
           <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">
-              ${" "}
-              {netfeedollar.toLocaleString(undefined, {
-                maximumFractionDigits: 2
-              })}
-            </div>
+            <div className="worth-in-dollar">$ 103</div>
+          </div>
+        </div>
+        <div className="collateralcount-child" />
+        <div className="sellatprice-parent">
+          <div className="collateral-worth-label11">
+            <div className="worth-in-dollar">1234 LYR</div>
+          </div>
+          <div className="collateral-worth-label12">
+            <div className="worth-in-dollar">Total:</div>
+            <div className="div20">$ 103</div>
           </div>
         </div>
       </div>
       <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
-        <div className="primary-button5">Review the Order</div>
+        <div className="primary-button6">Review the Order</div>
       </button>
     </div>
   );

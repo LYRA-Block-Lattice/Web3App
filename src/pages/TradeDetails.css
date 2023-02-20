@@ -29,7 +29,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.utility-button1 {
+.utility-button {
   position: relative;
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
