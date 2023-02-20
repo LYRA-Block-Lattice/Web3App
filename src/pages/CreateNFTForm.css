@@ -38,7 +38,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.secondary-button2 {
+.secondary-button4 {
   position: relative;
   font-size: var(--body-s-size);
   letter-spacing: 0.41px;
@@ -49,13 +49,13 @@
   text-align: center;
 }
 .createnftform,
-.prepare-sell-order-button10 {
+.prepare-sell-order-button14 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button10 {
+.prepare-sell-order-button14 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);

@@ -26,8 +26,8 @@ const CreateTOTForm: FunctionComponent = () => {
   return (
     <>
       <div className="createtotform">
-        <form className="createtottosellform1">
-          <div className="create-and-sell1">Create and Sell [TOT/SKU]</div>
+        <form className="createtottosellform">
+          <div className="create-and-sell">Create and Sell [TOT/SKU]</div>
           <FormControl sx={{ width: 301 }} variant="outlined">
             <InputLabel color="primary">Select Type of TOT</InputLabel>
             <Select color="primary" size="medium" label="Select Type of TOT">
@@ -40,7 +40,7 @@ const CreateTOTForm: FunctionComponent = () => {
             <FormHelperText />
           </FormControl>
           <TextField
-            className="tot-name3"
+            className="tot-name"
             sx={{ width: 301 }}
             color="primary"
             variant="outlined"
@@ -60,7 +60,7 @@ const CreateTOTForm: FunctionComponent = () => {
             margin="none"
           />
           <TextField
-            className="tot-name3"
+            className="tot-name"
             sx={{ width: 301 }}
             color="primary"
             variant="outlined"
@@ -71,16 +71,16 @@ const CreateTOTForm: FunctionComponent = () => {
             margin="none"
           />
           <button
-            className="prepare-sell-order-button20"
+            className="prepare-sell-order-button7"
             onClick={openSignTradeSecretPopup}
           >
-            <div className="utility-button8">Sign trade secret</div>
+            <div className="utility-button3">Sign trade secret</div>
           </button>
-          <div className="note-i-need3">
+          <div className="note-i-need">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <button className="prepare-sell-order-button21">
-            <div className="secondary-button7">Create TOT</div>
+          <button className="prepare-sell-order-button8">
+            <div className="secondary-button2">Create TOT</div>
           </button>
         </form>
       </div>

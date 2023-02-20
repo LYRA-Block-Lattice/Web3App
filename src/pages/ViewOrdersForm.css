@@ -1,4 +1,4 @@
-.utility-button3,
+.utility-button5,
 .view-orders {
   position: relative;
   letter-spacing: 0.41px;
@@ -10,13 +10,13 @@
   width: 168px;
   flex-shrink: 0;
 }
-.utility-button3 {
+.utility-button5 {
   font-size: var(--font-size-xl);
   font-family: var(--caption);
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button6 {
+.prepare-sell-order-button10 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);

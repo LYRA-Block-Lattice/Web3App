@@ -21,17 +21,22 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   return (
     <div className="priceandcollateralform">
       <div className="price-and-collateral">Price and Collateral</div>
-      <TextField
-        className="sellatprice"
-        sx={{ width: 320 }}
-        color="primary"
-        variant="outlined"
-        type="number"
-        label="Price for biding token"
-        placeholder="1.0"
-        size="medium"
-        margin="none"
-      />
+      <div className="sellatprice-parent">
+        <TextField
+          className="sellatprice"
+          sx={{ width: 320 }}
+          color="primary"
+          variant="outlined"
+          type="number"
+          label="Price for biding token"
+          placeholder="1.0"
+          size="medium"
+          margin="none"
+        />
+        <div className="worth-in-dollar-100-wrapper">
+          <div className="worth-in-dollar">Worth in dollar: $100</div>
+        </div>
+      </div>
       <div className="sellatprice-parent">
         <TextField
           className="sellatprice"
@@ -92,7 +97,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
           <TextField
             {...params}
             color="primary"
-            label="Select DAO witch the order will be created in"
+            label="Choose a regulatory DAO"
             variant="outlined"
             placeholder=""
             helperText=""

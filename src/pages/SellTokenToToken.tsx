@@ -19,14 +19,14 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
-        <form className="searchtokenbyname2">
+        <form className="searchtokenbyname">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
             <button
-              className="prepare-sell-order-button22"
+              className="prepare-sell-order-button9"
               onClick={openGeneralPopup}
             >
-              <div className="utility-button9">Mint</div>
+              <div className="utility-button4">Mint</div>
             </button>
           </div>
           <Autocomplete

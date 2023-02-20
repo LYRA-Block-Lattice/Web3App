@@ -3,17 +3,12 @@
   font-weight: 500;
 }
 .im-selling,
-.preview-sell-order,
-.token-name {
+.preview-sell-order {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   display: inline-block;
   width: 300px;
-}
-.token-name {
-  width: 143px;
-  flex-shrink: 0;
 }
 .nft-name {
   width: 320px;
@@ -101,6 +96,14 @@
   height: 157px;
   flex-shrink: 0;
 }
+.a-great-dao {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  display: inline-block;
+  width: 143px;
+  flex-shrink: 0;
+}
 .collateral-worth-label {
   width: 283px;
   overflow: hidden;
@@ -173,14 +176,14 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button9,
+.prepare-sell-order-button13,
 .previewsellorderform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button9 {
+.prepare-sell-order-button13 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
