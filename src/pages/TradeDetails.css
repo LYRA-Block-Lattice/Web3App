@@ -29,7 +29,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.utility-button {
+.utility-button1 {
   position: relative;
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
@@ -39,13 +39,13 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button,
+.prepare-sell-order-button1,
 .tradedetails {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
 }
-.prepare-sell-order-button {
+.prepare-sell-order-button1 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);

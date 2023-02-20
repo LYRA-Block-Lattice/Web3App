@@ -91,7 +91,7 @@ const SendTokenForm: FunctionComponent = () => {
         required
         onChange={(e) => setAmount(+e.target.value)}
       />
-      <button className="prepare-sell-order-button3" onClick={doSend}>
+      <button className="prepare-sell-order-button4" onClick={doSend}>
         <div className="primary-button">Send</div>
       </button>
     </div>

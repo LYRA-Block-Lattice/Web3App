@@ -25,13 +25,13 @@
   text-align: center;
 }
 .mint-fiat-token,
-.prepare-sell-order-button5 {
+.prepare-sell-order-button6 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button5 {
+.prepare-sell-order-button6 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);

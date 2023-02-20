@@ -85,7 +85,7 @@ const MintFiatToken: FunctionComponent<TokenMintProps> = (props) => {
           margin="none"
           onChange={(e) => setSupply(+e.target.value)}
         />
-        <button className="prepare-sell-order-button5" onClick={onMintClick}>
+        <button className="prepare-sell-order-button6" onClick={onMintClick}>
           <div className="secondary-button">Print</div>
         </button>
       </div>

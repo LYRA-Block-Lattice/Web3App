@@ -219,23 +219,32 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         size="medium"
       />
       <div className="collateralcount1">
-        <div className="collateral-worth-label5">
-          <div className="worth-in-dollar">
-            Collateral {dao?.sellerPar}%, eq: 100 LYR
+        <div className="sellatprice-parent">
+          <div className="collateral-worth-label5">
+            <div className="worth-in-dollar">Collateral value: 120%</div>
+            <div className="worth-in-dollar">1234 LYR</div>
           </div>
-          <div className="worth-in-dollar">$ 103</div>
+          <div className="collateral-worth-label6">
+            <div className="worth-in-dollar">$ 103</div>
+          </div>
         </div>
-        <div className="collateral-worth-label5">
-          <div className="worth-in-dollar">
-            DAO fee {dao?.sellerFeeRatio}% eq: 100 LYR
+        <div className="sellatprice-parent">
+          <div className="collateral-worth-label5">
+            <div className="worth-in-dollar">DAO fee: 1%</div>
+            <div className="worth-in-dollar">1234 LYR</div>
           </div>
-          <div className="worth-in-dollar">$ 103</div>
+          <div className="collateral-worth-label6">
+            <div className="worth-in-dollar">$ 103</div>
+          </div>
         </div>
-        <div className="collateral-worth-label5">
-          <div className="worth-in-dollar">
-            Network fee {LyraGlobal.OfferingNetworkFeeRatio}% eq: 100 LYR
+        <div className="sellatprice-parent">
+          <div className="collateral-worth-label5">
+            <div className="worth-in-dollar">Network fee 0.2%</div>
+            <div className="worth-in-dollar">1234 LYR</div>
           </div>
-          <div className="worth-in-dollar">$ 103</div>
+          <div className="collateral-worth-label6">
+            <div className="worth-in-dollar">$ 103</div>
+          </div>
         </div>
       </div>
       <button className="reviewtheorder" onClick={onReviewTheOrderClick}>

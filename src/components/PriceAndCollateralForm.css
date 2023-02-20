@@ -33,25 +33,31 @@
   flex-direction: column;
 }
 .collateral-worth-label5,
+.collateral-worth-label6,
 .collateralcount1,
 .limitoftrade {
   overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 .limitoftrade {
   width: 320px;
   padding: var(--padding-6xs) 0;
   box-sizing: border-box;
-  justify-content: space-between;
   font-size: var(--body-s-size);
 }
 .collateral-worth-label5,
+.collateral-worth-label6,
 .collateralcount1 {
-  width: 283px;
-  justify-content: flex-start;
-  gap: var(--gap-md);
+  width: 300px;
+}
+.collateral-worth-label6,
+.collateralcount1 {
+  align-items: flex-start;
+  justify-content: flex-end;
+  font-size: var(--uppercase-small-size);
 }
 .collateralcount1 {
   border-radius: var(--br-xs);
@@ -60,7 +66,6 @@
   flex-direction: column;
   padding: var(--padding-6xs);
   box-sizing: border-box;
-  align-items: flex-start;
   justify-content: center;
   gap: var(--gap-2xs);
   font-size: var(--body-semibold-size);
@@ -79,7 +84,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-5xl);
-  background-color: var(--primary);
+  background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
