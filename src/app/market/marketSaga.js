@@ -20,7 +20,7 @@ function* getOrders(action) {
     type: actionTypes.MARKET_GET_ORDERS_SUCCESS,
     payload: {
       cat: action.payload.cat,
-      data: orders.data
+      data: orders
     }
   });
 }
@@ -31,7 +31,7 @@ function* getOwnOrders(action) {
   );
   yield put({
     type: actionTypes.MARKET_GET_OWN_ORDERS_SUCCESS,
-    payload: orders.data
+    payload: orders
   });
 }
 
@@ -41,7 +41,7 @@ function* getOwnTrades(action) {
   );
   yield put({
     type: actionTypes.MARKET_GET_OWN_TRADES_SUCCESS,
-    payload: trades.data
+    payload: trades
   });
 }
 
@@ -49,7 +49,7 @@ function* getOrderById(action) {
   const order = yield BlockchainAPI.fetchOrderById(action.payload.orderId);
   yield put({
     type: actionTypes.MARKET_GET_ORDER_BY_ID_SUCCESS,
-    payload: order.data
+    payload: order
   });
 }
 
@@ -58,9 +58,9 @@ function* getDealer(action) {
   yield put({
     type: actionTypes.MARKET_GET_DEALER_OK,
     payload: {
-      AccountId: brief.data.AccountId,
-      ServiceId: brief.data.ServiceId,
-      Name: brief.data.Name
+      AccountId: brief.AccountId,
+      ServiceId: brief.ServiceId,
+      Name: brief.Name
     }
   });
 }
@@ -69,7 +69,7 @@ function* findDao(action) {
   const dao = yield BlockchainAPI.searchDao(action.payload);
   yield put({
     type: actionTypes.BLOCKCHAIN_FIND_DAO_OK,
-    payload: dao.data
+    payload: dao
   });
 }
 

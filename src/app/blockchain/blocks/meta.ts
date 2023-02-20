@@ -245,6 +245,22 @@ export enum HoldTypes {
   SVC
 }
 
+export function getHoldType(token: string): HoldTypes {
+  const secs = token.split("/");
+  switch (secs[0]) {
+    case "tot":
+      return HoldTypes.TOT;
+    case "nft":
+      return HoldTypes.NFT;
+    case "svc":
+      return HoldTypes.SVC;
+    case "fiat":
+      return HoldTypes.Fiat;
+    default:
+      return HoldTypes.Token;
+  }
+}
+
 export enum APIResultCodes {
   Success = 0,
   UnknownError = 1,

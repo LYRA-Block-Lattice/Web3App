@@ -428,7 +428,7 @@ export class LyraApi {
     return result2;
   }
 
-  async createUniOrder(order: UniOrder): Promise<AuthorizationAPIResult> {
+  async createOrder(order: UniOrder): Promise<AuthorizationAPIResult> {
     let tags: Tags = {
       [LyraGlobal.REQSERVICETAG]: BrokerActions.BRK_UNI_CRODR,
       data: stringify(order)

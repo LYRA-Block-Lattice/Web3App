@@ -7,6 +7,8 @@ import * as actionTypes from "../actionTypes";
 import persist from "../lyra/persist";
 import * as Dex from "../lyra/dexapi";
 import { ContractTypes } from "../blockchain";
+import { UniOrder } from "../blockchain/blocks/block";
+import { getHoldType } from "../blockchain/blocks/meta";
 
 function getWallet() {
   const userToken = JSON.parse(sessionStorage.getItem("token"));
@@ -69,7 +71,7 @@ function* receive(action) {
     const accountId = action.payload;
 
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 
@@ -283,7 +285,7 @@ function* mintToken(action) {
 function* mintNFT(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 
@@ -315,7 +317,7 @@ function* mintNFT(action) {
 function* mintTOT(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 
@@ -348,7 +350,7 @@ function* mintTOT(action) {
 function* printFiat(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 
@@ -378,9 +380,24 @@ function* printFiat(action) {
 function* createOrder(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
+
+    var order = new UniOrder();
+    order.daoId = action.payload.order.daoid;
+    order.dealerId = action.payload.order.dealerid;
+    order.offerby = getHoldType(action.payload.order.selltoken);
+    order.offering = action.payload.order.selltoken;
+    order.bidby = getHoldType(action.payload.order.gettoken);
+    order.biding = action.payload.order.gettoken;
+    order.amount = action.payload.order.count;
+    order.price = action.payload.order.price;
+    order.eqprice = action.payload.order.eqprice;
+    order.limitMax = action.payload.order.limitmax;
+    order.limitMin = action.payload.order.limitmin;
+    order.payBy = action.payload.order.payBy;
+    order.cltamt = action.payload.order.collateral;
 
     const balanceResp = yield wallet.createOrder(action.payload.order);
     console.log("createOrder", balanceResp);
@@ -402,7 +419,7 @@ function* createOrder(action) {
 function* delistOrder(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 
@@ -433,7 +450,7 @@ function* delistOrder(action) {
 function* closeOrder(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 
@@ -464,7 +481,7 @@ function* closeOrder(action) {
 function* createTrade(action) {
   try {
     const wallet = getWallet();
-    if (wallet.accountId !== accountId) {
+    if (wallet.accountId !== action.payload.accountId) {
       throw new Error("Invalid account id");
     }
 

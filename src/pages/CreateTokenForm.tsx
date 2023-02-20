@@ -29,7 +29,8 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
         name: name,
         desc: desc,
         domain: domain,
-        supply: supply
+        supply: supply,
+        tag: "mint " + name
       }
     });
   }, [name, desc, domain, supply]);
