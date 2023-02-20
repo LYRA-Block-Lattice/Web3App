@@ -10,11 +10,11 @@
   display: inline-block;
   width: 296px;
 }
-.total-supply {
+.token-name {
   border: 0;
   background-color: transparent;
 }
-.secondary-button6 {
+.secondary-button1 {
   position: relative;
   font-size: var(--body-s-size);
   letter-spacing: 0.41px;
@@ -25,13 +25,13 @@
   text-align: center;
 }
 .createtokenform,
-.prepare-sell-order-button19 {
+.prepare-sell-order-button6 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button19 {
+.prepare-sell-order-button6 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);

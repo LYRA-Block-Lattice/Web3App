@@ -75,14 +75,14 @@ const SellTokenToToken: FunctionComponent = () => {
     <>
       <div className="selltokentotoken">
         <PrimaryAccountCard />
-        <div className="searchtokenbyname2">
+        <div className="searchtokenbyname">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
             <button
-              className="prepare-sell-order-button22"
+              className="prepare-sell-order-button9"
               onClick={openGeneralPopup}
             >
-              <div className="utility-button9">Mint</div>
+              <div className="utility-button4">Mint</div>
             </button>
           </div>
           <SearchTokenInput

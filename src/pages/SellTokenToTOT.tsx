@@ -20,7 +20,7 @@ const SellTokenToTOT: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotot">
-        <form className="searchtokenbyname">
+        <form className="searchtokenbyname1">
           <div className="sell">Sell</div>
           <Autocomplete
             sx={{ width: 301 }}
@@ -41,23 +41,23 @@ const SellTokenToTOT: FunctionComponent = () => {
         </form>
         <form className="togettotform">
           <div className="sell">To get [TOT/SKU/SVC]</div>
-          <input className="tot-name" type="text" placeholder="Name" />
+          <input className="tot-name1" type="text" placeholder="Name" />
           <input
             className="tot-description2"
             type="text"
             placeholder="Public Description, seen by everyone"
           />
           <button
-            className="prepare-sell-order-button13"
+            className="prepare-sell-order-button17"
             onClick={openSignTradeSecretPopup}
           >
-            <div className="utility-button5">Sign trade secret</div>
+            <div className="utility-button7">Sign trade secret</div>
           </button>
-          <div className="note-i-need">
+          <div className="note-i-need1">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <button className="prepare-sell-order-button14">
-            <div className="secondary-button3">Create TOT</div>
+          <button className="prepare-sell-order-button18">
+            <div className="secondary-button5">Create TOT</div>
           </button>
         </form>
         <PriceAndCollateralForm offering="offering" biding="biding" />

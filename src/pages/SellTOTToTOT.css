@@ -11,7 +11,7 @@
   width: 296px;
 }
 .tot-description3,
-.tot-name1 {
+.tot-name2 {
   border: 0;
   font-family: var(--caption);
   font-size: var(--body-s-size);
@@ -32,7 +32,7 @@
   height: 124px;
   align-items: flex-start;
 }
-.utility-button6 {
+.utility-button8 {
   position: relative;
   font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
@@ -42,7 +42,7 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button15 {
+.prepare-sell-order-button19 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
@@ -57,27 +57,27 @@
   align-items: center;
   justify-content: center;
 }
-.note-i-need1,
-.secondary-button4 {
+.note-i-need2,
+.secondary-button6 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-family: var(--caption);
 }
-.note-i-need1 {
+.note-i-need2 {
   font-size: var(--body-semibold-size);
   color: var(--black-000000100);
   text-align: left;
   display: inline-block;
   width: 292px;
 }
-.secondary-button4 {
+.secondary-button6 {
   font-size: var(--body-s-size);
   font-weight: 500;
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button16 {
+.prepare-sell-order-button20 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);

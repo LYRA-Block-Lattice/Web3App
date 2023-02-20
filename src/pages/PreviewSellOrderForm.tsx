@@ -72,11 +72,11 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       <div className="preview-sell-order">Preview Sell Order</div>
       <div className="im-selling">I’m selling:</div>
       <div className="nft-name">
-        <div className="token-name">{obj.selltoken}</div>
+        <div className="a-great-dao">{obj.selltoken}</div>
       </div>
       <div className="im-selling">Buyer will pay me by:</div>
       <div className="nft-name">
-        <div className="token-name">{obj.gettoken}</div>
+        <div className="a-great-dao">{obj.gettoken}</div>
       </div>
       <div className="im-selling">Price, amount, and I’ll get:</div>
       <div className="nft-name-parent">
@@ -109,7 +109,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
       </div>
       <div className="im-selling">The trade will be created in DAO:</div>
       <div className="nft-name">
-        <div className="token-name">A Great DAO</div>
+        <div className="a-great-dao">A Great DAO</div>
       </div>
       <div className="im-selling">I need to send:</div>
       <div className="collateralcount">
@@ -161,7 +161,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         }
       />
       <button
-        className="prepare-sell-order-button9"
+        className="prepare-sell-order-button13"
         onClick={onPrepareSellOrderButtonClick}
       >
         <div className="primary-button2">Place Order</div>

@@ -20,39 +20,39 @@ const SellTOTToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltottotoken">
-        <form className="createtottosellform">
-          <div className="create-and-sell">Create and Sell [TOT/SKU]</div>
+        <form className="createtottosellform1">
+          <div className="to-get-tokennft">Create and Sell [TOT/SKU]</div>
           <select className="selecttypeoftot">
             <option value="sku">Goods</option>
             <option value="svc">Service</option>
             <option value="tot">Generic Trade only TOken</option>
           </select>
-          <input className="tot-supply" type="text" placeholder="TOT Name" />
+          <input className="tot-name3" type="text" placeholder="TOT Name" />
           <input
             className="tot-description4"
             type="text"
             placeholder="Public Description, seen by everyone"
           />
           <input
-            className="tot-supply"
+            className="tot-name3"
             type="number"
             placeholder="Total Supply"
           />
           <button
-            className="prepare-sell-order-button17"
+            className="prepare-sell-order-button21"
             onClick={openSignTradeSecretPopup}
           >
-            <div className="utility-button7">Sign trade secret</div>
+            <div className="utility-button9">Sign trade secret</div>
           </button>
-          <div className="note-i-need2">
+          <div className="note-i-need3">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <button className="prepare-sell-order-button18">
-            <div className="secondary-button5">Create TOT</div>
+          <button className="prepare-sell-order-button22">
+            <div className="secondary-button7">Create TOT</div>
           </button>
         </form>
-        <form className="searchtokenbyname1">
-          <div className="create-and-sell">To get Token/NFT</div>
+        <form className="searchtokenbyname2">
+          <div className="to-get-tokennft">To get Token/NFT</div>
           <Autocomplete
             sx={{ width: 301 }}
             disablePortal

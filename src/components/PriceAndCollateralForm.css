@@ -1,5 +1,6 @@
 .price-and-collateral {
   position: relative;
+  font-size: var(--font-size-7xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -30,7 +31,6 @@
 }
 .sellatprice-parent {
   flex-direction: column;
-  font-size: var(--caption-size);
 }
 .collateral-worth-label5,
 .collateralcount1,
@@ -105,7 +105,7 @@
   justify-content: flex-start;
   gap: var(--gap-2xl);
   text-align: left;
-  font-size: var(--font-size-7xl);
+  font-size: var(--caption-size);
   color: var(--black-000000100);
   font-family: var(--caption);
 }
