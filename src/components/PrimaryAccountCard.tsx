@@ -13,7 +13,7 @@ const PrimaryAccountCard: FunctionComponent = () => {
     <div className="wallet-card">
       <div className="wallet-card-inner">
         <div className="rectangle-wrapper">
-          <div className="rectangle" />
+          <div className="rectangle2" />
         </div>
       </div>
       <div className="wallet-card-child">

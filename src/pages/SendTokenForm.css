@@ -19,7 +19,7 @@
   border: 0;
   background-color: transparent;
 }
-.primary-button {
+.primary-button1 {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -39,8 +39,8 @@
 .prepare-sell-order-button4 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-5xl);
-  background-color: var(--primary1);
+  padding: var(--padding-6xs) var(--padding-6xl);
+  background-color: var(--primary);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;

@@ -7,7 +7,7 @@ const WalletCard: FunctionComponent = () => {
     <div className="wallet-card1">
       <div className="wallet-card-inner1">
         <div className="rectangle-container">
-          <div className="rectangle1" />
+          <div className="rectangle3" />
         </div>
       </div>
       <div className="frame-container">

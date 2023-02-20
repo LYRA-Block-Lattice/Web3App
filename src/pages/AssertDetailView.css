@@ -96,6 +96,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+.icoutline-remove-red-eye-parent {
   gap: var(--gap-xs);
 }
 .assertstatssection {
@@ -174,10 +176,12 @@
 .div8,
 .tetherusdt {
   position: relative;
-  font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
+}
+.tetherusdt {
+  font-size: var(--font-size-xl);
 }
 .div8 {
   font-size: var(--caption-size);
@@ -236,7 +240,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.primary-button1 {
+.primary-button2 {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -257,8 +261,8 @@
 .prepare-sell-order-button5 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-5xl);
-  background-color: var(--primary1);
+  padding: var(--padding-6xs) var(--padding-6xl);
+  background-color: var(--primary);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
