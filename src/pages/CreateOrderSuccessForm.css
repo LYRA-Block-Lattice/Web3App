@@ -26,7 +26,7 @@
   font-weight: 100;
 }
 .blvm6g1jjkwuz8ocens7fuuswjqdr3,
-.secondary-button3,
+.secondary-button1,
 .view-on-block {
   position: relative;
   letter-spacing: 0.41px;
@@ -38,7 +38,7 @@
   display: inline-block;
   width: 292px;
 }
-.secondary-button3 {
+.secondary-button1 {
   font-size: var(--font-size-3xl);
   font-weight: 500;
   font-family: var(--caption);
@@ -46,13 +46,13 @@
   text-align: center;
 }
 .createordersuccessform,
-.prepare-sell-order-button11 {
+.prepare-sell-order-button7 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button11 {
+.prepare-sell-order-button7 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);

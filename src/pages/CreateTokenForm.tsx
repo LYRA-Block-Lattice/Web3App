@@ -7,7 +7,7 @@ const CreateTokenForm: FunctionComponent = () => {
     <form className="createtokenform">
       <div className="mint-token">Mint Token</div>
       <TextField
-        className="token-name"
+        className="total-supply"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -17,7 +17,7 @@ const CreateTokenForm: FunctionComponent = () => {
         margin="none"
       />
       <TextField
-        className="token-name"
+        className="total-supply"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -37,7 +37,7 @@ const CreateTokenForm: FunctionComponent = () => {
         margin="none"
       />
       <TextField
-        className="token-name"
+        className="total-supply"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -47,8 +47,8 @@ const CreateTokenForm: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <button className="prepare-sell-order-button6">
-        <div className="secondary-button1">Mint Token</div>
+      <button className="prepare-sell-order-button19">
+        <div className="secondary-button6">Mint Token</div>
       </button>
     </form>
   );

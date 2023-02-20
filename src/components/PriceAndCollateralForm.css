@@ -1,67 +1,69 @@
 .price-and-collateral {
-  font-size: var(--font-size-7xl);
-  font-weight: 500;
-  display: inline-block;
-  width: 296px;
-}
-.price-and-collateral,
-.set-the-price {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
-}
-.set-the-price-one-parent {
-  width: 321px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-6xs);
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-2xs);
+  font-weight: 500;
+  display: inline-block;
+  width: 320px;
 }
 .sellatprice {
   border: 0;
   background-color: transparent;
 }
-.limitoftrade {
-  width: 322px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-6xs);
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-md);
-  font-size: var(--body-s-size);
-}
-.collateral-in-lyr {
+.worth-in-dollar {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
-  display: inline-block;
-  width: 292px;
 }
-.collateral-section,
-.collateral-worth-label {
-  overflow: hidden;
+.sellatprice-parent,
+.worth-in-dollar-100-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.collateral-worth-label {
-  width: 314px;
+.worth-in-dollar-100-wrapper {
+  width: 320px;
+  overflow: hidden;
   flex-direction: row;
   padding: 0 var(--padding-6xs);
   box-sizing: border-box;
+}
+.sellatprice-parent {
+  flex-direction: column;
+  font-size: var(--caption-size);
+}
+.collateral-worth-label5,
+.collateralcount1,
+.limitoftrade {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.limitoftrade {
+  width: 320px;
+  padding: var(--padding-6xs) 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  font-size: var(--body-s-size);
+}
+.collateral-worth-label5,
+.collateralcount1 {
+  width: 283px;
+  justify-content: flex-start;
   gap: var(--gap-md);
 }
-.collateral-section {
+.collateralcount1 {
+  border-radius: var(--br-xs);
+  background-color: var(--color-gray-200);
+  width: 320px;
   flex-direction: column;
   padding: var(--padding-6xs);
-  gap: var(--gap-6xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-2xs);
+  font-size: var(--body-semibold-size);
 }
 .primary-button5 {
   position: relative;
@@ -103,7 +105,7 @@
   justify-content: flex-start;
   gap: var(--gap-2xl);
   text-align: left;
-  font-size: var(--body-semibold-size);
+  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
   font-family: var(--caption);
 }

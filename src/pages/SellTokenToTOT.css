@@ -10,22 +10,22 @@
   display: inline-block;
   width: 296px;
 }
-.searchtokenbyname1,
+.searchtokenbyname,
 .tot-description2,
-.tot-name1 {
+.tot-name {
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.searchtokenbyname1 {
+.searchtokenbyname {
   background-color: var(--color-white);
   flex-direction: column;
   padding: var(--padding-xl) var(--padding-2xs);
   gap: var(--gap-4xl);
 }
 .tot-description2,
-.tot-name1 {
+.tot-name {
   border: 0;
   font-family: var(--caption);
   font-size: var(--body-s-size);
@@ -42,7 +42,7 @@
   height: 124px;
   align-items: flex-start;
 }
-.utility-button7 {
+.utility-button5 {
   position: relative;
   font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
@@ -52,7 +52,7 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button17 {
+.prepare-sell-order-button13 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-lg);
@@ -67,27 +67,27 @@
   align-items: center;
   justify-content: center;
 }
-.note-i-need1,
-.secondary-button5 {
+.note-i-need,
+.secondary-button3 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-family: var(--caption);
 }
-.note-i-need1 {
+.note-i-need {
   font-size: var(--body-semibold-size);
   color: var(--black-000000100);
   text-align: left;
   display: inline-block;
   width: 292px;
 }
-.secondary-button5 {
+.secondary-button3 {
   font-size: var(--body-s-size);
   font-weight: 500;
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button18 {
+.prepare-sell-order-button14 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);

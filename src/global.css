@@ -55,6 +55,7 @@ body {
   --text-primary-dark1: #424242;
   --default-black: #272c34;
   --color-black: #1b2749;
+  --color-gray-200: rgba(0, 0, 0, 0.05);
   --text-secondary1: rgba(0, 0, 0, 0.54);
   --color-lightyellow: #f6ffde;
   --color-silver-100: rgba(209, 190, 190, 0.47);

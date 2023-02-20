@@ -19,10 +19,18 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
-        <form className="searchtokenbyname">
-          <div className="to-sell-token">To Sell Token</div>
+        <form className="searchtokenbyname2">
+          <div className="to-sell-token-parent">
+            <div className="to-sell-token">To Sell Token</div>
+            <button
+              className="prepare-sell-order-button22"
+              onClick={openGeneralPopup}
+            >
+              <div className="utility-button9">Mint</div>
+            </button>
+          </div>
           <Autocomplete
-            sx={{ width: 301 }}
+            sx={{ width: 320 }}
             disablePortal
             options={["aaa", "bbb", "ccc"]}
             renderInput={(params: any) => (
@@ -37,16 +45,9 @@ const SellTokenToToken: FunctionComponent = () => {
             )}
             size="medium"
           />
-          <button
-            className="prepare-sell-order-button9"
-            onClick={openGeneralPopup}
-          >
-            <div className="utility-button4">Mint to sell</div>
-          </button>
-          <div className="searchtokenbyname-child" />
-          <div className="to-sell-token">To Get Fiat</div>
+          <div className="to-get-fiat">To Get Fiat</div>
           <Autocomplete
-            sx={{ width: 301 }}
+            sx={{ width: 320 }}
             disablePortal
             options={["aaa", "bbb", "ccc"]}
             renderInput={(params: any) => (
@@ -62,7 +63,7 @@ const SellTokenToToken: FunctionComponent = () => {
             size="medium"
           />
         </form>
-        <PriceAndCollateralForm offering="offering" biding="biding" />
+        <PriceAndCollateralForm />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup
