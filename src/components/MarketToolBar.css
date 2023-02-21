@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
 }
-.ranking13 {
+.ranking14 {
   position: relative;
   font-size: var(--regular-body-size);
   line-height: 18px;
@@ -36,12 +36,21 @@
   color: var(--black-000000100);
   text-align: left;
 }
+.markettoolbar,
 .swap-button-container {
-  align-self: stretch;
   display: flex;
-  flex-direction: row;
-  padding: var(--padding-7xs) 0;
   align-items: center;
   justify-content: center;
+}
+.swap-button-container {
+  align-self: stretch;
+  flex-direction: row;
+  padding: var(--padding-7xs) 0;
   gap: var(--gap-md);
+}
+.markettoolbar {
+  border-radius: var(--br-sm);
+  background-color: var(--color-whitesmoke-200);
+  flex-direction: column;
+  padding: var(--padding-7xs) var(--padding-6xs);
 }

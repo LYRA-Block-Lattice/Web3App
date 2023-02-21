@@ -37,20 +37,20 @@
   padding: var(--padding-7xs) 0;
   gap: var(--gap-md);
 }
-.iconssection-container,
-.iconssection1 {
+.iconssection,
+.iconssection-wrapper {
   align-self: stretch;
   display: flex;
   flex-direction: column;
 }
-.iconssection1 {
+.iconssection {
   border-radius: var(--br-sm);
   background-color: var(--color-whitesmoke-200);
   padding: var(--padding-7xs) var(--padding-6xs);
   align-items: center;
   justify-content: center;
 }
-.iconssection-container {
+.iconssection-wrapper {
   align-items: flex-start;
   justify-content: flex-start;
 }

@@ -77,7 +77,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
             <b className="sold">Sell</b>
             <b className="sold">{offering}</b>
             <img
-              className="frame-child4"
+              className="frame-child5"
               alt=""
               src="../asserts/arrow-22.svg"
             />

@@ -9,11 +9,13 @@ const Market: FunctionComponent = () => {
   return (
     <div className="market">
       <PrimaryAccountCard />
-      <div className="iconssection-wrapper">
-        <div className="iconssection">
-          <MarketToolBar />
-        </div>
-      </div>
+      <MarketToolBar
+        homeIconInterlocution="../asserts/home--icon--interlocution.svg"
+        homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"
+        homeIconInterlocution2="../asserts/home--icon--interlocution2.svg"
+        homeIconInterlocution3="../asserts/home--icon--interlocution3.svg"
+        homeIconInterlocution4="../asserts/home--icon--interlocution4.svg"
+      />
       <div className="searchsection">
         <input
           className="searchsection-child"
