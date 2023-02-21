@@ -18,11 +18,11 @@ import SellTokenToToken from "./pages/SellTokenToToken";
 import ViewTradesForm from "./pages/ViewTradesForm";
 import ViewOrdersForm from "./pages/ViewOrdersForm";
 import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
-import PreviewSellOrderForm from "./pages/PreviewSellOrderForm";
 import CreateNFTForm from "./pages/CreateNFTForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
+import PreviewSellOrderForm from "./pages/PreviewSellOrderForm";
 import Redir from "./pages/Redir";
 import About from "./pages/About";
 import ScanToPay from "./pages/ScanToPay";
@@ -104,10 +104,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/previewsellorderform":
-        title = "";
-        metaDescription = "";
-        break;
       case "/createnftform":
         title = "";
         metaDescription = "";
@@ -121,6 +117,10 @@ function App() {
         metaDescription = "";
         break;
       case "/openwallet":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/previewsellorderform":
         title = "";
         metaDescription = "";
         break;
@@ -201,8 +201,6 @@ function App() {
         element={<CreateOrderSuccessForm />}
       />
 
-      <Route path="/previewsellorderform" element={<PreviewSellOrderForm />} />
-
       <Route path="/createnftform" element={<CreateNFTForm />} />
 
       <Route path="/starttocreateorder" element={<StartToCreateOrder />} />
@@ -210,6 +208,8 @@ function App() {
       <Route path="/create-wallet" element={<CreateWallet />} />
 
       <Route path="/openwallet" element={<OpenWallet />} />
+
+      <Route path="/previewsellorderform" element={<PreviewSellOrderForm />} />
 
       <Route path="/redir" element={<Redir />} />
 

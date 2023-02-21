@@ -1,63 +1,17 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent } from "react";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
-import { useNavigate } from "react-router-dom";
+import MarketToolBar from "../components/MarketToolBar";
+import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import MarketOrder from "../components/MarketOrder";
 import "./Market.css";
 
 const Market: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onSwapButtonClick = useCallback(() => {
-    navigate("/starttocreateorder");
-  }, [navigate]);
-
-  const onSwapButton1Click = useCallback(() => {
-    navigate("/viewordersform");
-  }, [navigate]);
-
-  const onDEXButtonClick = useCallback(() => {
-    navigate("/viewtradesform");
-  }, [navigate]);
-
   return (
     <div className="market">
       <PrimaryAccountCard />
       <div className="iconssection-wrapper">
         <div className="iconssection">
-          <div className="swap-button-parent">
-            <button className="swap-button" onClick={onSwapButtonClick}>
-              <img
-                className="home-icon-interlocution"
-                alt=""
-                src="../asserts/home--icon--interlocution.svg"
-              />
-              <div className="ranking">New Sell</div>
-            </button>
-            <button className="swap-button" onClick={onSwapButton1Click}>
-              <img
-                className="home-icon-interlocution"
-                alt=""
-                src="../asserts/home--icon--interlocution1.svg"
-              />
-              <div className="ranking">My Orders</div>
-            </button>
-            <button className="swap-button" onClick={onDEXButtonClick}>
-              <img
-                className="home-icon-interlocution"
-                alt=""
-                src="../asserts/home--icon--interlocution2.svg"
-              />
-              <div className="ranking">My Trades</div>
-            </button>
-            <button className="swap-button">
-              <img
-                className="home-icon-interlocution"
-                alt=""
-                src="../asserts/home--icon--interlocution3.svg"
-              />
-              <div className="ranking3">ODR</div>
-            </button>
-          </div>
+          <MarketToolBar />
         </div>
       </div>
       <div className="searchsection">
@@ -68,42 +22,8 @@ const Market: FunctionComponent = () => {
         />
       </div>
       <div className="orderandcatalog">
+        <TokenCatalogTabs />
         <div className="tradableorderssection">
-          <div className="catalogtab">
-            <button className="tokentab">
-              <b className="token">Token</b>
-              <div className="ellipse-parent">
-                <img
-                  className="group-child"
-                  alt=""
-                  src="../asserts/ellipse-43.svg"
-                />
-                <div className="div">18</div>
-              </div>
-            </button>
-            <button className="nft-tab">
-              <b className="token">NFT</b>
-              <div className="ellipse-parent">
-                <img
-                  className="group-child"
-                  alt=""
-                  src="../asserts/ellipse-43.svg"
-                />
-                <div className="div">18</div>
-              </div>
-            </button>
-            <button className="fiat-tab">
-              <b className="fiat">Fiat</b>
-            </button>
-            <button className="fiat-tab">
-              <b className="fiat">Goods</b>
-            </button>
-            <button className="fiat-tab">
-              <b className="fiat">Service</b>
-            </button>
-          </div>
-        </div>
-        <div className="tradableorderssection1">
           <MarketOrder
             offeringIcon="../asserts/icbaselinegeneratingtokens.svg"
             bidingIcon="../asserts/carbonuserservicedesk.svg"

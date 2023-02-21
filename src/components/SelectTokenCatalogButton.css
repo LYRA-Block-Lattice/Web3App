@@ -5,7 +5,7 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.token2 {
+.token1 {
   position: relative;
   font-size: var(--font-size-3xl);
   letter-spacing: 0.41px;

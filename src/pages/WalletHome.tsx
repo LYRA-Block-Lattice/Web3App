@@ -3,6 +3,7 @@ import WalletCard from "../components/WalletCard";
 import { useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
+import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import TokenDisplayItem from "../components/TokenDisplayItem";
 import "./WalletHome.css";
 
@@ -32,86 +33,56 @@ const WalletHome: FunctionComponent = () => {
         <WalletCard />
         <div className="iconssection-container">
           <div className="iconssection1">
-            <div className="swap-button-group">
-              <button className="send-button" onClick={onSwapButtonClick}>
+            <div className="swap-button-parent">
+              <button className="swap-button" onClick={onSwapButtonClick}>
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution4.svg"
                 />
-                <div className="ranking4">Market</div>
+                <div className="ranking">Market</div>
               </button>
-              <button className="send-button">
+              <button className="swap-button">
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution5.svg"
                 />
-                <div className="ranking4">Swap</div>
+                <div className="ranking">Swap</div>
               </button>
-              <button className="send-button" onClick={onSendButtonClick}>
+              <button className="swap-button" onClick={onSendButtonClick}>
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution6.svg"
                 />
-                <div className="ranking4">Send</div>
+                <div className="ranking">Send</div>
               </button>
-              <button className="send-button">
+              <button className="swap-button">
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution7.svg"
                 />
-                <div className="ranking4">Receive</div>
+                <div className="ranking">Receive</div>
               </button>
-              <button className="send-button" onClick={openSideMenuPopup}>
+              <button className="swap-button" onClick={openSideMenuPopup}>
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution8.svg"
                 />
-                <div className="ranking4">More...</div>
+                <div className="ranking">More...</div>
               </button>
             </div>
           </div>
         </div>
         <div className="tradableorderssection-parent">
-          <div className="tradableorderssection2">
-            <div className="catalogtab1">
-              <button className="tokentab1">
-                <b className="token1">Token</b>
-                <div className="ellipse-container">
-                  <img
-                    className="group-inner"
-                    alt=""
-                    src="../asserts/ellipse-43.svg"
-                  />
-                  <div className="div4">18</div>
-                </div>
-              </button>
-              <button className="nft-tab1">
-                <b className="token1">NFT</b>
-                <div className="ellipse-container">
-                  <img
-                    className="group-inner"
-                    alt=""
-                    src="../asserts/ellipse-43.svg"
-                  />
-                  <div className="div4">18</div>
-                </div>
-              </button>
-              <button className="fiat-tab1">
-                <b className="fiat1">Fiat</b>
-              </button>
-              <button className="fiat-tab1">
-                <b className="fiat1">Goods</b>
-              </button>
-              <button className="fiat-tab1">
-                <b className="fiat1">Service</b>
-              </button>
-            </div>
-          </div>
+          <TokenCatalogTabs
+            tradableOrdersSectionAlignSelf="unset"
+            tradableOrdersSectionWidth="455px"
+            tradableOrdersSectionBoxSizing="border-box"
+          />
           <div className="coinlisting">
             <TokenDisplayItem
               coinIcon="../asserts/lyralogoblackicon@2x.png"

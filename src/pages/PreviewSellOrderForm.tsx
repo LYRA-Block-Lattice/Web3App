@@ -14,24 +14,24 @@ const PreviewSellOrderForm: FunctionComponent = () => {
     <div className="previewsellorderform">
       <div className="preview-sell-order">Preview Sell Order</div>
       <div className="im-selling">I’m selling:</div>
-      <div className="nft-name">
+      <div className="nft-name1">
         <div className="a-great-dao">Token Name</div>
       </div>
       <div className="im-selling">Buyer will pay me by:</div>
-      <div className="nft-name">
+      <div className="nft-name1">
         <div className="a-great-dao">Token Name</div>
       </div>
       <div className="im-selling">Price, amount, and I’ll get:</div>
       <div className="nft-name-parent">
-        <div className="nft-name2">
+        <div className="nft-name3">
           <div className="amount">Price</div>
         </div>
         <div className="x">X</div>
-        <div className="nft-name2">
+        <div className="nft-name3">
           <div className="amount">Amount</div>
         </div>
         <div className="x">=</div>
-        <div className="nft-name2">
+        <div className="nft-name3">
           <div className="amount">Total</div>
         </div>
       </div>
@@ -51,7 +51,7 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         </div>
       </div>
       <div className="im-selling">The trade will be created in DAO:</div>
-      <div className="nft-name">
+      <div className="nft-name1">
         <div className="a-great-dao">A Great DAO</div>
       </div>
       <div className="im-selling">I need to send:</div>
@@ -84,12 +84,12 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         Total tokens to be send to create an order:
       </div>
       <div className="nft-name-group">
-        <div className="nft-name6">
+        <div className="nft-name7">
           <div className="price-10-tetherusdt">
             1,000,000 LYR, worth $10,000
           </div>
         </div>
-        <div className="nft-name6">
+        <div className="nft-name7">
           <div className="price-10-tetherusdt">
             1,000,000 LYR, worth $10,000
           </div>
@@ -104,10 +104,10 @@ const PreviewSellOrderForm: FunctionComponent = () => {
         }
       />
       <button
-        className="prepare-sell-order-button14"
+        className="prepare-sell-order-button16"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button4">Place Order</div>
+        <div className="primary-button5">Place Order</div>
       </button>
     </div>
   );

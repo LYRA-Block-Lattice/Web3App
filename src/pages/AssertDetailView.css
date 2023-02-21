@@ -141,13 +141,13 @@
   align-self: stretch;
   padding: 0 var(--padding-6xs);
 }
-.div7,
+.div3,
 .tetherusdt {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
 }
-.div7 {
+.div3 {
   font-size: var(--uppercase-small-size);
   font-weight: 500;
   color: var(--color-dimgray-100);

@@ -1,11 +1,11 @@
-.home-icon-interlocution4 {
+.home-icon-interlocution {
   position: relative;
   width: 40px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.ranking4 {
+.ranking {
   position: relative;
   font-size: var(--regular-body-size);
   line-height: 18px;
@@ -13,13 +13,13 @@
   color: var(--black-000000100);
   text-align: left;
 }
-.send-button,
-.swap-button-group {
+.swap-button,
+.swap-button-parent {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.send-button {
+.swap-button {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -31,7 +31,7 @@
   flex-shrink: 0;
   flex-direction: column;
 }
-.swap-button-group {
+.swap-button-parent {
   align-self: stretch;
   flex-direction: row;
   padding: var(--padding-7xs) 0;
@@ -52,114 +52,6 @@
 }
 .iconssection-container {
   align-items: flex-start;
-  justify-content: flex-start;
-}
-.token1 {
-  position: relative;
-  font-size: var(--font-size-xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-family: var(--caption);
-  color: var(--color-white);
-  text-align: center;
-  z-index: 0;
-}
-.div4,
-.group-inner {
-  position: absolute;
-  top: calc(50% - 4px);
-  left: calc(50% - 5.5px);
-  width: 11px;
-  height: 11px;
-}
-.div4 {
-  top: calc(50% - 7px);
-  font-size: var(--font-size-3xs);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-family: var(--caption);
-  color: var(--color-white);
-  text-align: center;
-  display: inline-block;
-  width: 10px;
-  height: 12px;
-}
-.ellipse-container {
-  position: absolute;
-  margin: 0 !important;
-  top: calc(50% - 14px);
-  left: calc(50% + 22.5px);
-  width: 11px;
-  height: 14px;
-  flex-shrink: 0;
-  z-index: 1;
-}
-.nft-tab1,
-.tokentab1 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-7xs) 0;
-  background-color: var(--text-secondary1);
-  border-radius: var(--br-md) var(--br-md) 0 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 80px;
-  height: 32px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: flex-end;
-  justify-content: center;
-  position: relative;
-}
-.nft-tab1 {
-  overflow: hidden;
-}
-.fiat1 {
-  position: relative;
-  font-size: var(--font-size-xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-family: var(--caption);
-  color: var(--color-white);
-  text-align: center;
-}
-.fiat-tab1 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-7xs) 0;
-  background-color: var(--text-secondary1);
-  border-radius: var(--br-md) var(--br-md) 0 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 80px;
-  height: 32px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: flex-end;
-  justify-content: center;
-}
-.catalogtab1,
-.tradableorderssection2 {
-  background-color: var(--color-whitesmoke-200);
-  display: flex;
-  align-items: center;
-}
-.catalogtab1 {
-  width: 424px;
-  overflow: hidden;
-  flex-direction: row;
-  justify-content: center;
-  gap: var(--gap-xs);
-}
-.tradableorderssection2 {
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
-  width: 455px;
-  flex-direction: column;
-  padding: var(--padding-2xs) var(--padding-6xs) 0;
-  box-sizing: border-box;
   justify-content: flex-start;
 }
 .lyralogoblueicon4 {

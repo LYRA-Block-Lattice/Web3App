@@ -2,7 +2,7 @@
   flex: 1;
   position: relative;
   border-radius: var(--br-4xs);
-  background-color: var(--color-deeppink);
+  background-color: var(--secondary1);
   width: 5px;
 }
 .rectangle-wrapper,
@@ -29,7 +29,7 @@
   font-size: var(--font-size-5xl);
   display: inline-block;
   font-family: var(--font-sf-pro-text);
-  color: var(--color-deeppink);
+  color: var(--secondary1);
   text-align: right;
   width: 206px;
 }
@@ -53,7 +53,7 @@
 }
 .lyrlabel {
   font-size: var(--uppercase-small-size);
-  color: var(--color-deeppink);
+  color: var(--secondary1);
   text-align: left;
 }
 .balance-display-zone-item {

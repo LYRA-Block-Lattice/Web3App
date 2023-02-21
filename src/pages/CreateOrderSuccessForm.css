@@ -56,7 +56,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);
-  background-color: var(--color-deeppink);
+  background-color: var(--secondary1);
   border-radius: var(--br-lg);
   height: 40px;
   flex-shrink: 0;
