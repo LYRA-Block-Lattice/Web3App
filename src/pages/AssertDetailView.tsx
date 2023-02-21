@@ -4,7 +4,11 @@ import "./AssertDetailView.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";
-import { getAppSelector, getMarketSelector } from "../app/selectors";
+import {
+  getAppSelector,
+  getMarketSelector,
+  getNotifySelector
+} from "../app/selectors";
 import {
   MARKET_GET_ORDER_BY_ID,
   WALLET_CREATE_TRADE
@@ -42,6 +46,7 @@ interface IAssertInfo {
 const AssertDetailView: FunctionComponent = () => {
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
+  const notify = useSelector(getNotifySelector);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
 
@@ -50,6 +55,15 @@ const AssertDetailView: FunctionComponent = () => {
 
   // variable for buyAmount
   const [buyAmount, setBuyAmount] = useState(0);
+
+  // dollar estimated
+  const [pricedollar, setPriceDollar] = useState(0);
+  const [avalibleMinDollar, setAvalibleMinDollar] = useState(0);
+  const [avalibleMaxDollar, setAvalibleMaxDollar] = useState(0);
+  const [offerDollar, setOfferDollar] = useState(0);
+
+  // bid estimated
+  const [bidAmount, setBidAmount] = useState(0);
 
   useEffect(() => {
     const orderId = searchParams.get("orderId");
@@ -64,14 +78,21 @@ const AssertDetailView: FunctionComponent = () => {
       } catch (error) {
         console.error(error);
       }
-      // dispatch({
-      //   type: MARKET_GET_ORDER_BY_ID,
-      //   payload: {
-      //     orderId: orderId
-      //   }
-      // });
     }
   }, [dispatch, searchParams]);
+
+  useEffect(() => {
+    if (info && notify.prices) {
+      let pricedollar =
+        info.Blocks.Order.Order.eqprice *
+        notify.prices.find((a) => a.ticker == "LYR")!.price;
+      setPriceDollar(pricedollar);
+      setAvalibleMinDollar(pricedollar * info.Blocks.Order.Order.limitMin);
+      setAvalibleMaxDollar(pricedollar * info.Blocks.Order.Order.limitMax);
+      setBidAmount(buyAmount * info.Blocks.Order.Order.price);
+      setOfferDollar(pricedollar * buyAmount);
+    }
+  }, [info, notify, buyAmount]);
 
   const onMakeOfferButtonClick = useCallback(() => {
     if (!info) {
@@ -215,11 +236,16 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
               <div className="priceandvaluelabel">
                 <div className="meka-legends">
-                  {info?.Blocks.Order.Order.price} {info?.Blocks.Bidgen.Ticker}
+                  {info?.Blocks.Order.Order.price}
                 </div>
                 <div className="tetherusdt-parent">
-                  <div className="tetherusdt">tether/USDT</div>
-                  <div className="div7">$86.20</div>
+                  <div className="tetherusdt">{info?.Blocks.Bidgen.Ticker}</div>
+                  <div className="div7">
+                    ${" "}
+                    {pricedollar.toLocaleString(undefined, {
+                      maximumFractionDigits: 2
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -234,7 +260,16 @@ const AssertDetailView: FunctionComponent = () => {
                 </div>
                 <div className="tetherusdt-parent">
                   <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
-                  <div className="div7">$40 ~ 84.20</div>
+                  <div className="div7">
+                    ${" "}
+                    {avalibleMinDollar.toLocaleString(undefined, {
+                      maximumFractionDigits: 2
+                    })}{" "}
+                    ~{" "}
+                    {avalibleMaxDollar.toLocaleString(undefined, {
+                      maximumFractionDigits: 2
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,14 +283,25 @@ const AssertDetailView: FunctionComponent = () => {
                     className="selectedamount"
                     type="number"
                     placeholder="150"
-                    defaultValue={info?.Blocks.Order.Order.limitMax! + ""}
-                    value={buyAmount}
+                    defaultValue={info?.Blocks.Order.Order.limitMin! + ""}
                     onChange={(e) => console.log(e)}
                   />
                   <div className="tethereth-group">
-                    <div className="tethereth1">tether/ETH</div>
-                    <div className="tetherusdt">100 tether/USDT</div>
-                    <div className="tetherusdt">$ 10.3</div>
+                    <div className="tethereth1">
+                      {info?.Blocks.Offgen.Ticker}
+                    </div>
+                    <div className="tetherusdt">
+                      {bidAmount.toLocaleString(undefined, {
+                        maximumFractionDigits: 8
+                      })}{" "}
+                      {info?.Blocks.Bidgen.Ticker}
+                    </div>
+                    <div className="tetherusdt">
+                      ${" "}
+                      {offerDollar.toLocaleString(undefined, {
+                        maximumFractionDigits: 2
+                      })}
+                    </div>
                   </div>
                 </div>
                 <div className="limitadjustsection">
@@ -268,7 +314,7 @@ const AssertDetailView: FunctionComponent = () => {
                       min={info?.Blocks.Order.Order.limitMin}
                       max={info?.Blocks.Order.Order.limitMax}
                       onChange={(e, v) => setBuyAmount(v as number)}
-                      defaultValue={info?.Blocks.Order.Order.limitMax}
+                      defaultValue={info?.Blocks.Order.Order.limitMin!}
                     />
                   </Box>
                   <div className="max">Max</div>
