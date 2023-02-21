@@ -271,63 +271,64 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="pricelabel-parent">
-          <div className="pricelabel1">
-            <div className="meka-legends">My Offer</div>
-          </div>
-          <div className="frame-container">
-            <div className="selectedamount-parent">
-              <input
-                className="selectedamount"
-                type="number"
-                placeholder="150"
-              />
-              <div className="tethereth-group">
-                <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
-                <div className="tetherusdt">
-                  {bidAmount.toLocaleString(undefined, {
-                    maximumFractionDigits: 8
-                  })}{" "}
-                  {info?.Blocks.Bidgen.Ticker}
-                </div>
-                <div className="tetherusdt">
-                  ${" "}
-                  {offerDollar.toLocaleString(undefined, {
-                    maximumFractionDigits: 2
-                  })}
+
+          <div className="pricelabel-parent">
+            <div className="pricelabel1">
+              <div className="meka-legends">My Offer</div>
+            </div>
+            <div className="frame-container">
+              <div className="selectedamount-parent">
+                <input
+                  className="selectedamount"
+                  type="number"
+                  placeholder="150"
+                />
+                <div className="tethereth-group">
+                  <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
+                  <div className="tetherusdt">
+                    {bidAmount.toLocaleString(undefined, {
+                      maximumFractionDigits: 8
+                    })}{" "}
+                    {info?.Blocks.Bidgen.Ticker}
+                  </div>
+                  <div className="tetherusdt">
+                    ${" "}
+                    {offerDollar.toLocaleString(undefined, {
+                      maximumFractionDigits: 2
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="limitadjustsection">
-              <div className="tetherusdt">Min</div>
-              <Box className="slidercontinuous">
-                <Slider
-                  color="primary"
-                  orientation="horizontal"
-                  step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
-                  min={info?.Blocks.Order.Order.limitMin}
-                  max={info?.Blocks.Order.Order.limitMax}
-                  onChange={(e, v) => setBuyAmount(v as number)}
-                  defaultValue={info?.Blocks.Order.Order.limitMin!}
-                />
-              </Box>
-              <div className="max">Max</div>
+              <div className="limitadjustsection">
+                <div className="tetherusdt">Min</div>
+                <Box className="slidercontinuous">
+                  <Slider
+                    color="primary"
+                    orientation="horizontal"
+                    step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
+                    min={info?.Blocks.Order.Order.limitMin}
+                    max={info?.Blocks.Order.Order.limitMax}
+                    onChange={(e, v) => setBuyAmount(v as number)}
+                    defaultValue={info?.Blocks.Order.Order.limitMin!}
+                  />
+                </Box>
+                <div className="max">Max</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="makeofferbutton">
-          <button
-            className="prepare-sell-order-button5"
-            onClick={onMakeOfferButtonClick}
-          >
-            <img
-              className="material-symbolsshare-icon"
-              alt=""
-              src="../asserts/evapricetagsoutline.svg"
-            />
-            <div className="primary-button2">Make offer</div>
-          </button>
+          <div className="makeofferbutton">
+            <button
+              className="prepare-sell-order-button5"
+              onClick={onMakeOfferButtonClick}
+            >
+              <img
+                className="material-symbolsshare-icon"
+                alt=""
+                src="../asserts/evapricetagsoutline.svg"
+              />
+              <div className="primary-button2">Make offer</div>
+            </button>
+          </div>
         </div>
       </div>
       <div className="descriptiontitle">
