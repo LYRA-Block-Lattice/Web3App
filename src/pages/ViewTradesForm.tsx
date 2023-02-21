@@ -5,7 +5,7 @@ import { MARKET_GET_OWN_TRADES } from "../app/actionTypes";
 import { getAuthSelector, getMarketSelector } from "../app/selectors";
 import TradeCard from "../components/TradeCard";
 import "./ViewTradesForm.css";
-import { getTickerIcon, OrderStatus } from "../app/market/marketReducer";
+import { getTickerIcon } from "../app/market/marketReducer";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
 
 const ViewTradesForm: FunctionComponent = () => {

@@ -1,4 +1,5 @@
 import * as actionTypes from "../actionTypes";
+import { IDao } from "../blockchain/blocks/block";
 import { IAction } from "../wallet/walletReducer";
 
 const icons = {
@@ -17,24 +18,6 @@ export const getTickerIcon = (ticker: string) => {
   if (ticker.startsWith("svc/")) return icons["Service"];
   return icons["Token"];
 };
-
-export interface IDao {
-  name: string;
-  daoId: string;
-  seats: number;
-  shareRito: number;
-  sellerPar: number;
-  sellerFeeRatio: number;
-  buyerPar: number;
-  buyerFeeRatio: number;
-}
-
-export enum OrderStatus {
-  Open = 0,
-  Partial = 10,
-  Closed = 30,
-  Delist = 50
-}
 
 export interface IOrder {
   daoid: string;

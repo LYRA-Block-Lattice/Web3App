@@ -7,8 +7,16 @@ import CollateralCalculation from "../components/CollateralCalculation";
 import "./SellTokenToToken.css";
 import SearchTokenInput from "../dup/SearchTokenInput";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
-import { useSelector } from "react-redux";
-import { getAppSelector, getAuthSelector } from "../app/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getAppSelector,
+  getAuthSelector,
+  getMarketSelector,
+  getNotifySelector
+} from "../app/selectors";
+
+import * as actionTypes from "../app/actionTypes";
+import { IDao } from "../app/blockchain/blocks/block";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -25,8 +33,10 @@ interface IToken {
 
 const SellTokenToToken: FunctionComponent = () => {
   const navigate = useNavigate();
-  const app = useSelector(getAppSelector);
+  const dispatch = useDispatch();
+  const market = useSelector(getMarketSelector);
   const auth = useSelector(getAuthSelector);
+  const notify = useSelector(getNotifySelector);
 
   //const [isDisabled, setDisabled] = useState<boolean>(false);
   const [searchParams, setSearchParams] = useSearchParams({});
@@ -37,7 +47,19 @@ const SellTokenToToken: FunctionComponent = () => {
   const [toget, setToget] = useState<string | undefined>();
   const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
 
+  const [price, setPrice] = useState<number>(0);
+  const [eqprice, setEQPrice] = useState<number>(0);
+
+  const [pricedollar, setPriceDollar] = useState<number>(0);
+  const [eqdollar, setEQDollar] = useState<number>(0);
+
+  const [amount, setAmount] = useState<number>(0);
+  const [limitmin, setLimitmin] = useState<number>(0);
+  const [limitmax, setLimitmax] = useState<number>(0);
+
+  const [dao, setDao] = useState<IDao | null>(null);
   const [val, setVal] = useState<IToken>();
+  const [totallyr, setTotalLYR] = useState<number>(0);
 
   const onSellChange = useCallback(
     (value: any) => {
@@ -50,6 +72,21 @@ const SellTokenToToken: FunctionComponent = () => {
     },
     [tosell]
   );
+
+  useEffect(() => {
+    if (price > 0 && notify.prices != undefined && toget != undefined) {
+      var ticker = toget;
+      if (ticker.startsWith("tether/")) ticker = ticker.replace("tether/", "");
+      if (ticker.startsWith("fiat/"))
+        ticker = ticker.replace("fiat/", "").toLowerCase();
+      const quote = notify.prices.find((a) => a.ticker == ticker);
+      if (quote === undefined) setPriceDollar(0);
+      else {
+        let priced = price * quote.price;
+        setPriceDollar(priced);
+      }
+    } else setPriceDollar(0);
+  }, [price, toget]);
 
   const openGeneralPopup = useCallback(() => {
     if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
@@ -70,6 +107,54 @@ const SellTokenToToken: FunctionComponent = () => {
     },
     [tosell, val]
   );
+
+  const onDaoSearchChange = useCallback(
+    (event: any, value: any, reason: any) => {
+      if (value) {
+        dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: value });
+      }
+    },
+    [market.daos]
+  );
+
+  const onTotal = (total: number, daofee: number, netfee: number) => {
+    setTotalLYR(total);
+  };
+
+  const onReviewTheOrderClick = useCallback(() => {
+    var obj = {
+      selltoken: tosell,
+      gettoken: toget,
+      price: price,
+      count: amount,
+      collateral: totallyr,
+      secret: undefined,
+      //daoid: dao?.daoId,
+      dealerid: market.dealerId,
+      limitmin: limitmin,
+      limitmax: limitmax,
+      eqprice: eqprice,
+      // daofee: daofeelyr,
+      // netfee: netfeelyr,
+      payby: ["Default"]
+    };
+    navigate("/sellflow?data=" + encodeURIComponent(JSON.stringify(obj)));
+  }, [
+    navigate,
+    tosell,
+    toget,
+    price,
+    amount,
+    //collaterallyr,
+    //dao?.daoId,
+    market.dealerId,
+    totallyr,
+    limitmin,
+    limitmax,
+    eqprice
+    // daofeelyr,
+    // netfeelyr
+  ]);
 
   return (
     <>
@@ -158,6 +243,7 @@ const SellTokenToToken: FunctionComponent = () => {
               placeholder="1"
               size="medium"
               margin="none"
+              onChange={(e) => setLimitmin(+e.target.value)}
             />
             <div className="worth-in-dollar">-</div>
             <TextField
@@ -170,12 +256,17 @@ const SellTokenToToken: FunctionComponent = () => {
               placeholder="10"
               size="medium"
               margin="none"
+              onChange={(e) => setLimitmax(+e.target.value)}
             />
           </div>
           <Autocomplete
             sx={{ width: 320 }}
             disablePortal
-            options={[] as any}
+            options={market.daos}
+            onInputChange={onDaoSearchChange}
+            onChange={(event, value) => setDao(value)}
+            isOptionEqualToValue={(option, value) => option.Name === value.Name}
+            getOptionLabel={(option) => option.Name}
             renderInput={(params: any) => (
               <TextField
                 {...params}
@@ -189,7 +280,14 @@ const SellTokenToToken: FunctionComponent = () => {
             )}
             size="medium"
           />
-          <CollateralCalculation eqprice="1234" />
+          <CollateralCalculation
+            selling={true}
+            eqprice={eqprice}
+            eqdollar={pricedollar}
+            amount={amount}
+            dao={dao}
+            onTotalChange={onTotal}
+          />
           <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
             <div className="primary-button3">Review the Order</div>
           </button>

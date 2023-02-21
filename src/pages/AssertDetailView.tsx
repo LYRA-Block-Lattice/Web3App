@@ -67,6 +67,7 @@ const AssertDetailView: FunctionComponent = () => {
 
   // bid estimated
   const [bidAmount, setBidAmount] = useState(0);
+  const [totallyr, setTotalLYR] = useState<number>(0);
 
   useEffect(() => {
     const orderId = searchParams.get("orderId");
@@ -129,14 +130,19 @@ const AssertDetailView: FunctionComponent = () => {
           biding: order.biding,
 
           price: order.price,
-          cltamt: 100,
-          payVia: "Meka",
+          eqprice: order.eqprice,
+          cltamt: totallyr,
+          payVia: "Default",
           amount: buyAmount,
           pay: order.price * buyAmount
         }
       }
     });
-  }, [navigate, buyAmount, dispatch, app.wallet.accountId, info]);
+  }, [navigate, buyAmount, dispatch, app.wallet.accountId, info, totallyr]);
+
+  const onTotal = (total: number, daofee: number, netfee: number) => {
+    setTotalLYR(total);
+  };
 
   return (
     <div>
@@ -338,7 +344,14 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">Collateral and Fees</div>
             </div>
-            <CollateralCalculation eqprice="1234 LYR" />
+            <CollateralCalculation
+              selling={false}
+              eqprice={info?.Blocks.Order.Order.eqprice ?? 0}
+              eqdollar={pricedollar}
+              amount={buyAmount}
+              dao={info?.Blocks.Dao ?? null}
+              onTotalChange={onTotal}
+            />
             <button
               className="prepare-sell-order-button5"
               onClick={onMakeOfferButtonClick}

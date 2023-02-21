@@ -45,7 +45,7 @@ function bitLength(n: bigint): number {
 }
 
 function isBigIntNegative(x: bigint): boolean {
-  const zero = BigInt.asIntN(bitLength(x), 0n);
+  const zero = BigInt.asIntN(bitLength(x), BigInt(0));
   return x < zero;
 }
 

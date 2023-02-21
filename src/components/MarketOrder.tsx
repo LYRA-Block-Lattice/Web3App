@@ -5,13 +5,13 @@ import "./MarketOrder.css";
 import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
-import { OrderStatus } from "../app/market/marketReducer";
+import { UniOrderStatus } from "../app/blockchain/blocks/meta";
 
 type MarketOrderType = {
   orderId: string;
   offeringIcon?: string;
   bidingIcon?: string;
-  orderStatus?: OrderStatus;
+  orderStatus?: UniOrderStatus;
   offering?: string;
   biding?: string;
   amount?: string;
@@ -84,7 +84,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
             </div>
             <div className="order-status" style={orderStatusStyle}>
               <b className="open">
-                {OrderStatus[orderStatus ?? OrderStatus.Closed]}
+                {UniOrderStatus[orderStatus ?? UniOrderStatus.Closed]}
               </b>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { BlockchainAPI } from "../app/blockchain/blockchain-api";
 import "./TradeCard.css";
@@ -29,17 +29,24 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   tradeId
 }) => {
   const navigate = useNavigate();
+  const orderRef = useRef<HTMLDivElement>(null);
 
   const onBannerImageClick = useCallback(() => {
     navigate("/tradedetails?tradeId=" + tradeId);
   }, [navigate]);
+
+  useEffect(() => {
+    if (orderRef.current && dir === "Sell") {
+      orderRef.current.style.backgroundColor = "var(--sell1)";
+    }
+  }, []);
 
   return (
     <div className="ordercard1">
       <div className="order-brief-section1">
         <button className="banner-image1" onClick={onBannerImageClick}>
           <div className="order-banner1">
-            <div className="order-image1">
+            <div className="order-image1" ref={orderRef}>
               <img
                 className="icbaseline-generating-tokens-icon"
                 alt=""

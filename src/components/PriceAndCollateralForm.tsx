@@ -6,8 +6,8 @@ import "./PriceAndCollateralForm.css";
 import { useDispatch, useSelector } from "react-redux";
 import * as actionTypes from "../app/actionTypes";
 import { getMarketSelector, getNotifySelector } from "../app/selectors";
-import { IDao } from "../app/market/marketReducer";
-import { LyraGlobal } from "../app/blockchain/blocks/block";
+import { IDao, LyraGlobal } from "../app/blockchain/blocks/block";
+import CollateralCalculation from "./CollateralCalculation";
 
 type PriceAndCollateralFormType = {
   offering?: string;
@@ -34,15 +34,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   const [pricedollar, setPriceDollar] = useState<number>(0);
   const [eqdollar, setEQDollar] = useState<number>(0);
 
-  const [collateraldollar, setCollateralDollar] = useState<number>(0);
-  const [collaterallyr, setCollateralLYR] = useState<number>(0);
-  const [daofeelyr, setDaoFeeLYR] = useState<number>(0);
-  const [daofeedollar, setDaoFeeDollar] = useState<number>(0);
-  const [netfeelyr, setNetFeeLYR] = useState<number>(0);
-  const [netfeedollar, setNetFeeDollar] = useState<number>(0);
-
   const [totallyr, setTotalLYR] = useState<number>(0);
-  const [totaldollar, setTotalDollar] = useState<number>(0);
 
   useEffect(() => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: "" });
@@ -78,36 +70,6 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
     } else setEQDollar(0);
   }, [eqprice]);
 
-  useEffect(() => {
-    if (eqdollar > 0 && count > 0 && dao != undefined && dao != null) {
-      setCollateralDollar((eqdollar * count * dao.sellerPar) / 100);
-      setCollateralLYR((eqprice * count * dao.sellerPar) / 100);
-      setDaoFeeLYR(eqprice * count * dao.sellerFeeRatio);
-      setDaoFeeDollar(eqdollar * count * dao.sellerFeeRatio);
-      setNetFeeLYR(eqprice * count * LyraGlobal.OfferingNetworkFeeRatio);
-      setNetFeeDollar(eqdollar * count * LyraGlobal.OfferingNetworkFeeRatio);
-    } else {
-      setCollateralDollar(0);
-      setCollateralLYR(0);
-      setDaoFeeLYR(0);
-      setDaoFeeDollar(0);
-      setNetFeeLYR(0);
-      setNetFeeDollar(0);
-    }
-  }, [eqdollar, count, dao]);
-
-  useEffect(() => {
-    setTotalLYR(collaterallyr + daofeelyr + netfeelyr);
-    setTotalDollar(collateraldollar + daofeedollar + netfeedollar);
-  }, [
-    collateraldollar,
-    collaterallyr,
-    daofeedollar,
-    daofeelyr,
-    netfeedollar,
-    netfeelyr
-  ]);
-
   const searchDao = (searchTerm: any) => {
     dispatch({ type: actionTypes.BLOCKCHAIN_FIND_DAO, payload: searchTerm });
   };
@@ -121,6 +83,10 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
     [market.daos]
   );
 
+  const onTotal = (total: number, daofee: number, netfee: number) => {
+    setTotalLYR(total);
+  };
+
   const onReviewTheOrderClick = useCallback(() => {
     let togettoken = biding;
     console.log(
@@ -133,13 +99,13 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
       count: count,
       collateral: totallyr,
       secret: undefined,
-      daoid: dao?.daoId,
+      //daoid: dao?.daoId,
       dealerid: market.dealerId,
       limitmin: limitmin,
       limitmax: limitmax,
       eqprice: eqprice,
-      daofee: daofeelyr,
-      netfee: netfeelyr,
+      // daofee: daofeelyr,
+      // netfee: netfeelyr,
       payby: ["Default"]
     };
     navigate("/sellflow?data=" + encodeURIComponent(JSON.stringify(obj)));
@@ -149,15 +115,15 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
     biding,
     price,
     count,
-    collaterallyr,
-    dao?.daoId,
+    //collaterallyr,
+    //dao?.daoId,
     market.dealerId,
     totallyr,
     limitmin,
     limitmax,
-    eqprice,
-    daofeelyr,
-    netfeelyr
+    eqprice
+    // daofeelyr,
+    // netfeelyr
   ]);
 
   return (
@@ -252,8 +218,8 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         options={market.daos}
         onInputChange={onDaoSearchChange}
         onChange={(event, value) => setDao(value)}
-        isOptionEqualToValue={(option, value) => option.name === value.name}
-        getOptionLabel={(option) => option.name}
+        isOptionEqualToValue={(option, value) => option.Name === value.Name}
+        getOptionLabel={(option) => option.Name}
         renderInput={(params: any) => (
           <TextField
             {...params}
@@ -267,91 +233,14 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         )}
         size="medium"
       />
-      <div className="collateralcount1">
-        <div className="sellatprice-parent">
-          <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">
-              Collateral value: {dao?.sellerPar}%
-            </div>
-            <div className="worth-in-dollar">
-              {collaterallyr.toLocaleString(undefined, {
-                maximumFractionDigits: 4
-              })}{" "}
-              LYR
-            </div>
-          </div>
-          <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">
-              ${" "}
-              {collateraldollar.toLocaleString(undefined, {
-                maximumFractionDigits: 2
-              })}
-            </div>
-          </div>
-        </div>
-        <div className="sellatprice-parent">
-          <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">
-              DAO fee: {(dao?.sellerFeeRatio ?? 0) * 100}%
-            </div>
-            <div className="worth-in-dollar">
-              {daofeelyr.toLocaleString(undefined, {
-                maximumFractionDigits: 4
-              })}{" "}
-              LYR
-            </div>
-          </div>
-          <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">
-              ${" "}
-              {daofeedollar.toLocaleString(undefined, {
-                maximumFractionDigits: 2
-              })}
-            </div>
-          </div>
-        </div>
-        <div className="sellatprice-parent">
-          <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">
-              Network fee: {LyraGlobal.OfferingNetworkFeeRatio * 100}%
-            </div>
-            <div className="worth-in-dollar">
-              {netfeelyr.toLocaleString(undefined, {
-                maximumFractionDigits: 4
-              })}{" "}
-              LYR
-            </div>
-          </div>
-          <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">
-              ${" "}
-              {netfeedollar.toLocaleString(undefined, {
-                maximumFractionDigits: 2
-              })}
-            </div>
-          </div>
-        </div>
-        <div className="collateralcount-child" />
-        <div className="sellatprice-parent">
-          <div className="collateral-worth-label11">
-            <div className="worth-in-dollar">
-              {totallyr.toLocaleString(undefined, {
-                maximumFractionDigits: 4
-              })}{" "}
-              LYR
-            </div>
-          </div>
-          <div className="collateral-worth-label12">
-            <div className="worth-in-dollar">Total:</div>
-            <div className="div22">
-              ${" "}
-              {totaldollar.toLocaleString(undefined, {
-                maximumFractionDigits: 2
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
+      <CollateralCalculation
+        selling={true}
+        eqprice={eqprice}
+        eqdollar={eqdollar}
+        amount={count}
+        dao={dao}
+        onTotalChange={onTotal}
+      />
       <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
         <div className="primary-button6">Review the Order</div>
       </button>
