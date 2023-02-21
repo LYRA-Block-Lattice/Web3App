@@ -261,18 +261,14 @@
   line-height: 18px;
   text-align: center;
 }
-.frame-container,
-.limitadjustsection,
-.pricelabel-parent {
-  align-self: stretch;
-  display: flex;
-  justify-content: flex-start;
-}
 .limitadjustsection {
+  align-self: stretch;
   background-color: var(--color-white);
   overflow: hidden;
+  display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
   gap: var(--gap-3xl);
   text-align: left;
   font-size: var(--font-size-xl);
@@ -280,17 +276,22 @@
 }
 .frame-container,
 .pricelabel-parent {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 .frame-container {
+  width: 380px;
   padding: 0 var(--padding-7xs);
+  box-sizing: border-box;
   gap: var(--gap-2xs);
   text-align: center;
   font-size: var(--uppercase-small-size);
   color: var(--color-dimgray-100);
 }
 .pricelabel-parent {
+  align-self: stretch;
   padding: 0 var(--padding-6xs);
   gap: var(--gap-md);
 }
@@ -338,7 +339,7 @@
   justify-content: center;
 }
 .buysection {
-  width: 384px;
+  width: 400px;
   padding: var(--padding-6xs) 0 0;
   box-sizing: border-box;
   align-items: flex-start;
