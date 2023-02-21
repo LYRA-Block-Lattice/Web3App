@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { TextField, Autocomplete } from "@mui/material";
+import CollateralAndFees from "../components/CollateralAndFees";
 import { useNavigate } from "react-router-dom";
 import "./PriceAndCollateralForm.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +12,7 @@ import { LyraGlobal } from "../app/blockchain/blocks/block";
 type PriceAndCollateralFormType = {
   offering?: string;
   biding?: string;
+  eqprice?: string;
 };
 
 const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({

@@ -343,6 +343,7 @@
   padding: var(--padding-4xs);
   align-items: center;
   justify-content: center;
+  gap: var(--gap-md);
 }
 .buysection {
   padding: var(--padding-6xs) 0 0;

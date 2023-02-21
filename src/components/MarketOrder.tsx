@@ -94,28 +94,28 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           to={`/assertdetailview?orderId=${orderId}`}
         >
           <div className="sell-parent">
-            <b className="btc">Sell</b>
-            <b className="btc">{offering}</b>
+            <b className="sell">Sell</b>
+            <b className="sell">{offering}</b>
             <img className="arrow-icon" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt2">{biding}</b>
           </div>
           <div>{time.DateTime}</div>
           <div className="details-section">
             <div className="block3">
-              <div className="btc">Amount</div>
-              <div className="btc">Limit Min</div>
-              <div className="btc">Limit Max</div>
+              <div className="sell">Amount</div>
+              <div className="sell">Limit Min</div>
+              <div className="sell">Limit Max</div>
             </div>
             <div className="block4">
-              <div className="btc">{amount}</div>
-              <div className="btc">{limitMin}</div>
-              <div className="btc">{limitMax}</div>
+              <div className="sell">{amount}</div>
+              <div className="sell">{limitMin}</div>
+              <div className="sell">{limitMax}</div>
             </div>
             <div className="block1">
               <div className="price3">Price</div>
             </div>
             <div className="block2">
-              <b className="btc">{price}</b>
+              <b className="sell">{price}</b>
             </div>
             <div className="details-section-child" />
           </div>
@@ -131,11 +131,11 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           src="../asserts/ellipse-1@2x.png"
         />
         <div className="a-big-seller-parent">
-          <b className="btc">{sellerName}</b>
+          <b className="sell">{sellerName}</b>
           <div className="the-first-dao">{daoName}</div>
         </div>
         <div className="parent">
-          <b className="btc">{sellerRatings}</b>
+          <b className="sell">{sellerRatings}</b>
           <div className="the-first-dao">{sellerTrades}</div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
+import CollateralCalculation from "../components/CollateralCalculation";
 import "./AssertDetailView.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
@@ -334,6 +335,10 @@ const AssertDetailView: FunctionComponent = () => {
             </div>
           </div>
           <div className="makeofferbutton">
+            <div className="pricelabel1">
+              <div className="meka-legends">Collateral and Fees</div>
+            </div>
+            <CollateralCalculation eqprice="1234 LYR" />
             <button
               className="prepare-sell-order-button5"
               onClick={onMakeOfferButtonClick}
