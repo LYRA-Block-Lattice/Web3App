@@ -72,6 +72,7 @@ const AssertDetailView: FunctionComponent = () => {
         const fetchit = async () => {
           const response = await BlockchainAPI.fetchOrderById(orderId);
           setInfo(response as IAssertInfo);
+          setBuyAmount(response.Blocks.Order.Order.limitMin);
           setIsLoading(false);
         };
         fetchit();
@@ -279,8 +280,7 @@ const AssertDetailView: FunctionComponent = () => {
                 <input
                   className="selectedamount"
                   type="number"
-                  placeholder="150"
-                  defaultValue={info?.Blocks.Order.Order.limitMin! + ""}
+                  value={buyAmount}
                   onChange={(e) => console.log(e)}
                 />
                 <div className="tethereth-group">
@@ -305,7 +305,7 @@ const AssertDetailView: FunctionComponent = () => {
                   <Slider
                     color="primary"
                     orientation="horizontal"
-                    step={10 ** (-1 * info?.Blocks.Offgen.Precision!)}
+                    step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
                     min={info?.Blocks.Order.Order.limitMin}
                     max={info?.Blocks.Order.Order.limitMax}
                     onChange={(e, v) => setBuyAmount(v as number)}
