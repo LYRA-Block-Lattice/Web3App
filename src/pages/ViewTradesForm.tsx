@@ -7,6 +7,7 @@ import TradeCard from "../components/TradeCard";
 import "./ViewTradesForm.css";
 import { getTickerIcon } from "../app/market/marketReducer";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
+import MarketToolBar from "../components/MarketToolBar";
 
 const ViewTradesForm: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -24,6 +25,11 @@ const ViewTradesForm: FunctionComponent = () => {
   return (
     <div className="viewtradesform">
       <PrimaryAccountCard />
+      <div className="iconssection-wrapper">
+        <div className="iconssection">
+          <MarketToolBar />
+        </div>
+      </div>
       <div className="view-trades-wrapper">
         <div className="view-trades">View Trades</div>
       </div>

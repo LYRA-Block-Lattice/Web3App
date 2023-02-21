@@ -1,4 +1,4 @@
-import { FunctionComponent, useState, useEffect } from "react";
+import { FunctionComponent, useState, useEffect, useCallback } from "react";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
 import { useSelector } from "react-redux";
 import MarketToolBar from "../components/MarketToolBar";
@@ -7,6 +7,7 @@ import { getAppSelector, getAuthSelector } from "../app/selectors";
 import DisplaySellItems from "../dup/DisplaySellItems";
 
 import "./Market.css";
+import { useNavigate } from "react-router";
 
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -49,41 +50,6 @@ const Market: FunctionComponent = () => {
       </div>
       <div className="orderandcatalog">
         <TokenCatalogTabs />
-        <div className="tradableorderssection">
-          <div className="catalogtab">
-            <button className="tokentab" onClick={() => setCat("Token")}>
-              <b className="token">Token</b>
-              <div className="ellipse-parent">
-                <img
-                  className="group-child"
-                  alt=""
-                  src="../asserts/ellipse-43.svg"
-                />
-                <div className="div">18</div>
-              </div>
-            </button>
-            <button className="nft-tab" onClick={() => setCat("NFT")}>
-              <b className="token">NFT</b>
-              <div className="ellipse-parent">
-                <img
-                  className="group-child"
-                  alt=""
-                  src="../asserts/ellipse-43.svg"
-                />
-                <div className="div">18</div>
-              </div>
-            </button>
-            <button className="fiat-tab" onClick={() => setCat("Fiat")}>
-              <b className="fiat">Fiat</b>
-            </button>
-            <button className="fiat-tab" onClick={() => setCat("Goods")}>
-              <b className="fiat">Goods</b>
-            </button>
-            <button className="fiat-tab" onClick={() => setCat("Service")}>
-              <b className="fiat">Service</b>
-            </button>
-          </div>
-        </div>
       </div>
       <DisplaySellItems cat={cat} />
     </div>

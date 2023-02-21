@@ -181,46 +181,8 @@ const WalletHome: FunctionComponent = () => {
             tradableOrdersSectionWidth="455px"
             tradableOrdersSectionBoxSizing="border-box"
           />
-          <div className="coinlisting">
-            <TokenDisplayItem
-              coinIcon="../asserts/lyralogoblackicon@2x.png"
-              coinName="Lyra Coin"
-              amountText="1,234,525 LYR"
-              amountWorth="$2,183"
-            />
-            <div className="tokendisplayitem">
-              <div className="frame-group">
-                <div className="lyralogoblueicon-parent">
-                  <img
-                    className="lyralogoblueicon4"
-                    alt=""
-                    src="../asserts/lyralogoblueicon4@2x.png"
-                  />
-                  <b className="custom-coin">Custom Coin</b>
-                  <div className="cus-parent">
-                    <b className="cus">1,234,525 CUS</b>
-                    <b className="b">$2,183</b>
-                  </div>
-                </div>
-                <div className="frame-child" />
-              </div>
-            </div>
-            <TokenDisplayItem
-              coinIcon="../asserts/logosbitcoin.svg"
-              coinName="BitCoin"
-              amountText="1.2345 BTC"
-              amountWorth="$20,183"
-              lyraLogoBlackIconObjectFit="unset"
-            />
-            <TokenDisplayItem
-              coinIcon="../asserts/mask-group@2x.png"
-              coinName="T-Shirt Blue"
-              amountText="3 Items"
-              amountWorth="$20,183"
-            />
-          </div>
+          <div className="coinlisting">{showTokens()}</div>
         </div>
-        <div className="coinlisting">{showTokens()}</div>
       </div>
       {isSideMenuPopupOpen && (
         <PortalDrawer

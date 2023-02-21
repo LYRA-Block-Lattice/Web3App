@@ -10,6 +10,7 @@ import PrimaryAccountCard from "../components/PrimaryAccountCard";
 import React from "react";
 import { Tab, Tabs } from "@mui/material";
 import { set } from "immer/dist/internal";
+import MarketToolBar from "../components/MarketToolBar";
 
 interface customWindow extends Window {
   rrComponent?: any;
@@ -69,6 +70,11 @@ const ViewOrdersForm: FunctionComponent = () => {
   return (
     <div className="viewordersform">
       <PrimaryAccountCard />
+      <div className="iconssection-wrapper">
+        <div className="iconssection">
+          <MarketToolBar />
+        </div>
+      </div>
       <div className="view-orders-parent">
         <div className="view-orders">View Orders</div>
         <button
