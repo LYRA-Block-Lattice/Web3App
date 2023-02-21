@@ -32,71 +32,16 @@
 .sellatprice-parent {
   flex-direction: column;
 }
-.collateral-worth-label5,
-.collateral-worth-label6,
 .limitoftrade {
+  width: 320px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.limitoftrade {
-  width: 320px;
   padding: var(--padding-6xs) 0;
   box-sizing: border-box;
-  font-size: var(--body-s-size);
-}
-.collateral-worth-label5,
-.collateral-worth-label6 {
-  width: 300px;
-}
-.collateral-worth-label6 {
-  align-items: flex-start;
-  justify-content: flex-end;
-  font-size: var(--uppercase-small-size);
-}
-.collateralcount-child {
-  position: relative;
-  border-top: 1px solid var(--black-000000100);
-  box-sizing: border-box;
-  width: 299px;
-  height: 1px;
-  flex-shrink: 0;
-}
-.collateral-worth-label11 {
-  width: 300px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
-.div22 {
-  position: relative;
-  font-size: var(--uppercase-small-size);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-}
-.collateral-worth-label12,
-.collateralcount1 {
-  width: 300px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-}
-.collateralcount1 {
-  border-radius: var(--br-xs);
-  background-color: var(--color-gray-200);
-  width: 320px;
-  flex-direction: column;
-  padding: var(--padding-6xs);
-  box-sizing: border-box;
-  justify-content: center;
-  gap: var(--gap-2xs);
-  font-size: var(--body-semibold-size);
+  font-size: var(--body-s-size);
 }
 .primary-button6 {
   position: relative;

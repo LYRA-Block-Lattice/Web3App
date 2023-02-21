@@ -63,7 +63,7 @@ const SellTokenToToken: FunctionComponent = () => {
             size="medium"
           />
         </form>
-        <PriceAndCollateralForm />
+        <PriceAndCollateralForm eqprice="1234 LYR" />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

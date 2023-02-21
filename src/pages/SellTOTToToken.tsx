@@ -70,7 +70,11 @@ const SellTOTToToken: FunctionComponent = () => {
             size="medium"
           />
         </form>
-        <PriceAndCollateralForm offering="offering" biding="biding" />
+        <PriceAndCollateralForm
+          offering="offering"
+          biding="biding"
+          eqprice="1234 LYR"
+        />
       </div>
       {isSignTradeSecretPopupOpen && (
         <PortalPopup

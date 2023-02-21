@@ -41,7 +41,11 @@ const SellTOTToTOT: FunctionComponent = () => {
             <div className="secondary-button6">Create TOT</div>
           </button>
         </form>
-        <PriceAndCollateralForm offering="offering" biding="biding" />
+        <PriceAndCollateralForm
+          offering="offering"
+          biding="biding"
+          eqprice="1234 LYR"
+        />
       </div>
       {isSignTradeSecretPopupOpen && (
         <PortalPopup

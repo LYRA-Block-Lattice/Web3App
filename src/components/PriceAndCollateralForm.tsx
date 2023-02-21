@@ -1,16 +1,19 @@
 import { FunctionComponent, useCallback } from "react";
 import { TextField, Autocomplete } from "@mui/material";
+import CollateralAndFees from "../components/CollateralAndFees";
 import { useNavigate } from "react-router-dom";
 import "./PriceAndCollateralForm.css";
 
 type PriceAndCollateralFormType = {
   offering?: string;
   biding?: string;
+  eqprice?: string;
 };
 
 const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
   offering,
   biding,
+  eqprice = "1234",
 }) => {
   const navigate = useNavigate();
 
@@ -106,45 +109,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
         )}
         size="medium"
       />
-      <div className="collateralcount1">
-        <div className="sellatprice-parent">
-          <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">Collateral value: 120%</div>
-            <div className="worth-in-dollar">1234 LYR</div>
-          </div>
-          <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">$ 103</div>
-          </div>
-        </div>
-        <div className="sellatprice-parent">
-          <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">DAO fee: 1%</div>
-            <div className="worth-in-dollar">1234 LYR</div>
-          </div>
-          <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">$ 103</div>
-          </div>
-        </div>
-        <div className="sellatprice-parent">
-          <div className="collateral-worth-label5">
-            <div className="worth-in-dollar">Network fee: 0.2%</div>
-            <div className="worth-in-dollar">1234 LYR</div>
-          </div>
-          <div className="collateral-worth-label6">
-            <div className="worth-in-dollar">$ 103</div>
-          </div>
-        </div>
-        <div className="collateralcount-child" />
-        <div className="sellatprice-parent">
-          <div className="collateral-worth-label11">
-            <div className="worth-in-dollar">1234 LYR</div>
-          </div>
-          <div className="collateral-worth-label12">
-            <div className="worth-in-dollar">Total:</div>
-            <div className="div22">$ 103</div>
-          </div>
-        </div>
-      </div>
+      <CollateralAndFees eqprice={eqprice} />
       <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
         <div className="primary-button6">Review the Order</div>
       </button>
