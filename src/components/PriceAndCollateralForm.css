@@ -32,20 +32,16 @@
 .sellatprice-parent {
   flex-direction: column;
 }
-.collateral-worth-label5 {
-  align-items: center;
-  justify-content: space-between;
-}
 .collateral-worth-label5,
 .collateral-worth-label6,
 .limitoftrade {
   overflow: hidden;
   display: flex;
   flex-direction: row;
-}
-.limitoftrade {
   align-items: center;
   justify-content: space-between;
+}
+.limitoftrade {
   width: 320px;
   padding: var(--padding-6xs) 0;
   box-sizing: border-box;

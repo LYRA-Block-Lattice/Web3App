@@ -96,8 +96,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
-.icoutline-remove-red-eye-parent {
   gap: var(--gap-xs);
 }
 .assertstatssection {
@@ -240,11 +238,9 @@
 .selectedamount-parent,
 .tethereth-group {
   display: flex;
-  justify-content: center;
-}
-.tethereth-group {
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center;
 }
 .selectedamount-parent {
   align-self: stretch;
@@ -278,20 +274,20 @@
 .pricelabel-parent {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
 }
 .frame-container {
   width: 380px;
   padding: 0 var(--padding-7xs);
-  box-sizing: border-box;
   gap: var(--gap-2xs);
   text-align: center;
   font-size: var(--uppercase-small-size);
   color: var(--color-dimgray-100);
 }
 .pricelabel-parent {
-  align-self: stretch;
+  width: 400px;
   padding: 0 var(--padding-6xs);
   gap: var(--gap-md);
 }
@@ -327,11 +323,12 @@
 }
 .buysection,
 .makeofferbutton {
+  width: 400px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 .makeofferbutton {
-  align-self: stretch;
   background-color: var(--color-white);
   overflow: hidden;
   padding: var(--padding-4xs);
@@ -339,9 +336,7 @@
   justify-content: center;
 }
 .buysection {
-  width: 400px;
   padding: var(--padding-6xs) 0 0;
-  box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-3xl);
