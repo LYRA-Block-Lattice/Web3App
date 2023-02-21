@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { Box, Slider } from "@mui/material";
-import CollateralAndFees from "../components/CollateralAndFees";
+import CollateralCalculation from "../components/CollateralCalculation";
 import "./AssertDetailView.css";
 
 const AssertDetailView: FunctionComponent = () => {
@@ -149,7 +149,7 @@ const AssertDetailView: FunctionComponent = () => {
           <div className="pricelabel1">
             <div className="meka-legends">Collateral and Fees</div>
           </div>
-          <CollateralAndFees eqprice="123" />
+          <CollateralCalculation eqprice="1234 LYR" />
           <button className="prepare-sell-order-button5">
             <img
               className="material-symbolsshare-icon"

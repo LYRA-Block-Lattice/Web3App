@@ -26,7 +26,6 @@ import OpenWallet from "./pages/OpenWallet";
 import Redir from "./pages/Redir";
 import About from "./pages/About";
 import ScanToPay from "./pages/ScanToPay";
-import SellTokenToTOT from "./pages/SellTokenToTOT";
 import SellTOTToTOT from "./pages/SellTOTToTOT";
 import SellTOTToToken from "./pages/SellTOTToToken";
 import Empty from "./pages/Empty";
@@ -137,10 +136,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/selltokentotot":
-        title = "";
-        metaDescription = "";
-        break;
       case "/selltottotot":
         title = "";
         metaDescription = "";
@@ -221,8 +216,6 @@ function App() {
       <Route path="/about" element={<About />} />
 
       <Route path="/scantopay" element={<ScanToPay />} />
-
-      <Route path="/selltokentotot" element={<SellTokenToTOT />} />
 
       <Route path="/selltottotot" element={<SellTOTToTOT />} />
 
