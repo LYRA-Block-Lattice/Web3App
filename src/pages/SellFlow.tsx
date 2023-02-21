@@ -27,22 +27,6 @@ const SellFlow: FunctionComponent = () => {
         }
       });
     }
-
-    // window.rrProxy.ReactRazor.Pages.Home.Interop.CreateOrderAsync(
-    //   window.rrComponent,
-    //   data
-    // ).then(function (response: any) {
-    //   var ret = JSON.parse(response);
-    //   if (ret.ret == "Success") {
-    //     navigate("/createordersuccessform?tx=" + ret.txhash);
-    //   } else {
-    //     window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(
-    //       window.rrComponent,
-    //       "Warning",
-    //       ret.msg
-    //     );
-    //   }
-    // });
   }, [navigate]);
   return (
     <div className="sellflow">

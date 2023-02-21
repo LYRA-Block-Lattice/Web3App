@@ -6,6 +6,7 @@ import { useNavigate } from "react-router";
 import { useSearchParams } from "react-router-dom";
 import {
   getAppSelector,
+  getAuthSelector,
   getMarketSelector,
   getNotifySelector
 } from "../app/selectors";
@@ -46,6 +47,7 @@ interface IAssertInfo {
 const AssertDetailView: FunctionComponent = () => {
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
   const notify = useSelector(getNotifySelector);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
@@ -105,6 +107,10 @@ const AssertDetailView: FunctionComponent = () => {
       });
       return;
     }
+    if (!auth.hasKey) {
+      navigate("/openwallet?ret=/assertdetailview?orderId=" + info.OrderId);
+      return;
+    }
     const order = info.Blocks.Order.Order;
     dispatch({
       type: WALLET_CREATE_TRADE,
@@ -135,6 +141,11 @@ const AssertDetailView: FunctionComponent = () => {
     <div>
       <div className="assertdetailview">
         <PrimaryAccountCard />
+        {isLoading && (
+          <div className="overlay">
+            <p>Loading...</p>
+          </div>
+        )}
         <div className="assertdetailview1">
           <div className="asserttitleregion">
             <div className="assertauthorsection">
@@ -173,11 +184,14 @@ const AssertDetailView: FunctionComponent = () => {
                 src="../asserts/iconparksolidblockchain.svg"
               />
             </div>
-            <img
-              className="titlebannerregion-child"
-              alt=""
-              src={info?.Meta?.image ?? "../asserts/frame-61@2x.png"}
-            />
+            {info?.Meta?.image && (
+              <img
+                className="titlebannerregion-child"
+                alt=""
+                src={info?.Meta?.image}
+              />
+            )}
+            {info?.Meta?.image || <h1>{info?.Blocks.Offgen.Ticker}</h1>}
           </div>
           <div className="assertstatssection">
             <div className="icoutline-remove-red-eye-parent">
@@ -281,7 +295,10 @@ const AssertDetailView: FunctionComponent = () => {
                 <input
                   className="selectedamount"
                   type="number"
-                  placeholder="150"
+                  value={buyAmount}
+                  min={info?.Blocks.Order.Order.limitMin}
+                  max={info?.Blocks.Order.Order.limitMax}
+                  onChange={(e) => setBuyAmount(Number(e.target.value))}
                 />
                 <div className="tethereth-group">
                   <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
@@ -306,10 +323,10 @@ const AssertDetailView: FunctionComponent = () => {
                     color="primary"
                     orientation="horizontal"
                     step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
-                    min={info?.Blocks.Order.Order.limitMin}
-                    max={info?.Blocks.Order.Order.limitMax}
+                    min={info?.Blocks.Order.Order.limitMin ?? 0}
+                    max={info?.Blocks.Order.Order.limitMax ?? 0}
                     onChange={(e, v) => setBuyAmount(v as number)}
-                    defaultValue={info?.Blocks.Order.Order.limitMin!}
+                    value={buyAmount ?? 0}
                   />
                 </Box>
                 <div className="max">Max</div>

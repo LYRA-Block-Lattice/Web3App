@@ -452,7 +452,7 @@ export class LyraApi {
     return await this.sendEx(order.daoId, amounts, tags);
   }
 
-  async createUniTrade(trade: UniTrade): Promise<AuthorizationAPIResult> {
+  async createTrade(trade: UniTrade): Promise<AuthorizationAPIResult> {
     let tags: Tags = {
       [LyraGlobal.REQSERVICETAG]: BrokerActions.BRK_UNI_CRTRD,
       data: stringify(trade)
