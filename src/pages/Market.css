@@ -1,20 +1,3 @@
-.iconssection {
-  align-self: stretch;
-  border-radius: var(--br-sm);
-  background-color: var(--color-whitesmoke-200);
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-7xs) var(--padding-6xs);
-  align-items: center;
-  justify-content: center;
-}
-.iconssection-wrapper {
-  width: 449px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
 .searchsection,
 .searchsection-child {
   overflow: hidden;

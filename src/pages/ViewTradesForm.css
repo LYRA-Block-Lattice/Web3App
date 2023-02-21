@@ -1,3 +1,153 @@
+.rectangle2 {
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-4xs);
+  background-color: var(--secondary1);
+  width: 5px;
+}
+.rectangle-wrapper,
+.wallet-card-inner {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rectangle-wrapper {
+  overflow: hidden;
+  flex-direction: column;
+}
+.wallet-card-inner {
+  background-color: var(--text-primary-dark1);
+  width: 18px;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padding-7xs) 0;
+  box-sizing: border-box;
+}
+.wallet-name-label {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+  font-family: var(--font-sf-pro-text);
+  color: var(--secondary1);
+  text-align: right;
+  display: inline-block;
+  width: 206px;
+}
+.balance-display-zone-child {
+  position: relative;
+  border-top: 1px solid var(--info1);
+  box-sizing: border-box;
+  width: 126px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.lyrlabel,
+.usdtbalance {
+  position: relative;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
+}
+.lyrlabel {
+  font-size: var(--uppercase-small-size);
+  color: var(--secondary1);
+  text-align: left;
+}
+.balance-display-zone-item {
+  position: relative;
+  background-color: var(--color-gainsboro-500);
+  width: 22px;
+  height: 2px;
+  flex-shrink: 0;
+}
+.balance-display-zone {
+  text-decoration: none;
+  align-self: stretch;
+  flex: 1;
+  background-color: var(--text-primary-dark1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-7xs) var(--padding-6xs) 0;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+  color: inherit;
+}
+.qrcode-button-round {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-2xl);
+  background-color: var(--color-silver-100);
+  opacity: 0.5;
+  mix-blend-mode: normal;
+}
+.qrcode-icon {
+  position: absolute;
+  top: 14.33px;
+  right: 14.07px;
+  width: 29px;
+  height: 29px;
+}
+.qrcode-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 56.78px;
+  height: 56.78px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.balance-display-zone-parent,
+.qrcode-button-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.qrcode-button-wrapper {
+  background-color: var(--text-primary-dark1);
+  overflow: hidden;
+  padding: var(--padding-7xs) var(--padding-7xs) var(--padding-6xs)
+    var(--padding-6xs);
+}
+.balance-display-zone-parent {
+  flex: 1;
+}
+.wallet-card,
+.wallet-card-child {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.wallet-card-child {
+  align-self: stretch;
+  flex: 1;
+  flex-direction: column;
+}
+.wallet-card {
+  border-radius: var(--br-sm);
+  background-color: var(--text-primary-dark1);
+  width: 402px;
+  height: 94px;
+  flex-shrink: 0;
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-6xs);
+  box-sizing: border-box;
+}
 .view-trades {
   position: relative;
   letter-spacing: 0.41px;
@@ -22,6 +172,9 @@
   padding: var(--padding-xl) var(--padding-sm) var(--padding-xl)
     var(--padding-xl);
   align-items: flex-start;
+  text-align: left;
+  color: var(--black-000000100);
+  font-family: var(--caption);
 }
 .viewtradesform {
   position: relative;
@@ -31,8 +184,8 @@
   padding: var(--padding-6xs);
   align-items: center;
   gap: var(--gap-xl);
-  text-align: left;
+  text-align: right;
   font-size: var(--font-size-7xl);
-  color: var(--black-000000100);
-  font-family: var(--caption);
+  color: var(--color-white);
+  font-family: var(--font-sf-pro-text);
 }

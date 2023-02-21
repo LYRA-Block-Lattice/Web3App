@@ -129,14 +129,14 @@ const WalletHome: FunctionComponent = () => {
     <>
       <div className="wallethome">
         <WalletCard />
-        <div className="iconssection-container">
-          <div className="iconssection1">
+        <div className="iconssection-wrapper">
+          <div className="iconssection">
             <div className="swap-button-parent">
               <button className="swap-button" onClick={onSwapButtonClick}>
                 <img
                   className="home-icon-interlocution"
                   alt=""
-                  src="../asserts/home--icon--interlocution4.svg"
+                  src="../asserts/home--icon--interlocution5.svg"
                 />
                 <div className="ranking">Market</div>
               </button>
@@ -144,7 +144,7 @@ const WalletHome: FunctionComponent = () => {
                 <img
                   className="home-icon-interlocution"
                   alt=""
-                  src="../asserts/home--icon--interlocution5.svg"
+                  src="../asserts/home--icon--interlocution6.svg"
                 />
                 <div className="ranking">Swap</div>
               </button>
@@ -152,7 +152,7 @@ const WalletHome: FunctionComponent = () => {
                 <img
                   className="home-icon-interlocution"
                   alt=""
-                  src="../asserts/home--icon--interlocution6.svg"
+                  src="../asserts/home--icon--interlocution7.svg"
                 />
                 <div className="ranking">Send</div>
               </button>
@@ -160,7 +160,7 @@ const WalletHome: FunctionComponent = () => {
                 <img
                   className="home-icon-interlocution"
                   alt=""
-                  src="../asserts/home--icon--interlocution7.svg"
+                  src="../asserts/home--icon--interlocution8.svg"
                 />
                 <div className="ranking">Receive</div>
               </button>
@@ -168,7 +168,7 @@ const WalletHome: FunctionComponent = () => {
                 <img
                   className="home-icon-interlocution"
                   alt=""
-                  src="../asserts/home--icon--interlocution8.svg"
+                  src="../asserts/home--icon--interlocution9.svg"
                 />
                 <div className="ranking">More...</div>
               </button>

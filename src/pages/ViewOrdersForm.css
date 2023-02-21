@@ -1,3 +1,153 @@
+.rectangle3 {
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-4xs);
+  background-color: var(--secondary1);
+  width: 5px;
+}
+.rectangle-container,
+.wallet-card-inner1 {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rectangle-container {
+  overflow: hidden;
+  flex-direction: column;
+}
+.wallet-card-inner1 {
+  background-color: var(--text-primary-dark1);
+  width: 18px;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padding-7xs) 0;
+  box-sizing: border-box;
+}
+.wallet-name-label1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+  font-family: var(--font-sf-pro-text);
+  color: var(--secondary1);
+  text-align: right;
+  display: inline-block;
+  width: 206px;
+}
+.balance-display-zone-inner {
+  position: relative;
+  border-top: 1px solid var(--info1);
+  box-sizing: border-box;
+  width: 126px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.lyrlabel1,
+.usdtbalance1 {
+  position: relative;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
+}
+.lyrlabel1 {
+  font-size: var(--uppercase-small-size);
+  color: var(--secondary1);
+  text-align: left;
+}
+.rectangle-div {
+  position: relative;
+  background-color: var(--color-gainsboro-500);
+  width: 22px;
+  height: 2px;
+  flex-shrink: 0;
+}
+.balance-display-zone1 {
+  text-decoration: none;
+  align-self: stretch;
+  flex: 1;
+  background-color: var(--text-primary-dark1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-7xs) var(--padding-6xs) 0;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+  color: inherit;
+}
+.qrcode-button-round1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-2xl);
+  background-color: var(--color-silver-100);
+  opacity: 0.5;
+  mix-blend-mode: normal;
+}
+.qrcode-icon1 {
+  position: absolute;
+  top: 14.33px;
+  right: 14.07px;
+  width: 29px;
+  height: 29px;
+}
+.qrcode-button1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 56.78px;
+  height: 56.78px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.balance-display-zone-group,
+.qrcode-button-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.qrcode-button-container {
+  background-color: var(--text-primary-dark1);
+  overflow: hidden;
+  padding: var(--padding-7xs) var(--padding-7xs) var(--padding-6xs)
+    var(--padding-6xs);
+}
+.balance-display-zone-group {
+  flex: 1;
+}
+.wallet-card-inner2,
+.wallet-card1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.wallet-card-inner2 {
+  align-self: stretch;
+  flex: 1;
+  flex-direction: column;
+}
+.wallet-card1 {
+  border-radius: var(--br-sm);
+  background-color: var(--text-primary-dark1);
+  width: 402px;
+  height: 94px;
+  flex-shrink: 0;
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-6xs);
+  box-sizing: border-box;
+}
 .utility-button5,
 .view-orders {
   position: relative;
@@ -46,6 +196,9 @@
     var(--padding-xl);
   justify-content: center;
   gap: 130px;
+  text-align: left;
+  color: var(--black-000000100);
+  font-family: var(--caption);
 }
 .viewordersform {
   position: relative;
@@ -55,8 +208,8 @@
   padding: var(--padding-6xs);
   justify-content: flex-start;
   gap: var(--gap-xl);
-  text-align: left;
+  text-align: right;
   font-size: var(--font-size-7xl);
-  color: var(--black-000000100);
-  font-family: var(--caption);
+  color: var(--color-white);
+  font-family: var(--font-sf-pro-text);
 }

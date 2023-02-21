@@ -1,22 +1,22 @@
-.rectangle3 {
+.rectangle5 {
   flex: 1;
   position: relative;
   border-radius: var(--br-4xs);
   background-color: var(--secondary1);
   width: 5px;
 }
-.rectangle-container,
-.wallet-card-inner1 {
+.rectangle-wrapper1,
+.wallet-card-inner5 {
   align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.rectangle-container {
+.rectangle-wrapper1 {
   overflow: hidden;
   flex-direction: column;
 }
-.wallet-card-inner1 {
+.wallet-card-inner5 {
   background-color: var(--text-primary-dark1);
   width: 18px;
   flex-shrink: 0;
@@ -24,7 +24,7 @@
   padding: var(--padding-7xs) 0;
   box-sizing: border-box;
 }
-.wallet-name-label1 {
+.wallet-name-label3 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -38,7 +38,7 @@
   display: inline-block;
   width: 206px;
 }
-.balance-display-zone-inner {
+.balance-display-zone-child2 {
   position: relative;
   border-top: 1px solid var(--info1);
   box-sizing: border-box;
@@ -46,12 +46,12 @@
   height: 1px;
   flex-shrink: 0;
 }
-.usdtbalance1 {
+.usdtbalance3 {
   position: relative;
   letter-spacing: 0.3px;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
-.rectangle-div {
+.balance-display-zone-child3 {
   position: relative;
   background-color: var(--color-gainsboro-500);
   width: 22px;
@@ -66,7 +66,7 @@
   text-align: left;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
-.balance-display-zone1 {
+.balance-display-zone3 {
   cursor: pointer;
   text-decoration: none;
   align-self: stretch;
@@ -81,7 +81,7 @@
   gap: var(--gap-4xs);
   color: inherit;
 }
-.qrcode-button-round1 {
+.qrcode-button-round3 {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -94,14 +94,14 @@
   opacity: 0.5;
   mix-blend-mode: normal;
 }
-.qrcode-icon1 {
+.qrcode-icon3 {
   position: absolute;
   top: 14.33px;
   right: 14.07px;
   width: 29px;
   height: 29px;
 }
-.qrcode-button1 {
+.qrcode-button3 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -112,21 +112,21 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.balance-display-zone-group,
-.qrcode-button-container {
+.balance-display-zone-parent1,
+.qrcode-button-wrapper1 {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-end;
 }
-.qrcode-button-container {
+.qrcode-button-wrapper1 {
   background-color: var(--text-primary-dark1);
   overflow: hidden;
   padding: var(--padding-7xs) var(--padding-7xs) var(--padding-6xs)
     var(--padding-6xs);
 }
-.balance-display-zone-group {
+.balance-display-zone-parent1 {
   flex: 1;
 }
 .nft-count,
@@ -170,7 +170,7 @@
   gap: var(--gap-3xl);
 }
 .frame-parent1,
-.wallet-card1 {
+.wallet-card3 {
   align-self: stretch;
   display: flex;
   align-items: flex-start;
@@ -180,7 +180,7 @@
   flex: 1;
   flex-direction: column;
 }
-.wallet-card1 {
+.wallet-card3 {
   border-radius: var(--br-sm);
   background-color: var(--text-primary-dark1);
   height: 217px;

@@ -18,36 +18,36 @@ const WalletCard: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="wallet-card1">
-      <div className="wallet-card-inner1">
-        <div className="rectangle-container">
-          <div className="rectangle3" />
+    <div className="wallet-card3">
+      <div className="wallet-card-inner5">
+        <div className="rectangle-wrapper1">
+          <div className="rectangle5" />
         </div>
       </div>
       <div className="frame-parent1">
-        <div className="balance-display-zone-group">
-          <Link className="balance-display-zone1" to="/openwallet">
-            <button className="wallet-name-label1">{app.name}</button>
-            <div className="balance-display-zone-inner" />
-            <b className="usdtbalance1">
+        <div className="balance-display-zone-parent1">
+          <Link className="balance-display-zone3" to="/openwallet">
+            <button className="wallet-name-label3">{app.name}</button>
+            <div className="balance-display-zone-child2" />
+            <b className="usdtbalance3">
               {app.wallet.balance.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
             <b className="usdtlabel">LYR</b>
-            <div className="rectangle-div" />
-            <b className="usdtbalance1">
+            <div className="balance-display-zone-child3" />
+            <b className="usdtbalance3">
               {app.wallet.usdt.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
             <b className="usdtlabel">USDT</b>
           </Link>
-          <div className="qrcode-button-container">
-            <button className="qrcode-button1" onClick={scanToPay}>
-              <div className="qrcode-button-round1" />
+          <div className="qrcode-button-wrapper1">
+            <button className="qrcode-button3" onClick={scanToPay}>
+              <div className="qrcode-button-round3" />
               <img
-                className="qrcode-icon1"
+                className="qrcode-icon3"
                 alt=""
                 src="../asserts/qrcode-icon.svg"
               />

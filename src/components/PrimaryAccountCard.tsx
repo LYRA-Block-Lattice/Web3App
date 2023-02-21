@@ -19,33 +19,33 @@ const PrimaryAccountCard: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="wallet-card">
-      <div className="wallet-card-inner">
-        <div className="rectangle-wrapper">
-          <div className="rectangle2" />
+    <div className="wallet-card2">
+      <div className="wallet-card-inner3">
+        <div className="rectangle-frame">
+          <div className="rectangle4" />
         </div>
       </div>
-      <div className="wallet-card-child">
-        <div className="balance-display-zone-parent">
+      <div className="wallet-card-inner4">
+        <div className="balance-display-zone-container">
           <button
-            className="balance-display-zone"
+            className="balance-display-zone2"
             onClick={onBalanceDisplayZoneClick}
           >
-            <b className="wallet-name-label">{app.name}</b>
-            <div className="balance-display-zone-child" />
-            <b className="usdtbalance">
+            <b className="wallet-name-label2">{app.name}</b>
+            <div className="line-div" />
+            <b className="usdtbalance2">
               {app.wallet.balance.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
-            <b className="lyrlabel">LYR</b>
-            <div className="balance-display-zone-item" />
+            <b className="lyrlabel2">LYR</b>
+            <div className="balance-display-zone-child1" />
           </button>
-          <div className="qrcode-button-wrapper">
-            <button className="qrcode-button" onClick={scanToPay}>
-              <div className="qrcode-button-round" />
+          <div className="qrcode-button-frame">
+            <button className="qrcode-button2" onClick={scanToPay}>
+              <div className="qrcode-button-round2" />
               <img
-                className="qrcode-icon"
+                className="qrcode-icon2"
                 alt=""
                 src="../asserts/qrcode-icon.svg"
               />
