@@ -27,7 +27,7 @@
   background-color: var(--color-white);
   flex-direction: column;
   padding: var(--padding-xl) var(--padding-2xs);
-  gap: var(--gap-5xl);
+  gap: var(--gap-4xl);
 }
 .tot-description2,
 .tot-name1 {
@@ -120,7 +120,7 @@
 }
 .togettotform {
   padding: var(--padding-xl) var(--padding-xs);
-  gap: var(--gap-3xl);
+  gap: var(--gap-2xl);
 }
 .selltokentotot {
   position: relative;

@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
-import { TextField, Box, Slider } from "@mui/material";
+import { Box, Slider } from "@mui/material";
 import "./AssertDetailView.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
@@ -278,14 +278,10 @@ const AssertDetailView: FunctionComponent = () => {
           </div>
           <div className="frame-container">
             <div className="selectedamount-parent">
-              <TextField
+              <input
                 className="selectedamount"
-                color="primary"
-                variant="outlined"
                 type="number"
-                placeholder="Placeholder"
-                size="medium"
-                margin="none"
+                placeholder="150"
               />
               <div className="tethereth-group">
                 <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
@@ -302,51 +298,51 @@ const AssertDetailView: FunctionComponent = () => {
                   })}
                 </div>
               </div>
-              <div className="limitadjustsection">
-                <div className="tetherusdt">Min</div>
-                <Box className="slidercontinuous">
-                  <Slider
-                    color="primary"
-                    orientation="horizontal"
-                    step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
-                    min={info?.Blocks.Order.Order.limitMin}
-                    max={info?.Blocks.Order.Order.limitMax}
-                    onChange={(e, v) => setBuyAmount(v as number)}
-                    defaultValue={info?.Blocks.Order.Order.limitMin!}
-                  />
-                </Box>
-                <div className="max">Max</div>
-              </div>
+            </div>
+            <div className="limitadjustsection">
+              <div className="tetherusdt">Min</div>
+              <Box className="slidercontinuous">
+                <Slider
+                  color="primary"
+                  orientation="horizontal"
+                  step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
+                  min={info?.Blocks.Order.Order.limitMin}
+                  max={info?.Blocks.Order.Order.limitMax}
+                  onChange={(e, v) => setBuyAmount(v as number)}
+                  defaultValue={info?.Blocks.Order.Order.limitMin!}
+                />
+              </Box>
+              <div className="max">Max</div>
             </div>
           </div>
-          <div className="makeofferbutton">
-            <button
-              className="prepare-sell-order-button5"
-              onClick={onMakeOfferButtonClick}
-            >
-              <img
-                className="material-symbolsshare-icon"
-                alt=""
-                src="../asserts/evapricetagsoutline.svg"
-              />
-              <div className="primary-button2">Make offer</div>
-            </button>
-          </div>
-          <div className="descriptiontitle2">
+        </div>
+        <div className="makeofferbutton">
+          <button
+            className="prepare-sell-order-button5"
+            onClick={onMakeOfferButtonClick}
+          >
             <img
               className="material-symbolsshare-icon"
               alt=""
-              src="../asserts/galasecure.svg"
+              src="../asserts/evapricetagsoutline.svg"
             />
-            <div className="meka-legends">Trading protection</div>
-          </div>
-          <div className="descriptiondetails1">
-            <div className="a-legend-nft">
-              This order is protected by staking of 100,000 LYR, or $1,000 in
-              USD, from the seller. This order belongs to DAO "A good shop"
-              which has a total staking of 30,000,000 LYR.
-            </div>
-          </div>
+            <div className="primary-button2">Make offer</div>
+          </button>
+        </div>
+      </div>
+      <div className="descriptiontitle">
+        <img
+          className="material-symbolsshare-icon"
+          alt=""
+          src="../asserts/galasecure.svg"
+        />
+        <div className="meka-legends">Trading protection</div>
+      </div>
+      <div className="descriptiondetails1">
+        <div className="this-order-is">
+          This order is protected by staking of 100,000 LYR, or $1,000 in USD,
+          from the seller. This order is regulated by the DAO “A good shop”
+          which has a total staking of 30,000,000 LYR.
         </div>
       </div>
     </div>
