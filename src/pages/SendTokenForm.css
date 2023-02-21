@@ -57,7 +57,7 @@
   flex-direction: column;
   padding: var(--padding-6xs);
   justify-content: flex-start;
-  gap: var(--gap-5xl);
+  gap: var(--gap-6xl);
   text-align: left;
   font-size: var(--font-size-8xl);
   color: var(--black-000000100);

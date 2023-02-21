@@ -18,15 +18,17 @@
   background-color: var(--color-lightyellow);
   border-radius: var(--br-xs);
   width: 301px;
-  height: 40px;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   padding: var(--padding-6xs);
   box-sizing: border-box;
-  align-items: center;
   justify-content: flex-start;
+}
+.tot-name2 {
+  height: 40px;
+  align-items: center;
 }
 .tot-description3 {
   height: 124px;
@@ -98,10 +100,12 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-xl) var(--padding-xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-2xl);
+}
+.togettotform1 {
+  padding: var(--padding-xl) var(--padding-xs);
+  gap: var(--gap-3xl);
 }
 .selltottotot {
   position: relative;

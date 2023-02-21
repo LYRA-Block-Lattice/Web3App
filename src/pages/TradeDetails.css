@@ -64,7 +64,7 @@
   padding: var(--padding-6xs);
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-3xl);
+  gap: var(--gap-4xl);
   text-align: left;
   font-size: var(--font-size-3xl);
   color: var(--black-000000100);

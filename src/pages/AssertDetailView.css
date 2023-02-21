@@ -96,15 +96,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+.icoutline-remove-red-eye-parent {
   gap: var(--gap-xs);
 }
 .assertstatssection {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   padding: var(--padding-6xs);
-  gap: var(--gap-3xl);
+  gap: var(--gap-4xl);
 }
 .assertdetailview1 {
-  align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -113,13 +114,13 @@
 .descriptiondetails,
 .descriptiontitle,
 .pricelabel {
-  align-self: stretch;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
 .descriptiontitle {
+  align-self: stretch;
   border-radius: var(--br-sm);
   background-color: var(--color-gainsboro-300);
   padding: var(--padding-3xs) var(--padding-sm);
@@ -139,6 +140,7 @@
   box-sizing: border-box;
 }
 .pricelabel {
+  align-self: stretch;
   padding: 0 var(--padding-6xs);
 }
 .div7,
@@ -179,7 +181,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: var(--gap-2xs);
 }
 .priceandvaluelabel1,
 .pricelabel1 {
@@ -212,7 +214,7 @@
   padding: 0 var(--padding-6xs);
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: var(--gap-2xs);
 }
 .selectedamount {
   border: 1px solid #cacaca;
@@ -238,18 +240,17 @@
 .selectedamount-parent,
 .tethereth-group {
   display: flex;
+  justify-content: center;
+}
+.tethereth-group {
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
 }
 .selectedamount-parent {
   align-self: stretch;
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-md);
-}
-.slidercontinuous {
-  flex: 1;
+  gap: var(--gap-4xl);
 }
 .max {
   position: relative;
@@ -258,22 +259,19 @@
   text-align: center;
 }
 .limitadjustsection {
-  align-self: stretch;
   background-color: var(--color-white);
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-6xs) 0;
   align-items: center;
-  justify-content: center;
-  gap: var(--gap-md);
+  justify-content: flex-start;
+  gap: var(--gap-4xl);
   text-align: left;
   font-size: var(--font-size-xl);
   color: var(--color-dimgray-300);
 }
 .frame-container,
 .pricelabel-parent {
-  align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -286,8 +284,9 @@
   color: var(--color-dimgray-100);
 }
 .pricelabel-parent {
+  align-self: stretch;
   padding: 0 var(--padding-6xs);
-  gap: var(--gap-md);
+  gap: var(--gap-2xs);
 }
 .primary-button2 {
   position: relative;
@@ -299,75 +298,71 @@
   color: var(--color-white);
   text-align: center;
 }
-.descriptiontitle2,
-.makeofferbutton,
-.prepare-sell-order-button5 {
-  align-self: stretch;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .prepare-sell-order-button5 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-6xl);
   background-color: var(--primary);
+  align-self: stretch;
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
   box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
   gap: var(--gap-md);
 }
 .prepare-sell-order-button5:hover {
   background-color: var(--color-mediumslateblue-100);
 }
-.descriptiontitle2,
+.buysection,
 .makeofferbutton {
-  background-color: var(--color-white);
+  display: flex;
   flex-direction: column;
-  padding: var(--padding-4xs);
 }
-.descriptiontitle2 {
-  border-radius: var(--br-sm);
-  background-color: var(--color-gainsboro-300);
-  flex-direction: row;
-  padding: var(--padding-3xs) var(--padding-sm);
+.makeofferbutton {
+  align-self: stretch;
+  background-color: var(--color-white);
+  overflow: hidden;
+  padding: var(--padding-4xs);
+  align-items: center;
+  justify-content: center;
+}
+.buysection {
+  padding: var(--padding-6xs) 0 0;
+  align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-md);
-  font-size: var(--font-size-7xl);
-  color: var(--black-000000100);
+  gap: var(--gap-xl);
+  color: var(--color-dimgray-300);
+}
+.this-order-is {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  display: inline-block;
+  width: 334px;
+  flex-shrink: 0;
 }
 .assertdetailview,
-.buysection,
 .descriptiondetails1 {
+  background-color: var(--color-white);
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
 .descriptiondetails1 {
-  align-self: stretch;
-  background-color: var(--color-white);
   overflow: hidden;
   flex-direction: row;
   padding: var(--padding-md) var(--padding-4xl);
-  color: var(--black-000000100);
-}
-.assertdetailview,
-.buysection {
-  flex-direction: column;
-}
-.buysection {
-  align-self: stretch;
-  padding: var(--padding-6xs) 0 0;
-  gap: var(--gap-md);
-  color: var(--color-dimgray-300);
 }
 .assertdetailview {
   position: relative;
-  background-color: var(--color-white);
   width: 100%;
+  flex-direction: column;
   padding: var(--padding-6xs);
   box-sizing: border-box;
   text-align: left;
