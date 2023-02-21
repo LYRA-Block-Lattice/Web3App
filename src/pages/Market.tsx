@@ -1,5 +1,5 @@
 import { FunctionComponent, useState, useEffect, useCallback } from "react";
-import PrimaryAccountCard from "../components/PrimaryAccountCard";
+import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import { useSelector } from "react-redux";
 import MarketToolBar from "../components/MarketToolBar";
 import TokenCatalogTabs from "../components/TokenCatalogTabs";
@@ -35,7 +35,7 @@ const Market: FunctionComponent = () => {
 
   return (
     <div className="market">
-      <PrimaryAccountCard />
+      <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon.svg" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution.svg"
         homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"

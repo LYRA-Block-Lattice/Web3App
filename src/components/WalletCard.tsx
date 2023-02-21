@@ -18,38 +18,38 @@ const WalletCard: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="wallet-card3">
-      <div className="wallet-card-inner5">
-        <div className="rectangle-wrapper1">
-          <div className="rectangle5" />
+    <div className="wallet-card">
+      <div className="wallet-card-inner">
+        <div className="rectangle-wrapper">
+          <div className="rectangle2" />
         </div>
       </div>
       <div className="frame-parent1">
-        <div className="balance-display-zone-parent1">
-          <Link className="balance-display-zone3" to="/openwallet">
-            <button className="wallet-name-label3">{app.name}</button>
-            <div className="balance-display-zone-child2" />
-            <b className="usdtbalance3">
+        <div className="balance-display-zone-parent">
+          <Link className="balance-display-zone" to="/openwallet">
+            <button className="wallet-name-label">{app.name}</button>
+            <div className="balance-display-zone-child" />
+            <b className="usdtbalance">
               {app.wallet.balance.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
-            <b className="usdtlabel">LYR</b>
-            <div className="balance-display-zone-child3" />
-            <b className="usdtbalance3">
+            <b className="lyrlabel">LYR</b>
+            <div className="balance-display-zone-item" />
+            <b className="usdtbalance">
               {app.wallet.usdt.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
-            <b className="usdtlabel">USDT</b>
+            <b className="lyrlabel">USDT</b>
           </Link>
-          <div className="qrcode-button-wrapper1">
-            <button className="qrcode-button3" onClick={scanToPay}>
-              <div className="qrcode-button-round3" />
+          <div className="qrcode-button-wrapper">
+            <button className="qrcode-button" onClick={scanToPay}>
+              <div className="qrcode-button-round" />
               <img
-                className="qrcode-icon3"
+                className="qrcode-icon"
                 alt=""
-                src="../asserts/qrcode-icon.svg"
+                src="../asserts/qrcode-icon1.svg"
               />
             </button>
           </div>
