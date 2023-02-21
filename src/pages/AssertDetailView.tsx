@@ -230,7 +230,7 @@ const AssertDetailView: FunctionComponent = () => {
                     {info?.Blocks.Order.Order.limitMin} -{" "}
                     {info?.Blocks.Order.Order.limitMax}
                   </div>
-                  <div className="tetherusdt">tether/USDT</div>
+                  <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
                   <div className="div8">$0 ~ 0</div>
                 </div>
               </div>
@@ -244,6 +244,7 @@ const AssertDetailView: FunctionComponent = () => {
                     min={info?.Blocks.Order.Order.limitMin}
                     max={info?.Blocks.Order.Order.limitMax}
                     onChange={(e, v) => setBuyAmount(v as number)}
+                    defaultValue={info?.Blocks.Order.Order.limitMax}
                   />
                 </Box>
                 <div className="meka-legends">Max</div>
@@ -251,7 +252,7 @@ const AssertDetailView: FunctionComponent = () => {
               <input
                 className="selectedamount"
                 type="number"
-                placeholder={info?.Blocks.Order.Order.limitMin! + ""}
+                defaultValue={info?.Blocks.Order.Order.limitMax! + ""}
                 value={buyAmount}
                 onChange={(e) => console.log(e)}
               />
