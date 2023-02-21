@@ -141,7 +141,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
           </div>
           <div className="collateral-worth-label12">
             <div className="worth-in-dollar">Total:</div>
-            <div className="div20">$ 103</div>
+            <div className="div22">$ 103</div>
           </div>
         </div>
       </div>

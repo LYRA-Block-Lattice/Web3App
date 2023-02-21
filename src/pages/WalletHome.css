@@ -67,10 +67,8 @@
 .div4,
 .group-inner {
   position: absolute;
-  left: calc(50% - 5.5px);
-}
-.group-inner {
   top: calc(50% - 4px);
+  left: calc(50% - 5.5px);
   width: 11px;
   height: 11px;
 }

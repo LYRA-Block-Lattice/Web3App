@@ -95,33 +95,54 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="meka-legends">Current Price</div>
           </div>
           <div className="priceandvaluelabel">
-            <div className="meka-legends">0.0325 ETH</div>
-            <div className="tetherusdt">$86.20</div>
+            <div className="meka-legends">0.0325</div>
+            <div className="tetherusdt-parent">
+              <div className="tetherusdt">tether/USDT</div>
+              <div className="div7">$86.20</div>
+            </div>
           </div>
         </div>
-        <div className="selectamountsection">
-          <div className="setlimitsection">
-            <div className="pricelabel1">
-              <div className="meka-legends">Available to buy</div>
-            </div>
-            <div className="priceandvaluelabel1">
-              <div className="meka-legends">100 - 200</div>
-              <div className="tetherusdt">tether/USDT</div>
-              <div className="div8">$40 ~ 84.20</div>
+        <div className="setlimitsection">
+          <div className="pricelabel1">
+            <div className="meka-legends">Available to buy</div>
+          </div>
+          <div className="priceandvaluelabel1">
+            <div className="meka-legends">100 - 200</div>
+            <div className="tetherusdt-parent">
+              <div className="tetherusdt">tether/ETH</div>
+              <div className="div7">$40 ~ 84.20</div>
             </div>
           </div>
-          <div className="limitadjustsection">
-            <div className="meka-legends">Min</div>
-            <Box className="slidercontinuous">
-              <Slider
-                color="primary"
-                defaultValue={20}
-                orientation="horizontal"
+        </div>
+        <div className="pricelabel-parent">
+          <div className="pricelabel1">
+            <div className="meka-legends">My Offer</div>
+          </div>
+          <div className="frame-container">
+            <div className="selectedamount-parent">
+              <input
+                className="selectedamount"
+                type="number"
+                placeholder="150"
               />
-            </Box>
-            <div className="meka-legends">Max</div>
+              <div className="tethereth-group">
+                <div className="tethereth1">tether/ETH</div>
+                <div className="tetherusdt">100 tether/USDT</div>
+                <div className="tetherusdt">$ 10.3</div>
+              </div>
+            </div>
+            <div className="limitadjustsection">
+              <div className="tetherusdt">Min</div>
+              <Box className="slidercontinuous">
+                <Slider
+                  color="primary"
+                  defaultValue={20}
+                  orientation="horizontal"
+                />
+              </Box>
+              <div className="max">Max</div>
+            </div>
           </div>
-          <input className="selectedamount" type="number" placeholder="150" />
         </div>
         <div className="makeofferbutton">
           <button className="prepare-sell-order-button5">
@@ -133,7 +154,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="primary-button2">Make offer</div>
           </button>
         </div>
-        <div className="descriptiontitle">
+        <div className="descriptiontitle2">
           <img
             className="material-symbolsshare-icon"
             alt=""
@@ -141,7 +162,7 @@ const AssertDetailView: FunctionComponent = () => {
           />
           <div className="meka-legends">Trading protection</div>
         </div>
-        <div className="descriptiondetails">
+        <div className="descriptiondetails1">
           <div className="a-legend-nft">
             This order is protected by staking of 100,000 LYR, or $1,000 in USD,
             from the seller. This order belongs to DAO ‘A good shop’ which has a

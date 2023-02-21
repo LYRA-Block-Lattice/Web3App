@@ -69,7 +69,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
             <b className="btc">Sell</b>
             <b className="btc">{offering}</b>
             <img className="arrow-icon" alt="" src="../asserts/arrow-2.svg" />
-            <b className="tetherusdt1">{biding}</b>
+            <b className="tetherusdt2">{biding}</b>
           </div>
           <div className="details-section">
             <div className="block3">

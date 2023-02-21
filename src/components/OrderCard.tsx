@@ -81,7 +81,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
               alt=""
               src="../asserts/arrow-22.svg"
             />
-            <b className="tetherusdt3">{biding}</b>
+            <b className="tetherusdt4">{biding}</b>
           </div>
           <div className="title-section-item" />
           <div className="am-container">

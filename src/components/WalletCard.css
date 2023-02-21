@@ -169,14 +169,14 @@
   justify-content: flex-end;
   gap: var(--gap-3xl);
 }
-.frame-container,
+.frame-parent1,
 .wallet-card1 {
   align-self: stretch;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-container {
+.frame-parent1 {
   flex: 1;
   flex-direction: column;
 }

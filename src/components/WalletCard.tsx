@@ -10,7 +10,7 @@ const WalletCard: FunctionComponent = () => {
           <div className="rectangle3" />
         </div>
       </div>
-      <div className="frame-container">
+      <div className="frame-parent1">
         <div className="balance-display-zone-group">
           <Link className="balance-display-zone1" to="/openwallet">
             <button className="wallet-name-label1">My Primary Account</button>
