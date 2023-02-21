@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
-import { Box, Slider } from "@mui/material";
+import { TextField, Box, Slider } from "@mui/material";
 import "./AssertDetailView.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
@@ -271,32 +271,35 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
             </div>
           </div>
-          <div className="pricelabel-parent">
-            <div className="pricelabel1">
-              <div className="meka-legends">My Offer</div>
-            </div>
-            <div className="frame-container">
-              <div className="selectedamount-parent">
-                <input
-                  className="selectedamount"
-                  type="number"
-                  value={buyAmount}
-                  onChange={(e) => console.log(e)}
-                />
-                <div className="tethereth-group">
-                  <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
-                  <div className="tetherusdt">
-                    {bidAmount.toLocaleString(undefined, {
-                      maximumFractionDigits: 8
-                    })}{" "}
-                    {info?.Blocks.Bidgen.Ticker}
-                  </div>
-                  <div className="tetherusdt">
-                    ${" "}
-                    {offerDollar.toLocaleString(undefined, {
-                      maximumFractionDigits: 2
-                    })}
-                  </div>
+        </div>
+        <div className="pricelabel-parent">
+          <div className="pricelabel1">
+            <div className="meka-legends">My Offer</div>
+          </div>
+          <div className="frame-container">
+            <div className="selectedamount-parent">
+              <TextField
+                className="selectedamount"
+                color="primary"
+                variant="outlined"
+                type="number"
+                placeholder="Placeholder"
+                size="medium"
+                margin="none"
+              />
+              <div className="tethereth-group">
+                <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
+                <div className="tetherusdt">
+                  {bidAmount.toLocaleString(undefined, {
+                    maximumFractionDigits: 8
+                  })}{" "}
+                  {info?.Blocks.Bidgen.Ticker}
+                </div>
+                <div className="tetherusdt">
+                  ${" "}
+                  {offerDollar.toLocaleString(undefined, {
+                    maximumFractionDigits: 2
+                  })}
                 </div>
               </div>
               <div className="limitadjustsection">
