@@ -97,10 +97,8 @@
 .div,
 .group-child {
   position: absolute;
-  left: calc(50% - 5.5px);
-}
-.group-child {
   top: calc(50% - 4px);
+  left: calc(50% - 5.5px);
   width: 11px;
   height: 11px;
 }
@@ -226,8 +224,6 @@
 .market,
 .orderandcatalog {
   background-color: var(--color-white);
-}
-.orderandcatalog {
   width: 449px;
 }
 .market {
