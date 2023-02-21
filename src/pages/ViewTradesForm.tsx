@@ -8,7 +8,6 @@ import TradeCard from "../components/TradeCard";
 import "./ViewTradesForm.css";
 import { getTickerIcon } from "../app/market/marketReducer";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
-import MarketToolBar from "../components/MarketToolBar";
 
 const ViewTradesForm: FunctionComponent = () => {
   const navigate = useNavigate();

@@ -11,7 +11,6 @@ import PrimaryAccountCard from "../components/PrimaryAccountCard";
 import React from "react";
 import { Tab, Tabs } from "@mui/material";
 import { set } from "immer/dist/internal";
-import MarketToolBar from "../components/MarketToolBar";
 
 interface customWindow extends Window {
   rrComponent?: any;
