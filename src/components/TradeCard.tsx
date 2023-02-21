@@ -36,8 +36,12 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
   }, [navigate]);
 
   useEffect(() => {
-    if (orderRef.current && dir === "Sell") {
-      orderRef.current.style.backgroundColor = "var(--sell1)";
+    if (orderRef.current) {
+      if (dir === "Sell") {
+        orderRef.current.style.backgroundColor = "var(--sell1)";
+      } else {
+        orderRef.current.style.backgroundColor = "var(--buy1)";
+      }
     }
   }, []);
 
