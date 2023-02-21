@@ -47,7 +47,7 @@ const MiscComponents: FunctionComponent = () => {
                 />
               </div>
               <div className="price">
-                <div className="div2">60$</div>
+                <div className="div">60$</div>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ const MiscComponents: FunctionComponent = () => {
                 />
               </div>
               <div className="price">
-                <div className="div2">60$</div>
+                <div className="div">60$</div>
               </div>
             </div>
           </div>

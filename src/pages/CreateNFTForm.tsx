@@ -180,7 +180,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
     <div className="createnftform">
       <div className="create-nft">Create NFT</div>
       <TextField
-        className="nft-metadata-url"
+        className="nft-name"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -202,7 +202,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
       />
       <img className="createnftform-child" alt="" src={imgsrc} />
       <TextField
-        className="nft-metadata-url"
+        className="nft-name"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -220,7 +220,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         type="file"
         onChange={handleFileChange}
       />
-      <button className="prepare-sell-order-button15" onClick={onMintClick}>
+      <button className="prepare-sell-order-button14" onClick={onMintClick}>
         <div className="secondary-button4">Create NFT</div>
       </button>
     </div>

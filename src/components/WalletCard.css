@@ -2,7 +2,7 @@
   flex: 1;
   position: relative;
   border-radius: var(--br-4xs);
-  background-color: var(--color-deeppink);
+  background-color: var(--secondary1);
   width: 5px;
 }
 .rectangle-container,
@@ -33,7 +33,7 @@
   font-size: var(--font-size-5xl);
   font-weight: 700;
   font-family: var(--font-sf-pro-text);
-  color: var(--color-deeppink);
+  color: var(--secondary1);
   text-align: right;
   display: inline-block;
   width: 206px;
@@ -62,7 +62,7 @@
   position: relative;
   font-size: var(--uppercase-small-size);
   letter-spacing: 0.3px;
-  color: var(--color-deeppink);
+  color: var(--secondary1);
   text-align: left;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
@@ -143,7 +143,7 @@
 }
 .nft-label {
   font-size: var(--uppercase-small-size);
-  color: var(--color-deeppink);
+  color: var(--secondary1);
 }
 .go-nft-button {
   cursor: pointer;

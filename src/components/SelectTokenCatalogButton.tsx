@@ -34,7 +34,7 @@ const SelectTokenCatalogButton: FunctionComponent<
         src={icbaselineGeneratingToken}
       />
       <div className="token-wrapper">
-        <b className="token2">{token}</b>
+        <b className="token1">{token}</b>
       </div>
     </button>
   );

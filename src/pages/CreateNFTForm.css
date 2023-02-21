@@ -6,15 +6,15 @@
   display: inline-block;
   width: 296px;
 }
+.nft-name {
+  border: 0;
+  background-color: transparent;
+}
 .createnftform-child {
   max-width: 300px;
   overflow: hidden;
   max-height: 300px;
   object-fit: cover;
-}
-.nft-metadata-url {
-  border: 0;
-  background-color: transparent;
 }
 .or {
   position: relative;
@@ -49,17 +49,17 @@
   text-align: center;
 }
 .createnftform,
-.prepare-sell-order-button15 {
+.prepare-sell-order-button14 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button15 {
+.prepare-sell-order-button14 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-6xs) var(--padding-3xl);
-  background-color: var(--color-deeppink);
+  background-color: var(--secondary1);
   border-radius: var(--br-lg);
   height: 40px;
   flex-shrink: 0;

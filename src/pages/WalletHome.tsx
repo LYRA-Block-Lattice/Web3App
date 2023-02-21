@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
+import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import WalletCard from "../components/WalletCard";
 
 import {
@@ -130,85 +131,93 @@ const WalletHome: FunctionComponent = () => {
         <WalletCard />
         <div className="iconssection-container">
           <div className="iconssection1">
-            <div className="swap-button-group">
-              <button className="send-button" onClick={onSwapButtonClick}>
+            <div className="swap-button-parent">
+              <button className="swap-button" onClick={onSwapButtonClick}>
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution4.svg"
                 />
-                <div className="ranking4">Market</div>
+                <div className="ranking">Market</div>
               </button>
-              <button className="send-button">
+              <button className="swap-button">
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution5.svg"
                 />
-                <div className="ranking4">Swap</div>
+                <div className="ranking">Swap</div>
               </button>
-              <button className="send-button" onClick={onSendButtonClick}>
+              <button className="swap-button" onClick={onSendButtonClick}>
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution6.svg"
                 />
-                <div className="ranking4">Send</div>
+                <div className="ranking">Send</div>
               </button>
-              <button className="send-button" onClick={onReceiveButtonClick}>
+              <button className="swap-button" onClick={onReceiveButtonClick}>
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution7.svg"
                 />
-                <div className="ranking4">Receive</div>
+                <div className="ranking">Receive</div>
               </button>
-              <button className="send-button" onClick={openSideMenuPopup}>
+              <button className="swap-button" onClick={openSideMenuPopup}>
                 <img
-                  className="home-icon-interlocution4"
+                  className="home-icon-interlocution"
                   alt=""
                   src="../asserts/home--icon--interlocution8.svg"
                 />
-                <div className="ranking4">More...</div>
+                <div className="ranking">More...</div>
               </button>
             </div>
           </div>
         </div>
         <div className="tradableorderssection-parent">
-          <div className="tradableorderssection2">
-            <div className="catalogtab1">
-              <button className="tokentab1" onClick={() => setCat("")}>
-                <b className="token1">Token</b>
-                <div className="ellipse-container">
+          <TokenCatalogTabs
+            tradableOrdersSectionAlignSelf="unset"
+            tradableOrdersSectionWidth="455px"
+            tradableOrdersSectionBoxSizing="border-box"
+          />
+          <div className="coinlisting">
+            <TokenDisplayItem
+              coinIcon="../asserts/lyralogoblackicon@2x.png"
+              coinName="Lyra Coin"
+              amountText="1,234,525 LYR"
+              amountWorth="$2,183"
+            />
+            <div className="tokendisplayitem">
+              <div className="frame-group">
+                <div className="lyralogoblueicon-parent">
                   <img
-                    className="group-inner"
+                    className="lyralogoblueicon4"
                     alt=""
-                    src="../asserts/ellipse-43.svg"
+                    src="../asserts/lyralogoblueicon4@2x.png"
                   />
-                  <div className="div4">18</div>
+                  <b className="custom-coin">Custom Coin</b>
+                  <div className="cus-parent">
+                    <b className="cus">1,234,525 CUS</b>
+                    <b className="b">$2,183</b>
+                  </div>
                 </div>
-              </button>
-              <button className="nft-tab1" onClick={() => setCat("nft")}>
-                <b className="token1">NFT</b>
-                <div className="ellipse-container">
-                  <img
-                    className="group-inner"
-                    alt=""
-                    src="../asserts/ellipse-43.svg"
-                  />
-                  <div className="div4">18</div>
-                </div>
-              </button>
-              <button className="fiat-tab1" onClick={() => setCat("fiat")}>
-                <b className="fiat1">Fiat</b>
-              </button>
-              <button className="fiat-tab1" onClick={() => setCat("tot")}>
-                <b className="fiat1">Goods</b>
-              </button>
-              <button className="fiat-tab1" onClick={() => setCat("svc")}>
-                <b className="fiat1">Service</b>
-              </button>
+                <div className="frame-child" />
+              </div>
             </div>
+            <TokenDisplayItem
+              coinIcon="../asserts/logosbitcoin.svg"
+              coinName="BitCoin"
+              amountText="1.2345 BTC"
+              amountWorth="$20,183"
+              lyraLogoBlackIconObjectFit="unset"
+            />
+            <TokenDisplayItem
+              coinIcon="../asserts/mask-group@2x.png"
+              coinName="T-Shirt Blue"
+              amountText="3 Items"
+              amountWorth="$20,183"
+            />
           </div>
         </div>
         <div className="coinlisting">{showTokens()}</div>

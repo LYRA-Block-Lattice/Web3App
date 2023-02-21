@@ -259,7 +259,7 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
               <div className="tetherusdt-parent">
                 <div className="tetherusdt">{info?.Blocks.Bidgen.Ticker}</div>
-                <div className="div7">
+                <div className="div3">
                   ${" "}
                   {pricedollar.toLocaleString(undefined, {
                     maximumFractionDigits: 2
@@ -279,7 +279,7 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
               <div className="tetherusdt-parent">
                 <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
-                <div className="div7">
+                <div className="div3">
                   ${" "}
                   {avalibleMinDollar.toLocaleString(undefined, {
                     maximumFractionDigits: 2

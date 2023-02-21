@@ -1,7 +1,8 @@
-import { FunctionComponent, useCallback, useState, useEffect } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import MarketToolBar from "../components/MarketToolBar";
+import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
 import DisplaySellItems from "../dup/DisplaySellItems";
 
@@ -36,40 +37,7 @@ const Market: FunctionComponent = () => {
       <PrimaryAccountCard />
       <div className="iconssection-wrapper">
         <div className="iconssection">
-          <div className="swap-button-parent">
-            <button className="swap-button" onClick={onNewSell}>
-              <img
-                className="home-icon-interlocution"
-                alt=""
-                src="../asserts/home--icon--interlocution.svg"
-              />
-              <div className="ranking">New Sell</div>
-            </button>
-            <button className="swap-button" onClick={onSwapButton1Click}>
-              <img
-                className="home-icon-interlocution"
-                alt=""
-                src="../asserts/home--icon--interlocution1.svg"
-              />
-              <div className="ranking">My Orders</div>
-            </button>
-            <button className="swap-button" onClick={onDEXButtonClick}>
-              <img
-                className="home-icon-interlocution"
-                alt=""
-                src="../asserts/home--icon--interlocution2.svg"
-              />
-              <div className="ranking">My Trades</div>
-            </button>
-            <button className="swap-button">
-              <img
-                className="home-icon-interlocution"
-                alt=""
-                src="../asserts/home--icon--interlocution3.svg"
-              />
-              <div className="ranking3">ODR</div>
-            </button>
-          </div>
+          <MarketToolBar />
         </div>
       </div>
       <div className="searchsection">
@@ -80,6 +48,7 @@ const Market: FunctionComponent = () => {
         />
       </div>
       <div className="orderandcatalog">
+        <TokenCatalogTabs />
         <div className="tradableorderssection">
           <div className="catalogtab">
             <button className="tokentab" onClick={() => setCat("Token")}>

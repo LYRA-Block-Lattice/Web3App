@@ -24,7 +24,6 @@ body {
   --font-myriad-pro: "Myriad Pro";
 
   /* font sizes */
-  --font-size-3xs: 7px;
   --uppercase-small-size: 10px;
   --caption-size: 12px;
   --regular-body-size: 13px;
@@ -60,7 +59,7 @@ body {
   --text-secondary1: rgba(0, 0, 0, 0.54);
   --color-lightyellow: #f6ffde;
   --color-silver-100: rgba(209, 190, 190, 0.47);
-  --color-deeppink: #ff4081;
+  --secondary1: #ff4081;
   --color-mediumslateblue-100: #766ae7;
   --primary: #594ae2;
   --tertiary: #1ec8a5;

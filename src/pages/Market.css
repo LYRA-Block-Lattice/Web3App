@@ -1,58 +1,12 @@
-.home-icon-interlocution {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.ranking {
-  position: relative;
-  font-size: var(--caption-size);
-  line-height: 18px;
-  font-family: var(--caption);
-  color: var(--black-000000100);
-  text-align: left;
-}
-.swap-button {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: var(--color-white);
-  border-radius: var(--br-sm);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 60px;
-  height: 60px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.ranking3 {
-  position: relative;
-  font-size: var(--regular-body-size);
-  line-height: 18px;
-  font-family: var(--caption);
-  color: var(--black-000000100);
-  text-align: left;
-}
-.iconssection,
-.swap-button-parent {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.swap-button-parent {
-  flex-direction: row;
-  padding: var(--padding-7xs) 0;
-  gap: var(--gap-md);
-}
 .iconssection {
+  align-self: stretch;
   border-radius: var(--br-sm);
   background-color: var(--color-whitesmoke-200);
+  display: flex;
   flex-direction: column;
   padding: var(--padding-7xs) var(--padding-6xs);
+  align-items: center;
+  justify-content: center;
 }
 .iconssection-wrapper {
   width: 449px;
@@ -84,137 +38,15 @@
   align-items: flex-start;
   justify-content: center;
 }
-.token {
-  position: relative;
-  font-size: var(--font-size-xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-family: var(--caption);
-  color: var(--color-white);
-  text-align: center;
-  z-index: 0;
-}
-.div,
-.group-child {
-  position: absolute;
-  top: calc(50% - 4px);
-  left: calc(50% - 5.5px);
-  width: 11px;
-  height: 11px;
-}
-.div {
-  top: calc(50% - 7px);
-  font-size: var(--font-size-3xs);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-family: var(--caption);
-  color: var(--color-white);
-  text-align: center;
-  display: inline-block;
-  width: 10px;
-  height: 12px;
-}
-.ellipse-parent {
-  position: absolute;
-  margin: 0 !important;
-  top: calc(50% - 14px);
-  left: calc(50% + 22.5px);
-  width: 11px;
-  height: 14px;
-  flex-shrink: 0;
-  z-index: 1;
-}
-.tokentab {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-7xs) 0;
-  background-color: var(--text-secondary1);
-  border-radius: var(--br-md) var(--br-md) 0 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 80px;
-  height: 32px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: flex-end;
-  justify-content: center;
-}
-.fiat,
-.nft-tab,
-.tokentab {
-  position: relative;
-}
-.nft-tab {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-7xs) 0;
-  background-color: var(--text-secondary1);
-  border-radius: var(--br-md) var(--br-md) 0 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 80px;
-  height: 32px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: flex-end;
-  justify-content: center;
-}
-.fiat {
-  font-size: var(--font-size-xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-family: var(--caption);
-  color: var(--color-white);
-  text-align: center;
-}
-.fiat-tab {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-7xs) 0;
-  background-color: var(--text-secondary1);
-  border-radius: var(--br-md) var(--br-md) 0 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 80px;
-  height: 32px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: flex-end;
-  justify-content: center;
-}
-.catalogtab,
-.tradableorderssection {
-  background-color: var(--color-whitesmoke-200);
-}
-.catalogtab {
-  width: 424px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-xs);
-}
-.tradableorderssection {
-  align-self: stretch;
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
-  padding: var(--padding-2xs) var(--padding-6xs) 0;
-}
 .market,
 .orderandcatalog,
-.tradableorderssection,
-.tradableorderssection1 {
+.tradableorderssection {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
-.tradableorderssection1 {
+.tradableorderssection {
   align-self: stretch;
   border-radius: 0 0 var(--br-sm) var(--br-sm);
   background-color: var(--color-whitesmoke-200);

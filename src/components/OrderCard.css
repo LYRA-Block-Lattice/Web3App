@@ -172,6 +172,11 @@
   color: var(--color-white);
   text-align: center;
 }
+.delist-button1,
+.itemactions1 {
+  display: flex;
+  flex-direction: row;
+}
 .delist-button1 {
   cursor: pointer;
   border: 0;
@@ -180,21 +185,15 @@
   border-radius: var(--br-lg);
   height: 24px;
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
 }
-.itemactions1,
-.ordercard2 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
 .itemactions1 {
-  flex-direction: row;
+  align-self: stretch;
   padding: var(--padding-7xs) var(--padding-7xs) 0;
+  align-items: flex-end;
+  justify-content: flex-end;
   gap: var(--gap-md);
 }
 .ordercard2 {
@@ -202,8 +201,11 @@
   background-color: var(--color-white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-darkgray);
+  display: flex;
   flex-direction: column;
   padding: var(--padding-6xs);
+  align-items: flex-start;
+  justify-content: flex-start;
   text-align: right;
   font-size: var(--caption-size);
   color: var(--black-000000100);

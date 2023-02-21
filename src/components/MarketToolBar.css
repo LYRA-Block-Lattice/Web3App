@@ -1,0 +1,47 @@
+.home-icon-interlocution10 {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.ranking10 {
+  position: relative;
+  font-size: var(--caption-size);
+  line-height: 18px;
+  font-family: var(--caption);
+  color: var(--black-000000100);
+  text-align: left;
+}
+.dex-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-white);
+  border-radius: var(--br-sm);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ranking13 {
+  position: relative;
+  font-size: var(--regular-body-size);
+  line-height: 18px;
+  font-family: var(--caption);
+  color: var(--black-000000100);
+  text-align: left;
+}
+.swap-button-container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-7xs) 0;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-md);
+}
