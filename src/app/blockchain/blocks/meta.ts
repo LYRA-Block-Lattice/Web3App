@@ -627,3 +627,52 @@ export class BrokerActions {
   public static readonly BRK_UNI_CRDPT = "UORDCRDPT";
   public static readonly BRK_UNI_RSLDPT = "UORDRSLDPT";
 }
+
+export enum UniOrderStatus {
+  Open, // just add, trade begin
+  Partial = 10, // partial traded, total count reduced
+  Closed = 30, // close order and all pending trading, get back collateral
+  Delist = 50 // prevent order from trading, but wait for all trading finished. after which order can be closed.
+}
+
+export enum UniTradeStatus {
+  // start
+  Open,
+
+  // trade begins
+  Processing,
+  //Arrived,
+  //BidSent = 10,
+  //BidReceived,
+  //OfferSent,
+  //OfferReceived,
+
+  //// sku to sku
+  //BothShipping,
+  //BothConfirmed,
+
+  // special trade has special state, add bellow.
+
+  // trade ends successfull
+  Closed = 30,
+
+  // trade in abnormal states
+  Dispute = 40,
+  DisputeClosed = 45,
+
+  // canceled trade. not count.
+  Canceled = 50
+}
+
+export interface NftMetadata {
+  name: string;
+  description: string;
+  image: string;
+  external_url?: string;
+  attributes?: NftAttribute[];
+}
+
+export interface NftAttribute {
+  trait_type: string;
+  value: string;
+}
