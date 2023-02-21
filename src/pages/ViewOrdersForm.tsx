@@ -11,7 +11,6 @@ import { getTickerIcon, IOrder } from "../app/market/marketReducer";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
 import React from "react";
 import { Tab, Tabs } from "@mui/material";
-import { set } from "immer/dist/internal";
 
 interface customWindow extends Window {
   rrComponent?: any;

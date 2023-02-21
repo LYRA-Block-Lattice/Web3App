@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { useNavigate } from "react-router";
 import "./MarketToolBar.css";
 
 type MarketToolBarType = {
@@ -14,12 +15,14 @@ const MarketToolBar: FunctionComponent<MarketToolBarType> = ({
   homeIconInterlocution1,
   homeIconInterlocution2,
   homeIconInterlocution3,
-  homeIconInterlocution4,
+  homeIconInterlocution4
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="markettoolbar">
       <div className="swap-button-container">
-        <button className="dex-button">
+        <button className="dex-button" onClick={() => navigate("/")}>
           <img
             className="home-icon-interlocution10"
             alt=""
@@ -27,7 +30,10 @@ const MarketToolBar: FunctionComponent<MarketToolBarType> = ({
           />
           <div className="ranking10">Market</div>
         </button>
-        <button className="dex-button">
+        <button
+          className="dex-button"
+          onClick={() => navigate("/starttocreateorder")}
+        >
           <img
             className="home-icon-interlocution10"
             alt=""
@@ -35,7 +41,10 @@ const MarketToolBar: FunctionComponent<MarketToolBarType> = ({
           />
           <div className="ranking10">New Sell</div>
         </button>
-        <button className="dex-button">
+        <button
+          className="dex-button"
+          onClick={() => navigate("/viewordersform")}
+        >
           <img
             className="home-icon-interlocution10"
             alt=""
@@ -43,7 +52,10 @@ const MarketToolBar: FunctionComponent<MarketToolBarType> = ({
           />
           <div className="ranking10">Orders</div>
         </button>
-        <button className="dex-button">
+        <button
+          className="dex-button"
+          onClick={() => navigate("/viewtradesform")}
+        >
           <img
             className="home-icon-interlocution10"
             alt=""
