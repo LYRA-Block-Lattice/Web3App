@@ -6,7 +6,9 @@ import {
   BlockTypes,
   ContractTypes,
   NonFungibleTokenTypes,
-  HoldTypes
+  HoldTypes,
+  UniOrderStatus,
+  UniTradeStatus
 } from "./meta";
 import stringify from "json-stable-stringify";
 
@@ -335,4 +337,32 @@ export class UniTrade {
     this.pay = pay;
     this.payVia = payVia;
   }
+}
+
+export interface IBrokerAccount {
+  Name: string;
+  OwnerAccountId: string;
+  RelatedTx: string;
+}
+
+export interface IDaoTreasure {
+  [key: string]: number;
+}
+export interface IDao extends IBrokerAccount {
+  SellerFeeRatio: number;
+  BuyerFeeRatio: number;
+  SellerPar: number;
+  BuyerPar: number;
+  Treasure: IDaoTreasure;
+  Description: string;
+}
+
+export interface IUniOrder extends IBrokerAccount {
+  Order: UniOrder;
+  UOStatus: UniOrderStatus;
+}
+
+export interface IUniTrade extends IBrokerAccount {
+  Trade: UniTrade;
+  UTStatus: UniTradeStatus;
 }
