@@ -101,7 +101,7 @@
   padding: var(--padding-xl) var(--padding-xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-3xl);
+  gap: var(--gap-2xl);
 }
 .to-get-tokennft {
   position: relative;
@@ -124,7 +124,7 @@
   padding: var(--padding-xl) var(--padding-2xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-5xl);
+  gap: var(--gap-4xl);
 }
 .selltottotoken {
   position: relative;

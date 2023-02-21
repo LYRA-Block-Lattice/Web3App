@@ -56,7 +56,7 @@
   padding: var(--padding-xl) var(--padding-2xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-5xl);
+  gap: var(--gap-4xl);
 }
 .selltokentotoken {
   position: relative;

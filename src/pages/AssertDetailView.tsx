@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { TextField, Box, Slider } from "@mui/material";
+import { Box, Slider } from "@mui/material";
 import "./AssertDetailView.css";
 
 const AssertDetailView: FunctionComponent = () => {
@@ -120,14 +120,10 @@ const AssertDetailView: FunctionComponent = () => {
           </div>
           <div className="frame-container">
             <div className="selectedamount-parent">
-              <TextField
+              <input
                 className="selectedamount"
-                color="primary"
-                variant="outlined"
                 type="number"
-                placeholder="Placeholder"
-                size="medium"
-                margin="none"
+                placeholder="150"
               />
               <div className="tethereth-group">
                 <div className="tethereth1">tether/ETH</div>
@@ -137,7 +133,7 @@ const AssertDetailView: FunctionComponent = () => {
             </div>
             <div className="limitadjustsection">
               <div className="tetherusdt">Min</div>
-              <Box sx={{ width: 250 }}>
+              <Box className="slidercontinuous">
                 <Slider
                   color="primary"
                   defaultValue={20}

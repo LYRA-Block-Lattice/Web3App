@@ -76,7 +76,7 @@
 .nft-showing-item-parent {
   flex-direction: row;
   align-items: flex-start;
-  gap: var(--gap-5xl);
+  gap: var(--gap-4xl);
 }
 .put-your-product2 {
   position: relative;
