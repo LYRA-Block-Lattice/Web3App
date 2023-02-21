@@ -58,7 +58,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
             <b className="trade">Trade</b>
             <b className="trade">{biding}</b>
             <img
-              className="frame-child4"
+              className="frame-child3"
               alt=""
               src="../asserts/arrow-22.svg"
             />

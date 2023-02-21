@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import PrimaryAccountCard from "../components/PrimaryAccountCard";
+import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
 import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import MarketOrder from "../components/MarketOrder";
@@ -8,7 +8,7 @@ import "./Market.css";
 const Market: FunctionComponent = () => {
   return (
     <div className="market">
-      <PrimaryAccountCard />
+      <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon.svg" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution.svg"
         homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"

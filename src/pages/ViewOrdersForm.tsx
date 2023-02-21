@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
+import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
 import { useNavigate } from "react-router-dom";
 import OrderCard from "../components/OrderCard";
@@ -13,34 +14,7 @@ const ViewOrdersForm: FunctionComponent = () => {
 
   return (
     <div className="viewordersform">
-      <div className="wallet-card1">
-        <div className="wallet-card-inner1">
-          <div className="rectangle-container">
-            <div className="rectangle3" />
-          </div>
-        </div>
-        <div className="wallet-card-inner2">
-          <div className="balance-display-zone-group">
-            <a className="balance-display-zone1">
-              <button className="wallet-name-label1">My Primary Account</button>
-              <div className="balance-display-zone-inner" />
-              <b className="usdtbalance1">1,025,000</b>
-              <b className="lyrlabel1">LYR</b>
-              <div className="rectangle-div" />
-            </a>
-            <div className="qrcode-button-container">
-              <button className="qrcode-button1">
-                <div className="qrcode-button-round1" />
-                <img
-                  className="qrcode-icon1"
-                  alt=""
-                  src="../asserts/qrcode-icon2.svg"
-                />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon2.svg" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
         homeIconInterlocution1="../asserts/home--icon--interlocution16.svg"

@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
 import TradeCard from "../components/TradeCard";
 import "./ViewTradesForm.css";
@@ -6,34 +7,7 @@ import "./ViewTradesForm.css";
 const ViewTradesForm: FunctionComponent = () => {
   return (
     <div className="viewtradesform">
-      <div className="wallet-card">
-        <div className="wallet-card-inner">
-          <div className="rectangle-wrapper">
-            <div className="rectangle2" />
-          </div>
-        </div>
-        <div className="wallet-card-child">
-          <div className="balance-display-zone-parent">
-            <a className="balance-display-zone">
-              <button className="wallet-name-label">My Primary Account</button>
-              <div className="balance-display-zone-child" />
-              <b className="usdtbalance">1,025,000</b>
-              <b className="lyrlabel">LYR</b>
-              <div className="balance-display-zone-item" />
-            </a>
-            <div className="qrcode-button-wrapper">
-              <button className="qrcode-button">
-                <div className="qrcode-button-round" />
-                <img
-                  className="qrcode-icon"
-                  alt=""
-                  src="../asserts/qrcode-icon2.svg"
-                />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon2.svg" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution10.svg"
         homeIconInterlocution1="../asserts/home--icon--interlocution11.svg"
