@@ -341,7 +341,7 @@ const PriceAndCollateralForm: FunctionComponent<PriceAndCollateralFormType> = ({
           </div>
           <div className="collateral-worth-label12">
             <div className="worth-in-dollar">Total:</div>
-            <div className="div20">
+            <div className="div22">
               ${" "}
               {totaldollar.toLocaleString(undefined, {
                 maximumFractionDigits: 2

@@ -70,7 +70,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
               alt=""
               src="../asserts/arrow-22.svg"
             />
-            <b className="tetherusdt2">{offering}</b>
+            <b className="tetherusdt3">{offering}</b>
           </div>
           <div className="title-section-child" />
           <div className="am-wrapper">

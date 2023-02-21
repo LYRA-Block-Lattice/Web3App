@@ -101,18 +101,17 @@
   align-items: center;
   justify-content: center;
 }
-.group3 {
-  left: 163px;
-}
 .group3,
 .group4,
 .group5 {
   position: absolute;
   top: 478px;
+  left: 163px;
   width: 102px;
   height: 51px;
 }
-.group4 {
+.group4,
+.group5 {
   left: 27px;
 }
 .group5 {
@@ -182,13 +181,11 @@
 .returncollateral,
 .sellforlabel {
   position: absolute;
+  top: 699px;
+  left: 51px;
   width: 156px;
   height: 30px;
   color: var(--black-000000100);
-}
-.sellforlabel {
-  top: 699px;
-  left: 51px;
 }
 .ordercollateral,
 .returncollateral {
@@ -250,35 +247,33 @@
   align-items: center;
   justify-content: center;
 }
-.group7 {
-  left: 162px;
-}
 .group7,
 .group8,
 .group9 {
   position: absolute;
   top: 563px;
+  left: 162px;
   width: 104px;
   height: 52px;
 }
-.group8 {
+.group8,
+.group9 {
   left: 298px;
 }
 .group9 {
   left: 26px;
-}
-.vector-vector1 {
-  left: 73.67px;
-  width: 141.08px;
 }
 .vector-vector1,
 .vector-vector2,
 .vector-vector3 {
   position: absolute;
   top: 413px;
+  left: 73.67px;
+  width: 141.08px;
   height: 65px;
 }
-.vector-vector2 {
+.vector-vector2,
+.vector-vector3 {
   left: 209.67px;
   width: 8.66px;
 }
@@ -286,40 +281,37 @@
   left: 213.25px;
   width: 141.08px;
 }
-.vector-vector4 {
-  left: 73.67px;
-}
 .vector-vector4,
 .vector-vector5,
 .vector-vector6 {
   position: absolute;
   top: 529px;
+  left: 73.67px;
   width: 8.66px;
   height: 34px;
 }
-.vector-vector5 {
+.vector-vector5,
+.vector-vector6 {
   left: 209.67px;
 }
 .vector-vector6 {
   left: 345.67px;
-}
-.vector-rectangle {
-  left: 77.25px;
-  width: 142.08px;
 }
 .vector-rectangle,
 .vector-rectangle1,
 .vector-rectangle2 {
   position: absolute;
   top: 615px;
+  left: 77.25px;
+  width: 142.08px;
   height: 130px;
 }
-.vector-rectangle1 {
+.vector-rectangle1,
+.vector-rectangle2 {
   left: 210.67px;
   width: 8.66px;
 }
 .vector-rectangle2 {
-  left: 210.67px;
   width: 140.08px;
 }
 .sellflow {

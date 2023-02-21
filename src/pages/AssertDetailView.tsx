@@ -217,45 +217,63 @@ const AssertDetailView: FunctionComponent = () => {
                 <div className="meka-legends">
                   {info?.Blocks.Order.Order.price} {info?.Blocks.Bidgen.Ticker}
                 </div>
-                <div className="tetherusdt">$ 0</div>
+                <div className="tetherusdt-parent">
+                  <div className="tetherusdt">tether/USDT</div>
+                  <div className="div7">$86.20</div>
+                </div>
               </div>
             </div>
-            <div className="selectamountsection">
-              <div className="setlimitsection">
-                <div className="pricelabel1">
-                  <div className="meka-legends">Available to buy</div>
+            <div className="setlimitsection">
+              <div className="pricelabel1">
+                <div className="meka-legends">Available to buy</div>
+              </div>
+              <div className="priceandvaluelabel1">
+                <div className="meka-legends">
+                  {info?.Blocks.Order.Order.limitMin} -{" "}
+                  {info?.Blocks.Order.Order.limitMax}
                 </div>
-                <div className="priceandvaluelabel1">
-                  <div className="meka-legends">
-                    {info?.Blocks.Order.Order.limitMin} -{" "}
-                    {info?.Blocks.Order.Order.limitMax}
-                  </div>
+                <div className="tetherusdt-parent">
                   <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
-                  <div className="div8">$0 ~ 0</div>
+                  <div className="div7">$40 ~ 84.20</div>
                 </div>
               </div>
-              <div className="limitadjustsection">
-                <div className="meka-legends">Min</div>
-                <Box className="slidercontinuous">
-                  <Slider
-                    color="primary"
-                    orientation="horizontal"
-                    step={10 ** (-1 * info?.Blocks.Offgen.Precision!)}
-                    min={info?.Blocks.Order.Order.limitMin}
-                    max={info?.Blocks.Order.Order.limitMax}
-                    onChange={(e, v) => setBuyAmount(v as number)}
-                    defaultValue={info?.Blocks.Order.Order.limitMax}
-                  />
-                </Box>
-                <div className="meka-legends">Max</div>
+            </div>
+            <div className="pricelabel-parent">
+              <div className="pricelabel1">
+                <div className="meka-legends">My Offer</div>
               </div>
-              <input
-                className="selectedamount"
-                type="number"
-                defaultValue={info?.Blocks.Order.Order.limitMax! + ""}
-                value={buyAmount}
-                onChange={(e) => console.log(e)}
-              />
+              <div className="frame-container">
+                <div className="selectedamount-parent">
+                  <input
+                    className="selectedamount"
+                    type="number"
+                    placeholder="150"
+                    defaultValue={info?.Blocks.Order.Order.limitMax! + ""}
+                    value={buyAmount}
+                    onChange={(e) => console.log(e)}
+                  />
+                  <div className="tethereth-group">
+                    <div className="tethereth1">tether/ETH</div>
+                    <div className="tetherusdt">100 tether/USDT</div>
+                    <div className="tetherusdt">$ 10.3</div>
+                  </div>
+                </div>
+                <div className="limitadjustsection">
+                  <div className="tetherusdt">Min</div>
+                  <Box className="slidercontinuous">
+                    <Slider
+                      color="primary"
+                      orientation="horizontal"
+                      step={10 ** (-1 * info?.Blocks.Offgen.Precision!)}
+                      min={info?.Blocks.Order.Order.limitMin}
+                      max={info?.Blocks.Order.Order.limitMax}
+                      onChange={(e, v) => setBuyAmount(v as number)}
+                      defaultValue={info?.Blocks.Order.Order.limitMax}
+                    />
+                  </Box>
+                  <div className="max">Max</div>
+                </div>
+              </div>
             </div>
             <div className="makeofferbutton">
               <button
@@ -270,7 +288,7 @@ const AssertDetailView: FunctionComponent = () => {
                 <div className="primary-button2">Make offer</div>
               </button>
             </div>
-            <div className="descriptiontitle">
+            <div className="descriptiontitle2">
               <img
                 className="material-symbolsshare-icon"
                 alt=""
@@ -278,10 +296,10 @@ const AssertDetailView: FunctionComponent = () => {
               />
               <div className="meka-legends">Trading protection</div>
             </div>
-            <div className="descriptiondetails">
+            <div className="descriptiondetails1">
               <div className="a-legend-nft">
                 This order is protected by staking of 100,000 LYR, or $1,000 in
-                USD, from the seller. This order belongs to DAO 'A good shop'
+                USD, from the seller. This order belongs to DAO "A good shop"
                 which has a total staking of 30,000,000 LYR.
               </div>
             </div>

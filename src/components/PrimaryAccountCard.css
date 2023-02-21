@@ -44,14 +44,12 @@
 .lyrlabel,
 .usdtbalance {
   position: relative;
+  font-size: var(--font-size-7xl);
   letter-spacing: 0.3px;
   font-family: var(--font-sf-pro-text);
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
-}
-.usdtbalance {
-  font-size: var(--font-size-7xl);
   color: var(--color-white);
   text-align: right;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
 .lyrlabel {
   font-size: var(--uppercase-small-size);
