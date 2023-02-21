@@ -30,7 +30,7 @@
   flex-direction: column;
   padding: var(--padding-6xs);
   align-items: center;
-  gap: var(--gap-xl);
+  gap: var(--gap-2xl);
   text-align: left;
   font-size: var(--font-size-7xl);
   color: var(--black-000000100);

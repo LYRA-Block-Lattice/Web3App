@@ -118,16 +118,18 @@
   line-height: 18px;
 }
 .collateral-worth-label1,
-.collateral-worth-label2,
-.collateralcount {
+.collateral-worth-label2 {
   overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
-.collateral-worth-label2,
 .collateralcount {
+  overflow: hidden;
+  display: flex;
+}
+.collateral-worth-label2 {
   width: 283px;
   gap: var(--gap-md);
 }
@@ -201,7 +203,7 @@
   flex-direction: column;
   padding: var(--padding-5xl) var(--padding-6xs) var(--padding-6xs);
   justify-content: flex-start;
-  gap: 15px;
+  gap: var(--gap-xl);
   text-align: left;
   font-size: var(--body-semibold-size);
   color: var(--black-000000100);

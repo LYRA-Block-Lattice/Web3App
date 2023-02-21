@@ -82,11 +82,12 @@ body {
   --gap-sm: 8px;
   --gap-md: 10px;
   --gap-lg: 12px;
-  --gap-xl: 16px;
-  --gap-2xl: 18px;
-  --gap-3xl: 20px;
-  --gap-4xl: 26px;
-  --gap-5xl: 30px;
+  --gap-xl: 15px;
+  --gap-2xl: 16px;
+  --gap-3xl: 18px;
+  --gap-4xl: 20px;
+  --gap-5xl: 26px;
+  --gap-6xl: 30px;
 
   /* Paddings */
   --padding-10xs: 2px;

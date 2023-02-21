@@ -10,19 +10,24 @@
   display: inline-block;
   width: 296px;
 }
+.searchtokenbyname1 {
+  align-items: center;
+}
 .searchtokenbyname1,
 .tot-description2,
 .tot-name1 {
   overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+}
+.tot-name1 {
+  align-items: center;
 }
 .searchtokenbyname1 {
   background-color: var(--color-white);
   flex-direction: column;
   padding: var(--padding-xl) var(--padding-2xs);
-  gap: var(--gap-4xl);
+  gap: var(--gap-5xl);
 }
 .tot-description2,
 .tot-name1 {
@@ -32,11 +37,13 @@
   background-color: var(--color-lightyellow);
   border-radius: var(--br-xs);
   width: 301px;
-  height: 40px;
   flex-shrink: 0;
   flex-direction: row;
   padding: var(--padding-6xs);
   box-sizing: border-box;
+}
+.tot-name1 {
+  height: 40px;
 }
 .tot-description2 {
   height: 124px;
@@ -108,10 +115,12 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-xl) var(--padding-xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-2xl);
+}
+.togettotform {
+  padding: var(--padding-xl) var(--padding-xs);
+  gap: var(--gap-3xl);
 }
 .selltokentotot {
   position: relative;

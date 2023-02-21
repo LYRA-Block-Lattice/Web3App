@@ -1,18 +1,24 @@
+.selecttypeoftot {
+  height: 40px;
+  align-items: center;
+}
 .selecttypeoftot,
 .tot-description4,
 .tot-name3 {
   background-color: var(--color-lightyellow);
   border-radius: var(--br-xs);
   width: 301px;
-  height: 40px;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   padding: var(--padding-6xs);
   box-sizing: border-box;
-  align-items: center;
   justify-content: flex-start;
+}
+.tot-name3 {
+  height: 40px;
+  align-items: center;
 }
 .selecttypeoftot {
   gap: var(--gap-md);
@@ -95,7 +101,7 @@
   padding: var(--padding-xl) var(--padding-xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-2xl);
+  gap: var(--gap-3xl);
 }
 .to-get-tokennft {
   position: relative;
@@ -118,7 +124,7 @@
   padding: var(--padding-xl) var(--padding-2xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-4xl);
+  gap: var(--gap-5xl);
 }
 .selltottotoken {
   position: relative;

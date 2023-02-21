@@ -133,7 +133,7 @@ const AssertDetailView: FunctionComponent = () => {
             </div>
             <div className="limitadjustsection">
               <div className="tetherusdt">Min</div>
-              <Box className="slidercontinuous">
+              <Box sx={{ width: 250 }}>
                 <Slider
                   color="primary"
                   defaultValue={20}
@@ -154,20 +154,20 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="primary-button2">Make offer</div>
           </button>
         </div>
-        <div className="descriptiontitle2">
-          <img
-            className="material-symbolsshare-icon"
-            alt=""
-            src="../asserts/galasecure.svg"
-          />
-          <div className="meka-legends">Trading protection</div>
-        </div>
-        <div className="descriptiondetails1">
-          <div className="a-legend-nft">
-            This order is protected by staking of 100,000 LYR, or $1,000 in USD,
-            from the seller. This order belongs to DAO ‘A good shop’ which has a
-            total staking of 30,000,000 LYR.
-          </div>
+      </div>
+      <div className="descriptiontitle">
+        <img
+          className="material-symbolsshare-icon"
+          alt=""
+          src="../asserts/galasecure.svg"
+        />
+        <div className="meka-legends">Trading protection</div>
+      </div>
+      <div className="descriptiondetails1">
+        <div className="this-order-is">
+          This order is protected by staking of 100,000 LYR, or $1,000 in USD,
+          from the seller. This order is regulated by the DAO “A good shop”
+          which has a total staking of 30,000,000 LYR.
         </div>
       </div>
     </div>
