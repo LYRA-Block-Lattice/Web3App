@@ -161,14 +161,11 @@
   justify-content: center;
   font-size: var(--font-size-xl);
 }
-.priceandbuyregion,
 .priceandvaluelabel {
   align-self: stretch;
   background-color: var(--color-white);
-  display: flex;
-}
-.priceandvaluelabel {
   overflow: hidden;
+  display: flex;
   flex-direction: row;
   padding: 0 var(--padding-xs);
   align-items: center;
@@ -176,40 +173,40 @@
   font-size: var(--font-size-8xl);
   color: var(--black-000000100);
 }
-.priceandbuyregion {
-  border-radius: var(--br-sm);
-  flex-direction: column;
+.priceandbuyregion,
+.pricelabel1 {
   align-items: flex-start;
   justify-content: flex-start;
+}
+.priceandbuyregion {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
   gap: var(--gap-2xs);
 }
-.priceandvaluelabel1,
 .pricelabel1 {
-  align-self: stretch;
   overflow: hidden;
   flex-direction: row;
 }
-.pricelabel1 {
+.priceandvaluelabel1,
+.pricelabel1,
+.setlimitsection {
+  align-self: stretch;
   background-color: var(--color-white);
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 .priceandvaluelabel1 {
+  overflow: hidden;
+  flex-direction: row;
   padding: 0 var(--padding-7xs);
   align-items: center;
   justify-content: space-between;
   font-size: var(--font-size-7xl);
   color: var(--black-000000100);
 }
-.priceandvaluelabel1,
-.selectedamount,
 .setlimitsection {
-  background-color: var(--color-white);
-  display: flex;
-}
-.setlimitsection {
-  align-self: stretch;
   flex-direction: column;
   padding: 0 var(--padding-6xs);
   align-items: flex-start;
@@ -217,18 +214,9 @@
   gap: var(--gap-2xs);
 }
 .selectedamount {
-  border: 1px solid #cacaca;
-  font-weight: 500;
-  font-family: var(--caption);
-  font-size: 1.5em;
+  border: 0;
+  background-color: transparent;
   flex: 1;
-  border-radius: var(--br-sm);
-  overflow: hidden;
-  flex-direction: row;
-  padding: var(--padding-6xs);
-  align-items: center;
-  justify-content: flex-end;
-  text-align: right;
 }
 .tethereth1 {
   position: relative;
