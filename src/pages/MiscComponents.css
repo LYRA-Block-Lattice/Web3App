@@ -13,7 +13,7 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-10xl);
+  padding: var(--padding-9xl);
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
@@ -114,7 +114,7 @@
   width: 100%;
   height: 1414px;
   overflow: hidden;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   box-sizing: border-box;
   align-items: center;
   gap: var(--gap-lg);

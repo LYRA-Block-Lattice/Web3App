@@ -22,10 +22,10 @@
   color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button19 {
+.prepare-sell-order-button18 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-7xl);
+  padding: var(--padding-4xs) var(--padding-7xl);
   background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
@@ -37,7 +37,7 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button19:hover {
+.prepare-sell-order-button18:hover {
   background-color: var(--color-mediumslateblue);
 }
 .mini-button1 {
@@ -50,10 +50,10 @@
   color: var(--color-darkslategray-300);
   text-align: center;
 }
-.prepare-sell-order-button20 {
+.prepare-sell-order-button19 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-xl);
+  padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--color-whitesmoke-200);
   border-radius: var(--br-lg);
   height: 24px;
@@ -97,7 +97,7 @@
   width: 100%;
   height: 909px;
   overflow: hidden;
-  padding: 0 var(--padding-3xs);
+  padding: 0 var(--padding-2xs);
   box-sizing: border-box;
   gap: var(--gap-xl);
 }

@@ -39,17 +39,17 @@
   color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button22,
+.prepare-sell-order-button21,
 .scantopay {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button22 {
+.prepare-sell-order-button21 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-7xl);
+  padding: var(--padding-4xs) var(--padding-7xl);
   background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
@@ -57,7 +57,7 @@
   flex-direction: row;
   justify-content: center;
 }
-.prepare-sell-order-button22:hover {
+.prepare-sell-order-button21:hover {
   background-color: var(--color-mediumslateblue);
 }
 .scantopay {
@@ -65,7 +65,7 @@
   background-color: var(--white);
   width: 100%;
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   justify-content: flex-start;
   gap: 30px;
   text-align: center;

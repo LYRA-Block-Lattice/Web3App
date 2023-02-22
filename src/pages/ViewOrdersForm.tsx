@@ -1,7 +1,7 @@
-import { FunctionComponent, useCallback, useState, useEffect } from "react";
+import { FunctionComponent, useState, useEffect } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
-import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import OrderCard from "../components/OrderCard";
 import BottomNavigationBar from "../components/BottomNavigationBar";
@@ -71,23 +71,15 @@ const ViewOrdersForm: FunctionComponent = () => {
   return (
     <div className="viewordersform">
       <TopNavigationBar title="My Orders" />
-      <MarketToolBar
-        homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
-        homeIconInterlocution1="../asserts/home--icon--interlocution16.svg"
-        homeIconInterlocution2="../asserts/home--icon--interlocution17.svg"
-        homeIconInterlocution3="../asserts/home--icon--interlocution18.svg"
-        homeIconInterlocution4="../asserts/home--icon--interlocution19.svg"
-      />
-      <div className="view-orders-parent">
-        <div className="view-orders">View Orders</div>
-        <button
-          className="prepare-sell-order-button12"
-          onClick={onPrepareSellOrderButtonClick}
-        >
-          <div className="utility-button5">New</div>
-        </button>
-      </div>
-      <div className="ordercard-container">
+      <div className="wallet-card-container">
+        <PrimaryAccountContainer />
+        <MarketToolBar
+          homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
+          homeIconInterlocution1="../asserts/home--icon--interlocution16.svg"
+          homeIconInterlocution2="../asserts/home--icon--interlocution17.svg"
+          homeIconInterlocution3="../asserts/home--icon--interlocution18.svg"
+          homeIconInterlocution4="../asserts/home--icon--interlocution19.svg"
+        />
         {odrs?.map((order) => (
           <OrderCard
             key={order.orderid!}

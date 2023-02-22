@@ -1,33 +1,12 @@
-.view-trades {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  display: inline-block;
-  width: 180px;
-  flex-shrink: 0;
-}
-.view-trades-wrapper {
-  background-color: var(--white);
-  width: 376px;
-  height: 52px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-2xl) var(--padding-md) var(--padding-2xl)
-    var(--padding-2xl);
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.ordercard-wrapper,
-.viewtradesform {
+.viewtradesform,
+.wallet-card-group {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  gap: var(--gap-xl);
 }
-.ordercard-wrapper {
+.wallet-card-group {
   flex: 1;
 }
 .viewtradesform {
@@ -36,11 +15,6 @@
   width: 100%;
   height: 926px;
   overflow: hidden;
-  padding: 0 var(--padding-3xs);
+  padding: 0 var(--padding-2xs);
   box-sizing: border-box;
-  gap: var(--gap-xl);
-  text-align: left;
-  font-size: var(--font-size-6xl);
-  color: var(--black-000000100);
-  font-family: var(--caption);
 }

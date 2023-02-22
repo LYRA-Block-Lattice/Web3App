@@ -37,7 +37,7 @@
   background-color: var(--info1);
   display: flex;
   flex-direction: row;
-  padding: var(--padding-10xs) var(--padding-11xs);
+  padding: var(--padding-9xs) var(--padding-10xs);
   align-items: center;
   justify-content: center;
 }
@@ -182,7 +182,7 @@
 .delist-button {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-xl);
+  padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--color-whitesmoke-200);
   border-radius: var(--br-lg);
   height: 24px;
@@ -193,7 +193,7 @@
 }
 .itemactions {
   align-self: stretch;
-  padding: var(--padding-8xs) var(--padding-8xs) 0;
+  padding: var(--padding-7xs) var(--padding-7xs) 0;
   align-items: flex-end;
   justify-content: flex-end;
   gap: var(--gap-lg);
@@ -205,7 +205,7 @@
   border: 1px solid var(--color-darkgray);
   display: flex;
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   align-items: flex-start;
   justify-content: flex-start;
   text-align: right;

@@ -20,7 +20,7 @@
   width: 18px;
   flex-shrink: 0;
   flex-direction: row;
-  padding: var(--padding-8xs) 0;
+  padding: var(--padding-7xs) 0;
   box-sizing: border-box;
 }
 .wallet-name-label {
@@ -70,7 +70,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 0 var(--padding-8xs) var(--padding-5xs) 0;
+  padding: 0 var(--padding-7xs) var(--padding-4xs) 0;
   align-items: flex-end;
   justify-content: flex-start;
   gap: var(--gap-3xs);
@@ -117,8 +117,8 @@
 }
 .qrcode-button-wrapper {
   overflow: hidden;
-  padding: var(--padding-8xs) var(--padding-8xs) var(--padding-5xs)
-    var(--padding-5xs);
+  padding: var(--padding-7xs) var(--padding-7xs) var(--padding-4xs)
+    var(--padding-4xs);
 }
 .balance-display-zone-parent {
   flex: 1;
@@ -180,7 +180,7 @@
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   box-sizing: border-box;
   text-align: right;
   font-size: var(--font-size-6xl);

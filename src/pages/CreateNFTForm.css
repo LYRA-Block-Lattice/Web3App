@@ -33,7 +33,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
@@ -49,16 +49,16 @@
   text-align: center;
 }
 .createnftform,
-.prepare-sell-order-button15 {
+.prepare-sell-order-button14 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button15 {
+.prepare-sell-order-button14 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-4xl);
+  padding: var(--padding-4xs) var(--padding-4xl);
   background-color: var(--secondary1);
   border-radius: var(--br-lg);
   height: 40px;
@@ -71,7 +71,7 @@
   background-color: var(--white);
   width: 100%;
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   justify-content: flex-start;
   gap: var(--gap-2xl);
   text-align: left;

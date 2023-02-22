@@ -1,5 +1,6 @@
 import { FunctionComponent, useEffect } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
@@ -27,17 +28,15 @@ const ViewTradesForm: FunctionComponent = () => {
   return (
     <div className="viewtradesform">
       <TopNavigationBar title="My Trades" />
-      <MarketToolBar
-        homeIconInterlocution="../asserts/home--icon--interlocution10.svg"
-        homeIconInterlocution1="../asserts/home--icon--interlocution11.svg"
-        homeIconInterlocution2="../asserts/home--icon--interlocution12.svg"
-        homeIconInterlocution3="../asserts/home--icon--interlocution13.svg"
-        homeIconInterlocution4="../asserts/home--icon--interlocution14.svg"
-      />
-      <div className="view-trades-wrapper">
-        <div className="view-trades">View Trades</div>
-      </div>
-      <div className="ordercard-wrapper">
+      <div className="wallet-card-group">
+        <PrimaryAccountContainer />
+        <MarketToolBar
+          homeIconInterlocution="../asserts/home--icon--interlocution10.svg"
+          homeIconInterlocution1="../asserts/home--icon--interlocution11.svg"
+          homeIconInterlocution2="../asserts/home--icon--interlocution12.svg"
+          homeIconInterlocution3="../asserts/home--icon--interlocution13.svg"
+          homeIconInterlocution4="../asserts/home--icon--interlocution14.svg"
+        />
         {market.ownTrades?.map((trade: any) => (
           <TradeCard
             key={trade.tradeId}

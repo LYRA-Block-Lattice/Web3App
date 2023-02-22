@@ -73,7 +73,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
   return (
     <div className="collateralcalculation">
       <div className="collateralsection">
-        <div className="collateral-worth-label7">
+        <div className="collateral-worth-label5">
           <div className="collateral-value-120">
             Collateral value: {selling ? dao?.SellerPar : dao?.BuyerPar}%
           </div>
@@ -85,7 +85,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
             LYR
           </div>
         </div>
-        <div className="collateral-worth-label8">
+        <div className="collateral-worth-label6">
           <div className="collateral-value-120">
             ${" "}
             {collateraldollar.toLocaleString(undefined, {
@@ -95,7 +95,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
         </div>
       </div>
       <div className="collateralsection">
-        <div className="collateral-worth-label7">
+        <div className="collateral-worth-label5">
           <div className="collateral-value-120">
             DAO fee:{" "}
             {(selling ? dao?.SellerFeeRatio ?? 0 : dao?.BuyerFeeRatio ?? 0) *
@@ -109,7 +109,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
             LYR
           </div>
         </div>
-        <div className="collateral-worth-label8">
+        <div className="collateral-worth-label6">
           <div className="collateral-value-120">
             ${" "}
             {daofeedollar.toLocaleString(undefined, {
@@ -119,7 +119,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
         </div>
       </div>
       <div className="collateralsection">
-        <div className="collateral-worth-label7">
+        <div className="collateral-worth-label5">
           <div className="collateral-value-120">
             Network fee:{" "}
             {selling
@@ -134,7 +134,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
             LYR
           </div>
         </div>
-        <div className="collateral-worth-label8">
+        <div className="collateral-worth-label6">
           <div className="collateral-value-120">
             ${" "}
             {netfeedollar.toLocaleString(undefined, {
@@ -145,7 +145,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
       </div>
       <div className="collateralcalculation-child" />
       <div className="collateralsection">
-        <div className="collateral-worth-label13">
+        <div className="collateral-worth-label11">
           <div className="collateral-value-120">
             {totallyr.toLocaleString(undefined, {
               maximumFractionDigits: 4
@@ -153,9 +153,9 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
             LYR
           </div>
         </div>
-        <div className="collateral-worth-label14">
+        <div className="collateral-worth-label12">
           <div className="collateral-value-120">Total:</div>
-          <div className="div24">
+          <div className="div18">
             ${" "}
             {totaldollar.toLocaleString(undefined, {
               maximumFractionDigits: 2

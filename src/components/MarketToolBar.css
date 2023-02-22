@@ -45,11 +45,11 @@
 .swap-button-container {
   align-self: stretch;
   flex-direction: row;
-  padding: var(--padding-8xs) 0;
+  padding: var(--padding-7xs) 0;
   gap: var(--gap-lg);
 }
 .markettoolbar {
   border-radius: var(--br-xs);
   flex-direction: column;
-  padding: var(--padding-8xs) var(--padding-5xs);
+  padding: var(--padding-7xs) var(--padding-4xs);
 }

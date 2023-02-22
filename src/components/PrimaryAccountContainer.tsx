@@ -51,7 +51,11 @@ const PrimaryAccountContainer: FunctionComponent<
           <div className="qrcode-button-container">
             <button className="qrcode-button1" onClick={scanToPay}>
               <div className="qrcode-button-round1" />
-              <img className="qrcode-icon1" alt="" src={qRCodeIcon} />
+              <img
+                className="qrcode-icon1"
+                alt=""
+                src="../asserts/qrcode-icon.svg"
+              />
             </button>
           </div>
         </div>

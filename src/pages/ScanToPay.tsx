@@ -29,7 +29,7 @@ const ScanToPay: FunctionComponent = () => {
       <button className="prepare-sell-order-button13" onClick={onCopyAddress}>
         {auth.accountId}
       </button>
-      <button className="prepare-sell-order-button22" onClick={onScan}>
+      <button className="prepare-sell-order-button21" onClick={onScan}>
         <div className="primary-button9">Scan to pay</div>
       </button>
     </div>

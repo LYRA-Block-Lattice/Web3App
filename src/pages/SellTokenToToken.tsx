@@ -162,7 +162,7 @@ const SellTokenToToken: FunctionComponent = () => {
     <>
       <div className="selltokentotoken">
         <TopNavigationBar title="Order Settings" />
-        <div className="searchtokenbyname">
+        <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
             <button
@@ -188,9 +188,7 @@ const SellTokenToToken: FunctionComponent = () => {
             ownOnly={false}
             onTokenSelect={(name, ticker) => setToget(ticker)}
           />
-        </div>
-        <div className="priceandcollateralform">
-          <div className="price-and-collateral">Price and Collateral</div>
+          <div className="to-get-fiat">Price and Collateral</div>
           <div className="sellatprice-parent">
             <TextField
               className="sellatprice"

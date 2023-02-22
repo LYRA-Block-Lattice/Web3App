@@ -1,3 +1,26 @@
+.vector-stroke-icon {
+  position: absolute;
+  height: 58.33%;
+  width: 33.33%;
+  top: 20.83%;
+  right: 31.25%;
+  bottom: 20.83%;
+  left: 35.42%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.iconleft {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+}
 .mini-programs-buttons {
   position: relative;
   width: 87px;
@@ -125,8 +148,8 @@
   align-self: stretch;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-7xs) var(--padding-6xs) var(--padding-7xs)
-    var(--padding-3xs);
+  padding: var(--padding-6xs) var(--padding-5xs) var(--padding-6xs)
+    var(--padding-2xs);
   align-items: center;
   justify-content: center;
   gap: var(--gap-md);
