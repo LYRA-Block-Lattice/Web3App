@@ -6,10 +6,10 @@ type TopNavigationBarType = {
 };
 
 const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
-  title = "Lyra",
+  title = "Lyra"
 }) => {
   const onTitleClick = useCallback(() => {
-    //TODO: chroll main view to top
+    //TODO: scroll main view to top
   }, []);
 
   const onHomeClick = useCallback(() => {
