@@ -18,17 +18,15 @@
   background-color: var(--color-lightyellow);
   border-radius: var(--br-2xs);
   width: 301px;
+  height: 40px;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   padding: var(--padding-5xs);
   box-sizing: border-box;
-  justify-content: flex-start;
-}
-.tot-name1 {
-  height: 40px;
   align-items: center;
+  justify-content: flex-start;
 }
 .tot-description2 {
   height: 124px;

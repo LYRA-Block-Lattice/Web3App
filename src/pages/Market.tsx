@@ -3,6 +3,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
 import MarketOrder from "../components/MarketOrder";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./Market.css";
 
 const Market: FunctionComponent = () => {
@@ -75,45 +76,7 @@ const Market: FunctionComponent = () => {
           />
         </div>
       </div>
-      <div className="bottomtabbar">
-        <div className="home-indicator">
-          <div className="home-indicator1" />
-        </div>
-        <div className="tabbar">
-          <div className="tabbar-item">
-            <img
-              className="box-alt-light-icon"
-              alt=""
-              src="../asserts/box-alt-light.svg"
-            />
-            <div className="text">Market</div>
-          </div>
-          <div className="tabbar-item">
-            <img
-              className="box-alt-light-icon"
-              alt=""
-              src="../asserts/molecule-light.svg"
-            />
-            <div className="text">DAO</div>
-          </div>
-          <div className="tabbar-item">
-            <img
-              className="box-alt-light-icon"
-              alt=""
-              src="../asserts/wallet-light.svg"
-            />
-            <div className="text2">Wallet</div>
-          </div>
-          <div className="tabbar-item3">
-            <img
-              className="box-alt-light-icon"
-              alt=""
-              src="../asserts/user-alt-light.svg"
-            />
-            <div className="text">Me</div>
-          </div>
-        </div>
-      </div>
+      <BottomNavigationBar />
     </div>
   );
 };
