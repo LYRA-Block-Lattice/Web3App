@@ -13,7 +13,7 @@
 .utility-button5 {
   font-size: var(--font-size-xl);
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .prepare-sell-order-button12,
@@ -34,7 +34,7 @@
   overflow: hidden;
 }
 .view-orders-parent {
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 386px;
   height: 52px;
   flex-shrink: 0;
@@ -54,7 +54,7 @@
 }
 .viewordersform {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 100%;
   height: 926px;
   overflow: hidden;
@@ -62,7 +62,7 @@
   box-sizing: border-box;
   gap: var(--gap-xl);
   text-align: left;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   color: var(--black-000000100);
   font-family: var(--caption);
 }

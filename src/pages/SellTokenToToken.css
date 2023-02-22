@@ -1,7 +1,7 @@
 .to-sell-token,
 .utility-button4 {
   position: relative;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -11,7 +11,7 @@
 }
 .utility-button4 {
   font-size: var(--font-size-xl);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .prepare-sell-order-button11 {
@@ -37,7 +37,7 @@
 }
 .to-get-fiat {
   position: relative;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -48,7 +48,7 @@
   width: 320px;
 }
 .searchtokenbyname {
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@
 }
 .price-and-collateral {
   position: relative;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -100,16 +100,16 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
 }
 .primary-button4 {
   position: relative;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .reviewtheorder {
@@ -132,7 +132,7 @@
 }
 .priceandcollateralform,
 .selltokentotoken {
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: column;

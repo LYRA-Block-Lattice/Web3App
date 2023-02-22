@@ -21,7 +21,7 @@
 .tot-name2 {
   border: 0;
   font-family: var(--caption);
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
 }
 .tot-description3 {
   height: 124px;
@@ -34,10 +34,10 @@
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button21 {
+.prepare-sell-order-button25 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -67,12 +67,12 @@
   width: 292px;
 }
 .secondary-button6 {
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button22 {
+.prepare-sell-order-button26 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
@@ -88,7 +88,7 @@
   justify-content: center;
 }
 .createtottosellform1 {
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@
 }
 .to-get-tokennft {
   position: relative;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -110,7 +110,7 @@
   width: 296px;
 }
 .searchtokenbyname1 {
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -120,7 +120,7 @@
   gap: var(--gap-5xl);
 }
 .price-and-collateral2 {
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   font-weight: 500;
   display: inline-block;
   width: 296px;
@@ -163,7 +163,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--gap-lg);
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
 }
 .collateral-section1,
 .collateral-worth-label6 {
@@ -184,14 +184,14 @@
   padding: var(--padding-5xs);
   gap: var(--gap-5xs);
 }
-.primary-button9 {
+.primary-button11 {
   position: relative;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .reviewtheorder2 {
@@ -214,7 +214,7 @@
 }
 .priceandcollateralform2,
 .selltottotoken {
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 373px;
   overflow: hidden;
   display: flex;

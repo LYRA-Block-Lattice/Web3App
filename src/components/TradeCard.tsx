@@ -86,16 +86,16 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
       </div>
       <div className="itemactions">
         <button className="delist-button">
-          <div className="mini-button">Cancel</div>
+          <div className="mini-button2">Cancel</div>
         </button>
         <button className="delist-button">
-          <div className="mini-button">Close</div>
+          <div className="mini-button2">Close</div>
         </button>
         <button className="delist-button">
-          <div className="mini-button">Complain</div>
+          <div className="mini-button2">Complain</div>
         </button>
         <button className="delist-button">
-          <div className="mini-button">Comment</div>
+          <div className="mini-button2">Comment</div>
         </button>
       </div>
     </div>

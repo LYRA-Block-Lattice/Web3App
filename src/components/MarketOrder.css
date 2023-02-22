@@ -28,7 +28,7 @@
   position: relative;
   font-size: var(--caption-size);
   font-family: var(--font-calibri);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .order-status {
@@ -110,7 +110,7 @@
   width: 73px;
   overflow: hidden;
   align-items: flex-end;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-5xl);
   color: var(--color-forestgreen);
 }
 .details-section-child {
@@ -198,7 +198,7 @@
 }
 .ordercard,
 .userprofilesection {
-  background-color: var(--color-white);
+  background-color: var(--white);
   display: flex;
   justify-content: flex-start;
 }
@@ -208,7 +208,7 @@
   flex-direction: row;
   align-items: center;
   gap: var(--gap-sm);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl);
 }
 .ordercard {
   border-radius: var(--br-sm);

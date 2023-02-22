@@ -14,7 +14,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--color-white);
+  background-color: var(--white);
   height: 34px;
 }
 .box-alt-light-icon {
@@ -61,7 +61,7 @@
   right: 0;
   bottom: 34px;
   left: 0;
-  background-color: var(--color-white);
+  background-color: var(--white);
   box-shadow: var(--y1);
   height: 56px;
   flex-direction: row;

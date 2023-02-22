@@ -113,10 +113,10 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
       </div>
       <div className="itemactions1">
         <button className="delist-button1">
-          <div className="mini-button4">Delist</div>
+          <div className="mini-button6">Delist</div>
         </button>
         <button className="delist-button1">
-          <div className="mini-button4">Close</div>
+          <div className="mini-button6">Close</div>
         </button>
       </div>
     </div>

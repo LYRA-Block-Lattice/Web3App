@@ -7,12 +7,12 @@
 }
 .token2 {
   position: relative;
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   display: inline-block;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
   width: 71px;
 }

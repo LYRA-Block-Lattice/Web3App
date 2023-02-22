@@ -112,11 +112,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/create-wallet":
+      case "/createwallet":
         title = "";
         metaDescription = "";
         break;
-      case "/open-wallet":
+      case "/openwallet":
         title = "";
         metaDescription = "";
         break;
@@ -205,9 +205,9 @@ function App() {
 
       <Route path="/starttocreateorder" element={<StartToCreateOrder />} />
 
-      <Route path="/create-wallet" element={<CreateWallet />} />
+      <Route path="/createwallet" element={<CreateWallet />} />
 
-      <Route path="/open-wallet" element={<OpenWallet />} />
+      <Route path="/openwallet" element={<OpenWallet />} />
 
       <Route path="/previewsellorderform" element={<PreviewSellOrderForm />} />
 

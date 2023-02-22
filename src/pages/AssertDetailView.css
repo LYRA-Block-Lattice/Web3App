@@ -26,7 +26,7 @@
 }
 .assertauthorsection {
   align-self: stretch;
-  background-color: var(--color-white);
+  background-color: var(--white);
   height: 48px;
   flex-shrink: 0;
   justify-content: center;
@@ -47,11 +47,11 @@
 }
 .asserttitlesection {
   align-self: stretch;
-  background-color: var(--color-white);
+  background-color: var(--white);
   height: 48px;
   display: flex;
   justify-content: flex-start;
-  font-size: var(--font-size-8xl);
+  font-size: var(--font-size-7xl);
 }
 .assertownersection {
   height: 24px;
@@ -61,7 +61,7 @@
 .asserttitleregion,
 .icon-park-solidblockchain-wrapper {
   align-self: stretch;
-  background-color: var(--color-white);
+  background-color: var(--white);
   display: flex;
   justify-content: flex-start;
 }
@@ -90,7 +90,7 @@
 }
 .assertstatssection,
 .icoutline-remove-red-eye-parent {
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -124,11 +124,11 @@
   padding: var(--padding-2xs) var(--padding-md);
   align-items: center;
   gap: var(--gap-lg);
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
 }
 .descriptiondetails,
 .pricelabel {
-  background-color: var(--color-white);
+  background-color: var(--white);
   align-items: flex-start;
 }
 .descriptiondetails {
@@ -162,7 +162,7 @@
 .priceandbuyregion,
 .priceandvaluelabel {
   align-self: stretch;
-  background-color: var(--color-white);
+  background-color: var(--white);
   display: flex;
 }
 .priceandvaluelabel {
@@ -171,7 +171,7 @@
   padding: 0 var(--padding-sm);
   align-items: center;
   justify-content: space-between;
-  font-size: var(--font-size-8xl);
+  font-size: var(--font-size-7xl);
   color: var(--black-000000100);
 }
 .priceandbuyregion {
@@ -188,7 +188,7 @@
   flex-direction: row;
 }
 .pricelabel1 {
-  background-color: var(--color-white);
+  background-color: var(--white);
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -197,13 +197,13 @@
   padding: 0 var(--padding-8xs);
   align-items: center;
   justify-content: space-between;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   color: var(--black-000000100);
 }
 .priceandvaluelabel1,
 .selectedamount,
 .setlimitsection {
-  background-color: var(--color-white);
+  background-color: var(--white);
   display: flex;
 }
 .setlimitsection {
@@ -259,7 +259,7 @@
 }
 .limitadjustsection {
   align-self: stretch;
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -293,12 +293,12 @@
 }
 .primary-button3 {
   position: relative;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .prepare-sell-order-button6 {
@@ -329,7 +329,7 @@
   box-sizing: border-box;
 }
 .makeofferbutton {
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   padding: var(--padding-3xs);
   align-items: center;
@@ -353,7 +353,7 @@
   flex-shrink: 0;
 }
 .descriptiondetails1 {
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -374,7 +374,7 @@
 }
 .assertdetailview {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 100%;
   height: 1899px;
   padding: 0 var(--padding-3xs);

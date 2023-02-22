@@ -7,7 +7,7 @@
 .matterhorn-popup {
   position: relative;
   border-radius: var(--br-xs);
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 900px;
   display: flex;
   flex-direction: column;

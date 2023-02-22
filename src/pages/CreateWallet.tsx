@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent } from "react";
 import {
   TextField,
   Input,
@@ -9,17 +9,10 @@ import {
   Checkbox,
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import { useNavigate } from "react-router-dom";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./CreateWallet.css";
 
 const CreateWallet: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onOpenWalletLinkClick = useCallback(() => {
-    navigate("/open-wallet");
-  }, [navigate]);
-
   return (
     <div className="createwallet">
       <TopNavigationBar title="Create Wallet" />
@@ -126,28 +119,29 @@ const CreateWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <FormControlLabel
-          label="I want to restore wallet by Private Key"
-          labelPlacement="end"
-          control={<Checkbox color="primary" size="medium" />}
-        />
-        <TextField
-          className="wallet-name"
-          sx={{ width: 343 }}
-          color="primary"
-          variant="standard"
-          type="text"
-          label="Private Key"
-          placeholder="Placeholder"
-          size="medium"
-          margin="none"
-        />
-        <button className="create-wallet">
-          <div className="button-shape" />
-          <div className="createlabel">Create</div>
+        <div className="checkboxrestoreprivatekey-parent">
+          <FormControlLabel
+            label="I want to restore wallet by Private Key"
+            labelPlacement="end"
+            control={<Checkbox color="primary" size="medium" />}
+          />
+          <TextField
+            className="wallet-name"
+            sx={{ width: 343 }}
+            color="primary"
+            variant="standard"
+            type="text"
+            label="Private Key"
+            placeholder="Placeholder"
+            size="medium"
+            margin="none"
+          />
+        </div>
+        <button className="prepare-sell-order-button17">
+          <div className="primary-button6">Create Wallet</div>
         </button>
-        <button className="open-wallet-link" onClick={onOpenWalletLinkClick}>
-          Open Wallet
+        <button className="prepare-sell-order-button18">
+          <div className="mini-button">Open Wallet</div>
         </button>
       </div>
       <BottomNavigationBar

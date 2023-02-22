@@ -1,6 +1,6 @@
 .to-get-totskusvc {
   position: relative;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -14,7 +14,7 @@
 .tot-name1 {
   border: 0;
   font-family: var(--caption);
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
   background-color: var(--color-lightyellow);
   border-radius: var(--br-xs);
   width: 301px;
@@ -39,10 +39,10 @@
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button19 {
+.prepare-sell-order-button23 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -72,18 +72,18 @@
   width: 292px;
 }
 .secondary-button5 {
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button20,
+.prepare-sell-order-button24,
 .togettotform {
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-.prepare-sell-order-button20 {
+.prepare-sell-order-button24 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
@@ -96,14 +96,14 @@
   justify-content: center;
 }
 .togettotform {
-  background-color: var(--color-white);
+  background-color: var(--white);
   flex-direction: column;
   padding: var(--padding-2xl) var(--padding-sm);
   justify-content: flex-start;
   gap: var(--gap-2xl);
 }
 .price-and-collateral1 {
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   font-weight: 500;
   display: inline-block;
   width: 296px;
@@ -139,7 +139,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--gap-lg);
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
 }
 .collateral-in-lyr {
   position: relative;
@@ -167,14 +167,14 @@
   padding: var(--padding-5xs);
   gap: var(--gap-5xs);
 }
-.primary-button8 {
+.primary-button10 {
   position: relative;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .reviewtheorder1 {
@@ -197,7 +197,7 @@
 }
 .priceandcollateralform1,
 .selltottotot {
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 373px;
   overflow: hidden;
   display: flex;

@@ -8,7 +8,7 @@
   flex-shrink: 0;
 }
 .view-trades-wrapper {
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 376px;
   height: 52px;
   flex-shrink: 0;
@@ -32,7 +32,7 @@
 }
 .viewtradesform {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 100%;
   height: 926px;
   overflow: hidden;
@@ -40,7 +40,7 @@
   box-sizing: border-box;
   gap: var(--gap-xl);
   text-align: left;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   color: var(--black-000000100);
   font-family: var(--caption);
 }

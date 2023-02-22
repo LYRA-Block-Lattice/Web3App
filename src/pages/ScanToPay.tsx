@@ -15,10 +15,10 @@ const ScanToPay: FunctionComponent = () => {
         LV3nD5Bii1aHj7x5AXDq2oraDoP1cd9UF5p7uuqHYFnC1tfUX4mtWXa98uYYxZ3pf7aCTdvvqiNpop1WsakaooQzFjCMhc
       </button>
       <button
-        className="prepare-sell-order-button18"
+        className="prepare-sell-order-button22"
         onClick={onPrepareSellOrderButtonClick}
       >
-        <div className="primary-button7">Scan to pay</div>
+        <div className="primary-button9">Scan to pay</div>
       </button>
     </div>
   );

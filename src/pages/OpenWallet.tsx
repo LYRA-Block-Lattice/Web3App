@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent } from "react";
 import {
   FormControl,
   InputLabel,
@@ -12,17 +12,10 @@ import {
   IconButton,
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import { useNavigate } from "react-router-dom";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./OpenWallet.css";
 
 const OpenWallet: FunctionComponent = () => {
-  const navigate = useNavigate();
-
-  const onSignUpClick = useCallback(() => {
-    navigate("/create-wallet");
-  }, [navigate]);
-
   return (
     <div className="openwallet">
       <TopNavigationBar title="Open Wallet" />
@@ -65,16 +58,13 @@ const OpenWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className="open-wallet-button">
-          <div className="button-shape1" />
-          <div className="label">Open</div>
+        <button className="prepare-sell-order-button19">
+          <div className="primary-button7">Open Wallet</div>
         </button>
-        <div className="sign-up-parent">
-          <button className="sign-up" onClick={onSignUpClick}>
-            Create Wallet
-          </button>
-          <button className="forgot-password-copy">Forgot password?</button>
-        </div>
+        <button className="prepare-sell-order-button20">
+          <div className="mini-button1">Create Wallet</div>
+        </button>
+        <button className="forgot-password-copy">Forgot password?</button>
       </div>
       <BottomNavigationBar
         boxAltLight="../asserts/box-alt-light.svg"
