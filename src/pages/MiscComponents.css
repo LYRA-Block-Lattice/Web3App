@@ -55,10 +55,13 @@
   color: var(--accent-strong-blue);
 }
 .content,
+.nft-showing-item {
+  flex-direction: column;
+}
+.content,
 .nft-showing-item,
 .nft-showing-item-parent {
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
 }
 .content {
@@ -66,8 +69,7 @@
   align-items: flex-start;
   gap: var(--gap-3xs);
 }
-.nft-showing-item,
-.nft-showing-item-parent {
+.nft-showing-item {
   align-items: flex-end;
   gap: var(--gap-sm);
 }

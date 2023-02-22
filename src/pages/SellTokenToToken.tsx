@@ -5,7 +5,6 @@ import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import CollateralCalculation from "../components/CollateralCalculation";
 import { useNavigate } from "react-router-dom";
-import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SellTokenToToken.css";
 
 const SellTokenToToken: FunctionComponent = () => {
@@ -170,12 +169,45 @@ const SellTokenToToken: FunctionComponent = () => {
             <div className="primary-button3">Review the Order</div>
           </button>
         </div>
-        <BottomNavigationBar
-          iconImageUrl="../asserts/box-alt-light2.svg"
-          moleculeImageUrl="../asserts/molecule-light2.svg"
-          walletImageUrl="../asserts/wallet-light2.svg"
-          userImageUrl="../asserts/user-alt-light2.svg"
-        />
+        <div className="bottomtabbar2">
+          <div className="home-indicator4">
+            <div className="home-indicator5" />
+          </div>
+          <div className="tabbar2">
+            <div className="tabbar-item8">
+              <img
+                className="box-alt-light-icon2"
+                alt=""
+                src="../asserts/box-alt-light.svg"
+              />
+              <div className="text18">Market</div>
+            </div>
+            <div className="tabbar-item8">
+              <img
+                className="box-alt-light-icon2"
+                alt=""
+                src="../asserts/molecule-light.svg"
+              />
+              <div className="text18">DAO</div>
+            </div>
+            <div className="tabbar-item8">
+              <img
+                className="box-alt-light-icon2"
+                alt=""
+                src="../asserts/wallet-light.svg"
+              />
+              <div className="text20">Wallet</div>
+            </div>
+            <div className="tabbar-item11">
+              <img
+                className="box-alt-light-icon2"
+                alt=""
+                src="../asserts/user-alt-light.svg"
+              />
+              <div className="text18">Me</div>
+            </div>
+          </div>
+        </div>
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

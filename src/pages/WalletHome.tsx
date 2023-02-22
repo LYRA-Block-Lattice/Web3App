@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
 import TokenDisplayItem from "../components/TokenDisplayItem";
-import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./WalletHome.css";
 
 const WalletHome: FunctionComponent = () => {
@@ -136,12 +135,45 @@ const WalletHome: FunctionComponent = () => {
             />
           </div>
         </div>
-        <BottomNavigationBar
-          iconImageUrl="../asserts/box-alt-light.svg"
-          moleculeImageUrl="../asserts/molecule-light.svg"
-          walletImageUrl="../asserts/wallet-light.svg"
-          userImageUrl="../asserts/user-alt-light.svg"
-        />
+        <div className="bottomtabbar1">
+          <div className="home-indicator2">
+            <div className="home-indicator3" />
+          </div>
+          <div className="tabbar1">
+            <div className="tabbar-item4">
+              <img
+                className="box-alt-light-icon1"
+                alt=""
+                src="../asserts/box-alt-light.svg"
+              />
+              <div className="text14">Market</div>
+            </div>
+            <div className="tabbar-item4">
+              <img
+                className="box-alt-light-icon1"
+                alt=""
+                src="../asserts/molecule-light.svg"
+              />
+              <div className="text14">DAO</div>
+            </div>
+            <div className="tabbar-item4">
+              <img
+                className="box-alt-light-icon1"
+                alt=""
+                src="../asserts/wallet-light.svg"
+              />
+              <div className="text16">Wallet</div>
+            </div>
+            <div className="tabbar-item7">
+              <img
+                className="box-alt-light-icon1"
+                alt=""
+                src="../asserts/user-alt-light.svg"
+              />
+              <div className="text14">Me</div>
+            </div>
+          </div>
+        </div>
       </div>
       {isSideMenuPopupOpen && (
         <PortalDrawer

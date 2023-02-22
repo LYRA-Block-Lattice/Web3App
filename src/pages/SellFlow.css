@@ -10,10 +10,10 @@
 }
 .group,
 .rectangle,
-.text {
+.text4 {
   position: absolute;
 }
-.text {
+.text4 {
   height: 100%;
   width: calc(100% - 26.4px);
   top: 0;
@@ -36,11 +36,11 @@
   height: 63.5px;
 }
 .group1,
-.text1,
+.text5,
 .vector-icon {
   position: absolute;
 }
-.text1 {
+.text5 {
   height: 100%;
   width: calc(100% - 49.6px);
   top: 0;
@@ -63,11 +63,11 @@
   height: 101.5px;
 }
 .group2,
-.text2,
+.text6,
 .vector-icon1 {
   position: absolute;
 }
-.text2 {
+.text6 {
   height: calc(100% - 20px);
   width: calc(100% - 60px);
   top: 20px;
@@ -82,7 +82,7 @@
   width: 200px;
   height: 100px;
 }
-.text3,
+.text7,
 .vector-icon2 {
   position: absolute;
   top: 0;
@@ -93,7 +93,7 @@
   width: 102px;
   height: 51px;
 }
-.text3 {
+.text7 {
   height: 100%;
   width: calc(100% - 20.4px);
   left: 10.2px;
@@ -101,17 +101,18 @@
   align-items: center;
   justify-content: center;
 }
+.group3 {
+  left: 163px;
+}
 .group3,
 .group4,
 .group5 {
   position: absolute;
   top: 478px;
-  left: 163px;
   width: 102px;
   height: 51px;
 }
-.group4,
-.group5 {
+.group4 {
   left: 27px;
 }
 .group5 {
@@ -141,10 +142,10 @@
 }
 .group6,
 .rectangle1,
-.text6 {
+.text10 {
   position: absolute;
 }
-.text6 {
+.text10 {
   height: 100%;
   width: calc(100% - 40px);
   top: 0;
@@ -181,11 +182,13 @@
 .returncollateral,
 .sellforlabel {
   position: absolute;
-  top: 699px;
-  left: 51px;
   width: 156px;
   height: 30px;
   color: var(--black-000000100);
+}
+.sellforlabel {
+  top: 699px;
+  left: 51px;
 }
 .ordercollateral,
 .returncollateral {
@@ -237,7 +240,7 @@
   width: 105.5px;
   height: 53.5px;
 }
-.text7 {
+.text11 {
   position: absolute;
   height: 100%;
   width: calc(100% - 41.6px);
@@ -247,33 +250,35 @@
   align-items: center;
   justify-content: center;
 }
+.group7 {
+  left: 162px;
+}
 .group7,
 .group8,
 .group9 {
   position: absolute;
   top: 563px;
-  left: 162px;
   width: 104px;
   height: 52px;
 }
-.group8,
-.group9 {
+.group8 {
   left: 298px;
 }
 .group9 {
   left: 26px;
+}
+.vector-vector1 {
+  left: 73.67px;
+  width: 141.08px;
 }
 .vector-vector1,
 .vector-vector2,
 .vector-vector3 {
   position: absolute;
   top: 413px;
-  left: 73.67px;
-  width: 141.08px;
   height: 65px;
 }
-.vector-vector2,
-.vector-vector3 {
+.vector-vector2 {
   left: 209.67px;
   width: 8.66px;
 }
@@ -281,37 +286,40 @@
   left: 213.25px;
   width: 141.08px;
 }
+.vector-vector4 {
+  left: 73.67px;
+}
 .vector-vector4,
 .vector-vector5,
 .vector-vector6 {
   position: absolute;
   top: 529px;
-  left: 73.67px;
   width: 8.66px;
   height: 34px;
 }
-.vector-vector5,
-.vector-vector6 {
+.vector-vector5 {
   left: 209.67px;
 }
 .vector-vector6 {
   left: 345.67px;
+}
+.vector-rectangle {
+  left: 77.25px;
+  width: 142.08px;
 }
 .vector-rectangle,
 .vector-rectangle1,
 .vector-rectangle2 {
   position: absolute;
   top: 615px;
-  left: 77.25px;
-  width: 142.08px;
   height: 130px;
 }
-.vector-rectangle1,
-.vector-rectangle2 {
+.vector-rectangle1 {
   left: 210.67px;
   width: 8.66px;
 }
 .vector-rectangle2 {
+  left: 210.67px;
   width: 140.08px;
 }
 .sellflow {

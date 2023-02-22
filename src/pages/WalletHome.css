@@ -164,34 +164,112 @@
   color: var(--black-000000100);
   font-family: var(--font-sf-pro-text);
 }
-.coinlisting {
-  background-color: var(--color-white);
-  width: 396px;
-  padding: 0 var(--padding-5xs) var(--padding-5xs);
-  box-sizing: border-box;
-  align-items: flex-start;
-  gap: var(--gap-md);
-}
 .coinlisting,
-.coinlisting-wrapper,
-.wallethome {
+.coinlisting-wrapper {
+  width: 396px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
+}
+.coinlisting {
+  background-color: var(--color-white);
+  padding: 0 var(--padding-5xs) var(--padding-5xs);
+  box-sizing: border-box;
+  gap: var(--gap-md);
 }
 .coinlisting-wrapper {
   flex: 1;
-  width: 396px;
-  align-items: flex-start;
+}
+.home-indicator3 {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 67px);
+  border-radius: var(--br-3xl);
+  background-color: var(--black-000000100);
+  width: 134px;
+  height: 5px;
+  display: none;
+}
+.home-indicator2 {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-white);
+  height: 34px;
+}
+.box-alt-light-icon1 {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.text14 {
+  position: relative;
+  line-height: 14px;
+}
+.tabbar-item4 {
+  align-self: stretch;
+  flex: 1;
+  background-color: var(--selectable);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-5xs);
+}
+.text16 {
+  position: relative;
+  line-height: 10px;
+}
+.tabbar-item7,
+.tabbar1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tabbar-item7 {
+  align-self: stretch;
+  flex: 1;
+  background-color: var(--selectable);
+  flex-direction: column;
+  gap: var(--gap-5xs);
+  color: var(--primary1);
+}
+.tabbar1 {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 34px;
+  left: 0;
+  background-color: var(--color-white);
+  box-shadow: var(--y1);
+  height: 56px;
+  flex-direction: row;
+}
+.bottomtabbar1 {
+  position: fixed;
+  width: 375px;
+  height: 90px;
+  flex-shrink: 0;
+  bottom: 0;
+  font-size: var(--uppercase-small-size);
+  color: var(--primary-text);
+  font-family: var(--font-open-sans);
 }
 .wallethome {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
   height: 938px;
+  display: flex;
+  flex-direction: column;
   padding: 0 var(--padding-3xs);
   box-sizing: border-box;
   align-items: center;
+  justify-content: flex-start;
   gap: var(--gap-lg);
   text-align: center;
   font-size: var(--body-semibold-size);
