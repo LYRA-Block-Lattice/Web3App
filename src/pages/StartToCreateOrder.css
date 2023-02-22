@@ -29,10 +29,10 @@
   color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button16 {
+.prepare-sell-order-button15 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-7xl);
+  padding: var(--padding-4xs) var(--padding-7xl);
   background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
@@ -44,10 +44,10 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button16:hover {
+.prepare-sell-order-button15:hover {
   background-color: #8277e8;
 }
-.prepare-sell-order-button16:disabled {
+.prepare-sell-order-button15:disabled {
   background-color: var(--color-gainsboro-400);
 }
 .catalog-section-parent,
@@ -67,7 +67,7 @@
   width: 100%;
   height: 917px;
   overflow: hidden;
-  padding: 0 var(--padding-3xs);
+  padding: 0 var(--padding-2xs);
   box-sizing: border-box;
   justify-content: flex-start;
   gap: var(--gap-xl);

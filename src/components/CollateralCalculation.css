@@ -3,8 +3,8 @@
   letter-spacing: 0.41px;
   line-height: 18px;
 }
-.collateral-worth-label7,
-.collateral-worth-label8 {
+.collateral-worth-label5,
+.collateral-worth-label6 {
   width: 300px;
   overflow: hidden;
   display: flex;
@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.collateral-worth-label8 {
+.collateral-worth-label6 {
   align-items: flex-start;
   justify-content: flex-end;
   font-size: var(--uppercase-small-size);
@@ -31,7 +31,7 @@
   height: 1px;
   flex-shrink: 0;
 }
-.collateral-worth-label13 {
+.collateral-worth-label11 {
   width: 300px;
   overflow: hidden;
   display: flex;
@@ -39,13 +39,13 @@
   align-items: flex-start;
   justify-content: flex-end;
 }
-.div24 {
+.div18 {
   position: relative;
   font-size: var(--uppercase-small-size);
   letter-spacing: 0.41px;
   line-height: 18px;
 }
-.collateral-worth-label14,
+.collateral-worth-label12,
 .collateralcalculation {
   width: 300px;
   overflow: hidden;
@@ -59,7 +59,7 @@
   background-color: var(--color-gray-100);
   width: 320px;
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   box-sizing: border-box;
   justify-content: center;
   gap: var(--gap-xs);

@@ -137,10 +137,10 @@ const CreateWallet: FunctionComponent = () => {
             margin="none"
           />
         </div>
-        <button className="prepare-sell-order-button17">
+        <button className="prepare-sell-order-button16">
           <div className="primary-button6">Create Wallet</div>
         </button>
-        <button className="prepare-sell-order-button18">
+        <button className="prepare-sell-order-button17">
           <div className="mini-button">Open Wallet</div>
         </button>
       </div>

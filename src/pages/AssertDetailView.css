@@ -20,7 +20,7 @@
   align-items: center;
 }
 .material-symbolsshare-parent {
-  padding: var(--padding-3xs);
+  padding: var(--padding-2xs);
   justify-content: flex-end;
   gap: var(--gap-4xl);
 }
@@ -68,7 +68,7 @@
 .asserttitleregion {
   border-radius: var(--br-xs);
   flex-direction: column;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   align-items: flex-start;
   gap: var(--gap-lg);
 }
@@ -77,7 +77,7 @@
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-5xs) 0;
+  padding: var(--padding-4xs) 0;
   box-sizing: border-box;
   align-items: center;
 }
@@ -100,7 +100,7 @@
 }
 .assertstatssection {
   border-radius: var(--br-xs) var(--br-xs) 0 0;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   gap: var(--gap-3xl);
 }
 .assertdetailview1 {
@@ -121,7 +121,7 @@
   align-self: stretch;
   border-radius: var(--br-xs);
   background-color: var(--color-gainsboro-300);
-  padding: var(--padding-2xs) var(--padding-md);
+  padding: var(--padding-xs) var(--padding-md);
   align-items: center;
   gap: var(--gap-lg);
   font-size: var(--font-size-6xl);
@@ -139,7 +139,7 @@
 }
 .pricelabel {
   align-self: stretch;
-  padding: 0 var(--padding-5xs);
+  padding: 0 var(--padding-4xs);
 }
 .div3,
 .tetherusdt {
@@ -194,7 +194,7 @@
   justify-content: flex-start;
 }
 .priceandvaluelabel1 {
-  padding: 0 var(--padding-8xs);
+  padding: 0 var(--padding-7xs);
   align-items: center;
   justify-content: space-between;
   font-size: var(--font-size-6xl);
@@ -209,7 +209,7 @@
 .setlimitsection {
   align-self: stretch;
   flex-direction: column;
-  padding: 0 var(--padding-5xs);
+  padding: 0 var(--padding-4xs);
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-lg);
@@ -223,7 +223,7 @@
   border-radius: var(--br-xs);
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   align-items: center;
   justify-content: flex-end;
   text-align: right;
@@ -280,7 +280,7 @@
 }
 .frame-container {
   width: 380px;
-  padding: 0 var(--padding-8xs);
+  padding: 0 var(--padding-7xs);
   gap: var(--gap-xs);
   text-align: center;
   font-size: var(--uppercase-small-size);
@@ -288,7 +288,7 @@
 }
 .pricelabel-parent {
   width: 400px;
-  padding: 0 var(--padding-5xs);
+  padding: 0 var(--padding-4xs);
   gap: var(--gap-lg);
 }
 .primary-button3 {
@@ -304,7 +304,7 @@
 .prepare-sell-order-button6 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-5xs) var(--padding-7xl);
+  padding: var(--padding-4xs) var(--padding-7xl);
   background-color: var(--primary1);
   align-self: stretch;
   border-radius: var(--br-lg);
@@ -331,16 +331,16 @@
 .makeofferbutton {
   background-color: var(--white);
   overflow: hidden;
-  padding: var(--padding-3xs);
+  padding: var(--padding-2xs);
   align-items: center;
   justify-content: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-xl);
 }
 .buysection {
-  padding: var(--padding-5xs) 0 0;
+  padding: var(--padding-4xs) 0 0;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-3xl);
+  gap: 16px;
   color: var(--color-dimgray-300);
 }
 .this-order-is {
@@ -377,7 +377,7 @@
   background-color: var(--white);
   width: 100%;
   height: 1899px;
-  padding: 0 var(--padding-3xs);
+  padding: 0 var(--padding-2xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: center;

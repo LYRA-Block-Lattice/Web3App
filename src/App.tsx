@@ -26,10 +26,7 @@ import PreviewSellOrderForm from "./pages/PreviewSellOrderForm";
 import Redir from "./pages/Redir";
 import About from "./pages/About";
 import ScanToPay from "./pages/ScanToPay";
-import SellTOTToTOT from "./pages/SellTOTToTOT";
-import SellTOTToToken from "./pages/SellTOTToToken";
 import Empty from "./pages/Empty";
-import OldV1UI from "./pages/OldV1UI";
 import { useEffect } from "react";
 
 function App() {
@@ -136,19 +133,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/selltottotot":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/selltottotoken":
-        title = "";
-        metaDescription = "";
-        break;
       case "/empty":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/oldv1ui":
         title = "";
         metaDescription = "";
         break;
@@ -217,13 +202,7 @@ function App() {
 
       <Route path="/scantopay" element={<ScanToPay />} />
 
-      <Route path="/selltottotot" element={<SellTOTToTOT />} />
-
-      <Route path="/selltottotoken" element={<SellTOTToToken />} />
-
       <Route path="/empty" element={<Empty />} />
-
-      <Route path="/oldv1ui" element={<OldV1UI />} />
     </Routes>
   );
 }

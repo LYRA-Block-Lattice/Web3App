@@ -9,37 +9,37 @@ const Market: FunctionComponent = () => {
   return (
     <div className="market">
       <TopNavigationBar title="Market" />
-      <MarketToolBar
-        homeIconInterlocution="../asserts/home--icon--interlocution.svg"
-        homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"
-        homeIconInterlocution2="../asserts/home--icon--interlocution2.svg"
-        homeIconInterlocution3="../asserts/home--icon--interlocution3.svg"
-        homeIconInterlocution4="../asserts/home--icon--interlocution4.svg"
-      />
-      <div className="searchsection">
-        <input
-          className="searchsection-child"
-          type="search"
-          placeholder="Search products/token/NFT/TOT etc."
-        />
-      </div>
       <div className="orderandcatalog">
+        <MarketToolBar
+          homeIconInterlocution="../asserts/home--icon--interlocution.svg"
+          homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"
+          homeIconInterlocution2="../asserts/home--icon--interlocution2.svg"
+          homeIconInterlocution3="../asserts/home--icon--interlocution3.svg"
+          homeIconInterlocution4="../asserts/home--icon--interlocution4.svg"
+        />
+        <div className="searchsection">
+          <input
+            className="searchsection-child"
+            type="search"
+            placeholder="Search products/token/NFT/TOT etc."
+          />
+        </div>
         <div className="tradableorderssection">
-          <div className="catalogtab">
-            <div className="nft-wrapper">
-              <b className="nft">NFT</b>
+          <div className="catalogtab1">
+            <div className="nft-container">
+              <b className="nft1">NFT</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Fiat</b>
+            <div className="nft-container">
+              <b className="nft1">Fiat</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Goods</b>
+            <div className="nft-container">
+              <b className="nft1">Goods</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Service</b>
+            <div className="nft-container">
+              <b className="nft1">Service</b>
             </div>
-            <div className="token-wrapper">
-              <b className="nft">Token</b>
+            <div className="token-container">
+              <b className="nft1">Token</b>
             </div>
           </div>
           <MarketOrder

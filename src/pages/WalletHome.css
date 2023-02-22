@@ -34,7 +34,7 @@
 .swap-button-parent {
   align-self: stretch;
   flex-direction: row;
-  padding: var(--padding-8xs) 0;
+  padding: var(--padding-7xs) 0;
   gap: var(--gap-lg);
 }
 .iconssection,
@@ -45,7 +45,7 @@
 }
 .iconssection {
   border-radius: var(--br-xs);
-  padding: var(--padding-8xs) var(--padding-5xs);
+  padding: var(--padding-7xs) var(--padding-4xs);
   align-items: center;
   justify-content: center;
 }
@@ -53,12 +53,12 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.nft1 {
+.nft {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
 }
-.nft-container {
+.nft-wrapper {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-300);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -66,31 +66,31 @@
   height: 26px;
   flex-shrink: 0;
   overflow: hidden;
-  padding: var(--padding-8xs) 0 var(--padding-11xs);
+  padding: var(--padding-7xs) 0 var(--padding-10xs);
   box-sizing: border-box;
   align-items: flex-end;
 }
-.catalogtab1,
-.nft-container,
-.token-container {
+.catalogtab,
+.nft-wrapper,
+.token-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.token-container {
+.token-wrapper {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-300);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
   height: 26px;
   flex-shrink: 0;
-  padding: var(--padding-8xs) 0 var(--padding-11xs);
+  padding: var(--padding-7xs) 0 var(--padding-10xs);
   box-sizing: border-box;
   align-items: flex-end;
 }
-.catalogtab1 {
+.catalogtab {
   background-color: var(--white);
-  border-bottom: 1px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-200);
   overflow: hidden;
   align-items: center;
   gap: var(--gap-sm);
@@ -156,7 +156,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-8xs);
+  padding: var(--padding-7xs);
   align-items: center;
   justify-content: center;
   text-align: left;
@@ -167,29 +167,30 @@
 .coinlisting {
   background-color: var(--white);
   width: 396px;
-  padding: 0 var(--padding-5xs) var(--padding-5xs);
+  padding: 0 var(--padding-4xs) var(--padding-4xs);
   box-sizing: border-box;
   align-items: flex-start;
   gap: var(--gap-lg);
 }
 .coinlisting,
-.coinlisting-wrapper,
+.wallet-card-parent,
 .wallethome {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.coinlisting-wrapper {
+.wallet-card-parent {
   flex: 1;
   width: 396px;
   align-items: flex-start;
+  gap: var(--gap-lg);
 }
 .wallethome {
   position: relative;
   background-color: var(--white);
   width: 100%;
   height: 917px;
-  padding: 0 var(--padding-3xs);
+  padding: 0 var(--padding-2xs);
   box-sizing: border-box;
   align-items: center;
   gap: var(--gap-xl);

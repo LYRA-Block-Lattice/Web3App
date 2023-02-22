@@ -10,12 +10,12 @@
   display: inline-block;
   height: 24px;
 }
-.b3,
+.b1,
 .lyr,
 .lyra-coin {
   position: relative;
 }
-.b3 {
+.b1 {
   font-size: var(--caption-size);
   color: var(--text-secondary1);
 }
@@ -60,7 +60,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-8xs);
+  padding: var(--padding-7xs);
   align-items: center;
   justify-content: center;
   gap: var(--gap-sm);

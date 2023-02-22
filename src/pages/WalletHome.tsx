@@ -32,70 +32,70 @@ const WalletHome: FunctionComponent = () => {
     <>
       <div className="wallethome">
         <TopNavigationBar title="My Wallet" />
-        <WalletCard />
-        <div className="iconssection-wrapper">
-          <div className="iconssection">
-            <div className="swap-button-parent">
-              <button className="swap-button" onClick={onSwapButtonClick}>
-                <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution5.svg"
-                />
-                <div className="ranking">Market</div>
-              </button>
-              <button className="swap-button">
-                <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution6.svg"
-                />
-                <div className="ranking">Swap</div>
-              </button>
-              <button className="swap-button" onClick={onSendButtonClick}>
-                <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution7.svg"
-                />
-                <div className="ranking">Send</div>
-              </button>
-              <button className="swap-button">
-                <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution8.svg"
-                />
-                <div className="ranking">Receive</div>
-              </button>
-              <button className="swap-button" onClick={openSideMenuPopup}>
-                <img
-                  className="home-icon-interlocution"
-                  alt=""
-                  src="../asserts/home--icon--interlocution9.svg"
-                />
-                <div className="ranking">More...</div>
-              </button>
+        <div className="wallet-card-parent">
+          <WalletCard />
+          <div className="iconssection-wrapper">
+            <div className="iconssection">
+              <div className="swap-button-parent">
+                <button className="swap-button" onClick={onSwapButtonClick}>
+                  <img
+                    className="home-icon-interlocution"
+                    alt=""
+                    src="../asserts/home--icon--interlocution.svg"
+                  />
+                  <div className="ranking">Market</div>
+                </button>
+                <button className="swap-button">
+                  <img
+                    className="home-icon-interlocution"
+                    alt=""
+                    src="../asserts/home--icon--interlocution1.svg"
+                  />
+                  <div className="ranking">Swap</div>
+                </button>
+                <button className="swap-button" onClick={onSendButtonClick}>
+                  <img
+                    className="home-icon-interlocution"
+                    alt=""
+                    src="../asserts/home--icon--interlocution2.svg"
+                  />
+                  <div className="ranking">Send</div>
+                </button>
+                <button className="swap-button">
+                  <img
+                    className="home-icon-interlocution"
+                    alt=""
+                    src="../asserts/home--icon--interlocution3.svg"
+                  />
+                  <div className="ranking">Receive</div>
+                </button>
+                <button className="swap-button" onClick={openSideMenuPopup}>
+                  <img
+                    className="home-icon-interlocution"
+                    alt=""
+                    src="../asserts/home--icon--interlocution4.svg"
+                  />
+                  <div className="ranking">More...</div>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="coinlisting-wrapper">
           <div className="coinlisting">
-            <div className="catalogtab1">
-              <div className="nft-container">
-                <b className="nft1">NFT</b>
+            <div className="catalogtab">
+              <div className="nft-wrapper">
+                <b className="nft">NFT</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Fiat</b>
+              <div className="nft-wrapper">
+                <b className="nft">Fiat</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Goods</b>
+              <div className="nft-wrapper">
+                <b className="nft">Goods</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Service</b>
+              <div className="nft-wrapper">
+                <b className="nft">Service</b>
               </div>
-              <div className="token-container">
-                <b className="nft1">Token</b>
+              <div className="token-wrapper">
+                <b className="nft">Token</b>
               </div>
             </div>
             <TokenDisplayItem

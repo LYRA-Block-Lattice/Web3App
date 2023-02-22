@@ -20,7 +20,7 @@
   align-items: center;
 }
 .network-parent {
-  padding: var(--padding-5xs) 48px;
+  padding: var(--padding-4xs) 48px;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }
@@ -29,7 +29,7 @@
   background-color: var(--white);
   width: 100%;
   height: 459px;
-  padding: var(--padding-5xs);
+  padding: var(--padding-4xs);
   box-sizing: border-box;
   justify-content: center;
   gap: 50px;

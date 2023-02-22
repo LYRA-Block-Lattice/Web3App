@@ -1,13 +1,7 @@
 import { FunctionComponent } from "react";
 import "./PrimaryAccountContainer.css";
 
-type PrimaryAccountContainerType = {
-  qRCodeIcon?: string;
-};
-
-const PrimaryAccountContainer: FunctionComponent<
-  PrimaryAccountContainerType
-> = ({ qRCodeIcon }) => {
+const PrimaryAccountContainer: FunctionComponent = () => {
   return (
     <div className="wallet-card1">
       <div className="wallet-card-child">
@@ -27,7 +21,11 @@ const PrimaryAccountContainer: FunctionComponent<
           <div className="qrcode-button-container">
             <button className="qrcode-button1">
               <div className="qrcode-button-round1" />
-              <img className="qrcode-icon1" alt="" src={qRCodeIcon} />
+              <img
+                className="qrcode-icon1"
+                alt=""
+                src="../asserts/qrcode-icon.svg"
+              />
             </button>
           </div>
         </div>

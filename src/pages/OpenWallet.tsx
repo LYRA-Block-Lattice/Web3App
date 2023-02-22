@@ -58,10 +58,10 @@ const OpenWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className="prepare-sell-order-button19">
+        <button className="prepare-sell-order-button18">
           <div className="primary-button7">Open Wallet</div>
         </button>
-        <button className="prepare-sell-order-button20">
+        <button className="prepare-sell-order-button19">
           <div className="mini-button1">Create Wallet</div>
         </button>
         <button className="forgot-password-copy">Forgot password?</button>

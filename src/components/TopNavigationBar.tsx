@@ -8,6 +8,10 @@ type TopNavigationBarType = {
 const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   title = "Lyra",
 }) => {
+  const onIconleftClick = useCallback(() => {
+    //TODO: Navigate back
+  }, []);
+
   const onTitleClick = useCallback(() => {
     //TODO: chroll main view to top
   }, []);
@@ -22,11 +26,15 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
 
   return (
     <div className="navigation">
-      <img
-        className="mini-programs-buttons"
-        alt=""
-        src="../asserts/mini-programs-buttons.svg"
-      />
+      <div className="mini-programs-buttons">
+        <button className="iconleft" onClick={onIconleftClick}>
+          <img
+            className="vector-stroke-icon"
+            alt=""
+            src="../asserts/vector-stroke.svg"
+          />
+        </button>
+      </div>
       <button className="title" onClick={onTitleClick}>
         {title}
       </button>
