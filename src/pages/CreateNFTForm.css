@@ -27,7 +27,7 @@
   width: 31px;
 }
 .select-nft-image {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   background-color: var(--color-lightyellow);
   width: 297px;
   overflow: hidden;

@@ -73,7 +73,7 @@
 }
 .nav-item {
   align-self: stretch;
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   display: flex;
   flex-direction: row;
   padding: var(--padding-3xs);

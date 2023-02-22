@@ -17,7 +17,7 @@
 }
 .nft-name1,
 .nft-name3 {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   height: 40px;
   overflow: hidden;
   display: flex;
@@ -78,7 +78,7 @@
   position: absolute;
   top: 33px;
   left: 0;
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   width: 301px;
   height: 124px;
   overflow: hidden;
@@ -132,7 +132,7 @@
   gap: var(--gap-lg);
 }
 .collateralcount {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   background-color: var(--color-gray-100);
   width: 320px;
   flex-direction: column;
@@ -148,7 +148,7 @@
   justify-content: flex-start;
 }
 .nft-name7 {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   width: 320px;
   height: 40px;
   flex-shrink: 0;
