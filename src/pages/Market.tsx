@@ -9,6 +9,7 @@ import BottomNavigationBar from "../components/BottomNavigationBar";
 
 import "./Market.css";
 import { useNavigate } from "react-router";
+import TokenCatalogTabs from "../components/TokenCatalogTabs";
 
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
