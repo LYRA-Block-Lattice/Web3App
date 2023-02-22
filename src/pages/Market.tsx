@@ -57,12 +57,7 @@ const Market: FunctionComponent = () => {
         <TokenCatalogTabs />
       </div>
       <DisplaySellItems cat={cat} />
-      <BottomNavigationBar
-        iconImageUrl="../asserts/box-alt-light.svg"
-        moleculeImageUrl="../asserts/molecule-light.svg"
-        walletImageUrl="../asserts/wallet-light.svg"
-        userImageUrl="../asserts/user-alt-light.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

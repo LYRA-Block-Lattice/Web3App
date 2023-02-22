@@ -301,12 +301,7 @@ const SellTokenToToken: FunctionComponent = () => {
             <div className="primary-button3">Review the Order</div>
           </button>
         </div>
-        <BottomNavigationBar
-          iconImageUrl="../asserts/box-alt-light2.svg"
-          moleculeImageUrl="../asserts/molecule-light2.svg"
-          walletImageUrl="../asserts/wallet-light2.svg"
-          userImageUrl="../asserts/user-alt-light2.svg"
-        />
+        <BottomNavigationBar />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

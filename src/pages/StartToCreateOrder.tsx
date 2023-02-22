@@ -122,12 +122,7 @@ const StartToCreateOrder: FunctionComponent = () => {
       >
         <div className="primary-button4">Specify Token</div>
       </button>
-      <BottomNavigationBar
-        iconImageUrl="../asserts/box-alt-light3.svg"
-        moleculeImageUrl="../asserts/molecule-light3.svg"
-        walletImageUrl="../asserts/wallet-light3.svg"
-        userImageUrl="../asserts/user-alt-light3.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };
