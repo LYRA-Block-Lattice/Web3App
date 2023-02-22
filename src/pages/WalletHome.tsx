@@ -31,7 +31,7 @@ const WalletHome: FunctionComponent = () => {
   return (
     <>
       <div className="wallethome">
-        <TopNavigationBar title="Wallet" />
+        <TopNavigationBar title="My Wallet" />
         <WalletCard />
         <div className="iconssection-wrapper">
           <div className="iconssection">
@@ -136,7 +136,12 @@ const WalletHome: FunctionComponent = () => {
             />
           </div>
         </div>
-        <BottomNavigationBar />
+        <BottomNavigationBar
+          boxAltLight="../asserts/box-alt-light.svg"
+          moleculeLight="../asserts/molecule-light.svg"
+          walletLight="../asserts/wallet-light.svg"
+          userAltLight="../asserts/user-alt-light.svg"
+        />
       </div>
       {isSideMenuPopupOpen && (
         <PortalDrawer

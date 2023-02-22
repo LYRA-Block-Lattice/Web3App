@@ -27,7 +27,7 @@
   width: 31px;
 }
 .select-nft-image {
-  border-radius: var(--br-2xs);
+  border-radius: var(--br-xs);
   background-color: var(--color-lightyellow);
   width: 297px;
   overflow: hidden;
@@ -49,13 +49,13 @@
   text-align: center;
 }
 .createnftform,
-.prepare-sell-order-button14 {
+.prepare-sell-order-button15 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button14 {
+.prepare-sell-order-button15 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);

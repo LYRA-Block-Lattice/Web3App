@@ -20,7 +20,7 @@
   color: inherit;
 }
 .trade-id-parent {
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .status-wrapper,
 .trade-id-parent {
@@ -39,13 +39,13 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button1,
+.prepare-sell-order-button2,
 .tradedetails {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
 }
-.prepare-sell-order-button1 {
+.prepare-sell-order-button2 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);

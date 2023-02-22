@@ -7,29 +7,37 @@
   width: 180px;
   flex-shrink: 0;
 }
-.view-trades-wrapper,
-.viewtradesform {
-  background-color: var(--color-white);
-  display: flex;
-  box-sizing: border-box;
-  justify-content: flex-start;
-}
 .view-trades-wrapper {
+  background-color: var(--color-white);
   width: 376px;
   height: 52px;
   flex-shrink: 0;
+  display: flex;
   flex-direction: row;
   padding: var(--padding-2xl) var(--padding-md) var(--padding-2xl)
     var(--padding-2xl);
+  box-sizing: border-box;
   align-items: flex-start;
+  justify-content: flex-start;
+}
+.ordercard-wrapper,
+.viewtradesform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ordercard-wrapper {
+  flex: 1;
 }
 .viewtradesform {
   position: relative;
+  background-color: var(--color-white);
   width: 100%;
+  height: 926px;
   overflow: hidden;
-  flex-direction: column;
-  padding: var(--padding-5xs);
-  align-items: center;
+  padding: 0 var(--padding-3xs);
+  box-sizing: border-box;
   gap: var(--gap-xl);
   text-align: left;
   font-size: var(--font-size-7xl);

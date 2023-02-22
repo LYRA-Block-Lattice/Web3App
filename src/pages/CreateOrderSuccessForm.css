@@ -4,7 +4,6 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  text-align: left;
   display: inline-block;
   width: 296px;
 }
@@ -45,14 +44,7 @@
   color: var(--color-white);
   text-align: center;
 }
-.createordersuccessform,
-.prepare-sell-order-button12 {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
-.prepare-sell-order-button12 {
+.prepare-sell-order-button13 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
@@ -60,17 +52,34 @@
   border-radius: var(--br-lg);
   height: 40px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
+}
+.createordersuccessform,
+.success-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.success-parent {
+  flex: 1;
+  justify-content: center;
+  gap: var(--gap-4xl);
 }
 .createordersuccessform {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
-  flex-direction: column;
-  padding: var(--padding-5xs);
+  height: 926px;
+  overflow: hidden;
+  padding: 0 var(--padding-3xs);
+  box-sizing: border-box;
   justify-content: flex-start;
-  gap: var(--gap-2xl);
+  gap: var(--gap-xl);
   text-align: center;
   font-size: var(--body-semibold-size);
   color: var(--black-000000100);

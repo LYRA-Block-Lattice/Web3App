@@ -34,7 +34,7 @@ const SellTOTToTOT: FunctionComponent = () => {
             placeholder="Public Description, seen by everyone"
           />
           <button
-            className="prepare-sell-order-button18"
+            className="prepare-sell-order-button19"
             onClick={openSignTradeSecretPopup}
           >
             <div className="utility-button7">Sign trade secret</div>
@@ -43,7 +43,7 @@ const SellTOTToTOT: FunctionComponent = () => {
             Note: This [tot/sku/svc] share the same trade secret of selling
             item.
           </div>
-          <button className="prepare-sell-order-button19">
+          <button className="prepare-sell-order-button20">
             <div className="secondary-button5">Create TOT</div>
           </button>
         </form>
@@ -145,7 +145,7 @@ const SellTOTToTOT: FunctionComponent = () => {
             dealer.
           </div>
           <button className="reviewtheorder1" onClick={onReviewTheOrderClick}>
-            <div className="primary-button7">Review the Order</div>
+            <div className="primary-button8">Review the Order</div>
           </button>
         </div>
       </div>

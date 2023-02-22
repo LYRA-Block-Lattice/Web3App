@@ -14,25 +14,26 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
-      <TopNavigationBar
-        title="Order Type"
-        titleLetterSpacing="0.41px"
-        titleFontWeight="500"
-        titleFontFamily="'SF Pro Display'"
-        titleLineHeight="18px"
-      />
-      <div className="catalog-section">
-        <CatalogSelection iWantTo="I want to sell:" />
-        <div className="catalog-section-child" />
-        <CatalogSelection iWantTo="I want to get:" />
+      <TopNavigationBar title="Select Catalog" />
+      <div className="catalog-section-parent">
+        <div className="catalog-section">
+          <CatalogSelection iWantTo="I want to sell:" />
+          <div className="catalog-section-child" />
+          <CatalogSelection iWantTo="I want to get:" />
+        </div>
+        <button
+          className="prepare-sell-order-button16"
+          onClick={onPrepareSellOrderButtonClick}
+        >
+          <div className="primary-button5">Specify Token</div>
+        </button>
       </div>
-      <button
-        className="prepare-sell-order-button15"
-        onClick={onPrepareSellOrderButtonClick}
-      >
-        <div className="primary-button4">Specify Token</div>
-      </button>
-      <BottomNavigationBar />
+      <BottomNavigationBar
+        boxAltLight="../asserts/box-alt-light.svg"
+        moleculeLight="../asserts/molecule-light.svg"
+        walletLight="../asserts/wallet-light.svg"
+        userAltLight="../asserts/user-alt-light.svg"
+      />
     </div>
   );
 };

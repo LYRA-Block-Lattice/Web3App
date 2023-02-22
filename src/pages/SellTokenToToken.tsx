@@ -27,18 +27,12 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
-        <TopNavigationBar
-          title="Order Settings"
-          titleLetterSpacing="0.41px"
-          titleFontWeight="500"
-          titleFontFamily="'SF Pro Display'"
-          titleLineHeight="18px"
-        />
+        <TopNavigationBar title="Order Settings" />
         <form className="searchtokenbyname">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
             <button
-              className="prepare-sell-order-button10"
+              className="prepare-sell-order-button11"
               onClick={openGeneralPopup}
             >
               <div className="utility-button4">Mint</div>
@@ -167,10 +161,15 @@ const SellTokenToToken: FunctionComponent = () => {
           />
           <CollateralCalculation eqprice="1234" />
           <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
-            <div className="primary-button3">Review the Order</div>
+            <div className="primary-button4">Review the Order</div>
           </button>
         </div>
-        <BottomNavigationBar />
+        <BottomNavigationBar
+          boxAltLight="../asserts/box-alt-light.svg"
+          moleculeLight="../asserts/molecule-light.svg"
+          walletLight="../asserts/wallet-light.svg"
+          userAltLight="../asserts/user-alt-light.svg"
+        />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

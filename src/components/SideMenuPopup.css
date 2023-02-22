@@ -63,7 +63,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
 }
 .arrow-chevron-down-icon {
   position: relative;
@@ -73,13 +73,13 @@
 }
 .nav-item {
   align-self: stretch;
-  border-radius: var(--br-2xs);
+  border-radius: var(--br-xs);
   display: flex;
   flex-direction: row;
   padding: var(--padding-3xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-lg);
+  gap: var(--gap-xl);
 }
 .component-2variant3 {
   width: 236px;
@@ -103,7 +103,7 @@
   flex-shrink: 0;
   overflow-y: auto;
   padding: 0 0 var(--padding-7xs);
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .sidemenupopup {
   position: relative;

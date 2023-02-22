@@ -1,6 +1,5 @@
 import { FunctionComponent } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
 import MarketOrder from "../components/MarketOrder";
 import BottomNavigationBar from "../components/BottomNavigationBar";
@@ -10,7 +9,6 @@ const Market: FunctionComponent = () => {
   return (
     <div className="market">
       <TopNavigationBar title="Market" />
-      <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon.svg" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution.svg"
         homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"
@@ -76,7 +74,12 @@ const Market: FunctionComponent = () => {
           />
         </div>
       </div>
-      <BottomNavigationBar />
+      <BottomNavigationBar
+        boxAltLight="../asserts/box-alt-light.svg"
+        moleculeLight="../asserts/molecule-light.svg"
+        walletLight="../asserts/wallet-light.svg"
+        userAltLight="../asserts/user-alt-light.svg"
+      />
     </div>
   );
 };
