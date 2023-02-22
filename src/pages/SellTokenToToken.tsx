@@ -162,7 +162,7 @@ const SellTokenToToken: FunctionComponent = () => {
     <>
       <div className="selltokentotoken">
         <TopNavigationBar title="Order Settings" />
-        <form className="searchtokenbyname">
+        <div className="searchtokenbyname">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
             <button

@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useCallback, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   TextField,
@@ -13,6 +13,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import * as actionTypes from "../app/actionTypes";
 import "./CreateWallet.css";
+import { useNavigate } from "react-router";
 
 const CreateWallet: FunctionComponent = () => {
   const navigate = useNavigate();

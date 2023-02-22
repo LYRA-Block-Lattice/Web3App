@@ -149,11 +149,18 @@ const AssertDetailView: FunctionComponent = () => {
   return (
     <div className="assertdetailview">
       <TopNavigationBar title="Assert Details" />
+      {isLoading && (
+        <div className="overlay">
+          <p>Loading...</p>
+        </div>
+      )}
       <div className="assertdetailview-parent">
         <div className="assertdetailview1">
           <div className="asserttitleregion">
             <div className="assertauthorsection">
-              <div className="a-legend-nft">A legend NFT author</div>
+              <div className="a-legend-nft">
+                Author: {info?.Users.Author.UserName}
+              </div>
               <div className="material-symbolsshare-parent">
                 <img
                   className="material-symbolsshare-icon"
@@ -168,10 +175,14 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
             </div>
             <div className="asserttitlesection">
-              <div className="meka-legends">Meka Legends # 500</div>
+              <div className="meka-legends">
+                {info?.Blocks.Offgen.Custom1 ?? info?.Blocks.Offgen.Ticker}
+              </div>
             </div>
             <div className="assertownersection">
-              <div className="meka-legends">Owner someone</div>
+              <div className="meka-legends">
+                Owner: {info?.Users.Seller.UserName}
+              </div>
             </div>
           </div>
           <div className="asserttitleregion">
@@ -182,11 +193,14 @@ const AssertDetailView: FunctionComponent = () => {
                 src="../asserts/iconparksolidblockchain.svg"
               />
             </div>
-            <img
-              className="titlebannerregion-child"
-              alt=""
-              src="../asserts/frame-61@2x.png"
-            />
+            {info?.Meta?.image && (
+              <img
+                className="titlebannerregion-child"
+                alt=""
+                src={info?.Meta?.image}
+              />
+            )}
+            {info?.Meta?.image || <h1>{info?.Blocks.Offgen.Ticker}</h1>}
           </div>
           <div className="assertstatssection">
             <div className="icoutline-remove-red-eye-parent">
@@ -224,7 +238,9 @@ const AssertDetailView: FunctionComponent = () => {
           <div className="meka-legends">Description</div>
         </div>
         <div className="descriptiondetails">
-          <div className="meka-legends">By A great designer</div>
+          <div className="meka-legends">
+            {info?.Blocks.Offgen.Description ?? "[empty]"}
+          </div>
         </div>
         <div className="descriptiontitle">
           <img
@@ -240,10 +256,17 @@ const AssertDetailView: FunctionComponent = () => {
               <div className="meka-legends">Current Price</div>
             </div>
             <div className="priceandvaluelabel">
-              <div className="meka-legends">0.0325</div>
+              <div className="meka-legends">
+                {info?.Blocks.Order.Order.price}
+              </div>
               <div className="tetherusdt-parent">
-                <div className="tetherusdt">tether/USDT</div>
-                <div className="div3">$86.20</div>
+                <div className="tetherusdt">{info?.Blocks.Bidgen.Ticker}</div>
+                <div className="div3">
+                  ${" "}
+                  {pricedollar.toLocaleString(undefined, {
+                    maximumFractionDigits: 2
+                  })}
+                </div>
               </div>
             </div>
           </div>
@@ -252,10 +275,24 @@ const AssertDetailView: FunctionComponent = () => {
               <div className="meka-legends">Available to buy</div>
             </div>
             <div className="priceandvaluelabel1">
-              <div className="meka-legends">100 - 200</div>
+              <div className="meka-legends">
+                {" "}
+                {info?.Blocks.Order.Order.limitMin} -{" "}
+                {info?.Blocks.Order.Order.limitMax}
+              </div>
               <div className="tetherusdt-parent">
-                <div className="tetherusdt">tether/ETH</div>
-                <div className="div3">$40 ~ 84.20</div>
+                <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
+                <div className="div3">
+                  {" "}
+                  ${" "}
+                  {avalibleMinDollar.toLocaleString(undefined, {
+                    maximumFractionDigits: 2
+                  })}{" "}
+                  ~{" "}
+                  {avalibleMaxDollar.toLocaleString(undefined, {
+                    maximumFractionDigits: 2
+                  })}
+                </div>
               </div>
             </div>
           </div>
@@ -268,12 +305,25 @@ const AssertDetailView: FunctionComponent = () => {
                 <input
                   className="selectedamount"
                   type="number"
-                  placeholder="150"
+                  value={buyAmount}
+                  min={info?.Blocks.Order.Order.limitMin}
+                  max={info?.Blocks.Order.Order.limitMax}
+                  onChange={(e) => setBuyAmount(Number(e.target.value))}
                 />
                 <div className="tethereth-group">
-                  <div className="tethereth1">tether/ETH</div>
-                  <div className="tetherusdt">100 tether/USDT</div>
-                  <div className="tetherusdt">$ 10.3</div>
+                  <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
+                  <div className="tetherusdt">
+                    {bidAmount.toLocaleString(undefined, {
+                      maximumFractionDigits: 8
+                    })}{" "}
+                    {info?.Blocks.Bidgen.Ticker}
+                  </div>
+                  <div className="tetherusdt">
+                    ${" "}
+                    {offerDollar.toLocaleString(undefined, {
+                      maximumFractionDigits: 2
+                    })}
+                  </div>
                 </div>
               </div>
               <div className="limitadjustsection">
@@ -281,8 +331,12 @@ const AssertDetailView: FunctionComponent = () => {
                 <Box className="slidercontinuous">
                   <Slider
                     color="primary"
-                    defaultValue={20}
                     orientation="horizontal"
+                    step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
+                    min={info?.Blocks.Order.Order.limitMin ?? 0}
+                    max={info?.Blocks.Order.Order.limitMax ?? 0}
+                    onChange={(e, v) => setBuyAmount(v as number)}
+                    value={buyAmount ?? 0}
                   />
                 </Box>
                 <div className="max">Max</div>
@@ -293,8 +347,18 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">Collateral and Fees</div>
             </div>
-            <CollateralCalculation eqprice="1234 LYR" />
-            <button className="prepare-sell-order-button6">
+            <CollateralCalculation
+              selling={false}
+              eqprice={info?.Blocks.Order.Order.eqprice ?? 0}
+              eqdollar={pricedollar}
+              amount={buyAmount}
+              dao={info?.Blocks.Dao ?? null}
+              onTotalChange={onTotal}
+            />
+            <button
+              className="prepare-sell-order-button6"
+              onClick={onMakeOfferButtonClick}
+            >
               <img
                 className="material-symbolsshare-icon"
                 alt=""
