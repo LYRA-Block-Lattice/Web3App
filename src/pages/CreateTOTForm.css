@@ -27,7 +27,7 @@
 .prepare-sell-order-button8 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-lg);
+  padding: var(--padding-5xs) var(--padding-xl);
   background-color: var(--tertiary);
   border-radius: var(--br-lg);
   height: 30px;
@@ -62,7 +62,7 @@
 .prepare-sell-order-button9 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-3xl);
+  padding: var(--padding-5xs) var(--padding-4xl);
   background-color: var(--secondary1);
   border-radius: var(--br-lg);
   height: 40px;
@@ -83,7 +83,7 @@
 }
 .createtottosellform {
   flex-direction: column;
-  padding: var(--padding-xl) var(--padding-xs);
+  padding: var(--padding-2xl) var(--padding-sm);
   justify-content: flex-start;
   gap: var(--gap-2xl);
 }
@@ -91,7 +91,7 @@
   position: relative;
   width: 100%;
   flex-direction: row;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   justify-content: center;
 }

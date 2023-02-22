@@ -17,7 +17,7 @@
 .prepare-sell-order-button10 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-lg);
+  padding: var(--padding-5xs) var(--padding-xl);
   background-color: var(--tertiary);
   border-radius: var(--br-lg);
   height: 30px;
@@ -52,7 +52,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-xl) var(--padding-2xs);
+  padding: var(--padding-2xl) var(--padding-xs);
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-4xl);
@@ -85,7 +85,7 @@
   width: 320px;
   overflow: hidden;
   flex-direction: row;
-  padding: 0 var(--padding-6xs);
+  padding: 0 var(--padding-5xs);
   box-sizing: border-box;
 }
 .sellatprice-parent {
@@ -96,7 +96,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-5xs) 0;
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
@@ -115,8 +115,8 @@
 .reviewtheorder {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-6xl);
-  background-color: var(--primary);
+  padding: var(--padding-5xs) var(--padding-7xl);
+  background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
@@ -133,21 +133,25 @@
 .priceandcollateralform,
 .selltokentotoken {
   background-color: var(--color-white);
-  width: 373px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-xl) 0;
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
+}
+.priceandcollateralform {
+  flex: 1;
+  width: 373px;
+  padding: var(--padding-2xl) 0;
   gap: var(--gap-2xl);
 }
 .selltokentotoken {
   position: relative;
   width: 100%;
-  padding: var(--padding-6xs);
-  gap: var(--gap-md);
+  height: 1097px;
+  padding: 0 var(--padding-3xs);
+  gap: var(--gap-lg);
   text-align: left;
   font-size: var(--caption-size);
   color: var(--black-000000100);

@@ -1,5 +1,4 @@
 import { FunctionComponent } from "react";
-import { Link } from "react-router-dom";
 import "./WalletCard.css";
 
 const WalletCard: FunctionComponent = () => {
@@ -12,7 +11,7 @@ const WalletCard: FunctionComponent = () => {
       </div>
       <div className="frame-parent1">
         <div className="balance-display-zone-parent">
-          <Link className="balance-display-zone" to="/openwallet">
+          <a className="balance-display-zone">
             <button className="wallet-name-label">My Primary Account</button>
             <div className="balance-display-zone-child" />
             <b className="usdtbalance">1,025,000</b>
@@ -20,14 +19,14 @@ const WalletCard: FunctionComponent = () => {
             <div className="balance-display-zone-item" />
             <b className="usdtbalance">5,000</b>
             <b className="lyrlabel">USDT</b>
-          </Link>
+          </a>
           <div className="qrcode-button-wrapper">
             <button className="qrcode-button">
               <div className="qrcode-button-round" />
               <img
                 className="qrcode-icon"
                 alt=""
-                src="../asserts/qrcode-icon1.svg"
+                src="../asserts/qrcode-icon.svg"
               />
             </button>
           </div>

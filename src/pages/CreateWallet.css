@@ -221,7 +221,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: center;

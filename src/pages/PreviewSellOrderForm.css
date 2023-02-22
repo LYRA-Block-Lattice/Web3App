@@ -17,12 +17,12 @@
 }
 .nft-name1,
 .nft-name3 {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   height: 40px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
@@ -78,13 +78,13 @@
   position: absolute;
   top: 33px;
   left: 0;
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   width: 301px;
   height: 124px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
@@ -132,11 +132,11 @@
   gap: var(--gap-md);
 }
 .collateralcount {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   background-color: var(--color-gray-200);
   width: 320px;
   flex-direction: column;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: center;
@@ -148,13 +148,13 @@
   justify-content: flex-start;
 }
 .nft-name7 {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   width: 320px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: center;
 }
@@ -186,8 +186,8 @@
 .prepare-sell-order-button16 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-6xl);
-  background-color: var(--primary);
+  padding: var(--padding-5xs) var(--padding-7xl);
+  background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
@@ -199,7 +199,7 @@
   background-color: var(--color-white);
   width: 100%;
   flex-direction: column;
-  padding: var(--padding-5xl) var(--padding-6xs) var(--padding-6xs);
+  padding: var(--padding-6xl) var(--padding-5xs) var(--padding-5xs);
   justify-content: flex-start;
   gap: 15px;
   text-align: left;

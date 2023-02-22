@@ -1,6 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import CatalogSelection from "../components/CatalogSelection";
 import { useNavigate } from "react-router-dom";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./StartToCreateOrder.css";
 
 const StartToCreateOrder: FunctionComponent = () => {
@@ -12,7 +14,13 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
-      <div className="choose-the-catalog">Choose the catalog</div>
+      <TopNavigationBar
+        title="Order Type"
+        titleLetterSpacing="0.41px"
+        titleFontWeight="500"
+        titleFontFamily="'SF Pro Display'"
+        titleLineHeight="18px"
+      />
       <div className="catalog-section">
         <CatalogSelection iWantTo="I want to sell:" />
         <div className="catalog-section-child" />
@@ -24,6 +32,12 @@ const StartToCreateOrder: FunctionComponent = () => {
       >
         <div className="primary-button4">Specify Token</div>
       </button>
+      <BottomNavigationBar
+        iconImageUrl="../asserts/box-alt-light3.svg"
+        moleculeImageUrl="../asserts/molecule-light3.svg"
+        walletImageUrl="../asserts/wallet-light3.svg"
+        userImageUrl="../asserts/user-alt-light3.svg"
+      />
     </div>
   );
 };

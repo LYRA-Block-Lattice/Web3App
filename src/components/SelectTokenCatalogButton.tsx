@@ -16,8 +16,8 @@ const SelectTokenCatalogButton: FunctionComponent<
         alt=""
         src={icbaselineGeneratingToken}
       />
-      <div className="token-wrapper">
-        <b className="token1">{token}</b>
+      <div className="token-frame">
+        <b className="token2">{token}</b>
       </div>
     </button>
   );

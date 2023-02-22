@@ -1,11 +1,3 @@
-.choose-the-catalog {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  display: inline-block;
-  width: 296px;
-}
 .catalog-section-child {
   position: relative;
   border-right: 1px solid #bcbcbc;
@@ -15,6 +7,7 @@
   flex-shrink: 0;
 }
 .catalog-section {
+  flex: 1;
   width: 324px;
   overflow: hidden;
   display: flex;
@@ -38,8 +31,8 @@
 .prepare-sell-order-button15 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-6xl);
-  background-color: var(--primary);
+  padding: var(--padding-5xs) var(--padding-7xl);
+  background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
@@ -60,16 +53,13 @@
   position: relative;
   background-color: var(--color-white);
   width: 100%;
+  height: 902px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-6xs);
+  padding: 0 var(--padding-3xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
-  gap: 21px;
-  text-align: left;
-  font-size: var(--font-size-7xl);
-  color: var(--black-000000100);
-  font-family: var(--caption);
+  gap: 48px;
 }

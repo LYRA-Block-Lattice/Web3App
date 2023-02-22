@@ -1,9 +1,11 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import CollateralCalculation from "../components/CollateralCalculation";
 import { useNavigate } from "react-router-dom";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SellTokenToToken.css";
 
 const SellTokenToToken: FunctionComponent = () => {
@@ -25,6 +27,13 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
+        <TopNavigationBar
+          title="Order Settings"
+          titleLetterSpacing="0.41px"
+          titleFontWeight="500"
+          titleFontFamily="'SF Pro Display'"
+          titleLineHeight="18px"
+        />
         <form className="searchtokenbyname">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
@@ -161,6 +170,12 @@ const SellTokenToToken: FunctionComponent = () => {
             <div className="primary-button3">Review the Order</div>
           </button>
         </div>
+        <BottomNavigationBar
+          iconImageUrl="../asserts/box-alt-light2.svg"
+          moleculeImageUrl="../asserts/molecule-light2.svg"
+          walletImageUrl="../asserts/wallet-light2.svg"
+          userImageUrl="../asserts/user-alt-light2.svg"
+        />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

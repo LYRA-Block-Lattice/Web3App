@@ -1,13 +1,15 @@
 import { FunctionComponent } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
-import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import MarketOrder from "../components/MarketOrder";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./Market.css";
 
 const Market: FunctionComponent = () => {
   return (
     <div className="market">
+      <TopNavigationBar title="Market" />
       <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon.svg" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution.svg"
@@ -24,8 +26,24 @@ const Market: FunctionComponent = () => {
         />
       </div>
       <div className="orderandcatalog">
-        <TokenCatalogTabs />
         <div className="tradableorderssection">
+          <div className="catalogtab">
+            <div className="nft-wrapper">
+              <b className="nft">NFT</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="nft">Fiat</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="nft">Goods</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="nft">Service</b>
+            </div>
+            <div className="token-wrapper">
+              <b className="nft">Token</b>
+            </div>
+          </div>
           <MarketOrder
             offeringIcon="../asserts/icbaselinegeneratingtokens.svg"
             bidingIcon="../asserts/carbonuserservicedesk.svg"
@@ -42,7 +60,7 @@ const Market: FunctionComponent = () => {
             sellerTrades="1024 Trades"
           />
           <MarketOrder
-            offeringIcon="../asserts/icbaselinegeneratingtokens1.svg"
+            offeringIcon="icbaselinegeneratingtokens1.svg"
             bidingIcon="../asserts/carbonuserservicedesk1.svg"
             orderStatus="Open"
             offering="BTC"
@@ -58,6 +76,12 @@ const Market: FunctionComponent = () => {
           />
         </div>
       </div>
+      <BottomNavigationBar
+        iconImageUrl="../asserts/box-alt-light.svg"
+        moleculeImageUrl="../asserts/molecule-light.svg"
+        walletImageUrl="../asserts/wallet-light.svg"
+        userImageUrl="../asserts/user-alt-light.svg"
+      />
     </div>
   );
 };

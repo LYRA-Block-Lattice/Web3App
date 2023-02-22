@@ -24,7 +24,7 @@
   border: 0;
   padding: 0;
   background-color: var(--color-white);
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 60px;
   height: 60px;
@@ -34,7 +34,7 @@
 .swap-button-parent {
   align-self: stretch;
   flex-direction: row;
-  padding: var(--padding-7xs) 0;
+  padding: var(--padding-8xs) 0;
   gap: var(--gap-md);
 }
 .iconssection,
@@ -44,15 +44,56 @@
   flex-direction: column;
 }
 .iconssection {
-  border-radius: var(--br-sm);
-  background-color: var(--color-whitesmoke-200);
-  padding: var(--padding-7xs) var(--padding-6xs);
+  border-radius: var(--br-xs);
+  padding: var(--padding-8xs) var(--padding-5xs);
   align-items: center;
   justify-content: center;
 }
 .iconssection-wrapper {
   align-items: flex-start;
   justify-content: flex-start;
+}
+.nft1 {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+}
+.nft-container {
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  background-color: var(--color-whitesmoke-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 70px;
+  height: 26px;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: var(--padding-8xs) 0 var(--padding-11xs);
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+.catalogtab1,
+.nft-container,
+.token-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.token-container {
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  background-color: var(--color-whitesmoke-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 70px;
+  height: 26px;
+  flex-shrink: 0;
+  padding: var(--padding-8xs) 0 var(--padding-11xs);
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+.catalogtab1 {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-400);
+  overflow: hidden;
+  align-items: center;
+  gap: var(--gap-xs);
 }
 .lyralogoblueicon4 {
   position: relative;
@@ -115,34 +156,45 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-7xs);
+  padding: var(--padding-8xs);
   align-items: center;
   justify-content: center;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--black-000000100);
+  font-family: var(--font-sf-pro-text);
 }
 .coinlisting {
   background-color: var(--color-white);
-  width: 455px;
-  padding: 0 var(--padding-6xs) var(--padding-6xs);
+  width: 396px;
+  padding: 0 var(--padding-5xs) var(--padding-5xs);
   box-sizing: border-box;
+  align-items: flex-start;
+  gap: var(--gap-md);
 }
 .coinlisting,
-.tradableorderssection-parent,
+.coinlisting-wrapper,
 .wallethome {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-md);
+}
+.coinlisting-wrapper {
+  flex: 1;
+  width: 396px;
+  align-items: flex-start;
 }
 .wallethome {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
-  padding: var(--padding-6xs);
+  height: 938px;
+  padding: 0 var(--padding-3xs);
   box-sizing: border-box;
   align-items: center;
-  text-align: left;
-  font-size: var(--font-size-3xl);
-  color: var(--black-000000100);
-  font-family: var(--font-sf-pro-text);
+  gap: var(--gap-lg);
+  text-align: center;
+  font-size: var(--body-semibold-size);
+  color: var(--text-primary-dark);
+  font-family: var(--caption);
 }

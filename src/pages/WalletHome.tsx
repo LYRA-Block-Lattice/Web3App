@@ -1,10 +1,11 @@
 import { FunctionComponent, useState, useCallback } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import WalletCard from "../components/WalletCard";
 import { useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
-import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import TokenDisplayItem from "../components/TokenDisplayItem";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./WalletHome.css";
 
 const WalletHome: FunctionComponent = () => {
@@ -30,6 +31,7 @@ const WalletHome: FunctionComponent = () => {
   return (
     <>
       <div className="wallethome">
+        <TopNavigationBar title="Wallet" />
         <WalletCard />
         <div className="iconssection-wrapper">
           <div className="iconssection">
@@ -77,13 +79,25 @@ const WalletHome: FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <div className="tradableorderssection-parent">
-          <TokenCatalogTabs
-            tradableOrdersSectionAlignSelf="unset"
-            tradableOrdersSectionWidth="455px"
-            tradableOrdersSectionBoxSizing="border-box"
-          />
+        <div className="coinlisting-wrapper">
           <div className="coinlisting">
+            <div className="catalogtab1">
+              <div className="nft-container">
+                <b className="nft1">NFT</b>
+              </div>
+              <div className="nft-container">
+                <b className="nft1">Fiat</b>
+              </div>
+              <div className="nft-container">
+                <b className="nft1">Goods</b>
+              </div>
+              <div className="nft-container">
+                <b className="nft1">Service</b>
+              </div>
+              <div className="token-container">
+                <b className="nft1">Token</b>
+              </div>
+            </div>
             <TokenDisplayItem
               coinIcon="../asserts/lyralogoblackicon@2x.png"
               coinName="Lyra Coin"
@@ -122,6 +136,12 @@ const WalletHome: FunctionComponent = () => {
             />
           </div>
         </div>
+        <BottomNavigationBar
+          iconImageUrl="../asserts/box-alt-light.svg"
+          moleculeImageUrl="../asserts/molecule-light.svg"
+          walletImageUrl="../asserts/wallet-light.svg"
+          userImageUrl="../asserts/user-alt-light.svg"
+        />
       </div>
       {isSideMenuPopupOpen && (
         <PortalDrawer

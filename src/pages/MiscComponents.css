@@ -6,14 +6,14 @@
   object-fit: cover;
 }
 .lyralogoblueicon-wrapper {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--color-white);
   width: 162px;
   height: 162px;
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-9xl);
+  padding: var(--padding-10xl);
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
@@ -114,7 +114,7 @@
   width: 100%;
   height: 1414px;
   overflow: hidden;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: center;
   gap: var(--gap-md);
