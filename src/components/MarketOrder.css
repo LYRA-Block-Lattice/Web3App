@@ -1,17 +1,17 @@
-.icbaseline-generating-tokens-icon {
+.icbaseline-generating-tokens-icon1 {
   position: relative;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.order-image-child {
+.order-image-item {
   position: relative;
   width: 19.5px;
   height: 7.36px;
   flex-shrink: 0;
 }
-.order-image {
+.order-image1 {
   border-radius: var(--br-xs) var(--br-xs) 0 0;
   background-color: var(--text-primary-dark);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
@@ -24,14 +24,14 @@
   justify-content: center;
   gap: var(--gap-3xs);
 }
-.open {
+.open1 {
   position: relative;
   font-size: var(--caption-size);
-  font-family: var(--font-calibri);
+  font-family: var(--font-roboto);
   color: var(--white);
   text-align: center;
 }
-.order-status {
+.order-status1 {
   align-self: stretch;
   border-radius: 0 0 var(--br-xs) var(--br-xs);
   background-color: var(--info1);
@@ -41,15 +41,15 @@
   align-items: center;
   justify-content: center;
 }
-.banner-image,
-.order-banner {
+.banner-image1,
+.order-banner1 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
-.banner-image {
+.banner-image1 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -65,12 +65,12 @@
   height: 7.36px;
   flex-shrink: 0;
 }
-.tetherusdt2 {
+.tetherusdt3 {
   position: relative;
   text-align: left;
 }
-.block3,
-.block4,
+.block31,
+.block41,
 .sell-parent {
   display: flex;
   justify-content: flex-start;
@@ -80,25 +80,25 @@
   align-items: center;
   gap: var(--gap-xs);
 }
-.block3,
-.block4 {
+.block31,
+.block41 {
   overflow: hidden;
   flex-direction: column;
 }
-.block3 {
+.block31 {
   padding: 0 0 var(--padding-8xs);
   align-items: flex-start;
 }
-.block4 {
+.block41 {
   align-items: flex-end;
 }
-.price3 {
+.price4 {
   position: relative;
   display: inline-block;
   width: 66px;
 }
-.block1,
-.block2 {
+.block11,
+.block21 {
   width: 55px;
   flex-shrink: 0;
   display: flex;
@@ -106,26 +106,26 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.block2 {
+.block21 {
   width: 73px;
   overflow: hidden;
   align-items: flex-end;
   font-size: var(--font-size-5xl);
   color: var(--color-forestgreen);
 }
-.details-section-child {
+.details-section-item {
   position: relative;
   width: 4px;
   height: 15px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.details-section,
-.title-section {
+.details-section1,
+.title-section1 {
   display: flex;
   justify-content: flex-start;
 }
-.details-section {
+.details-section1 {
   align-self: stretch;
   overflow: hidden;
   flex-direction: row;
@@ -133,7 +133,7 @@
   gap: var(--gap-sm);
   font-size: var(--caption-size);
 }
-.title-section {
+.title-section1 {
   cursor: pointer;
   text-decoration: none;
   flex: 1;
@@ -143,7 +143,7 @@
   gap: var(--gap-2xs);
   color: inherit;
 }
-.order-brief-section {
+.order-brief-section1 {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -151,7 +151,7 @@
   justify-content: center;
   gap: var(--gap-lg);
 }
-.width-controller {
+.width-controller1 {
   position: relative;
   border-top: 1px solid var(--black-000000100);
   box-sizing: border-box;
@@ -159,7 +159,7 @@
   height: 1px;
   flex-shrink: 0;
 }
-.trades-section {
+.trades-section1 {
   align-self: stretch;
   height: 0;
   flex-shrink: 0;
@@ -196,7 +196,7 @@
   padding: var(--padding-8xs) var(--padding-4xs);
   align-items: flex-end;
 }
-.ordercard,
+.ordercard1,
 .userprofilesection {
   background-color: var(--white);
   display: flex;
@@ -210,7 +210,7 @@
   gap: var(--gap-xs);
   font-size: var(--font-size-2xl);
 }
-.ordercard {
+.ordercard1 {
   border-radius: var(--br-xs);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-gainsboro-100);
@@ -221,5 +221,5 @@
   text-align: right;
   font-size: var(--font-size-xl);
   color: var(--black-000000100);
-  font-family: var(--font-calibri);
+  font-family: var(--font-roboto);
 }

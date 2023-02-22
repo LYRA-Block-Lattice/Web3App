@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import { useNavigate } from "react-router-dom";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./CreateOrderSuccessForm.css";
@@ -18,7 +19,7 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
     //TODO: back home
   }, []);
 
-  const onNavigationPrepareSellOrderClick = useCallback(() => {
+  const onContextPlusClick = useCallback(() => {
     //TODO: context menu
   }, []);
 
@@ -28,57 +29,20 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
 
   return (
     <div className="createordersuccessform">
-      <nav className="navigation28">
-        <button
-          className="mini-programs-buttons16"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft8" alt="" src="../asserts/iconleft4.svg" />
-        </button>
-        <button className="title13" onClick={onTitleClick}>
-          Order Created
-        </button>
-        <div className="mini-programs-buttons17">
-          <div className="stroke8" />
-          <button className="home8" onClick={onHomeClick}>
-            <img
-              className="ellipse-icon16"
-              alt=""
-              src="../asserts/ellipse8.svg"
-            />
-            <img
-              className="ellipse-icon17"
-              alt=""
-              src="../asserts/ellipse9.svg"
-            />
-          </button>
-          <img
-            className="separator-icon8"
-            alt=""
-            src="../asserts/separator4.svg"
-          />
-          <button
-            className="navigationprepare-sell-order8"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="navigationprepare-sell-order-child20"
-              alt=""
-              src="../asserts/rectangle-18.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child21"
-              alt=""
-              src="../asserts/vector-74.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child22"
-              alt=""
-              src="../asserts/vector-84.svg"
-            />
-          </button>
-        </div>
-      </nav>
+      <TopNavigationBar
+        title="Order Created"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator4.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-18.svg"
+        iconleft="../asserts/iconleft4.svg"
+        ellipse="../asserts/ellipse8.svg"
+        ellipse1="../asserts/ellipse9.svg"
+        vector7="../asserts/vector-74.svg"
+        vector8="../asserts/vector-84.svg"
+      />
       <div className="success-parent">
         <div className="success">Success!</div>
         <img className="illus8-icon" alt="" src="../asserts/illus8.svg" />

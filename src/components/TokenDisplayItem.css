@@ -17,7 +17,7 @@
 }
 .b3 {
   font-size: var(--caption-size);
-  color: var(--text-secondary1);
+  color: var(--text-secondary);
 }
 .lyr-parent,
 .lyra-coin-parent {
@@ -38,7 +38,7 @@
   align-items: center;
   gap: var(--gap-xs);
 }
-.line-div {
+.frame-child4 {
   position: relative;
   border-top: 1px solid var(--color-gainsboro-200);
   box-sizing: border-box;
@@ -67,5 +67,5 @@
   text-align: left;
   font-size: var(--font-size-2xl);
   color: var(--black-000000100);
-  font-family: var(--font-sf-pro-text);
+  font-family: var(--caption);
 }

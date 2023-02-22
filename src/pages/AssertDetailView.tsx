@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
 import CollateralCalculation from "../components/CollateralCalculation";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";
@@ -17,63 +18,26 @@ const AssertDetailView: FunctionComponent = () => {
     //TODO: back home
   }, []);
 
-  const onNavigationPrepareSellOrderClick = useCallback(() => {
+  const onContextPlusClick = useCallback(() => {
     //TODO: context menu
   }, []);
 
   return (
     <div className="assertdetailview">
-      <nav className="navigation24">
-        <button
-          className="mini-programs-buttons8"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft4" alt="" src="../asserts/iconleft4.svg" />
-        </button>
-        <button className="title9" onClick={onTitleClick}>
-          Assert Details
-        </button>
-        <div className="mini-programs-buttons9">
-          <div className="stroke4" />
-          <button className="home4" onClick={onHomeClick}>
-            <img
-              className="ellipse-icon8"
-              alt=""
-              src="../asserts/ellipse8.svg"
-            />
-            <img
-              className="ellipse-icon9"
-              alt=""
-              src="../asserts/ellipse9.svg"
-            />
-          </button>
-          <img
-            className="separator-icon4"
-            alt=""
-            src="../asserts/separator4.svg"
-          />
-          <button
-            className="navigationprepare-sell-order4"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="navigationprepare-sell-order-child8"
-              alt=""
-              src="../asserts/rectangle-14.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child9"
-              alt=""
-              src="../asserts/vector-74.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child10"
-              alt=""
-              src="../asserts/vector-84.svg"
-            />
-          </button>
-        </div>
-      </nav>
+      <TopNavigationBar
+        title="Assert Details"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator4.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-14.svg"
+        iconleft="../asserts/iconleft4.svg"
+        ellipse="../asserts/ellipse8.svg"
+        ellipse1="../asserts/ellipse9.svg"
+        vector7="../asserts/vector-74.svg"
+        vector8="../asserts/vector-84.svg"
+      />
       <div className="assertdetailview-parent">
         <div className="assertdetailview1">
           <div className="asserttitleregion">

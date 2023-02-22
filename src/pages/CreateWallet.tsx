@@ -8,6 +8,7 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./CreateWallet.css";
 
@@ -24,68 +25,31 @@ const CreateWallet: FunctionComponent = () => {
     //TODO: back home
   }, []);
 
-  const onNavigationPrepareSellOrderClick = useCallback(() => {
+  const onContextPlusClick = useCallback(() => {
     //TODO: context menu
   }, []);
 
   return (
     <div className="createwallet">
-      <div className="navigation210">
-        <button
-          className="mini-programs-buttons20"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft10" alt="" src="../asserts/iconleft.svg" />
-        </button>
-        <button className="title15" onClick={onTitleClick}>
-          Create Wallet
-        </button>
-        <div className="mini-programs-buttons21">
-          <div className="stroke10" />
-          <button className="home10" onClick={onHomeClick}>
-            <img
-              className="ellipse-icon20"
-              alt=""
-              src="../asserts/ellipse.svg"
-            />
-            <img
-              className="ellipse-icon21"
-              alt=""
-              src="../asserts/ellipse1.svg"
-            />
-          </button>
-          <img
-            className="separator-icon10"
-            alt=""
-            src="../asserts/separator10.svg"
-          />
-          <button
-            className="navigationprepare-sell-order10"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="navigationprepare-sell-order-child26"
-              alt=""
-              src="../asserts/rectangle-110.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child27"
-              alt=""
-              src="../asserts/vector-7.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child28"
-              alt=""
-              src="../asserts/vector-8.svg"
-            />
-          </button>
-        </div>
-      </div>
+      <TopNavigationBar
+        title="Create Wallet"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator10.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-110.svg"
+        iconleft="../asserts/iconleft.svg"
+        ellipse="../asserts/ellipse.svg"
+        ellipse1="../asserts/ellipse1.svg"
+        vector7="../asserts/vector-7.svg"
+        vector8="../asserts/vector-8.svg"
+      />
       <div className="illus1-parent">
         <div className="illus1">
           <img className="illus1-child" alt="" src="../asserts/group-3.svg" />
           <div className="group-parent">
-            <img className="frame-item" alt="" src="../asserts/group-42.svg" />
+            <img className="frame-inner" alt="" src="../asserts/group-42.svg" />
             <div className="create-account">
               C<span className="r">r</span>
               <span className="e">e</span>a<span className="t">t</span>
@@ -104,20 +68,24 @@ const CreateWallet: FunctionComponent = () => {
               alt=""
               src="../asserts/youremailgmailc.svg"
             />
-            <img className="frame-inner" alt="" src="../asserts/group-49.svg" />
+            <img className="group-icon" alt="" src="../asserts/group-49.svg" />
             <img
               className="your-text-icon"
               alt=""
               src="../asserts/your-text.svg"
             />
-            <img className="group-icon" alt="" src="../asserts/group-53.svg" />
+            <img
+              className="frame-child1"
+              alt=""
+              src="../asserts/group-53.svg"
+            />
             <img
               className="your-city-icon"
               alt=""
               src="../asserts/your-city.svg"
             />
             <img
-              className="frame-child1"
+              className="frame-child2"
               alt=""
               src="../asserts/group-57.svg"
             />
@@ -127,7 +95,7 @@ const CreateWallet: FunctionComponent = () => {
               src="../asserts/entry-password.svg"
             />
             <img
-              className="frame-child2"
+              className="frame-child3"
               alt=""
               src="../asserts/group-145.svg"
             />
@@ -206,7 +174,7 @@ const CreateWallet: FunctionComponent = () => {
           <div className="primary-button6">Create</div>
         </button>
         <button className="prepare-sell-order-button17">
-          <div className="mini-button">Open</div>
+          <div className="mini-button4">Open</div>
         </button>
       </div>
       <BottomNavigationBar

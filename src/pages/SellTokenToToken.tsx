@@ -1,5 +1,6 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import CollateralCalculation from "../components/CollateralCalculation";
@@ -23,7 +24,7 @@ const SellTokenToToken: FunctionComponent = () => {
     //TODO: back home
   }, []);
 
-  const onNavigationPrepareSellOrderClick = useCallback(() => {
+  const onContextPlusClick = useCallback(() => {
     //TODO: context menu
   }, []);
 
@@ -42,57 +43,20 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
-        <nav className="navigation25">
-          <button
-            className="mini-programs-buttons10"
-            onClick={onMiniProgramsButtonsClick}
-          >
-            <img className="iconleft5" alt="" src="../asserts/iconleft.svg" />
-          </button>
-          <button className="title10" onClick={onTitleClick}>
-            New Order
-          </button>
-          <div className="mini-programs-buttons11">
-            <div className="stroke5" />
-            <button className="home5" onClick={onHomeClick}>
-              <img
-                className="ellipse-icon10"
-                alt=""
-                src="../asserts/ellipse.svg"
-              />
-              <img
-                className="ellipse-icon11"
-                alt=""
-                src="../asserts/ellipse1.svg"
-              />
-            </button>
-            <img
-              className="separator-icon5"
-              alt=""
-              src="../asserts/separator.svg"
-            />
-            <button
-              className="navigationprepare-sell-order5"
-              onClick={onNavigationPrepareSellOrderClick}
-            >
-              <img
-                className="navigationprepare-sell-order-child11"
-                alt=""
-                src="../asserts/rectangle-15.svg"
-              />
-              <img
-                className="navigationprepare-sell-order-child12"
-                alt=""
-                src="../asserts/vector-7.svg"
-              />
-              <img
-                className="navigationprepare-sell-order-child13"
-                alt=""
-                src="../asserts/vector-8.svg"
-              />
-            </button>
-          </div>
-        </nav>
+        <TopNavigationBar
+          title="Order Settings"
+          onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+          onTitleClick={onTitleClick}
+          onHomeClick={onHomeClick}
+          separator="../asserts/separator.svg"
+          onContextPlusClick={onContextPlusClick}
+          rectangle1="../asserts/rectangle-15.svg"
+          iconleft="../asserts/iconleft.svg"
+          ellipse="../asserts/ellipse.svg"
+          ellipse1="../asserts/ellipse1.svg"
+          vector7="../asserts/vector-7.svg"
+          vector8="../asserts/vector-8.svg"
+        />
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
