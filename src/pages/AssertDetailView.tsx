@@ -1,6 +1,5 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
-import TopNavigationBar from "../components/TopNavigationBar";
 import CollateralCalculation from "../components/CollateralCalculation";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";
@@ -261,7 +260,7 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
               <div className="tetherusdt-parent">
                 <div className="tetherusdt">{info?.Blocks.Bidgen.Ticker}</div>
-                <div className="div3">
+                <div className="div4">
                   ${" "}
                   {pricedollar.toLocaleString(undefined, {
                     maximumFractionDigits: 2
@@ -282,7 +281,7 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
               <div className="tetherusdt-parent">
                 <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
-                <div className="div3">
+                <div className="div4">
                   {" "}
                   ${" "}
                   {avalibleMinDollar.toLocaleString(undefined, {
@@ -300,7 +299,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-container">
+            <div className="frame-parent1">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
@@ -385,10 +384,10 @@ const AssertDetailView: FunctionComponent = () => {
         </div>
       </div>
       <BottomNavigationBar
-        boxAltLight="box-alt-light2.svg"
-        moleculeLight="molecule-light2.svg"
-        walletLight="wallet-light2.svg"
-        userAltLight="user-alt-light2.svg"
+        boxAltLight1="../asserts/box-alt-light4.svg"
+        moleculeLight1="../asserts/molecule-light4.svg"
+        walletLight1="../asserts/wallet-light4.svg"
+        userAltLight1="../asserts/user-alt-light4.svg"
       />
     </div>
   );

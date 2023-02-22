@@ -62,7 +62,57 @@ const OpenWallet: FunctionComponent = () => {
 
   return (
     <div className="openwallet">
-      <TopNavigationBar title="Open Wallet" />
+      <nav className="navigation211">
+        <button
+          className="mini-programs-buttons22"
+          onClick={onMiniProgramsButtonsClick}
+        >
+          <img className="iconleft11" alt="" src="../asserts/iconleft.svg" />
+        </button>
+        <button className="title16" onClick={onTitleClick}>
+          Open Wallet
+        </button>
+        <div className="mini-programs-buttons23">
+          <div className="stroke11" />
+          <button className="home11" onClick={onHomeClick}>
+            <img
+              className="ellipse-icon22"
+              alt=""
+              src="../asserts/ellipse.svg"
+            />
+            <img
+              className="ellipse-icon23"
+              alt=""
+              src="../asserts/ellipse1.svg"
+            />
+          </button>
+          <img
+            className="separator-icon11"
+            alt=""
+            src="../asserts/separator10.svg"
+          />
+          <button
+            className="navigationprepare-sell-order11"
+            onClick={onNavigationPrepareSellOrderClick}
+          >
+            <img
+              className="navigationprepare-sell-order-child29"
+              alt=""
+              src="../asserts/rectangle-111.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child30"
+              alt=""
+              src="../asserts/vector-7.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child31"
+              alt=""
+              src="../asserts/vector-8.svg"
+            />
+          </button>
+        </div>
+      </nav>
       <div className="illus5-copy-parent">
         <img
           className="illus5-copy-icon"
@@ -113,18 +163,20 @@ const OpenWallet: FunctionComponent = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="prepare-sell-order-button18" onClick={onOpenWallet}>
-          <div className="primary-button7">Open Wallet</div>
+          <div className="primary-button7">Open</div>
         </button>
         <button className="prepare-sell-order-button19">
-          <div className="mini-button1">Create Wallet</div>
+          <div className="mini-button1">Create</div>
         </button>
         <button className="forgot-password-copy">Forgot password?</button>
       </div>
       <BottomNavigationBar
-        boxAltLight="../asserts/box-alt-light.svg"
-        moleculeLight="../asserts/molecule-light.svg"
-        walletLight="../asserts/wallet-light.svg"
-        userAltLight="../asserts/user-alt-light.svg"
+        boxAltLight1="../asserts/box-alt-light.svg"
+        moleculeLight1="../asserts/molecule-light.svg"
+        walletLight1="../asserts/wallet-light.svg"
+        userAltLight1="../asserts/user-alt-light.svg"
+        textColor="#434343"
+        textColor1="#0ebd8d"
       />
     </div>
   );

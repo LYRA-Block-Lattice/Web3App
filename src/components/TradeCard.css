@@ -22,7 +22,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-2xs);
+  gap: var(--gap-3xs);
 }
 .open1 {
   position: relative;
@@ -73,7 +73,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
   font-size: var(--font-size-xl);
 }
 .title-section-child {
@@ -124,7 +124,7 @@
 .title-section1 {
   display: flex;
   justify-content: flex-start;
-  gap: var(--gap-xs);
+  gap: var(--gap-2xs);
 }
 .details-section1 {
   align-self: stretch;
@@ -144,7 +144,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
 }
 .width-controller1 {
   position: relative;
@@ -183,7 +183,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
-  background-color: var(--color-whitesmoke-200);
+  background-color: var(--color-whitesmoke-300);
   border-radius: var(--br-lg);
   height: 24px;
   overflow: hidden;
@@ -196,7 +196,7 @@
   padding: var(--padding-7xs) var(--padding-7xs) 0;
   align-items: flex-end;
   justify-content: flex-end;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .ordercard1 {
   border-radius: var(--br-xs);

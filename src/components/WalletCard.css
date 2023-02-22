@@ -73,7 +73,7 @@
   padding: 0 var(--padding-7xs) var(--padding-4xs) 0;
   align-items: flex-end;
   justify-content: flex-start;
-  gap: var(--gap-3xs);
+  gap: var(--gap-4xs);
   color: inherit;
 }
 .qrcode-button-round {
@@ -151,7 +151,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-3xs);
+  gap: var(--gap-4xs);
 }
 .token-lists {
   align-self: stretch;
@@ -162,14 +162,14 @@
   justify-content: flex-end;
   gap: var(--gap-3xl);
 }
-.frame-parent1,
+.frame-parent2,
 .wallet-card {
   align-self: stretch;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-parent1 {
+.frame-parent2 {
   flex: 1;
   flex-direction: column;
 }

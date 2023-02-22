@@ -1,5 +1,4 @@
 import { FunctionComponent, useState, useCallback, useEffect } from "react";
-import TopNavigationBar from "../components/TopNavigationBar";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
@@ -129,7 +128,57 @@ const WalletHome: FunctionComponent = () => {
   return (
     <>
       <div className="wallethome">
-        <TopNavigationBar title="My Wallet" />
+        <nav className="navigation23">
+          <button
+            className="mini-programs-buttons6"
+            onClick={onMiniProgramsButtonsClick}
+          >
+            <img className="iconleft3" alt="" src="../asserts/iconleft.svg" />
+          </button>
+          <button className="title8" onClick={onTitleClick}>
+            Wallet
+          </button>
+          <div className="mini-programs-buttons7">
+            <div className="stroke3" />
+            <button className="home3" onClick={onHomeClick}>
+              <img
+                className="ellipse-icon6"
+                alt=""
+                src="../asserts/ellipse.svg"
+              />
+              <img
+                className="ellipse-icon7"
+                alt=""
+                src="../asserts/ellipse1.svg"
+              />
+            </button>
+            <img
+              className="separator-icon3"
+              alt=""
+              src="../asserts/separator1.svg"
+            />
+            <button
+              className="navigationprepare-sell-order3"
+              onClick={onNavigationPrepareSellOrderClick}
+            >
+              <img
+                className="navigationprepare-sell-order-child5"
+                alt=""
+                src="../asserts/rectangle-13.svg"
+              />
+              <img
+                className="navigationprepare-sell-order-child6"
+                alt=""
+                src="../asserts/vector-7.svg"
+              />
+              <img
+                className="navigationprepare-sell-order-child7"
+                alt=""
+                src="../asserts/vector-8.svg"
+              />
+            </button>
+          </div>
+        </nav>
         <div className="wallet-card-parent">
           <WalletCard />
           <div className="iconssection-wrapper">
@@ -139,7 +188,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution.svg"
+                    src="../asserts/home--icon--interlocution5.svg"
                   />
                   <div className="ranking">Market</div>
                 </button>
@@ -147,7 +196,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution1.svg"
+                    src="../asserts/home--icon--interlocution6.svg"
                   />
                   <div className="ranking">Swap</div>
                 </button>
@@ -155,7 +204,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution2.svg"
+                    src="../asserts/home--icon--interlocution7.svg"
                   />
                   <div className="ranking">Send</div>
                 </button>
@@ -163,7 +212,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution3.svg"
+                    src="../asserts/home--icon--interlocution8.svg"
                   />
                   <div className="ranking">Receive</div>
                 </button>
@@ -171,7 +220,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution4.svg"
+                    src="../asserts/home--icon--interlocution9.svg"
                   />
                   <div className="ranking">More...</div>
                 </button>
@@ -179,31 +228,33 @@ const WalletHome: FunctionComponent = () => {
             </div>
           </div>
           <div className="coinlisting">
-            <div className="catalogtab">
-              <div className="nft-wrapper">
-                <b className="nft">NFT</b>
+            <div className="catalogtab1">
+              <div className="nft-container">
+                <b className="nft1">NFT</b>
               </div>
-              <div className="nft-wrapper">
-                <b className="nft">Fiat</b>
+              <div className="nft-container">
+                <b className="nft1">Fiat</b>
               </div>
-              <div className="nft-wrapper">
-                <b className="nft">Goods</b>
+              <div className="nft-container">
+                <b className="nft1">Goods</b>
               </div>
-              <div className="nft-wrapper">
-                <b className="nft">Service</b>
+              <div className="nft-container">
+                <b className="nft1">Service</b>
               </div>
-              <div className="token-wrapper">
-                <b className="nft">Token</b>
+              <div className="token-container">
+                <b className="nft1">Token</b>
               </div>
             </div>
             {showTokens()}
           </div>
         </div>
         <BottomNavigationBar
-          boxAltLight="../asserts/box-alt-light.svg"
-          moleculeLight="../asserts/molecule-light.svg"
-          walletLight="../asserts/wallet-light.svg"
-          userAltLight="../asserts/user-alt-light.svg"
+          boxAltLight1="../asserts/box-alt-light.svg"
+          moleculeLight1="../asserts/molecule-light.svg"
+          walletLight1="../asserts/wallet-light.svg"
+          userAltLight1="../asserts/user-alt-light.svg"
+          textColor="#434343"
+          textColor1="#0ebd8d"
         />
       </div>
       {isSideMenuPopupOpen && (

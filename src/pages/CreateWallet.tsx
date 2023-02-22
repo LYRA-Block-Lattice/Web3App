@@ -9,7 +9,6 @@ import {
   FormControlLabel,
   Checkbox
 } from "@mui/material";
-import TopNavigationBar from "../components/TopNavigationBar";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import * as actionTypes from "../app/actionTypes";
 import "./CreateWallet.css";
@@ -54,7 +53,57 @@ const CreateWallet: FunctionComponent = () => {
 
   return (
     <div className="createwallet">
-      <TopNavigationBar title="Create Wallet" />
+      <div className="navigation210">
+        <button
+          className="mini-programs-buttons20"
+          onClick={onMiniProgramsButtonsClick}
+        >
+          <img className="iconleft10" alt="" src="../asserts/iconleft.svg" />
+        </button>
+        <button className="title15" onClick={onTitleClick}>
+          Create Wallet
+        </button>
+        <div className="mini-programs-buttons21">
+          <div className="stroke10" />
+          <button className="home10" onClick={onHomeClick}>
+            <img
+              className="ellipse-icon20"
+              alt=""
+              src="../asserts/ellipse.svg"
+            />
+            <img
+              className="ellipse-icon21"
+              alt=""
+              src="../asserts/ellipse1.svg"
+            />
+          </button>
+          <img
+            className="separator-icon10"
+            alt=""
+            src="../asserts/separator10.svg"
+          />
+          <button
+            className="navigationprepare-sell-order10"
+            onClick={onNavigationPrepareSellOrderClick}
+          >
+            <img
+              className="navigationprepare-sell-order-child26"
+              alt=""
+              src="../asserts/rectangle-110.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child27"
+              alt=""
+              src="../asserts/vector-7.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child28"
+              alt=""
+              src="../asserts/vector-8.svg"
+            />
+          </button>
+        </div>
+      </div>
       <div className="illus1-parent">
         <div className="illus1">
           <img className="illus1-child" alt="" src="../asserts/group-3.svg" />
@@ -190,17 +239,19 @@ const CreateWallet: FunctionComponent = () => {
           className="prepare-sell-order-button16"
           onClick={onWalletCreate}
         >
-          <div className="primary-button6">Create Wallet</div>
+          <div className="primary-button6">Create</div>
         </button>
         <button className="prepare-sell-order-button17">
-          <div className="mini-button">Open Wallet</div>
+          <div className="mini-button">Open</div>
         </button>
       </div>
       <BottomNavigationBar
-        boxAltLight="box-alt-light2.svg"
-        moleculeLight="molecule-light2.svg"
-        walletLight="wallet-light2.svg"
-        userAltLight="user-alt-light2.svg"
+        boxAltLight1="../asserts/box-alt-light.svg"
+        moleculeLight1="../asserts/molecule-light.svg"
+        walletLight1="../asserts/wallet-light.svg"
+        userAltLight1="../asserts/user-alt-light.svg"
+        textColor="#434343"
+        textColor1="#0ebd8d"
       />
     </div>
   );

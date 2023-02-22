@@ -71,7 +71,57 @@ const ViewOrdersForm: FunctionComponent = () => {
 
   return (
     <div className="viewordersform">
-      <TopNavigationBar title="My Orders" />
+      <nav className="navigation27">
+        <button
+          className="mini-programs-buttons14"
+          onClick={onMiniProgramsButtonsClick}
+        >
+          <img className="iconleft7" alt="" src="../asserts/iconleft.svg" />
+        </button>
+        <button className="title12" onClick={onTitleClick}>
+          My Orders
+        </button>
+        <div className="mini-programs-buttons15">
+          <div className="stroke7" />
+          <button className="home7" onClick={onHomeClick}>
+            <img
+              className="ellipse-icon14"
+              alt=""
+              src="../asserts/ellipse.svg"
+            />
+            <img
+              className="ellipse-icon15"
+              alt=""
+              src="../asserts/ellipse1.svg"
+            />
+          </button>
+          <img
+            className="separator-icon7"
+            alt=""
+            src="../asserts/separator1.svg"
+          />
+          <button
+            className="navigationprepare-sell-order7"
+            onClick={onNavigationPrepareSellOrderClick}
+          >
+            <img
+              className="navigationprepare-sell-order-child17"
+              alt=""
+              src="../asserts/rectangle-17.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child18"
+              alt=""
+              src="../asserts/vector-7.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child19"
+              alt=""
+              src="../asserts/vector-8.svg"
+            />
+          </button>
+        </div>
+      </nav>
       <div className="wallet-card-container">
         <PrimaryAccountContainer />
         <MarketToolBar
@@ -105,10 +155,12 @@ const ViewOrdersForm: FunctionComponent = () => {
         ))}
       </div>
       <BottomNavigationBar
-        boxAltLight="../asserts/box-alt-light.svg"
-        moleculeLight="../asserts/molecule-light.svg"
-        walletLight="../asserts/wallet-light.svg"
-        userAltLight="../asserts/user-alt-light.svg"
+        boxAltLight1="../asserts/box-alt-light.svg"
+        moleculeLight1="../asserts/molecule-light.svg"
+        walletLight1="../asserts/wallet-light.svg"
+        userAltLight1="../asserts/user-alt-light.svg"
+        textColor="#434343"
+        textColor2="#0ebd8d"
       />
     </div>
   );

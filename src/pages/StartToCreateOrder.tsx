@@ -85,7 +85,57 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
-      <TopNavigationBar title="Select Catalog" />
+      <nav className="navigation29">
+        <button
+          className="mini-programs-buttons18"
+          onClick={onMiniProgramsButtonsClick}
+        >
+          <img className="iconleft9" alt="" src="../asserts/iconleft4.svg" />
+        </button>
+        <button className="title14" onClick={onTitleClick}>
+          Select Catalog
+        </button>
+        <div className="mini-programs-buttons19">
+          <div className="stroke9" />
+          <button className="home9" onClick={onHomeClick}>
+            <img
+              className="ellipse-icon18"
+              alt=""
+              src="../asserts/ellipse8.svg"
+            />
+            <img
+              className="ellipse-icon19"
+              alt=""
+              src="../asserts/ellipse9.svg"
+            />
+          </button>
+          <img
+            className="separator-icon9"
+            alt=""
+            src="../asserts/separator4.svg"
+          />
+          <button
+            className="navigationprepare-sell-order9"
+            onClick={onNavigationPrepareSellOrderClick}
+          >
+            <img
+              className="navigationprepare-sell-order-child23"
+              alt=""
+              src="../asserts/rectangle-19.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child24"
+              alt=""
+              src="../asserts/vector-74.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child25"
+              alt=""
+              src="../asserts/vector-84.svg"
+            />
+          </button>
+        </div>
+      </nav>
       <div className="catalog-section-parent">
         <div className="catalog-section">
           <Xwrapper>
@@ -118,10 +168,12 @@ const StartToCreateOrder: FunctionComponent = () => {
         </button>
       </div>
       <BottomNavigationBar
-        boxAltLight="../asserts/box-alt-light.svg"
-        moleculeLight="../asserts/molecule-light.svg"
-        walletLight="../asserts/wallet-light.svg"
-        userAltLight="../asserts/user-alt-light.svg"
+        boxAltLight1="../asserts/box-alt-light4.svg"
+        moleculeLight1="../asserts/molecule-light4.svg"
+        walletLight1="../asserts/wallet-light4.svg"
+        userAltLight1="../asserts/user-alt-light4.svg"
+        textColor="#434343"
+        textColor1="#0ebd8d"
       />
     </div>
   );

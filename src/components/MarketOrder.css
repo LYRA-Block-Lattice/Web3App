@@ -22,7 +22,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-2xs);
+  gap: var(--gap-3xs);
 }
 .open {
   position: relative;
@@ -78,7 +78,7 @@
 .sell-parent {
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
 }
 .block3,
 .block4 {
@@ -130,7 +130,7 @@
   overflow: hidden;
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-md);
+  gap: var(--gap-sm);
   font-size: var(--caption-size);
 }
 .title-section {
@@ -140,7 +140,7 @@
   border-radius: var(--br-3xs) var(--br-3xs) 0 0;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--gap-xs);
+  gap: var(--gap-2xs);
   color: inherit;
 }
 .order-brief-section {
@@ -149,7 +149,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
 }
 .width-controller {
   position: relative;
@@ -207,7 +207,7 @@
   overflow: hidden;
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
   font-size: var(--font-size-2xl);
 }
 .ordercard {
@@ -217,7 +217,7 @@
   flex-direction: column;
   padding: var(--padding-4xs);
   align-items: flex-start;
-  gap: var(--gap-4xs);
+  gap: var(--gap-5xs);
   text-align: right;
   font-size: var(--font-size-xl);
   color: var(--black-000000100);

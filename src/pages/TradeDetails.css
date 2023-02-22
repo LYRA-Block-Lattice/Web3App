@@ -20,7 +20,7 @@
   color: inherit;
 }
 .trade-id-parent {
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .status-wrapper,
 .trade-id-parent {

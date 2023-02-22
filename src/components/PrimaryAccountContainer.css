@@ -73,7 +73,7 @@
   padding: 0 var(--padding-7xs) var(--padding-4xs) 0;
   align-items: flex-end;
   justify-content: flex-start;
-  gap: var(--gap-3xs);
+  gap: var(--gap-4xs);
   color: inherit;
 }
 .qrcode-button-round1 {

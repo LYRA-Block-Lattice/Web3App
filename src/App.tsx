@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
+import UserProfile from "./pages/UserProfile";
 import SellFlow from "./pages/SellFlow";
 import TradeDetails from "./pages/TradeDetails";
 import MiscComponents from "./pages/MiscComponents";
@@ -44,6 +45,10 @@ function App() {
 
     switch (pathname) {
       case "/":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/userprofile":
         title = "";
         metaDescription = "";
         break;
@@ -154,6 +159,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Market />} />
+
+      <Route path="/userprofile" element={<UserProfile />} />
 
       <Route path="/sellflow" element={<SellFlow />} />
 

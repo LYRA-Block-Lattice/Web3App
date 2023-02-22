@@ -23,11 +23,15 @@
   height: 24px;
   flex-shrink: 0;
 }
-.text10 {
+.text13 {
   position: relative;
   line-height: 14px;
 }
 .tabbar-item {
+  color: var(--primary1);
+}
+.tabbar-item,
+.tabbar-item1 {
   align-self: stretch;
   flex: 1;
   background-color: var(--selectable);
@@ -35,25 +39,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-4xs);
+  gap: var(--gap-5xs);
 }
-.text12 {
+.text15 {
   position: relative;
   line-height: 10px;
-}
-.tabbar,
-.tabbar-item3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tabbar-item3 {
-  align-self: stretch;
-  flex: 1;
-  background-color: var(--selectable);
-  flex-direction: column;
-  gap: var(--gap-4xs);
-  color: var(--primary1);
 }
 .tabbar {
   position: absolute;
@@ -64,7 +54,10 @@
   background-color: var(--white);
   box-shadow: var(--y1);
   height: 56px;
+  display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .bottomtabbar {
   position: fixed;
