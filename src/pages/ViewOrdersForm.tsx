@@ -1,4 +1,4 @@
-import { FunctionComponent, useState, useEffect } from "react";
+import { FunctionComponent, useState, useEffect, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
@@ -12,6 +12,7 @@ import { getTickerIcon, IOrder } from "../app/market/marketReducer";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
 import React from "react";
 import { Tab, Tabs } from "@mui/material";
+import { useNavigate } from "react-router";
 
 interface customWindow extends Window {
   rrComponent?: any;

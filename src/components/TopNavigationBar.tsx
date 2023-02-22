@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router";
 import "./TopNavigationBar.css";
 
 type TopNavigationBarType = {
@@ -8,16 +9,18 @@ type TopNavigationBarType = {
 const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   title = "Lyra"
 }) => {
+  const navigate = useNavigate();
+
   const onIconleftClick = useCallback(() => {
-    //TODO: Navigate back
-  }, []);
+    navigate(-1);
+  }, [navigate]);
 
   const onTitleClick = useCallback(() => {
-    //TODO: scroll main view to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const onHomeClick = useCallback(() => {
-    // Please sync "Home" to the project
+    navigate("/");
   }, []);
 
   const onShareClick = useCallback(() => {
@@ -25,7 +28,7 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   }, []);
 
   return (
-    <div className="navigation">
+    <div className="navigation sticky-header">
       <div className="mini-programs-buttons">
         <button className="iconleft" onClick={onIconleftClick}>
           <img
