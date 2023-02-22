@@ -10,10 +10,10 @@
 }
 .group,
 .rectangle,
-.text {
+.text3 {
   position: absolute;
 }
-.text {
+.text3 {
   height: 100%;
   width: calc(100% - 26.4px);
   top: 0;
@@ -28,7 +28,7 @@
   width: 132px;
   height: 56px;
 }
-.vector-icon {
+.vector-icon1 {
   top: -0.75px;
   left: -0.75px;
   border-radius: var(--br-5xs);
@@ -36,11 +36,11 @@
   height: 63.5px;
 }
 .group1,
-.text1,
-.vector-icon {
+.text4,
+.vector-icon1 {
   position: absolute;
 }
-.text1 {
+.text4 {
   height: 100%;
   width: calc(100% - 49.6px);
   top: 0;
@@ -55,7 +55,7 @@
   width: 124px;
   height: 62px;
 }
-.vector-icon1 {
+.vector-icon2 {
   top: -0.75px;
   left: -0.75px;
   border-radius: var(--br-5xs);
@@ -63,11 +63,11 @@
   height: 101.5px;
 }
 .group2,
-.text2,
-.vector-icon1 {
+.text5,
+.vector-icon2 {
   position: absolute;
 }
-.text2 {
+.text5 {
   height: calc(100% - 20px);
   width: calc(100% - 60px);
   top: 20px;
@@ -82,18 +82,18 @@
   width: 200px;
   height: 100px;
 }
-.text3,
-.vector-icon2 {
+.text6,
+.vector-icon3 {
   position: absolute;
   top: 0;
 }
-.vector-icon2 {
+.vector-icon3 {
   left: 0;
   border-radius: var(--br-5xs);
   width: 102px;
   height: 51px;
 }
-.text3 {
+.text6 {
   height: 100%;
   width: calc(100% - 20.4px);
   left: 10.2px;
@@ -141,10 +141,10 @@
 }
 .group6,
 .rectangle1,
-.text6 {
+.text9 {
   position: absolute;
 }
-.text6 {
+.text9 {
   height: 100%;
   width: calc(100% - 40px);
   top: 0;
@@ -258,9 +258,9 @@
   position: absolute;
   top: 839px;
   left: 61px;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
 }
-.vector-icon5 {
+.vector-icon6 {
   position: absolute;
   top: -0.75px;
   left: -0.75px;
@@ -268,7 +268,7 @@
   width: 105.5px;
   height: 53.5px;
 }
-.text7 {
+.text10 {
   position: absolute;
   height: 100%;
   width: calc(100% - 41.6px);

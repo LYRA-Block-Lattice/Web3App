@@ -1,14 +1,79 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
-import TopNavigationBar from "../components/TopNavigationBar";
 import CollateralCalculation from "../components/CollateralCalculation";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";
 
 const AssertDetailView: FunctionComponent = () => {
+  const onMiniProgramsButtonsClick = useCallback(() => {
+    //TODO: nav back
+  }, []);
+
+  const onTitleClick = useCallback(() => {
+    //TODO: scroll top
+  }, []);
+
+  const onHomeClick = useCallback(() => {
+    //TODO: back home
+  }, []);
+
+  const onNavigationPrepareSellOrderClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   return (
     <div className="assertdetailview">
-      <TopNavigationBar title="Assert Details" />
+      <nav className="navigation24">
+        <button
+          className="mini-programs-buttons8"
+          onClick={onMiniProgramsButtonsClick}
+        >
+          <img className="iconleft4" alt="" src="../asserts/iconleft4.svg" />
+        </button>
+        <button className="title9" onClick={onTitleClick}>
+          Assert Details
+        </button>
+        <div className="mini-programs-buttons9">
+          <div className="stroke4" />
+          <button className="home4" onClick={onHomeClick}>
+            <img
+              className="ellipse-icon8"
+              alt=""
+              src="../asserts/ellipse8.svg"
+            />
+            <img
+              className="ellipse-icon9"
+              alt=""
+              src="../asserts/ellipse9.svg"
+            />
+          </button>
+          <img
+            className="separator-icon4"
+            alt=""
+            src="../asserts/separator4.svg"
+          />
+          <button
+            className="navigationprepare-sell-order4"
+            onClick={onNavigationPrepareSellOrderClick}
+          >
+            <img
+              className="navigationprepare-sell-order-child8"
+              alt=""
+              src="../asserts/rectangle-14.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child9"
+              alt=""
+              src="../asserts/vector-74.svg"
+            />
+            <img
+              className="navigationprepare-sell-order-child10"
+              alt=""
+              src="../asserts/vector-84.svg"
+            />
+          </button>
+        </div>
+      </nav>
       <div className="assertdetailview-parent">
         <div className="assertdetailview1">
           <div className="asserttitleregion">
@@ -103,7 +168,7 @@ const AssertDetailView: FunctionComponent = () => {
               <div className="meka-legends">0.0325</div>
               <div className="tetherusdt-parent">
                 <div className="tetherusdt">tether/USDT</div>
-                <div className="div3">$86.20</div>
+                <div className="div4">$86.20</div>
               </div>
             </div>
           </div>
@@ -115,7 +180,7 @@ const AssertDetailView: FunctionComponent = () => {
               <div className="meka-legends">100 - 200</div>
               <div className="tetherusdt-parent">
                 <div className="tetherusdt">tether/ETH</div>
-                <div className="div3">$40 ~ 84.20</div>
+                <div className="div4">$40 ~ 84.20</div>
               </div>
             </div>
           </div>
@@ -123,7 +188,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-container">
+            <div className="frame-parent1">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
@@ -181,10 +246,10 @@ const AssertDetailView: FunctionComponent = () => {
         </div>
       </div>
       <BottomNavigationBar
-        boxAltLight="box-alt-light2.svg"
-        moleculeLight="molecule-light2.svg"
-        walletLight="wallet-light2.svg"
-        userAltLight="user-alt-light2.svg"
+        boxAltLight1="../asserts/box-alt-light4.svg"
+        moleculeLight1="../asserts/molecule-light4.svg"
+        walletLight1="../asserts/wallet-light4.svg"
+        userAltLight1="../asserts/user-alt-light4.svg"
       />
     </div>
   );

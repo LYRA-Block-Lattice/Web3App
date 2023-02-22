@@ -19,7 +19,7 @@
   max-height: 100%;
   overflow: auto;
 }
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 420px) {
   .video {
     height: 50.625vw !important;
   }

@@ -38,9 +38,9 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
 
   return (
     <div className="sidemenupopup" data-animate-on-scroll>
-      <div className="frame-parent">
+      <div className="frame-group">
         <div className="vector-parent">
-          <img className="vector-icon8" alt="" src="../asserts/vector8.svg" />
+          <img className="vector-icon9" alt="" src="../asserts/vector8.svg" />
           <div className="lyra-web3-ecommerce">Lyra Web3 eCommerce</div>
         </div>
         <div className="administration">

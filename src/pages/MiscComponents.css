@@ -40,7 +40,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.div {
+.div1 {
   position: relative;
   line-height: 24px;
   font-weight: 600;
@@ -64,12 +64,12 @@
 .content {
   width: 155px;
   align-items: flex-start;
-  gap: var(--gap-2xs);
+  gap: var(--gap-3xs);
 }
 .nft-showing-item,
 .nft-showing-item-parent {
   align-items: flex-end;
-  gap: var(--gap-md);
+  gap: var(--gap-sm);
 }
 .nft-showing-item-parent {
   flex-direction: row;
@@ -106,7 +106,7 @@
   padding: 0;
   background-color: transparent;
   align-items: flex-end;
-  gap: var(--gap-md);
+  gap: var(--gap-sm);
 }
 .misccomponents {
   position: relative;
@@ -117,7 +117,7 @@
   padding: var(--padding-4xs);
   box-sizing: border-box;
   align-items: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
   text-align: left;
   font-size: var(--uppercase-small-size);
   color: var(--text-dark-60);

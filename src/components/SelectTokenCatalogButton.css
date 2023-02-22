@@ -34,5 +34,5 @@
   height: 80px;
   flex-shrink: 0;
   box-sizing: border-box;
-  gap: var(--gap-2xs);
+  gap: var(--gap-3xs);
 }

@@ -8,7 +8,7 @@
     opacity: 1;
   }
 }
-.vector-icon8 {
+.vector-icon9 {
   position: relative;
   width: 31.39px;
   height: 28px;
@@ -63,7 +63,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-sm);
+  gap: var(--gap-xs);
 }
 .arrow-chevron-down-icon {
   position: relative;
@@ -79,31 +79,31 @@
   padding: var(--padding-2xs);
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-xl);
+  gap: var(--gap-lg);
 }
 .component-2variant3 {
   width: 236px;
 }
 .administration,
 .component-2variant3,
-.frame-parent,
+.frame-group,
 .sidemenupopup {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-parent,
+.frame-group,
 .sidemenupopup {
   box-sizing: border-box;
 }
-.frame-parent {
+.frame-group {
   align-self: stretch;
   height: 744px;
   flex-shrink: 0;
   overflow-y: auto;
   padding: 0 0 var(--padding-6xs);
-  gap: var(--gap-lg);
+  gap: var(--gap-md);
 }
 .sidemenupopup {
   position: relative;
@@ -116,7 +116,7 @@
   max-width: 90%;
   text-align: left;
   font-size: var(--body-m-size);
-  color: var(--color-whitesmoke-100);
+  color: var(--color-whitesmoke-200);
   font-family: var(--base-1-semibold);
 }
 .sidemenupopup.animate {

@@ -1,6 +1,5 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import { Autocomplete, TextField } from "@mui/material";
-import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import CollateralCalculation from "../components/CollateralCalculation";
@@ -11,6 +10,22 @@ import "./SellTokenToToken.css";
 const SellTokenToToken: FunctionComponent = () => {
   const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
   const navigate = useNavigate();
+
+  const onMiniProgramsButtonsClick = useCallback(() => {
+    //TODO: nav back
+  }, []);
+
+  const onTitleClick = useCallback(() => {
+    //TODO: scroll top
+  }, []);
+
+  const onHomeClick = useCallback(() => {
+    //TODO: back home
+  }, []);
+
+  const onNavigationPrepareSellOrderClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
 
   const openGeneralPopup = useCallback(() => {
     setGeneralPopupOpen(true);
@@ -27,7 +42,57 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
-        <TopNavigationBar title="Order Settings" />
+        <nav className="navigation25">
+          <button
+            className="mini-programs-buttons10"
+            onClick={onMiniProgramsButtonsClick}
+          >
+            <img className="iconleft5" alt="" src="../asserts/iconleft.svg" />
+          </button>
+          <button className="title10" onClick={onTitleClick}>
+            New Order
+          </button>
+          <div className="mini-programs-buttons11">
+            <div className="stroke5" />
+            <button className="home5" onClick={onHomeClick}>
+              <img
+                className="ellipse-icon10"
+                alt=""
+                src="../asserts/ellipse.svg"
+              />
+              <img
+                className="ellipse-icon11"
+                alt=""
+                src="../asserts/ellipse1.svg"
+              />
+            </button>
+            <img
+              className="separator-icon5"
+              alt=""
+              src="../asserts/separator.svg"
+            />
+            <button
+              className="navigationprepare-sell-order5"
+              onClick={onNavigationPrepareSellOrderClick}
+            >
+              <img
+                className="navigationprepare-sell-order-child11"
+                alt=""
+                src="../asserts/rectangle-15.svg"
+              />
+              <img
+                className="navigationprepare-sell-order-child12"
+                alt=""
+                src="../asserts/vector-7.svg"
+              />
+              <img
+                className="navigationprepare-sell-order-child13"
+                alt=""
+                src="../asserts/vector-8.svg"
+              />
+            </button>
+          </div>
+        </nav>
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
@@ -163,10 +228,12 @@ const SellTokenToToken: FunctionComponent = () => {
           </button>
         </div>
         <BottomNavigationBar
-          boxAltLight="../asserts/box-alt-light.svg"
-          moleculeLight="../asserts/molecule-light.svg"
-          walletLight="../asserts/wallet-light.svg"
-          userAltLight="../asserts/user-alt-light.svg"
+          boxAltLight1="../asserts/box-alt-light.svg"
+          moleculeLight1="../asserts/molecule-light.svg"
+          walletLight1="../asserts/wallet-light.svg"
+          userAltLight1="../asserts/user-alt-light.svg"
+          textColor="#434343"
+          textColor1="#0ebd8d"
         />
       </div>
       {isGeneralPopupOpen && (
