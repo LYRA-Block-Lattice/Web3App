@@ -18,7 +18,7 @@
 }
 .or {
   position: relative;
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -40,12 +40,12 @@
 }
 .secondary-button4 {
   position: relative;
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .createnftform,
@@ -68,14 +68,14 @@
 }
 .createnftform {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 100%;
   flex-direction: column;
   padding: var(--padding-5xs);
   justify-content: flex-start;
   gap: var(--gap-2xl);
   text-align: left;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   color: var(--black-000000100);
   font-family: var(--caption);
 }

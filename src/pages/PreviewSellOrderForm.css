@@ -1,5 +1,5 @@
 .preview-sell-order {
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   font-weight: 500;
 }
 .im-selling,
@@ -13,7 +13,7 @@
 .nft-name1 {
   width: 320px;
   flex-shrink: 0;
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
 }
 .nft-name1,
 .nft-name3 {
@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--gap-lg);
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
 }
 .ill-share-the {
   position: absolute;
@@ -88,7 +88,7 @@
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
 }
 .tradesecretsection {
   position: relative;
@@ -133,7 +133,7 @@
 }
 .collateralcount {
   border-radius: var(--br-xs);
-  background-color: var(--color-gray-200);
+  background-color: var(--color-gray-100);
   width: 320px;
   flex-direction: column;
   padding: var(--padding-5xs);
@@ -161,29 +161,29 @@
 .nft-name-group {
   flex-direction: column;
   align-items: flex-start;
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
 }
 .confirm-before-create-order,
-.primary-button6 {
+.primary-button8 {
   position: relative;
 }
-.primary-button6 {
-  font-size: var(--font-size-5xl);
+.primary-button8 {
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button17,
+.prepare-sell-order-button21,
 .previewsellorderform {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button17 {
+.prepare-sell-order-button21 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-7xl);
@@ -196,7 +196,7 @@
 }
 .previewsellorderform {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 100%;
   flex-direction: column;
   padding: var(--padding-6xl) var(--padding-5xs) var(--padding-5xs);

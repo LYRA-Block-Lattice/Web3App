@@ -28,7 +28,7 @@
   position: relative;
   font-size: var(--caption-size);
   font-family: var(--font-calibri);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .order-status2 {
@@ -83,7 +83,7 @@
 }
 .am-container {
   align-self: stretch;
-  background-color: var(--color-white);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -147,7 +147,7 @@
 }
 .width-controller2 {
   position: relative;
-  border-top: 1px solid var(--color-white);
+  border-top: 1px solid var(--white);
   box-sizing: border-box;
   width: 365px;
   height: 1px;
@@ -162,14 +162,14 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.mini-button4 {
+.mini-button6 {
   position: relative;
   font-size: var(--caption-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--color-darkslategray-300);
   text-align: center;
 }
 .delist-button1,
@@ -181,7 +181,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
-  background-color: var(--text-primary-dark);
+  background-color: var(--color-whitesmoke-200);
   border-radius: var(--br-lg);
   height: 24px;
   overflow: hidden;
@@ -198,7 +198,7 @@
 }
 .ordercard2 {
   border-radius: var(--br-sm);
-  background-color: var(--color-white);
+  background-color: var(--white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-darkgray);
   display: flex;

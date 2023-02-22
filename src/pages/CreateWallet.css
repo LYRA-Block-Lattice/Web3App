@@ -153,54 +153,64 @@
   background-color: transparent;
   position: relative;
 }
-.button-shape {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: var(--br-lg);
-  background-color: var(--sell1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+.checkboxrestoreprivatekey-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
-.createlabel {
-  position: absolute;
-  width: 90.67%;
-  top: calc(50% - 11px);
-  left: 4.66%;
-  font-size: var(--headline-s-size);
-  letter-spacing: 0.41px;
-  line-height: 22px;
-  font-weight: 600;
-  font-family: var(--caption);
-  color: var(--color-white);
-  text-align: center;
-  display: inline-block;
-}
-.create-wallet,
-.open-wallet-link {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
+.primary-button6 {
   position: relative;
-}
-.create-wallet {
-  width: 164px;
-  height: 50px;
-  flex-shrink: 0;
-}
-.open-wallet-link {
-  font-size: var(--body-s-size);
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-black);
+  color: var(--white);
   text-align: center;
-  display: inline-block;
+}
+.prepare-sell-order-button17 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-5xs) var(--padding-7xl);
+  background-color: var(--primary1);
+  border-radius: var(--br-lg);
+  height: 50px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.prepare-sell-order-button17:hover {
+  background-color: var(--color-mediumslateblue);
+}
+.mini-button {
+  position: relative;
+  font-size: var(--caption-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--caption);
+  color: var(--color-darkslategray-300);
+  text-align: center;
+}
+.prepare-sell-order-button18 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-5xs) var(--padding-xl);
+  background-color: var(--color-whitesmoke-200);
+  border-radius: var(--br-lg);
+  height: 24px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
 }
 .createwallet,
 .illus1-parent {
@@ -208,19 +218,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-xl);
 }
 .illus1-parent {
   flex: 1;
+  gap: var(--gap-4xl);
 }
 .createwallet {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 100%;
   height: 909px;
   overflow: hidden;
   padding: 0 var(--padding-3xs);
   box-sizing: border-box;
+  gap: var(--gap-xl);
   text-align: center;
   font-size: 6.03px;
   color: #34336c;

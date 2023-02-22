@@ -27,7 +27,7 @@
   justify-content: center;
   gap: var(--gap-md);
   text-align: center;
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl);
   color: var(--black-000000100);
   font-family: var(--font-open-sans);
 }

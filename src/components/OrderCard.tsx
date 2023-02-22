@@ -182,12 +182,12 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
       <div className="itemactions1">
         {orderStatus === "Partial" ? (
           <button className="delist-button1" onClick={onDelist}>
-            <div className="mini-button4">Delist</div>
+            <div className="mini-button6">Delist</div>
           </button>
         ) : null}
         {orderStatus === "Delist" ? (
           <button className="delist-button1" onClick={onCloseOrder}>
-            <div className="mini-button4">Close</div>
+            <div className="mini-button6">Close</div>
           </button>
         ) : null}
       </div>

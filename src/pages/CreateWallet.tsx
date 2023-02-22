@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   TextField,
@@ -10,7 +10,6 @@ import {
   Checkbox
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import { useNavigate } from "react-router-dom";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import * as actionTypes from "../app/actionTypes";
 import "./CreateWallet.css";
@@ -161,35 +160,39 @@ const CreateWallet: FunctionComponent = () => {
           required
           onChange={(e) => setPassword2(e.target.value)}
         />
-        <FormControlLabel
-          label="I want to restore wallet by Private Key"
-          labelPlacement="end"
-          control={
-            <Checkbox
-              color="primary"
-              size="medium"
-              onChange={(e) => setChkkey(e.target.value)}
-            />
-          }
-        />
-        <TextField
-          className="wallet-name"
-          sx={{ width: 343 }}
-          color="primary"
-          variant="standard"
-          type="text"
-          label="Private Key"
-          placeholder="Placeholder"
-          size="medium"
-          margin="none"
-          onChange={(e) => setPvk(e.target.value)}
-        />
-        <button className="create-wallet" onClick={onWalletCreate}>
-          <div className="button-shape" />
-          <div className="createlabel">Create</div>
+        <div className="checkboxrestoreprivatekey-parent">
+          <FormControlLabel
+            label="I want to restore wallet by Private Key"
+            labelPlacement="end"
+            control={
+              <Checkbox
+                color="primary"
+                size="medium"
+                onChange={(e) => setChkkey(e.target.value)}
+              />
+            }
+          />
+          <TextField
+            className="wallet-name"
+            sx={{ width: 343 }}
+            color="primary"
+            variant="standard"
+            type="text"
+            label="Private Key"
+            placeholder="Placeholder"
+            size="medium"
+            margin="none"
+            onChange={(e) => setPvk(e.target.value)}
+          />
+        </div>
+        <button
+          className="prepare-sell-order-button17"
+          onClick={onWalletCreate}
+        >
+          <div className="primary-button6">Create Wallet</div>
         </button>
-        <button className="open-wallet-link" onClick={onOpenWalletLinkClick}>
-          Open Wallet
+        <button className="prepare-sell-order-button18">
+          <div className="mini-button">Open Wallet</div>
         </button>
       </div>
       <BottomNavigationBar

@@ -1,6 +1,6 @@
 .print-fiat-for {
   position: relative;
-  font-size: var(--font-size-7xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -16,12 +16,12 @@
 }
 .secondary-button {
   position: relative;
-  font-size: var(--body-s-size);
+  font-size: var(--body-m-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
 .mint-fiat-token,
@@ -44,7 +44,7 @@
 }
 .mint-fiat-token {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 100%;
   flex-direction: column;
   padding: var(--padding-5xs);

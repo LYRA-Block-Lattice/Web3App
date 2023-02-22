@@ -16,7 +16,7 @@
   justify-content: flex-start;
 }
 .searchsection {
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 400px;
   align-items: flex-start;
   justify-content: center;
@@ -28,7 +28,7 @@
 }
 .nft-wrapper {
   border-radius: var(--br-md) var(--br-md) 0 0;
-  background-color: var(--color-whitesmoke-200);
+  background-color: var(--color-whitesmoke-300);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
   height: 26px;
@@ -47,7 +47,7 @@
 }
 .token-wrapper {
   border-radius: var(--br-md) var(--br-md) 0 0;
-  background-color: var(--color-whitesmoke-200);
+  background-color: var(--color-whitesmoke-300);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
   height: 26px;
@@ -57,8 +57,8 @@
   align-items: flex-end;
 }
 .catalogtab {
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-gray-400);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--color-gray-300);
   overflow: hidden;
   align-items: center;
   gap: var(--gap-sm);
@@ -79,7 +79,7 @@
 }
 .market,
 .orderandcatalog {
-  background-color: var(--color-white);
+  background-color: var(--white);
 }
 .orderandcatalog {
   flex: 1;

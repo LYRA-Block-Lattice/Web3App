@@ -29,24 +29,24 @@
   text-align: center;
   display: inline-block;
 }
-.primary-button7 {
+.primary-button9 {
   position: relative;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--color-white);
+  color: var(--white);
   text-align: center;
 }
-.prepare-sell-order-button18,
+.prepare-sell-order-button22,
 .scantopay {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button18 {
+.prepare-sell-order-button22 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-7xl);
@@ -57,19 +57,19 @@
   flex-direction: row;
   justify-content: center;
 }
-.prepare-sell-order-button18:hover {
+.prepare-sell-order-button22:hover {
   background-color: var(--color-mediumslateblue);
 }
 .scantopay {
   position: relative;
-  background-color: var(--color-white);
+  background-color: var(--white);
   width: 100%;
   flex-direction: column;
   padding: var(--padding-5xs);
   justify-content: flex-start;
   gap: 30px;
   text-align: center;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-3xl);
   color: var(--black-000000100);
   font-family: var(--base-1-semibold);
 }

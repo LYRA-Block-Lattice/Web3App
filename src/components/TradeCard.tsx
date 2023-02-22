@@ -107,19 +107,19 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
         {tradeStatus != "Closed" && (
           <div>
             <button className="delist-button">
-              <div className="mini-button">Cancel</div>
+              <div className="mini-button2">Cancel</div>
             </button>
             <button className="delist-button">
-              <div className="mini-button">Close</div>
+              <div className="mini-button2">Close</div>
             </button>
             <button className="delist-button">
-              <div className="mini-button">Complain</div>
+              <div className="mini-button2">Complain</div>
             </button>
           </div>
         )}
         {tradeStatus === "Closed" && (
           <button className="delist-button">
-            <div className="mini-button">Comment</div>
+            <div className="mini-button2">Comment</div>
           </button>
         )}
       </div>
