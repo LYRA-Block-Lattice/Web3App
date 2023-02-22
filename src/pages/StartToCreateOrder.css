@@ -7,8 +7,9 @@
   flex-shrink: 0;
 }
 .catalog-section {
-  flex: 1;
   width: 324px;
+  height: 533px;
+  flex-shrink: 0;
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -18,7 +19,7 @@
   justify-content: center;
   gap: 29px;
 }
-.primary-button4 {
+.primary-button5 {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -28,7 +29,7 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button15 {
+.prepare-sell-order-button16 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-7xl);
@@ -43,23 +44,31 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button15:hover {
+.prepare-sell-order-button16:hover {
   background-color: #8277e8;
 }
-.prepare-sell-order-button15:disabled {
+.prepare-sell-order-button16:disabled {
   background-color: var(--color-gainsboro-400);
+}
+.catalog-section-parent,
+.starttocreateorder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.catalog-section-parent {
+  flex: 1;
+  justify-content: center;
+  gap: var(--gap-4xl);
 }
 .starttocreateorder {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
-  height: 902px;
+  height: 917px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   padding: 0 var(--padding-3xs);
   box-sizing: border-box;
-  align-items: center;
   justify-content: flex-start;
-  gap: 48px;
+  gap: var(--gap-xl);
 }

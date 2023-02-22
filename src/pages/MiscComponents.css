@@ -6,7 +6,7 @@
   object-fit: cover;
 }
 .lyralogoblueicon-wrapper {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-sm);
   background-color: var(--color-white);
   width: 162px;
   height: 162px;
@@ -64,17 +64,17 @@
 .content {
   width: 155px;
   align-items: flex-start;
-  gap: var(--gap-3xs);
+  gap: var(--gap-2xs);
 }
 .nft-showing-item,
 .nft-showing-item-parent {
   align-items: flex-end;
-  gap: var(--gap-sm);
+  gap: var(--gap-md);
 }
 .nft-showing-item-parent {
   flex-direction: row;
   align-items: flex-start;
-  gap: var(--gap-4xl);
+  gap: var(--gap-5xl);
 }
 .put-your-product2 {
   position: relative;
@@ -106,7 +106,7 @@
   padding: 0;
   background-color: transparent;
   align-items: flex-end;
-  gap: var(--gap-sm);
+  gap: var(--gap-md);
 }
 .misccomponents {
   position: relative;
@@ -117,7 +117,7 @@
   padding: var(--padding-5xs);
   box-sizing: border-box;
   align-items: center;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
   text-align: left;
   font-size: var(--uppercase-small-size);
   color: var(--text-dark-60);

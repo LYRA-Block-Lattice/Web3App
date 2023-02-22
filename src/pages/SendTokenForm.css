@@ -1,25 +1,8 @@
-.send-token {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-}
-.asserttitlesection {
-  align-self: stretch;
-  background-color: var(--color-white);
-  height: 48px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
 .tokentosell {
   border: 0;
   background-color: transparent;
 }
-.primary-button1 {
+.primary-button2 {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -29,14 +12,7 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button4,
-.sendtokenform {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
-.prepare-sell-order-button4 {
+.prepare-sell-order-button5 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-7xl);
@@ -44,22 +20,35 @@
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button4:hover {
+.prepare-sell-order-button5:hover {
   background-color: var(--color-mediumslateblue);
+}
+.sendtokenform,
+.tokentosell-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tokentosell-parent {
+  flex: 1;
+  justify-content: center;
+  gap: var(--gap-4xl);
 }
 .sendtokenform {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
-  flex-direction: column;
-  padding: var(--padding-5xs);
+  height: 917px;
+  overflow: hidden;
+  padding: 0 var(--padding-3xs);
+  box-sizing: border-box;
   justify-content: flex-start;
-  gap: var(--gap-5xl);
-  text-align: left;
-  font-size: var(--font-size-8xl);
-  color: var(--black-000000100);
-  font-family: var(--caption);
+  gap: var(--gap-xl);
 }

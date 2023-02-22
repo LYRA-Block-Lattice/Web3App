@@ -44,19 +44,19 @@ const TradeDetails: FunctionComponent = () => {
       </div>
       <div className="trade-id-parent">
         <button
-          className="prepare-sell-order-button1"
+          className="prepare-sell-order-button2"
           onClick={onPrepareSellOrderButtonClick}
         >
           <div className="utility-button">Close</div>
         </button>
         <button
-          className="prepare-sell-order-button1"
+          className="prepare-sell-order-button2"
           onClick={onPrepareSellOrderButton1Click}
         >
           <div className="utility-button">Complain</div>
         </button>
         <button
-          className="prepare-sell-order-button1"
+          className="prepare-sell-order-button2"
           onClick={onPrepareSellOrderButton2Click}
         >
           <div className="utility-button">Comment</div>

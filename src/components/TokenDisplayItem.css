@@ -29,7 +29,7 @@
 .lyr-parent {
   flex-direction: column;
   align-items: flex-end;
-  gap: var(--gap-4xs);
+  gap: var(--gap-3xs);
   text-align: right;
   font-size: var(--font-size-xl);
   color: var(--default-black);
@@ -38,7 +38,7 @@
   align-self: stretch;
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
 }
 .line-div {
   position: relative;
@@ -54,7 +54,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-2xs);
+  gap: var(--gap-xs);
 }
 .tokendisplayitem1 {
   align-self: stretch;
@@ -65,7 +65,7 @@
   padding: var(--padding-8xs);
   align-items: center;
   justify-content: center;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
   text-align: left;
   font-size: var(--font-size-3xl);
   color: var(--black-000000100);

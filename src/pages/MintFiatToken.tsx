@@ -51,45 +51,42 @@ const MintFiatToken: FunctionComponent<TokenMintProps> = (props) => {
   );
 
   return (
-    <div className="mint-fiat-token">
-      <div className="print-fiat-for-free">Print Fiat for free</div>
-      <div className="mint-fiat-token">
-        <div className="print-fiat-for">Print Fiat for free</div>
-        <Autocomplete
-          sx={{ width: 301 }}
-          disablePortal
-          options={options}
-          onInputChange={onGetTokenInputChange}
-          getOptionLabel={(option) => option.Ticker}
-          renderInput={(params: any) => (
-            <TextField
-              {...params}
-              color="primary"
-              label="Select Fiat Type"
-              variant="outlined"
-              placeholder=""
-              helperText=""
-            />
-          )}
-          size="medium"
-        />
-        <TextField
-          className="domain-name"
-          sx={{ width: 301 }}
-          color="primary"
-          variant="outlined"
-          type="number"
-          label="Amount to print"
-          placeholder="100"
-          size="medium"
-          margin="none"
-          onChange={(e) => setSupply(+e.target.value)}
-        />
-        <button className="prepare-sell-order-button6" onClick={onMintClick}>
-          <div className="secondary-button">Print</div>
-        </button>
-      </div>
-    </div>
+    <form className="mint-fiat-token">
+      <div className="print-fiat-for">Print Fiat for free</div>
+      <Autocomplete
+        sx={{ width: 301 }}
+        disablePortal
+        options={options}
+        onInputChange={onGetTokenInputChange}
+        getOptionLabel={(option) => option.Ticker}
+        renderInput={(params: any) => (
+          <TextField
+            {...params}
+            color="primary"
+            label="Select Fiat Type"
+            variant="outlined"
+            placeholder=""
+            helperText=""
+          />
+        )}
+        size="medium"
+      />
+      <TextField
+        className="domain-name"
+        sx={{ width: 301 }}
+        color="primary"
+        variant="outlined"
+        type="number"
+        label="Amount to print"
+        placeholder="100"
+        size="medium"
+        margin="none"
+        onChange={(e) => setSupply(+e.target.value)}
+      />
+      <button className="prepare-sell-order-button7" onClick={onMintClick}>
+        <div className="secondary-button">Print</div>
+      </button>
+    </form>
   );
 };
 

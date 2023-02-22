@@ -85,44 +85,44 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
-      <PrimaryAccountCard />
-      <TopNavigationBar
-        title="Order Type"
-        titleLetterSpacing="0.41px"
-        titleFontWeight="500"
-        titleFontFamily="'SF Pro Display'"
-        titleLineHeight="18px"
-      />
-      <div className="catalog-section">
-        <Xwrapper>
-          <div style={{ zIndex: 3 }}>
-            <Xarrow
-              showXarrow={start != null && end != null}
-              start={`Sell-${start}`}
-              end={`Get-${end}`}
+      <TopNavigationBar title="Select Catalog" />
+      <div className="catalog-section-parent">
+        <div className="catalog-section">
+          <Xwrapper>
+            <div style={{ zIndex: 3 }}>
+              <Xarrow
+                showXarrow={start != null && end != null}
+                start={`Sell-${start}`}
+                end={`Get-${end}`}
+              />
+            </div>
+            <CatalogSelection
+              key="sell"
+              iWantTo="Sell"
+              tokenActionClicked={onTokenAction}
             />
-          </div>
-          <CatalogSelection
-            key="sell"
-            iWantTo="Sell"
-            tokenActionClicked={onTokenAction}
-          />
-          <div className="catalog-section-child" />
-          <CatalogSelection
-            key="get"
-            iWantTo="Get"
-            tokenActionClicked={onTokenAction}
-          />
-        </Xwrapper>
+            <div className="catalog-section-child" />
+            <CatalogSelection
+              key="get"
+              iWantTo="Get"
+              tokenActionClicked={onTokenAction}
+            />
+          </Xwrapper>
+        </div>
+        <button
+          className="prepare-sell-order-button16"
+          disabled={isDisabled}
+          onClick={onPrepareSellOrderButtonClick}
+        >
+          <div className="primary-button5">Specify Token</div>
+        </button>
       </div>
-      <button
-        className="prepare-sell-order-button15"
-        disabled={isDisabled}
-        onClick={onPrepareSellOrderButtonClick}
-      >
-        <div className="primary-button4">Specify Token</div>
-      </button>
-      <BottomNavigationBar />
+      <BottomNavigationBar
+        boxAltLight="../asserts/box-alt-light.svg"
+        moleculeLight="../asserts/molecule-light.svg"
+        walletLight="../asserts/wallet-light.svg"
+        userAltLight="../asserts/user-alt-light.svg"
+      />
     </div>
   );
 };

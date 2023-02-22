@@ -1,9 +1,10 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
-import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
+import TopNavigationBar from "../components/TopNavigationBar";
 import MarketToolBar from "../components/MarketToolBar";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import OrderCard from "../components/OrderCard";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ViewOrdersForm.css";
 import { MARKET_GET_OWN_ORDERS } from "../app/actionTypes";
 import { getAuthSelector, getMarketSelector } from "../app/selectors";
@@ -69,7 +70,7 @@ const ViewOrdersForm: FunctionComponent = () => {
 
   return (
     <div className="viewordersform">
-      <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon2.svg" />
+      <TopNavigationBar title="My Orders" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
         homeIconInterlocution1="../asserts/home--icon--interlocution16.svg"
@@ -80,42 +81,42 @@ const ViewOrdersForm: FunctionComponent = () => {
       <div className="view-orders-parent">
         <div className="view-orders">View Orders</div>
         <button
-          className="prepare-sell-order-button11"
+          className="prepare-sell-order-button12"
           onClick={onPrepareSellOrderButtonClick}
         >
           <div className="utility-button5">New</div>
         </button>
       </div>
-      <Tabs value={value} onChange={handleChange} centered>
-        <Tab label="All" />
-        <Tab label="Open" />
-        <Tab label="Partial" />
-        <Tab label="Delist" />
-        <Tab label="Closed" />
-        <Tab label="Dispute" />
-      </Tabs>
-      {odrs?.map((order) => (
-        <OrderCard
-          key={order.orderid!}
-          offering={order.offering}
-          biding={order.biding}
-          orderStatus={order.status}
-          offeringImg={getTickerIcon(order.offering)}
-          bidingImg={getTickerIcon(order.biding)}
-          time={order.time}
-          price={order.price.toString()}
-          amount={order.amount.toString()}
-          limitMin={order.limitmin.toString()}
-          limitMax={order.limitmax.toString()}
-          sold={order.sold.toString()}
-          shelf={order.shelf.toString()}
-          orderStatusBackgroundColor={
-            order.status == "Open" ? "#2196F3" : "gray"
-          }
-          orderId={order.orderid!}
-          daoId={order.daoid!}
-        />
-      ))}
+      <div className="ordercard-container">
+        {odrs?.map((order) => (
+          <OrderCard
+            key={order.orderid!}
+            offering={order.offering}
+            biding={order.biding}
+            orderStatus={order.status}
+            offeringImg={getTickerIcon(order.offering)}
+            bidingImg={getTickerIcon(order.biding)}
+            time={order.time}
+            price={order.price.toString()}
+            amount={order.amount.toString()}
+            limitMin={order.limitmin.toString()}
+            limitMax={order.limitmax.toString()}
+            sold={order.sold.toString()}
+            shelf={order.shelf.toString()}
+            orderStatusBackgroundColor={
+              order.status == "Open" ? "#2196F3" : "gray"
+            }
+            orderId={order.orderid!}
+            daoId={order.daoid!}
+          />
+        ))}
+      </div>
+      <BottomNavigationBar
+        boxAltLight="../asserts/box-alt-light.svg"
+        moleculeLight="../asserts/molecule-light.svg"
+        walletLight="../asserts/wallet-light.svg"
+        userAltLight="../asserts/user-alt-light.svg"
+      />
     </div>
   );
 };

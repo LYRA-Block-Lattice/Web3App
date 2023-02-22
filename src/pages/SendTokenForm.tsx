@@ -1,5 +1,7 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SendTokenForm.css";
 import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
 import { useDispatch, useSelector } from "react-redux";
@@ -54,46 +56,51 @@ const SendTokenForm: FunctionComponent = () => {
 
   return (
     <div className="sendtokenform">
-      <PrimaryAccountCard />
-      <div className="asserttitlesection">
-        <div className="send-token">Send Token</div>
+      <TopNavigationBar title="Send Token" />
+      <div className="tokentosell-parent">
+        <SearchTokenInput
+          key="tosend"
+          val={val}
+          dir="Send"
+          cat="Token"
+          ownOnly={true}
+          onTokenSelect={onSelectChange}
+        />
+        <TextField
+          className="tokentosell"
+          sx={{ width: 301 }}
+          color="primary"
+          variant="outlined"
+          type="text"
+          label="Destination address"
+          placeholder="Address started with 'L...'"
+          size="medium"
+          margin="none"
+          required
+          onChange={(e) => setDst(e.target.value)}
+        />
+        <TextField
+          className="tokentosell"
+          sx={{ width: 301 }}
+          color="primary"
+          variant="outlined"
+          type="number"
+          label="Amount to send"
+          size="medium"
+          margin="none"
+          required
+          onChange={(e) => setAmount(+e.target.value)}
+        />
+        <button className="prepare-sell-order-button5" onClick={doSend}>
+          <div className="primary-button2">Send</div>
+        </button>
       </div>
-      <SearchTokenInput
-        key="tosend"
-        val={val}
-        dir="Send"
-        cat="Token"
-        ownOnly={true}
-        onTokenSelect={onSelectChange}
+      <BottomNavigationBar
+        boxAltLight="../asserts/box-alt-light.svg"
+        moleculeLight="../asserts/molecule-light.svg"
+        walletLight="../asserts/wallet-light.svg"
+        userAltLight="../asserts/user-alt-light.svg"
       />
-      <TextField
-        className="tokentosell"
-        sx={{ width: 301 }}
-        color="primary"
-        variant="outlined"
-        type="text"
-        label="Destination address"
-        placeholder="Address starts with 'L...'"
-        size="medium"
-        margin="none"
-        required
-        onChange={(e) => setDst(e.target.value)}
-      />
-      <TextField
-        className="tokentosell"
-        sx={{ width: 301 }}
-        color="primary"
-        variant="outlined"
-        type="number"
-        label="Amount to send"
-        size="medium"
-        margin="none"
-        required
-        onChange={(e) => setAmount(+e.target.value)}
-      />
-      <button className="prepare-sell-order-button4" onClick={doSend}>
-        <div className="primary-button1">Send</div>
-      </button>
     </div>
   );
 };

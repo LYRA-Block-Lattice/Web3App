@@ -22,7 +22,7 @@
 .network-parent {
   padding: var(--padding-5xs) 48px;
   justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .about {
   position: relative;

@@ -272,7 +272,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                   <img
                     className="arrow-chevron-down-icon"
                     alt=""
-                    src="../asserts/arrowchevrondown5.svg"
+                    src="../asserts/arrowchevrondown.svg"
                   />
                 </div>
               </div>
@@ -297,7 +297,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
               <img
                 className="arrow-chevron-down-icon"
                 alt=""
-                src="../asserts/arrowchevrondown5.svg"
+                src="../asserts/arrowchevrondown.svg"
               />
             </div>
           </div>
@@ -321,7 +321,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                 <img
                   className="arrow-chevron-down-icon"
                   alt=""
-                  src="../asserts/arrowchevrondown5.svg"
+                  src="../asserts/arrowchevrondown.svg"
                 />
               </div>
             </div>

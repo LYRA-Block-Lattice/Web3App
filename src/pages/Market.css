@@ -16,8 +16,8 @@
   justify-content: flex-start;
 }
 .searchsection {
-  align-self: stretch;
   background-color: var(--color-white);
+  width: 400px;
   align-items: flex-start;
   justify-content: center;
 }
@@ -27,7 +27,7 @@
   line-height: 18px;
 }
 .nft-wrapper {
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  border-radius: var(--br-md) var(--br-md) 0 0;
   background-color: var(--color-whitesmoke-200);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
@@ -46,7 +46,7 @@
   justify-content: center;
 }
 .token-wrapper {
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  border-radius: var(--br-md) var(--br-md) 0 0;
   background-color: var(--color-whitesmoke-200);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
@@ -61,7 +61,7 @@
   border-bottom: 1px solid var(--color-gray-400);
   overflow: hidden;
   align-items: center;
-  gap: var(--gap-xs);
+  gap: var(--gap-sm);
 }
 .market,
 .orderandcatalog,
@@ -73,9 +73,9 @@
 }
 .tradableorderssection {
   align-self: stretch;
-  border-radius: 0 0 var(--br-xs) var(--br-xs);
+  border-radius: 0 0 var(--br-sm) var(--br-sm);
   padding: var(--padding-xs) var(--padding-5xs);
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .market,
 .orderandcatalog {
@@ -90,7 +90,7 @@
   height: 902px;
   padding: 0 var(--padding-3xs);
   box-sizing: border-box;
-  gap: var(--gap-lg);
+  gap: var(--gap-xl);
   text-align: center;
   font-size: var(--body-semibold-size);
   color: var(--text-primary-dark);

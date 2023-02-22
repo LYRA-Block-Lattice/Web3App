@@ -1,6 +1,8 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
 import CollateralCalculation from "../components/CollateralCalculation";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
@@ -145,20 +147,13 @@ const AssertDetailView: FunctionComponent = () => {
   };
 
   return (
-    <div>
-      <div className="assertdetailview">
-        <PrimaryAccountCard />
-        {isLoading && (
-          <div className="overlay">
-            <p>Loading...</p>
-          </div>
-        )}
+    <div className="assertdetailview">
+      <TopNavigationBar title="Assert Details" />
+      <div className="assertdetailview-parent">
         <div className="assertdetailview1">
           <div className="asserttitleregion">
             <div className="assertauthorsection">
-              <div className="a-legend-nft">
-                Author: {info?.Users.Author.UserName}
-              </div>
+              <div className="a-legend-nft">A legend NFT author</div>
               <div className="material-symbolsshare-parent">
                 <img
                   className="material-symbolsshare-icon"
@@ -172,15 +167,11 @@ const AssertDetailView: FunctionComponent = () => {
                 />
               </div>
             </div>
-            <div className="asserttitlesection1">
-              <div className="meka-legends">
-                {info?.Blocks.Offgen.Custom1 ?? info?.Blocks.Offgen.Ticker}
-              </div>
+            <div className="asserttitlesection">
+              <div className="meka-legends">Meka Legends # 500</div>
             </div>
             <div className="assertownersection">
-              <div className="meka-legends">
-                Owner: {info?.Users.Seller.UserName}
-              </div>
+              <div className="meka-legends">Owner someone</div>
             </div>
           </div>
           <div className="asserttitleregion">
@@ -191,14 +182,11 @@ const AssertDetailView: FunctionComponent = () => {
                 src="../asserts/iconparksolidblockchain.svg"
               />
             </div>
-            {info?.Meta?.image && (
-              <img
-                className="titlebannerregion-child"
-                alt=""
-                src={info?.Meta?.image}
-              />
-            )}
-            {info?.Meta?.image || <h1>{info?.Blocks.Offgen.Ticker}</h1>}
+            <img
+              className="titlebannerregion-child"
+              alt=""
+              src="../asserts/frame-61@2x.png"
+            />
           </div>
           <div className="assertstatssection">
             <div className="icoutline-remove-red-eye-parent">
@@ -236,9 +224,7 @@ const AssertDetailView: FunctionComponent = () => {
           <div className="meka-legends">Description</div>
         </div>
         <div className="descriptiondetails">
-          <div className="meka-legends">
-            {info?.Blocks.Offgen.Description ?? "[empty]"}
-          </div>
+          <div className="meka-legends">By A great designer</div>
         </div>
         <div className="descriptiontitle">
           <img
@@ -254,17 +240,10 @@ const AssertDetailView: FunctionComponent = () => {
               <div className="meka-legends">Current Price</div>
             </div>
             <div className="priceandvaluelabel">
-              <div className="meka-legends">
-                {info?.Blocks.Order.Order.price}
-              </div>
+              <div className="meka-legends">0.0325</div>
               <div className="tetherusdt-parent">
-                <div className="tetherusdt">{info?.Blocks.Bidgen.Ticker}</div>
-                <div className="div3">
-                  ${" "}
-                  {pricedollar.toLocaleString(undefined, {
-                    maximumFractionDigits: 2
-                  })}
-                </div>
+                <div className="tetherusdt">tether/USDT</div>
+                <div className="div3">$86.20</div>
               </div>
             </div>
           </div>
@@ -273,26 +252,13 @@ const AssertDetailView: FunctionComponent = () => {
               <div className="meka-legends">Available to buy</div>
             </div>
             <div className="priceandvaluelabel1">
-              <div className="meka-legends">
-                {info?.Blocks.Order.Order.limitMin} -{" "}
-                {info?.Blocks.Order.Order.limitMax}
-              </div>
+              <div className="meka-legends">100 - 200</div>
               <div className="tetherusdt-parent">
-                <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
-                <div className="div3">
-                  ${" "}
-                  {avalibleMinDollar.toLocaleString(undefined, {
-                    maximumFractionDigits: 2
-                  })}{" "}
-                  ~{" "}
-                  {avalibleMaxDollar.toLocaleString(undefined, {
-                    maximumFractionDigits: 2
-                  })}
-                </div>
+                <div className="tetherusdt">tether/ETH</div>
+                <div className="div3">$40 ~ 84.20</div>
               </div>
             </div>
           </div>
-
           <div className="pricelabel-parent">
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
@@ -302,25 +268,12 @@ const AssertDetailView: FunctionComponent = () => {
                 <input
                   className="selectedamount"
                   type="number"
-                  value={buyAmount}
-                  min={info?.Blocks.Order.Order.limitMin}
-                  max={info?.Blocks.Order.Order.limitMax}
-                  onChange={(e) => setBuyAmount(Number(e.target.value))}
+                  placeholder="150"
                 />
                 <div className="tethereth-group">
-                  <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
-                  <div className="tetherusdt">
-                    {bidAmount.toLocaleString(undefined, {
-                      maximumFractionDigits: 8
-                    })}{" "}
-                    {info?.Blocks.Bidgen.Ticker}
-                  </div>
-                  <div className="tetherusdt">
-                    ${" "}
-                    {offerDollar.toLocaleString(undefined, {
-                      maximumFractionDigits: 2
-                    })}
-                  </div>
+                  <div className="tethereth1">tether/ETH</div>
+                  <div className="tetherusdt">100 tether/USDT</div>
+                  <div className="tetherusdt">$ 10.3</div>
                 </div>
               </div>
               <div className="limitadjustsection">
@@ -328,12 +281,8 @@ const AssertDetailView: FunctionComponent = () => {
                 <Box className="slidercontinuous">
                   <Slider
                     color="primary"
+                    defaultValue={20}
                     orientation="horizontal"
-                    step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
-                    min={info?.Blocks.Order.Order.limitMin ?? 0}
-                    max={info?.Blocks.Order.Order.limitMax ?? 0}
-                    onChange={(e, v) => setBuyAmount(v as number)}
-                    value={buyAmount ?? 0}
                   />
                 </Box>
                 <div className="max">Max</div>
@@ -344,43 +293,39 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">Collateral and Fees</div>
             </div>
-            <CollateralCalculation
-              selling={false}
-              eqprice={info?.Blocks.Order.Order.eqprice ?? 0}
-              eqdollar={pricedollar}
-              amount={buyAmount}
-              dao={info?.Blocks.Dao ?? null}
-              onTotalChange={onTotal}
-            />
-            <button
-              className="prepare-sell-order-button5"
-              onClick={onMakeOfferButtonClick}
-            >
+            <CollateralCalculation eqprice="1234 LYR" />
+            <button className="prepare-sell-order-button6">
               <img
                 className="material-symbolsshare-icon"
                 alt=""
                 src="../asserts/evapricetagsoutline.svg"
               />
-              <div className="primary-button2">Make offer</div>
+              <div className="primary-button3">Make offer</div>
             </button>
           </div>
         </div>
-      </div>
-      <div className="descriptiontitle">
-        <img
-          className="material-symbolsshare-icon"
-          alt=""
-          src="../asserts/galasecure.svg"
-        />
-        <div className="meka-legends">Trading protection</div>
-      </div>
-      <div className="descriptiondetails1">
-        <div className="this-order-is">
-          This order is protected by staking of 100,000 LYR, or $1,000 in USD,
-          from the seller. This order is regulated by the DAO “A good shop”
-          which has a total staking of 30,000,000 LYR.
+        <div className="descriptiontitle">
+          <img
+            className="material-symbolsshare-icon"
+            alt=""
+            src="../asserts/galasecure.svg"
+          />
+          <div className="meka-legends">Trading protection</div>
+        </div>
+        <div className="descriptiondetails1">
+          <div className="this-order-is">
+            This order is protected by staking of 100,000 LYR, or $1,000 in USD,
+            from the seller. This order is regulated by the DAO “A good shop”
+            which has a total staking of 30,000,000 LYR.
+          </div>
         </div>
       </div>
+      <BottomNavigationBar
+        boxAltLight="box-alt-light2.svg"
+        moleculeLight="molecule-light2.svg"
+        walletLight="wallet-light2.svg"
+        userAltLight="user-alt-light2.svg"
+      />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import { FunctionComponent, useState, useEffect, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import { useSelector } from "react-redux";
 import MarketToolBar from "../components/MarketToolBar";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
@@ -38,7 +37,6 @@ const Market: FunctionComponent = () => {
   return (
     <div className="market">
       <TopNavigationBar title="Market" />
-      <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon.svg" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution.svg"
         homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"
@@ -57,7 +55,12 @@ const Market: FunctionComponent = () => {
         <TokenCatalogTabs />
       </div>
       <DisplaySellItems cat={cat} />
-      <BottomNavigationBar />
+      <BottomNavigationBar
+        boxAltLight="../asserts/box-alt-light.svg"
+        moleculeLight="../asserts/molecule-light.svg"
+        walletLight="../asserts/wallet-light.svg"
+        userAltLight="../asserts/user-alt-light.svg"
+      />
     </div>
   );
 };

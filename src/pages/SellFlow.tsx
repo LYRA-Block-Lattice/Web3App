@@ -80,12 +80,19 @@ const SellFlow: FunctionComponent = () => {
       <div className="returncollateral">
         {obj.collateral - obj.daofee - obj.netfee} LYR
       </div>
-      <button
-        className="prepare-sell-order-button"
-        onClick={onPrepareSellOrderButtonClick}
-      >
-        <div className="primary-button">Place sell order</div>
-      </button>
+      <div className="ordercollateral">1024 LYR</div>
+      <div className="returncollateral">1000 LYR</div>
+      <div className="prepare-sell-order-button-parent">
+        <button className="prepare-sell-order-button">
+          <div className="primary-button">Back</div>
+        </button>
+        <button
+          className="prepare-sell-order-button1"
+          onClick={onPrepareSellOrderButtonClick}
+        >
+          <div className="primary-button1">Place sell order</div>
+        </button>
+      </div>
       <div className="group7">
         <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />
         <div className="text7">Trade</div>

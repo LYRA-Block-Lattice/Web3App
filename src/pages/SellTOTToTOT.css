@@ -16,7 +16,7 @@
   font-family: var(--caption);
   font-size: var(--body-s-size);
   background-color: var(--color-lightyellow);
-  border-radius: var(--br-2xs);
+  border-radius: var(--br-xs);
   width: 301px;
   height: 40px;
   flex-shrink: 0;
@@ -42,7 +42,7 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button18 {
+.prepare-sell-order-button19 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-xl);
@@ -77,13 +77,13 @@
   color: var(--color-white);
   text-align: center;
 }
-.prepare-sell-order-button19,
+.prepare-sell-order-button20,
 .togettotform {
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-.prepare-sell-order-button19 {
+.prepare-sell-order-button20 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);
@@ -123,7 +123,7 @@
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-2xs);
+  gap: var(--gap-xs);
 }
 .sellatprice2 {
   border: 0;
@@ -138,7 +138,7 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
   font-size: var(--body-s-size);
 }
 .collateral-in-lyr {
@@ -160,14 +160,14 @@
   flex-direction: row;
   padding: 0 var(--padding-5xs);
   box-sizing: border-box;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
 }
 .collateral-section {
   flex-direction: column;
   padding: var(--padding-5xs);
-  gap: var(--gap-6xs);
+  gap: var(--gap-5xs);
 }
-.primary-button7 {
+.primary-button8 {
   position: relative;
   font-size: var(--font-size-5xl);
   letter-spacing: 0.41px;
@@ -212,7 +212,7 @@
   position: relative;
   width: 100%;
   padding: var(--padding-7xl) var(--padding-8xl);
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
   text-align: left;
   font-size: var(--body-semibold-size);
   color: var(--black-000000100);

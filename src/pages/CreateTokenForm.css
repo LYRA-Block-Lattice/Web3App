@@ -25,13 +25,13 @@
   text-align: center;
 }
 .createtokenform,
-.prepare-sell-order-button7 {
+.prepare-sell-order-button8 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button7 {
+.prepare-sell-order-button8 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-5xs) var(--padding-4xl);

@@ -1,7 +1,7 @@
 .rectangle2 {
   flex: 1;
   position: relative;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-3xs);
   background-color: var(--secondary1);
   width: 5px;
 }
@@ -73,7 +73,7 @@
   padding: 0 var(--padding-8xs) var(--padding-5xs) 0;
   align-items: flex-end;
   justify-content: flex-start;
-  gap: var(--gap-4xs);
+  gap: var(--gap-3xs);
   color: inherit;
 }
 .qrcode-button-round {
@@ -151,7 +151,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-4xs);
+  gap: var(--gap-3xs);
 }
 .token-lists {
   align-self: stretch;
@@ -174,7 +174,7 @@
   flex-direction: column;
 }
 .wallet-card {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-sm);
   background-color: var(--primary1);
   height: 217px;
   flex-shrink: 0;

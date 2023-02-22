@@ -55,14 +55,14 @@
   justify-content: space-between;
 }
 .collateralcalculation {
-  border-radius: var(--br-2xs);
+  border-radius: var(--br-xs);
   background-color: var(--color-gray-200);
   width: 320px;
   flex-direction: column;
   padding: var(--padding-5xs);
   box-sizing: border-box;
   justify-content: center;
-  gap: var(--gap-2xs);
+  gap: var(--gap-xs);
   text-align: left;
   font-size: var(--body-semibold-size);
   color: var(--black-000000100);
