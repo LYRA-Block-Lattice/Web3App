@@ -10,16 +10,58 @@
   flex: 1;
   border-radius: 60px;
   height: 47px;
-  padding: 0 0 0 var(--padding-4xs);
+  padding: 0 0 0 var(--padding-3xs);
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
 }
 .searchsection {
+  align-self: stretch;
   background-color: var(--color-white);
-  width: 449px;
   align-items: flex-start;
   justify-content: center;
+}
+.nft {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+}
+.nft-wrapper {
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  background-color: var(--color-whitesmoke-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 70px;
+  height: 26px;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: var(--padding-8xs) 0 var(--padding-11xs);
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+.catalogtab,
+.nft-wrapper,
+.token-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.token-wrapper {
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  background-color: var(--color-whitesmoke-200);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 70px;
+  height: 26px;
+  flex-shrink: 0;
+  padding: var(--padding-8xs) 0 var(--padding-11xs);
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+.catalogtab {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-400);
+  overflow: hidden;
+  align-items: center;
+  gap: var(--gap-xs);
 }
 .market,
 .orderandcatalog,
@@ -31,20 +73,26 @@
 }
 .tradableorderssection {
   align-self: stretch;
-  border-radius: 0 0 var(--br-sm) var(--br-sm);
-  background-color: var(--color-whitesmoke-200);
-  padding: var(--padding-2xs) var(--padding-6xs);
+  border-radius: 0 0 var(--br-xs) var(--br-xs);
+  padding: var(--padding-xs) var(--padding-5xs);
   gap: var(--gap-md);
 }
 .market,
 .orderandcatalog {
   background-color: var(--color-white);
-  width: 449px;
+}
+.orderandcatalog {
+  flex: 1;
 }
 .market {
   position: relative;
   width: 100%;
-  padding: var(--padding-6xs);
+  height: 902px;
+  padding: 0 var(--padding-3xs);
   box-sizing: border-box;
-  gap: var(--gap-md);
+  gap: var(--gap-lg);
+  text-align: center;
+  font-size: var(--body-semibold-size);
+  color: var(--text-primary-dark);
+  font-family: var(--caption);
 }

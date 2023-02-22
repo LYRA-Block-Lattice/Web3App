@@ -24,7 +24,7 @@ const CreateWallet: FunctionComponent = () => {
   const [pvk, setPvk] = useState("");
 
   const onOpenWalletLinkClick = useCallback(() => {
-    navigate("/openwallet");
+    navigate("/open-wallet");
   }, [navigate]);
 
   const onWalletCreate = useCallback(() => {

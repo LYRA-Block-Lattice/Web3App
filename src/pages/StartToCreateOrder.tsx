@@ -6,8 +6,10 @@ import {
   useState,
   useEffect
 } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import { useNavigate } from "react-router-dom";
 import CatalogSelection from "../components/CatalogSelection";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./StartToCreateOrder.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
@@ -84,7 +86,13 @@ const StartToCreateOrder: FunctionComponent = () => {
   return (
     <div className="starttocreateorder">
       <PrimaryAccountCard />
-      <div className="choose-the-catalog">Choose the catalog</div>
+      <TopNavigationBar
+        title="Order Type"
+        titleLetterSpacing="0.41px"
+        titleFontWeight="500"
+        titleFontFamily="'SF Pro Display'"
+        titleLineHeight="18px"
+      />
       <div className="catalog-section">
         <Xwrapper>
           <div style={{ zIndex: 3 }}>
@@ -114,6 +122,12 @@ const StartToCreateOrder: FunctionComponent = () => {
       >
         <div className="primary-button4">Specify Token</div>
       </button>
+      <BottomNavigationBar
+        iconImageUrl="../asserts/box-alt-light3.svg"
+        moleculeImageUrl="../asserts/molecule-light3.svg"
+        walletImageUrl="../asserts/wallet-light3.svg"
+        userImageUrl="../asserts/user-alt-light3.svg"
+      />
     </div>
   );
 };

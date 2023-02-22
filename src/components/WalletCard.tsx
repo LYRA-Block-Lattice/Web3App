@@ -26,7 +26,7 @@ const WalletCard: FunctionComponent = () => {
       </div>
       <div className="frame-parent1">
         <div className="balance-display-zone-parent">
-          <Link className="balance-display-zone" to="/openwallet">
+          <a className="balance-display-zone">
             <button className="wallet-name-label">{app.name}</button>
             <div className="balance-display-zone-child" />
             <b className="usdtbalance">
@@ -42,14 +42,14 @@ const WalletCard: FunctionComponent = () => {
               })}
             </b>
             <b className="lyrlabel">USDT</b>
-          </Link>
+          </a>
           <div className="qrcode-button-wrapper">
             <button className="qrcode-button" onClick={scanToPay}>
               <div className="qrcode-button-round" />
               <img
                 className="qrcode-icon"
                 alt=""
-                src="../asserts/qrcode-icon1.svg"
+                src="../asserts/qrcode-icon.svg"
               />
             </button>
           </div>

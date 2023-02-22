@@ -1,9 +1,9 @@
 import { FunctionComponent, useState, useCallback, useEffect } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
-import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import WalletCard from "../components/WalletCard";
 
 import {
@@ -12,6 +12,7 @@ import {
   getNotifySelector
 } from "../app/selectors";
 import TokenDisplayItem from "../components/TokenDisplayItem";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import * as actionTypes from "../app/actionTypes";
 import "./WalletHome.css";
 import { IBalance } from "../app/wallet/walletReducer";
@@ -128,6 +129,7 @@ const WalletHome: FunctionComponent = () => {
   return (
     <>
       <div className="wallethome">
+        <TopNavigationBar title="Wallet" />
         <WalletCard />
         <div className="iconssection-wrapper">
           <div className="iconssection">
@@ -175,14 +177,34 @@ const WalletHome: FunctionComponent = () => {
             </div>
           </div>
         </div>
-        <div className="tradableorderssection-parent">
-          <TokenCatalogTabs
-            tradableOrdersSectionAlignSelf="unset"
-            tradableOrdersSectionWidth="455px"
-            tradableOrdersSectionBoxSizing="border-box"
-          />
-          <div className="coinlisting">{showTokens()}</div>
+        <div className="coinlisting-wrapper">
+          <div className="coinlisting">
+            <div className="catalogtab1">
+              <div className="nft-container">
+                <b className="nft1">NFT</b>
+              </div>
+              <div className="nft-container">
+                <b className="nft1">Fiat</b>
+              </div>
+              <div className="nft-container">
+                <b className="nft1">Goods</b>
+              </div>
+              <div className="nft-container">
+                <b className="nft1">Service</b>
+              </div>
+              <div className="token-container">
+                <b className="nft1">Token</b>
+              </div>
+            </div>
+            {showTokens()}
+          </div>
         </div>
+        <BottomNavigationBar
+          iconImageUrl="../asserts/box-alt-light.svg"
+          moleculeImageUrl="../asserts/molecule-light.svg"
+          walletImageUrl="../asserts/wallet-light.svg"
+          userImageUrl="../asserts/user-alt-light.svg"
+        />
       </div>
       {isSideMenuPopupOpen && (
         <PortalDrawer

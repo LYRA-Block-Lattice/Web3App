@@ -5,7 +5,7 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.token1 {
+.token2 {
   position: relative;
   font-size: var(--font-size-3xl);
   letter-spacing: 0.41px;
@@ -17,7 +17,7 @@
   width: 71px;
 }
 .select-token-catalog-button,
-.token-wrapper {
+.token-frame {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,9 +26,9 @@
 .select-token-catalog-button {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-8xl) var(--padding-4xl);
+  padding: var(--padding-9xl) var(--padding-5xl);
   background-color: var(--tertiary);
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
   width: 80px;
   height: 80px;

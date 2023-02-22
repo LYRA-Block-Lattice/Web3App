@@ -1,10 +1,11 @@
 import { FunctionComponent, useState, useEffect, useCallback } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import { useSelector } from "react-redux";
 import MarketToolBar from "../components/MarketToolBar";
-import TokenCatalogTabs from "../components/TokenCatalogTabs";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
 import DisplaySellItems from "../dup/DisplaySellItems";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 
 import "./Market.css";
 import { useNavigate } from "react-router";
@@ -35,6 +36,7 @@ const Market: FunctionComponent = () => {
 
   return (
     <div className="market">
+      <TopNavigationBar title="Market" />
       <PrimaryAccountContainer qRCodeIcon="../asserts/qrcode-icon.svg" />
       <MarketToolBar
         homeIconInterlocution="../asserts/home--icon--interlocution.svg"
@@ -54,6 +56,12 @@ const Market: FunctionComponent = () => {
         <TokenCatalogTabs />
       </div>
       <DisplaySellItems cat={cat} />
+      <BottomNavigationBar
+        iconImageUrl="../asserts/box-alt-light.svg"
+        moleculeImageUrl="../asserts/molecule-light.svg"
+        walletImageUrl="../asserts/wallet-light.svg"
+        userImageUrl="../asserts/user-alt-light.svg"
+      />
     </div>
   );
 };

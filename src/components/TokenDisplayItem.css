@@ -62,7 +62,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-7xs);
+  padding: var(--padding-8xs);
   align-items: center;
   justify-content: center;
   gap: var(--gap-xs);

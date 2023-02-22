@@ -1,9 +1,11 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import CollateralCalculation from "../components/CollateralCalculation";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SellTokenToToken.css";
 import SearchTokenInput from "../dup/SearchTokenInput";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
@@ -159,6 +161,13 @@ const SellTokenToToken: FunctionComponent = () => {
   return (
     <>
       <div className="selltokentotoken">
+        <TopNavigationBar
+          title="Order Settings"
+          titleLetterSpacing="0.41px"
+          titleFontWeight="500"
+          titleFontFamily="'SF Pro Display'"
+          titleLineHeight="18px"
+        />
         <PrimaryAccountCard />
         <div className="searchtokenbyname">
           <div className="to-sell-token-parent">
@@ -292,6 +301,12 @@ const SellTokenToToken: FunctionComponent = () => {
             <div className="primary-button3">Review the Order</div>
           </button>
         </div>
+        <BottomNavigationBar
+          iconImageUrl="../asserts/box-alt-light2.svg"
+          moleculeImageUrl="../asserts/molecule-light2.svg"
+          walletImageUrl="../asserts/wallet-light2.svg"
+          userImageUrl="../asserts/user-alt-light2.svg"
+        />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

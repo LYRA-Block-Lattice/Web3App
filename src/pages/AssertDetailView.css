@@ -29,7 +29,7 @@
   align-items: center;
 }
 .material-symbolsshare-parent {
-  padding: var(--padding-4xs);
+  padding: var(--padding-3xs);
   justify-content: flex-end;
   gap: 24px;
 }
@@ -75,9 +75,9 @@
   justify-content: flex-start;
 }
 .asserttitleregion {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   flex-direction: column;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   align-items: flex-start;
   gap: var(--gap-md);
 }
@@ -86,7 +86,7 @@
   flex-shrink: 0;
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-6xs) 0;
+  padding: var(--padding-5xs) 0;
   box-sizing: border-box;
   align-items: center;
 }
@@ -108,8 +108,8 @@
   gap: var(--gap-xs);
 }
 .assertstatssection {
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
-  padding: var(--padding-6xs);
+  border-radius: var(--br-xs) var(--br-xs) 0 0;
+  padding: var(--padding-5xs);
   gap: var(--gap-3xl);
 }
 .assertdetailview1 {
@@ -128,9 +128,9 @@
 }
 .descriptiontitle {
   align-self: stretch;
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--color-gainsboro-300);
-  padding: var(--padding-3xs) var(--padding-sm);
+  padding: var(--padding-2xs) var(--padding-md);
   align-items: center;
   gap: var(--gap-md);
   font-size: var(--font-size-7xl);
@@ -143,12 +143,12 @@
 .descriptiondetails {
   height: 93px;
   flex-shrink: 0;
-  padding: var(--padding-md) var(--padding-4xl);
+  padding: var(--padding-lg) var(--padding-5xl);
   box-sizing: border-box;
 }
 .pricelabel {
   align-self: stretch;
-  padding: 0 var(--padding-6xs);
+  padding: 0 var(--padding-5xs);
 }
 .div3,
 .tetherusdt {
@@ -177,14 +177,14 @@
 .priceandvaluelabel {
   overflow: hidden;
   flex-direction: row;
-  padding: 0 var(--padding-xs);
+  padding: 0 var(--padding-sm);
   align-items: center;
   justify-content: space-between;
   font-size: var(--font-size-8xl);
   color: var(--black-000000100);
 }
 .priceandbuyregion {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -203,7 +203,7 @@
   justify-content: flex-start;
 }
 .priceandvaluelabel1 {
-  padding: 0 var(--padding-7xs);
+  padding: 0 var(--padding-8xs);
   align-items: center;
   justify-content: space-between;
   font-size: var(--font-size-7xl);
@@ -218,7 +218,7 @@
 .setlimitsection {
   align-self: stretch;
   flex-direction: column;
-  padding: 0 var(--padding-6xs);
+  padding: 0 var(--padding-5xs);
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-md);
@@ -229,10 +229,10 @@
   font-family: var(--caption);
   font-size: 1.5em;
   flex: 1;
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   align-items: center;
   justify-content: flex-end;
   text-align: right;
@@ -289,7 +289,7 @@
 }
 .frame-container {
   width: 380px;
-  padding: 0 var(--padding-7xs);
+  padding: 0 var(--padding-8xs);
   gap: var(--gap-2xs);
   text-align: center;
   font-size: var(--uppercase-small-size);
@@ -297,7 +297,7 @@
 }
 .pricelabel-parent {
   width: 400px;
-  padding: 0 var(--padding-6xs);
+  padding: 0 var(--padding-5xs);
   gap: var(--gap-md);
 }
 .primary-button2 {
@@ -313,8 +313,8 @@
 .prepare-sell-order-button5 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-6xl);
-  background-color: var(--primary);
+  padding: var(--padding-5xs) var(--padding-7xl);
+  background-color: var(--primary1);
   align-self: stretch;
   border-radius: var(--br-lg);
   height: 50px;
@@ -328,7 +328,7 @@
   gap: var(--gap-md);
 }
 .prepare-sell-order-button5:hover {
-  background-color: var(--color-mediumslateblue-100);
+  background-color: var(--color-mediumslateblue);
 }
 .buysection,
 .makeofferbutton {
@@ -340,13 +340,13 @@
 .makeofferbutton {
   background-color: var(--color-white);
   overflow: hidden;
-  padding: var(--padding-4xs);
+  padding: var(--padding-3xs);
   align-items: center;
   justify-content: center;
   gap: var(--gap-md);
 }
 .buysection {
-  padding: var(--padding-6xs) 0 0;
+  padding: var(--padding-5xs) 0 0;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-3xl);
@@ -371,13 +371,13 @@
 .descriptiondetails1 {
   overflow: hidden;
   flex-direction: row;
-  padding: var(--padding-md) var(--padding-4xl);
+  padding: var(--padding-lg) var(--padding-5xl);
 }
 .assertdetailview {
   position: relative;
   width: 100%;
   flex-direction: column;
-  padding: var(--padding-6xs);
+  padding: var(--padding-5xs);
   box-sizing: border-box;
   text-align: left;
   font-size: var(--font-size-xl);

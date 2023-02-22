@@ -1,9 +1,9 @@
 .rectangle {
   top: 0;
   left: 0;
-  border-radius: var(--br-3xl);
+  border-radius: var(--br-4xl);
   background-color: var(--color-white);
-  border: 1.5px solid var(--color-darkslategray-200);
+  border: 1.5px solid var(--color-darkslategray-300);
   box-sizing: border-box;
   width: 132px;
   height: 56px;
@@ -31,7 +31,7 @@
 .vector-icon {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-3xs);
+  border-radius: var(--br-4xs);
   width: 125.5px;
   height: 63.5px;
 }
@@ -58,7 +58,7 @@
 .vector-icon1 {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-3xs);
+  border-radius: var(--br-4xs);
   width: 201.5px;
   height: 101.5px;
 }
@@ -89,7 +89,7 @@
 }
 .vector-icon2 {
   left: 0;
-  border-radius: var(--br-3xs);
+  border-radius: var(--br-4xs);
   width: 102px;
   height: 51px;
 }
@@ -132,9 +132,9 @@
 .rectangle1 {
   top: 0;
   left: 0;
-  border-radius: var(--br-3xl);
+  border-radius: var(--br-4xl);
   background-color: var(--color-white);
-  border: 1.5px solid var(--color-darkslategray-200);
+  border: 1.5px solid var(--color-darkslategray-300);
   box-sizing: border-box;
   width: 200px;
   height: 60px;
@@ -212,8 +212,8 @@
 .prepare-sell-order-button {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-6xs) var(--padding-6xl);
-  background-color: var(--primary);
+  padding: var(--padding-5xs) var(--padding-7xl);
+  background-color: var(--primary1);
   position: absolute;
   top: 838px;
   left: 120px;
@@ -227,13 +227,13 @@
   justify-content: center;
 }
 .prepare-sell-order-button:hover {
-  background-color: var(--color-mediumslateblue-100);
+  background-color: var(--color-mediumslateblue);
 }
 .vector-icon5 {
   position: absolute;
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-3xs);
+  border-radius: var(--br-4xs);
   width: 105.5px;
   height: 53.5px;
 }
@@ -322,6 +322,6 @@
   overflow: hidden;
   text-align: center;
   font-size: var(--font-size-3xl);
-  color: var(--color-darkslategray-200);
+  color: var(--color-darkslategray-300);
   font-family: var(--base-1-semibold);
 }
