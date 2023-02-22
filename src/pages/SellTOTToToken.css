@@ -2,7 +2,7 @@
 .tot-description3,
 .tot-name2 {
   background-color: var(--color-lightyellow);
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   width: 301px;
   height: 40px;
   flex-shrink: 0;

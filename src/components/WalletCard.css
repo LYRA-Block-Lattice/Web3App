@@ -1,7 +1,7 @@
 .rectangle2 {
   flex: 1;
   position: relative;
-  border-radius: var(--br-3xs);
+  border-radius: var(--br-4xs);
   background-color: var(--secondary1);
   width: 5px;
 }
@@ -174,7 +174,7 @@
   flex-direction: column;
 }
 .wallet-card {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--primary1);
   height: 217px;
   flex-shrink: 0;

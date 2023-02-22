@@ -27,7 +27,7 @@
   line-height: 18px;
 }
 .nft-wrapper {
-  border-radius: var(--br-md) var(--br-md) 0 0;
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-300);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
@@ -46,7 +46,7 @@
   justify-content: center;
 }
 .token-wrapper {
-  border-radius: var(--br-md) var(--br-md) 0 0;
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-300);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
@@ -73,7 +73,7 @@
 }
 .tradableorderssection {
   align-self: stretch;
-  border-radius: 0 0 var(--br-sm) var(--br-sm);
+  border-radius: 0 0 var(--br-xs) var(--br-xs);
   padding: var(--padding-xs) var(--padding-5xs);
   gap: var(--gap-lg);
 }

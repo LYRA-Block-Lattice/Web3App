@@ -118,12 +118,13 @@ body {
   --padding-11xl: 84px;
 
   /* border radiuses */
-  --br-4xs: 2px;
-  --br-3xs: 2.5px;
-  --br-2xs: 5px;
-  --br-xs: 8px;
-  --br-sm: 10px;
-  --br-md: 12px;
+  --br-5xs: 2px;
+  --br-4xs: 2.5px;
+  --br-3xs: 5px;
+  --br-2xs: 8px;
+  --br-xs: 10px;
+  --br-sm: 12px;
+  --br-md: 16px;
   --br-lg: 25px;
   --br-xl: 26px;
   --br-2xl: 32.5px;

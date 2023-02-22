@@ -31,7 +31,7 @@
 .vector-icon {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   width: 125.5px;
   height: 63.5px;
 }
@@ -58,7 +58,7 @@
 .vector-icon1 {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   width: 201.5px;
   height: 101.5px;
 }
@@ -89,7 +89,7 @@
 }
 .vector-icon2 {
   left: 0;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   width: 102px;
   height: 51px;
 }
@@ -264,7 +264,7 @@
   position: absolute;
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   width: 105.5px;
   height: 53.5px;
 }

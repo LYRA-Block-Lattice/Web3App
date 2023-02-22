@@ -18,7 +18,7 @@
   border: 0;
   padding: 0;
   background-color: var(--white);
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 60px;
   height: 60px;
@@ -49,7 +49,7 @@
   gap: var(--gap-lg);
 }
 .markettoolbar {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   flex-direction: column;
   padding: var(--padding-8xs) var(--padding-5xs);
 }

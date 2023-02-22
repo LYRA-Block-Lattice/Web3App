@@ -24,7 +24,7 @@
   border: 0;
   padding: 0;
   background-color: var(--white);
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 60px;
   height: 60px;
@@ -44,7 +44,7 @@
   flex-direction: column;
 }
 .iconssection {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   padding: var(--padding-8xs) var(--padding-5xs);
   align-items: center;
   justify-content: center;
@@ -59,7 +59,7 @@
   line-height: 18px;
 }
 .nft-container {
-  border-radius: var(--br-md) var(--br-md) 0 0;
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-300);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
@@ -78,7 +78,7 @@
   justify-content: center;
 }
 .token-container {
-  border-radius: var(--br-md) var(--br-md) 0 0;
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-300);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 70px;
