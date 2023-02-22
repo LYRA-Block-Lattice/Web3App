@@ -85,57 +85,20 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
-      <nav className="navigation29">
-        <button
-          className="mini-programs-buttons18"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft9" alt="" src="../asserts/iconleft4.svg" />
-        </button>
-        <button className="title14" onClick={onTitleClick}>
-          Select Catalog
-        </button>
-        <div className="mini-programs-buttons19">
-          <div className="stroke9" />
-          <button className="home9" onClick={onHomeClick}>
-            <img
-              className="ellipse-icon18"
-              alt=""
-              src="../asserts/ellipse8.svg"
-            />
-            <img
-              className="ellipse-icon19"
-              alt=""
-              src="../asserts/ellipse9.svg"
-            />
-          </button>
-          <img
-            className="separator-icon9"
-            alt=""
-            src="../asserts/separator4.svg"
-          />
-          <button
-            className="navigationprepare-sell-order9"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="navigationprepare-sell-order-child23"
-              alt=""
-              src="../asserts/rectangle-19.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child24"
-              alt=""
-              src="../asserts/vector-74.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child25"
-              alt=""
-              src="../asserts/vector-84.svg"
-            />
-          </button>
-        </div>
-      </nav>
+      <TopNavigationBar
+        title="Select Catalog"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator4.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-19.svg"
+        iconleft="../asserts/iconleft4.svg"
+        ellipse="../asserts/ellipse8.svg"
+        ellipse1="../asserts/ellipse9.svg"
+        vector7="../asserts/vector-74.svg"
+        vector8="../asserts/vector-84.svg"
+      />
       <div className="catalog-section-parent">
         <div className="catalog-section">
           <Xwrapper>

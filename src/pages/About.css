@@ -36,5 +36,5 @@
   text-align: center;
   font-size: var(--font-size-xl);
   color: var(--black-000000100);
-  font-family: var(--font-sf-pro-text);
+  font-family: var(--caption);
 }

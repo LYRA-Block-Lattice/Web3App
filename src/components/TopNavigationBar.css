@@ -1,44 +1,30 @@
-.vector-stroke-icon {
-  position: absolute;
-  height: 58.33%;
-  width: 33.33%;
-  top: 20.83%;
-  right: 31.25%;
-  bottom: 20.83%;
-  left: 35.42%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-}
 .iconleft {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
   position: absolute;
   top: 4px;
   left: 0;
   width: 24px;
   height: 24px;
 }
-.mini-programs-buttons {
+.mini-programs-buttons,
+.title5 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
   position: relative;
+}
+.mini-programs-buttons {
   width: 87px;
   height: 32px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.title {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
+.title5 {
   flex: 1;
-  position: relative;
   font-size: var(--font-size-2xl);
   letter-spacing: 0.02em;
   font-weight: 600;
-  font-family: var(--font-open-sans);
+  font-family: var(--caption);
   color: var(--black-000000100);
   text-align: center;
   display: inline-block;
@@ -92,51 +78,56 @@
   width: 20px;
   height: 20px;
 }
-.ellipse-icon2,
-.ellipse-icon3,
-.ellipse-icon4 {
+.separator-icon {
   position: absolute;
-  height: 32.5%;
-  width: 32.5%;
-  top: 33.75%;
-  right: 33.75%;
-  bottom: 33.75%;
-  left: 33.75%;
+  top: 6.65px;
+  left: 43.33px;
+  width: 0.35px;
+  height: 18.7px;
+  opacity: 0.2;
+}
+.contextplus-child,
+.contextplus-inner,
+.contextplus-item {
+  position: absolute;
+  height: 76.67%;
+  width: 76.67%;
+  top: 11.67%;
+  right: 11.67%;
+  bottom: 11.67%;
+  left: 11.67%;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
 }
-.ellipse-icon3,
-.ellipse-icon4 {
-  height: 20%;
-  width: 20%;
-  top: 40%;
-  right: 77.5%;
-  bottom: 40%;
-  left: 2.5%;
+.contextplus-inner,
+.contextplus-item {
+  height: 10%;
+  width: 35%;
+  top: 45%;
+  right: 32.5%;
+  bottom: 45%;
+  left: 32.5%;
+  border-radius: var(--br-5xs);
 }
-.ellipse-icon4 {
-  right: 2.5%;
-  left: 77.5%;
+.contextplus-inner {
+  height: 35%;
+  width: 10%;
+  top: 32.5%;
+  right: 45%;
+  bottom: 32.5%;
+  left: 45%;
 }
-.share {
+.contextplus {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
   position: absolute;
   top: 6px;
-  left: 13px;
+  left: 12px;
   width: 20px;
   height: 20px;
-}
-.separator-icon {
-  position: absolute;
-  top: 6.65px;
-  left: 43.32px;
-  width: 0.35px;
-  height: 18.7px;
-  opacity: 0.2;
 }
 .mini-programs-buttons1 {
   position: relative;
@@ -144,15 +135,17 @@
   height: 32px;
   flex-shrink: 0;
 }
-.navigation {
-  align-self: stretch;
+.topnavigationbar {
+  background-color: var(--white);
+  width: 375px;
   display: flex;
   flex-direction: row;
   padding: var(--padding-6xs) var(--padding-5xs) var(--padding-6xs)
     var(--padding-2xs);
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  gap: var(--gap-md);
+  gap: var(--gap-sm);
 }
 .sticky-header {
   position: fixed;

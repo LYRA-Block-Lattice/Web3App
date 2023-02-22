@@ -18,36 +18,36 @@ const WalletCard: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="wallet-card">
-      <div className="wallet-card-inner">
-        <div className="rectangle-wrapper">
-          <div className="rectangle2" />
+    <div className="wallet-card2">
+      <div className="wallet-card-inner3">
+        <div className="rectangle-frame">
+          <div className="rectangle4" />
         </div>
       </div>
       <div className="frame-parent2">
-        <div className="balance-display-zone-parent">
-          <a className="balance-display-zone">
-            <button className="wallet-name-label">{app.name}</button>
-            <div className="balance-display-zone-child" />
-            <b className="usdtbalance">
+        <div className="balance-display-zone-container">
+          <a className="balance-display-zone2">
+            <button className="wallet-name-label2">{app.name}</button>
+            <div className="line-div" />
+            <b className="usdtbalance2">
               {app.wallet.balance.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
-            <b className="lyrlabel">LYR</b>
-            <div className="balance-display-zone-item" />
-            <b className="usdtbalance">
+            <b className="usdtlabel">LYR</b>
+            <div className="balance-display-zone-child1" />
+            <b className="usdtbalance2">
               {app.wallet.usdt.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
-            <b className="lyrlabel">USDT</b>
+            <b className="usdtlabel">USDT</b>
           </a>
-          <div className="qrcode-button-wrapper">
-            <button className="qrcode-button" onClick={scanToPay}>
-              <div className="qrcode-button-round" />
+          <div className="qrcode-button-frame">
+            <button className="qrcode-button2" onClick={scanToPay}>
+              <div className="qrcode-button-round2" />
               <img
-                className="qrcode-icon"
+                className="qrcode-icon2"
                 alt=""
                 src="../asserts/qrcode-icon.svg"
               />

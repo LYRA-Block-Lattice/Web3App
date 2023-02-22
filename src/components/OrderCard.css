@@ -27,7 +27,7 @@
 .open2 {
   position: relative;
   font-size: var(--caption-size);
-  font-family: var(--font-calibri);
+  font-family: var(--font-roboto);
   color: var(--white);
   text-align: center;
 }
@@ -55,7 +55,7 @@
   padding: 0;
   background-color: transparent;
 }
-.frame-child4 {
+.frame-child5 {
   position: relative;
   width: 12.5px;
   height: 7.36px;
@@ -75,7 +75,7 @@
 }
 .title-section-item {
   position: relative;
-  border-top: 1px solid var(--text-secondary1);
+  border-top: 1px solid var(--text-secondary);
   box-sizing: border-box;
   width: 128px;
   height: 1px;
@@ -209,5 +209,5 @@
   text-align: right;
   font-size: var(--caption-size);
   color: var(--black-000000100);
-  font-family: var(--font-calibri);
+  font-family: var(--font-roboto);
 }

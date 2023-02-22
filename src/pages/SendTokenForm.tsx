@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SendTokenForm.css";
 import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
@@ -55,57 +56,20 @@ const SendTokenForm: FunctionComponent = () => {
 
   return (
     <div className="sendtokenform">
-      <nav className="navigation22">
-        <button
-          className="mini-programs-buttons4"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft2" alt="" src="../asserts/iconleft.svg" />
-        </button>
-        <button className="title7" onClick={onTitleClick}>
-          Send Token
-        </button>
-        <div className="mini-programs-buttons5">
-          <div className="stroke2" />
-          <button className="home2" onClick={onHomeClick}>
-            <img
-              className="ellipse-icon4"
-              alt=""
-              src="../asserts/ellipse.svg"
-            />
-            <img
-              className="ellipse-icon5"
-              alt=""
-              src="../asserts/ellipse1.svg"
-            />
-          </button>
-          <img
-            className="separator-icon2"
-            alt=""
-            src="../asserts/separator1.svg"
-          />
-          <button
-            className="navigationprepare-sell-order2"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="navigationprepare-sell-order-child2"
-              alt=""
-              src="../asserts/rectangle-12.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child3"
-              alt=""
-              src="../asserts/vector-7.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child4"
-              alt=""
-              src="../asserts/vector-8.svg"
-            />
-          </button>
-        </div>
-      </nav>
+      <TopNavigationBar
+        title="Send Token"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator1.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-12.svg"
+        iconleft="../asserts/iconleft.svg"
+        ellipse="../asserts/ellipse.svg"
+        ellipse1="../asserts/ellipse1.svg"
+        vector7="../asserts/vector-7.svg"
+        vector8="../asserts/vector-8.svg"
+      />
       <div className="tokentosell-parent">
         <SearchTokenInput
           key="tosend"

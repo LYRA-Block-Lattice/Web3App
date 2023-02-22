@@ -1,5 +1,6 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
+import TopNavigationBar from "../components/TopNavigationBar";
 import CollateralCalculation from "../components/CollateralCalculation";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";

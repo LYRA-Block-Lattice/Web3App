@@ -28,7 +28,7 @@
   width: 132px;
   height: 56px;
 }
-.vector-icon1 {
+.vector-icon {
   top: -0.75px;
   left: -0.75px;
   border-radius: var(--br-5xs);
@@ -37,7 +37,7 @@
 }
 .group1,
 .text4,
-.vector-icon1 {
+.vector-icon {
   position: absolute;
 }
 .text4 {
@@ -55,7 +55,7 @@
   width: 124px;
   height: 62px;
 }
-.vector-icon2 {
+.vector-icon1 {
   top: -0.75px;
   left: -0.75px;
   border-radius: var(--br-5xs);
@@ -64,7 +64,7 @@
 }
 .group2,
 .text5,
-.vector-icon2 {
+.vector-icon1 {
   position: absolute;
 }
 .text5 {
@@ -83,11 +83,11 @@
   height: 100px;
 }
 .text6,
-.vector-icon3 {
+.vector-icon2 {
   position: absolute;
   top: 0;
 }
-.vector-icon3 {
+.vector-icon2 {
   left: 0;
   border-radius: var(--br-5xs);
   width: 102px;
@@ -260,7 +260,7 @@
   left: 61px;
   gap: var(--gap-lg);
 }
-.vector-icon6 {
+.vector-icon5 {
   position: absolute;
   top: -0.75px;
   left: -0.75px;

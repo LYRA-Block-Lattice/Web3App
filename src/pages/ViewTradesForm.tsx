@@ -25,61 +25,57 @@ const ViewTradesForm: FunctionComponent = () => {
     });
   }, []);
 
+  const onBannerImageClick = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   return (
     <div className="viewtradesform">
-      <nav className="navigation26">
-        <button
-          className="mini-programs-buttons12"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft6" alt="" src="../asserts/iconleft.svg" />
-        </button>
-        <button className="title11" onClick={onTitleClick}>
-          My Trades
-        </button>
-        <div className="mini-programs-buttons13">
-          <div className="stroke6" />
-          <button className="home6" onClick={onHomeClick}>
-            <img
-              className="ellipse-icon12"
-              alt=""
-              src="../asserts/ellipse.svg"
-            />
-            <img
-              className="ellipse-icon13"
-              alt=""
-              src="../asserts/ellipse1.svg"
-            />
-          </button>
-          <img
-            className="separator-icon6"
-            alt=""
-            src="../asserts/separator1.svg"
-          />
-          <button
-            className="navigationprepare-sell-order6"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="navigationprepare-sell-order-child14"
-              alt=""
-              src="../asserts/rectangle-11.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child15"
-              alt=""
-              src="../asserts/vector-7.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child16"
-              alt=""
-              src="../asserts/vector-8.svg"
-            />
-          </button>
-        </div>
-      </nav>
+      <TopNavigationBar
+        title="My Trades"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator1.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-11.svg"
+        iconleft="../asserts/iconleft.svg"
+        ellipse="../asserts/ellipse.svg"
+        ellipse1="../asserts/ellipse1.svg"
+        vector7="../asserts/vector-7.svg"
+        vector8="../asserts/vector-8.svg"
+      />
       <div className="wallet-card-group">
-        <PrimaryAccountContainer />
+        <div className="wallet-card">
+          <div className="wallet-card-inner">
+            <div className="rectangle-wrapper">
+              <div className="rectangle2" />
+            </div>
+          </div>
+          <div className="wallet-card-child">
+            <div className="balance-display-zone-parent">
+              <a className="balance-display-zone">
+                <button className="wallet-name-label">
+                  My Primary Account
+                </button>
+                <div className="balance-display-zone-child" />
+                <b className="usdtbalance">1,025,000</b>
+                <b className="lyrlabel">LYR</b>
+                <div className="balance-display-zone-item" />
+              </a>
+              <div className="qrcode-button-wrapper">
+                <button className="qrcode-button">
+                  <div className="qrcode-button-round" />
+                  <img
+                    className="qrcode-icon"
+                    alt=""
+                    src="../asserts/qrcode-icon.svg"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <MarketToolBar
           homeIconInterlocution="../asserts/home--icon--interlocution10.svg"
           homeIconInterlocution1="../asserts/home--icon--interlocution11.svg"

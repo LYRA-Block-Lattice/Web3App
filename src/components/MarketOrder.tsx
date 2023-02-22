@@ -61,68 +61,68 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   }, [orderStatusBackgroundColor]);
 
   return (
-    <div className="ordercard">
-      <div className="order-brief-section">
-        <button className="banner-image" onClick={toggle}>
-          <div className="order-banner">
-            <div className="order-image">
+    <div className="ordercard1">
+      <div className="order-brief-section1">
+        <button className="banner-image1" onClick={toggle}>
+          <div className="order-banner1">
+            <div className="order-image1">
               <img
-                className="icbaseline-generating-tokens-icon"
+                className="icbaseline-generating-tokens-icon1"
                 alt=""
                 src={offeringIcon}
               />
               <img
-                className="order-image-child"
+                className="order-image-item"
                 alt=""
                 src="../asserts/arrow-1.svg"
               />
               <img
-                className="icbaseline-generating-tokens-icon"
+                className="icbaseline-generating-tokens-icon1"
                 alt=""
                 src={bidingIcon}
               />
             </div>
-            <div className="order-status" style={orderStatusStyle}>
-              <b className="open">
+            <div className="order-status1" style={orderStatusStyle}>
+              <b className="open1">
                 {UniOrderStatus[orderStatus ?? UniOrderStatus.Closed]}
               </b>
             </div>
           </div>
         </button>
         <Link
-          className="title-section"
+          className="title-section1"
           to={`/assertdetailview?orderId=${orderId}`}
         >
           <div className="sell-parent">
             <b className="sell">Sell</b>
             <b className="sell">{offering}</b>
             <img className="arrow-icon" alt="" src="../asserts/arrow-2.svg" />
-            <b className="tetherusdt2">{biding}</b>
+            <b className="tetherusdt3">{biding}</b>
           </div>
           <div>{time.DateTime}</div>
-          <div className="details-section">
-            <div className="block3">
+          <div className="details-section1">
+            <div className="block31">
               <div className="sell">Amount</div>
               <div className="sell">Limit Min</div>
               <div className="sell">Limit Max</div>
             </div>
-            <div className="block4">
+            <div className="block41">
               <div className="sell">{amount}</div>
               <div className="sell">{limitMin}</div>
               <div className="sell">{limitMax}</div>
             </div>
-            <div className="block1">
-              <div className="price3">Price</div>
+            <div className="block11">
+              <div className="price4">Price</div>
             </div>
-            <div className="block2">
+            <div className="block21">
               <b className="sell">{price}</b>
             </div>
-            <div className="details-section-child" />
+            <div className="details-section-item" />
           </div>
         </Link>
       </div>
-      <div className="trades-section">
-        <div className="width-controller" />
+      <div className="trades-section1">
+        <div className="width-controller1" />
       </div>
       <div className="userprofilesection">
         <img

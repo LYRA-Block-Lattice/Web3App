@@ -23,7 +23,6 @@ import PreviewSellOrderForm from "./pages/PreviewSellOrderForm";
 import Redir from "./pages/Redir";
 import About from "./pages/About";
 import ScanToPay from "./pages/ScanToPay";
-import Empty from "./pages/Empty";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
 
@@ -136,10 +135,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/empty":
-        title = "";
-        metaDescription = "";
-        break;
     }
 
     if (title) {
@@ -206,8 +201,6 @@ function App() {
       <Route path="/about" element={<About />} />
 
       <Route path="/scantopay" element={<ScanToPay />} />
-
-      <Route path="/empty" element={<Empty />} />
     </Routes>
   );
 }

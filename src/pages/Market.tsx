@@ -36,53 +36,20 @@ const Market: FunctionComponent = () => {
 
   return (
     <div className="market">
-      <nav className="navigation2">
-        <button
-          className="mini-programs-buttons"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
-        </button>
-        <button className="title" onClick={onTitleClick}>
-          Market
-        </button>
-        <div className="mini-programs-buttons1">
-          <div className="stroke" />
-          <button className="home" onClick={onHomeClick}>
-            <img className="ellipse-icon" alt="" src="../asserts/ellipse.svg" />
-            <img
-              className="ellipse-icon1"
-              alt=""
-              src="../asserts/ellipse1.svg"
-            />
-          </button>
-          <img
-            className="separator-icon"
-            alt=""
-            src="../asserts/separator.svg"
-          />
-          <button
-            className="navigationprepare-sell-order"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="navigationprepare-sell-order-child"
-              alt=""
-              src="../asserts/rectangle-1.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-item"
-              alt=""
-              src="../asserts/vector-7.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-inner"
-              alt=""
-              src="../asserts/vector-8.svg"
-            />
-          </button>
-        </div>
-      </nav>
+      <TopNavigationBar
+        title="Market"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-1.svg"
+        iconleft="../asserts/iconleft.svg"
+        ellipse="../asserts/ellipse.svg"
+        ellipse1="../asserts/ellipse1.svg"
+        vector7="../asserts/vector-7.svg"
+        vector8="../asserts/vector-8.svg"
+      />
       <div className="orderandcatalog">
         <MarketToolBar
           homeIconInterlocution="../asserts/home--icon--interlocution.svg"

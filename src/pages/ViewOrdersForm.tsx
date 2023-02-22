@@ -71,59 +71,51 @@ const ViewOrdersForm: FunctionComponent = () => {
 
   return (
     <div className="viewordersform">
-      <nav className="navigation27">
-        <button
-          className="mini-programs-buttons14"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft7" alt="" src="../asserts/iconleft.svg" />
-        </button>
-        <button className="title12" onClick={onTitleClick}>
-          My Orders
-        </button>
-        <div className="mini-programs-buttons15">
-          <div className="stroke7" />
-          <button className="home7" onClick={onHomeClick}>
-            <img
-              className="ellipse-icon14"
-              alt=""
-              src="../asserts/ellipse.svg"
-            />
-            <img
-              className="ellipse-icon15"
-              alt=""
-              src="../asserts/ellipse1.svg"
-            />
-          </button>
-          <img
-            className="separator-icon7"
-            alt=""
-            src="../asserts/separator1.svg"
-          />
-          <button
-            className="navigationprepare-sell-order7"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="navigationprepare-sell-order-child17"
-              alt=""
-              src="../asserts/rectangle-17.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child18"
-              alt=""
-              src="../asserts/vector-7.svg"
-            />
-            <img
-              className="navigationprepare-sell-order-child19"
-              alt=""
-              src="../asserts/vector-8.svg"
-            />
-          </button>
-        </div>
-      </nav>
+      <TopNavigationBar
+        title="My Orders"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator1.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-17.svg"
+        iconleft="../asserts/iconleft.svg"
+        ellipse="../asserts/ellipse.svg"
+        ellipse1="../asserts/ellipse1.svg"
+        vector7="../asserts/vector-7.svg"
+        vector8="../asserts/vector-8.svg"
+      />
       <div className="wallet-card-container">
-        <PrimaryAccountContainer />
+        <div className="wallet-card1">
+          <div className="wallet-card-inner1">
+            <div className="rectangle-container">
+              <div className="rectangle3" />
+            </div>
+          </div>
+          <div className="wallet-card-inner2">
+            <div className="balance-display-zone-group">
+              <a className="balance-display-zone1">
+                <button className="wallet-name-label1">
+                  My Primary Account
+                </button>
+                <div className="balance-display-zone-inner" />
+                <b className="usdtbalance1">1,025,000</b>
+                <b className="lyrlabel1">LYR</b>
+                <div className="rectangle-div" />
+              </a>
+              <div className="qrcode-button-container">
+                <button className="qrcode-button1">
+                  <div className="qrcode-button-round1" />
+                  <img
+                    className="qrcode-icon1"
+                    alt=""
+                    src="../asserts/qrcode-icon.svg"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <MarketToolBar
           homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
           homeIconInterlocution1="../asserts/home--icon--interlocution16.svg"

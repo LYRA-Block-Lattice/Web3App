@@ -140,7 +140,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
           <div className="sell-group">
             <b className="sold">Sell</b>
             <b className="sold">{offering}</b>
-            <img className="frame-child4" alt="" src="../asserts/arrow-2.svg" />
+            <img className="frame-child5" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt4">{biding}</b>
           </div>
           <div className="title-section-item" />

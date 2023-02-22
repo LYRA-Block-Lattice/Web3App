@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: flex-start;
 }
-.amount,
+.total,
 .x {
   position: relative;
   letter-spacing: 0.41px;
@@ -36,7 +36,7 @@
 .x {
   font-size: var(--body-semibold-size);
 }
-.amount {
+.total {
   display: inline-block;
   width: 63px;
   flex-shrink: 0;

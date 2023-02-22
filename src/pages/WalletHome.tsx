@@ -1,4 +1,5 @@
 import { FunctionComponent, useState, useCallback, useEffect } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
@@ -128,57 +129,20 @@ const WalletHome: FunctionComponent = () => {
   return (
     <>
       <div className="wallethome">
-        <nav className="navigation23">
-          <button
-            className="mini-programs-buttons6"
-            onClick={onMiniProgramsButtonsClick}
-          >
-            <img className="iconleft3" alt="" src="../asserts/iconleft.svg" />
-          </button>
-          <button className="title8" onClick={onTitleClick}>
-            Wallet
-          </button>
-          <div className="mini-programs-buttons7">
-            <div className="stroke3" />
-            <button className="home3" onClick={onHomeClick}>
-              <img
-                className="ellipse-icon6"
-                alt=""
-                src="../asserts/ellipse.svg"
-              />
-              <img
-                className="ellipse-icon7"
-                alt=""
-                src="../asserts/ellipse1.svg"
-              />
-            </button>
-            <img
-              className="separator-icon3"
-              alt=""
-              src="../asserts/separator1.svg"
-            />
-            <button
-              className="navigationprepare-sell-order3"
-              onClick={onNavigationPrepareSellOrderClick}
-            >
-              <img
-                className="navigationprepare-sell-order-child5"
-                alt=""
-                src="../asserts/rectangle-13.svg"
-              />
-              <img
-                className="navigationprepare-sell-order-child6"
-                alt=""
-                src="../asserts/vector-7.svg"
-              />
-              <img
-                className="navigationprepare-sell-order-child7"
-                alt=""
-                src="../asserts/vector-8.svg"
-              />
-            </button>
-          </div>
-        </nav>
+        <TopNavigationBar
+          title="Wallet"
+          onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+          onTitleClick={onTitleClick}
+          onHomeClick={onHomeClick}
+          separator="../asserts/separator1.svg"
+          onContextPlusClick={onContextPlusClick}
+          rectangle1="../asserts/rectangle-13.svg"
+          iconleft="../asserts/iconleft.svg"
+          ellipse="../asserts/ellipse.svg"
+          ellipse1="../asserts/ellipse1.svg"
+          vector7="../asserts/vector-7.svg"
+          vector8="../asserts/vector-8.svg"
+        />
         <div className="wallet-card-parent">
           <WalletCard />
           <div className="iconssection-wrapper">

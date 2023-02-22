@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
+import TopNavigationBar from "../components/TopNavigationBar";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./UserProfile.css";
 
@@ -15,59 +16,26 @@ const UserProfile: FunctionComponent = () => {
     //TODO: back home
   }, []);
 
-  const onNavigationPrepareSellOrderClick = useCallback(() => {
+  const onContextPlusClick = useCallback(() => {
     //TODO: context menu
   }, []);
 
   return (
     <div className="userprofile">
-      <nav className="navigation21">
-        <button
-          className="mini-programs-buttons2"
-          onClick={onMiniProgramsButtonsClick}
-        >
-          <img className="iconleft1" alt="" src="../asserts/iconleft.svg" />
-        </button>
-        <button className="title1" onClick={onTitleClick}>
-          My Trades
-        </button>
-        <div className="mini-programs-buttons3">
-          <div className="stroke1" />
-          <button className="home1" onClick={onHomeClick}>
-            <img
-              className="ellipse-icon2"
-              alt=""
-              src="../asserts/ellipse.svg"
-            />
-            <img
-              className="ellipse-icon3"
-              alt=""
-              src="../asserts/ellipse1.svg"
-            />
-          </button>
-          <img
-            className="separator-icon1"
-            alt=""
-            src="../asserts/separator1.svg"
-          />
-          <button
-            className="navigationprepare-sell-order1"
-            onClick={onNavigationPrepareSellOrderClick}
-          >
-            <img
-              className="rectangle-icon"
-              alt=""
-              src="../asserts/rectangle-11.svg"
-            />
-            <img className="vector-icon" alt="" src="../asserts/vector-7.svg" />
-            <img
-              className="navigationprepare-sell-order-child1"
-              alt=""
-              src="../asserts/vector-8.svg"
-            />
-          </button>
-        </div>
-      </nav>
+      <TopNavigationBar
+        title="User Profile"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+        onHomeClick={onHomeClick}
+        separator="../asserts/separator1.svg"
+        onContextPlusClick={onContextPlusClick}
+        rectangle1="../asserts/rectangle-11.svg"
+        iconleft="../asserts/iconleft.svg"
+        ellipse="../asserts/ellipse.svg"
+        ellipse1="../asserts/ellipse1.svg"
+        vector7="../asserts/vector-7.svg"
+        vector8="../asserts/vector-8.svg"
+      />
       <div className="form">
         <div className="card">
           <div className="item">
@@ -154,10 +122,10 @@ const UserProfile: FunctionComponent = () => {
                 </div>
                 <div className="button-group">
                   <div className="button">
-                    <div className="title2">删除</div>
+                    <div className="title">删除</div>
                   </div>
                   <div className="button">
-                    <div className="title2">修改</div>
+                    <div className="title">修改</div>
                   </div>
                 </div>
               </div>
@@ -174,10 +142,10 @@ const UserProfile: FunctionComponent = () => {
                 </div>
                 <div className="button-group">
                   <div className="button">
-                    <div className="title2">删除</div>
+                    <div className="title">删除</div>
                   </div>
                   <div className="button">
-                    <div className="title2">修改</div>
+                    <div className="title">修改</div>
                   </div>
                 </div>
               </div>
