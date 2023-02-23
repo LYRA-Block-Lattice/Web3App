@@ -31,20 +31,20 @@ const WalletHome: FunctionComponent = () => {
         <WalletToolBar />
         <div className="coinlisting">
           <div className="catalogtab1">
-            <div className="nft-container">
-              <b className="nft1">NFT</b>
-            </div>
-            <div className="nft-container">
-              <b className="nft1">Fiat</b>
-            </div>
-            <div className="nft-container">
-              <b className="nft1">Goods</b>
-            </div>
-            <div className="nft-container">
-              <b className="nft1">Service</b>
-            </div>
             <div className="token-container">
-              <b className="nft1">Token</b>
+              <b className="token1">Token</b>
+            </div>
+            <div className="nft-container">
+              <b className="token1">NFT</b>
+            </div>
+            <div className="nft-container">
+              <b className="token1">Fiat</b>
+            </div>
+            <div className="nft-container">
+              <b className="token1">Goods</b>
+            </div>
+            <div className="nft-container">
+              <b className="token1">Service</b>
             </div>
           </div>
           <div className="tokendisplayitem">

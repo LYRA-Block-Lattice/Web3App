@@ -51,20 +51,20 @@ const Market: FunctionComponent = () => {
         </div>
         <div className="tradableorderssection">
           <div className="catalogtab">
-            <div className="nft-wrapper">
-              <b className="nft">NFT</b>
-            </div>
-            <div className="nft-wrapper">
-              <b className="nft">Fiat</b>
-            </div>
-            <div className="nft-wrapper">
-              <b className="nft">Goods</b>
-            </div>
-            <div className="nft-wrapper">
-              <b className="nft">Service</b>
-            </div>
             <div className="token-wrapper">
-              <b className="nft">Token</b>
+              <b className="token">Token</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="token">NFT</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="token">Fiat</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="token">Goods</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="token">Service</b>
             </div>
           </div>
           <div className="ordercard">
