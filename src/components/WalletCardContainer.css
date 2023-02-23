@@ -85,7 +85,7 @@
   bottom: 0;
   left: 0;
   border-radius: var(--br-2xl);
-  background-color: var(--color-silver-200);
+  background-color: var(--color-silver-100);
   opacity: 0.5;
   mix-blend-mode: normal;
 }

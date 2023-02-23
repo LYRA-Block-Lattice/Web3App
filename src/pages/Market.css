@@ -174,7 +174,7 @@
 }
 .a-big-seller-parent {
   flex: 1;
-  padding: var(--padding-8xs) var(--padding-10xl) var(--padding-8xs) 0;
+  padding: var(--padding-8xs) var(--padding-9xl) var(--padding-8xs) 0;
   align-items: flex-start;
 }
 .parent {

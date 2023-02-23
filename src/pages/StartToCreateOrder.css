@@ -1,3 +1,102 @@
+.i-want-to,
+.token2 {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  display: inline-block;
+}
+.i-want-to {
+  font-weight: 500;
+  width: 119px;
+}
+.token2 {
+  font-size: var(--font-size-5xl);
+  font-family: var(--regular-body1);
+  color: var(--white1);
+  text-align: center;
+  width: 71px;
+}
+.select-token-catalog-button,
+.token-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.select-token-catalog-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-7xl) var(--padding-5xl);
+  background-color: var(--tertiary);
+  border-radius: var(--br-2xs);
+  box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+}
+.mapart-gallery-icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.fiat2,
+.goods2 {
+  position: relative;
+  font-size: var(--font-size-5xl);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  display: inline-block;
+  font-family: var(--regular-body1);
+  color: var(--white1);
+  text-align: center;
+  width: 73px;
+}
+.goods2 {
+  width: 74px;
+}
+.catalogselection,
+.tradecatalog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.tradecatalog {
+  background-color: var(--white1);
+  width: 110px;
+  overflow: hidden;
+  padding: var(--padding-3xl) var(--padding-3xs) var(--padding-4xs);
+  box-sizing: border-box;
+  gap: var(--gap-md);
+}
+.catalogselection {
+  gap: var(--gap-6xs);
+}
+.catalog-section-child {
+  position: relative;
+  border-right: 1px solid #bcbcbc;
+  box-sizing: border-box;
+  width: 1px;
+  height: 479px;
+  flex-shrink: 0;
+}
+.catalog-section {
+  width: 324px;
+  height: 533px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 0 50px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 29px;
+}
 .primary-button6 {
   position: relative;
   font-size: var(--font-size-6xl);
@@ -49,4 +148,8 @@
   padding: 0 var(--padding-2xs);
   box-sizing: border-box;
   gap: var(--gap-lg);
+  text-align: center;
+  font-size: var(--body-m-size);
+  color: var(--black-0000001001);
+  font-family: var(--regular-body1);
 }

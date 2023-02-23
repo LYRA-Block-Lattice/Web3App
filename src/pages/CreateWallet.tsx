@@ -9,7 +9,7 @@ import {
   Checkbox,
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./CreateWallet.css";
 
 const CreateWallet: FunctionComponent = () => {
@@ -145,12 +145,7 @@ const CreateWallet: FunctionComponent = () => {
           <div className="mini-button">Open</div>
         </button>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light.svg"
-        moleculeImageUrl="../molecule-light.svg"
-        walletImageUrl="../wallet-light.svg"
-        userImageUrl="../user-alt-light.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

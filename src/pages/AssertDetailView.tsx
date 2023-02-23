@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";
 
 const AssertDetailView: FunctionComponent = () => {
@@ -234,14 +234,7 @@ const AssertDetailView: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light6.svg"
-        moleculeImageUrl="../molecule-light6.svg"
-        walletImageUrl="../wallet-light6.svg"
-        userImageUrl="../user-alt-light6.svg"
-        propColor="#0ebd8d"
-        propColor1="#434343"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

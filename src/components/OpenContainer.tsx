@@ -28,13 +28,13 @@ const OpenContainer: FunctionComponent<OpenContainerType> = ({
       <div className="order-banner2">
         <div className="order-image2" style={orderImageStyle}>
           <img
-            className="icbaseline-generating-tokens-icon2"
+            className="icbaseline-generating-tokens-icon4"
             alt=""
             src={tokenImageUrl}
           />
           <img className="order-image-inner" alt="" src="../arrow-1.svg" />
           <img
-            className="icbaseline-generating-tokens-icon2"
+            className="icbaseline-generating-tokens-icon4"
             alt=""
             src="../carbonuserservicedesk2.svg"
           />

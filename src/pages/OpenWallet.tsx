@@ -12,7 +12,7 @@ import {
   IconButton,
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./OpenWallet.css";
 
 const OpenWallet: FunctionComponent = () => {
@@ -79,12 +79,7 @@ const OpenWallet: FunctionComponent = () => {
         </button>
         <button className="forgot-password-copy">Forgot password?</button>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light.svg"
-        moleculeImageUrl="../molecule-light.svg"
-        walletImageUrl="../wallet-light.svg"
-        userImageUrl="../user-alt-light.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

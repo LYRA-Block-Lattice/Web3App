@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import { useNavigate } from "react-router-dom";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./CreateOrderSuccessForm.css";
 
 const CreateOrderSuccessForm: FunctionComponent = () => {
@@ -52,12 +52,7 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
           <div className="secondary-button3">View my orders</div>
         </button>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light6.svg"
-        moleculeImageUrl="../molecule-light6.svg"
-        walletImageUrl="../wallet-light6.svg"
-        userImageUrl="../user-alt-light6.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

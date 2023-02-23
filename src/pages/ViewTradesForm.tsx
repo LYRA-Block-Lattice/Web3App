@@ -3,7 +3,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import WalletCardContainer from "../components/WalletCardContainer";
 import MarketToolBarContainer from "../components/MarketToolBarContainer";
 import TradeContainer from "../components/TradeContainer";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ViewTradesForm.css";
 
 const ViewTradesForm: FunctionComponent = () => {
@@ -42,14 +42,7 @@ const ViewTradesForm: FunctionComponent = () => {
         />
         <TradeContainer />
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light.svg"
-        moleculeImageUrl="../molecule-light.svg"
-        walletImageUrl="../wallet-light.svg"
-        userImageUrl="../user-alt-light.svg"
-        propColor1="#434343"
-        propColor2="#0ebd8d"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

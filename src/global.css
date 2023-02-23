@@ -66,8 +66,7 @@ body {
   --color-dimgray-300: #656565;
   --accent-strong-blue: #554af0;
   --secondary1: #fc7c00;
-  --color-silver-100: #bcbcbc;
-  --color-silver-200: rgba(209, 190, 190, 0.47);
+  --color-silver-100: rgba(209, 190, 190, 0.47);
   --info1: #2196f3;
   --color-forestgreen: #008d30;
   --color-lightyellow: #f6ffde;
@@ -91,7 +90,6 @@ body {
   --gap-3xl: 20px;
   --gap-4xl: 24px;
   --gap-5xl: 26px;
-  --gap-6xl: 29px;
 
   /* Paddings */
   --padding-10xs: 2px;
@@ -115,8 +113,7 @@ body {
   --padding-6xl: 28px;
   --padding-7xl: 32px;
   --padding-8xl: 33px;
-  --padding-9xl: 50px;
-  --padding-10xl: 84px;
+  --padding-9xl: 84px;
 
   /* border radiuses */
   --br-5xs: 2px;

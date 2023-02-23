@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./About.css";
 
 const About: FunctionComponent = () => {
@@ -45,13 +45,7 @@ const About: FunctionComponent = () => {
           © Copyright 2023 Lyra Live Inc., All Rights Reserved.
         </div>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light.svg"
-        moleculeImageUrl="../molecule-light.svg"
-        walletImageUrl="../wallet-light.svg"
-        userImageUrl="../user-alt-light.svg"
-        propColor1="#434343"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

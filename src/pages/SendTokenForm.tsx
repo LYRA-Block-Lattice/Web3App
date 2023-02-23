@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SendTokenForm.css";
 
 const SendTokenForm: FunctionComponent = () => {
@@ -69,12 +69,7 @@ const SendTokenForm: FunctionComponent = () => {
           <div className="primary-button3">Send</div>
         </button>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light.svg"
-        moleculeImageUrl="../molecule-light.svg"
-        walletImageUrl="../wallet-light.svg"
-        userImageUrl="../user-alt-light.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

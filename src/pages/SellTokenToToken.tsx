@@ -3,7 +3,7 @@ import { Autocomplete, TextField } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SellTokenToToken.css";
 
 const SellTokenToToken: FunctionComponent = () => {
@@ -214,12 +214,7 @@ const SellTokenToToken: FunctionComponent = () => {
             <div className="primary-button5">Review the Order</div>
           </button>
         </div>
-        <Footer
-          iconImageUrl="../box-alt-light.svg"
-          moleculeImageUrl="../molecule-light.svg"
-          walletImageUrl="../wallet-light.svg"
-          userImageUrl="../user-alt-light.svg"
-        />
+        <BottomNavigationBar />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

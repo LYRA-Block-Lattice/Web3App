@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ScanToPay.css";
 
 const ScanToPay: FunctionComponent = () => {
@@ -35,15 +35,7 @@ const ScanToPay: FunctionComponent = () => {
           <div className="primary-button">Scan to pay</div>
         </button>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light.svg"
-        moleculeImageUrl="../molecule-light.svg"
-        walletImageUrl="../wallet-light.svg"
-        userImageUrl="../user-alt-light.svg"
-        propColor="#434343"
-        propColor1="#0ebd8d"
-        propColor2="#434343"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

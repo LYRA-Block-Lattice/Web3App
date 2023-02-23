@@ -1,8 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import TokenContainer from "../components/TokenContainer";
 import { useNavigate } from "react-router-dom";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./StartToCreateOrder.css";
 
 const StartToCreateOrder: FunctionComponent = () => {
@@ -33,7 +32,119 @@ const StartToCreateOrder: FunctionComponent = () => {
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
       <div className="catalog-section-parent">
-        <TokenContainer />
+        <div className="catalog-section">
+          <div className="catalogselection">
+            <div className="i-want-to">I want to sell:</div>
+            <div className="tradecatalog">
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../icbaselinegeneratingtokens4.svg"
+                />
+                <div className="token-frame">
+                  <b className="token2">Token</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../mapartgallery.svg"
+                />
+                <div className="token-frame">
+                  <b className="token2">NFT</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../fluentemojihighcontrastdollarbanknote.svg"
+                />
+                <div className="token-frame">
+                  <b className="fiat2">Fiat</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../mditruckdelivery.svg"
+                />
+                <div className="token-frame">
+                  <b className="goods2">Goods</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../carbonuserservicedesk4.svg"
+                />
+                <div className="token-frame">
+                  <b className="fiat2">Service</b>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div className="catalog-section-child" />
+          <div className="catalogselection">
+            <div className="i-want-to">I want to get:</div>
+            <div className="tradecatalog">
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../icbaselinegeneratingtokens5.svg"
+                />
+                <div className="token-frame">
+                  <b className="token2">Token</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../mapartgallery.svg"
+                />
+                <div className="token-frame">
+                  <b className="token2">NFT</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../fluentemojihighcontrastdollarbanknote.svg"
+                />
+                <div className="token-frame">
+                  <b className="fiat2">Fiat</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../mditruckdelivery1.svg"
+                />
+                <div className="token-frame">
+                  <b className="goods2">Goods</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../carbonuserservicedesk4.svg"
+                />
+                <div className="token-frame">
+                  <b className="fiat2">Service</b>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
         <button
           className="prepare-sell-order-button13"
           onClick={onPrepareSellOrderButtonClick}
@@ -41,12 +152,7 @@ const StartToCreateOrder: FunctionComponent = () => {
           <div className="primary-button6">Specify Token</div>
         </button>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light6.svg"
-        moleculeImageUrl="../molecule-light6.svg"
-        walletImageUrl="../wallet-light6.svg"
-        userImageUrl="../user-alt-light6.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };
