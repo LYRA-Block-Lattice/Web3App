@@ -1,0 +1,22 @@
+import { FunctionComponent } from "react";
+import "./SelectTokenCatalogButton.css";
+
+type SelectTokenCatalogButtonType = {
+  imgurl?: string;
+  cat?: string;
+};
+
+const SelectTokenCatalogButton: FunctionComponent<
+  SelectTokenCatalogButtonType
+> = ({ imgurl, cat }) => {
+  return (
+    <button className="select-token-catalog-button">
+      <img className="icbaseline-generating-tokens-icon2" alt="" src={imgurl} />
+      <div className="token-wrapper">
+        <b className="token">{cat}</b>
+      </div>
+    </button>
+  );
+};
+
+export default SelectTokenCatalogButton;
