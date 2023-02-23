@@ -16,42 +16,38 @@ const BottomNavigationBar: FunctionComponent = () => {
         <div className="home-indicator1" />
       </div>
       <div className="tabbar">
-        <button onClick={gotoMarket}>
-          <div className="tabbar-item">
-            <img
-              className="box-alt-light-icon"
-              alt=""
-              src="../asserts/box-alt-light.svg"
-            />
-            <div className="text11">Market</div>
-          </div>
+        <button className="tabbar-item" onClick={gotoMarket}>
+          <img
+            className="box-alt-light-icon"
+            alt=""
+            src="../asserts/box-alt-light.svg"
+          />
+          <div className="text11">Market</div>
         </button>
-        <div className="tabbar-item">
+        <button className="tabbar-item">
           <img
             className="box-alt-light-icon"
             alt=""
             src="../asserts/molecule-light.svg"
           />
           <div className="text11">DAO</div>
-        </div>
-        <button onClick={gotoWallet}>
-          <div className="tabbar-item">
-            <img
-              className="box-alt-light-icon"
-              alt=""
-              src="../asserts/wallet-light.svg"
-            />
-            <div className="text13">Wallet</div>
-          </div>
         </button>
-        <div className="tabbar-item">
+        <button className="tabbar-item" onClick={gotoWallet}>
+          <img
+            className="box-alt-light-icon"
+            alt=""
+            src="../asserts/wallet-light.svg"
+          />
+          <div className="text13">Wallet</div>
+        </button>
+        <button className="tabbar-item">
           <img
             className="box-alt-light-icon"
             alt=""
             src="../asserts/user-alt-light.svg"
           />
           <div className="text11">Me</div>
-        </div>
+        </button>
       </div>
     </div>
   );
