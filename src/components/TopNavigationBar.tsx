@@ -48,36 +48,17 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
       <button className="title5" onClick={onTitleClick}>
         {title}
       </button>
-      <div className="mini-programs-buttons1">
-        <div className="stroke" />
-        <button className="home" onClick={onHomeClick}>
-          <img className="ellipse-icon" alt="" src="../asserts/ellipse.svg" />
-          <img className="ellipse-icon1" alt="" src="../asserts/ellipse1.svg" />
-        </button>
+      <button
+        className="mini-programs-buttons1"
+        onClick={onMiniProgramsButtons1Click}
+      >
         <img
-          className="separator-icon"
+          className="icround-plus-icon"
           alt=""
-          src="../asserts/separator1.svg"
+          src="../asserts/icroundplus.svg"
         />
-        <button className="contextplus" onClick={onContextPlusClick}>
-          <img
-            className="contextplus-child"
-            alt=""
-            src="../asserts/rectangle-11.svg"
-          />
-          <img
-            className="contextplus-item"
-            alt=""
-            src="../asserts/vector-7.svg"
-          />
-          <img
-            className="contextplus-inner"
-            alt=""
-            src="../asserts/vector-8.svg"
-          />
-        </button>
-      </div>
-    </nav>
+      </button>
+    </div>
   );
 };
 

@@ -91,19 +91,11 @@ const SellTokenToToken: FunctionComponent = () => {
   }, [price, toget]);
 
   const onMiniProgramsButtonsClick = useCallback(() => {
-    //TODO: nav back
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 
   const onTitleClick = useCallback(() => {
     //TODO: scroll top
-  }, []);
-
-  const onHomeClick = useCallback(() => {
-    //TODO: back home
-  }, []);
-
-  const onContextPlusClick = useCallback(() => {
-    //TODO: context menu
   }, []);
 
   const openGeneralPopup = useCallback(() => {

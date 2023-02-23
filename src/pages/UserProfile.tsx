@@ -5,19 +5,11 @@ import "./UserProfile.css";
 
 const UserProfile: FunctionComponent = () => {
   const onMiniProgramsButtonsClick = useCallback(() => {
-    //TODO: nav back
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 
   const onTitleClick = useCallback(() => {
     //TODO: scroll top
-  }, []);
-
-  const onHomeClick = useCallback(() => {
-    //TODO: back home
-  }, []);
-
-  const onContextPlusClick = useCallback(() => {
-    //TODO: context menu
   }, []);
 
   return (
