@@ -38,7 +38,7 @@
   width: 292px;
 }
 .secondary-button3 {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   font-weight: 500;
   font-family: var(--regular-body1);
   color: var(--white1);

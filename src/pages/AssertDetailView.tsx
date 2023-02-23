@@ -34,12 +34,12 @@ const AssertDetailView: FunctionComponent = () => {
                 <img
                   className="material-symbolsshare-icon"
                   alt=""
-                  src="../materialsymbolsshare.svg"
+                  src="../asserts/materialsymbolsshare.svg"
                 />
                 <img
                   className="material-symbolsshare-icon"
                   alt=""
-                  src="../carbonoverflowmenuhorizontal.svg"
+                  src="../asserts/carbonoverflowmenuhorizontal.svg"
                 />
               </div>
             </div>
@@ -55,13 +55,13 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../iconparksolidblockchain.svg"
+                src="../asserts/iconparksolidblockchain.svg"
               />
             </div>
             <img
               className="titlebannerregion-child"
               alt=""
-              src="../frame-61@2x.png"
+              src="../asserts/frame-61@2x.png"
             />
           </div>
           <div className="assertstatssection">
@@ -69,7 +69,7 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../icoutlineremoveredeye.svg"
+                src="../asserts/icoutlineremoveredeye.svg"
               />
               <div className="meka-legends">32 views</div>
             </div>
@@ -77,7 +77,7 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../mdicardsheartoutline.svg"
+                src="../asserts/mdicardsheartoutline.svg"
               />
               <div className="meka-legends">5 favorite</div>
             </div>
@@ -85,7 +85,7 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../mdishapeoutline.svg"
+                src="../asserts/mdishapeoutline.svg"
               />
               <div className="meka-legends">Fiat OTC</div>
             </div>
@@ -95,7 +95,7 @@ const AssertDetailView: FunctionComponent = () => {
           <img
             className="material-symbolsshare-icon"
             alt=""
-            src="../fluenttextdescription20filled.svg"
+            src="../asserts/fluenttextdescription20filled.svg"
           />
           <div className="meka-legends">Description</div>
         </div>
@@ -106,7 +106,7 @@ const AssertDetailView: FunctionComponent = () => {
           <img
             className="material-symbolsshare-icon"
             alt=""
-            src="../icoutlinepricechange.svg"
+            src="../asserts/icoutlinepricechange.svg"
           />
           <div className="meka-legends">Price and payment</div>
         </div>
@@ -212,7 +212,7 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../evapricetagsoutline.svg"
+                src="../asserts/evapricetagsoutline.svg"
               />
               <div className="primary-button4">Make offer</div>
             </button>
@@ -222,7 +222,7 @@ const AssertDetailView: FunctionComponent = () => {
           <img
             className="material-symbolsshare-icon"
             alt=""
-            src="../galasecure.svg"
+            src="../asserts/galasecure.svg"
           />
           <div className="meka-legends">Trading protection</div>
         </div>

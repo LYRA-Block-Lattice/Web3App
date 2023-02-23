@@ -29,8 +29,12 @@ const UserProfile: FunctionComponent = () => {
         <div className="card">
           <div className="item">
             <div className="label">Avatar</div>
-            <img className="avatar-icon" alt="" src="../avatar@2x.png" />
-            <img className="iconright" alt="" src="../iconright.svg" />
+            <img
+              className="avatar-icon"
+              alt=""
+              src="../asserts/avatar@2x.png"
+            />
+            <img className="iconright" alt="" src="../asserts/iconright.svg" />
           </div>
           <div className="divider">
             <div className="line" />
@@ -46,7 +50,11 @@ const UserProfile: FunctionComponent = () => {
             <div className="input-item">
               <div className="label">Nick Name</div>
               <div className="placeholder">YingMing</div>
-              <img className="iconright" alt="" src="../iconright.svg" />
+              <img
+                className="iconright"
+                alt=""
+                src="../asserts/iconright.svg"
+              />
             </div>
           </div>
           <div className="divider">
@@ -55,7 +63,7 @@ const UserProfile: FunctionComponent = () => {
           <div className="item3">
             <div className="label1">Region</div>
             <div className="placeholder">浙江省杭州市拱墅区</div>
-            <img className="iconright" alt="" src="../iconright.svg" />
+            <img className="iconright" alt="" src="../asserts/iconright.svg" />
           </div>
         </div>
         <PhoneContainer contactInfo="Phone" contactPhone="177*********98" />
@@ -107,7 +115,11 @@ const UserProfile: FunctionComponent = () => {
             </div>
             <div className="button-wrapper">
               <div className="button4">
-                <img className="iconadd-one" alt="" src="../iconaddone.svg" />
+                <img
+                  className="iconadd-one"
+                  alt=""
+                  src="../asserts/iconaddone.svg"
+                />
                 <div className="label1">新增地址</div>
               </div>
             </div>

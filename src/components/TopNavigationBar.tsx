@@ -19,13 +19,17 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   return (
     <div className="topnavigationbar">
       <button className="navbackbutton" onClick={onNavBackButtonClick}>
-        <img className="iconleft" alt="" src="../iconleft.svg" />
+        <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
       </button>
       <button className="title5" onClick={onTitleClick}>
         {title}
       </button>
       <button className="contextmenubutton" onClick={onContextMenuButtonClick}>
-        <img className="icround-plus-icon" alt="" src="../icroundplus2.svg" />
+        <img
+          className="icround-plus-icon"
+          alt=""
+          src="../asserts/icroundplus3.svg"
+        />
       </button>
     </div>
   );

@@ -34,11 +34,11 @@ const ViewTradesForm: FunctionComponent = () => {
       <div className="wallet-card-group">
         <WalletCardContainer />
         <MarketToolBarContainer
-          homeIconInterlocution="../home--icon--interlocution10.svg"
-          homeIconInterlocution1="../home--icon--interlocution11.svg"
-          homeIconInterlocution2="../home--icon--interlocution12.svg"
-          homeIconInterlocution3="../home--icon--interlocution13.svg"
-          homeIconInterlocution4="../home--icon--interlocution14.svg"
+          homeIconInterlocution="../asserts/home--icon--interlocution10.svg"
+          homeIconInterlocution1="../asserts/home--icon--interlocution11.svg"
+          homeIconInterlocution2="../asserts/home--icon--interlocution12.svg"
+          homeIconInterlocution3="../asserts/home--icon--interlocution13.svg"
+          homeIconInterlocution4="../asserts/home--icon--interlocution14.svg"
         />
         <TradeContainer />
       </div>

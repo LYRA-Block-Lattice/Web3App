@@ -4,33 +4,41 @@ import "./SellFlow.css";
 const SellFlow: FunctionComponent = () => {
   return (
     <div className="sellflow">
-      <div className="group">
+      <div className="group1">
         <div className="rectangle" />
         <div className="text1">My Wallet</div>
       </div>
-      <div className="group1">
-        <img className="vector-icon" alt="" src="../vector.svg" />
+      <div className="group2">
+        <img className="vector-icon" alt="" src="../asserts/vector.svg" />
         <div className="text2">DAO</div>
       </div>
-      <div className="group2">
-        <img className="vector-icon1" alt="" src="../vector1.svg" />
+      <div className="group3">
+        <img className="vector-icon1" alt="" src="../asserts/vector1.svg" />
         <div className="text3">Sell Order</div>
       </div>
-      <div className="group3">
-        <img className="vector-icon2" alt="" src="../vector2.svg" />
-        <div className="text4">Buyer</div>
-      </div>
       <div className="group4">
-        <img className="vector-icon2" alt="" src="../vector2.svg" />
+        <img className="vector-icon2" alt="" src="../asserts/vector2.svg" />
         <div className="text4">Buyer</div>
       </div>
       <div className="group5">
-        <img className="vector-icon2" alt="" src="../vector2.svg" />
+        <img className="vector-icon2" alt="" src="../asserts/vector2.svg" />
+        <div className="text4">Buyer</div>
+      </div>
+      <div className="group6">
+        <img className="vector-icon2" alt="" src="../asserts/vector2.svg" />
         <div className="text4">...</div>
       </div>
-      <img className="rectangle-vector" alt="" src="../rectangle--vector.svg" />
-      <img className="vector-vector" alt="" src="../vector--vector.svg" />
-      <div className="group6">
+      <img
+        className="rectangle-vector"
+        alt=""
+        src="../asserts/rectangle--vector.svg"
+      />
+      <img
+        className="vector-vector"
+        alt=""
+        src="../asserts/vector--vector.svg"
+      />
+      <div className="group7">
         <div className="rectangle1" />
         <div className="text7">My Wallet</div>
       </div>
@@ -48,34 +56,62 @@ const SellFlow: FunctionComponent = () => {
           <div className="primary-button2">Place sell order</div>
         </button>
       </div>
-      <div className="group7">
-        <img className="vector-icon5" alt="" src="../vector5.svg" />
-        <div className="text8">Trade</div>
-      </div>
       <div className="group8">
-        <img className="vector-icon5" alt="" src="../vector5.svg" />
-        <div className="text8">...</div>
+        <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />
+        <div className="text8">Trade</div>
       </div>
       <div className="group9">
-        <img className="vector-icon5" alt="" src="../vector5.svg" />
+        <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />
+        <div className="text8">...</div>
+      </div>
+      <div className="group10">
+        <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />
         <div className="text8">Trade</div>
       </div>
-      <img className="vector-vector1" alt="" src="../vector--vector1.svg" />
-      <img className="vector-vector2" alt="" src="../vector--vector2.svg" />
-      <img className="vector-vector3" alt="" src="../vector--vector3.svg" />
-      <img className="vector-vector4" alt="" src="../vector--vector4.svg" />
-      <img className="vector-vector5" alt="" src="../vector--vector4.svg" />
-      <img className="vector-vector6" alt="" src="../vector--vector4.svg" />
-      <img className="vector-rectangle" alt="" src="../vector--rectangle.svg" />
+      <img
+        className="vector-vector1"
+        alt=""
+        src="../asserts/vector--vector1.svg"
+      />
+      <img
+        className="vector-vector2"
+        alt=""
+        src="../asserts/vector--vector2.svg"
+      />
+      <img
+        className="vector-vector3"
+        alt=""
+        src="../asserts/vector--vector3.svg"
+      />
+      <img
+        className="vector-vector4"
+        alt=""
+        src="../asserts/vector--vector4.svg"
+      />
+      <img
+        className="vector-vector5"
+        alt=""
+        src="../asserts/vector--vector4.svg"
+      />
+      <img
+        className="vector-vector6"
+        alt=""
+        src="../asserts/vector--vector4.svg"
+      />
+      <img
+        className="vector-rectangle"
+        alt=""
+        src="../asserts/vector--rectangle.svg"
+      />
       <img
         className="vector-rectangle1"
         alt=""
-        src="../vector--rectangle1.svg"
+        src="../asserts/vector--rectangle1.svg"
       />
       <img
         className="vector-rectangle2"
         alt=""
-        src="../vector--rectangle2.svg"
+        src="../asserts/vector--rectangle2.svg"
       />
     </div>
   );

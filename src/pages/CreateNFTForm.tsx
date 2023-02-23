@@ -28,7 +28,7 @@ const CreateNFTForm: FunctionComponent = () => {
       <img
         className="createnftform-child"
         alt=""
-        src="../frame-627115@2x.png"
+        src="../asserts/frame-627115@2x.png"
       />
       <TextField
         className="nft-name"

@@ -40,7 +40,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../icbaselinegeneratingtokens4.svg"
+                  src="../asserts/icbaselinegeneratingtokens4.svg"
                 />
                 <div className="token-frame">
                   <b className="token2">Token</b>
@@ -50,7 +50,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../mapartgallery.svg"
+                  src="../asserts/mapartgallery.svg"
                 />
                 <div className="token-frame">
                   <b className="token2">NFT</b>
@@ -60,7 +60,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../fluentemojihighcontrastdollarbanknote.svg"
+                  src="../asserts/fluentemojihighcontrastdollarbanknote.svg"
                 />
                 <div className="token-frame">
                   <b className="fiat2">Fiat</b>
@@ -70,7 +70,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../mditruckdelivery.svg"
+                  src="../asserts/mditruckdelivery.svg"
                 />
                 <div className="token-frame">
                   <b className="goods2">Goods</b>
@@ -80,7 +80,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../carbonuserservicedesk4.svg"
+                  src="../asserts/carbonuserservicedesk4.svg"
                 />
                 <div className="token-frame">
                   <b className="fiat2">Service</b>
@@ -96,7 +96,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../icbaselinegeneratingtokens5.svg"
+                  src="../asserts/icbaselinegeneratingtokens5.svg"
                 />
                 <div className="token-frame">
                   <b className="token2">Token</b>
@@ -106,7 +106,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../mapartgallery.svg"
+                  src="../asserts/mapartgallery.svg"
                 />
                 <div className="token-frame">
                   <b className="token2">NFT</b>
@@ -116,7 +116,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../fluentemojihighcontrastdollarbanknote.svg"
+                  src="../asserts/fluentemojihighcontrastdollarbanknote.svg"
                 />
                 <div className="token-frame">
                   <b className="fiat2">Fiat</b>
@@ -126,7 +126,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../mditruckdelivery1.svg"
+                  src="../asserts/mditruckdelivery1.svg"
                 />
                 <div className="token-frame">
                   <b className="goods2">Goods</b>
@@ -136,7 +136,7 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../carbonuserservicedesk4.svg"
+                  src="../asserts/carbonuserservicedesk4.svg"
                 />
                 <div className="token-frame">
                   <b className="fiat2">Service</b>

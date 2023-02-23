@@ -27,7 +27,7 @@
 .open2 {
   position: relative;
   font-size: var(--caption-size);
-  font-family: var(--font-calibri);
+  font-family: var(--regular-body1);
   color: var(--white1);
   text-align: center;
 }

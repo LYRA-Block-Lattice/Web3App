@@ -63,5 +63,5 @@
   text-align: left;
   font-size: var(--caption-size);
   color: var(--subtitle-text);
-  font-family: var(--font-open-sans);
+  font-family: var(--regular-body1);
 }

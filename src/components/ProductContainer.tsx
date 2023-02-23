@@ -15,7 +15,7 @@ const ProductContainer: FunctionComponent<ProductContainerType> = ({
         <img
           className="lyralogoblueicon2"
           alt=""
-          src="../lyralogoblueicon@2x.png"
+          src="../asserts/lyralogoblueicon@2x.png"
         />
       </div>
       <div className="content1">

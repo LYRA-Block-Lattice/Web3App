@@ -21,7 +21,11 @@ const WalletCardContainer: FunctionComponent = () => {
           <div className="qrcode-button-container">
             <button className="qrcode-button1">
               <div className="qrcode-button-round1" />
-              <img className="qrcode-icon1" alt="" src="../qrcode-icon.svg" />
+              <img
+                className="qrcode-icon1"
+                alt=""
+                src="../asserts/qrcode-icon.svg"
+              />
             </button>
           </div>
         </div>

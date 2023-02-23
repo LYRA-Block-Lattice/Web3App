@@ -37,7 +37,11 @@ const OpenWallet: FunctionComponent = () => {
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
       <div className="illus5-copy-parent">
-        <img className="illus5-copy-icon" alt="" src="../illus5-copy.svg" />
+        <img
+          className="illus5-copy-icon"
+          alt=""
+          src="../asserts/illus5-copy.svg"
+        />
         <FormControl
           className="wallet-name1"
           sx={{ width: 343 }}

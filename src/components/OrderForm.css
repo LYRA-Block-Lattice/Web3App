@@ -15,6 +15,7 @@
   justify-content: flex-start;
   gap: var(--gap-xs);
   font-size: var(--font-size-3xl);
+  font-family: var(--regular-body1);
 }
 .title-section-item {
   position: relative;
@@ -153,5 +154,5 @@
   text-align: right;
   font-size: var(--caption-size);
   color: var(--black-0000001001);
-  font-family: var(--font-calibri);
+  font-family: var(--font-source-sans-pro);
 }

@@ -21,10 +21,10 @@
 }
 .title5 {
   flex: 1;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.02em;
   font-weight: 600;
-  font-family: var(--font-open-sans);
+  font-family: var(--regular-body1);
   color: var(--black-0000001001);
   text-align: center;
   display: inline-block;

@@ -11,7 +11,7 @@ const OrderForm: FunctionComponent = () => {
     <div className="ordercard3">
       <div className="order-brief-section3">
         <OpenContainer
-          tokenImageUrl="../icbaselinegeneratingtokens3.svg"
+          tokenImageUrl="../asserts/icbaselinegeneratingtokens3.svg"
           propBackgroundColor="#fa7268"
           onBannerImageClick={onBannerImageClick}
         />
@@ -19,7 +19,7 @@ const OrderForm: FunctionComponent = () => {
           <div className="sell-group">
             <b className="sold">Sell</b>
             <b className="sold">BTC</b>
-            <img className="frame-child6" alt="" src="../arrow-2.svg" />
+            <img className="frame-child6" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt4">tether/USDT</b>
           </div>
           <div className="title-section-item" />

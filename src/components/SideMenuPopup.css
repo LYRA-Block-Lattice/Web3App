@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 9px;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-5xl);
   color: var(--white1);
 }
 .administration-1-icon {

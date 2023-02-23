@@ -32,11 +32,15 @@ const OpenContainer: FunctionComponent<OpenContainerType> = ({
             alt=""
             src={tokenImageUrl}
           />
-          <img className="order-image-inner" alt="" src="../arrow-1.svg" />
+          <img
+            className="order-image-inner"
+            alt=""
+            src="../asserts/arrow-1.svg"
+          />
           <img
             className="icbaseline-generating-tokens-icon4"
             alt=""
-            src="../carbonuserservicedesk2.svg"
+            src="../asserts/carbonuserservicedesk2.svg"
           />
         </div>
         <div className="order-status2">

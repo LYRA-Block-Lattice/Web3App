@@ -19,7 +19,7 @@ const PhoneContainer: FunctionComponent<PhoneContainerType> = ({
         <div className="form-item-select">
           <div className="label4">{contactInfo}</div>
           <div className="placeholder9">{contactPhone}</div>
-          <img className="iconright3" alt="" src="../iconright.svg" />
+          <img className="iconright3" alt="" src="../asserts/iconright.svg" />
         </div>
       </div>
     </div>
