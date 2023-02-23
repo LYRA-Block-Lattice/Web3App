@@ -1,0 +1,67 @@
+.text {
+  flex: 1;
+  position: relative;
+  line-height: 16px;
+}
+.formCardTitle {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-md);
+  align-items: center;
+  justify-content: flex-start;
+}
+.label,
+.placeholder {
+  position: relative;
+  line-height: 24px;
+}
+.label {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  flex-shrink: 0;
+}
+.placeholder {
+  flex: 1;
+  color: var(--primary-text1);
+  text-align: right;
+}
+.iconright {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.form,
+.formItemSelect,
+.slotList {
+  align-self: stretch;
+  display: flex;
+  justify-content: flex-start;
+}
+.formItemSelect {
+  background-color: var(--selectable1);
+  flex-direction: row;
+  padding: var(--padding-2xs) var(--padding-2xs) var(--padding-2xs)
+    var(--padding-md);
+  align-items: center;
+  gap: var(--gap-sm);
+}
+.form,
+.slotList {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.slotList {
+  border-radius: var(--br-2xs);
+  background-color: var(--white1);
+  padding: var(--padding-5xs) 0;
+  font-size: var(--body-semibold-size);
+}
+.form {
+  text-align: left;
+  font-size: var(--caption-size);
+  color: var(--subtitle-text);
+  font-family: var(--font-open-sans);
+}

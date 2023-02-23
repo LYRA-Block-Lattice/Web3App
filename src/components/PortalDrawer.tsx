@@ -7,7 +7,7 @@ import {
 } from "react";
 
 import { createPortal } from "react-dom";
-import "./PortalDrawer.css";
+import styles from "./PortalDrawer.module.css";
 
 type DrawerProps = {
   overlayColor?: string;
@@ -55,7 +55,7 @@ const PortalDrawer: FunctionComponent<DrawerProps> = ({
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (
         onOutsideClick &&
-        (e.target as HTMLElement).classList.contains("portalPopupOverlay")
+        (e.target as HTMLElement).classList.contains(styles.portalPopupOverlay)
       ) {
         onOutsideClick();
       }
@@ -67,7 +67,7 @@ const PortalDrawer: FunctionComponent<DrawerProps> = ({
   return (
     <DrawerContainer>
       <div
-        className={"portalPopupOverlay"}
+        className={styles.portalPopupOverlay}
         style={drawerStyle}
         onClick={onOverlayClick}
       >

@@ -1,13 +1,13 @@
 import { FunctionComponent } from "react";
 import { TextField } from "@mui/material";
-import "./CreateNFTForm.css";
+import styles from "./CreateNFTForm.module.css";
 
 const CreateNFTForm: FunctionComponent = () => {
   return (
-    <div className="createnftform">
-      <div className="create-nft">Create NFT</div>
+    <div className={styles.createnftform}>
+      <div className={styles.createNft}>Create NFT</div>
       <TextField
-        className="nft-name"
+        className={styles.nftName}
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -26,12 +26,12 @@ const CreateNFTForm: FunctionComponent = () => {
         margin="none"
       />
       <img
-        className="createnftform-child"
+        className={styles.createnftformChild}
         alt=""
-        src="../asserts/frame-627115@2x.png"
+        src="../frame-627115@2x.png"
       />
       <TextField
-        className="nft-name"
+        className={styles.nftName}
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -41,10 +41,10 @@ const CreateNFTForm: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <div className="or">or</div>
-      <input className="select-nft-image" type="file" />
-      <button className="prepare-sell-order-button14">
-        <div className="secondary-button4">Create NFT</div>
+      <div className={styles.or}>or</div>
+      <input className={styles.selectNftImage} type="file" />
+      <button className={styles.prepareSellOrderButton}>
+        <div className={styles.secondaryButton}>Create NFT</div>
       </button>
     </div>
   );

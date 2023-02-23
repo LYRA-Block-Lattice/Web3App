@@ -1,117 +1,113 @@
 import { FunctionComponent } from "react";
-import "./SellFlow.css";
+import styles from "./SellFlow.module.css";
 
 const SellFlow: FunctionComponent = () => {
   return (
-    <div className="sellflow">
-      <div className="group">
-        <div className="rectangle" />
-        <div className="text3">My Wallet</div>
+    <div className={styles.sellflow}>
+      <div className={styles.group}>
+        <div className={styles.rectangle} />
+        <div className={styles.text}>My Wallet</div>
       </div>
-      <div className="group1">
-        <img className="vector-icon" alt="" src="../asserts/vector.svg" />
-        <div className="text4">DAO</div>
+      <div className={styles.group1}>
+        <img className={styles.vectorIcon} alt="" src="../vector.svg" />
+        <div className={styles.text1}>DAO</div>
       </div>
-      <div className="group2">
-        <img className="vector-icon1" alt="" src="../asserts/vector1.svg" />
-        <div className="text5">Sell Order</div>
+      <div className={styles.group2}>
+        <img className={styles.vectorIcon1} alt="" src="../vector1.svg" />
+        <div className={styles.text2}>Sell Order</div>
       </div>
-      <div className="group3">
-        <img className="vector-icon2" alt="" src="../asserts/vector2.svg" />
-        <div className="text6">Buyer</div>
+      <div className={styles.group3}>
+        <img className={styles.vectorIcon2} alt="" src="../vector2.svg" />
+        <div className={styles.text3}>Buyer</div>
       </div>
-      <div className="group4">
-        <img className="vector-icon2" alt="" src="../asserts/vector2.svg" />
-        <div className="text6">Buyer</div>
+      <div className={styles.group4}>
+        <img className={styles.vectorIcon2} alt="" src="../vector2.svg" />
+        <div className={styles.text3}>Buyer</div>
       </div>
-      <div className="group5">
-        <img className="vector-icon2" alt="" src="../asserts/vector2.svg" />
-        <div className="text6">...</div>
+      <div className={styles.group5}>
+        <img className={styles.vectorIcon2} alt="" src="../vector2.svg" />
+        <div className={styles.text3}>...</div>
       </div>
       <img
-        className="rectangle-vector"
+        className={styles.rectangleVector}
         alt=""
-        src="../asserts/rectangle--vector.svg"
+        src="../rectangle--vector.svg"
       />
-      <img
-        className="vector-vector"
-        alt=""
-        src="../asserts/vector--vector.svg"
-      />
-      <div className="group6">
-        <div className="rectangle1" />
-        <div className="text9">My Wallet</div>
+      <img className={styles.vectorVector} alt="" src="../vector--vector.svg" />
+      <div className={styles.group6}>
+        <div className={styles.rectangle1} />
+        <div className={styles.text6}>My Wallet</div>
       </div>
-      <div className="offeringlabel">10 test/BTC</div>
-      <div className="sellforlabel">
-        <div className="bidinglabel">1000 tether/USDT</div>
+      <div className={styles.offeringlabel}>10 test/BTC</div>
+      <div className={styles.sellforlabel}>
+        <div className={styles.bidinglabel}>1000 tether/USDT</div>
       </div>
-      <div className="ordercollateral">1024 LYR</div>
-      <div className="returncollateral">1000 LYR</div>
-      <div className="prepare-sell-order-button-parent">
-        <button className="prepare-sell-order-button">
-          <div className="primary-button">Back</div>
+      <div className={styles.ordercollateral}>1024 LYR</div>
+      <div className={styles.returncollateral}>1000 LYR</div>
+      <div className={styles.prepareSellOrderButtonParent}>
+        <button className={styles.prepareSellOrderButton}>
+          <div className={styles.primaryButton}>Back</div>
         </button>
-        <button className="prepare-sell-order-button1">
-          <div className="primary-button1">Place sell order</div>
+        <button className={styles.prepareSellOrderButton1}>
+          <div className={styles.primaryButton1}>Place sell order</div>
         </button>
       </div>
-      <div className="group7">
-        <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />
-        <div className="text10">Trade</div>
+      <div className={styles.group7}>
+        <img className={styles.vectorIcon5} alt="" src="../vector5.svg" />
+        <div className={styles.text7}>Trade</div>
       </div>
-      <div className="group8">
-        <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />
-        <div className="text10">...</div>
+      <div className={styles.group8}>
+        <img className={styles.vectorIcon5} alt="" src="../vector5.svg" />
+        <div className={styles.text7}>...</div>
       </div>
-      <div className="group9">
-        <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />
-        <div className="text10">Trade</div>
+      <div className={styles.group9}>
+        <img className={styles.vectorIcon5} alt="" src="../vector5.svg" />
+        <div className={styles.text7}>Trade</div>
       </div>
       <img
-        className="vector-vector1"
+        className={styles.vectorVector1}
         alt=""
-        src="../asserts/vector--vector1.svg"
+        src="../vector--vector1.svg"
       />
       <img
-        className="vector-vector2"
+        className={styles.vectorVector2}
         alt=""
-        src="../asserts/vector--vector2.svg"
+        src="../vector--vector2.svg"
       />
       <img
-        className="vector-vector3"
+        className={styles.vectorVector3}
         alt=""
-        src="../asserts/vector--vector3.svg"
+        src="../vector--vector3.svg"
       />
       <img
-        className="vector-vector4"
+        className={styles.vectorVector4}
         alt=""
-        src="../asserts/vector--vector4.svg"
+        src="../vector--vector4.svg"
       />
       <img
-        className="vector-vector5"
+        className={styles.vectorVector5}
         alt=""
-        src="../asserts/vector--vector4.svg"
+        src="../vector--vector4.svg"
       />
       <img
-        className="vector-vector6"
+        className={styles.vectorVector6}
         alt=""
-        src="../asserts/vector--vector4.svg"
+        src="../vector--vector4.svg"
       />
       <img
-        className="vector-rectangle"
+        className={styles.vectorRectangle}
         alt=""
-        src="../asserts/vector--rectangle.svg"
+        src="../vector--rectangle.svg"
       />
       <img
-        className="vector-rectangle1"
+        className={styles.vectorRectangle1}
         alt=""
-        src="../asserts/vector--rectangle1.svg"
+        src="../vector--rectangle1.svg"
       />
       <img
-        className="vector-rectangle2"
+        className={styles.vectorRectangle2}
         alt=""
-        src="../asserts/vector--rectangle2.svg"
+        src="../vector--rectangle2.svg"
       />
     </div>
   );

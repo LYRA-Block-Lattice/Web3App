@@ -1,40 +1,37 @@
-import { FunctionComponent, useCallback } from "react";
-import "./TopNavigationBar.css";
+import { FunctionComponent } from "react";
+import styles from "./TopNavigationBar.module.css";
 
 type TopNavigationBarType = {
   title?: string;
 
   /** Action props */
-  onMiniProgramsButtonsClick?: () => void;
+  onNavBackButtonClick?: () => void;
   onTitleClick?: () => void;
-  onHomeClick?: () => void;
-  onContextPlusClick?: () => void;
+  onContextMenuButtonClick?: () => void;
 };
 
 const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   title,
-  onMiniProgramsButtonsClick,
+  onNavBackButtonClick,
   onTitleClick,
-  onHomeClick,
-  onContextPlusClick,
+  onContextMenuButtonClick,
 }) => {
-  const onContextMenuButtonClick = useCallback(() => {
-    //TODO: context menu
-  }, []);
-
   return (
-    <div className="topnavigationbar">
-      <button className="navbackbutton" onClick={onMiniProgramsButtonsClick}>
-        <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
+    <div className={styles.topnavigationbar}>
+      <button className={styles.navbackbutton} onClick={onNavBackButtonClick}>
+        <img className={styles.iconleft} alt="" src="../iconleft.svg" />
       </button>
-      <button className="title5" onClick={onTitleClick}>
+      <button className={styles.title} onClick={onTitleClick}>
         {title}
       </button>
-      <button className="contextmenubutton" onClick={onContextMenuButtonClick}>
+      <button
+        className={styles.contextmenubutton}
+        onClick={onContextMenuButtonClick}
+      >
         <img
-          className="icround-plus-icon"
+          className={styles.icroundPlusIcon}
           alt=""
-          src="../asserts/icroundplus.svg"
+          src="../icroundplus2.svg"
         />
       </button>
     </div>

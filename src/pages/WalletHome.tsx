@@ -1,17 +1,11 @@
-import { FunctionComponent, useState, useCallback } from "react";
+import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import WalletCard from "../components/WalletCard";
-import { useNavigate } from "react-router-dom";
-import SideMenuPopup from "../components/SideMenuPopup";
-import PortalDrawer from "../components/PortalDrawer";
-import TokenDisplayItem from "../components/TokenDisplayItem";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./WalletHome.css";
+import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
+import WalletToolBar from "../components/WalletToolBar";
+import Footer from "../components/Footer";
+import styles from "./WalletHome.module.css";
 
 const WalletHome: FunctionComponent = () => {
-  const navigate = useNavigate();
-  const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
-
   const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
@@ -20,153 +14,116 @@ const WalletHome: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
-  const onSwapButtonClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
-  const onSendButtonClick = useCallback(() => {
-    navigate("/sendtokenform");
-  }, [navigate]);
-
-  const openSideMenuPopup = useCallback(() => {
-    setSideMenuPopupOpen(true);
-  }, []);
-
-  const closeSideMenuPopup = useCallback(() => {
-    setSideMenuPopupOpen(false);
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
   }, []);
 
   return (
-    <>
-      <div className="wallethome">
-        <TopNavigationBar
-          title="Wallet"
-          onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-          onTitleClick={onTitleClick}
-        />
-        <div className="wallet-card-parent">
-          <WalletCard />
-          <div className="iconssection-wrapper">
-            <div className="iconssection">
-              <div className="swap-button-parent">
-                <button className="swap-button" onClick={onSwapButtonClick}>
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution.svg"
-                  />
-                  <div className="ranking">Market</div>
-                </button>
-                <button className="swap-button">
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution1.svg"
-                  />
-                  <div className="ranking">Swap</div>
-                </button>
-                <button className="swap-button" onClick={onSendButtonClick}>
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution2.svg"
-                  />
-                  <div className="ranking">Send</div>
-                </button>
-                <button className="swap-button">
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution3.svg"
-                  />
-                  <div className="ranking">Receive</div>
-                </button>
-                <button className="swap-button" onClick={openSideMenuPopup}>
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution4.svg"
-                  />
-                  <div className="ranking">More...</div>
-                </button>
-              </div>
+    <div className={styles.wallethome}>
+      <TopNavigationBar
+        title="My Wallet"
+        onNavBackButtonClick={onNavBackButtonClick}
+        onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
+      />
+      <div className={styles.walletCardParent}>
+        <PrimaryAccountContainer />
+        <WalletToolBar />
+        <div className={styles.coinlisting}>
+          <div className={styles.catalogtab}>
+            <div className={styles.nftWrapper}>
+              <b className={styles.nft}>NFT</b>
+            </div>
+            <div className={styles.nftWrapper}>
+              <b className={styles.nft}>Fiat</b>
+            </div>
+            <div className={styles.nftWrapper}>
+              <b className={styles.nft}>Goods</b>
+            </div>
+            <div className={styles.nftWrapper}>
+              <b className={styles.nft}>Service</b>
+            </div>
+            <div className={styles.tokenWrapper}>
+              <b className={styles.nft}>Token</b>
             </div>
           </div>
-          <div className="coinlisting">
-            <div className="catalogtab">
-              <div className="nft-wrapper">
-                <b className="nft">NFT</b>
-              </div>
-              <div className="nft-wrapper">
-                <b className="nft">Fiat</b>
-              </div>
-              <div className="nft-wrapper">
-                <b className="nft">Goods</b>
-              </div>
-              <div className="nft-wrapper">
-                <b className="nft">Service</b>
-              </div>
-              <div className="token-wrapper">
-                <b className="nft">Token</b>
-              </div>
-            </div>
-            <TokenDisplayItem
-              coinIcon="../asserts/lyralogoblackicon@2x.png"
-              coinName="Lyra Coin"
-              amountText="1,234,525 LYR"
-              amountWorth="$2,183"
+          <div className={styles.tokendisplayitem}>
+            <img
+              className={styles.lyralogoblackicon}
+              alt=""
+              src="../lyralogoblackicon@2x.png"
             />
-            <div className="tokendisplayitem">
-              <div className="frame-parent">
-                <div className="lyralogoblueicon-parent">
-                  <img
-                    className="lyralogoblueicon"
-                    alt=""
-                    src="../asserts/lyralogoblueicon@2x.png"
-                  />
-                  <b className="custom-coin">Custom Coin</b>
-                  <div className="cus-parent">
-                    <b className="cus">1,234,525 CUS</b>
-                    <b className="b">$2,183</b>
-                  </div>
+            <div className={styles.frameParent}>
+              <div className={styles.lyraCoinParent}>
+                <b className={styles.lyraCoin}>Lyra Coin</b>
+                <div className={styles.lyrParent}>
+                  <b className={styles.lyr}>1,234,525 LYR</b>
+                  <b className={styles.b}>$2,183</b>
                 </div>
-                <div className="frame-child" />
               </div>
+              <div className={styles.frameChild} />
             </div>
-            <TokenDisplayItem
-              coinIcon="../asserts/logosbitcoin.svg"
-              coinName="BitCoin"
-              amountText="1.2345 BTC"
-              amountWorth="$20,183"
-              lyraLogoBlackIconObjectFit="unset"
+          </div>
+          <div className={styles.tokendisplayitem1}>
+            <div className={styles.frameParent}>
+              <div className={styles.lyraCoinParent}>
+                <img
+                  className={styles.lyralogoblackicon}
+                  alt=""
+                  src="../lyralogoblueicon4@2x.png"
+                />
+                <b className={styles.lyraCoin}>Custom Coin</b>
+                <div className={styles.lyrParent}>
+                  <b className={styles.lyr}>1,234,525 CUS</b>
+                  <b className={styles.b}>$2,183</b>
+                </div>
+              </div>
+              <div className={styles.frameChild} />
+            </div>
+          </div>
+          <div className={styles.tokendisplayitem2}>
+            <img
+              className={styles.logosbitcoinIcon}
+              alt=""
+              src="../logosbitcoin.svg"
             />
-            <TokenDisplayItem
-              coinIcon="../asserts/mask-group@2x.png"
-              coinName="T-Shirt Blue"
-              amountText="3 Items"
-              amountWorth="$20,183"
+            <div className={styles.frameParent}>
+              <div className={styles.lyraCoinParent}>
+                <b className={styles.lyraCoin}>BitCoin</b>
+                <div className={styles.lyrParent}>
+                  <b className={styles.lyr}>1.2345 BTC</b>
+                  <b className={styles.b}>$20,183</b>
+                </div>
+              </div>
+              <div className={styles.frameChild} />
+            </div>
+          </div>
+          <div className={styles.tokendisplayitem2}>
+            <img
+              className={styles.lyralogoblackicon}
+              alt=""
+              src="../mask-group@2x.png"
             />
+            <div className={styles.frameParent}>
+              <div className={styles.lyraCoinParent}>
+                <b className={styles.lyraCoin}>T-Shirt Blue</b>
+                <div className={styles.lyrParent}>
+                  <b className={styles.lyr}>3 Items</b>
+                  <b className={styles.b}>$20,183</b>
+                </div>
+              </div>
+              <div className={styles.frameChild} />
+            </div>
           </div>
         </div>
-        <BottomNavigationBar
-          boxAltLight1="../asserts/box-alt-light.svg"
-          moleculeLight1="../asserts/molecule-light.svg"
-          walletLight1="../asserts/wallet-light.svg"
-          userAltLight1="../asserts/user-alt-light.svg"
-          textColor="#434343"
-          textColor1="#0ebd8d"
-        />
       </div>
-      {isSideMenuPopupOpen && (
-        <PortalDrawer
-          overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Right"
-          onOutsideClick={closeSideMenuPopup}
-        >
-          <SideMenuPopup onClose={closeSideMenuPopup} />
-        </PortalDrawer>
-      )}
-    </>
+      <Footer
+        iconImageUrl="../box-alt-light.svg"
+        moleculeImageUrl="../molecule-light.svg"
+        walletImageUrl="../wallet-light.svg"
+        userImageUrl="../user-alt-light.svg"
+      />
+    </div>
   );
 };
 

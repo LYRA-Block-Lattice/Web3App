@@ -1,0 +1,8 @@
+.generalpopup {
+  position: relative;
+  background-color: var(--white1);
+  width: 370px;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+}

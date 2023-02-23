@@ -1,9 +1,9 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import MarketToolBar from "../components/MarketToolBar";
-import MarketOrder from "../components/MarketOrder";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./Market.css";
+import MarketToolBarContainer from "../components/MarketToolBarContainer";
+import TetherLink from "../components/TetherLink";
+import Footer from "../components/Footer";
+import styles from "./Market.module.css";
 
 const Market: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -14,86 +14,168 @@ const Market: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
+  const onBannerImageClick = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
+  const onBannerImage1Click = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   return (
-    <div className="market">
+    <div className={styles.market}>
       <TopNavigationBar
-        title="Market"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        title="Lyra Web3 Market"
+        onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="orderandcatalog">
-        <MarketToolBar
-          homeIconInterlocution="../asserts/home--icon--interlocution.svg"
-          homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"
-          homeIconInterlocution2="../asserts/home--icon--interlocution2.svg"
-          homeIconInterlocution3="../asserts/home--icon--interlocution3.svg"
-          homeIconInterlocution4="../asserts/home--icon--interlocution4.svg"
+      <div className={styles.orderandcatalog}>
+        <MarketToolBarContainer
+          homeIconInterlocution="../home--icon--interlocution5.svg"
+          homeIconInterlocution1="../home--icon--interlocution6.svg"
+          homeIconInterlocution2="../home--icon--interlocution7.svg"
+          homeIconInterlocution3="../home--icon--interlocution8.svg"
+          homeIconInterlocution4="../home--icon--interlocution9.svg"
         />
-        <div className="searchsection">
+        <div className={styles.searchsection}>
           <input
-            className="searchsection-child"
+            className={styles.searchsectionChild}
             type="search"
             placeholder="Search products/token/NFT/TOT etc."
           />
         </div>
-        <div className="tradableorderssection">
-          <div className="catalogtab1">
-            <div className="nft-container">
-              <b className="nft1">NFT</b>
+        <div className={styles.tradableorderssection}>
+          <div className={styles.catalogtab}>
+            <div className={styles.nftWrapper}>
+              <b className={styles.nft}>NFT</b>
             </div>
-            <div className="nft-container">
-              <b className="nft1">Fiat</b>
+            <div className={styles.nftWrapper}>
+              <b className={styles.nft}>Fiat</b>
             </div>
-            <div className="nft-container">
-              <b className="nft1">Goods</b>
+            <div className={styles.nftWrapper}>
+              <b className={styles.nft}>Goods</b>
             </div>
-            <div className="nft-container">
-              <b className="nft1">Service</b>
+            <div className={styles.nftWrapper}>
+              <b className={styles.nft}>Service</b>
             </div>
-            <div className="token-container">
-              <b className="nft1">Token</b>
+            <div className={styles.tokenWrapper}>
+              <b className={styles.nft}>Token</b>
             </div>
           </div>
-          <MarketOrder
-            offeringIcon="../asserts/icbaselinegeneratingtokens.svg"
-            bidingIcon="../asserts/carbonuserservicedesk.svg"
-            orderStatus="Open"
-            offering="BTC"
-            biding="tether/USDT"
-            amount="1113.2"
-            limitMin="1.2"
-            limitMax="3.2"
-            price="10,323"
-            sellerName="A big seller"
-            daoName="The First DAO"
-            sellerRatings="98%"
-            sellerTrades="1024 Trades"
-          />
-          <MarketOrder
-            offeringIcon="icbaselinegeneratingtokens1.svg"
-            bidingIcon="../asserts/carbonuserservicedesk1.svg"
-            orderStatus="Open"
-            offering="BTC"
-            biding="tether/USDT"
-            amount="1113.2"
-            limitMin="1.2"
-            limitMax="3.2"
-            price="10,323"
-            sellerName="A big seller"
-            daoName="The First DAO"
-            sellerRatings="98%"
-            sellerTrades="1024 Trades"
-          />
+          <div className={styles.ordercard}>
+            <div className={styles.orderBriefSection}>
+              <button
+                className={styles.bannerImage}
+                onClick={onBannerImageClick}
+              >
+                <div className={styles.orderBanner}>
+                  <div className={styles.orderImage}>
+                    <img
+                      className={styles.icbaselineGeneratingTokensIcon}
+                      alt=""
+                      src="../icbaselinegeneratingtokens.svg"
+                    />
+                    <img
+                      className={styles.orderImageChild}
+                      alt=""
+                      src="../arrow-1.svg"
+                    />
+                    <img
+                      className={styles.icbaselineGeneratingTokensIcon}
+                      alt=""
+                      src="../carbonuserservicedesk.svg"
+                    />
+                  </div>
+                  <div className={styles.orderStatus}>
+                    <b className={styles.open}>Open</b>
+                  </div>
+                </div>
+              </button>
+              <TetherLink />
+            </div>
+            <div className={styles.tradesSection}>
+              <div className={styles.widthController} />
+            </div>
+            <div className={styles.userprofilesection}>
+              <img
+                className={styles.userprofilesectionChild}
+                alt=""
+                src="../ellipse-1@2x.png"
+              />
+              <div className={styles.aBigSellerParent}>
+                <b className={styles.aBigSeller}>A big seller</b>
+                <div className={styles.theFirstDao}>The First DAO</div>
+              </div>
+              <div className={styles.parent}>
+                <b className={styles.aBigSeller}>98%</b>
+                <div className={styles.theFirstDao}>1024 Trades</div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.ordercard}>
+            <div className={styles.orderBriefSection}>
+              <button
+                className={styles.bannerImage}
+                onClick={onBannerImage1Click}
+              >
+                <div className={styles.orderBanner}>
+                  <div className={styles.orderImage}>
+                    <img
+                      className={styles.icbaselineGeneratingTokensIcon}
+                      alt=""
+                      src="../icbaselinegeneratingtokens.svg"
+                    />
+                    <img
+                      className={styles.orderImageChild}
+                      alt=""
+                      src="../arrow-1.svg"
+                    />
+                    <img
+                      className={styles.icbaselineGeneratingTokensIcon}
+                      alt=""
+                      src="../carbonuserservicedesk1.svg"
+                    />
+                  </div>
+                  <div className={styles.orderStatus}>
+                    <b className={styles.open}>Open</b>
+                  </div>
+                </div>
+              </button>
+              <TetherLink />
+            </div>
+            <div className={styles.tradesSection}>
+              <div className={styles.widthController} />
+            </div>
+            <div className={styles.userprofilesection}>
+              <img
+                className={styles.userprofilesectionChild}
+                alt=""
+                src="../ellipse-1@2x.png"
+              />
+              <div className={styles.aBigSellerParent}>
+                <b className={styles.aBigSeller}>A big seller</b>
+                <div className={styles.theFirstDao}>The First DAO</div>
+              </div>
+              <div className={styles.parent}>
+                <b className={styles.aBigSeller}>98%</b>
+                <div className={styles.theFirstDao}>1024 Trades</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#0ebd8d"
-        textColor1="#434343"
-        textColor2="#434343"
+      <Footer
+        iconImageUrl="../box-alt-light.svg"
+        moleculeImageUrl="../molecule-light.svg"
+        walletImageUrl="../wallet-light.svg"
+        userImageUrl="../user-alt-light.svg"
+        propColor="#0ebd8d"
+        propColor1="#434343"
       />
     </div>
   );

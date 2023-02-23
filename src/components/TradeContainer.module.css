@@ -1,0 +1,157 @@
+.frameChild,
+.trade {
+  position: relative;
+}
+.frameChild {
+  width: 12.5px;
+  height: 7.36px;
+  flex-shrink: 0;
+}
+.tetherusdt {
+  position: relative;
+  text-align: left;
+}
+.tradeParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+  font-size: var(--font-size-3xl);
+}
+.titleSectionChild {
+  position: relative;
+  border-top: 1px solid var(--text-secondary1);
+  box-sizing: border-box;
+  width: 128px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.amWrapper,
+.block1,
+.block2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.amWrapper {
+  align-self: stretch;
+  background-color: var(--white1);
+  overflow: hidden;
+  flex-direction: row;
+  text-align: left;
+}
+.block1,
+.block2 {
+  flex-direction: column;
+}
+.block2 {
+  overflow: hidden;
+  align-items: flex-end;
+}
+.detailsSectionChild {
+  position: relative;
+  width: 4px;
+  height: 15px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.block3,
+.detailsSection {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.detailsSection {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-2xs);
+}
+.orderBriefSection,
+.titleSection {
+  display: flex;
+  align-items: flex-start;
+}
+.titleSection {
+  text-decoration: none;
+  border-radius: var(--br-3xs) var(--br-3xs) 0 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-2xs);
+  color: inherit;
+}
+.orderBriefSection {
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--gap-lg);
+}
+.widthController {
+  position: relative;
+  border-top: 1px solid var(--black-0000001001);
+  box-sizing: border-box;
+  width: 365px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.tradesSection {
+  align-self: stretch;
+  height: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.miniButton {
+  position: relative;
+  font-size: var(--caption-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--regular-body1);
+  color: var(--color-darkslategray-300);
+  text-align: center;
+}
+.delistButton,
+.itemactions {
+  display: flex;
+  flex-direction: row;
+}
+.delistButton {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-xl);
+  background-color: var(--color-whitesmoke-300);
+  border-radius: var(--br-lg);
+  height: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.itemactions {
+  align-self: stretch;
+  padding: var(--padding-7xs) var(--padding-7xs) 0;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: var(--gap-md);
+}
+.ordercard {
+  border-radius: var(--br-xs);
+  background-color: var(--white1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-darkgray);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-4xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: right;
+  font-size: var(--caption-size);
+  color: var(--black-0000001001);
+  font-family: var(--font-calibri);
+}

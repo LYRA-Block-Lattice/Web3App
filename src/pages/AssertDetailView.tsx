@@ -1,9 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import CollateralCalculation from "../components/CollateralCalculation";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./AssertDetailView.css";
+import Footer from "../components/Footer";
+import styles from "./AssertDetailView.module.css";
 
 const AssertDetailView: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -14,189 +13,236 @@ const AssertDetailView: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   return (
-    <div className="assertdetailview">
+    <div className={styles.assertdetailview}>
       <TopNavigationBar
         title="Assert Details"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="assertdetailview-parent">
-        <div className="assertdetailview1">
-          <div className="asserttitleregion">
-            <div className="assertauthorsection">
-              <div className="a-legend-nft">A legend NFT author</div>
-              <div className="material-symbolsshare-parent">
+      <div className={styles.assertdetailviewParent}>
+        <div className={styles.collateralsection}>
+          <div className={styles.asserttitleregion}>
+            <div className={styles.assertauthorsection}>
+              <div className={styles.aLegendNft}>A legend NFT author</div>
+              <div className={styles.materialSymbolsshareParent}>
                 <img
-                  className="material-symbolsshare-icon"
+                  className={styles.materialSymbolsshareIcon}
                   alt=""
-                  src="../asserts/materialsymbolsshare.svg"
+                  src="../materialsymbolsshare.svg"
                 />
                 <img
-                  className="material-symbolsshare-icon"
+                  className={styles.materialSymbolsshareIcon}
                   alt=""
-                  src="../asserts/carbonoverflowmenuhorizontal.svg"
+                  src="../carbonoverflowmenuhorizontal.svg"
                 />
               </div>
             </div>
-            <div className="asserttitlesection">
-              <div className="meka-legends">Meka Legends # 500</div>
+            <div className={styles.asserttitlesection}>
+              <div className={styles.mekaLegends}>Meka Legends # 500</div>
             </div>
-            <div className="assertownersection">
-              <div className="meka-legends">Owner someone</div>
+            <div className={styles.assertownersection}>
+              <div className={styles.mekaLegends}>Owner someone</div>
             </div>
           </div>
-          <div className="asserttitleregion">
-            <div className="icon-park-solidblockchain-wrapper">
+          <div className={styles.asserttitleregion}>
+            <div className={styles.iconParkSolidblockchainWrapper}>
               <img
-                className="material-symbolsshare-icon"
+                className={styles.materialSymbolsshareIcon}
                 alt=""
-                src="../asserts/iconparksolidblockchain.svg"
+                src="../iconparksolidblockchain.svg"
               />
             </div>
             <img
-              className="titlebannerregion-child"
+              className={styles.titlebannerregionChild}
               alt=""
-              src="../asserts/frame-61@2x.png"
+              src="../frame-61@2x.png"
             />
           </div>
-          <div className="assertstatssection">
-            <div className="icoutline-remove-red-eye-parent">
+          <div className={styles.assertstatssection}>
+            <div className={styles.icoutlineRemoveRedEyeParent}>
               <img
-                className="material-symbolsshare-icon"
+                className={styles.materialSymbolsshareIcon}
                 alt=""
-                src="../asserts/icoutlineremoveredeye.svg"
+                src="../icoutlineremoveredeye.svg"
               />
-              <div className="meka-legends">32 views</div>
+              <div className={styles.mekaLegends}>32 views</div>
             </div>
-            <div className="icoutline-remove-red-eye-parent">
+            <div className={styles.icoutlineRemoveRedEyeParent}>
               <img
-                className="material-symbolsshare-icon"
+                className={styles.materialSymbolsshareIcon}
                 alt=""
-                src="../asserts/mdicardsheartoutline.svg"
+                src="../mdicardsheartoutline.svg"
               />
-              <div className="meka-legends">5 favorite</div>
+              <div className={styles.mekaLegends}>5 favorite</div>
             </div>
-            <div className="icoutline-remove-red-eye-parent">
+            <div className={styles.icoutlineRemoveRedEyeParent}>
               <img
-                className="material-symbolsshare-icon"
+                className={styles.materialSymbolsshareIcon}
                 alt=""
-                src="../asserts/mdishapeoutline.svg"
+                src="../mdishapeoutline.svg"
               />
-              <div className="meka-legends">Fiat OTC</div>
+              <div className={styles.mekaLegends}>Fiat OTC</div>
             </div>
           </div>
         </div>
-        <div className="descriptiontitle">
+        <div className={styles.descriptiontitle}>
           <img
-            className="material-symbolsshare-icon"
+            className={styles.materialSymbolsshareIcon}
             alt=""
-            src="../asserts/fluenttextdescription20filled.svg"
+            src="../fluenttextdescription20filled.svg"
           />
-          <div className="meka-legends">Description</div>
+          <div className={styles.mekaLegends}>Description</div>
         </div>
-        <div className="descriptiondetails">
-          <div className="meka-legends">By A great designer</div>
+        <div className={styles.descriptiondetails}>
+          <div className={styles.mekaLegends}>By A great designer</div>
         </div>
-        <div className="descriptiontitle">
+        <div className={styles.descriptiontitle}>
           <img
-            className="material-symbolsshare-icon"
+            className={styles.materialSymbolsshareIcon}
             alt=""
-            src="../asserts/icoutlinepricechange.svg"
+            src="../icoutlinepricechange.svg"
           />
-          <div className="meka-legends">Price and payment</div>
+          <div className={styles.mekaLegends}>Price and payment</div>
         </div>
-        <div className="buysection">
-          <div className="priceandbuyregion">
-            <div className="pricelabel">
-              <div className="meka-legends">Current Price</div>
+        <div className={styles.buysection}>
+          <div className={styles.priceandbuyregion}>
+            <div className={styles.pricelabel}>
+              <div className={styles.mekaLegends}>Current Price</div>
             </div>
-            <div className="priceandvaluelabel">
-              <div className="meka-legends">0.0325</div>
-              <div className="tetherusdt-parent">
-                <div className="tetherusdt">tether/USDT</div>
-                <div className="div4">$86.20</div>
+            <div className={styles.priceandvaluelabel}>
+              <div className={styles.mekaLegends}>0.0325</div>
+              <div className={styles.tetherusdtParent}>
+                <div className={styles.tetherusdt}>tether/USDT</div>
+                <div className={styles.div1}>$86.20</div>
               </div>
             </div>
           </div>
-          <div className="setlimitsection">
-            <div className="pricelabel1">
-              <div className="meka-legends">Available to buy</div>
+          <div className={styles.setlimitsection}>
+            <div className={styles.pricelabel1}>
+              <div className={styles.mekaLegends}>Available to buy</div>
             </div>
-            <div className="priceandvaluelabel1">
-              <div className="meka-legends">100 - 200</div>
-              <div className="tetherusdt-parent">
-                <div className="tetherusdt">tether/ETH</div>
-                <div className="div4">$40 ~ 84.20</div>
+            <div className={styles.priceandvaluelabel1}>
+              <div className={styles.mekaLegends}>100 - 200</div>
+              <div className={styles.tetherusdtParent}>
+                <div className={styles.tetherusdt}>tether/ETH</div>
+                <div className={styles.div1}>$40 ~ 84.20</div>
               </div>
             </div>
           </div>
-          <div className="pricelabel-parent">
-            <div className="pricelabel1">
-              <div className="meka-legends">My Offer</div>
+          <div className={styles.pricelabelParent}>
+            <div className={styles.pricelabel1}>
+              <div className={styles.mekaLegends}>My Offer</div>
             </div>
-            <div className="frame-parent1">
-              <div className="selectedamount-parent">
+            <div className={styles.frameParent}>
+              <div className={styles.selectedamountParent}>
                 <input
-                  className="selectedamount"
+                  className={styles.selectedamount}
                   type="number"
                   placeholder="150"
                 />
-                <div className="tethereth-group">
-                  <div className="tethereth1">tether/ETH</div>
-                  <div className="tetherusdt">100 tether/USDT</div>
-                  <div className="tetherusdt">$ 10.3</div>
+                <div className={styles.tetherethGroup}>
+                  <div className={styles.tethereth1}>tether/ETH</div>
+                  <div className={styles.tetherusdt}>100 tether/USDT</div>
+                  <div className={styles.tetherusdt}>$ 10.3</div>
                 </div>
               </div>
-              <div className="limitadjustsection">
-                <div className="tetherusdt">Min</div>
-                <Box className="slidercontinuous">
+              <div className={styles.limitadjustsection}>
+                <div className={styles.tetherusdt}>Min</div>
+                <Box className={styles.slidercontinuous}>
                   <Slider
                     color="primary"
                     defaultValue={20}
                     orientation="horizontal"
                   />
                 </Box>
-                <div className="max">Max</div>
+                <div className={styles.max}>Max</div>
               </div>
             </div>
           </div>
-          <div className="makeofferbutton">
-            <div className="pricelabel1">
-              <div className="meka-legends">Collateral and Fees</div>
+          <div className={styles.makeofferbutton}>
+            <div className={styles.pricelabel1}>
+              <div className={styles.mekaLegends}>Collateral and Fees</div>
             </div>
-            <CollateralCalculation eqprice="1234 LYR" />
-            <button className="prepare-sell-order-button6">
+            <div className={styles.collateralcalculation}>
+              <div className={styles.collateralsection}>
+                <div className={styles.collateralWorthLabel}>
+                  <div className={styles.tetherusdt}>
+                    Collateral value: 120%
+                  </div>
+                  <div className={styles.tetherusdt}>1234 LYR</div>
+                </div>
+                <div className={styles.collateralWorthLabel1}>
+                  <div className={styles.tetherusdt}>$ 103</div>
+                </div>
+              </div>
+              <div className={styles.collateralsection}>
+                <div className={styles.collateralWorthLabel}>
+                  <div className={styles.tetherusdt}>DAO fee: 1%</div>
+                  <div className={styles.tetherusdt}>1234 LYR</div>
+                </div>
+                <div className={styles.collateralWorthLabel1}>
+                  <div className={styles.tetherusdt}>$ 103</div>
+                </div>
+              </div>
+              <div className={styles.collateralsection}>
+                <div className={styles.collateralWorthLabel}>
+                  <div className={styles.tetherusdt}>Network fee: 0.2%</div>
+                  <div className={styles.tetherusdt}>1234 LYR</div>
+                </div>
+                <div className={styles.collateralWorthLabel1}>
+                  <div className={styles.tetherusdt}>$ 103</div>
+                </div>
+              </div>
+              <div className={styles.collateralcalculationChild} />
+              <div className={styles.collateralsection}>
+                <div className={styles.collateralWorthLabel6}>
+                  <div className={styles.tetherusdt}>1234 LYR</div>
+                </div>
+                <div className={styles.collateralWorthLabel7}>
+                  <div className={styles.tetherusdt}>Total:</div>
+                  <div className={styles.div8}>$ 103</div>
+                </div>
+              </div>
+            </div>
+            <button className={styles.prepareSellOrderButton}>
               <img
-                className="material-symbolsshare-icon"
+                className={styles.materialSymbolsshareIcon}
                 alt=""
-                src="../asserts/evapricetagsoutline.svg"
+                src="../evapricetagsoutline.svg"
               />
-              <div className="primary-button3">Make offer</div>
+              <div className={styles.primaryButton}>Make offer</div>
             </button>
           </div>
         </div>
-        <div className="descriptiontitle">
+        <div className={styles.descriptiontitle}>
           <img
-            className="material-symbolsshare-icon"
+            className={styles.materialSymbolsshareIcon}
             alt=""
-            src="../asserts/galasecure.svg"
+            src="../galasecure.svg"
           />
-          <div className="meka-legends">Trading protection</div>
+          <div className={styles.mekaLegends}>Trading protection</div>
         </div>
-        <div className="descriptiondetails1">
-          <div className="this-order-is">
+        <div className={styles.descriptiondetails1}>
+          <div className={styles.thisOrderIs}>
             This order is protected by staking of 100,000 LYR, or $1,000 in USD,
             from the seller. This order is regulated by the DAO “A good shop”
             which has a total staking of 30,000,000 LYR.
           </div>
         </div>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light4.svg"
-        moleculeLight1="../asserts/molecule-light4.svg"
-        walletLight1="../asserts/wallet-light4.svg"
-        userAltLight1="../asserts/user-alt-light4.svg"
+      <Footer
+        iconImageUrl="../box-alt-light6.svg"
+        moleculeImageUrl="../molecule-light6.svg"
+        walletImageUrl="../wallet-light6.svg"
+        userImageUrl="../user-alt-light6.svg"
+        propColor="#0ebd8d"
+        propColor1="#434343"
       />
     </div>
   );

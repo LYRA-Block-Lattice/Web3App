@@ -9,8 +9,8 @@ import {
   Checkbox,
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./CreateWallet.css";
+import Footer from "../components/Footer";
+import styles from "./CreateWallet.module.css";
 
 const CreateWallet: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -21,71 +21,65 @@ const CreateWallet: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   return (
-    <div className="createwallet">
+    <div className={styles.createwallet}>
       <TopNavigationBar
         title="Create Wallet"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="illus1-parent">
-        <div className="illus1">
-          <img className="illus1-child" alt="" src="../asserts/group-3.svg" />
-          <div className="group-parent">
-            <img className="frame-inner" alt="" src="../asserts/group-42.svg" />
-            <div className="create-account">
-              C<span className="r">r</span>
-              <span className="e">e</span>a<span className="t">t</span>
+      <div className={styles.illus1Parent}>
+        <div className={styles.illus1}>
+          <img className={styles.illus1Child} alt="" src="../group-3.svg" />
+          <div className={styles.groupParent}>
+            <img className={styles.frameChild} alt="" src="../group-42.svg" />
+            <div className={styles.createAccount}>
+              C<span className={styles.r}>r</span>
+              <span className={styles.e}>e</span>a
+              <span className={styles.t}>t</span>
               {`e `}
-              <span className="a">A</span>
-              <span className="cc">cc</span>ount
+              <span className={styles.a}>A</span>
+              <span className={styles.cc}>cc</span>ount
             </div>
-            <img className="fill-43-icon" alt="" src="../asserts/fill-43.svg" />
+            <img className={styles.fill43Icon} alt="" src="../fill-43.svg" />
             <img
-              className="email-address-icon"
+              className={styles.emailAddressIcon}
               alt=""
-              src="../asserts/email-address.svg"
+              src="../email-address.svg"
             />
             <img
-              className="youremailgmailc-icon"
+              className={styles.youremailgmailcIcon}
               alt=""
-              src="../asserts/youremailgmailc.svg"
+              src="../youremailgmailc.svg"
             />
-            <img className="group-icon" alt="" src="../asserts/group-49.svg" />
+            <img className={styles.frameItem} alt="" src="../group-49.svg" />
             <img
-              className="your-text-icon"
+              className={styles.yourTextIcon}
               alt=""
-              src="../asserts/your-text.svg"
+              src="../your-text.svg"
             />
+            <img className={styles.frameInner} alt="" src="../group-53.svg" />
             <img
-              className="frame-child1"
+              className={styles.yourCityIcon}
               alt=""
-              src="../asserts/group-53.svg"
+              src="../your-city.svg"
             />
+            <img className={styles.groupIcon} alt="" src="../group-57.svg" />
             <img
-              className="your-city-icon"
+              className={styles.entryPasswordIcon}
               alt=""
-              src="../asserts/your-city.svg"
+              src="../entry-password.svg"
             />
-            <img
-              className="frame-child2"
-              alt=""
-              src="../asserts/group-57.svg"
-            />
-            <img
-              className="entry-password-icon"
-              alt=""
-              src="../asserts/entry-password.svg"
-            />
-            <img
-              className="frame-child3"
-              alt=""
-              src="../asserts/group-145.svg"
-            />
+            <img className={styles.frameChild1} alt="" src="../group-145.svg" />
           </div>
         </div>
         <TextField
-          className="wallet-name"
+          className={styles.walletName}
           sx={{ width: 343 }}
           color="primary"
           variant="standard"
@@ -96,7 +90,7 @@ const CreateWallet: FunctionComponent = () => {
           required
         />
         <TextField
-          className="wallet-name"
+          className={styles.walletName}
           sx={{ width: 343 }}
           color="primary"
           variant="standard"
@@ -116,7 +110,7 @@ const CreateWallet: FunctionComponent = () => {
           required
         />
         <TextField
-          className="wallet-name"
+          className={styles.walletName}
           sx={{ width: 343 }}
           color="primary"
           variant="standard"
@@ -135,14 +129,14 @@ const CreateWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <div className="checkboxrestoreprivatekey-parent">
+        <div className={styles.checkboxrestoreprivatekeyParent}>
           <FormControlLabel
             label="I want to restore wallet by Private Key"
             labelPlacement="end"
             control={<Checkbox color="primary" size="medium" />}
           />
           <TextField
-            className="wallet-name"
+            className={styles.walletName}
             sx={{ width: 343 }}
             color="primary"
             variant="standard"
@@ -153,20 +147,18 @@ const CreateWallet: FunctionComponent = () => {
             margin="none"
           />
         </div>
-        <button className="prepare-sell-order-button16">
-          <div className="primary-button6">Create</div>
+        <button className={styles.prepareSellOrderButton}>
+          <div className={styles.primaryButton}>Create</div>
         </button>
-        <button className="prepare-sell-order-button17">
-          <div className="mini-button4">Open</div>
+        <button className={styles.prepareSellOrderButton1}>
+          <div className={styles.miniButton}>Open</div>
         </button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
+      <Footer
+        iconImageUrl="../box-alt-light.svg"
+        moleculeImageUrl="../molecule-light.svg"
+        walletImageUrl="../wallet-light.svg"
+        userImageUrl="../user-alt-light.svg"
       />
     </div>
   );

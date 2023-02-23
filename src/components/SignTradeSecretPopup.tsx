@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect } from "react";
-import "./SignTradeSecretPopup.css";
+import styles from "./SignTradeSecretPopup.module.css";
 
 type SignTradeSecretPopupType = {
   onClose?: () => void;
@@ -17,7 +17,7 @@ const SignTradeSecretPopup: FunctionComponent<SignTradeSecretPopupType> = ({
         for (const entry of entries) {
           if (entry.isIntersecting || entry.intersectionRatio > 0) {
             const targetElement = entry.target;
-            targetElement.classList.add("animate");
+            targetElement.classList.add(styles.animate);
             observer.unobserve(targetElement);
           }
         }
@@ -39,21 +39,21 @@ const SignTradeSecretPopup: FunctionComponent<SignTradeSecretPopupType> = ({
   }, []);
 
   return (
-    <div className="signtradesecretpopup" data-animate-on-scroll>
-      <div className="sign-trade-secret">Sign Trade Secret</div>
-      <div className="to-protect-privacy">
+    <div className={styles.signtradesecretpopup} data-animate-on-scroll>
+      <div className={styles.signTradeSecret}>Sign Trade Secret</div>
+      <div className={styles.toProtectPrivacy}>
         To protect privacy, Lyra blockchain never record trade secret. What the
         blockchain needed is a digital signature of the trade secret.
       </div>
       <textarea
-        className="tot-description"
+        className={styles.totDescription}
         placeholder={`Please pay to my bank account number:
 
 Bank of America
 1234 1234 1234 1234`}
       />
-      <button className="prepare-sell-order-button13" onClick={onClose}>
-        <div className="utility-button5">Sign and return</div>
+      <button className={styles.prepareSellOrderButton} onClick={onClose}>
+        <div className={styles.utilityButton}>Sign and return</div>
       </button>
     </div>
   );

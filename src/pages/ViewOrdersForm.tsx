@@ -1,9 +1,10 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import MarketToolBar from "../components/MarketToolBar";
-import OrderCard from "../components/OrderCard";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./ViewOrdersForm.css";
+import WalletCardContainer from "../components/WalletCardContainer";
+import MarketToolBarContainer from "../components/MarketToolBarContainer";
+import OrderForm from "../components/OrderForm";
+import Footer from "../components/Footer";
+import styles from "./ViewOrdersForm.module.css";
 
 const ViewOrdersForm: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -14,74 +15,40 @@ const ViewOrdersForm: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
+  const onBannerImageClick = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   return (
-    <div className="viewordersform">
+    <div className={styles.viewordersform}>
       <TopNavigationBar
-        title="My Orders"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        title="View Orders"
+        onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="wallet-card-container">
-        <div className="wallet-card1">
-          <div className="wallet-card-inner1">
-            <div className="rectangle-container">
-              <div className="rectangle3" />
-            </div>
-          </div>
-          <div className="wallet-card-inner2">
-            <div className="balance-display-zone-group">
-              <a className="balance-display-zone1">
-                <button className="wallet-name-label1">
-                  My Primary Account
-                </button>
-                <div className="balance-display-zone-inner" />
-                <b className="usdtbalance1">1,025,000</b>
-                <b className="lyrlabel1">LYR</b>
-                <div className="rectangle-div" />
-              </a>
-              <div className="qrcode-button-container">
-                <button className="qrcode-button1">
-                  <div className="qrcode-button-round1" />
-                  <img
-                    className="qrcode-icon1"
-                    alt=""
-                    src="../asserts/qrcode-icon.svg"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <MarketToolBar
-          homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
-          homeIconInterlocution1="../asserts/home--icon--interlocution16.svg"
-          homeIconInterlocution2="../asserts/home--icon--interlocution17.svg"
-          homeIconInterlocution3="../asserts/home--icon--interlocution18.svg"
-          homeIconInterlocution4="../asserts/home--icon--interlocution19.svg"
+      <div className={styles.walletCardParent}>
+        <WalletCardContainer />
+        <MarketToolBarContainer
+          homeIconInterlocution="../home--icon--interlocution15.svg"
+          homeIconInterlocution1="../home--icon--interlocution16.svg"
+          homeIconInterlocution2="../home--icon--interlocution17.svg"
+          homeIconInterlocution3="../home--icon--interlocution18.svg"
+          homeIconInterlocution4="../home--icon--interlocution19.svg"
         />
-        <OrderCard
-          offering="BTC"
-          biding="tether/USDT"
-          orderStatus="Open"
-          offeringImg="../asserts/icbaselinegeneratingtokens.svg"
-          bidingImg="../asserts/carbonuserservicedesk.svg"
-          time="12/29/2022 10:25:37 AM"
-          price="10,323"
-          amount="1113.2"
-          limitMin="3.3"
-          limitMax="4.3"
-          sold="12"
-          shelf="123"
-          orderStatusBackgroundColor="#2196F3"
-        />
+        <OrderForm />
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#434343"
-        textColor2="#0ebd8d"
+      <Footer
+        iconImageUrl="../box-alt-light.svg"
+        moleculeImageUrl="../molecule-light.svg"
+        walletImageUrl="../wallet-light.svg"
+        userImageUrl="../user-alt-light.svg"
+        propColor1="#434343"
+        propColor2="#0ebd8d"
       />
     </div>
   );

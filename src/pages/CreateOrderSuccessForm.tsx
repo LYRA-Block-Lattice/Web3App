@@ -1,8 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import { useNavigate } from "react-router-dom";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./CreateOrderSuccessForm.css";
+import Footer from "../components/Footer";
+import styles from "./CreateOrderSuccessForm.module.css";
 
 const CreateOrderSuccessForm: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -15,45 +15,48 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   const onPrepareSellOrderButtonClick = useCallback(() => {
     navigate("/viewordersform");
   }, [navigate]);
 
   return (
-    <div className="createordersuccessform">
+    <div className={styles.createordersuccessform}>
       <TopNavigationBar
         title="Order Created"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="success-parent">
-        <div className="success">Success!</div>
-        <img className="illus8-icon" alt="" src="../asserts/illus8.svg" />
-        <div className="you-order-tx">You order TX Hash is:</div>
-        <div className="blvm6g1jjkwuz8ocens7fuuswjqdr3">
+      <div className={styles.successParent}>
+        <div className={styles.success}>Success!</div>
+        <img className={styles.illus8Icon} alt="" src="../illus8.svg" />
+        <div className={styles.youOrderTx}>You order TX Hash is:</div>
+        <div className={styles.blvm6g1jjkwuz8ocens7fuuswjqdr3}>
           BLVm6g1JJkWUZ8oCenS7FuusWJQdR3deCwtRk6U7Rt8L
         </div>
         <a
-          className="view-on-block"
+          className={styles.viewOnBlock}
           href="https://nebula.lyra.live/showblock/FuF7e1ZaBdmqB6cc5PfxitShUnR5WWNKcm59ofYPCXua"
           target="_blank"
         >
           View on block explorer
         </a>
         <button
-          className="prepare-sell-order-button12"
+          className={styles.prepareSellOrderButton}
           onClick={onPrepareSellOrderButtonClick}
         >
-          <div className="secondary-button3">View my orders</div>
+          <div className={styles.secondaryButton}>View my orders</div>
         </button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light4.svg"
-        moleculeLight1="../asserts/molecule-light4.svg"
-        walletLight1="../asserts/wallet-light4.svg"
-        userAltLight1="../asserts/user-alt-light4.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
+      <Footer
+        iconImageUrl="../box-alt-light6.svg"
+        moleculeImageUrl="../molecule-light6.svg"
+        walletImageUrl="../wallet-light6.svg"
+        userImageUrl="../user-alt-light6.svg"
       />
     </div>
   );

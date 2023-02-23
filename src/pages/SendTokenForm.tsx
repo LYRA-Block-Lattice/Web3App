@@ -1,8 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./SendTokenForm.css";
+import Footer from "../components/Footer";
+import styles from "./SendTokenForm.module.css";
 
 const SendTokenForm: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -13,14 +13,19 @@ const SendTokenForm: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   return (
-    <div className="sendtokenform">
+    <div className={styles.sendtokenform}>
       <TopNavigationBar
         title="Send Token"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="tokentosell-parent">
+      <div className={styles.tokentosellParent}>
         <Autocomplete
           sx={{ width: 301 }}
           disablePortal
@@ -38,7 +43,7 @@ const SendTokenForm: FunctionComponent = () => {
           size="medium"
         />
         <TextField
-          className="tokentosell"
+          className={styles.tokentosell}
           sx={{ width: 301 }}
           color="primary"
           variant="outlined"
@@ -50,7 +55,7 @@ const SendTokenForm: FunctionComponent = () => {
           required
         />
         <TextField
-          className="tokentosell"
+          className={styles.tokentosell}
           sx={{ width: 301 }}
           color="primary"
           variant="outlined"
@@ -60,17 +65,15 @@ const SendTokenForm: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className="prepare-sell-order-button5">
-          <div className="primary-button2">Send</div>
+        <button className={styles.prepareSellOrderButton}>
+          <div className={styles.primaryButton}>Send</div>
         </button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
+      <Footer
+        iconImageUrl="../box-alt-light.svg"
+        moleculeImageUrl="../molecule-light.svg"
+        walletImageUrl="../wallet-light.svg"
+        userImageUrl="../user-alt-light.svg"
       />
     </div>
   );

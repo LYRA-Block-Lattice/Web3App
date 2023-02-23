@@ -5,12 +5,13 @@ import {
   useLocation,
 } from "react-router-dom";
 import Market from "./pages/Market";
-import WalletHome from "./pages/WalletHome";
+import ScanToPay from "./pages/ScanToPay";
+import About from "./pages/About";
 import UserProfile from "./pages/UserProfile";
 import SellFlow from "./pages/SellFlow";
-import TradeDetails from "./pages/TradeDetails";
 import MiscComponents from "./pages/MiscComponents";
 import SendTokenForm from "./pages/SendTokenForm";
+import WalletHome from "./pages/WalletHome";
 import AssertDetailView from "./pages/AssertDetailView";
 import MintFiatToken from "./pages/MintFiatToken";
 import CreateTokenForm from "./pages/CreateTokenForm";
@@ -23,10 +24,6 @@ import CreateNFTForm from "./pages/CreateNFTForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
-import PreviewSellOrderForm from "./pages/PreviewSellOrderForm";
-import Redir from "./pages/Redir";
-import About from "./pages/About";
-import ScanToPay from "./pages/ScanToPay";
 import { useEffect } from "react";
 
 function App() {
@@ -49,7 +46,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/wallethome":
+      case "/scantopay":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/about":
         title = "";
         metaDescription = "";
         break;
@@ -61,15 +62,15 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/tradedetails":
-        title = "";
-        metaDescription = "";
-        break;
       case "/misccomponents":
         title = "";
         metaDescription = "";
         break;
       case "/sendtokenform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/wallethome":
         title = "";
         metaDescription = "";
         break;
@@ -121,22 +122,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/previewsellorderform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/redir":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/about":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/scantopay":
-        title = "";
-        metaDescription = "";
-        break;
     }
 
     if (title) {
@@ -157,17 +142,19 @@ function App() {
     <Routes>
       <Route path="/" element={<Market />} />
 
-      <Route path="/wallethome" element={<WalletHome />} />
+      <Route path="/scantopay" element={<ScanToPay />} />
+
+      <Route path="/about" element={<About />} />
 
       <Route path="/userprofile" element={<UserProfile />} />
 
       <Route path="/sellflow" element={<SellFlow />} />
 
-      <Route path="/tradedetails" element={<TradeDetails />} />
-
       <Route path="/misccomponents" element={<MiscComponents />} />
 
       <Route path="/sendtokenform" element={<SendTokenForm />} />
+
+      <Route path="/wallethome" element={<WalletHome />} />
 
       <Route path="/assertdetailview1" element={<AssertDetailView />} />
 
@@ -195,14 +182,6 @@ function App() {
       <Route path="/createwallet" element={<CreateWallet />} />
 
       <Route path="/openwallet" element={<OpenWallet />} />
-
-      <Route path="/previewsellorderform" element={<PreviewSellOrderForm />} />
-
-      <Route path="/redir" element={<Redir />} />
-
-      <Route path="/about" element={<About />} />
-
-      <Route path="/scantopay" element={<ScanToPay />} />
     </Routes>
   );
 }

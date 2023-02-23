@@ -1,0 +1,358 @@
+.rectangle {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-4xl);
+  background-color: var(--white1);
+  border: 1.5px solid var(--color-darkslategray-400);
+  box-sizing: border-box;
+  width: 132px;
+  height: 56px;
+}
+.group,
+.rectangle,
+.text {
+  position: absolute;
+}
+.text {
+  height: 100%;
+  width: calc(100% - 26.4px);
+  top: 0;
+  left: 13.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group {
+  top: 61px;
+  left: 148px;
+  width: 132px;
+  height: 56px;
+}
+.vectorIcon {
+  top: -0.75px;
+  left: -0.75px;
+  border-radius: var(--br-5xs);
+  width: 125.5px;
+  height: 63.5px;
+}
+.group1,
+.text1,
+.vectorIcon {
+  position: absolute;
+}
+.text1 {
+  height: 100%;
+  width: calc(100% - 49.6px);
+  top: 0;
+  left: 24.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group1 {
+  top: 172px;
+  left: 152px;
+  width: 124px;
+  height: 62px;
+}
+.vectorIcon1 {
+  top: -0.75px;
+  left: -0.75px;
+  border-radius: var(--br-5xs);
+  width: 201.5px;
+  height: 101.5px;
+}
+.group2,
+.text2,
+.vectorIcon1 {
+  position: absolute;
+}
+.text2 {
+  height: calc(100% - 20px);
+  width: calc(100% - 60px);
+  top: 20px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group2 {
+  top: 313px;
+  left: 114px;
+  width: 200px;
+  height: 100px;
+}
+.text3,
+.vectorIcon2 {
+  position: absolute;
+  top: 0;
+}
+.vectorIcon2 {
+  left: 0;
+  border-radius: var(--br-5xs);
+  width: 102px;
+  height: 51px;
+}
+.text3 {
+  height: 100%;
+  width: calc(100% - 20.4px);
+  left: 10.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group3,
+.group4,
+.group5 {
+  position: absolute;
+  top: 478px;
+  left: 163px;
+  width: 102px;
+  height: 51px;
+}
+.group4,
+.group5 {
+  left: 27px;
+}
+.group5 {
+  left: 299px;
+}
+.rectangleVector,
+.vectorVector {
+  position: absolute;
+  top: 117px;
+  left: 209.67px;
+  width: 8.66px;
+  height: 55px;
+}
+.vectorVector {
+  top: 234px;
+  height: 79px;
+}
+.rectangle1 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-4xl);
+  background-color: var(--white1);
+  border: 1.5px solid var(--color-darkslategray-400);
+  box-sizing: border-box;
+  width: 200px;
+  height: 60px;
+}
+.group6,
+.rectangle1,
+.text6 {
+  position: absolute;
+}
+.text6 {
+  height: 100%;
+  width: calc(100% - 40px);
+  top: 0;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group6 {
+  top: 745px;
+  left: 115px;
+  width: 200px;
+  height: 60px;
+}
+.bidinglabel,
+.offeringlabel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 156px;
+  height: 30px;
+}
+.offeringlabel {
+  top: 130px;
+  left: 49px;
+  color: var(--black-0000001001);
+}
+.bidinglabel {
+  top: 0;
+  left: 0;
+}
+.ordercollateral,
+.returncollateral,
+.sellforlabel {
+  position: absolute;
+  top: 699px;
+  left: 51px;
+  width: 156px;
+  height: 30px;
+  color: var(--black-0000001001);
+}
+.ordercollateral,
+.returncollateral {
+  top: 130px;
+  left: 221px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.returncollateral {
+  top: 699px;
+  left: 224px;
+}
+.primaryButton {
+  position: relative;
+  font-size: var(--font-size-6xl);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--regular-body1);
+  color: var(--black-0000001001);
+  text-align: center;
+}
+.prepareSellOrderButton {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-6xl);
+  background-color: var(--color-gainsboro-200);
+  border-radius: var(--br-lg);
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.prepareSellOrderButton1:hover,
+.prepareSellOrderButton:hover {
+  background-color: var(--color-mediumslateblue);
+}
+.primaryButton1 {
+  position: relative;
+  font-size: var(--font-size-6xl);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--regular-body1);
+  color: var(--white1);
+  text-align: center;
+}
+.prepareSellOrderButton1,
+.prepareSellOrderButtonParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.prepareSellOrderButton1 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-6xl);
+  background-color: var(--primary1);
+  border-radius: var(--br-lg);
+  height: 50px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.prepareSellOrderButtonParent {
+  position: absolute;
+  top: 839px;
+  left: 61px;
+  gap: var(--gap-lg);
+}
+.vectorIcon5 {
+  position: absolute;
+  top: -0.75px;
+  left: -0.75px;
+  border-radius: var(--br-5xs);
+  width: 105.5px;
+  height: 53.5px;
+}
+.text7 {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 41.6px);
+  top: 0;
+  left: 20.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.group7,
+.group8,
+.group9 {
+  position: absolute;
+  top: 563px;
+  left: 162px;
+  width: 104px;
+  height: 52px;
+}
+.group8,
+.group9 {
+  left: 298px;
+}
+.group9 {
+  left: 26px;
+}
+.vectorVector1,
+.vectorVector2,
+.vectorVector3 {
+  position: absolute;
+  top: 413px;
+  left: 73.67px;
+  width: 141.08px;
+  height: 65px;
+}
+.vectorVector2,
+.vectorVector3 {
+  left: 209.67px;
+  width: 8.66px;
+}
+.vectorVector3 {
+  left: 213.25px;
+  width: 141.08px;
+}
+.vectorVector4,
+.vectorVector5,
+.vectorVector6 {
+  position: absolute;
+  top: 529px;
+  left: 73.67px;
+  width: 8.66px;
+  height: 34px;
+}
+.vectorVector5,
+.vectorVector6 {
+  left: 209.67px;
+}
+.vectorVector6 {
+  left: 345.67px;
+}
+.vectorRectangle,
+.vectorRectangle1,
+.vectorRectangle2 {
+  position: absolute;
+  top: 615px;
+  left: 77.25px;
+  width: 142.08px;
+  height: 130px;
+}
+.vectorRectangle1,
+.vectorRectangle2 {
+  left: 210.67px;
+  width: 8.66px;
+}
+.vectorRectangle2 {
+  width: 140.08px;
+}
+.sellflow {
+  position: relative;
+  background-color: var(--white1);
+  width: 100%;
+  height: 926px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-darkslategray-400);
+  font-family: var(--base-1-semibold);
+}

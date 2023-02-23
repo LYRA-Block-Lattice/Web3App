@@ -1,9 +1,9 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import CatalogSelection from "../components/CatalogSelection";
+import TokenContainer from "../components/TokenContainer";
 import { useNavigate } from "react-router-dom";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./StartToCreateOrder.css";
+import Footer from "../components/Footer";
+import styles from "./StartToCreateOrder.module.css";
 
 const StartToCreateOrder: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -16,37 +16,36 @@ const StartToCreateOrder: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   const onPrepareSellOrderButtonClick = useCallback(() => {
     navigate("/selltokentotoken");
   }, [navigate]);
 
   return (
-    <div className="starttocreateorder">
+    <div className={styles.starttocreateorder}>
       <TopNavigationBar
         title="Select Catalog"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="catalog-section-parent">
-        <div className="catalog-section">
-          <CatalogSelection iWantTo="I want to sell:" />
-          <div className="catalog-section-child" />
-          <CatalogSelection iWantTo="I want to get:" />
-        </div>
+      <div className={styles.catalogSectionParent}>
+        <TokenContainer />
         <button
-          className="prepare-sell-order-button15"
+          className={styles.prepareSellOrderButton}
           onClick={onPrepareSellOrderButtonClick}
         >
-          <div className="primary-button5">Specify Token</div>
+          <div className={styles.primaryButton}>Specify Token</div>
         </button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light4.svg"
-        moleculeLight1="../asserts/molecule-light4.svg"
-        walletLight1="../asserts/wallet-light4.svg"
-        userAltLight1="../asserts/user-alt-light4.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
+      <Footer
+        iconImageUrl="../box-alt-light6.svg"
+        moleculeImageUrl="../molecule-light6.svg"
+        walletImageUrl="../wallet-light6.svg"
+        userImageUrl="../user-alt-light6.svg"
       />
     </div>
   );

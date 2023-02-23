@@ -1,7 +1,9 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
-import "./MiscComponents.css";
+import ItemContainer from "../components/ItemContainer";
+import ProductContainer from "../components/ProductContainer";
+import styles from "./MiscComponents.module.css";
 
 const MiscComponents: FunctionComponent = () => {
   const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
@@ -25,90 +27,14 @@ const MiscComponents: FunctionComponent = () => {
 
   return (
     <>
-      <div className="misccomponents">
-        <div className="nft-showing-item-parent">
-          <div className="nft-showing-item">
-            <div className="lyralogoblueicon-wrapper">
-              <img
-                className="lyralogoblueicon1"
-                alt=""
-                src="../asserts/lyralogoblueicon1@2x.png"
-              />
-            </div>
-            <div className="content">
-              <div className="name-bm">
-                <div className="put-your-product">
-                  put your product name here or go!
-                </div>
-                <img
-                  className="press-area-icon"
-                  alt=""
-                  src="../asserts/press-area.svg"
-                />
-              </div>
-              <div className="price">
-                <div className="div1">60$</div>
-              </div>
-            </div>
-          </div>
-          <div className="nft-showing-item">
-            <div className="lyralogoblueicon-wrapper">
-              <img
-                className="lyralogoblueicon1"
-                alt=""
-                src="../asserts/lyralogoblueicon1@2x.png"
-              />
-            </div>
-            <div className="content">
-              <div className="name-bm">
-                <div className="put-your-product">
-                  put your product name here or go!
-                </div>
-                <img
-                  className="press-area-icon"
-                  alt=""
-                  src="../asserts/press-area1.svg"
-                />
-              </div>
-              <div className="price">
-                <div className="div1">60$</div>
-              </div>
-            </div>
-          </div>
+      <div className={styles.misccomponents}>
+        <div className={styles.nftShowingItemParent}>
+          <ItemContainer />
+          <ItemContainer />
         </div>
-        <div className="nft-showing-item-parent">
-          <button className="nft-showing-item2" onClick={openGeneralPopup}>
-            <div className="lyralogoblueicon-wrapper">
-              <img
-                className="lyralogoblueicon1"
-                alt=""
-                src="../asserts/lyralogoblueicon1@2x.png"
-              />
-            </div>
-            <div className="content2">
-              <div className="name-bm">
-                <div className="put-your-product2">
-                  put your product name here or go!
-                </div>
-              </div>
-            </div>
-          </button>
-          <button className="nft-showing-item2" onClick={openGeneralPopup1}>
-            <div className="lyralogoblueicon-wrapper">
-              <img
-                className="lyralogoblueicon1"
-                alt=""
-                src="../asserts/lyralogoblueicon1@2x.png"
-              />
-            </div>
-            <div className="content2">
-              <div className="name-bm">
-                <div className="put-your-product2">
-                  put your product name here or go!
-                </div>
-              </div>
-            </div>
-          </button>
+        <div className={styles.nftShowingItemParent}>
+          <ProductContainer openGeneralPopup={openGeneralPopup} />
+          <ProductContainer openGeneralPopup={openGeneralPopup1} />
         </div>
       </div>
       {isGeneralPopupOpen && (

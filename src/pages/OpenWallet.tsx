@@ -12,8 +12,8 @@ import {
   IconButton,
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import BottomNavigationBar from "../components/BottomNavigationBar";
-import "./OpenWallet.css";
+import Footer from "../components/Footer";
+import styles from "./OpenWallet.module.css";
 
 const OpenWallet: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -24,21 +24,26 @@ const OpenWallet: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   return (
-    <div className="openwallet">
+    <div className={styles.openwallet}>
       <TopNavigationBar
         title="Open Wallet"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="illus5-copy-parent">
+      <div className={styles.illus5CopyParent}>
         <img
-          className="illus5-copy-icon"
+          className={styles.illus5CopyIcon}
           alt=""
-          src="../asserts/illus5-copy.svg"
+          src="../illus5-copy.svg"
         />
         <FormControl
-          className="wallet-name1"
+          className={styles.walletName}
           sx={{ width: 343 }}
           variant="standard"
         >
@@ -50,7 +55,7 @@ const OpenWallet: FunctionComponent = () => {
           <FormHelperText />
         </FormControl>
         <TextField
-          className="password"
+          className={styles.password}
           sx={{ width: 330 }}
           color="primary"
           variant="standard"
@@ -70,21 +75,19 @@ const OpenWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className="prepare-sell-order-button18">
-          <div className="primary-button7">Open</div>
+        <button className={styles.prepareSellOrderButton}>
+          <div className={styles.primaryButton}>Open</div>
         </button>
-        <button className="prepare-sell-order-button19">
-          <div className="mini-button5">Create</div>
+        <button className={styles.prepareSellOrderButton1}>
+          <div className={styles.miniButton}>Create</div>
         </button>
-        <button className="forgot-password-copy">Forgot password?</button>
+        <button className={styles.forgotPasswordCopy}>Forgot password?</button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
+      <Footer
+        iconImageUrl="../box-alt-light.svg"
+        moleculeImageUrl="../molecule-light.svg"
+        walletImageUrl="../wallet-light.svg"
+        userImageUrl="../user-alt-light.svg"
       />
     </div>
   );
