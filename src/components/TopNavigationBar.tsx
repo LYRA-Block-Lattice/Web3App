@@ -6,44 +6,36 @@ type TopNavigationBarType = {
   title?: string;
 
   /** Action props */
-  onMiniProgramsButtons?: () => void;
+  onNavBack?: () => void;
   onTitle?: () => void;
-  onHome?: () => void;
   onContextPlus?: () => void;
 };
 
 const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   title,
-  onMiniProgramsButtons,
+  onNavBack,
   onTitle,
-  onHome,
   onContextPlus
 }) => {
   const navigate = useNavigate();
 
-  const onContextMenuButtonClick = useCallback(() => {
-    //TODO: context menu
-  }, []);
-
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     navigate(-1);
+    if (onNavBack) onNavBack();
   }, [navigate]);
 
   const onTitleClick = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    if (onTitle) onTitle();
   }, []);
 
-  const onHomeClick = useCallback(() => {
-    navigate("/");
-  }, []);
-
-  const onContextPlusClick = useCallback(() => {
-    //TODO: popup context menu, share, etc.
+  const onContextMenuButtonClick = useCallback(() => {
+    if (onContextPlus) onContextPlus();
   }, []);
 
   return (
-    <nav className="topnavigationbar sticky-header">
-      <button className="navbackbutton" onClick={onMiniProgramsButtonsClick}>
+    <div className="topnavigationbar sticky-header">
+      <button className="navbackbutton" onClick={onNavBackButtonClick}>
         <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
       </button>
       <button className="title5" onClick={onTitleClick}>

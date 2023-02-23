@@ -54,21 +54,9 @@ const SendTokenForm: FunctionComponent = () => {
     }
   }, [sel, dst, amount]);
 
-  const onNavBackButtonClick = useCallback(() => {
-    //TODO: nav back. none for home (wallet, market, profile, etc.)
-  }, []);
-
-  const onTitleClick = useCallback(() => {
-    //TODO: scroll top
-  }, []);
-
   return (
     <div className="sendtokenform">
-      <TopNavigationBar
-        title="Send Token"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-        onTitleClick={onTitleClick}
-      />
+      <TopNavigationBar title="Send Token" />
       <div className="tokentosell-parent">
         <SearchTokenInput
           key="tosend"

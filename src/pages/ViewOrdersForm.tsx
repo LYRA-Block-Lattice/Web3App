@@ -69,21 +69,9 @@ const ViewOrdersForm: FunctionComponent = () => {
     navigate("/starttocreateorder");
   }, [navigate]);
 
-  const onNavBackButtonClick = useCallback(() => {
-    //TODO: nav back. none for home (wallet, market, profile, etc.)
-  }, []);
-
-  const onTitleClick = useCallback(() => {
-    //TODO: scroll top
-  }, []);
-
   return (
     <div className="viewordersform">
-      <TopNavigationBar
-        title="My Orders"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-        onTitleClick={onTitleClick}
-      />
+      <TopNavigationBar title="My Orders" />
       <div className="wallet-card-container">
         <div className="wallet-card1">
           <div className="wallet-card-inner1">
