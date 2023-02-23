@@ -350,7 +350,7 @@
   font-size: var(--body-semibold-size);
   color: var(--black-0000001001);
 }
-.primary-button4 {
+.primary-button7 {
   position: relative;
   font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
@@ -360,7 +360,7 @@
   color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button4 {
+.prepare-sell-order-button11 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -377,7 +377,7 @@
   justify-content: center;
   gap: var(--gap-md);
 }
-.prepare-sell-order-button4:hover {
+.prepare-sell-order-button11:hover {
   background-color: var(--color-mediumslateblue);
 }
 .buysection,

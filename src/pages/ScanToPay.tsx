@@ -31,8 +31,8 @@ const ScanToPay: FunctionComponent = () => {
         <button className="lv3nd5bii1ahj7x5axdq2oradop1cd">
           LV3nD5Bii1aHj7x5AXDq2oraDoP1cd9UF5p7uuqHYFnC1tfUX4mtWXa98uYYxZ3pf7aCTdvvqiNpop1WsakaooQzFjCMhc
         </button>
-        <button className="prepare-sell-order-button">
-          <div className="primary-button">Scan to pay</div>
+        <button className="prepare-sell-order-button7">
+          <div className="primary-button3">Scan to pay</div>
         </button>
       </div>
       <BottomNavigationBar />

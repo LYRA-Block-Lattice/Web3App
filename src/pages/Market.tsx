@@ -1,6 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import MarketToolBarContainer from "../components/MarketToolBarContainer";
+import CatalogTab from "../components/CatalogTab";
 import TetherLink from "../components/TetherLink";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./Market.css";
@@ -16,6 +17,26 @@ const Market: FunctionComponent = () => {
 
   const onContextMenuButtonClick = useCallback(() => {
     //TODO: context menu
+  }, []);
+
+  const onFrameButtonClick = useCallback(() => {
+    //TODO: sel token
+  }, []);
+
+  const onFrameButton1Click = useCallback(() => {
+    //TODO: sel nft
+  }, []);
+
+  const onFrameButton2Click = useCallback(() => {
+    //TODO: sel fiat
+  }, []);
+
+  const onFrameButton3Click = useCallback(() => {
+    //TODO: sel goods
+  }, []);
+
+  const onFrameButton4Click = useCallback(() => {
+    //TODO: sel services
   }, []);
 
   const onBannerImageClick = useCallback(() => {
@@ -50,23 +71,13 @@ const Market: FunctionComponent = () => {
           />
         </div>
         <div className="tradableorderssection">
-          <div className="catalogtab">
-            <div className="token-wrapper">
-              <b className="token">Token</b>
-            </div>
-            <div className="nft-wrapper">
-              <b className="token">NFT</b>
-            </div>
-            <div className="nft-wrapper">
-              <b className="token">Fiat</b>
-            </div>
-            <div className="nft-wrapper">
-              <b className="token">Goods</b>
-            </div>
-            <div className="nft-wrapper">
-              <b className="token">Service</b>
-            </div>
-          </div>
+          <CatalogTab
+            onFrameButtonClick={onFrameButtonClick}
+            onFrameButton1Click={onFrameButton1Click}
+            onFrameButton2Click={onFrameButton2Click}
+            onFrameButton3Click={onFrameButton3Click}
+            onFrameButton4Click={onFrameButton4Click}
+          />
           <div className="ordercard">
             <div className="order-brief-section">
               <button className="banner-image" onClick={onBannerImageClick}>

@@ -40,7 +40,7 @@ const OpenContainer: FunctionComponent<OpenContainerType> = ({
           <img
             className="icbaseline-generating-tokens-icon4"
             alt=""
-            src="../asserts/carbonuserservicedesk2.svg"
+            src="../asserts/carbonuserservicedesk4.svg"
           />
         </div>
         <div className="order-status2">
