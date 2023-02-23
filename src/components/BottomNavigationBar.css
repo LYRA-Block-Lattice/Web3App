@@ -25,12 +25,19 @@
 }
 .text11 {
   position: relative;
+  font-size: var(--uppercase-small-size);
   line-height: 14px;
+  font-family: var(--regular-body1);
+  color: var(--primary-text1);
+  text-align: center;
 }
 .tabbar-item {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--selectable1);
   align-self: stretch;
   flex: 1;
-  background-color: var(--selectable1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,21 +46,11 @@
 }
 .text13 {
   position: relative;
+  font-size: var(--uppercase-small-size);
   line-height: 10px;
-}
-.tabbar,
-.tabbar-item2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tabbar-item2 {
-  align-self: stretch;
-  flex: 1;
-  background-color: var(--selectable1);
-  flex-direction: column;
-  gap: var(--gap-5xs);
+  font-family: var(--regular-body1);
   color: var(--primary1);
+  text-align: center;
 }
 .tabbar {
   position: absolute;
@@ -62,9 +59,12 @@
   bottom: 34px;
   left: 0;
   background-color: var(--white1);
-  box-shadow: var(--y11);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) inset;
   height: 56px;
+  display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .bottomtabbar {
   position: fixed;
@@ -72,8 +72,4 @@
   height: 90px;
   flex-shrink: 0;
   bottom: 0;
-  text-align: center;
-  font-size: var(--uppercase-small-size);
-  color: var(--primary-text1);
-  font-family: var(--regular-body1);
 }
