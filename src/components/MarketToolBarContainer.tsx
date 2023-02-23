@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { useNavigate } from "react-router";
 import "./MarketToolBarContainer.css";
 
 type MarketToolBarContainerType = {
@@ -16,10 +17,12 @@ const MarketToolBarContainer: FunctionComponent<MarketToolBarContainerType> = ({
   homeIconInterlocution3,
   homeIconInterlocution4
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="markettoolbar">
       <div className="swap-button-parent">
-        <button className="swap-button">
+        <button className="swap-button" onClick={() => navigate("/")}>
           <img
             className="home-icon-interlocution"
             alt=""
@@ -27,7 +30,10 @@ const MarketToolBarContainer: FunctionComponent<MarketToolBarContainerType> = ({
           />
           <div className="ranking">Market</div>
         </button>
-        <button className="swap-button">
+        <button
+          className="swap-button"
+          onClick={() => navigate("/starttocreateorder")}
+        >
           <img
             className="home-icon-interlocution"
             alt=""
@@ -35,7 +41,10 @@ const MarketToolBarContainer: FunctionComponent<MarketToolBarContainerType> = ({
           />
           <div className="ranking">New Sell</div>
         </button>
-        <button className="swap-button">
+        <button
+          className="swap-button"
+          onClick={() => navigate("/viewordersform")}
+        >
           <img
             className="home-icon-interlocution"
             alt=""
@@ -43,7 +52,10 @@ const MarketToolBarContainer: FunctionComponent<MarketToolBarContainerType> = ({
           />
           <div className="ranking">Orders</div>
         </button>
-        <button className="swap-button">
+        <button
+          className="swap-button"
+          onClick={() => navigate("/viewtradesform")}
+        >
           <img
             className="home-icon-interlocution"
             alt=""
@@ -51,7 +63,7 @@ const MarketToolBarContainer: FunctionComponent<MarketToolBarContainerType> = ({
           />
           <div className="ranking">Trades</div>
         </button>
-        <button className="swap-button">
+        <button className="swap-button" onClick={() => navigate("/")}>
           <img
             className="home-icon-interlocution"
             alt=""

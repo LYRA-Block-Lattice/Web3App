@@ -28,7 +28,7 @@ const ViewTradesForm: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className="viewtradesform">
+    <div className="viewtradesform main-content">
       <TopNavigationBar title="View Trades" />
       <div className="wallet-card-group">
         <WalletCardContainer />

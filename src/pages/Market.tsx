@@ -18,14 +18,6 @@ const Market: FunctionComponent = () => {
   const auth = useSelector(getAuthSelector);
   const [cat, setCat] = useState("");
 
-  const onNavBackButtonClick = useCallback(() => {
-    //TODO: nav back. none for home (wallet, market, profile, etc.)
-  }, []);
-
-  const onBalanceDisplayZoneClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onNewSell = useCallback(() => {
     //if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
     //else
@@ -33,23 +25,27 @@ const Market: FunctionComponent = () => {
   }, [navigate]);
 
   const onFrameButtonClick = useCallback(() => {
-    //TODO: sel token
+    setCat("Token");
   }, []);
 
   const onFrameButton1Click = useCallback(() => {
     //TODO: sel nft
+    setCat("NFT");
   }, []);
 
   const onFrameButton2Click = useCallback(() => {
     //TODO: sel fiat
+    setCat("Fiat");
   }, []);
 
   const onFrameButton3Click = useCallback(() => {
     //TODO: sel goods
+    setCat("Goods");
   }, []);
 
   const onFrameButton4Click = useCallback(() => {
     //TODO: sel services
+    setCat("Service");
   }, []);
 
   const onSwapButton1Click = useCallback(() => {
@@ -87,6 +83,7 @@ const Market: FunctionComponent = () => {
             onFrameButton3Click={onFrameButton3Click}
             onFrameButton4Click={onFrameButton4Click}
           />
+          <DisplaySellItems cat={cat} />
           <div className="ordercard">
             <div className="order-brief-section">
               <button className="banner-image" onClick={onBannerImageClick}>
