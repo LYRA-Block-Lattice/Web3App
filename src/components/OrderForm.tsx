@@ -11,7 +11,7 @@ const OrderForm: FunctionComponent = () => {
     <div className="ordercard3">
       <div className="order-brief-section3">
         <OpenContainer
-          tokenImageUrl="../asserts/icbaselinegeneratingtokens3.svg"
+          tokenImageUrl="icbaselinegeneratingtokens3.svg"
           propBackgroundColor="#fa7268"
           onBannerImageClick={onBannerImageClick}
         />

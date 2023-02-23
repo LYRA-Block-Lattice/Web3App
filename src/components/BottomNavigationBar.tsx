@@ -20,7 +20,7 @@ const BottomNavigationBar: FunctionComponent = () => {
           <img
             className="box-alt-light-icon"
             alt=""
-            src="../asserts/box-alt-light.svg"
+            src="../asserts/box-alt-light1.svg"
           />
           <div className="text11">Market</div>
         </button>
@@ -28,7 +28,7 @@ const BottomNavigationBar: FunctionComponent = () => {
           <img
             className="box-alt-light-icon"
             alt=""
-            src="../asserts/molecule-light.svg"
+            src="../asserts/molecule-light1.svg"
           />
           <div className="text11">DAO</div>
         </button>
@@ -36,7 +36,7 @@ const BottomNavigationBar: FunctionComponent = () => {
           <img
             className="box-alt-light-icon"
             alt=""
-            src="../asserts/wallet-light.svg"
+            src="../asserts/wallet-light1.svg"
           />
           <div className="text13">Wallet</div>
         </button>
@@ -44,7 +44,7 @@ const BottomNavigationBar: FunctionComponent = () => {
           <img
             className="box-alt-light-icon"
             alt=""
-            src="../asserts/user-alt-light.svg"
+            src="../asserts/user-alt-light1.svg"
           />
           <div className="text11">Me</div>
         </button>

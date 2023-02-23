@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
-import CreateNFTForm from "./pages/CreateNFTForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
+import CreateNFTForm from "./pages/CreateNFTForm";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
 import ScanToPay from "./pages/ScanToPay";
@@ -44,11 +44,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/createnftform":
+      case "/starttocreateorder":
         title = "";
         metaDescription = "";
         break;
-      case "/starttocreateorder":
+      case "/createnftform":
         title = "";
         metaDescription = "";
         break;
@@ -140,9 +140,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Market />} />
 
-      <Route path="/createnftform" element={<CreateNFTForm />} />
-
       <Route path="/starttocreateorder" element={<StartToCreateOrder />} />
+
+      <Route path="/createnftform" element={<CreateNFTForm />} />
 
       <Route path="/createwallet" element={<CreateWallet />} />
 

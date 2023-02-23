@@ -14,7 +14,7 @@
   justify-content: flex-start;
 }
 .tradecatalog {
-  background-color: var(--white);
+  background-color: var(--white1);
   width: 110px;
   overflow: hidden;
   padding: var(--padding-3xl) var(--padding-3xs) var(--padding-4xs);
@@ -25,6 +25,6 @@
   gap: var(--gap-6xs);
   text-align: center;
   font-size: var(--body-m-size);
-  color: var(--black);
-  font-family: var(--caption);
+  color: var(--black-0000001001);
+  font-family: var(--regular-body1);
 }

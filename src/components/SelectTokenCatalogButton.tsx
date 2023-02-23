@@ -1,46 +1,19 @@
-import { FunctionComponent, useMemo, LegacyRef } from "react";
-import CSS, { Property } from "csstype";
+import { FunctionComponent } from "react";
 import "./SelectTokenCatalogButton.css";
 
 type SelectTokenCatalogButtonType = {
-  icbaselineGeneratingToken?: string;
-  token?: string;
-  tokenClicked: (tokenName: string | undefined) => void;
-  disabled: boolean;
-  act?: string;
-  xref: LegacyRef<HTMLButtonElement> | undefined;
+  imgurl?: string;
+  cat?: string;
 };
 
 const SelectTokenCatalogButton: FunctionComponent<
   SelectTokenCatalogButtonType
-> = ({
-  icbaselineGeneratingToken,
-  token,
-  tokenClicked,
-  disabled,
-  act,
-  xref
-}) => {
-  const selectTokenButtonStyle: CSS.Properties = useMemo(() => {
-    return {
-      backgroundColor: disabled ? "lightgray" : "#1EC8A5"
-    };
-  }, [disabled]);
+> = ({ imgurl, cat }) => {
   return (
-    <button
-      className="select-token-catalog-button"
-      onClick={(e) => tokenClicked(token)}
-      style={selectTokenButtonStyle}
-      ref={xref}
-      id={`${act}-${token}`}
-    >
-      <img
-        className="icbaseline-generating-tokens-icon3"
-        alt=""
-        src={icbaselineGeneratingToken}
-      />
-      <div className="token-frame">
-        <b className="token2">{token}</b>
+    <button className="select-token-catalog-button">
+      <img className="icbaseline-generating-tokens-icon2" alt="" src={imgurl} />
+      <div className="token-wrapper">
+        <b className="token">{cat}</b>
       </div>
     </button>
   );
