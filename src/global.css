@@ -128,3 +128,8 @@ body {
   --y1: 0px 1px 0px rgba(0, 0, 0, 0.05) inset;
   --inner-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
 }
+.main-content {
+  padding-top: 56px !important; /* replace with the height of your sticky header */
+  height: 100% !important;
+  /* other styles for main content */
+}

@@ -61,7 +61,7 @@
 }
 .bottomtabbar {
   position: fixed;
-  width: 375px;
+  width: 100%;
   height: 90px;
   flex-shrink: 0;
   bottom: 0;

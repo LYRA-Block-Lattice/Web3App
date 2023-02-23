@@ -39,7 +39,7 @@ const Market: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="market">
+    <div className="market main-content">
       <TopNavigationBar title="Market" />
       <div className="orderandcatalog">
         <MarketToolBar

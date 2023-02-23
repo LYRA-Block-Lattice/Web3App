@@ -70,7 +70,7 @@ const ViewOrdersForm: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className="viewordersform">
+    <div className="viewordersform main-content">
       <TopNavigationBar title="My Orders" />
       <div className="wallet-card-container">
         <div className="wallet-card1">

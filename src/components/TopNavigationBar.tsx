@@ -1,4 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router";
 import "./TopNavigationBar.css";
 
@@ -18,6 +19,8 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   onContextPlus
 }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isRoot = location.pathname === "/";
 
   const onNavBackButtonClick = useCallback(() => {
     navigate(-1);
@@ -36,7 +39,9 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   return (
     <div className="topnavigationbar sticky-header">
       <button className="navbackbutton" onClick={onNavBackButtonClick}>
-        <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
+        {!isRoot && (
+          <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
+        )}
       </button>
       <button className="title5" onClick={onTitleClick}>
         {title}
