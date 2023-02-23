@@ -2,7 +2,7 @@ import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import WalletToolBar from "../components/WalletToolBar";
-import Footer from "../components/Footer";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./WalletHome.css";
 
 const WalletHome: FunctionComponent = () => {
@@ -117,12 +117,7 @@ const WalletHome: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <Footer
-        iconImageUrl="../box-alt-light.svg"
-        moleculeImageUrl="../molecule-light.svg"
-        walletImageUrl="../wallet-light.svg"
-        userImageUrl="../user-alt-light.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };
