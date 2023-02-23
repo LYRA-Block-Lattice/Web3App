@@ -1,0 +1,73 @@
+.lyralogoblackicon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.lyra-coin {
+  flex: 1;
+  display: inline-block;
+  height: 24px;
+}
+.b1,
+.lyr,
+.lyra-coin {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+}
+.b1 {
+  font-size: var(--caption-size);
+  color: var(--text-secondary);
+}
+.lyr-parent,
+.lyra-coin-parent {
+  display: flex;
+  justify-content: flex-start;
+}
+.lyr-parent {
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--gap-4xs);
+  text-align: right;
+  font-size: var(--font-size-xl);
+  color: var(--default-black);
+}
+.lyra-coin-parent {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-xs);
+}
+.frame-child4 {
+  position: relative;
+  border-top: 1px solid var(--color-gainsboro-200);
+  box-sizing: border-box;
+  width: 156px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.frame-parent3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-2xs);
+}
+.tokendisplayitem1 {
+  align-self: stretch;
+  background-color: var(--white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-7xs);
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-xs);
+  text-align: left;
+  font-size: var(--font-size-2xl);
+  color: var(--black);
+  font-family: var(--caption);
+}
