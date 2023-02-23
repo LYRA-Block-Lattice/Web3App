@@ -15,7 +15,6 @@ import {
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import TopNavigationBar from "../components/TopNavigationBar";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./OpenWallet.css";
 
@@ -63,20 +62,7 @@ const OpenWallet: FunctionComponent = () => {
 
   return (
     <div className="openwallet">
-      <TopNavigationBar
-        title="Open Wallet"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-        onTitleClick={onTitleClick}
-        onHomeClick={onHomeClick}
-        separator="../asserts/separator10.svg"
-        onContextPlusClick={onContextPlusClick}
-        rectangle1="../asserts/rectangle-111.svg"
-        iconleft="../asserts/iconleft.svg"
-        ellipse="../asserts/ellipse.svg"
-        ellipse1="../asserts/ellipse1.svg"
-        vector7="../asserts/vector-7.svg"
-        vector8="../asserts/vector-8.svg"
-      />
+      <TopNavigationBar title="Open Wallet" />
       <div className="illus5-copy-parent">
         <img
           className="illus5-copy-icon"

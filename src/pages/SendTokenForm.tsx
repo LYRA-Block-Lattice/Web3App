@@ -56,20 +56,7 @@ const SendTokenForm: FunctionComponent = () => {
 
   return (
     <div className="sendtokenform">
-      <TopNavigationBar
-        title="Send Token"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-        onTitleClick={onTitleClick}
-        onHomeClick={onHomeClick}
-        separator="../asserts/separator1.svg"
-        onContextPlusClick={onContextPlusClick}
-        rectangle1="../asserts/rectangle-12.svg"
-        iconleft="../asserts/iconleft.svg"
-        ellipse="../asserts/ellipse.svg"
-        ellipse1="../asserts/ellipse1.svg"
-        vector7="../asserts/vector-7.svg"
-        vector8="../asserts/vector-8.svg"
-      />
+      <TopNavigationBar title="Send Token" />
       <div className="tokentosell-parent">
         <SearchTokenInput
           key="tosend"

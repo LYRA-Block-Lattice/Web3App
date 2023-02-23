@@ -129,20 +129,7 @@ const WalletHome: FunctionComponent = () => {
   return (
     <>
       <div className="wallethome">
-        <TopNavigationBar
-          title="Wallet"
-          onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-          onTitleClick={onTitleClick}
-          onHomeClick={onHomeClick}
-          separator="../asserts/separator1.svg"
-          onContextPlusClick={onContextPlusClick}
-          rectangle1="../asserts/rectangle-13.svg"
-          iconleft="../asserts/iconleft.svg"
-          ellipse="../asserts/ellipse.svg"
-          ellipse1="../asserts/ellipse1.svg"
-          vector7="../asserts/vector-7.svg"
-          vector8="../asserts/vector-8.svg"
-        />
+        <TopNavigationBar title="Wallet" />
         <div className="wallet-card-parent">
           <WalletCard />
           <div className="iconssection-wrapper">

@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from "react";
+import { FunctionComponent, useCallback, useEffect } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import MarketToolBar from "../components/MarketToolBar";
@@ -31,20 +31,7 @@ const ViewTradesForm: FunctionComponent = () => {
 
   return (
     <div className="viewtradesform">
-      <TopNavigationBar
-        title="My Trades"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-        onTitleClick={onTitleClick}
-        onHomeClick={onHomeClick}
-        separator="../asserts/separator1.svg"
-        onContextPlusClick={onContextPlusClick}
-        rectangle1="../asserts/rectangle-11.svg"
-        iconleft="../asserts/iconleft.svg"
-        ellipse="../asserts/ellipse.svg"
-        ellipse1="../asserts/ellipse1.svg"
-        vector7="../asserts/vector-7.svg"
-        vector8="../asserts/vector-8.svg"
-      />
+      <TopNavigationBar title="My Trades" />
       <div className="wallet-card-group">
         <div className="wallet-card">
           <div className="wallet-card-inner">

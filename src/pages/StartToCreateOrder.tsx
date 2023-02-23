@@ -43,31 +43,6 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
     navigate(`/selltokentotoken?sell=${typeMap[start!]}&get=${typeMap[end!]}`);
-    //if (start == "Token" || start == "NFT" || start == "Fiat") {
-    //  if (end == "Token" || end == "NFT" || end == "Fiat")
-    //    navigate(`/selltokentotoken?sell=${start}&get=${end}`);
-    //  //else if(end == "Fiat")
-    //  //  navigate(`/selltokentofiat?sell=${start}&get=${end}`);
-    //  else
-    //    navigate(`/selltokentotot?sell=${start}&get=${end}`);
-    //}
-    ////else if(start == "Fiat")
-    ////{
-    ////  if(end == "Token" || end == "NFT")
-    ////    navigate(`/sellfiattotoken?sell=${start}&get=${end}`);
-    ////  else if(end == "Fiat")
-    ////    navigate(`/sellfiattofiat?sell=${start}&get=${end}`);
-    ////  else
-    ////    navigate(`/sellfiattotot?sell=${start}&get=${end}`);
-    ////}
-    //else {
-    //  if (end == "Token" || end == "NFT" || end == "Fiat")
-    //    navigate(`/selltottotoken?sell=${start}&get=${end}`);
-    //  //else if(end == "Fiat")
-    //  //  navigate(`/selltottofiat?sell=${start}&get=${end}`);
-    //  else
-    //    navigate(`/selltottotot?sell=${start}&get=${end}`);
-    //}
   }, [navigate, start, end]);
 
   const onTokenAction = (
@@ -85,20 +60,7 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
-      <TopNavigationBar
-        title="Select Catalog"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-        onTitleClick={onTitleClick}
-        onHomeClick={onHomeClick}
-        separator="../asserts/separator4.svg"
-        onContextPlusClick={onContextPlusClick}
-        rectangle1="../asserts/rectangle-19.svg"
-        iconleft="../asserts/iconleft4.svg"
-        ellipse="../asserts/ellipse8.svg"
-        ellipse1="../asserts/ellipse9.svg"
-        vector7="../asserts/vector-74.svg"
-        vector8="../asserts/vector-84.svg"
-      />
+      <TopNavigationBar title="Select Catalog" />
       <div className="catalog-section-parent">
         <div className="catalog-section">
           <Xwrapper>

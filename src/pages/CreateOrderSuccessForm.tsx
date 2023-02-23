@@ -2,7 +2,6 @@ import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import BottomNavigationBar from "../components/BottomNavigationBar";
-import TopNavigationBar from "../components/TopNavigationBar";
 import "./CreateOrderSuccessForm.css";
 
 const CreateOrderSuccessForm: FunctionComponent = () => {
@@ -32,20 +31,7 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
 
   return (
     <div className="createordersuccessform">
-      <TopNavigationBar
-        title="Order Created"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-        onTitleClick={onTitleClick}
-        onHomeClick={onHomeClick}
-        separator="../asserts/separator4.svg"
-        onContextPlusClick={onContextPlusClick}
-        rectangle1="../asserts/rectangle-18.svg"
-        iconleft="../asserts/iconleft4.svg"
-        ellipse="../asserts/ellipse8.svg"
-        ellipse1="../asserts/ellipse9.svg"
-        vector7="../asserts/vector-74.svg"
-        vector8="../asserts/vector-84.svg"
-      />
+      <TopNavigationBar title="Order Created" />
       <div className="success-parent">
         <div className="success">Success!</div>
         <img className="illus8-icon" alt="" src="../asserts/illus8.svg" />

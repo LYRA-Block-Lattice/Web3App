@@ -71,20 +71,7 @@ const ViewOrdersForm: FunctionComponent = () => {
 
   return (
     <div className="viewordersform">
-      <TopNavigationBar
-        title="My Orders"
-        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
-        onTitleClick={onTitleClick}
-        onHomeClick={onHomeClick}
-        separator="../asserts/separator1.svg"
-        onContextPlusClick={onContextPlusClick}
-        rectangle1="../asserts/rectangle-17.svg"
-        iconleft="../asserts/iconleft.svg"
-        ellipse="../asserts/ellipse.svg"
-        ellipse1="../asserts/ellipse1.svg"
-        vector7="../asserts/vector-7.svg"
-        vector8="../asserts/vector-8.svg"
-      />
+      <TopNavigationBar title="My Orders" />
       <div className="wallet-card-container">
         <div className="wallet-card1">
           <div className="wallet-card-inner1">

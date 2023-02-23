@@ -4,38 +4,24 @@ import "./TopNavigationBar.css";
 
 type TopNavigationBarType = {
   title?: string;
-  separator?: string;
-  rectangle1?: string;
-  iconleft?: string;
-  ellipse?: string;
-  ellipse1?: string;
-  vector7?: string;
-  vector8?: string;
 
   /** Action props */
-  onMiniProgramsButtonsClick?: () => void;
-  onTitleClick?: () => void;
-  onHomeClick?: () => void;
-  onContextPlusClick?: () => void;
+  onMiniProgramsButtons?: () => void;
+  onTitle?: () => void;
+  onHome?: () => void;
+  onContextPlus?: () => void;
 };
 
 const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   title,
-  onMiniProgramsButtonsClick,
-  onTitleClick,
-  onHomeClick,
-  separator,
-  onContextPlusClick,
-  rectangle1,
-  iconleft,
-  ellipse,
-  ellipse1,
-  vector7,
-  vector8
+  onMiniProgramsButtons,
+  onTitle,
+  onHome,
+  onContextPlus
 }) => {
   const navigate = useNavigate();
 
-  const onIconleftClick = useCallback(() => {
+  const onMiniProgramsButtonsClick = useCallback(() => {
     navigate(-1);
   }, [navigate]);
 
@@ -47,7 +33,7 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
     navigate("/");
   }, []);
 
-  const onShareClick = useCallback(() => {
+  const onContextPlusClick = useCallback(() => {
     //TODO: popup context menu, share, etc.
   }, []);
 
@@ -57,7 +43,7 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
         className="mini-programs-buttons"
         onClick={onMiniProgramsButtonsClick}
       >
-        <img className="iconleft" alt="" src={iconleft} />
+        <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
       </button>
       <button className="title5" onClick={onTitleClick}>
         {title}
@@ -65,14 +51,30 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
       <div className="mini-programs-buttons1">
         <div className="stroke" />
         <button className="home" onClick={onHomeClick}>
-          <img className="ellipse-icon" alt="" src={ellipse} />
-          <img className="ellipse-icon1" alt="" src={ellipse1} />
+          <img className="ellipse-icon" alt="" src="../asserts/ellipse.svg" />
+          <img className="ellipse-icon1" alt="" src="../asserts/ellipse1.svg" />
         </button>
-        <img className="separator-icon" alt="" src={separator} />
+        <img
+          className="separator-icon"
+          alt=""
+          src="../asserts/separator1.svg"
+        />
         <button className="contextplus" onClick={onContextPlusClick}>
-          <img className="contextplus-child" alt="" src={rectangle1} />
-          <img className="contextplus-item" alt="" src={vector7} />
-          <img className="contextplus-inner" alt="" src={vector8} />
+          <img
+            className="contextplus-child"
+            alt=""
+            src="../asserts/rectangle-11.svg"
+          />
+          <img
+            className="contextplus-item"
+            alt=""
+            src="../asserts/vector-7.svg"
+          />
+          <img
+            className="contextplus-inner"
+            alt=""
+            src="../asserts/vector-8.svg"
+          />
         </button>
       </div>
     </nav>
