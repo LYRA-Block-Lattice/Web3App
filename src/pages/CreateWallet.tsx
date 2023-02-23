@@ -63,7 +63,7 @@ const CreateWallet: FunctionComponent = () => {
         <div className="illus1">
           <img className="illus1-child" alt="" src="../asserts/group-3.svg" />
           <div className="group-parent">
-            <img className="group-icon" alt="" src="../asserts/group-42.svg" />
+            <img className="frame-child" alt="" src="../asserts/group-42.svg" />
             <div className="create-account">
               C<span className="r">r</span>
               <span className="e">e</span>a<span className="t">t</span>
@@ -82,38 +82,26 @@ const CreateWallet: FunctionComponent = () => {
               alt=""
               src="../asserts/youremailgmailc.svg"
             />
-            <img
-              className="frame-child1"
-              alt=""
-              src="../asserts/group-49.svg"
-            />
+            <img className="frame-item" alt="" src="../asserts/group-49.svg" />
             <img
               className="your-text-icon"
               alt=""
               src="../asserts/your-text.svg"
             />
-            <img
-              className="frame-child2"
-              alt=""
-              src="../asserts/group-53.svg"
-            />
+            <img className="frame-inner" alt="" src="../asserts/group-53.svg" />
             <img
               className="your-city-icon"
               alt=""
               src="../asserts/your-city.svg"
             />
-            <img
-              className="frame-child3"
-              alt=""
-              src="../asserts/group-57.svg"
-            />
+            <img className="group-icon" alt="" src="../asserts/group-57.svg" />
             <img
               className="entry-password-icon"
               alt=""
               src="../asserts/entry-password.svg"
             />
             <img
-              className="frame-child4"
+              className="frame-child1"
               alt=""
               src="../asserts/group-145.svg"
             />
@@ -198,13 +186,10 @@ const CreateWallet: FunctionComponent = () => {
             onChange={(e) => setPvk(e.target.value)}
           />
         </div>
-        <button
-          className="prepare-sell-order-button14"
-          onClick={onWalletCreate}
-        >
-          <div className="primary-button7">Create</div>
+        <button className="prepare-sell-order-button3" onClick={onWalletCreate}>
+          <div className="primary-button1">Create</div>
         </button>
-        <button className="prepare-sell-order-button15">
+        <button className="prepare-sell-order-button4">
           <div className="mini-button">Open</div>
         </button>
       </div>

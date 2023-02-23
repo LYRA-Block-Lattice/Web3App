@@ -50,7 +50,7 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
         <img
           className="icround-plus-icon"
           alt=""
-          src="../asserts/icroundplus3.svg"
+          src="../asserts/icroundplus6.svg"
         />
       </button>
     </div>

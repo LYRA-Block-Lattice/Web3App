@@ -14,7 +14,7 @@
   border: 0;
   background-color: transparent;
 }
-.secondary-button1 {
+.secondary-button2 {
   position: relative;
   font-size: var(--body-m-size);
   letter-spacing: 0.41px;
@@ -25,13 +25,13 @@
   text-align: center;
 }
 .createtokenform,
-.prepare-sell-order-button6 {
+.prepare-sell-order-button13 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button6 {
+.prepare-sell-order-button13 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);

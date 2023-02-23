@@ -70,10 +70,10 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../asserts/icbaselinegeneratingtokens4.svg"
+                  src="../asserts/icbaselinegeneratingtokens2.svg"
                 />
-                <div className="token-frame">
-                  <b className="token2">Token</b>
+                <div className="token-wrapper">
+                  <b className="token">Token</b>
                 </div>
               </button>
               <button className="select-token-catalog-button">
@@ -82,8 +82,8 @@ const StartToCreateOrder: FunctionComponent = () => {
                   alt=""
                   src="../asserts/mapartgallery.svg"
                 />
-                <div className="token-frame">
-                  <b className="token2">NFT</b>
+                <div className="token-wrapper">
+                  <b className="token">NFT</b>
                 </div>
               </button>
               <button className="select-token-catalog-button">
@@ -92,8 +92,8 @@ const StartToCreateOrder: FunctionComponent = () => {
                   alt=""
                   src="../asserts/fluentemojihighcontrastdollarbanknote.svg"
                 />
-                <div className="token-frame">
-                  <b className="fiat2">Fiat</b>
+                <div className="token-wrapper">
+                  <b className="fiat">Fiat</b>
                 </div>
               </button>
               <button className="select-token-catalog-button">
@@ -102,18 +102,18 @@ const StartToCreateOrder: FunctionComponent = () => {
                   alt=""
                   src="../asserts/mditruckdelivery.svg"
                 />
-                <div className="token-frame">
-                  <b className="goods2">Goods</b>
+                <div className="token-wrapper">
+                  <b className="goods">Goods</b>
                 </div>
               </button>
               <button className="select-token-catalog-button">
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../asserts/carbonuserservicedesk4.svg"
+                  src="../asserts/carbonuserservicedesk2.svg"
                 />
-                <div className="token-frame">
-                  <b className="fiat2">Service</b>
+                <div className="token-wrapper">
+                  <b className="fiat">Service</b>
                 </div>
               </button>
             </div>
@@ -126,10 +126,10 @@ const StartToCreateOrder: FunctionComponent = () => {
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../asserts/icbaselinegeneratingtokens5.svg"
+                  src="../asserts/icbaselinegeneratingtokens3.svg"
                 />
-                <div className="token-frame">
-                  <b className="token2">Token</b>
+                <div className="token-wrapper">
+                  <b className="token">Token</b>
                 </div>
               </button>
               <button className="select-token-catalog-button">
@@ -138,8 +138,8 @@ const StartToCreateOrder: FunctionComponent = () => {
                   alt=""
                   src="../asserts/mapartgallery.svg"
                 />
-                <div className="token-frame">
-                  <b className="token2">NFT</b>
+                <div className="token-wrapper">
+                  <b className="token">NFT</b>
                 </div>
               </button>
               <button className="select-token-catalog-button">
@@ -148,8 +148,8 @@ const StartToCreateOrder: FunctionComponent = () => {
                   alt=""
                   src="../asserts/fluentemojihighcontrastdollarbanknote.svg"
                 />
-                <div className="token-frame">
-                  <b className="fiat2">Fiat</b>
+                <div className="token-wrapper">
+                  <b className="fiat">Fiat</b>
                 </div>
               </button>
               <button className="select-token-catalog-button">
@@ -158,29 +158,29 @@ const StartToCreateOrder: FunctionComponent = () => {
                   alt=""
                   src="../asserts/mditruckdelivery1.svg"
                 />
-                <div className="token-frame">
-                  <b className="goods2">Goods</b>
+                <div className="token-wrapper">
+                  <b className="goods">Goods</b>
                 </div>
               </button>
               <button className="select-token-catalog-button">
                 <img
                   className="mapart-gallery-icon"
                   alt=""
-                  src="../asserts/carbonuserservicedesk4.svg"
+                  src="../asserts/carbonuserservicedesk2.svg"
                 />
-                <div className="token-frame">
-                  <b className="fiat2">Service</b>
+                <div className="token-wrapper">
+                  <b className="fiat">Service</b>
                 </div>
               </button>
             </div>
           </div>
         </div>
         <button
-          className="prepare-sell-order-button13"
+          className="prepare-sell-order-button2"
           disabled={isDisabled}
           onClick={onPrepareSellOrderButtonClick}
         >
-          <div className="primary-button6">Specify Token</div>
+          <div className="primary-button">Specify Token</div>
         </button>
       </div>
       <BottomNavigationBar />

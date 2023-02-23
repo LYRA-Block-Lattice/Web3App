@@ -30,7 +30,7 @@
   text-align: center;
   display: inline-block;
 }
-.primary-button {
+.primary-button3 {
   position: relative;
   font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
@@ -40,7 +40,7 @@
   color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button {
+.prepare-sell-order-button7 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -55,7 +55,7 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button:hover {
+.prepare-sell-order-button7:hover {
   background-color: var(--color-mediumslateblue);
 }
 .scan-to-pay-me-parent,

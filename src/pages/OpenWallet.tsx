@@ -124,10 +124,10 @@ const OpenWallet: FunctionComponent = () => {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="prepare-sell-order-button16" onClick={onOpenWallet}>
-          <div className="primary-button8">Open</div>
+        <button className="prepare-sell-order-button5" onClick={onOpenWallet}>
+          <div className="primary-button2">Open</div>
         </button>
-        <button className="prepare-sell-order-button17">
+        <button className="prepare-sell-order-button6">
           <div className="mini-button1">Create</div>
         </button>
         <button className="forgot-password-copy">Forgot password?</button>

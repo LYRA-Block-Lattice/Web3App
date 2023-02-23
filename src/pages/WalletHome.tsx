@@ -19,6 +19,7 @@ import { IBalance } from "../app/wallet/walletReducer";
 import NFTInWalletDisplay from "../components/NFTInWalletDisplay";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import WalletToolBar from "../components/WalletToolBar";
+import CatalogTab from "../components/CatalogTab";
 
 const WalletHome: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -136,6 +137,26 @@ const WalletHome: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onFrameButtonClick = useCallback(() => {
+    //TODO: sel token
+  }, []);
+
+  const onFrameButton1Click = useCallback(() => {
+    //TODO: sel nft
+  }, []);
+
+  const onFrameButton2Click = useCallback(() => {
+    //TODO: sel fiat
+  }, []);
+
+  const onFrameButton3Click = useCallback(() => {
+    //TODO: sel goods
+  }, []);
+
+  const onFrameButton4Click = useCallback(() => {
+    //TODO: sel services
+  }, []);
+
   return (
     <div className="wallethome main-content">
       <TopNavigationBar title="My Wallet" />
@@ -143,23 +164,13 @@ const WalletHome: FunctionComponent = () => {
         <PrimaryAccountContainer />
         <WalletToolBar />
         <div className="coinlisting">
-          <div className="catalogtab1">
-            <div className="token-container">
-              <b className="token1">Token</b>
-            </div>
-            <div className="nft-container">
-              <b className="token1">NFT</b>
-            </div>
-            <div className="nft-container">
-              <b className="token1">Fiat</b>
-            </div>
-            <div className="nft-container">
-              <b className="token1">Goods</b>
-            </div>
-            <div className="nft-container">
-              <b className="token1">Service</b>
-            </div>
-          </div>
+          <CatalogTab
+            onFrameButtonClick={onFrameButtonClick}
+            onFrameButton1Click={onFrameButton1Click}
+            onFrameButton2Click={onFrameButton2Click}
+            onFrameButton3Click={onFrameButton3Click}
+            onFrameButton4Click={onFrameButton4Click}
+          />
           <div className="tokendisplayitem">
             <img
               className="lyralogoblackicon"
@@ -174,7 +185,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$2,183</b>
                 </div>
               </div>
-              <div className="frame-child" />
+              <div className="line-div" />
             </div>
           </div>
           <div className="tokendisplayitem1">
@@ -191,7 +202,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$2,183</b>
                 </div>
               </div>
-              <div className="frame-child" />
+              <div className="line-div" />
             </div>
           </div>
           <div className="tokendisplayitem2">
@@ -208,7 +219,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$20,183</b>
                 </div>
               </div>
-              <div className="frame-child" />
+              <div className="line-div" />
             </div>
           </div>
           <div className="tokendisplayitem2">
@@ -225,7 +236,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$20,183</b>
                 </div>
               </div>
-              <div className="frame-child" />
+              <div className="line-div" />
             </div>
           </div>
         </div>
