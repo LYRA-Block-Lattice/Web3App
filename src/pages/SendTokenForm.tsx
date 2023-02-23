@@ -91,18 +91,11 @@ const SendTokenForm: FunctionComponent = () => {
           required
           onChange={(e) => setAmount(+e.target.value)}
         />
-        <button className="prepare-sell-order-button5" onClick={doSend}>
-          <div className="primary-button2">Send</div>
+        <button className="prepare-sell-order-button3" onClick={doSend}>
+          <div className="primary-button3">Send</div>
         </button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

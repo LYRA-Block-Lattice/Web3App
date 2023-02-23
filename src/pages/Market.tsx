@@ -6,6 +6,9 @@ import { getAppSelector, getAuthSelector } from "../app/selectors";
 import DisplaySellItems from "../dup/DisplaySellItems";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 
+import MarketToolBarContainer from "../components/MarketToolBarContainer";
+import TetherLink from "../components/TetherLink";
+
 import "./Market.css";
 import { useNavigate } from "react-router";
 import TokenCatalogTabs from "../components/TokenCatalogTabs";
@@ -42,12 +45,12 @@ const Market: FunctionComponent = () => {
     <div className="market main-content">
       <TopNavigationBar title="Market" />
       <div className="orderandcatalog">
-        <MarketToolBar
-          homeIconInterlocution="../asserts/home--icon--interlocution.svg"
-          homeIconInterlocution1="../asserts/home--icon--interlocution1.svg"
-          homeIconInterlocution2="../asserts/home--icon--interlocution2.svg"
-          homeIconInterlocution3="../asserts/home--icon--interlocution3.svg"
-          homeIconInterlocution4="../asserts/home--icon--interlocution4.svg"
+        <MarketToolBarContainer
+          homeIconInterlocution="../home--icon--interlocution5.svg"
+          homeIconInterlocution1="../home--icon--interlocution6.svg"
+          homeIconInterlocution2="../home--icon--interlocution7.svg"
+          homeIconInterlocution3="../home--icon--interlocution8.svg"
+          homeIconInterlocution4="../home--icon--interlocution9.svg"
         />
         <div className="searchsection">
           <input
@@ -74,18 +77,104 @@ const Market: FunctionComponent = () => {
               <b className="nft1">Token</b>
             </div>
           </div>
+          <DisplaySellItems cat={cat} />
+          <div className="ordercard">
+            <div className="order-brief-section">
+              <button className="banner-image" onClick={onBannerImageClick}>
+                <div className="order-banner">
+                  <div className="order-image">
+                    <img
+                      className="icbaseline-generating-tokens-icon"
+                      alt=""
+                      src="../icbaselinegeneratingtokens.svg"
+                    />
+                    <img
+                      className="order-image-child"
+                      alt=""
+                      src="../arrow-1.svg"
+                    />
+                    <img
+                      className="icbaseline-generating-tokens-icon"
+                      alt=""
+                      src="../carbonuserservicedesk.svg"
+                    />
+                  </div>
+                  <div className="order-status">
+                    <b className="open">Open</b>
+                  </div>
+                </div>
+              </button>
+              <TetherLink />
+            </div>
+            <div className="trades-section">
+              <div className="width-controller" />
+            </div>
+            <div className="userprofilesection">
+              <img
+                className="userprofilesection-child"
+                alt=""
+                src="../ellipse-1@2x.png"
+              />
+              <div className="a-big-seller-parent">
+                <b className="a-big-seller">A big seller</b>
+                <div className="the-first-dao">The First DAO</div>
+              </div>
+              <div className="parent">
+                <b className="a-big-seller">98%</b>
+                <div className="the-first-dao">1024 Trades</div>
+              </div>
+            </div>
+          </div>
+          <div className="ordercard">
+            <div className="order-brief-section">
+              <button className="banner-image" onClick={onBannerImage1Click}>
+                <div className="order-banner">
+                  <div className="order-image">
+                    <img
+                      className="icbaseline-generating-tokens-icon"
+                      alt=""
+                      src="../icbaselinegeneratingtokens.svg"
+                    />
+                    <img
+                      className="order-image-child"
+                      alt=""
+                      src="../arrow-1.svg"
+                    />
+                    <img
+                      className="icbaseline-generating-tokens-icon"
+                      alt=""
+                      src="../carbonuserservicedesk1.svg"
+                    />
+                  </div>
+                  <div className="order-status">
+                    <b className="open">Open</b>
+                  </div>
+                </div>
+              </button>
+              <TetherLink />
+            </div>
+            <div className="trades-section">
+              <div className="width-controller" />
+            </div>
+            <div className="userprofilesection">
+              <img
+                className="userprofilesection-child"
+                alt=""
+                src="../ellipse-1@2x.png"
+              />
+              <div className="a-big-seller-parent">
+                <b className="a-big-seller">A big seller</b>
+                <div className="the-first-dao">The First DAO</div>
+              </div>
+              <div className="parent">
+                <b className="a-big-seller">98%</b>
+                <div className="the-first-dao">1024 Trades</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <DisplaySellItems cat={cat} />
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#0ebd8d"
-        textColor1="#434343"
-        textColor2="#434343"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

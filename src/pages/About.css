@@ -1,8 +1,21 @@
+.lyralogo-icon {
+  position: relative;
+  width: 110px;
+  height: 111px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
 .lyra-web3-app {
+  position: relative;
   font-size: 32px;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+}
+.web3-ecommerce-on {
+  align-self: stretch;
 }
 .github-repo,
-.lyra-web3-app,
+.network,
 .web3-ecommerce-on {
   position: relative;
   letter-spacing: 0.41px;
@@ -13,28 +26,38 @@
   color: #0029ff;
 }
 .about,
+.lyralogo-parent,
 .network-parent {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .network-parent {
+  overflow: hidden;
   padding: var(--padding-4xs) 48px;
   justify-content: flex-start;
   gap: var(--gap-md);
 }
+.about,
+.lyralogo-parent {
+  justify-content: center;
+}
+.lyralogo-parent {
+  align-self: stretch;
+  flex: 1;
+  gap: 50px;
+}
 .about {
   position: relative;
-  background-color: var(--white);
+  background-color: var(--white1);
   width: 100%;
-  height: 459px;
-  padding: var(--padding-4xs);
+  height: 909px;
+  overflow: hidden;
+  padding: 0 var(--padding-2xs);
   box-sizing: border-box;
-  justify-content: center;
-  gap: 50px;
+  gap: var(--gap-lg);
   text-align: center;
-  font-size: var(--font-size-xl);
-  color: var(--black);
-  font-family: var(--caption);
+  font-size: var(--font-size-3xl);
+  color: var(--black-0000001001);
+  font-family: var(--font-sf-pro-text);
 }

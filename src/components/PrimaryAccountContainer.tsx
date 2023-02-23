@@ -24,40 +24,56 @@ const PrimaryAccountContainer: FunctionComponent<
     else navigate("/scantopay");
   }, [navigate]);
   return (
-    <div className="wallet-card1">
-      <div className="wallet-card-child">
-        <div className="rectangle-container">
-          <div className="rectangle3" />
+    <div className="wallet-card">
+      <div className="wallet-card-inner">
+        <div className="rectangle-wrapper">
+          <div className="rectangle2" />
         </div>
       </div>
-      <div className="wallet-card-inner1">
-        <div className="balance-display-zone-group">
-          <a className="balance-display-zone1">
+      <div className="frame-parent5">
+        <div className="balance-display-zone-parent">
+          <a className="balance-display-zone">
             <button
-              className="wallet-name-label1"
+              className="wallet-name-label"
               onClick={onBalanceDisplayZoneClick}
             >
               {app.name}
             </button>
-            <div className="balance-display-zone-inner" />
-            <b className="usdtbalance2">
+            <div className="balance-display-zone-child" />
+            <b className="usdtbalance">
               {app.wallet.balance.toLocaleString(undefined, {
                 maximumFractionDigits: 2
               })}
             </b>
-            <b className="lyrlabel1">LYR</b>
-            <div className="rectangle-div" />
+            <b className="lyrlabel">LYR</b>
+            <div className="balance-display-zone-item" />
+            <b className="usdtbalance">5,000</b>
+            <b className="lyrlabel">USDT</b>
           </a>
-          <div className="qrcode-button-container">
-            <button className="qrcode-button1" onClick={scanToPay}>
-              <div className="qrcode-button-round1" />
-              <img
-                className="qrcode-icon1"
-                alt=""
-                src="../asserts/qrcode-icon.svg"
-              />
+          <div className="qrcode-button-wrapper">
+            <button className="qrcode-button" onClick={scanToPay}>
+              <div className="qrcode-button-round" />
+              <img className="qrcode-icon" alt="" src="../qrcode-icon.svg" />
             </button>
           </div>
+        </div>
+        <div className="token-lists">
+          <button className="go-nft-button">
+            <div className="nft-count">12</div>
+            <b className="nft-label">NFT</b>
+          </button>
+          <button className="go-nft-button">
+            <div className="nft-count">3</div>
+            <b className="nft-label">TOT</b>
+          </button>
+          <button className="go-nft-button">
+            <div className="nft-count">0</div>
+            <b className="nft-label">Selling</b>
+          </button>
+          <button className="go-nft-button">
+            <div className="nft-count">0</div>
+            <b className="nft-label">Buying</b>
+          </button>
         </div>
       </div>
     </div>

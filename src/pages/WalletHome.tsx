@@ -1,4 +1,4 @@
-import { FunctionComponent, useState, useCallback, useEffect } from "react";
+import { FunctionComponent, useCallback, useEffect } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -135,97 +135,115 @@ const WalletHome: FunctionComponent = () => {
   }, []);
 
   return (
-    <>
-      <div className="wallethome">
-        <TopNavigationBar title="Wallet" />
-        <div className="wallet-card-parent">
-          <WalletCard />
-          <div className="iconssection-wrapper">
-            <div className="iconssection">
-              <div className="swap-button-parent">
-                <button className="swap-button" onClick={onSwapButtonClick}>
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution.svg"
-                  />
-                  <div className="ranking">Market</div>
-                </button>
-                <button className="swap-button">
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution1.svg"
-                  />
-                  <div className="ranking">Swap</div>
-                </button>
-                <button className="swap-button" onClick={onSendButtonClick}>
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution2.svg"
-                  />
-                  <div className="ranking">Send</div>
-                </button>
-                <button className="swap-button">
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution3.svg"
-                  />
-                  <div className="ranking">Receive</div>
-                </button>
-                <button className="swap-button" onClick={openSideMenuPopup}>
-                  <img
-                    className="home-icon-interlocution"
-                    alt=""
-                    src="../asserts/home--icon--interlocution4.svg"
-                  />
-                  <div className="ranking">More...</div>
-                </button>
-              </div>
+    <div className="wallethome">
+      <TopNavigationBar
+        title="My Wallet"
+        onNavBackButtonClick={onNavBackButtonClick}
+        onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
+      />
+      <div className="wallet-card-parent">
+        <PrimaryAccountContainer />
+        <WalletToolBar />
+        <div className="coinlisting">
+          <div className="catalogtab">
+            <div className="nft-wrapper">
+              <b className="nft">NFT</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="nft">Fiat</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="nft">Goods</b>
+            </div>
+            <div className="nft-wrapper">
+              <b className="nft">Service</b>
+            </div>
+            <div className="token-wrapper">
+              <b className="nft">Token</b>
             </div>
           </div>
-          <div className="coinlisting">
-            <div className="catalogtab">
-              <div className="nft-wrapper">
-                <b className="nft">NFT</b>
+          <div className="tokendisplayitem">
+            <img
+              className="lyralogoblackicon"
+              alt=""
+              src="../lyralogoblackicon@2x.png"
+            />
+            <div className="frame-container">
+              <div className="lyra-coin-parent">
+                <b className="lyra-coin">Lyra Coin</b>
+                <div className="lyr-parent">
+                  <b className="lyr">1,234,525 LYR</b>
+                  <b className="b">$2,183</b>
+                </div>
               </div>
-              <div className="nft-wrapper">
-                <b className="nft">Fiat</b>
-              </div>
-              <div className="nft-wrapper">
-                <b className="nft">Goods</b>
-              </div>
-              <div className="nft-wrapper">
-                <b className="nft">Service</b>
-              </div>
-              <div className="token-wrapper">
-                <b className="nft">Token</b>
-              </div>
+              <div className="frame-child" />
             </div>
-            {showTokens()}
+          </div>
+          <div className="tokendisplayitem1">
+            <div className="frame-container">
+              <div className="lyra-coin-parent">
+                <img
+                  className="lyralogoblackicon"
+                  alt=""
+                  src="../lyralogoblueicon4@2x.png"
+                />
+                <b className="lyra-coin">Custom Coin</b>
+                <div className="lyr-parent">
+                  <b className="lyr">1,234,525 CUS</b>
+                  <b className="b">$2,183</b>
+                </div>
+              </div>
+              <div className="frame-child" />
+            </div>
+          </div>
+          <div className="tokendisplayitem2">
+            <img
+              className="logosbitcoin-icon"
+              alt=""
+              src="../logosbitcoin.svg"
+            />
+            <div className="frame-container">
+              <div className="lyra-coin-parent">
+                <b className="lyra-coin">BitCoin</b>
+                <div className="lyr-parent">
+                  <b className="lyr">1.2345 BTC</b>
+                  <b className="b">$20,183</b>
+                </div>
+              </div>
+              <div className="frame-child" />
+            </div>
+          </div>
+          <div className="tokendisplayitem2">
+            <img
+              className="lyralogoblackicon"
+              alt=""
+              src="../mask-group@2x.png"
+            />
+            <div className="frame-container">
+              <div className="lyra-coin-parent">
+                <b className="lyra-coin">T-Shirt Blue</b>
+                <div className="lyr-parent">
+                  <b className="lyr">3 Items</b>
+                  <b className="b">$20,183</b>
+                </div>
+              </div>
+              <div className="frame-child" />
+            </div>
           </div>
         </div>
-        <BottomNavigationBar
-          boxAltLight1="../asserts/box-alt-light.svg"
-          moleculeLight1="../asserts/molecule-light.svg"
-          walletLight1="../asserts/wallet-light.svg"
-          userAltLight1="../asserts/user-alt-light.svg"
-          textColor="#434343"
-          textColor1="#0ebd8d"
-        />
       </div>
-      {isSideMenuPopupOpen && (
-        <PortalDrawer
-          overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Right"
-          onOutsideClick={closeSideMenuPopup}
-        >
-          <SideMenuPopup onClose={closeSideMenuPopup} />
-        </PortalDrawer>
-      )}
-    </>
+      <BottomNavigationBar />
+    </div>
+          {isSideMenuPopupOpen && (
+            <PortalDrawer
+              overlayColor="rgba(113, 113, 113, 0.3)"
+              placement="Right"
+              onOutsideClick={closeSideMenuPopup}
+            >
+              <SideMenuPopup onClose={closeSideMenuPopup} />
+            </PortalDrawer>
+          )}
   );
 };
 

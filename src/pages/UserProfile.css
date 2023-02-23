@@ -33,7 +33,7 @@
 }
 .line {
   position: relative;
-  border-top: 1px solid var(--white);
+  border-top: 1px solid var(--white1);
   box-sizing: border-box;
   height: 1px;
   flex-shrink: 0;
@@ -52,7 +52,7 @@
 }
 .placeholder {
   flex: 1;
-  color: var(--primary-text);
+  color: var(--primary-text1);
   text-align: right;
 }
 .input-item,
@@ -87,58 +87,30 @@
 }
 .card {
   border-radius: var(--br-2xs);
-  background-color: var(--white);
+  background-color: var(--white1);
   flex-direction: column;
   padding: var(--padding-5xs) 0;
   align-items: flex-start;
-  font-size: var(--body-semibold-size);
 }
-.text {
+.div {
   flex: 1;
   position: relative;
   line-height: 16px;
 }
-.form-card-title,
-.label4 {
-  display: flex;
-  align-items: center;
-}
-.form-card-title {
+.wrapper {
   align-self: stretch;
+  display: flex;
   flex-direction: row;
   padding: var(--padding-5xs) var(--padding-md);
-  justify-content: flex-start;
-}
-.label4 {
-  position: relative;
-  line-height: 24px;
-  width: 100px;
-  flex-shrink: 0;
-}
-.form-item-select,
-.form1 {
-  align-self: stretch;
-  display: flex;
-  justify-content: flex-start;
-}
-.form-item-select {
-  background-color: var(--selectable);
-  flex-direction: row;
-  padding: var(--padding-2xs) var(--padding-2xs) var(--padding-2xs)
-    var(--padding-md);
   align-items: center;
-  gap: var(--gap-sm);
+  justify-content: flex-start;
 }
-.form1 {
-  flex-direction: column;
-  align-items: flex-start;
-}
-.placeholder5 {
+.placeholder3 {
   position: relative;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
 }
-.placeholder6 {
+.placeholder4 {
   position: relative;
   font-size: var(--caption-size);
   line-height: 16px;
@@ -175,7 +147,7 @@
   font-size: var(--caption-size);
   color: var(--primary1);
 }
-.frame-group,
+.frame-parent,
 .item4 {
   align-self: stretch;
   display: flex;
@@ -215,6 +187,17 @@
   text-align: center;
   color: var(--primary1);
 }
+.list {
+  align-self: stretch;
+  border-radius: var(--br-2xs);
+  background-color: var(--white1);
+  overflow: hidden;
+  padding: var(--padding-5xs) 0;
+  align-items: flex-start;
+  font-size: var(--body-semibold-size);
+  color: var(--primary-text1);
+}
+.card1,
 .form,
 .list,
 .userprofile {
@@ -222,15 +205,10 @@
   flex-direction: column;
   justify-content: flex-start;
 }
-.list {
+.card1 {
   align-self: stretch;
-  border-radius: var(--br-2xs);
-  background-color: var(--white);
-  overflow: hidden;
-  padding: var(--padding-5xs) 0;
   align-items: flex-start;
-  font-size: var(--body-semibold-size);
-  color: var(--primary-text);
+  font-size: var(--caption-size);
 }
 .form,
 .userprofile {
@@ -254,7 +232,7 @@
   align-items: center;
   gap: var(--gap-lg);
   text-align: left;
-  font-size: var(--caption-size);
+  font-size: var(--body-semibold-size);
   color: var(--subtitle-text);
-  font-family: var(--caption);
+  font-family: var(--font-open-sans);
 }

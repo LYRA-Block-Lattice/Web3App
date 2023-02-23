@@ -71,9 +71,9 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
 
   return (
     <div className="sidemenupopup" data-animate-on-scroll>
-      <div className="frame-container">
+      <div className="frame-group">
         <div className="vector-parent">
-          <img className="vector-icon8" alt="" src="../asserts/vector8.svg" />
+          <img className="vector-icon8" alt="" src="../vector8.svg" />
           <div className="lyra-web3-ecommerce">Lyra Web3 eCommerce</div>
         </div>
         <List
@@ -144,7 +144,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                     <img
                       className="administration-1-icon"
                       alt=""
-                      src="../asserts/administration-1@2x.png"
+                      src="../administration-1@2x.png"
                     />
                   </div>
                   <div className="promotion">Token Mint</div>
@@ -153,7 +153,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
               <img
                 className="arrow-chevron-down-icon"
                 alt=""
-                src="../asserts/arrowchevrondown.svg"
+                src="../arrowchevrondown.svg"
               />
             </div>
           </div>
@@ -167,7 +167,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                     <img
                       className="administration-1-icon"
                       alt=""
-                      src="../asserts/promotion-1@2x.png"
+                      src="../promotion-1@2x.png"
                     />
                   </div>
                   <div className="promotion">Promotion</div>
@@ -176,7 +176,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
               <img
                 className="arrow-chevron-down-icon"
                 alt=""
-                src="../asserts/arrowchevrondown.svg"
+                src="../arrowchevrondown.svg"
               />
             </div>
           </div>
@@ -190,7 +190,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                     <img
                       className="administration-1-icon"
                       alt=""
-                      src="../asserts/customerloyalty-1@2x.png"
+                      src="../customerloyalty-1@2x.png"
                     />
                   </div>
                   <div className="promotion">Loyalty</div>
@@ -199,7 +199,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
               <img
                 className="arrow-chevron-down-icon"
                 alt=""
-                src="../asserts/arrowchevrondown.svg"
+                src="../arrowchevrondown.svg"
               />
             </div>
           </div>
@@ -213,7 +213,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                     <img
                       className="administration-1-icon"
                       alt=""
-                      src="../asserts/productmanagement-1@2x.png"
+                      src="../productmanagement-1@2x.png"
                     />
                   </div>
                   <div className="promotion">Product Management</div>
@@ -222,7 +222,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
               <img
                 className="arrow-chevron-down-icon"
                 alt=""
-                src="../asserts/arrowchevrondown.svg"
+                src="../arrowchevrondown.svg"
               />
             </div>
           </div>
@@ -237,7 +237,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                       <img
                         className="administration-1-icon"
                         alt=""
-                        src="../asserts/sale-2-1@2x.png"
+                        src="../sale-2-1@2x.png"
                       />
                     </div>
                     <div className="promotion">Sales</div>
@@ -246,7 +246,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                 <img
                   className="arrow-chevron-down-icon"
                   alt=""
-                  src="../asserts/arrowchevrondown.svg"
+                  src="../arrowchevrondown.svg"
                 />
               </div>
             </div>
@@ -263,7 +263,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                         <img
                           className="administration-1-icon"
                           alt=""
-                          src="../asserts/order-2@2x.png"
+                          src="../order-2@2x.png"
                         />
                       </div>
                       <div className="promotion">Orders</div>
@@ -272,7 +272,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                   <img
                     className="arrow-chevron-down-icon"
                     alt=""
-                    src="../asserts/arrowchevrondown.svg"
+                    src="../arrowchevrondown.svg"
                   />
                 </div>
               </div>
@@ -288,7 +288,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                     <img
                       className="administration-1-icon"
                       alt=""
-                      src="../asserts/supplychainmanagement-2@2x.png"
+                      src="../supplychainmanagement-2@2x.png"
                     />
                   </div>
                   <div className="promotion">Supply Chain</div>
@@ -297,7 +297,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
               <img
                 className="arrow-chevron-down-icon"
                 alt=""
-                src="../asserts/arrowchevrondown.svg"
+                src="../arrowchevrondown.svg"
               />
             </div>
           </div>
@@ -312,7 +312,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                       <img
                         className="administration-1-icon"
                         alt=""
-                        src="../asserts/security-1@2x.png"
+                        src="../security-1@2x.png"
                       />
                     </div>
                     <div className="promotion">Security</div>
@@ -321,7 +321,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                 <img
                   className="arrow-chevron-down-icon"
                   alt=""
-                  src="../asserts/arrowchevrondown.svg"
+                  src="../arrowchevrondown.svg"
                 />
               </div>
             </div>

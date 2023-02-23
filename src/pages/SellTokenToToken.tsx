@@ -98,6 +98,10 @@ const SellTokenToToken: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   const openGeneralPopup = useCallback(() => {
     if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
     else setGeneralPopupOpen(true);
@@ -174,10 +178,10 @@ const SellTokenToToken: FunctionComponent = () => {
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
             <button
-              className="prepare-sell-order-button11"
+              className="prepare-sell-order-button9"
               onClick={openGeneralPopup}
             >
-              <div className="utility-button4">Mint</div>
+              <div className="utility-button1">Mint</div>
             </button>
           </div>
           <SearchTokenInput
@@ -297,17 +301,10 @@ const SellTokenToToken: FunctionComponent = () => {
             onTotalChange={onTotal}
           />
           <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
-            <div className="primary-button4">Review the Order</div>
+            <div className="primary-button5">Review the Order</div>
           </button>
         </div>
-        <BottomNavigationBar
-          boxAltLight1="../asserts/box-alt-light.svg"
-          moleculeLight1="../asserts/molecule-light.svg"
-          walletLight1="../asserts/wallet-light.svg"
-          userAltLight1="../asserts/user-alt-light.svg"
-          textColor="#434343"
-          textColor1="#0ebd8d"
-        />
+        <BottomNavigationBar />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

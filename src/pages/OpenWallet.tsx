@@ -68,15 +68,15 @@ const OpenWallet: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   return (
     <div className="openwallet">
       <TopNavigationBar title="Open Wallet" />
       <div className="illus5-copy-parent">
-        <img
-          className="illus5-copy-icon"
-          alt=""
-          src="../asserts/illus5-copy.svg"
-        />
+        <img className="illus5-copy-icon" alt="" src="../illus5-copy.svg" />
         <FormControl
           className="wallet-name1"
           sx={{ width: 343 }}
@@ -120,22 +120,15 @@ const OpenWallet: FunctionComponent = () => {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="prepare-sell-order-button18" onClick={onOpenWallet}>
-          <div className="primary-button7">Open</div>
+        <button className="prepare-sell-order-button16" onClick={onOpenWallet}>
+          <div className="primary-button8">Open</div>
         </button>
-        <button className="prepare-sell-order-button19">
-          <div className="mini-button5">Create</div>
+        <button className="prepare-sell-order-button17">
+          <div className="mini-button1">Create</div>
         </button>
         <button className="forgot-password-copy">Forgot password?</button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

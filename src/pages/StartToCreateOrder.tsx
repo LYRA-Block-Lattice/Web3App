@@ -85,21 +85,14 @@ const StartToCreateOrder: FunctionComponent = () => {
           </Xwrapper>
         </div>
         <button
-          className="prepare-sell-order-button15"
+          className="prepare-sell-order-button13"
           disabled={isDisabled}
           onClick={onPrepareSellOrderButtonClick}
         >
-          <div className="primary-button5">Specify Token</div>
+          <div className="primary-button6">Specify Token</div>
         </button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light4.svg"
-        moleculeLight1="../asserts/molecule-light4.svg"
-        walletLight1="../asserts/wallet-light4.svg"
-        userAltLight1="../asserts/user-alt-light4.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

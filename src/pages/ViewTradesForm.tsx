@@ -1,7 +1,9 @@
 import { FunctionComponent, useCallback, useEffect } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
-import MarketToolBar from "../components/MarketToolBar";
+import WalletCardContainer from "../components/WalletCardContainer";
+import MarketToolBarContainer from "../components/MarketToolBarContainer";
+import TradeContainer from "../components/TradeContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { MARKET_GET_OWN_TRADES } from "../app/actionTypes";
@@ -27,15 +29,23 @@ const ViewTradesForm: FunctionComponent = () => {
 
   return (
     <div className="viewtradesform">
-      <TopNavigationBar title="My Trades" />
-      <PrimaryAccountCard />
-      <MarketToolBar
-        homeIconInterlocution="../asserts/home--icon--interlocution10.svg"
-        homeIconInterlocution1="../asserts/home--icon--interlocution11.svg"
-        homeIconInterlocution2="../asserts/home--icon--interlocution12.svg"
-        homeIconInterlocution3="../asserts/home--icon--interlocution13.svg"
-        homeIconInterlocution4="../asserts/home--icon--interlocution14.svg"
+      <TopNavigationBar
+        title="View Trades"
+        onNavBackButtonClick={onNavBackButtonClick}
+        onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
       />
+      <div className="wallet-card-group">
+        <WalletCardContainer />
+        <MarketToolBarContainer
+          homeIconInterlocution="../home--icon--interlocution10.svg"
+          homeIconInterlocution1="../home--icon--interlocution11.svg"
+          homeIconInterlocution2="../home--icon--interlocution12.svg"
+          homeIconInterlocution3="../home--icon--interlocution13.svg"
+          homeIconInterlocution4="../home--icon--interlocution14.svg"
+        />
+        <TradeContainer />
+      </div>
       {market.ownTrades?.map((trade: any) => (
         <TradeCard
           key={trade.tradeId}
@@ -51,14 +61,7 @@ const ViewTradesForm: FunctionComponent = () => {
           tradeId={trade.tradeId}
         />
       ))}
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#434343"
-        textColor2="#0ebd8d"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

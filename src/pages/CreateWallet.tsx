@@ -61,9 +61,9 @@ const CreateWallet: FunctionComponent = () => {
       <TopNavigationBar title="Create Wallet" />
       <div className="illus1-parent">
         <div className="illus1">
-          <img className="illus1-child" alt="" src="../asserts/group-3.svg" />
+          <img className="illus1-child" alt="" src="../group-3.svg" />
           <div className="group-parent">
-            <img className="frame-inner" alt="" src="../asserts/group-42.svg" />
+            <img className="group-icon" alt="" src="../group-42.svg" />
             <div className="create-account">
               C<span className="r">r</span>
               <span className="e">e</span>a<span className="t">t</span>
@@ -71,48 +71,28 @@ const CreateWallet: FunctionComponent = () => {
               <span className="a">A</span>
               <span className="cc">cc</span>ount
             </div>
-            <img className="fill-43-icon" alt="" src="../asserts/fill-43.svg" />
+            <img className="fill-43-icon" alt="" src="../fill-43.svg" />
             <img
               className="email-address-icon"
               alt=""
-              src="../asserts/email-address.svg"
+              src="../email-address.svg"
             />
             <img
               className="youremailgmailc-icon"
               alt=""
-              src="../asserts/youremailgmailc.svg"
+              src="../youremailgmailc.svg"
             />
-            <img className="group-icon" alt="" src="../asserts/group-49.svg" />
-            <img
-              className="your-text-icon"
-              alt=""
-              src="../asserts/your-text.svg"
-            />
-            <img
-              className="frame-child1"
-              alt=""
-              src="../asserts/group-53.svg"
-            />
-            <img
-              className="your-city-icon"
-              alt=""
-              src="../asserts/your-city.svg"
-            />
-            <img
-              className="frame-child2"
-              alt=""
-              src="../asserts/group-57.svg"
-            />
+            <img className="frame-child1" alt="" src="../group-49.svg" />
+            <img className="your-text-icon" alt="" src="../your-text.svg" />
+            <img className="frame-child2" alt="" src="../group-53.svg" />
+            <img className="your-city-icon" alt="" src="../your-city.svg" />
+            <img className="frame-child3" alt="" src="../group-57.svg" />
             <img
               className="entry-password-icon"
               alt=""
-              src="../asserts/entry-password.svg"
+              src="../entry-password.svg"
             />
-            <img
-              className="frame-child3"
-              alt=""
-              src="../asserts/group-145.svg"
-            />
+            <img className="frame-child4" alt="" src="../group-145.svg" />
           </div>
         </div>
         <TextField
@@ -195,23 +175,16 @@ const CreateWallet: FunctionComponent = () => {
           />
         </div>
         <button
-          className="prepare-sell-order-button16"
+          className="prepare-sell-order-button14"
           onClick={onWalletCreate}
         >
-          <div className="primary-button6">Create</div>
+          <div className="primary-button7">Create</div>
         </button>
-        <button className="prepare-sell-order-button17">
-          <div className="mini-button4">Open</div>
+        <button className="prepare-sell-order-button15">
+          <div className="mini-button">Open</div>
         </button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light.svg"
-        moleculeLight1="../asserts/molecule-light.svg"
-        walletLight1="../asserts/wallet-light.svg"
-        userAltLight1="../asserts/user-alt-light.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

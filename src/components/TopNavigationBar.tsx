@@ -7,16 +7,16 @@ type TopNavigationBarType = {
   title?: string;
 
   /** Action props */
-  onNavBack?: () => void;
-  onTitle?: () => void;
-  onContextPlus?: () => void;
+  onNavBackButtonClick?: () => void;
+  onTitleClick?: () => void;
+  onContextMenuButtonClick?: () => void;
 };
 
 const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   title,
-  onNavBack,
-  onTitle,
-  onContextPlus
+  onNavBackButtonClick,
+  onTitleClick,
+  onContextMenuButtonClick
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -47,11 +47,7 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
         {title}
       </button>
       <button className="contextmenubutton" onClick={onContextMenuButtonClick}>
-        <img
-          className="icround-plus-icon"
-          alt=""
-          src="../asserts/icroundplus.svg"
-        />
+        <img className="icround-plus-icon" alt="" src="../icroundplus2.svg" />
       </button>
     </div>
   );

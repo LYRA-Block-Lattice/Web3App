@@ -1,7 +1,6 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
-import CollateralCalculation from "../components/CollateralCalculation";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -155,7 +154,7 @@ const AssertDetailView: FunctionComponent = () => {
         </div>
       )}
       <div className="assertdetailview-parent">
-        <div className="assertdetailview1">
+        <div className="collateralsection">
           <div className="asserttitleregion">
             <div className="assertauthorsection">
               <div className="a-legend-nft">
@@ -165,12 +164,12 @@ const AssertDetailView: FunctionComponent = () => {
                 <img
                   className="material-symbolsshare-icon"
                   alt=""
-                  src="../asserts/materialsymbolsshare.svg"
+                  src="../materialsymbolsshare.svg"
                 />
                 <img
                   className="material-symbolsshare-icon"
                   alt=""
-                  src="../asserts/carbonoverflowmenuhorizontal.svg"
+                  src="../carbonoverflowmenuhorizontal.svg"
                 />
               </div>
             </div>
@@ -190,7 +189,7 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../asserts/iconparksolidblockchain.svg"
+                src="../iconparksolidblockchain.svg"
               />
             </div>
             {info?.Meta?.image && (
@@ -207,7 +206,7 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../asserts/icoutlineremoveredeye.svg"
+                src="../icoutlineremoveredeye.svg"
               />
               <div className="meka-legends">32 views</div>
             </div>
@@ -215,7 +214,7 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../asserts/mdicardsheartoutline.svg"
+                src="../mdicardsheartoutline.svg"
               />
               <div className="meka-legends">5 favorite</div>
             </div>
@@ -223,7 +222,7 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../asserts/mdishapeoutline.svg"
+                src="../mdishapeoutline.svg"
               />
               <div className="meka-legends">Fiat OTC</div>
             </div>
@@ -233,7 +232,7 @@ const AssertDetailView: FunctionComponent = () => {
           <img
             className="material-symbolsshare-icon"
             alt=""
-            src="../asserts/fluenttextdescription20filled.svg"
+            src="../fluenttextdescription20filled.svg"
           />
           <div className="meka-legends">Description</div>
         </div>
@@ -246,7 +245,7 @@ const AssertDetailView: FunctionComponent = () => {
           <img
             className="material-symbolsshare-icon"
             alt=""
-            src="../asserts/icoutlinepricechange.svg"
+            src="../icoutlinepricechange.svg"
           />
           <div className="meka-legends">Price and payment</div>
         </div>
@@ -261,7 +260,7 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
               <div className="tetherusdt-parent">
                 <div className="tetherusdt">{info?.Blocks.Bidgen.Ticker}</div>
-                <div className="div4">
+                <div className="div2">
                   ${" "}
                   {pricedollar.toLocaleString(undefined, {
                     maximumFractionDigits: 2
@@ -282,7 +281,7 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
               <div className="tetherusdt-parent">
                 <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
-                <div className="div4">
+                <div className="div2">
                   {" "}
                   ${" "}
                   {avalibleMinDollar.toLocaleString(undefined, {
@@ -300,7 +299,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-parent1">
+            <div className="frame-parent4">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
@@ -362,9 +361,9 @@ const AssertDetailView: FunctionComponent = () => {
               <img
                 className="material-symbolsshare-icon"
                 alt=""
-                src="../asserts/evapricetagsoutline.svg"
+                src="../evapricetagsoutline.svg"
               />
-              <div className="primary-button3">Make offer</div>
+              <div className="primary-button4">Make offer</div>
             </button>
           </div>
         </div>
@@ -372,7 +371,7 @@ const AssertDetailView: FunctionComponent = () => {
           <img
             className="material-symbolsshare-icon"
             alt=""
-            src="../asserts/galasecure.svg"
+            src="../galasecure.svg"
           />
           <div className="meka-legends">Trading protection</div>
         </div>
@@ -384,12 +383,7 @@ const AssertDetailView: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light4.svg"
-        moleculeLight1="../asserts/molecule-light4.svg"
-        walletLight1="../asserts/wallet-light4.svg"
-        userAltLight1="../asserts/user-alt-light4.svg"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

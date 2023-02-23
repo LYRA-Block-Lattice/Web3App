@@ -17,6 +17,10 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
     //TODO: scroll top
   }, []);
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   const onPrepareSellOrderButtonClick = useCallback(() => {
     navigate("/viewordersform");
   }, [navigate]);
@@ -26,7 +30,7 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
       <TopNavigationBar title="Order Created" />
       <div className="success-parent">
         <div className="success">Success!</div>
-        <img className="illus8-icon" alt="" src="../asserts/illus8.svg" />
+        <img className="illus8-icon" alt="" src="../illus8.svg" />
         <div className="you-order-tx">You order TX Hash is:</div>
         <div className="blvm6g1jjkwuz8ocens7fuuswjqdr3">{tx}</div>
         <a
@@ -37,20 +41,13 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
           View on block explorer
         </a>
         <button
-          className="prepare-sell-order-button12"
+          className="prepare-sell-order-button10"
           onClick={onPrepareSellOrderButtonClick}
         >
           <div className="secondary-button3">View my orders</div>
         </button>
       </div>
-      <BottomNavigationBar
-        boxAltLight1="../asserts/box-alt-light4.svg"
-        moleculeLight1="../asserts/molecule-light4.svg"
-        walletLight1="../asserts/wallet-light4.svg"
-        userAltLight1="../asserts/user-alt-light4.svg"
-        textColor="#434343"
-        textColor1="#0ebd8d"
-      />
+      <BottomNavigationBar />
     </div>
   );
 };

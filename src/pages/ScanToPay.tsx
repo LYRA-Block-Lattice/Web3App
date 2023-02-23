@@ -1,6 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { getAuthSelector } from "../app/selectors";
+import TopNavigationBar from "../components/TopNavigationBar";
+import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ScanToPay.css";
 import { ToastContainer, toast } from "react-toastify";
 import QRCode from "react-qr-code";
@@ -21,17 +23,27 @@ const ScanToPay: FunctionComponent = () => {
 
   return (
     <div className="scantopay">
-      <PrimaryAccountCard />
-      <div className="scan-to-pay">Scan to pay me</div>
-      {/* <img className="image-1-icon" alt="" src="../asserts/qrimg@2x.png" /> */}
-      <QRCode value={auth.accountId!} />
-      <div className="scan-to-pay">My address is:</div>
-      <button className="prepare-sell-order-button13" onClick={onCopyAddress}>
-        {auth.accountId}
-      </button>
-      <button className="prepare-sell-order-button21" onClick={onScan}>
-        <div className="primary-button9">Scan to pay</div>
-      </button>
+      <TopNavigationBar
+        title="My Wallet Address"
+        onNavBackButtonClick={onNavBackButtonClick}
+        onTitleClick={onTitleClick}
+        onContextMenuButtonClick={onContextMenuButtonClick}
+      />
+      <div className="scan-to-pay-me-parent">
+        <div className="scan-to-pay">Scan to pay me</div>
+        <QRCode value={auth.accountId!} />
+        <div className="scan-to-pay">My address is:</div>
+        <button
+          className="lv3nd5bii1ahj7x5axdq2oradop1cd"
+          onClick={onCopyAddress}
+        >
+          {auth.accountId}
+        </button>
+        <button className="prepare-sell-order-button" onClick={onScan}>
+          <div className="primary-button">Scan to pay</div>
+        </button>
+      </div>
+      <BottomNavigationBar />
     </div>
   );
 };
