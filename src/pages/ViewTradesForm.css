@@ -1,7 +1,7 @@
 .rectangle2 {
   flex: 1;
   position: relative;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   background-color: var(--secondary1);
   width: 5px;
 }
@@ -294,7 +294,7 @@
 }
 .width-controller {
   position: relative;
-  border-top: 1px solid var(--black-000000100);
+  border-top: 1px solid var(--black);
   box-sizing: border-box;
   width: 365px;
   height: 1px;
@@ -359,7 +359,7 @@
   padding: var(--padding-4xs);
   align-items: flex-start;
   font-size: var(--caption-size);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--font-roboto);
 }
 .viewtradesform,

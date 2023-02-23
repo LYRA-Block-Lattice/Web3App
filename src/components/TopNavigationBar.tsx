@@ -21,6 +21,10 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
 }) => {
   const navigate = useNavigate();
 
+  const onContextMenuButtonClick = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   const onMiniProgramsButtonsClick = useCallback(() => {
     navigate(-1);
   }, [navigate]);
@@ -39,19 +43,13 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
 
   return (
     <nav className="topnavigationbar sticky-header">
-      <button
-        className="mini-programs-buttons"
-        onClick={onMiniProgramsButtonsClick}
-      >
+      <button className="navbackbutton" onClick={onMiniProgramsButtonsClick}>
         <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
       </button>
       <button className="title5" onClick={onTitleClick}>
         {title}
       </button>
-      <button
-        className="mini-programs-buttons1"
-        onClick={onMiniProgramsButtons1Click}
-      >
+      <button className="contextmenubutton" onClick={onContextMenuButtonClick}>
         <img
           className="icround-plus-icon"
           alt=""

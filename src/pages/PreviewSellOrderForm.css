@@ -204,6 +204,6 @@
   gap: 15px;
   text-align: left;
   font-size: var(--body-semibold-size);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--caption);
 }

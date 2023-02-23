@@ -181,7 +181,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: var(--font-size-7xl);
-  color: var(--black-000000100);
+  color: var(--black);
 }
 .priceandbuyregion {
   border-radius: var(--br-xs);
@@ -207,7 +207,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: var(--font-size-6xl);
-  color: var(--black-000000100);
+  color: var(--black);
 }
 .priceandvaluelabel1,
 .selectedamount,
@@ -242,7 +242,7 @@
   font-size: var(--font-size-xl);
   letter-spacing: 0.41px;
   line-height: 18px;
-  color: var(--black-000000100);
+  color: var(--black);
 }
 .selectedamount-parent,
 .tethereth-group {
@@ -392,6 +392,6 @@
   justify-content: center;
   text-align: left;
   font-size: var(--font-size-xl);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--caption);
 }

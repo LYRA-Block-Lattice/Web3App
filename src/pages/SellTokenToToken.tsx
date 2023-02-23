@@ -90,7 +90,7 @@ const SellTokenToToken: FunctionComponent = () => {
     } else setPriceDollar(0);
   }, [price, toget]);
 
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 

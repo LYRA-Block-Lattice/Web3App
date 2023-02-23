@@ -126,6 +126,14 @@ const WalletHome: FunctionComponent = () => {
     }
   };
 
+  const onNavBackButtonClick = useCallback(() => {
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
+  }, []);
+
+  const onTitleClick = useCallback(() => {
+    //TODO: scroll top
+  }, []);
+
   return (
     <>
       <div className="wallethome">
@@ -139,7 +147,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution5.svg"
+                    src="../asserts/home--icon--interlocution.svg"
                   />
                   <div className="ranking">Market</div>
                 </button>
@@ -147,7 +155,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution6.svg"
+                    src="../asserts/home--icon--interlocution1.svg"
                   />
                   <div className="ranking">Swap</div>
                 </button>
@@ -155,7 +163,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution7.svg"
+                    src="../asserts/home--icon--interlocution2.svg"
                   />
                   <div className="ranking">Send</div>
                 </button>
@@ -163,7 +171,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution8.svg"
+                    src="../asserts/home--icon--interlocution3.svg"
                   />
                   <div className="ranking">Receive</div>
                 </button>
@@ -171,7 +179,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution9.svg"
+                    src="../asserts/home--icon--interlocution4.svg"
                   />
                   <div className="ranking">More...</div>
                 </button>
@@ -179,21 +187,21 @@ const WalletHome: FunctionComponent = () => {
             </div>
           </div>
           <div className="coinlisting">
-            <div className="catalogtab1">
-              <div className="nft-container">
-                <b className="nft1">NFT</b>
+            <div className="catalogtab">
+              <div className="nft-wrapper">
+                <b className="nft">NFT</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Fiat</b>
+              <div className="nft-wrapper">
+                <b className="nft">Fiat</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Goods</b>
+              <div className="nft-wrapper">
+                <b className="nft">Goods</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Service</b>
+              <div className="nft-wrapper">
+                <b className="nft">Service</b>
               </div>
-              <div className="token-container">
-                <b className="nft1">Token</b>
+              <div className="token-wrapper">
+                <b className="nft">Token</b>
               </div>
             </div>
             {showTokens()}

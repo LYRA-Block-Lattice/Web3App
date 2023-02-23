@@ -9,7 +9,7 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
   const [searchParams, setSearchParams] = useSearchParams({});
   const tx = searchParams.get("tx");
 
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 

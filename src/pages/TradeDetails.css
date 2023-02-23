@@ -4,7 +4,7 @@
 }
 .tradedetails-child {
   position: relative;
-  border: 1px solid var(--black-000000100);
+  border: 1px solid var(--black);
   box-sizing: border-box;
   width: 140px;
   height: 140px;
@@ -67,6 +67,6 @@
   gap: var(--gap-3xl);
   text-align: left;
   font-size: var(--font-size-2xl);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--base-1-semibold);
 }

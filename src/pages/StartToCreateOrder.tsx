@@ -35,6 +35,14 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   const navigate = useNavigate();
 
+  const onNavBackButtonClick = useCallback(() => {
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
+  }, []);
+
+  const onTitleClick = useCallback(() => {
+    //TODO: scroll top
+  }, []);
+
   useEffect(() => {
     if (start != undefined && end != undefined) {
       setDisabled(false);
@@ -60,7 +68,11 @@ const StartToCreateOrder: FunctionComponent = () => {
 
   return (
     <div className="starttocreateorder">
-      <TopNavigationBar title="Select Catalog" />
+      <TopNavigationBar
+        title="Select Catalog"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+      />
       <div className="catalog-section-parent">
         <div className="catalog-section">
           <Xwrapper>

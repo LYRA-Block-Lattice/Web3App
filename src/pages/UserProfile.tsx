@@ -4,7 +4,7 @@ import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./UserProfile.css";
 
 const UserProfile: FunctionComponent = () => {
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 
@@ -94,7 +94,7 @@ const UserProfile: FunctionComponent = () => {
           </div>
           <div className="list">
             <div className="item4">
-              <div className="frame-parent">
+              <div className="frame-group">
                 <div className="placeholder-parent">
                   <div className="placeholder5">张俊</div>
                   <div className="placeholder6">13988781732</div>
@@ -114,7 +114,7 @@ const UserProfile: FunctionComponent = () => {
               <div className="line" />
             </div>
             <div className="item4">
-              <div className="frame-parent">
+              <div className="frame-group">
                 <div className="placeholder-parent">
                   <div className="placeholder5">孙悦婷</div>
                   <div className="placeholder6">13988781732</div>

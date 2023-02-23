@@ -30,9 +30,9 @@ const MiscComponents: FunctionComponent = () => {
           <div className="nft-showing-item">
             <div className="lyralogoblueicon-wrapper">
               <img
-                className="lyralogoblueicon"
+                className="lyralogoblueicon1"
                 alt=""
-                src="../asserts/lyralogoblueicon@2x.png"
+                src="../asserts/lyralogoblueicon1@2x.png"
               />
             </div>
             <div className="content">
@@ -54,9 +54,9 @@ const MiscComponents: FunctionComponent = () => {
           <div className="nft-showing-item">
             <div className="lyralogoblueicon-wrapper">
               <img
-                className="lyralogoblueicon"
+                className="lyralogoblueicon1"
                 alt=""
-                src="../asserts/lyralogoblueicon@2x.png"
+                src="../asserts/lyralogoblueicon1@2x.png"
               />
             </div>
             <div className="content">
@@ -80,9 +80,9 @@ const MiscComponents: FunctionComponent = () => {
           <button className="nft-showing-item2" onClick={openGeneralPopup}>
             <div className="lyralogoblueicon-wrapper">
               <img
-                className="lyralogoblueicon"
+                className="lyralogoblueicon1"
                 alt=""
-                src="../asserts/lyralogoblueicon@2x.png"
+                src="../asserts/lyralogoblueicon1@2x.png"
               />
             </div>
             <div className="content2">
@@ -96,9 +96,9 @@ const MiscComponents: FunctionComponent = () => {
           <button className="nft-showing-item2" onClick={openGeneralPopup1}>
             <div className="lyralogoblueicon-wrapper">
               <img
-                className="lyralogoblueicon"
+                className="lyralogoblueicon1"
                 alt=""
-                src="../asserts/lyralogoblueicon@2x.png"
+                src="../asserts/lyralogoblueicon1@2x.png"
               />
             </div>
             <div className="content2">

@@ -60,6 +60,14 @@ const OpenWallet: FunctionComponent = () => {
     else navigate("/create-wallet");
   }, [dispatch, auth.accountId, names]);
 
+  const onNavBackButtonClick = useCallback(() => {
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
+  }, []);
+
+  const onTitleClick = useCallback(() => {
+    //TODO: scroll top
+  }, []);
+
   return (
     <div className="openwallet">
       <TopNavigationBar title="Open Wallet" />

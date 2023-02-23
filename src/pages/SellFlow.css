@@ -31,7 +31,7 @@
 .vector-icon {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-4xs);
   width: 125.5px;
   height: 63.5px;
 }
@@ -58,7 +58,7 @@
 .vector-icon1 {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-4xs);
   width: 201.5px;
   height: 101.5px;
 }
@@ -89,7 +89,7 @@
 }
 .vector-icon2 {
   left: 0;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-4xs);
   width: 102px;
   height: 51px;
 }
@@ -171,7 +171,7 @@
 .offeringlabel {
   top: 130px;
   left: 49px;
-  color: var(--black-000000100);
+  color: var(--black);
 }
 .bidinglabel {
   top: 0;
@@ -185,7 +185,7 @@
   left: 51px;
   width: 156px;
   height: 30px;
-  color: var(--black-000000100);
+  color: var(--black);
 }
 .ordercollateral,
 .returncollateral {
@@ -206,7 +206,7 @@
   line-height: 18px;
   font-weight: 500;
   font-family: var(--caption);
-  color: var(--black-000000100);
+  color: var(--black);
   text-align: center;
 }
 .prepare-sell-order-button {
@@ -264,7 +264,7 @@
   position: absolute;
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-4xs);
   width: 105.5px;
   height: 53.5px;
 }

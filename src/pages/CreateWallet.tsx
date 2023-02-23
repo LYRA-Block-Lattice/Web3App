@@ -29,6 +29,10 @@ const CreateWallet: FunctionComponent = () => {
     navigate("/open-wallet");
   }, [navigate]);
 
+  const onNavBackButtonClick = useCallback(() => {
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
+  }, []);
+
   const onWalletCreate = useCallback(() => {
     // check if password and password2 equal
     if (name != "" && password === password2) {

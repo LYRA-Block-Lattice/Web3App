@@ -208,6 +208,6 @@
   justify-content: flex-start;
   text-align: right;
   font-size: var(--caption-size);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--font-roboto);
 }

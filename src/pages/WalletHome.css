@@ -10,7 +10,7 @@
   font-size: var(--regular-body-size);
   line-height: 18px;
   font-family: var(--caption);
-  color: var(--black-000000100);
+  color: var(--black);
   text-align: left;
 }
 .swap-button,
@@ -53,12 +53,12 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.nft1 {
+.nft {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
 }
-.nft-container {
+.nft-wrapper {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-400);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -70,14 +70,14 @@
   box-sizing: border-box;
   align-items: flex-end;
 }
-.catalogtab1,
-.nft-container,
-.token-container {
+.catalogtab,
+.nft-wrapper,
+.token-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.token-container {
+.token-wrapper {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-400);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -88,14 +88,14 @@
   box-sizing: border-box;
   align-items: flex-end;
 }
-.catalogtab1 {
+.catalogtab {
   background-color: var(--white);
-  border-bottom: 1px solid var(--color-gray-400);
+  border-bottom: 1px solid var(--color-gray-300);
   overflow: hidden;
   align-items: center;
   gap: var(--gap-xs);
 }
-.lyralogoblueicon4 {
+.lyralogoblueicon {
   position: relative;
   width: 32px;
   height: 32px;
@@ -143,7 +143,7 @@
   height: 1px;
   flex-shrink: 0;
 }
-.frame-container {
+.frame-parent {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -161,7 +161,7 @@
   justify-content: center;
   text-align: left;
   font-size: var(--font-size-2xl);
-  color: var(--black-000000100);
+  color: var(--black);
 }
 .coinlisting {
   background-color: var(--white);

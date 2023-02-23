@@ -3,7 +3,7 @@
   bottom: 8px;
   left: calc(50% - 67px);
   border-radius: var(--br-3xl);
-  background-color: var(--black-000000100);
+  background-color: var(--black);
   width: 134px;
   height: 5px;
   display: none;

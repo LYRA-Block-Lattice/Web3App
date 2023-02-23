@@ -29,9 +29,21 @@ const ViewTradesForm: FunctionComponent = () => {
     //TODO: toggle the bellow table
   }, []);
 
+  const onNavBackButtonClick = useCallback(() => {
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
+  }, []);
+
+  const onTitleClick = useCallback(() => {
+    //TODO: scroll top
+  }, []);
+
   return (
     <div className="viewtradesform">
-      <TopNavigationBar title="My Trades" />
+      <TopNavigationBar
+        title="My Trades"
+        onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
+        onTitleClick={onTitleClick}
+      />
       <div className="wallet-card-group">
         <div className="wallet-card">
           <div className="wallet-card-inner">

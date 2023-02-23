@@ -5,7 +5,7 @@
   width: 24px;
   height: 24px;
 }
-.mini-programs-buttons,
+.navbackbutton,
 .title5 {
   cursor: pointer;
   border: 0;
@@ -13,7 +13,7 @@
   background-color: transparent;
   position: relative;
 }
-.mini-programs-buttons {
+.navbackbutton {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
@@ -25,7 +25,7 @@
   letter-spacing: 0.02em;
   font-weight: 600;
   font-family: var(--caption);
-  color: var(--black-000000100);
+  color: var(--black);
   text-align: center;
   display: inline-block;
 }
@@ -37,7 +37,7 @@
   height: 20px;
   overflow: hidden;
 }
-.mini-programs-buttons1 {
+.contextmenubutton {
   cursor: pointer;
   border: 0;
   padding: 0;
