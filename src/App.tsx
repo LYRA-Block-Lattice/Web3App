@@ -5,12 +5,12 @@ import {
   useLocation,
 } from "react-router-dom";
 import Market from "./pages/Market";
+import WalletHome from "./pages/WalletHome";
 import UserProfile from "./pages/UserProfile";
 import SellFlow from "./pages/SellFlow";
 import TradeDetails from "./pages/TradeDetails";
 import MiscComponents from "./pages/MiscComponents";
 import SendTokenForm from "./pages/SendTokenForm";
-import WalletHome from "./pages/WalletHome";
 import AssertDetailView from "./pages/AssertDetailView";
 import MintFiatToken from "./pages/MintFiatToken";
 import CreateTokenForm from "./pages/CreateTokenForm";
@@ -49,6 +49,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/wallethome":
+        title = "";
+        metaDescription = "";
+        break;
       case "/userprofile":
         title = "";
         metaDescription = "";
@@ -66,10 +70,6 @@ function App() {
         metaDescription = "";
         break;
       case "/sendtokenform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/wallethome":
         title = "";
         metaDescription = "";
         break;
@@ -157,6 +157,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Market />} />
 
+      <Route path="/wallethome" element={<WalletHome />} />
+
       <Route path="/userprofile" element={<UserProfile />} />
 
       <Route path="/sellflow" element={<SellFlow />} />
@@ -166,8 +168,6 @@ function App() {
       <Route path="/misccomponents" element={<MiscComponents />} />
 
       <Route path="/sendtokenform" element={<SendTokenForm />} />
-
-      <Route path="/wallethome" element={<WalletHome />} />
 
       <Route path="/assertdetailview1" element={<AssertDetailView />} />
 

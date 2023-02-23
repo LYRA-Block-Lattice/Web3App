@@ -25,7 +25,7 @@
 }
 .collateralcalculation-child {
   position: relative;
-  border-top: 1px solid var(--black-000000100);
+  border-top: 1px solid var(--black);
   box-sizing: border-box;
   width: 299px;
   height: 1px;
@@ -65,6 +65,6 @@
   gap: var(--gap-2xs);
   text-align: left;
   font-size: var(--body-semibold-size);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--caption);
 }

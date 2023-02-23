@@ -8,7 +8,7 @@ import "./StartToCreateOrder.css";
 const StartToCreateOrder: FunctionComponent = () => {
   const navigate = useNavigate();
 
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 

@@ -13,7 +13,7 @@ import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./CreateWallet.css";
 
 const CreateWallet: FunctionComponent = () => {
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 

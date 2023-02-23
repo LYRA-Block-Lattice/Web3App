@@ -10,7 +10,7 @@
   font-size: var(--caption-size);
   line-height: 18px;
   font-family: var(--caption);
-  color: var(--black-000000100);
+  color: var(--black);
   text-align: left;
 }
 .dex-button {
@@ -33,7 +33,7 @@
   font-size: var(--regular-body-size);
   line-height: 18px;
   font-family: var(--caption);
-  color: var(--black-000000100);
+  color: var(--black);
   text-align: left;
 }
 .markettoolbar,

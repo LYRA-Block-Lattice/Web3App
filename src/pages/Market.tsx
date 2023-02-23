@@ -6,7 +6,7 @@ import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./Market.css";
 
 const Market: FunctionComponent = () => {
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 
@@ -37,21 +37,21 @@ const Market: FunctionComponent = () => {
           />
         </div>
         <div className="tradableorderssection">
-          <div className="catalogtab">
-            <div className="nft-wrapper">
-              <b className="nft">NFT</b>
+          <div className="catalogtab1">
+            <div className="nft-container">
+              <b className="nft1">NFT</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Fiat</b>
+            <div className="nft-container">
+              <b className="nft1">Fiat</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Goods</b>
+            <div className="nft-container">
+              <b className="nft1">Goods</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Service</b>
+            <div className="nft-container">
+              <b className="nft1">Service</b>
             </div>
-            <div className="token-wrapper">
-              <b className="nft">Token</b>
+            <div className="token-container">
+              <b className="nft1">Token</b>
             </div>
           </div>
           <MarketOrder

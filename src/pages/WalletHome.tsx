@@ -12,7 +12,7 @@ const WalletHome: FunctionComponent = () => {
   const navigate = useNavigate();
   const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
 
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 
@@ -53,7 +53,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution5.svg"
+                    src="../asserts/home--icon--interlocution.svg"
                   />
                   <div className="ranking">Market</div>
                 </button>
@@ -61,7 +61,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution6.svg"
+                    src="../asserts/home--icon--interlocution1.svg"
                   />
                   <div className="ranking">Swap</div>
                 </button>
@@ -69,7 +69,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution7.svg"
+                    src="../asserts/home--icon--interlocution2.svg"
                   />
                   <div className="ranking">Send</div>
                 </button>
@@ -77,7 +77,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution8.svg"
+                    src="../asserts/home--icon--interlocution3.svg"
                   />
                   <div className="ranking">Receive</div>
                 </button>
@@ -85,7 +85,7 @@ const WalletHome: FunctionComponent = () => {
                   <img
                     className="home-icon-interlocution"
                     alt=""
-                    src="../asserts/home--icon--interlocution9.svg"
+                    src="../asserts/home--icon--interlocution4.svg"
                   />
                   <div className="ranking">More...</div>
                 </button>
@@ -93,21 +93,21 @@ const WalletHome: FunctionComponent = () => {
             </div>
           </div>
           <div className="coinlisting">
-            <div className="catalogtab1">
-              <div className="nft-container">
-                <b className="nft1">NFT</b>
+            <div className="catalogtab">
+              <div className="nft-wrapper">
+                <b className="nft">NFT</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Fiat</b>
+              <div className="nft-wrapper">
+                <b className="nft">Fiat</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Goods</b>
+              <div className="nft-wrapper">
+                <b className="nft">Goods</b>
               </div>
-              <div className="nft-container">
-                <b className="nft1">Service</b>
+              <div className="nft-wrapper">
+                <b className="nft">Service</b>
               </div>
-              <div className="token-container">
-                <b className="nft1">Token</b>
+              <div className="token-wrapper">
+                <b className="nft">Token</b>
               </div>
             </div>
             <TokenDisplayItem
@@ -117,12 +117,12 @@ const WalletHome: FunctionComponent = () => {
               amountWorth="$2,183"
             />
             <div className="tokendisplayitem">
-              <div className="frame-container">
+              <div className="frame-parent">
                 <div className="lyralogoblueicon-parent">
                   <img
-                    className="lyralogoblueicon4"
+                    className="lyralogoblueicon"
                     alt=""
-                    src="../asserts/lyralogoblueicon4@2x.png"
+                    src="../asserts/lyralogoblueicon@2x.png"
                   />
                   <b className="custom-coin">Custom Coin</b>
                   <div className="cus-parent">

@@ -153,7 +153,7 @@
 }
 .width-controller1 {
   position: relative;
-  border-top: 1px solid var(--black-000000100);
+  border-top: 1px solid var(--black);
   box-sizing: border-box;
   width: 365px;
   height: 1px;
@@ -220,6 +220,6 @@
   gap: var(--gap-5xs);
   text-align: right;
   font-size: var(--font-size-xl);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--font-roboto);
 }

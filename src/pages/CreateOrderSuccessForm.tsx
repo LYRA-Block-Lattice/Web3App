@@ -7,7 +7,7 @@ import "./CreateOrderSuccessForm.css";
 const CreateOrderSuccessForm: FunctionComponent = () => {
   const navigate = useNavigate();
 
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 

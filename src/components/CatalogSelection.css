@@ -25,6 +25,6 @@
   gap: var(--gap-6xs);
   text-align: center;
   font-size: var(--body-m-size);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--caption);
 }

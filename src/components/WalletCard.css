@@ -1,7 +1,7 @@
 .rectangle4 {
   flex: 1;
   position: relative;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   background-color: var(--secondary1);
   width: 5px;
 }

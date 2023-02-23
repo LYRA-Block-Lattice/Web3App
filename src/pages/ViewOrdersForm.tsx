@@ -6,7 +6,7 @@ import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ViewOrdersForm.css";
 
 const ViewOrdersForm: FunctionComponent = () => {
-  const onMiniProgramsButtonsClick = useCallback(() => {
+  const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 

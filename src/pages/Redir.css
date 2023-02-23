@@ -15,6 +15,6 @@
   overflow: hidden;
   text-align: left;
   font-size: var(--regular-body-size);
-  color: var(--black-000000100);
+  color: var(--black);
   font-family: var(--caption);
 }
