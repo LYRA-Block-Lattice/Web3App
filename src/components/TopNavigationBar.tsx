@@ -22,31 +22,29 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   const location = useLocation();
   const isRoot = location.pathname === "/";
 
-  const onNavBackButtonClick = useCallback(() => {
+  const onNavBackButtonClick1 = useCallback(() => {
     navigate(-1);
-    if (onNavBack) onNavBack();
+    if (onNavBackButtonClick) onNavBackButtonClick();
   }, [navigate]);
 
-  const onTitleClick = useCallback(() => {
+  const onTitleClick1 = useCallback(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    if (onTitle) onTitle();
+    if (onTitleClick) onTitleClick();
   }, []);
 
-  const onContextMenuButtonClick = useCallback(() => {
-    if (onContextPlus) onContextPlus();
+  const onContextMenuButtonClick1 = useCallback(() => {
+    if (onContextMenuButtonClick) onContextMenuButtonClick();
   }, []);
 
   return (
     <div className="topnavigationbar sticky-header">
-      <button className="navbackbutton" onClick={onNavBackButtonClick}>
-        {!isRoot && (
-          <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
-        )}
+      <button className="navbackbutton" onClick={onNavBackButtonClick1}>
+        {!isRoot && <img className="iconleft" alt="" src="../iconleft.svg" />}
       </button>
-      <button className="title5" onClick={onTitleClick}>
+      <button className="title5" onClick={onTitleClick1}>
         {title}
       </button>
-      <button className="contextmenubutton" onClick={onContextMenuButtonClick}>
+      <button className="contextmenubutton" onClick={onContextMenuButtonClick1}>
         <img className="icround-plus-icon" alt="" src="../icroundplus2.svg" />
       </button>
     </div>

@@ -24,6 +24,7 @@ import {
   TokenGenesisBlock
 } from "../app/blockchain/blocks/block";
 import { NftMetadata } from "../app/blockchain/blocks/meta";
+import CollateralCalculation from "../components/CollateralCalculation";
 
 interface IDealerUser {
   UserName: string;

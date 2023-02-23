@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useEffect } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,6 +17,8 @@ import * as actionTypes from "../app/actionTypes";
 import "./WalletHome.css";
 import { IBalance } from "../app/wallet/walletReducer";
 import NFTInWalletDisplay from "../components/NFTInWalletDisplay";
+import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
+import WalletToolBar from "../components/WalletToolBar";
 
 const WalletHome: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -135,13 +137,8 @@ const WalletHome: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className="wallethome">
-      <TopNavigationBar
-        title="My Wallet"
-        onNavBackButtonClick={onNavBackButtonClick}
-        onTitleClick={onTitleClick}
-        onContextMenuButtonClick={onContextMenuButtonClick}
-      />
+    <div className="wallethome main-content">
+      <TopNavigationBar title="My Wallet" />
       <div className="wallet-card-parent">
         <PrimaryAccountContainer />
         <WalletToolBar />
@@ -235,15 +232,15 @@ const WalletHome: FunctionComponent = () => {
       </div>
       <BottomNavigationBar />
     </div>
-          {isSideMenuPopupOpen && (
-            <PortalDrawer
-              overlayColor="rgba(113, 113, 113, 0.3)"
-              placement="Right"
-              onOutsideClick={closeSideMenuPopup}
-            >
-              <SideMenuPopup onClose={closeSideMenuPopup} />
-            </PortalDrawer>
-          )}
+    // {isSideMenuPopupOpen && (
+    //   <PortalDrawer
+    //     overlayColor="rgba(113, 113, 113, 0.3)"
+    //     placement="Right"
+    //     onOutsideClick={closeSideMenuPopup}
+    //   >
+    //     <SideMenuPopup onClose={closeSideMenuPopup} />
+    //   </PortalDrawer>
+    // )}
   );
 };
 

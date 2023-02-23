@@ -14,6 +14,7 @@ import PrimaryAccountCard from "../components/PrimaryAccountCard";
 import React from "react";
 import { Tab, Tabs } from "@mui/material";
 import { useNavigate } from "react-router";
+import OrderCard from "../components/OrderCard";
 
 interface customWindow extends Window {
   rrComponent?: any;

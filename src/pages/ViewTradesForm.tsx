@@ -29,12 +29,7 @@ const ViewTradesForm: FunctionComponent = () => {
 
   return (
     <div className="viewtradesform">
-      <TopNavigationBar
-        title="View Trades"
-        onNavBackButtonClick={onNavBackButtonClick}
-        onTitleClick={onTitleClick}
-        onContextMenuButtonClick={onContextMenuButtonClick}
-      />
+      <TopNavigationBar title="View Trades" />
       <div className="wallet-card-group">
         <WalletCardContainer />
         <MarketToolBarContainer

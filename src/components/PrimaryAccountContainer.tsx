@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
@@ -14,6 +14,9 @@ const PrimaryAccountContainer: FunctionComponent<
   const navigate = useNavigate();
   const app = useSelector(getAppSelector);
   const auth = useSelector(getAuthSelector);
+
+  const [sellcnt, setSellcnt] = useState(0);
+  const [bidcnt, setBidcnt] = useState(0);
 
   const onBalanceDisplayZoneClick = useCallback(() => {
     navigate("/wallethome");
@@ -47,7 +50,12 @@ const PrimaryAccountContainer: FunctionComponent<
             </b>
             <b className="lyrlabel">LYR</b>
             <div className="balance-display-zone-item" />
-            <b className="usdtbalance">5,000</b>
+            <b className="usdtbalance">
+              {" "}
+              {app.wallet.usdt.toLocaleString(undefined, {
+                maximumFractionDigits: 2
+              })}
+            </b>
             <b className="lyrlabel">USDT</b>
           </a>
           <div className="qrcode-button-wrapper">
@@ -59,19 +67,19 @@ const PrimaryAccountContainer: FunctionComponent<
         </div>
         <div className="token-lists">
           <button className="go-nft-button">
-            <div className="nft-count">12</div>
+            <div className="nft-count">{app.wallet.nftcnt}</div>
             <b className="nft-label">NFT</b>
           </button>
           <button className="go-nft-button">
-            <div className="nft-count">3</div>
+            <div className="nft-count">{app.wallet.totcnt}</div>
             <b className="nft-label">TOT</b>
           </button>
           <button className="go-nft-button">
-            <div className="nft-count">0</div>
+            <div className="nft-count">{sellcnt}</div>
             <b className="nft-label">Selling</b>
           </button>
           <button className="go-nft-button">
-            <div className="nft-count">0</div>
+            <div className="nft-count">{bidcnt}</div>
             <b className="nft-label">Buying</b>
           </button>
         </div>

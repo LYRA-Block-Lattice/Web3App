@@ -23,12 +23,7 @@ const ScanToPay: FunctionComponent = () => {
 
   return (
     <div className="scantopay">
-      <TopNavigationBar
-        title="My Wallet Address"
-        onNavBackButtonClick={onNavBackButtonClick}
-        onTitleClick={onTitleClick}
-        onContextMenuButtonClick={onContextMenuButtonClick}
-      />
+      <TopNavigationBar title="My Wallet Address" />
       <div className="scan-to-pay-me-parent">
         <div className="scan-to-pay">Scan to pay me</div>
         <QRCode value={auth.accountId!} />

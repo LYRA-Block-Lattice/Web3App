@@ -1,7 +1,6 @@
 import { FunctionComponent, useState, useEffect, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import { useSelector } from "react-redux";
-import MarketToolBar from "../components/MarketToolBar";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
 import DisplaySellItems from "../dup/DisplaySellItems";
 import BottomNavigationBar from "../components/BottomNavigationBar";
@@ -11,7 +10,6 @@ import TetherLink from "../components/TetherLink";
 
 import "./Market.css";
 import { useNavigate } from "react-router";
-import TokenCatalogTabs from "../components/TokenCatalogTabs";
 
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -78,100 +76,6 @@ const Market: FunctionComponent = () => {
             </div>
           </div>
           <DisplaySellItems cat={cat} />
-          <div className="ordercard">
-            <div className="order-brief-section">
-              <button className="banner-image" onClick={onBannerImageClick}>
-                <div className="order-banner">
-                  <div className="order-image">
-                    <img
-                      className="icbaseline-generating-tokens-icon"
-                      alt=""
-                      src="../icbaselinegeneratingtokens.svg"
-                    />
-                    <img
-                      className="order-image-child"
-                      alt=""
-                      src="../arrow-1.svg"
-                    />
-                    <img
-                      className="icbaseline-generating-tokens-icon"
-                      alt=""
-                      src="../carbonuserservicedesk.svg"
-                    />
-                  </div>
-                  <div className="order-status">
-                    <b className="open">Open</b>
-                  </div>
-                </div>
-              </button>
-              <TetherLink />
-            </div>
-            <div className="trades-section">
-              <div className="width-controller" />
-            </div>
-            <div className="userprofilesection">
-              <img
-                className="userprofilesection-child"
-                alt=""
-                src="../ellipse-1@2x.png"
-              />
-              <div className="a-big-seller-parent">
-                <b className="a-big-seller">A big seller</b>
-                <div className="the-first-dao">The First DAO</div>
-              </div>
-              <div className="parent">
-                <b className="a-big-seller">98%</b>
-                <div className="the-first-dao">1024 Trades</div>
-              </div>
-            </div>
-          </div>
-          <div className="ordercard">
-            <div className="order-brief-section">
-              <button className="banner-image" onClick={onBannerImage1Click}>
-                <div className="order-banner">
-                  <div className="order-image">
-                    <img
-                      className="icbaseline-generating-tokens-icon"
-                      alt=""
-                      src="../icbaselinegeneratingtokens.svg"
-                    />
-                    <img
-                      className="order-image-child"
-                      alt=""
-                      src="../arrow-1.svg"
-                    />
-                    <img
-                      className="icbaseline-generating-tokens-icon"
-                      alt=""
-                      src="../carbonuserservicedesk1.svg"
-                    />
-                  </div>
-                  <div className="order-status">
-                    <b className="open">Open</b>
-                  </div>
-                </div>
-              </button>
-              <TetherLink />
-            </div>
-            <div className="trades-section">
-              <div className="width-controller" />
-            </div>
-            <div className="userprofilesection">
-              <img
-                className="userprofilesection-child"
-                alt=""
-                src="../ellipse-1@2x.png"
-              />
-              <div className="a-big-seller-parent">
-                <b className="a-big-seller">A big seller</b>
-                <div className="the-first-dao">The First DAO</div>
-              </div>
-              <div className="parent">
-                <b className="a-big-seller">98%</b>
-                <div className="the-first-dao">1024 Trades</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <BottomNavigationBar />
