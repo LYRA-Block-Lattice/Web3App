@@ -9,7 +9,6 @@ import {
 import TopNavigationBar from "../components/TopNavigationBar";
 import CatalogSelection from "../components/CatalogSelection";
 import { useNavigate } from "react-router-dom";
-import CatalogSelection from "../components/CatalogSelection";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./StartToCreateOrder.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
@@ -64,18 +63,28 @@ const StartToCreateOrder: FunctionComponent = () => {
       <TopNavigationBar title="Select Catalog" />
       <div className="catalog-section-parent">
         <div className="catalog-section">
-          <CatalogSelection
-            sellText="I want to sell:"
-            icbaselineGeneratingToken="carbonuserservicedesk.svg"
-            cat="Service"
-          />
-          <div className="catalog-section-child" />
-          <CatalogSelection
-            sellText="I want to get:"
-            icbaselineGeneratingToken="carbonuserservicedesk.svg"
-            cat="Service"
-          />
+          <Xwrapper>
+            <div style={{ zIndex: 3 }}>
+              <Xarrow
+                showXarrow={start != null && end != null}
+                start={`Sell-${start}`}
+                end={`Get-${end}`}
+              />
+            </div>
+            <CatalogSelection
+              key="sell"
+              sellText="Sell"
+              tokenActionClicked={onTokenAction}
+            />
+            <div className="catalog-section-child" />
+            <CatalogSelection
+              key="get"
+              sellText="Get"
+              tokenActionClicked={onTokenAction}
+            />
+          </Xwrapper>
         </div>
+
         <button
           className="prepare-sell-order-button"
           disabled={isDisabled}

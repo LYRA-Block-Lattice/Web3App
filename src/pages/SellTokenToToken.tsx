@@ -90,18 +90,6 @@ const SellTokenToToken: FunctionComponent = () => {
     } else setPriceDollar(0);
   }, [price, toget]);
 
-  const onNavBackButtonClick = useCallback(() => {
-    //TODO: nav back. none for home (wallet, market, profile, etc.)
-  }, []);
-
-  const onTitleClick = useCallback(() => {
-    //TODO: scroll top
-  }, []);
-
-  const onContextMenuButtonClick = useCallback(() => {
-    //TODO: context menu
-  }, []);
-
   const openGeneralPopup = useCallback(() => {
     if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
     else setGeneralPopupOpen(true);
@@ -172,7 +160,7 @@ const SellTokenToToken: FunctionComponent = () => {
 
   return (
     <>
-      <div className="selltokentotoken">
+      <div className="selltokentotoken main-content">
         <TopNavigationBar title="Order Settings" />
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
