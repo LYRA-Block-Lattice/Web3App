@@ -3,7 +3,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import WalletToolBar from "../components/WalletToolBar";
 import Footer from "../components/Footer";
-import styles from "./WalletHome.module.css";
+import "./WalletHome.css";
 
 const WalletHome: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -19,100 +19,100 @@ const WalletHome: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.wallethome}>
+    <div className="wallethome">
       <TopNavigationBar
         title="My Wallet"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.walletCardParent}>
+      <div className="wallet-card-parent">
         <PrimaryAccountContainer />
         <WalletToolBar />
-        <div className={styles.coinlisting}>
-          <div className={styles.catalogtab}>
-            <div className={styles.nftWrapper}>
-              <b className={styles.nft}>NFT</b>
+        <div className="coinlisting">
+          <div className="catalogtab">
+            <div className="nft-wrapper">
+              <b className="nft">NFT</b>
             </div>
-            <div className={styles.nftWrapper}>
-              <b className={styles.nft}>Fiat</b>
+            <div className="nft-wrapper">
+              <b className="nft">Fiat</b>
             </div>
-            <div className={styles.nftWrapper}>
-              <b className={styles.nft}>Goods</b>
+            <div className="nft-wrapper">
+              <b className="nft">Goods</b>
             </div>
-            <div className={styles.nftWrapper}>
-              <b className={styles.nft}>Service</b>
+            <div className="nft-wrapper">
+              <b className="nft">Service</b>
             </div>
-            <div className={styles.tokenWrapper}>
-              <b className={styles.nft}>Token</b>
+            <div className="token-wrapper">
+              <b className="nft">Token</b>
             </div>
           </div>
-          <div className={styles.tokendisplayitem}>
+          <div className="tokendisplayitem">
             <img
-              className={styles.lyralogoblackicon}
+              className="lyralogoblackicon"
               alt=""
               src="../lyralogoblackicon@2x.png"
             />
-            <div className={styles.frameParent}>
-              <div className={styles.lyraCoinParent}>
-                <b className={styles.lyraCoin}>Lyra Coin</b>
-                <div className={styles.lyrParent}>
-                  <b className={styles.lyr}>1,234,525 LYR</b>
-                  <b className={styles.b}>$2,183</b>
+            <div className="frame-container">
+              <div className="lyra-coin-parent">
+                <b className="lyra-coin">Lyra Coin</b>
+                <div className="lyr-parent">
+                  <b className="lyr">1,234,525 LYR</b>
+                  <b className="b">$2,183</b>
                 </div>
               </div>
-              <div className={styles.frameChild} />
+              <div className="frame-child" />
             </div>
           </div>
-          <div className={styles.tokendisplayitem1}>
-            <div className={styles.frameParent}>
-              <div className={styles.lyraCoinParent}>
+          <div className="tokendisplayitem1">
+            <div className="frame-container">
+              <div className="lyra-coin-parent">
                 <img
-                  className={styles.lyralogoblackicon}
+                  className="lyralogoblackicon"
                   alt=""
                   src="../lyralogoblueicon4@2x.png"
                 />
-                <b className={styles.lyraCoin}>Custom Coin</b>
-                <div className={styles.lyrParent}>
-                  <b className={styles.lyr}>1,234,525 CUS</b>
-                  <b className={styles.b}>$2,183</b>
+                <b className="lyra-coin">Custom Coin</b>
+                <div className="lyr-parent">
+                  <b className="lyr">1,234,525 CUS</b>
+                  <b className="b">$2,183</b>
                 </div>
               </div>
-              <div className={styles.frameChild} />
+              <div className="frame-child" />
             </div>
           </div>
-          <div className={styles.tokendisplayitem2}>
+          <div className="tokendisplayitem2">
             <img
-              className={styles.logosbitcoinIcon}
+              className="logosbitcoin-icon"
               alt=""
               src="../logosbitcoin.svg"
             />
-            <div className={styles.frameParent}>
-              <div className={styles.lyraCoinParent}>
-                <b className={styles.lyraCoin}>BitCoin</b>
-                <div className={styles.lyrParent}>
-                  <b className={styles.lyr}>1.2345 BTC</b>
-                  <b className={styles.b}>$20,183</b>
+            <div className="frame-container">
+              <div className="lyra-coin-parent">
+                <b className="lyra-coin">BitCoin</b>
+                <div className="lyr-parent">
+                  <b className="lyr">1.2345 BTC</b>
+                  <b className="b">$20,183</b>
                 </div>
               </div>
-              <div className={styles.frameChild} />
+              <div className="frame-child" />
             </div>
           </div>
-          <div className={styles.tokendisplayitem2}>
+          <div className="tokendisplayitem2">
             <img
-              className={styles.lyralogoblackicon}
+              className="lyralogoblackicon"
               alt=""
               src="../mask-group@2x.png"
             />
-            <div className={styles.frameParent}>
-              <div className={styles.lyraCoinParent}>
-                <b className={styles.lyraCoin}>T-Shirt Blue</b>
-                <div className={styles.lyrParent}>
-                  <b className={styles.lyr}>3 Items</b>
-                  <b className={styles.b}>$20,183</b>
+            <div className="frame-container">
+              <div className="lyra-coin-parent">
+                <b className="lyra-coin">T-Shirt Blue</b>
+                <div className="lyr-parent">
+                  <b className="lyr">3 Items</b>
+                  <b className="b">$20,183</b>
                 </div>
               </div>
-              <div className={styles.frameChild} />
+              <div className="frame-child" />
             </div>
           </div>
         </div>

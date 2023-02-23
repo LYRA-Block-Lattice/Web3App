@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
 import Footer from "../components/Footer";
-import styles from "./OpenWallet.module.css";
+import "./OpenWallet.css";
 
 const OpenWallet: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -29,21 +29,17 @@ const OpenWallet: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.openwallet}>
+    <div className="openwallet">
       <TopNavigationBar
         title="Open Wallet"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.illus5CopyParent}>
-        <img
-          className={styles.illus5CopyIcon}
-          alt=""
-          src="../illus5-copy.svg"
-        />
+      <div className="illus5-copy-parent">
+        <img className="illus5-copy-icon" alt="" src="../illus5-copy.svg" />
         <FormControl
-          className={styles.walletName}
+          className="wallet-name1"
           sx={{ width: 343 }}
           variant="standard"
         >
@@ -55,7 +51,7 @@ const OpenWallet: FunctionComponent = () => {
           <FormHelperText />
         </FormControl>
         <TextField
-          className={styles.password}
+          className="password"
           sx={{ width: 330 }}
           color="primary"
           variant="standard"
@@ -75,13 +71,13 @@ const OpenWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className={styles.prepareSellOrderButton}>
-          <div className={styles.primaryButton}>Open</div>
+        <button className="prepare-sell-order-button16">
+          <div className="primary-button8">Open</div>
         </button>
-        <button className={styles.prepareSellOrderButton1}>
-          <div className={styles.miniButton}>Create</div>
+        <button className="prepare-sell-order-button17">
+          <div className="mini-button1">Create</div>
         </button>
-        <button className={styles.forgotPasswordCopy}>Forgot password?</button>
+        <button className="forgot-password-copy">Forgot password?</button>
       </div>
       <Footer
         iconImageUrl="../box-alt-light.svg"

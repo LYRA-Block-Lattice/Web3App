@@ -1,12 +1,12 @@
 import { FunctionComponent } from "react";
-import styles from "./GeneralPopup.module.css";
+import "./GeneralPopup.css";
 
 type GeneralPopupType = {
   onClose?: () => void;
 };
 
 const GeneralPopup: FunctionComponent<GeneralPopupType> = ({ onClose }) => {
-  return <div className={styles.generalpopup} />;
+  return <div className="generalpopup" />;
 };
 
 export default GeneralPopup;

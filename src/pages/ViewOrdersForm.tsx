@@ -4,7 +4,7 @@ import WalletCardContainer from "../components/WalletCardContainer";
 import MarketToolBarContainer from "../components/MarketToolBarContainer";
 import OrderForm from "../components/OrderForm";
 import Footer from "../components/Footer";
-import styles from "./ViewOrdersForm.module.css";
+import "./ViewOrdersForm.css";
 
 const ViewOrdersForm: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -24,14 +24,14 @@ const ViewOrdersForm: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.viewordersform}>
+    <div className="viewordersform">
       <TopNavigationBar
         title="View Orders"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.walletCardParent}>
+      <div className="wallet-card-container">
         <WalletCardContainer />
         <MarketToolBarContainer
           homeIconInterlocution="../home--icon--interlocution15.svg"

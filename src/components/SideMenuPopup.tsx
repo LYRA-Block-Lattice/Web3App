@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect } from "react";
-import styles from "./SideMenuPopup.module.css";
+import "./SideMenuPopup.css";
 
 type SideMenuPopupType = {
   onClose?: () => void;
@@ -15,7 +15,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
         for (const entry of entries) {
           if (entry.isIntersecting || entry.intersectionRatio > 0) {
             const targetElement = entry.target;
-            targetElement.classList.add(styles.animate);
+            targetElement.classList.add("animate");
             observer.unobserve(targetElement);
           }
         }
@@ -37,122 +37,122 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
   }, []);
 
   return (
-    <div className={styles.sidemenupopup} data-animate-on-scroll>
-      <div className={styles.frameParent}>
-        <div className={styles.vectorParent}>
-          <img className={styles.vectorIcon} alt="" src="../vector8.svg" />
-          <div className={styles.lyraWeb3Ecommerce}>Lyra Web3 eCommerce</div>
+    <div className="sidemenupopup" data-animate-on-scroll>
+      <div className="frame-group">
+        <div className="vector-parent">
+          <img className="vector-icon8" alt="" src="../vector8.svg" />
+          <div className="lyra-web3-ecommerce">Lyra Web3 eCommerce</div>
         </div>
-        <div className={styles.administration}>
-          <div className={styles.component2variant3}>
-            <div className={styles.navItem}>
-              <div className={styles.administration}>
-                <div className={styles.left}>
-                  <div className={styles.administration1}>
+        <div className="administration">
+          <div className="component-2variant3">
+            <div className="nav-item">
+              <div className="administration">
+                <div className="left">
+                  <div className="administration-1">
                     <img
-                      className={styles.administration1Icon}
+                      className="administration-1-icon"
                       alt=""
                       src="../administration-1@2x.png"
                     />
                   </div>
-                  <div className={styles.promotion}>Token Mint</div>
+                  <div className="promotion">Token Mint</div>
                 </div>
               </div>
               <img
-                className={styles.arrowChevronDownIcon}
+                className="arrow-chevron-down-icon"
                 alt=""
                 src="../arrowchevrondown.svg"
               />
             </div>
           </div>
         </div>
-        <div className={styles.administration}>
-          <div className={styles.component2variant3}>
-            <div className={styles.navItem}>
-              <div className={styles.administration}>
-                <div className={styles.left}>
-                  <div className={styles.administration1}>
+        <div className="administration">
+          <div className="component-2variant3">
+            <div className="nav-item">
+              <div className="administration">
+                <div className="left">
+                  <div className="administration-1">
                     <img
-                      className={styles.administration1Icon}
+                      className="administration-1-icon"
                       alt=""
                       src="../promotion-1@2x.png"
                     />
                   </div>
-                  <div className={styles.promotion}>Promotion</div>
+                  <div className="promotion">Promotion</div>
                 </div>
               </div>
               <img
-                className={styles.arrowChevronDownIcon}
+                className="arrow-chevron-down-icon"
                 alt=""
                 src="../arrowchevrondown.svg"
               />
             </div>
           </div>
         </div>
-        <div className={styles.administration}>
-          <div className={styles.component2variant3}>
-            <div className={styles.navItem}>
-              <div className={styles.administration}>
-                <div className={styles.left}>
-                  <div className={styles.administration1}>
+        <div className="administration">
+          <div className="component-2variant3">
+            <div className="nav-item">
+              <div className="administration">
+                <div className="left">
+                  <div className="administration-1">
                     <img
-                      className={styles.administration1Icon}
+                      className="administration-1-icon"
                       alt=""
                       src="../customerloyalty-1@2x.png"
                     />
                   </div>
-                  <div className={styles.promotion}>Loyalty</div>
+                  <div className="promotion">Loyalty</div>
                 </div>
               </div>
               <img
-                className={styles.arrowChevronDownIcon}
+                className="arrow-chevron-down-icon"
                 alt=""
                 src="../arrowchevrondown.svg"
               />
             </div>
           </div>
         </div>
-        <div className={styles.administration}>
-          <div className={styles.component2variant3}>
-            <div className={styles.navItem}>
-              <div className={styles.administration}>
-                <div className={styles.left}>
-                  <div className={styles.administration1}>
+        <div className="administration">
+          <div className="component-2variant3">
+            <div className="nav-item">
+              <div className="administration">
+                <div className="left">
+                  <div className="administration-1">
                     <img
-                      className={styles.administration1Icon}
+                      className="administration-1-icon"
                       alt=""
                       src="../productmanagement-1@2x.png"
                     />
                   </div>
-                  <div className={styles.promotion}>Product Management</div>
+                  <div className="promotion">Product Management</div>
                 </div>
               </div>
               <img
-                className={styles.arrowChevronDownIcon}
+                className="arrow-chevron-down-icon"
                 alt=""
                 src="../arrowchevrondown.svg"
               />
             </div>
           </div>
         </div>
-        <div className={styles.administration}>
-          <div className={styles.administration}>
-            <div className={styles.component2variant3}>
-              <div className={styles.navItem}>
-                <div className={styles.administration}>
-                  <div className={styles.left}>
-                    <div className={styles.administration1}>
+        <div className="administration">
+          <div className="administration">
+            <div className="component-2variant3">
+              <div className="nav-item">
+                <div className="administration">
+                  <div className="left">
+                    <div className="administration-1">
                       <img
-                        className={styles.administration1Icon}
+                        className="administration-1-icon"
                         alt=""
                         src="../sale-2-1@2x.png"
                       />
                     </div>
-                    <div className={styles.promotion}>Sales</div>
+                    <div className="promotion">Sales</div>
                   </div>
                 </div>
                 <img
-                  className={styles.arrowChevronDownIcon}
+                  className="arrow-chevron-down-icon"
                   alt=""
                   src="../arrowchevrondown.svg"
                 />
@@ -160,25 +160,25 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
             </div>
           </div>
         </div>
-        <div className={styles.administration}>
-          <div className={styles.administration}>
-            <div className={styles.administration}>
-              <div className={styles.component2variant3}>
-                <div className={styles.navItem}>
-                  <div className={styles.administration}>
-                    <div className={styles.left}>
-                      <div className={styles.administration1}>
+        <div className="administration">
+          <div className="administration">
+            <div className="administration">
+              <div className="component-2variant3">
+                <div className="nav-item">
+                  <div className="administration">
+                    <div className="left">
+                      <div className="administration-1">
                         <img
-                          className={styles.administration1Icon}
+                          className="administration-1-icon"
                           alt=""
                           src="../order-2@2x.png"
                         />
                       </div>
-                      <div className={styles.promotion}>Orders</div>
+                      <div className="promotion">Orders</div>
                     </div>
                   </div>
                   <img
-                    className={styles.arrowChevronDownIcon}
+                    className="arrow-chevron-down-icon"
                     alt=""
                     src="../arrowchevrondown.svg"
                   />
@@ -187,47 +187,47 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
             </div>
           </div>
         </div>
-        <div className={styles.administration}>
-          <div className={styles.component2variant3}>
-            <div className={styles.navItem}>
-              <div className={styles.administration}>
-                <div className={styles.left}>
-                  <div className={styles.administration1}>
+        <div className="administration">
+          <div className="component-2variant3">
+            <div className="nav-item">
+              <div className="administration">
+                <div className="left">
+                  <div className="administration-1">
                     <img
-                      className={styles.administration1Icon}
+                      className="administration-1-icon"
                       alt=""
                       src="../supplychainmanagement-2@2x.png"
                     />
                   </div>
-                  <div className={styles.promotion}>Supply Chain</div>
+                  <div className="promotion">Supply Chain</div>
                 </div>
               </div>
               <img
-                className={styles.arrowChevronDownIcon}
+                className="arrow-chevron-down-icon"
                 alt=""
                 src="../arrowchevrondown.svg"
               />
             </div>
           </div>
         </div>
-        <div className={styles.administration}>
-          <div className={styles.administration}>
-            <div className={styles.component2variant3}>
-              <div className={styles.navItem}>
-                <div className={styles.administration}>
-                  <div className={styles.left}>
-                    <div className={styles.administration1}>
+        <div className="administration">
+          <div className="administration">
+            <div className="component-2variant3">
+              <div className="nav-item">
+                <div className="administration">
+                  <div className="left">
+                    <div className="administration-1">
                       <img
-                        className={styles.administration1Icon}
+                        className="administration-1-icon"
                         alt=""
                         src="../security-1@2x.png"
                       />
                     </div>
-                    <div className={styles.promotion}>Security</div>
+                    <div className="promotion">Security</div>
                   </div>
                 </div>
                 <img
-                  className={styles.arrowChevronDownIcon}
+                  className="arrow-chevron-down-icon"
                   alt=""
                   src="../arrowchevrondown.svg"
                 />

@@ -1,54 +1,48 @@
 import { FunctionComponent } from "react";
-import styles from "./PrimaryAccountContainer.module.css";
+import "./PrimaryAccountContainer.css";
 
 const PrimaryAccountContainer: FunctionComponent = () => {
   return (
-    <div className={styles.walletCard}>
-      <div className={styles.walletCardInner}>
-        <div className={styles.rectangleWrapper}>
-          <div className={styles.rectangle} />
+    <div className="wallet-card">
+      <div className="wallet-card-inner">
+        <div className="rectangle-wrapper">
+          <div className="rectangle2" />
         </div>
       </div>
-      <div className={styles.frameParent}>
-        <div className={styles.balanceDisplayZoneParent}>
-          <a className={styles.balanceDisplayZone}>
-            <button className={styles.walletNameLabel}>
-              My Primary Account
-            </button>
-            <div className={styles.balanceDisplayZoneChild} />
-            <b className={styles.usdtbalance}>1,025,000</b>
-            <b className={styles.lyrlabel}>LYR</b>
-            <div className={styles.balanceDisplayZoneItem} />
-            <b className={styles.usdtbalance}>5,000</b>
-            <b className={styles.lyrlabel}>USDT</b>
+      <div className="frame-parent5">
+        <div className="balance-display-zone-parent">
+          <a className="balance-display-zone">
+            <button className="wallet-name-label">My Primary Account</button>
+            <div className="balance-display-zone-child" />
+            <b className="usdtbalance">1,025,000</b>
+            <b className="lyrlabel">LYR</b>
+            <div className="balance-display-zone-item" />
+            <b className="usdtbalance">5,000</b>
+            <b className="lyrlabel">USDT</b>
           </a>
-          <div className={styles.qrcodeButtonWrapper}>
-            <button className={styles.qrcodeButton}>
-              <div className={styles.qrcodeButtonRound} />
-              <img
-                className={styles.qrcodeIcon}
-                alt=""
-                src="../qrcode-icon.svg"
-              />
+          <div className="qrcode-button-wrapper">
+            <button className="qrcode-button">
+              <div className="qrcode-button-round" />
+              <img className="qrcode-icon" alt="" src="../qrcode-icon.svg" />
             </button>
           </div>
         </div>
-        <div className={styles.tokenLists}>
-          <button className={styles.goNftButton}>
-            <div className={styles.nftCount}>12</div>
-            <b className={styles.nftLabel}>NFT</b>
+        <div className="token-lists">
+          <button className="go-nft-button">
+            <div className="nft-count">12</div>
+            <b className="nft-label">NFT</b>
           </button>
-          <button className={styles.goNftButton}>
-            <div className={styles.nftCount}>3</div>
-            <b className={styles.nftLabel}>TOT</b>
+          <button className="go-nft-button">
+            <div className="nft-count">3</div>
+            <b className="nft-label">TOT</b>
           </button>
-          <button className={styles.goNftButton}>
-            <div className={styles.nftCount}>0</div>
-            <b className={styles.nftLabel}>Selling</b>
+          <button className="go-nft-button">
+            <div className="nft-count">0</div>
+            <b className="nft-label">Selling</b>
           </button>
-          <button className={styles.goNftButton}>
-            <div className={styles.nftCount}>0</div>
-            <b className={styles.nftLabel}>Buying</b>
+          <button className="go-nft-button">
+            <div className="nft-count">0</div>
+            <b className="nft-label">Buying</b>
           </button>
         </div>
       </div>

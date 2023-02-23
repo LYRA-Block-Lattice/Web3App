@@ -1,11 +1,11 @@
 import { FunctionComponent } from "react";
 import { Autocomplete, TextField } from "@mui/material";
-import styles from "./MintFiatToken.module.css";
+import "./MintFiatToken.css";
 
 const MintFiatToken: FunctionComponent = () => {
   return (
-    <form className={styles.mintFiatToken}>
-      <div className={styles.printFiatFor}>Print Fiat for free</div>
+    <form className="mint-fiat-token">
+      <div className="print-fiat-for">Print Fiat for free</div>
       <Autocomplete
         sx={{ width: 301 }}
         disablePortal
@@ -23,7 +23,7 @@ const MintFiatToken: FunctionComponent = () => {
         size="medium"
       />
       <TextField
-        className={styles.domainName}
+        className="domain-name"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -33,8 +33,8 @@ const MintFiatToken: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <button className={styles.prepareSellOrderButton}>
-        <div className={styles.secondaryButton}>Print</div>
+      <button className="prepare-sell-order-button5">
+        <div className="secondary-button">Print</div>
       </button>
     </form>
   );

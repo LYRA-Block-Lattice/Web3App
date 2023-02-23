@@ -4,7 +4,7 @@ import WalletCardContainer from "../components/WalletCardContainer";
 import MarketToolBarContainer from "../components/MarketToolBarContainer";
 import TradeContainer from "../components/TradeContainer";
 import Footer from "../components/Footer";
-import styles from "./ViewTradesForm.module.css";
+import "./ViewTradesForm.css";
 
 const ViewTradesForm: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -24,14 +24,14 @@ const ViewTradesForm: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.viewtradesform}>
+    <div className="viewtradesform">
       <TopNavigationBar
         title="View Trades"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.walletCardParent}>
+      <div className="wallet-card-group">
         <WalletCardContainer />
         <MarketToolBarContainer
           homeIconInterlocution="../home--icon--interlocution10.svg"

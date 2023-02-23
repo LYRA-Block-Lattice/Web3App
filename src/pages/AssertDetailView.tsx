@@ -2,7 +2,7 @@ import { FunctionComponent, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
 import Footer from "../components/Footer";
-import styles from "./AssertDetailView.module.css";
+import "./AssertDetailView.css";
 
 const AssertDetailView: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -18,218 +18,216 @@ const AssertDetailView: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.assertdetailview}>
+    <div className="assertdetailview">
       <TopNavigationBar
         title="Assert Details"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.assertdetailviewParent}>
-        <div className={styles.collateralsection}>
-          <div className={styles.asserttitleregion}>
-            <div className={styles.assertauthorsection}>
-              <div className={styles.aLegendNft}>A legend NFT author</div>
-              <div className={styles.materialSymbolsshareParent}>
+      <div className="assertdetailview-parent">
+        <div className="collateralsection">
+          <div className="asserttitleregion">
+            <div className="assertauthorsection">
+              <div className="a-legend-nft">A legend NFT author</div>
+              <div className="material-symbolsshare-parent">
                 <img
-                  className={styles.materialSymbolsshareIcon}
+                  className="material-symbolsshare-icon"
                   alt=""
                   src="../materialsymbolsshare.svg"
                 />
                 <img
-                  className={styles.materialSymbolsshareIcon}
+                  className="material-symbolsshare-icon"
                   alt=""
                   src="../carbonoverflowmenuhorizontal.svg"
                 />
               </div>
             </div>
-            <div className={styles.asserttitlesection}>
-              <div className={styles.mekaLegends}>Meka Legends # 500</div>
+            <div className="asserttitlesection">
+              <div className="meka-legends">Meka Legends # 500</div>
             </div>
-            <div className={styles.assertownersection}>
-              <div className={styles.mekaLegends}>Owner someone</div>
+            <div className="assertownersection">
+              <div className="meka-legends">Owner someone</div>
             </div>
           </div>
-          <div className={styles.asserttitleregion}>
-            <div className={styles.iconParkSolidblockchainWrapper}>
+          <div className="asserttitleregion">
+            <div className="icon-park-solidblockchain-wrapper">
               <img
-                className={styles.materialSymbolsshareIcon}
+                className="material-symbolsshare-icon"
                 alt=""
                 src="../iconparksolidblockchain.svg"
               />
             </div>
             <img
-              className={styles.titlebannerregionChild}
+              className="titlebannerregion-child"
               alt=""
               src="../frame-61@2x.png"
             />
           </div>
-          <div className={styles.assertstatssection}>
-            <div className={styles.icoutlineRemoveRedEyeParent}>
+          <div className="assertstatssection">
+            <div className="icoutline-remove-red-eye-parent">
               <img
-                className={styles.materialSymbolsshareIcon}
+                className="material-symbolsshare-icon"
                 alt=""
                 src="../icoutlineremoveredeye.svg"
               />
-              <div className={styles.mekaLegends}>32 views</div>
+              <div className="meka-legends">32 views</div>
             </div>
-            <div className={styles.icoutlineRemoveRedEyeParent}>
+            <div className="icoutline-remove-red-eye-parent">
               <img
-                className={styles.materialSymbolsshareIcon}
+                className="material-symbolsshare-icon"
                 alt=""
                 src="../mdicardsheartoutline.svg"
               />
-              <div className={styles.mekaLegends}>5 favorite</div>
+              <div className="meka-legends">5 favorite</div>
             </div>
-            <div className={styles.icoutlineRemoveRedEyeParent}>
+            <div className="icoutline-remove-red-eye-parent">
               <img
-                className={styles.materialSymbolsshareIcon}
+                className="material-symbolsshare-icon"
                 alt=""
                 src="../mdishapeoutline.svg"
               />
-              <div className={styles.mekaLegends}>Fiat OTC</div>
+              <div className="meka-legends">Fiat OTC</div>
             </div>
           </div>
         </div>
-        <div className={styles.descriptiontitle}>
+        <div className="descriptiontitle">
           <img
-            className={styles.materialSymbolsshareIcon}
+            className="material-symbolsshare-icon"
             alt=""
             src="../fluenttextdescription20filled.svg"
           />
-          <div className={styles.mekaLegends}>Description</div>
+          <div className="meka-legends">Description</div>
         </div>
-        <div className={styles.descriptiondetails}>
-          <div className={styles.mekaLegends}>By A great designer</div>
+        <div className="descriptiondetails">
+          <div className="meka-legends">By A great designer</div>
         </div>
-        <div className={styles.descriptiontitle}>
+        <div className="descriptiontitle">
           <img
-            className={styles.materialSymbolsshareIcon}
+            className="material-symbolsshare-icon"
             alt=""
             src="../icoutlinepricechange.svg"
           />
-          <div className={styles.mekaLegends}>Price and payment</div>
+          <div className="meka-legends">Price and payment</div>
         </div>
-        <div className={styles.buysection}>
-          <div className={styles.priceandbuyregion}>
-            <div className={styles.pricelabel}>
-              <div className={styles.mekaLegends}>Current Price</div>
+        <div className="buysection">
+          <div className="priceandbuyregion">
+            <div className="pricelabel">
+              <div className="meka-legends">Current Price</div>
             </div>
-            <div className={styles.priceandvaluelabel}>
-              <div className={styles.mekaLegends}>0.0325</div>
-              <div className={styles.tetherusdtParent}>
-                <div className={styles.tetherusdt}>tether/USDT</div>
-                <div className={styles.div1}>$86.20</div>
+            <div className="priceandvaluelabel">
+              <div className="meka-legends">0.0325</div>
+              <div className="tetherusdt-parent">
+                <div className="tetherusdt">tether/USDT</div>
+                <div className="div2">$86.20</div>
               </div>
             </div>
           </div>
-          <div className={styles.setlimitsection}>
-            <div className={styles.pricelabel1}>
-              <div className={styles.mekaLegends}>Available to buy</div>
+          <div className="setlimitsection">
+            <div className="pricelabel1">
+              <div className="meka-legends">Available to buy</div>
             </div>
-            <div className={styles.priceandvaluelabel1}>
-              <div className={styles.mekaLegends}>100 - 200</div>
-              <div className={styles.tetherusdtParent}>
-                <div className={styles.tetherusdt}>tether/ETH</div>
-                <div className={styles.div1}>$40 ~ 84.20</div>
+            <div className="priceandvaluelabel1">
+              <div className="meka-legends">100 - 200</div>
+              <div className="tetherusdt-parent">
+                <div className="tetherusdt">tether/ETH</div>
+                <div className="div2">$40 ~ 84.20</div>
               </div>
             </div>
           </div>
-          <div className={styles.pricelabelParent}>
-            <div className={styles.pricelabel1}>
-              <div className={styles.mekaLegends}>My Offer</div>
+          <div className="pricelabel-parent">
+            <div className="pricelabel1">
+              <div className="meka-legends">My Offer</div>
             </div>
-            <div className={styles.frameParent}>
-              <div className={styles.selectedamountParent}>
+            <div className="frame-parent4">
+              <div className="selectedamount-parent">
                 <input
-                  className={styles.selectedamount}
+                  className="selectedamount"
                   type="number"
                   placeholder="150"
                 />
-                <div className={styles.tetherethGroup}>
-                  <div className={styles.tethereth1}>tether/ETH</div>
-                  <div className={styles.tetherusdt}>100 tether/USDT</div>
-                  <div className={styles.tetherusdt}>$ 10.3</div>
+                <div className="tethereth-group">
+                  <div className="tethereth1">tether/ETH</div>
+                  <div className="tetherusdt">100 tether/USDT</div>
+                  <div className="tetherusdt">$ 10.3</div>
                 </div>
               </div>
-              <div className={styles.limitadjustsection}>
-                <div className={styles.tetherusdt}>Min</div>
-                <Box className={styles.slidercontinuous}>
+              <div className="limitadjustsection">
+                <div className="tetherusdt">Min</div>
+                <Box className="slidercontinuous">
                   <Slider
                     color="primary"
                     defaultValue={20}
                     orientation="horizontal"
                   />
                 </Box>
-                <div className={styles.max}>Max</div>
+                <div className="max">Max</div>
               </div>
             </div>
           </div>
-          <div className={styles.makeofferbutton}>
-            <div className={styles.pricelabel1}>
-              <div className={styles.mekaLegends}>Collateral and Fees</div>
+          <div className="makeofferbutton">
+            <div className="pricelabel1">
+              <div className="meka-legends">Collateral and Fees</div>
             </div>
-            <div className={styles.collateralcalculation}>
-              <div className={styles.collateralsection}>
-                <div className={styles.collateralWorthLabel}>
-                  <div className={styles.tetherusdt}>
-                    Collateral value: 120%
-                  </div>
-                  <div className={styles.tetherusdt}>1234 LYR</div>
+            <div className="collateralcalculation">
+              <div className="collateralsection">
+                <div className="collateral-worth-label">
+                  <div className="tetherusdt">Collateral value: 120%</div>
+                  <div className="tetherusdt">1234 LYR</div>
                 </div>
-                <div className={styles.collateralWorthLabel1}>
-                  <div className={styles.tetherusdt}>$ 103</div>
+                <div className="collateral-worth-label1">
+                  <div className="tetherusdt">$ 103</div>
                 </div>
               </div>
-              <div className={styles.collateralsection}>
-                <div className={styles.collateralWorthLabel}>
-                  <div className={styles.tetherusdt}>DAO fee: 1%</div>
-                  <div className={styles.tetherusdt}>1234 LYR</div>
+              <div className="collateralsection">
+                <div className="collateral-worth-label">
+                  <div className="tetherusdt">DAO fee: 1%</div>
+                  <div className="tetherusdt">1234 LYR</div>
                 </div>
-                <div className={styles.collateralWorthLabel1}>
-                  <div className={styles.tetherusdt}>$ 103</div>
-                </div>
-              </div>
-              <div className={styles.collateralsection}>
-                <div className={styles.collateralWorthLabel}>
-                  <div className={styles.tetherusdt}>Network fee: 0.2%</div>
-                  <div className={styles.tetherusdt}>1234 LYR</div>
-                </div>
-                <div className={styles.collateralWorthLabel1}>
-                  <div className={styles.tetherusdt}>$ 103</div>
+                <div className="collateral-worth-label1">
+                  <div className="tetherusdt">$ 103</div>
                 </div>
               </div>
-              <div className={styles.collateralcalculationChild} />
-              <div className={styles.collateralsection}>
-                <div className={styles.collateralWorthLabel6}>
-                  <div className={styles.tetherusdt}>1234 LYR</div>
+              <div className="collateralsection">
+                <div className="collateral-worth-label">
+                  <div className="tetherusdt">Network fee: 0.2%</div>
+                  <div className="tetherusdt">1234 LYR</div>
                 </div>
-                <div className={styles.collateralWorthLabel7}>
-                  <div className={styles.tetherusdt}>Total:</div>
-                  <div className={styles.div8}>$ 103</div>
+                <div className="collateral-worth-label1">
+                  <div className="tetherusdt">$ 103</div>
+                </div>
+              </div>
+              <div className="collateralcalculation-child" />
+              <div className="collateralsection">
+                <div className="collateral-worth-label6">
+                  <div className="tetherusdt">1234 LYR</div>
+                </div>
+                <div className="collateral-worth-label7">
+                  <div className="tetherusdt">Total:</div>
+                  <div className="div9">$ 103</div>
                 </div>
               </div>
             </div>
-            <button className={styles.prepareSellOrderButton}>
+            <button className="prepare-sell-order-button4">
               <img
-                className={styles.materialSymbolsshareIcon}
+                className="material-symbolsshare-icon"
                 alt=""
                 src="../evapricetagsoutline.svg"
               />
-              <div className={styles.primaryButton}>Make offer</div>
+              <div className="primary-button4">Make offer</div>
             </button>
           </div>
         </div>
-        <div className={styles.descriptiontitle}>
+        <div className="descriptiontitle">
           <img
-            className={styles.materialSymbolsshareIcon}
+            className="material-symbolsshare-icon"
             alt=""
             src="../galasecure.svg"
           />
-          <div className={styles.mekaLegends}>Trading protection</div>
+          <div className="meka-legends">Trading protection</div>
         </div>
-        <div className={styles.descriptiondetails1}>
-          <div className={styles.thisOrderIs}>
+        <div className="descriptiondetails1">
+          <div className="this-order-is">
             This order is protected by staking of 100,000 LYR, or $1,000 in USD,
             from the seller. This order is regulated by the DAO “A good shop”
             which has a total staking of 30,000,000 LYR.

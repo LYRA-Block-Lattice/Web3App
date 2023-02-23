@@ -3,7 +3,7 @@ import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import ItemContainer from "../components/ItemContainer";
 import ProductContainer from "../components/ProductContainer";
-import styles from "./MiscComponents.module.css";
+import "./MiscComponents.css";
 
 const MiscComponents: FunctionComponent = () => {
   const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
@@ -27,12 +27,12 @@ const MiscComponents: FunctionComponent = () => {
 
   return (
     <>
-      <div className={styles.misccomponents}>
-        <div className={styles.nftShowingItemParent}>
+      <div className="misccomponents">
+        <div className="nft-showing-item-parent">
           <ItemContainer />
           <ItemContainer />
         </div>
-        <div className={styles.nftShowingItemParent}>
+        <div className="nft-showing-item-parent">
           <ProductContainer openGeneralPopup={openGeneralPopup} />
           <ProductContainer openGeneralPopup={openGeneralPopup1} />
         </div>

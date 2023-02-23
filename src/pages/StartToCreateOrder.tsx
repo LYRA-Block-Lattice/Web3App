@@ -3,7 +3,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import TokenContainer from "../components/TokenContainer";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
-import styles from "./StartToCreateOrder.module.css";
+import "./StartToCreateOrder.css";
 
 const StartToCreateOrder: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -25,20 +25,20 @@ const StartToCreateOrder: FunctionComponent = () => {
   }, [navigate]);
 
   return (
-    <div className={styles.starttocreateorder}>
+    <div className="starttocreateorder">
       <TopNavigationBar
         title="Select Catalog"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.catalogSectionParent}>
+      <div className="catalog-section-parent">
         <TokenContainer />
         <button
-          className={styles.prepareSellOrderButton}
+          className="prepare-sell-order-button13"
           onClick={onPrepareSellOrderButtonClick}
         >
-          <div className={styles.primaryButton}>Specify Token</div>
+          <div className="primary-button6">Specify Token</div>
         </button>
       </div>
       <Footer

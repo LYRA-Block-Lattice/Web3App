@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import styles from "./TopNavigationBar.module.css";
+import "./TopNavigationBar.css";
 
 type TopNavigationBarType = {
   title?: string;
@@ -17,22 +17,15 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   onContextMenuButtonClick,
 }) => {
   return (
-    <div className={styles.topnavigationbar}>
-      <button className={styles.navbackbutton} onClick={onNavBackButtonClick}>
-        <img className={styles.iconleft} alt="" src="../iconleft.svg" />
+    <div className="topnavigationbar">
+      <button className="navbackbutton" onClick={onNavBackButtonClick}>
+        <img className="iconleft" alt="" src="../iconleft.svg" />
       </button>
-      <button className={styles.title} onClick={onTitleClick}>
+      <button className="title5" onClick={onTitleClick}>
         {title}
       </button>
-      <button
-        className={styles.contextmenubutton}
-        onClick={onContextMenuButtonClick}
-      >
-        <img
-          className={styles.icroundPlusIcon}
-          alt=""
-          src="../icroundplus2.svg"
-        />
+      <button className="contextmenubutton" onClick={onContextMenuButtonClick}>
+        <img className="icround-plus-icon" alt="" src="../icroundplus2.svg" />
       </button>
     </div>
   );

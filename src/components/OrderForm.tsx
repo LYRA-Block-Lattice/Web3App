@@ -1,6 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import OpenContainer from "../components/OpenContainer";
-import styles from "./OrderForm.module.css";
+import "./OrderForm.css";
 
 const OrderForm: FunctionComponent = () => {
   const onBannerImageClick = useCallback(() => {
@@ -8,58 +8,58 @@ const OrderForm: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.ordercard}>
-      <div className={styles.orderBriefSection}>
+    <div className="ordercard3">
+      <div className="order-brief-section3">
         <OpenContainer
           tokenImageUrl="../icbaselinegeneratingtokens3.svg"
           propBackgroundColor="#fa7268"
           onBannerImageClick={onBannerImageClick}
         />
-        <a className={styles.titleSection}>
-          <div className={styles.sellParent}>
-            <b className={styles.sell}>Sell</b>
-            <b className={styles.sell}>BTC</b>
-            <img className={styles.frameChild} alt="" src="../arrow-2.svg" />
-            <b className={styles.tetherusdt}>tether/USDT</b>
+        <a className="title-section2">
+          <div className="sell-group">
+            <b className="sold">Sell</b>
+            <b className="sold">BTC</b>
+            <img className="frame-child6" alt="" src="../arrow-2.svg" />
+            <b className="tetherusdt4">tether/USDT</b>
           </div>
-          <div className={styles.titleSectionChild} />
-          <div className={styles.amWrapper}>
-            <div className={styles.sell}>12/29/2022 10:25:37 AM</div>
+          <div className="title-section-item" />
+          <div className="am-container">
+            <div className="sold">12/29/2022 10:25:37 AM</div>
           </div>
-          <div className={styles.detailsSection}>
-            <div className={styles.block1}>
-              <div className={styles.sell}>Price</div>
-              <div className={styles.sell}>Limit Min</div>
-              <div className={styles.sell}>Sold</div>
+          <div className="details-section2">
+            <div className="block12">
+              <div className="sold">Price</div>
+              <div className="sold">Limit Min</div>
+              <div className="sold">Sold</div>
             </div>
-            <div className={styles.block2}>
-              <div className={styles.sell}>10,323</div>
-              <div className={styles.sell}>3.2</div>
-              <div className={styles.sell}>123</div>
+            <div className="block22">
+              <div className="sold">10,323</div>
+              <div className="sold">3.2</div>
+              <div className="sold">123</div>
             </div>
-            <div className={styles.detailsSectionChild} />
-            <div className={styles.block3}>
-              <div className={styles.sell}>Amount</div>
-              <div className={styles.sell}>Limit Max</div>
-              <div className={styles.sell}>Shelf</div>
+            <div className="details-section-inner" />
+            <div className="block32">
+              <div className="sold">Amount</div>
+              <div className="sold">Limit Max</div>
+              <div className="sold">Shelf</div>
             </div>
-            <div className={styles.block2}>
-              <div className={styles.sell}>1113.2</div>
-              <div className={styles.sell}>3.2</div>
-              <div className={styles.sell}>123</div>
+            <div className="block22">
+              <div className="sold">1113.2</div>
+              <div className="sold">3.2</div>
+              <div className="sold">123</div>
             </div>
           </div>
         </a>
       </div>
-      <div className={styles.tradesSection}>
-        <div className={styles.widthController} />
+      <div className="trades-section3">
+        <div className="width-controller3" />
       </div>
-      <div className={styles.itemactions}>
-        <button className={styles.delistButton}>
-          <div className={styles.miniButton}>Delist</div>
+      <div className="itemactions1">
+        <button className="delist-button1">
+          <div className="mini-button6">Delist</div>
         </button>
-        <button className={styles.delistButton}>
-          <div className={styles.miniButton}>Close</div>
+        <button className="delist-button1">
+          <div className="mini-button6">Close</div>
         </button>
       </div>
     </div>

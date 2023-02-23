@@ -11,7 +11,7 @@ import {
 } from "react";
 
 import { createPortal } from "react-dom";
-import styles from "./PortalPopup.module.css";
+import "./PortalPopup.css";
 
 type PopupProps = {
   overlayColor?: string;
@@ -150,7 +150,7 @@ const PortalPopup: FunctionComponent<PopupProps> = ({
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (
         onOutsideClick &&
-        (e.target as HTMLElement).classList.contains(styles.portalPopupOverlay)
+        (e.target as HTMLElement).classList.contains("portalPopupOverlay")
       ) {
         onOutsideClick();
       }
@@ -162,7 +162,7 @@ const PortalPopup: FunctionComponent<PopupProps> = ({
   return (
     <Portal>
       <div
-        className={styles.portalPopupOverlay}
+        className={"portalPopupOverlay"}
         style={popupStyle}
         onClick={onOverlayClick}
       >

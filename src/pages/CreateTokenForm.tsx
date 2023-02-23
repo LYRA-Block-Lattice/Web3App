@@ -1,13 +1,13 @@
 import { FunctionComponent } from "react";
 import { TextField } from "@mui/material";
-import styles from "./CreateTokenForm.module.css";
+import "./CreateTokenForm.css";
 
 const CreateTokenForm: FunctionComponent = () => {
   return (
-    <form className={styles.createtokenform}>
-      <div className={styles.mintToken}>Mint Token</div>
+    <form className="createtokenform">
+      <div className="mint-token">Mint Token</div>
       <TextField
-        className={styles.tokenName}
+        className="token-name"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -17,7 +17,7 @@ const CreateTokenForm: FunctionComponent = () => {
         margin="none"
       />
       <TextField
-        className={styles.tokenName}
+        className="token-name"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -37,7 +37,7 @@ const CreateTokenForm: FunctionComponent = () => {
         margin="none"
       />
       <TextField
-        className={styles.tokenName}
+        className="token-name"
         sx={{ width: 301 }}
         color="primary"
         variant="outlined"
@@ -47,8 +47,8 @@ const CreateTokenForm: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <button className={styles.prepareSellOrderButton}>
-        <div className={styles.secondaryButton}>Mint Token</div>
+      <button className="prepare-sell-order-button6">
+        <div className="secondary-button1">Mint Token</div>
       </button>
     </form>
   );

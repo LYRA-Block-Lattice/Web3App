@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import SignTradeSecretPopup from "../components/SignTradeSecretPopup";
 import PortalPopup from "../components/PortalPopup";
-import styles from "./CreateTOTForm.module.css";
+import "./CreateTOTForm.css";
 
 const CreateTOTForm: FunctionComponent = () => {
   const [isSignTradeSecretPopupOpen, setSignTradeSecretPopupOpen] =
@@ -25,9 +25,9 @@ const CreateTOTForm: FunctionComponent = () => {
 
   return (
     <>
-      <div className={styles.createtotform}>
-        <form className={styles.createtottosellform}>
-          <div className={styles.createAndSell}>Create and Sell [TOT/SKU]</div>
+      <div className="createtotform">
+        <form className="createtottosellform">
+          <div className="create-and-sell">Create and Sell [TOT/SKU]</div>
           <FormControl sx={{ width: 301 }} variant="outlined">
             <InputLabel color="primary">Select Type of TOT</InputLabel>
             <Select color="primary" size="medium" label="Select Type of TOT">
@@ -40,7 +40,7 @@ const CreateTOTForm: FunctionComponent = () => {
             <FormHelperText />
           </FormControl>
           <TextField
-            className={styles.totName}
+            className="tot-name"
             sx={{ width: 301 }}
             color="primary"
             variant="outlined"
@@ -60,7 +60,7 @@ const CreateTOTForm: FunctionComponent = () => {
             margin="none"
           />
           <TextField
-            className={styles.totName}
+            className="tot-name"
             sx={{ width: 301 }}
             color="primary"
             variant="outlined"
@@ -71,16 +71,16 @@ const CreateTOTForm: FunctionComponent = () => {
             margin="none"
           />
           <button
-            className={styles.prepareSellOrderButton}
+            className="prepare-sell-order-button7"
             onClick={openSignTradeSecretPopup}
           >
-            <div className={styles.utilityButton}>Sign trade secret</div>
+            <div className="utility-button">Sign trade secret</div>
           </button>
-          <div className={styles.noteINeed}>
+          <div className="note-i-need">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <button className={styles.prepareSellOrderButton1}>
-            <div className={styles.secondaryButton}>Create TOT</div>
+          <button className="prepare-sell-order-button8">
+            <div className="secondary-button2">Create TOT</div>
           </button>
         </form>
       </div>

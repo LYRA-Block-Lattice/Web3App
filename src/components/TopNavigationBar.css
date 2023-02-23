@@ -21,11 +21,11 @@
 }
 .title5 {
   flex: 1;
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-5xl);
   letter-spacing: 0.02em;
   font-weight: 600;
-  font-family: var(--caption);
-  color: var(--black);
+  font-family: var(--font-open-sans);
+  color: var(--black-0000001001);
   text-align: center;
   display: inline-block;
 }
@@ -48,7 +48,7 @@
   flex-shrink: 0;
 }
 .topnavigationbar {
-  background-color: var(--white);
+  background-color: var(--white1);
   width: 375px;
   display: flex;
   flex-direction: row;

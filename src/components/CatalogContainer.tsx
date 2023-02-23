@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import styles from "./CatalogContainer.module.css";
+import "./CatalogContainer.css";
 
 type CatalogContainerType = {
   iWantToSell?: string;
@@ -13,57 +13,53 @@ const CatalogContainer: FunctionComponent<CatalogContainerType> = ({
   mditruckDelivery,
 }) => {
   return (
-    <div className={styles.catalogselection}>
-      <div className={styles.iWantTo}>{iWantToSell}</div>
-      <div className={styles.tradecatalog}>
-        <button className={styles.selectTokenCatalogButton}>
+    <div className="catalogselection">
+      <div className="i-want-to">{iWantToSell}</div>
+      <div className="tradecatalog">
+        <button className="select-token-catalog-button">
           <img
-            className={styles.icbaselineGeneratingTokensIcon}
+            className="mapart-gallery-icon"
             alt=""
             src={icbaselineGeneratingToken}
           />
-          <div className={styles.tokenWrapper}>
-            <b className={styles.token}>Token</b>
+          <div className="token-frame">
+            <b className="token2">Token</b>
           </div>
         </button>
-        <button className={styles.selectTokenCatalogButton}>
+        <button className="select-token-catalog-button">
           <img
-            className={styles.icbaselineGeneratingTokensIcon}
+            className="mapart-gallery-icon"
             alt=""
             src="../mapartgallery.svg"
           />
-          <div className={styles.tokenWrapper}>
-            <b className={styles.token}>NFT</b>
+          <div className="token-frame">
+            <b className="token2">NFT</b>
           </div>
         </button>
-        <button className={styles.selectTokenCatalogButton}>
+        <button className="select-token-catalog-button">
           <img
-            className={styles.icbaselineGeneratingTokensIcon}
+            className="mapart-gallery-icon"
             alt=""
             src="../fluentemojihighcontrastdollarbanknote.svg"
           />
-          <div className={styles.tokenWrapper}>
-            <b className={styles.fiat}>Fiat</b>
+          <div className="token-frame">
+            <b className="fiat2">Fiat</b>
           </div>
         </button>
-        <button className={styles.selectTokenCatalogButton}>
-          <img
-            className={styles.icbaselineGeneratingTokensIcon}
-            alt=""
-            src={mditruckDelivery}
-          />
-          <div className={styles.tokenWrapper}>
-            <b className={styles.goods}>Goods</b>
+        <button className="select-token-catalog-button">
+          <img className="mapart-gallery-icon" alt="" src={mditruckDelivery} />
+          <div className="token-frame">
+            <b className="goods2">Goods</b>
           </div>
         </button>
-        <button className={styles.selectTokenCatalogButton}>
+        <button className="select-token-catalog-button">
           <img
-            className={styles.icbaselineGeneratingTokensIcon}
+            className="mapart-gallery-icon"
             alt=""
             src="../carbonuserservicedesk4.svg"
           />
-          <div className={styles.tokenWrapper}>
-            <b className={styles.fiat}>Service</b>
+          <div className="token-frame">
+            <b className="fiat2">Service</b>
           </div>
         </button>
       </div>

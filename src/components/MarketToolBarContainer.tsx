@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import styles from "./MarketToolBarContainer.module.css";
+import "./MarketToolBarContainer.css";
 
 type MarketToolBarContainerType = {
   homeIconInterlocution?: string;
@@ -17,47 +17,47 @@ const MarketToolBarContainer: FunctionComponent<MarketToolBarContainerType> = ({
   homeIconInterlocution4,
 }) => {
   return (
-    <div className={styles.markettoolbar}>
-      <div className={styles.swapButtonParent}>
-        <button className={styles.swapButton}>
+    <div className="markettoolbar">
+      <div className="swap-button-group">
+        <button className="dex-button">
           <img
-            className={styles.homeIconInterlocution}
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution}
           />
-          <div className={styles.ranking}>Market</div>
+          <div className="ranking5">Market</div>
         </button>
-        <button className={styles.swapButton}>
+        <button className="dex-button">
           <img
-            className={styles.homeIconInterlocution}
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution1}
           />
-          <div className={styles.ranking}>New Sell</div>
+          <div className="ranking5">New Sell</div>
         </button>
-        <button className={styles.swapButton}>
+        <button className="dex-button">
           <img
-            className={styles.homeIconInterlocution}
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution2}
           />
-          <div className={styles.ranking}>Orders</div>
+          <div className="ranking5">Orders</div>
         </button>
-        <button className={styles.swapButton}>
+        <button className="dex-button">
           <img
-            className={styles.homeIconInterlocution}
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution3}
           />
-          <div className={styles.ranking}>Trades</div>
+          <div className="ranking5">Trades</div>
         </button>
-        <button className={styles.swapButton}>
+        <button className="dex-button">
           <img
-            className={styles.homeIconInterlocution}
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution4}
           />
-          <div className={styles.ranking4}>ODR</div>
+          <div className="ranking9">ODR</div>
         </button>
       </div>
     </div>

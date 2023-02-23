@@ -1,9 +1,10 @@
 .scan-to-pay {
-  align-self: stretch;
   position: relative;
   letter-spacing: -0.01em;
   line-height: 29.93px;
   font-weight: 600;
+  display: inline-block;
+  width: 380px;
 }
 .image-1-icon {
   position: relative;
@@ -25,51 +26,61 @@
   line-height: 29.93px;
   font-weight: 100;
   font-family: var(--base-1-semibold);
-  color: var(--black);
+  color: var(--black-0000001001);
   text-align: center;
   display: inline-block;
 }
-.primary-button9 {
+.primary-button {
   position: relative;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--caption);
-  color: var(--white);
+  font-family: var(--regular-body1);
+  color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button21,
-.scantopay {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
-.prepare-sell-order-button21 {
+.prepare-sell-order-button {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-4xs) var(--padding-7xl);
+  padding: var(--padding-4xs) var(--padding-6xl);
   background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
   flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button21:hover {
+.prepare-sell-order-button:hover {
   background-color: var(--color-mediumslateblue);
+}
+.scan-to-pay-me-parent,
+.scantopay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scan-to-pay-me-parent {
+  flex: 1;
+  justify-content: center;
+  gap: var(--gap-4xl);
 }
 .scantopay {
   position: relative;
-  background-color: var(--white);
+  background-color: var(--white1);
   width: 100%;
-  flex-direction: column;
-  padding: var(--padding-4xs);
+  height: 913px;
+  overflow: hidden;
+  padding: 0 var(--padding-2xs);
+  box-sizing: border-box;
   justify-content: flex-start;
-  gap: 30px;
+  gap: var(--gap-lg);
   text-align: center;
-  font-size: var(--font-size-3xl);
-  color: var(--black);
+  font-size: var(--font-size-4xl);
+  color: var(--black-0000001001);
   font-family: var(--base-1-semibold);
 }

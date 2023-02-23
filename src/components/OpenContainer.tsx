@@ -1,6 +1,6 @@
 import { FunctionComponent, useMemo } from "react";
 import CSS, { Property } from "csstype";
-import styles from "./OpenContainer.module.css";
+import "./OpenContainer.css";
 
 type OpenContainerType = {
   tokenImageUrl?: string;
@@ -24,23 +24,23 @@ const OpenContainer: FunctionComponent<OpenContainerType> = ({
   }, [propBackgroundColor]);
 
   return (
-    <button className={styles.bannerImage} onClick={onBannerImageClick}>
-      <div className={styles.orderBanner}>
-        <div className={styles.orderImage} style={orderImageStyle}>
+    <button className="banner-image2" onClick={onBannerImageClick}>
+      <div className="order-banner2">
+        <div className="order-image2" style={orderImageStyle}>
           <img
-            className={styles.icbaselineGeneratingTokensIcon}
+            className="icbaseline-generating-tokens-icon2"
             alt=""
             src={tokenImageUrl}
           />
-          <img className={styles.orderImageChild} alt="" src="../arrow-1.svg" />
+          <img className="order-image-inner" alt="" src="../arrow-1.svg" />
           <img
-            className={styles.icbaselineGeneratingTokensIcon}
+            className="icbaseline-generating-tokens-icon2"
             alt=""
             src="../carbonuserservicedesk2.svg"
           />
         </div>
-        <div className={styles.orderStatus}>
-          <b className={styles.open}>Open</b>
+        <div className="order-status2">
+          <b className="open2">Open</b>
         </div>
       </div>
     </button>

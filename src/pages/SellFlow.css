@@ -2,7 +2,7 @@
   top: 0;
   left: 0;
   border-radius: var(--br-4xl);
-  background-color: var(--white);
+  background-color: var(--white1);
   border: 1.5px solid var(--color-darkslategray-400);
   box-sizing: border-box;
   width: 132px;
@@ -10,10 +10,10 @@
 }
 .group,
 .rectangle,
-.text3 {
+.text1 {
   position: absolute;
 }
-.text3 {
+.text1 {
   height: 100%;
   width: calc(100% - 26.4px);
   top: 0;
@@ -31,16 +31,16 @@
 .vector-icon {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   width: 125.5px;
   height: 63.5px;
 }
 .group1,
-.text4,
+.text2,
 .vector-icon {
   position: absolute;
 }
-.text4 {
+.text2 {
   height: 100%;
   width: calc(100% - 49.6px);
   top: 0;
@@ -58,16 +58,16 @@
 .vector-icon1 {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   width: 201.5px;
   height: 101.5px;
 }
 .group2,
-.text5,
+.text3,
 .vector-icon1 {
   position: absolute;
 }
-.text5 {
+.text3 {
   height: calc(100% - 20px);
   width: calc(100% - 60px);
   top: 20px;
@@ -82,18 +82,18 @@
   width: 200px;
   height: 100px;
 }
-.text6,
+.text4,
 .vector-icon2 {
   position: absolute;
   top: 0;
 }
 .vector-icon2 {
   left: 0;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   width: 102px;
   height: 51px;
 }
-.text6 {
+.text4 {
   height: 100%;
   width: calc(100% - 20.4px);
   left: 10.2px;
@@ -133,7 +133,7 @@
   top: 0;
   left: 0;
   border-radius: var(--br-4xl);
-  background-color: var(--white);
+  background-color: var(--white1);
   border: 1.5px solid var(--color-darkslategray-400);
   box-sizing: border-box;
   width: 200px;
@@ -141,10 +141,10 @@
 }
 .group6,
 .rectangle1,
-.text9 {
+.text7 {
   position: absolute;
 }
-.text9 {
+.text7 {
   height: 100%;
   width: calc(100% - 40px);
   top: 0;
@@ -171,7 +171,7 @@
 .offeringlabel {
   top: 130px;
   left: 49px;
-  color: var(--black);
+  color: var(--black-0000001001);
 }
 .bidinglabel {
   top: 0;
@@ -185,7 +185,7 @@
   left: 51px;
   width: 156px;
   height: 30px;
-  color: var(--black);
+  color: var(--black-0000001001);
 }
 .ordercollateral,
 .returncollateral {
@@ -199,20 +199,20 @@
   top: 699px;
   left: 224px;
 }
-.primary-button {
+.primary-button1 {
   position: relative;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--caption);
-  color: var(--black);
+  font-family: var(--regular-body1);
+  color: var(--black-0000001001);
   text-align: center;
 }
-.prepare-sell-order-button {
+.prepare-sell-order-button1 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-4xs) var(--padding-7xl);
+  padding: var(--padding-4xs) var(--padding-6xl);
   background-color: var(--color-gainsboro-200);
   border-radius: var(--br-lg);
   height: 50px;
@@ -224,30 +224,30 @@
   justify-content: center;
 }
 .prepare-sell-order-button1:hover,
-.prepare-sell-order-button:hover {
+.prepare-sell-order-button2:hover {
   background-color: var(--color-mediumslateblue);
 }
-.primary-button1 {
+.primary-button2 {
   position: relative;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--caption);
-  color: var(--white);
+  font-family: var(--regular-body1);
+  color: var(--white1);
   text-align: center;
 }
 .prepare-sell-order-button-parent,
-.prepare-sell-order-button1 {
+.prepare-sell-order-button2 {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button1 {
+.prepare-sell-order-button2 {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-4xs) var(--padding-7xl);
+  padding: var(--padding-4xs) var(--padding-6xl);
   background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
@@ -264,11 +264,11 @@
   position: absolute;
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   width: 105.5px;
   height: 53.5px;
 }
-.text10 {
+.text8 {
   position: absolute;
   height: 100%;
   width: calc(100% - 41.6px);
@@ -347,12 +347,12 @@
 }
 .sellflow {
   position: relative;
-  background-color: var(--white);
+  background-color: var(--white1);
   width: 100%;
   height: 926px;
   overflow: hidden;
   text-align: center;
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-5xl);
   color: var(--color-darkslategray-400);
   font-family: var(--base-1-semibold);
 }

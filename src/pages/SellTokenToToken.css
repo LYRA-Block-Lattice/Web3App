@@ -1,17 +1,17 @@
 .to-sell-token,
-.utility-button4 {
+.utility-button1 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
 }
-.utility-button4 {
-  font-size: var(--font-size-xl);
-  font-family: var(--caption);
-  color: var(--white);
+.utility-button1 {
+  font-size: var(--font-size-3xl);
+  font-family: var(--regular-body1);
+  color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button11 {
+.prepare-sell-order-button9 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
@@ -66,31 +66,92 @@
   flex-direction: column;
   font-size: var(--caption-size);
 }
+.collateral-worth-label8,
+.collateral-worth-label9,
 .limitoftrade {
-  width: 320px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: var(--padding-4xs) 0;
-  box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
+}
+.limitoftrade {
+  width: 320px;
+  padding: var(--padding-4xs) 0;
+  box-sizing: border-box;
   font-size: var(--body-m-size);
 }
-.primary-button4 {
+.collateral-worth-label8,
+.collateral-worth-label9 {
+  width: 300px;
+}
+.collateral-worth-label9 {
+  align-items: flex-start;
+  justify-content: flex-end;
+  font-size: var(--uppercase-small-size);
+}
+.collateralsection1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.collateralcalculation-item {
   position: relative;
-  font-size: var(--font-size-4xl);
+  border-top: 1px solid var(--black-0000001001);
+  box-sizing: border-box;
+  width: 299px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.collateral-worth-label14 {
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.div14 {
+  position: relative;
+  font-size: var(--uppercase-small-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+}
+.collateral-worth-label15,
+.collateralcalculation1 {
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.collateralcalculation1 {
+  border-radius: var(--br-2xs);
+  background-color: var(--color-gray-200);
+  width: 320px;
+  flex-direction: column;
+  padding: var(--padding-4xs);
+  box-sizing: border-box;
+  justify-content: center;
+  gap: var(--gap-2xs);
+  font-size: var(--body-semibold-size);
+}
+.primary-button5 {
+  position: relative;
+  font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--caption);
-  color: var(--white);
+  font-family: var(--regular-body1);
+  color: var(--white1);
   text-align: center;
 }
 .reviewtheorder {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-4xs) var(--padding-7xl);
+  padding: var(--padding-4xs) var(--padding-6xl);
   background-color: var(--primary1);
   border-radius: var(--br-lg);
   height: 50px;
@@ -107,7 +168,7 @@
 }
 .priceandcollateralform,
 .selltokentotoken {
-  background-color: var(--white);
+  background-color: var(--white1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -128,7 +189,7 @@
   padding: 0 var(--padding-2xs);
   gap: var(--gap-lg);
   text-align: left;
-  font-size: var(--font-size-6xl);
-  color: var(--black);
-  font-family: var(--caption);
+  font-size: var(--font-size-8xl);
+  color: var(--black-0000001001);
+  font-family: var(--regular-body1);
 }

@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import styles from "./ProductContainer.module.css";
+import "./ProductContainer.css";
 
 type ProductContainerType = {
   /** Action props */
@@ -10,17 +10,17 @@ const ProductContainer: FunctionComponent<ProductContainerType> = ({
   openGeneralPopup,
 }) => {
   return (
-    <button className={styles.nftShowingItem} onClick={openGeneralPopup}>
-      <div className={styles.lyralogoblueiconWrapper}>
+    <button className="nft-showing-item1" onClick={openGeneralPopup}>
+      <div className="lyralogoblueicon-container">
         <img
-          className={styles.lyralogoblueicon}
+          className="lyralogoblueicon2"
           alt=""
           src="../lyralogoblueicon@2x.png"
         />
       </div>
-      <div className={styles.content}>
-        <div className={styles.nameBm}>
-          <div className={styles.putYourProduct}>
+      <div className="content1">
+        <div className="name-bm1">
+          <div className="put-your-product1">
             put your product name here or go!
           </div>
         </div>

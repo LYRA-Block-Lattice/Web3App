@@ -2,7 +2,7 @@ import { FunctionComponent, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
-import styles from "./WalletToolBar.module.css";
+import "./WalletToolBar.css";
 
 const WalletToolBar: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -26,48 +26,48 @@ const WalletToolBar: FunctionComponent = () => {
 
   return (
     <>
-      <div className={styles.iconssectionWrapper}>
-        <div className={styles.iconssection}>
-          <div className={styles.swapButtonParent}>
-            <button className={styles.swapButton} onClick={onSwapButtonClick}>
+      <div className="iconssection-wrapper">
+        <div className="iconssection">
+          <div className="swap-button-parent">
+            <button className="swap-button" onClick={onSwapButtonClick}>
               <img
-                className={styles.homeIconInterlocution}
+                className="home-icon-interlocution"
                 alt=""
                 src="../home--icon--interlocution.svg"
               />
-              <div className={styles.ranking}>Market</div>
+              <div className="ranking">Market</div>
             </button>
-            <button className={styles.swapButton}>
+            <button className="swap-button">
               <img
-                className={styles.homeIconInterlocution}
+                className="home-icon-interlocution"
                 alt=""
                 src="../home--icon--interlocution1.svg"
               />
-              <div className={styles.ranking}>Swap</div>
+              <div className="ranking">Swap</div>
             </button>
-            <button className={styles.swapButton} onClick={onSendButtonClick}>
+            <button className="swap-button" onClick={onSendButtonClick}>
               <img
-                className={styles.homeIconInterlocution}
+                className="home-icon-interlocution"
                 alt=""
                 src="../home--icon--interlocution2.svg"
               />
-              <div className={styles.ranking}>Send</div>
+              <div className="ranking">Send</div>
             </button>
-            <button className={styles.swapButton}>
+            <button className="swap-button">
               <img
-                className={styles.homeIconInterlocution}
+                className="home-icon-interlocution"
                 alt=""
                 src="../home--icon--interlocution3.svg"
               />
-              <div className={styles.ranking}>Receive</div>
+              <div className="ranking">Receive</div>
             </button>
-            <button className={styles.swapButton} onClick={openSideMenuPopup}>
+            <button className="swap-button" onClick={openSideMenuPopup}>
               <img
-                className={styles.homeIconInterlocution}
+                className="home-icon-interlocution"
                 alt=""
                 src="../home--icon--interlocution4.svg"
               />
-              <div className={styles.ranking}>More...</div>
+              <div className="ranking">More...</div>
             </button>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { FunctionComponent, useCallback } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
 import Footer from "../components/Footer";
-import styles from "./SendTokenForm.module.css";
+import "./SendTokenForm.css";
 
 const SendTokenForm: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -18,14 +18,14 @@ const SendTokenForm: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.sendtokenform}>
+    <div className="sendtokenform">
       <TopNavigationBar
         title="Send Token"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.tokentosellParent}>
+      <div className="tokentosell-parent">
         <Autocomplete
           sx={{ width: 301 }}
           disablePortal
@@ -43,7 +43,7 @@ const SendTokenForm: FunctionComponent = () => {
           size="medium"
         />
         <TextField
-          className={styles.tokentosell}
+          className="tokentosell"
           sx={{ width: 301 }}
           color="primary"
           variant="outlined"
@@ -55,7 +55,7 @@ const SendTokenForm: FunctionComponent = () => {
           required
         />
         <TextField
-          className={styles.tokentosell}
+          className="tokentosell"
           sx={{ width: 301 }}
           color="primary"
           variant="outlined"
@@ -65,8 +65,8 @@ const SendTokenForm: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className={styles.prepareSellOrderButton}>
-          <div className={styles.primaryButton}>Send</div>
+        <button className="prepare-sell-order-button3">
+          <div className="primary-button3">Send</div>
         </button>
       </div>
       <Footer

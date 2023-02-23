@@ -1,11 +1,11 @@
 .create-and-sell {
   position: relative;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-8xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--caption);
-  color: var(--black);
+  font-family: var(--regular-body1);
+  color: var(--black-0000001001);
   text-align: left;
   display: inline-block;
   width: 296px;
@@ -14,17 +14,17 @@
   border: 0;
   background-color: transparent;
 }
-.utility-button3 {
+.utility-button {
   position: relative;
   font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--caption);
-  color: var(--white);
+  font-family: var(--regular-body1);
+  color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button9 {
+.prepare-sell-order-button7 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
@@ -44,11 +44,11 @@
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
-  font-family: var(--caption);
+  font-family: var(--regular-body1);
 }
 .note-i-need {
   font-size: var(--body-semibold-size);
-  color: var(--black);
+  color: var(--black-0000001001);
   text-align: left;
   display: inline-block;
   width: 292px;
@@ -56,10 +56,10 @@
 .secondary-button2 {
   font-size: var(--body-m-size);
   font-weight: 500;
-  color: var(--white);
+  color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button10 {
+.prepare-sell-order-button8 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);
@@ -76,7 +76,7 @@
 }
 .createtotform,
 .createtottosellform {
-  background-color: var(--white);
+  background-color: var(--white1);
   overflow: hidden;
   display: flex;
   align-items: center;

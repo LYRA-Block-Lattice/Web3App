@@ -1,6 +1,6 @@
 import { FunctionComponent, useMemo } from "react";
 import CSS, { Property } from "csstype";
-import styles from "./Footer.module.css";
+import "./Footer.css";
 
 type FooterType = {
   iconImageUrl?: string;
@@ -42,34 +42,30 @@ const Footer: FunctionComponent<FooterType> = ({
   }, [propColor2]);
 
   return (
-    <div className={styles.bottomtabbar}>
-      <div className={styles.homeIndicator}>
-        <div className={styles.homeIndicator1} />
+    <div className="bottomtabbar">
+      <div className="home-indicator">
+        <div className="home-indicator1" />
       </div>
-      <div className={styles.tabbar}>
-        <div className={styles.tabbarItem}>
-          <img className={styles.boxAltLightIcon} alt="" src={iconImageUrl} />
-          <div className={styles.text} style={textStyle}>
+      <div className="tabbar">
+        <div className="tabbar-item">
+          <img className="box-alt-light-icon" alt="" src={iconImageUrl} />
+          <div className="text11" style={textStyle}>
             Market
           </div>
         </div>
-        <div className={styles.tabbarItem}>
-          <img
-            className={styles.boxAltLightIcon}
-            alt=""
-            src={moleculeImageUrl}
-          />
-          <div className={styles.text}>DAO</div>
+        <div className="tabbar-item">
+          <img className="box-alt-light-icon" alt="" src={moleculeImageUrl} />
+          <div className="text11">DAO</div>
         </div>
-        <div className={styles.tabbarItem2}>
-          <img className={styles.boxAltLightIcon} alt="" src={walletImageUrl} />
-          <div className={styles.text2} style={text1Style}>
+        <div className="tabbar-item2">
+          <img className="box-alt-light-icon" alt="" src={walletImageUrl} />
+          <div className="text13" style={text1Style}>
             Wallet
           </div>
         </div>
-        <div className={styles.tabbarItem}>
-          <img className={styles.boxAltLightIcon} alt="" src={userImageUrl} />
-          <div className={styles.text} style={text2Style}>
+        <div className="tabbar-item">
+          <img className="box-alt-light-icon" alt="" src={userImageUrl} />
+          <div className="text11" style={text2Style}>
             Me
           </div>
         </div>

@@ -3,7 +3,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import MarketToolBarContainer from "../components/MarketToolBarContainer";
 import TetherLink from "../components/TetherLink";
 import Footer from "../components/Footer";
-import styles from "./Market.module.css";
+import "./Market.css";
 
 const Market: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -27,14 +27,14 @@ const Market: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.market}>
+    <div className="market">
       <TopNavigationBar
         title="Lyra Web3 Market"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.orderandcatalog}>
+      <div className="orderandcatalog">
         <MarketToolBarContainer
           homeIconInterlocution="../home--icon--interlocution5.svg"
           homeIconInterlocution1="../home--icon--interlocution6.svg"
@@ -42,128 +42,122 @@ const Market: FunctionComponent = () => {
           homeIconInterlocution3="../home--icon--interlocution8.svg"
           homeIconInterlocution4="../home--icon--interlocution9.svg"
         />
-        <div className={styles.searchsection}>
+        <div className="searchsection">
           <input
-            className={styles.searchsectionChild}
+            className="searchsection-child"
             type="search"
             placeholder="Search products/token/NFT/TOT etc."
           />
         </div>
-        <div className={styles.tradableorderssection}>
-          <div className={styles.catalogtab}>
-            <div className={styles.nftWrapper}>
-              <b className={styles.nft}>NFT</b>
+        <div className="tradableorderssection">
+          <div className="catalogtab1">
+            <div className="nft-container">
+              <b className="nft1">NFT</b>
             </div>
-            <div className={styles.nftWrapper}>
-              <b className={styles.nft}>Fiat</b>
+            <div className="nft-container">
+              <b className="nft1">Fiat</b>
             </div>
-            <div className={styles.nftWrapper}>
-              <b className={styles.nft}>Goods</b>
+            <div className="nft-container">
+              <b className="nft1">Goods</b>
             </div>
-            <div className={styles.nftWrapper}>
-              <b className={styles.nft}>Service</b>
+            <div className="nft-container">
+              <b className="nft1">Service</b>
             </div>
-            <div className={styles.tokenWrapper}>
-              <b className={styles.nft}>Token</b>
+            <div className="token-container">
+              <b className="nft1">Token</b>
             </div>
           </div>
-          <div className={styles.ordercard}>
-            <div className={styles.orderBriefSection}>
-              <button
-                className={styles.bannerImage}
-                onClick={onBannerImageClick}
-              >
-                <div className={styles.orderBanner}>
-                  <div className={styles.orderImage}>
+          <div className="ordercard">
+            <div className="order-brief-section">
+              <button className="banner-image" onClick={onBannerImageClick}>
+                <div className="order-banner">
+                  <div className="order-image">
                     <img
-                      className={styles.icbaselineGeneratingTokensIcon}
+                      className="icbaseline-generating-tokens-icon"
                       alt=""
                       src="../icbaselinegeneratingtokens.svg"
                     />
                     <img
-                      className={styles.orderImageChild}
+                      className="order-image-child"
                       alt=""
                       src="../arrow-1.svg"
                     />
                     <img
-                      className={styles.icbaselineGeneratingTokensIcon}
+                      className="icbaseline-generating-tokens-icon"
                       alt=""
                       src="../carbonuserservicedesk.svg"
                     />
                   </div>
-                  <div className={styles.orderStatus}>
-                    <b className={styles.open}>Open</b>
+                  <div className="order-status">
+                    <b className="open">Open</b>
                   </div>
                 </div>
               </button>
               <TetherLink />
             </div>
-            <div className={styles.tradesSection}>
-              <div className={styles.widthController} />
+            <div className="trades-section">
+              <div className="width-controller" />
             </div>
-            <div className={styles.userprofilesection}>
+            <div className="userprofilesection">
               <img
-                className={styles.userprofilesectionChild}
+                className="userprofilesection-child"
                 alt=""
                 src="../ellipse-1@2x.png"
               />
-              <div className={styles.aBigSellerParent}>
-                <b className={styles.aBigSeller}>A big seller</b>
-                <div className={styles.theFirstDao}>The First DAO</div>
+              <div className="a-big-seller-parent">
+                <b className="a-big-seller">A big seller</b>
+                <div className="the-first-dao">The First DAO</div>
               </div>
-              <div className={styles.parent}>
-                <b className={styles.aBigSeller}>98%</b>
-                <div className={styles.theFirstDao}>1024 Trades</div>
+              <div className="parent">
+                <b className="a-big-seller">98%</b>
+                <div className="the-first-dao">1024 Trades</div>
               </div>
             </div>
           </div>
-          <div className={styles.ordercard}>
-            <div className={styles.orderBriefSection}>
-              <button
-                className={styles.bannerImage}
-                onClick={onBannerImage1Click}
-              >
-                <div className={styles.orderBanner}>
-                  <div className={styles.orderImage}>
+          <div className="ordercard">
+            <div className="order-brief-section">
+              <button className="banner-image" onClick={onBannerImage1Click}>
+                <div className="order-banner">
+                  <div className="order-image">
                     <img
-                      className={styles.icbaselineGeneratingTokensIcon}
+                      className="icbaseline-generating-tokens-icon"
                       alt=""
                       src="../icbaselinegeneratingtokens.svg"
                     />
                     <img
-                      className={styles.orderImageChild}
+                      className="order-image-child"
                       alt=""
                       src="../arrow-1.svg"
                     />
                     <img
-                      className={styles.icbaselineGeneratingTokensIcon}
+                      className="icbaseline-generating-tokens-icon"
                       alt=""
                       src="../carbonuserservicedesk1.svg"
                     />
                   </div>
-                  <div className={styles.orderStatus}>
-                    <b className={styles.open}>Open</b>
+                  <div className="order-status">
+                    <b className="open">Open</b>
                   </div>
                 </div>
               </button>
               <TetherLink />
             </div>
-            <div className={styles.tradesSection}>
-              <div className={styles.widthController} />
+            <div className="trades-section">
+              <div className="width-controller" />
             </div>
-            <div className={styles.userprofilesection}>
+            <div className="userprofilesection">
               <img
-                className={styles.userprofilesectionChild}
+                className="userprofilesection-child"
                 alt=""
                 src="../ellipse-1@2x.png"
               />
-              <div className={styles.aBigSellerParent}>
-                <b className={styles.aBigSeller}>A big seller</b>
-                <div className={styles.theFirstDao}>The First DAO</div>
+              <div className="a-big-seller-parent">
+                <b className="a-big-seller">A big seller</b>
+                <div className="the-first-dao">The First DAO</div>
               </div>
-              <div className={styles.parent}>
-                <b className={styles.aBigSeller}>98%</b>
-                <div className={styles.theFirstDao}>1024 Trades</div>
+              <div className="parent">
+                <b className="a-big-seller">98%</b>
+                <div className="the-first-dao">1024 Trades</div>
               </div>
             </div>
           </div>

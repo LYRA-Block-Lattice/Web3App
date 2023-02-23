@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
 import Footer from "../components/Footer";
-import styles from "./CreateWallet.module.css";
+import "./CreateWallet.css";
 
 const CreateWallet: FunctionComponent = () => {
   const onNavBackButtonClick = useCallback(() => {
@@ -26,60 +26,51 @@ const CreateWallet: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.createwallet}>
+    <div className="createwallet">
       <TopNavigationBar
         title="Create Wallet"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className={styles.illus1Parent}>
-        <div className={styles.illus1}>
-          <img className={styles.illus1Child} alt="" src="../group-3.svg" />
-          <div className={styles.groupParent}>
-            <img className={styles.frameChild} alt="" src="../group-42.svg" />
-            <div className={styles.createAccount}>
-              C<span className={styles.r}>r</span>
-              <span className={styles.e}>e</span>a
-              <span className={styles.t}>t</span>
+      <div className="illus1-parent">
+        <div className="illus1">
+          <img className="illus1-child" alt="" src="../group-3.svg" />
+          <div className="group-parent">
+            <img className="group-icon" alt="" src="../group-42.svg" />
+            <div className="create-account">
+              C<span className="r">r</span>
+              <span className="e">e</span>a<span className="t">t</span>
               {`e `}
-              <span className={styles.a}>A</span>
-              <span className={styles.cc}>cc</span>ount
+              <span className="a">A</span>
+              <span className="cc">cc</span>ount
             </div>
-            <img className={styles.fill43Icon} alt="" src="../fill-43.svg" />
+            <img className="fill-43-icon" alt="" src="../fill-43.svg" />
             <img
-              className={styles.emailAddressIcon}
+              className="email-address-icon"
               alt=""
               src="../email-address.svg"
             />
             <img
-              className={styles.youremailgmailcIcon}
+              className="youremailgmailc-icon"
               alt=""
               src="../youremailgmailc.svg"
             />
-            <img className={styles.frameItem} alt="" src="../group-49.svg" />
+            <img className="frame-child1" alt="" src="../group-49.svg" />
+            <img className="your-text-icon" alt="" src="../your-text.svg" />
+            <img className="frame-child2" alt="" src="../group-53.svg" />
+            <img className="your-city-icon" alt="" src="../your-city.svg" />
+            <img className="frame-child3" alt="" src="../group-57.svg" />
             <img
-              className={styles.yourTextIcon}
-              alt=""
-              src="../your-text.svg"
-            />
-            <img className={styles.frameInner} alt="" src="../group-53.svg" />
-            <img
-              className={styles.yourCityIcon}
-              alt=""
-              src="../your-city.svg"
-            />
-            <img className={styles.groupIcon} alt="" src="../group-57.svg" />
-            <img
-              className={styles.entryPasswordIcon}
+              className="entry-password-icon"
               alt=""
               src="../entry-password.svg"
             />
-            <img className={styles.frameChild1} alt="" src="../group-145.svg" />
+            <img className="frame-child4" alt="" src="../group-145.svg" />
           </div>
         </div>
         <TextField
-          className={styles.walletName}
+          className="wallet-name"
           sx={{ width: 343 }}
           color="primary"
           variant="standard"
@@ -90,7 +81,7 @@ const CreateWallet: FunctionComponent = () => {
           required
         />
         <TextField
-          className={styles.walletName}
+          className="wallet-name"
           sx={{ width: 343 }}
           color="primary"
           variant="standard"
@@ -110,7 +101,7 @@ const CreateWallet: FunctionComponent = () => {
           required
         />
         <TextField
-          className={styles.walletName}
+          className="wallet-name"
           sx={{ width: 343 }}
           color="primary"
           variant="standard"
@@ -129,14 +120,14 @@ const CreateWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <div className={styles.checkboxrestoreprivatekeyParent}>
+        <div className="checkboxrestoreprivatekey-parent">
           <FormControlLabel
             label="I want to restore wallet by Private Key"
             labelPlacement="end"
             control={<Checkbox color="primary" size="medium" />}
           />
           <TextField
-            className={styles.walletName}
+            className="wallet-name"
             sx={{ width: 343 }}
             color="primary"
             variant="standard"
@@ -147,11 +138,11 @@ const CreateWallet: FunctionComponent = () => {
             margin="none"
           />
         </div>
-        <button className={styles.prepareSellOrderButton}>
-          <div className={styles.primaryButton}>Create</div>
+        <button className="prepare-sell-order-button14">
+          <div className="primary-button7">Create</div>
         </button>
-        <button className={styles.prepareSellOrderButton1}>
-          <div className={styles.miniButton}>Open</div>
+        <button className="prepare-sell-order-button15">
+          <div className="mini-button">Open</div>
         </button>
       </div>
       <Footer

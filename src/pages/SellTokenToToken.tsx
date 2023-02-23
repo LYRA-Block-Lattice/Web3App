@@ -4,7 +4,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import Footer from "../components/Footer";
-import styles from "./SellTokenToToken.module.css";
+import "./SellTokenToToken.css";
 
 const SellTokenToToken: FunctionComponent = () => {
   const [isGeneralPopupOpen, setGeneralPopupOpen] = useState(false);
@@ -35,21 +35,21 @@ const SellTokenToToken: FunctionComponent = () => {
 
   return (
     <>
-      <div className={styles.selltokentotoken}>
+      <div className="selltokentotoken">
         <TopNavigationBar
           title="Order Settings"
           onNavBackButtonClick={onNavBackButtonClick}
           onTitleClick={onTitleClick}
           onContextMenuButtonClick={onContextMenuButtonClick}
         />
-        <div className={styles.priceandcollateralform}>
-          <div className={styles.toSellTokenParent}>
-            <div className={styles.toSellToken}>To Sell Token</div>
+        <div className="priceandcollateralform">
+          <div className="to-sell-token-parent">
+            <div className="to-sell-token">To Sell Token</div>
             <button
-              className={styles.prepareSellOrderButton}
+              className="prepare-sell-order-button9"
               onClick={openGeneralPopup}
             >
-              <div className={styles.utilityButton}>Mint</div>
+              <div className="utility-button1">Mint</div>
             </button>
           </div>
           <Autocomplete
@@ -68,7 +68,7 @@ const SellTokenToToken: FunctionComponent = () => {
             )}
             size="medium"
           />
-          <div className={styles.toGetFiat}>To Get Fiat</div>
+          <div className="to-get-fiat">To Get Fiat</div>
           <Autocomplete
             sx={{ width: 320 }}
             disablePortal
@@ -85,10 +85,10 @@ const SellTokenToToken: FunctionComponent = () => {
             )}
             size="medium"
           />
-          <div className={styles.toGetFiat}>Price and Collateral</div>
-          <div className={styles.sellatpriceParent}>
+          <div className="to-get-fiat">Price and Collateral</div>
+          <div className="sellatprice-parent">
             <TextField
-              className={styles.sellatprice}
+              className="sellatprice"
               sx={{ width: 320 }}
               color="primary"
               variant="outlined"
@@ -98,13 +98,13 @@ const SellTokenToToken: FunctionComponent = () => {
               size="medium"
               margin="none"
             />
-            <div className={styles.worthInDollar100Wrapper}>
-              <div className={styles.worthInDollar}>Worth in dollar: $100</div>
+            <div className="worth-in-dollar-100-wrapper">
+              <div className="worth-in-dollar">Worth in dollar: $100</div>
             </div>
           </div>
-          <div className={styles.sellatpriceParent}>
+          <div className="sellatprice-parent">
             <TextField
-              className={styles.sellatprice}
+              className="sellatprice"
               sx={{ width: 320 }}
               color="primary"
               variant="outlined"
@@ -114,12 +114,12 @@ const SellTokenToToken: FunctionComponent = () => {
               size="medium"
               margin="none"
             />
-            <div className={styles.worthInDollar100Wrapper}>
-              <div className={styles.worthInDollar}>Worth in dollar: $100</div>
+            <div className="worth-in-dollar-100-wrapper">
+              <div className="worth-in-dollar">Worth in dollar: $100</div>
             </div>
           </div>
           <TextField
-            className={styles.sellatprice}
+            className="sellatprice"
             sx={{ width: 320 }}
             color="primary"
             variant="outlined"
@@ -129,9 +129,9 @@ const SellTokenToToken: FunctionComponent = () => {
             size="medium"
             margin="none"
           />
-          <div className={styles.limitoftrade}>
+          <div className="limitoftrade">
             <TextField
-              className={styles.sellatprice}
+              className="sellatprice"
               sx={{ width: 138 }}
               color="primary"
               variant="outlined"
@@ -141,9 +141,9 @@ const SellTokenToToken: FunctionComponent = () => {
               size="medium"
               margin="none"
             />
-            <div className={styles.worthInDollar}>-</div>
+            <div className="worth-in-dollar">-</div>
             <TextField
-              className={styles.sellatprice}
+              className="sellatprice"
               sx={{ width: 138 }}
               color="primary"
               variant="outlined"
@@ -171,52 +171,47 @@ const SellTokenToToken: FunctionComponent = () => {
             )}
             size="medium"
           />
-          <div className={styles.collateralcalculation}>
-            <div className={styles.collateralsection}>
-              <div className={styles.collateralWorthLabel}>
-                <div className={styles.worthInDollar}>
-                  Collateral value: 120%
-                </div>
-                <div className={styles.worthInDollar}>1234 LYR</div>
+          <div className="collateralcalculation1">
+            <div className="collateralsection1">
+              <div className="collateral-worth-label8">
+                <div className="worth-in-dollar">Collateral value: 120%</div>
+                <div className="worth-in-dollar">1234 LYR</div>
               </div>
-              <div className={styles.collateralWorthLabel1}>
-                <div className={styles.worthInDollar}>$ 103</div>
+              <div className="collateral-worth-label9">
+                <div className="worth-in-dollar">$ 103</div>
               </div>
             </div>
-            <div className={styles.collateralsection}>
-              <div className={styles.collateralWorthLabel}>
-                <div className={styles.worthInDollar}>DAO fee: 1%</div>
-                <div className={styles.worthInDollar}>1234 LYR</div>
+            <div className="collateralsection1">
+              <div className="collateral-worth-label8">
+                <div className="worth-in-dollar">DAO fee: 1%</div>
+                <div className="worth-in-dollar">1234 LYR</div>
               </div>
-              <div className={styles.collateralWorthLabel1}>
-                <div className={styles.worthInDollar}>$ 103</div>
-              </div>
-            </div>
-            <div className={styles.collateralsection}>
-              <div className={styles.collateralWorthLabel}>
-                <div className={styles.worthInDollar}>Network fee: 0.2%</div>
-                <div className={styles.worthInDollar}>1234 LYR</div>
-              </div>
-              <div className={styles.collateralWorthLabel1}>
-                <div className={styles.worthInDollar}>$ 103</div>
+              <div className="collateral-worth-label9">
+                <div className="worth-in-dollar">$ 103</div>
               </div>
             </div>
-            <div className={styles.collateralcalculationChild} />
-            <div className={styles.collateralsection}>
-              <div className={styles.collateralWorthLabel6}>
-                <div className={styles.worthInDollar}>1234 LYR</div>
+            <div className="collateralsection1">
+              <div className="collateral-worth-label8">
+                <div className="worth-in-dollar">Network fee: 0.2%</div>
+                <div className="worth-in-dollar">1234 LYR</div>
               </div>
-              <div className={styles.collateralWorthLabel7}>
-                <div className={styles.worthInDollar}>Total:</div>
-                <div className={styles.div4}>$ 103</div>
+              <div className="collateral-worth-label9">
+                <div className="worth-in-dollar">$ 103</div>
+              </div>
+            </div>
+            <div className="collateralcalculation-item" />
+            <div className="collateralsection1">
+              <div className="collateral-worth-label14">
+                <div className="worth-in-dollar">1234 LYR</div>
+              </div>
+              <div className="collateral-worth-label15">
+                <div className="worth-in-dollar">Total:</div>
+                <div className="div14">$ 103</div>
               </div>
             </div>
           </div>
-          <button
-            className={styles.reviewtheorder}
-            onClick={onReviewTheOrderClick}
-          >
-            <div className={styles.primaryButton}>Review the Order</div>
+          <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
+            <div className="primary-button5">Review the Order</div>
           </button>
         </div>
         <Footer
