@@ -7,19 +7,11 @@ import "./Market.css";
 
 const Market: FunctionComponent = () => {
   const onMiniProgramsButtonsClick = useCallback(() => {
-    //TODO: nav back
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 
   const onTitleClick = useCallback(() => {
     //TODO: scroll top
-  }, []);
-
-  const onHomeClick = useCallback(() => {
-    //TODO: back home
-  }, []);
-
-  const onContextPlusClick = useCallback(() => {
-    //TODO: context menu
   }, []);
 
   return (
@@ -28,15 +20,6 @@ const Market: FunctionComponent = () => {
         title="Market"
         onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
         onTitleClick={onTitleClick}
-        onHomeClick={onHomeClick}
-        separator="../asserts/separator.svg"
-        onContextPlusClick={onContextPlusClick}
-        rectangle1="../asserts/rectangle-1.svg"
-        iconleft="../asserts/iconleft.svg"
-        ellipse="../asserts/ellipse.svg"
-        ellipse1="../asserts/ellipse1.svg"
-        vector7="../asserts/vector-7.svg"
-        vector8="../asserts/vector-8.svg"
       />
       <div className="orderandcatalog">
         <MarketToolBar

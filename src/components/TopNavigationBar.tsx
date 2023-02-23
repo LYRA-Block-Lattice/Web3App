@@ -1,15 +1,8 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
 import "./TopNavigationBar.css";
 
 type TopNavigationBarType = {
   title?: string;
-  separator?: string;
-  rectangle1?: string;
-  iconleft?: string;
-  ellipse?: string;
-  ellipse1?: string;
-  vector7?: string;
-  vector8?: string;
 
   /** Action props */
   onMiniProgramsButtonsClick?: () => void;
@@ -23,40 +16,34 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   onMiniProgramsButtonsClick,
   onTitleClick,
   onHomeClick,
-  separator,
   onContextPlusClick,
-  rectangle1,
-  iconleft,
-  ellipse,
-  ellipse1,
-  vector7,
-  vector8,
 }) => {
+  const onMiniProgramsButtons1Click = useCallback(() => {
+    //TODO: context menu
+  }, []);
+
   return (
-    <nav className="topnavigationbar">
+    <div className="topnavigationbar">
       <button
         className="mini-programs-buttons"
         onClick={onMiniProgramsButtonsClick}
       >
-        <img className="iconleft" alt="" src={iconleft} />
+        <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
       </button>
       <button className="title5" onClick={onTitleClick}>
         {title}
       </button>
-      <div className="mini-programs-buttons1">
-        <div className="stroke" />
-        <button className="home" onClick={onHomeClick}>
-          <img className="ellipse-icon" alt="" src={ellipse} />
-          <img className="ellipse-icon1" alt="" src={ellipse1} />
-        </button>
-        <img className="separator-icon" alt="" src={separator} />
-        <button className="contextplus" onClick={onContextPlusClick}>
-          <img className="contextplus-child" alt="" src={rectangle1} />
-          <img className="contextplus-item" alt="" src={vector7} />
-          <img className="contextplus-inner" alt="" src={vector8} />
-        </button>
-      </div>
-    </nav>
+      <button
+        className="mini-programs-buttons1"
+        onClick={onMiniProgramsButtons1Click}
+      >
+        <img
+          className="icround-plus-icon"
+          alt=""
+          src="../asserts/icroundplus.svg"
+        />
+      </button>
+    </div>
   );
 };
 

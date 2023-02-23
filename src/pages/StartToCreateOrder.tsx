@@ -9,19 +9,11 @@ const StartToCreateOrder: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onMiniProgramsButtonsClick = useCallback(() => {
-    //TODO: nav back
+    //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
 
   const onTitleClick = useCallback(() => {
     //TODO: scroll top
-  }, []);
-
-  const onHomeClick = useCallback(() => {
-    //TODO: back home
-  }, []);
-
-  const onContextPlusClick = useCallback(() => {
-    //TODO: context menu
   }, []);
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
@@ -34,15 +26,6 @@ const StartToCreateOrder: FunctionComponent = () => {
         title="Select Catalog"
         onMiniProgramsButtonsClick={onMiniProgramsButtonsClick}
         onTitleClick={onTitleClick}
-        onHomeClick={onHomeClick}
-        separator="../asserts/separator4.svg"
-        onContextPlusClick={onContextPlusClick}
-        rectangle1="../asserts/rectangle-19.svg"
-        iconleft="../asserts/iconleft4.svg"
-        ellipse="../asserts/ellipse8.svg"
-        ellipse1="../asserts/ellipse9.svg"
-        vector7="../asserts/vector-74.svg"
-        vector8="../asserts/vector-84.svg"
       />
       <div className="catalog-section-parent">
         <div className="catalog-section">
