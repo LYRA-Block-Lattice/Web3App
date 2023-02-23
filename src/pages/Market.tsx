@@ -39,6 +39,7 @@ const Market: FunctionComponent = () => {
     navigate("/viewtradesform");
   }, [navigate]);
 
+  const onBannerImageClick = useCallback(() => {}, []);
   return (
     <div className="market main-content">
       <TopNavigationBar title="Market" />
@@ -124,7 +125,7 @@ const Market: FunctionComponent = () => {
           </div>
           <div className="ordercard">
             <div className="order-brief-section">
-              <button className="banner-image" onClick={onBannerImage1Click}>
+              <button className="banner-image" onClick={onBannerImageClick}>
                 <div className="order-banner">
                   <div className="order-image">
                     <img
