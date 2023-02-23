@@ -44,11 +44,11 @@ const Market: FunctionComponent = () => {
       <TopNavigationBar title="Market" />
       <div className="orderandcatalog">
         <MarketToolBarContainer
-          homeIconInterlocution="../home--icon--interlocution5.svg"
-          homeIconInterlocution1="../home--icon--interlocution6.svg"
-          homeIconInterlocution2="../home--icon--interlocution7.svg"
-          homeIconInterlocution3="../home--icon--interlocution8.svg"
-          homeIconInterlocution4="../home--icon--interlocution9.svg"
+          homeIconInterlocution="../asserts/home--icon--interlocution5.svg"
+          homeIconInterlocution1="../asserts/home--icon--interlocution6.svg"
+          homeIconInterlocution2="../asserts/home--icon--interlocution7.svg"
+          homeIconInterlocution3="../asserts/home--icon--interlocution8.svg"
+          homeIconInterlocution4="../asserts/home--icon--interlocution9.svg"
         />
         <div className="searchsection">
           <input
@@ -58,24 +58,117 @@ const Market: FunctionComponent = () => {
           />
         </div>
         <div className="tradableorderssection">
-          <div className="catalogtab1">
-            <div className="nft-container">
-              <b className="nft1">NFT</b>
+          <div className="catalogtab">
+            <div className="nft-wrapper">
+              <b className="nft">NFT</b>
             </div>
-            <div className="nft-container">
-              <b className="nft1">Fiat</b>
+            <div className="nft-wrapper">
+              <b className="nft">Fiat</b>
             </div>
-            <div className="nft-container">
-              <b className="nft1">Goods</b>
+            <div className="nft-wrapper">
+              <b className="nft">Goods</b>
             </div>
-            <div className="nft-container">
-              <b className="nft1">Service</b>
+            <div className="nft-wrapper">
+              <b className="nft">Service</b>
             </div>
-            <div className="token-container">
-              <b className="nft1">Token</b>
+            <div className="token-wrapper">
+              <b className="nft">Token</b>
             </div>
           </div>
-          <DisplaySellItems cat={cat} />
+          <div className="ordercard">
+            <div className="order-brief-section">
+              <button className="banner-image" onClick={onBannerImageClick}>
+                <div className="order-banner">
+                  <div className="order-image">
+                    <img
+                      className="icbaseline-generating-tokens-icon"
+                      alt=""
+                      src="../asserts/icbaselinegeneratingtokens.svg"
+                    />
+                    <img
+                      className="order-image-child"
+                      alt=""
+                      src="../asserts/arrow-1.svg"
+                    />
+                    <img
+                      className="icbaseline-generating-tokens-icon"
+                      alt=""
+                      src="../asserts/carbonuserservicedesk.svg"
+                    />
+                  </div>
+                  <div className="order-status">
+                    <b className="open">Open</b>
+                  </div>
+                </div>
+              </button>
+              <TetherLink />
+            </div>
+            <div className="trades-section">
+              <div className="width-controller" />
+            </div>
+            <div className="userprofilesection">
+              <img
+                className="userprofilesection-child"
+                alt=""
+                src="../asserts/ellipse-1@2x.png"
+              />
+              <div className="a-big-seller-parent">
+                <b className="a-big-seller">A big seller</b>
+                <div className="the-first-dao">The First DAO</div>
+              </div>
+              <div className="parent">
+                <b className="a-big-seller">98%</b>
+                <div className="the-first-dao">1024 Trades</div>
+              </div>
+            </div>
+          </div>
+          <div className="ordercard">
+            <div className="order-brief-section">
+              <button className="banner-image" onClick={onBannerImage1Click}>
+                <div className="order-banner">
+                  <div className="order-image">
+                    <img
+                      className="icbaseline-generating-tokens-icon"
+                      alt=""
+                      src="../asserts/icbaselinegeneratingtokens.svg"
+                    />
+                    <img
+                      className="order-image-child"
+                      alt=""
+                      src="../asserts/arrow-1.svg"
+                    />
+                    <img
+                      className="icbaseline-generating-tokens-icon"
+                      alt=""
+                      src="../asserts/carbonuserservicedesk1.svg"
+                    />
+                  </div>
+                  <div className="order-status">
+                    <b className="open">Open</b>
+                  </div>
+                </div>
+              </button>
+              <TetherLink />
+            </div>
+            <div className="trades-section">
+              <div className="width-controller" />
+            </div>
+            <div className="userprofilesection">
+              <img
+                className="userprofilesection-child"
+                alt=""
+                src="../asserts/ellipse-1@2x.png"
+              />
+              <div className="a-big-seller-parent">
+                <b className="a-big-seller">A big seller</b>
+                <div className="the-first-dao">The First DAO</div>
+              </div>
+              <div className="parent">
+                <b className="a-big-seller">98%</b>
+                <div className="the-first-dao">1024 Trades</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <BottomNavigationBar />

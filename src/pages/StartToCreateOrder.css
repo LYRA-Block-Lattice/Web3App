@@ -10,7 +10,7 @@
   width: 119px;
 }
 .token2 {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   font-family: var(--regular-body1);
   color: var(--white1);
   text-align: center;
@@ -46,7 +46,7 @@
 .fiat2,
 .goods2 {
   position: relative;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
   line-height: 18px;
   display: inline-block;

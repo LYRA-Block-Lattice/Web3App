@@ -39,13 +39,19 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   return (
     <div className="topnavigationbar sticky-header">
       <button className="navbackbutton" onClick={onNavBackButtonClick1}>
-        {!isRoot && <img className="iconleft" alt="" src="../iconleft.svg" />}
+        {!isRoot && (
+          <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
+        )}
       </button>
       <button className="title5" onClick={onTitleClick1}>
         {title}
       </button>
       <button className="contextmenubutton" onClick={onContextMenuButtonClick1}>
-        <img className="icround-plus-icon" alt="" src="../icroundplus2.svg" />
+        <img
+          className="icround-plus-icon"
+          alt=""
+          src="../asserts/icroundplus3.svg"
+        />
       </button>
     </div>
   );

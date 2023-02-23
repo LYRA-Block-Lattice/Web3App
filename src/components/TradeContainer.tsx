@@ -11,7 +11,7 @@ const TradeContainer: FunctionComponent = () => {
     <div className="ordercard2">
       <div className="order-brief-section2">
         <OpenContainer
-          tokenImageUrl="../icbaselinegeneratingtokens2.svg"
+          tokenImageUrl="../asserts/icbaselinegeneratingtokens2.svg"
           propBackgroundColor="#7ed321"
           onBannerImageClick={onBannerImageClick}
         />
@@ -19,7 +19,7 @@ const TradeContainer: FunctionComponent = () => {
           <div className="trade-parent">
             <b className="trade">Trade</b>
             <b className="trade">BTC</b>
-            <img className="frame-child5" alt="" src="../arrow-2.svg" />
+            <img className="frame-child5" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt3">tether/USDT</b>
           </div>
           <div className="title-section-child" />

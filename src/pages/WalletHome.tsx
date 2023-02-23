@@ -143,35 +143,35 @@ const WalletHome: FunctionComponent = () => {
         <PrimaryAccountContainer />
         <WalletToolBar />
         <div className="coinlisting">
-          <div className="catalogtab">
-            <div className="token-wrapper">
-              <b className="nft">Token</b>
+          <div className="catalogtab1">
+            <div className="nft-container">
+              <b className="nft1">NFT</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">NFT</b>
+            <div className="nft-container">
+              <b className="nft1">Fiat</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Fiat</b>
+            <div className="nft-container">
+              <b className="nft1">Goods</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Goods</b>
+            <div className="nft-container">
+              <b className="nft1">Service</b>
             </div>
-            <div className="nft-wrapper">
-              <b className="nft">Service</b>
+            <div className="token-container">
+              <b className="nft1">Token</b>
             </div>
           </div>
           <div className="tokendisplayitem">
             <img
               className="lyralogoblackicon"
               alt=""
-              src="../lyralogoblackicon@2x.png"
+              src="../asserts/lyralogoblackicon@2x.png"
             />
             <div className="frame-container">
               <div className="lyra-coin-parent">
                 <b className="lyra-coin">Lyra Coin</b>
                 <div className="lyr-parent">
                   <b className="lyr">1,234,525 LYR</b>
-                  <b className="b">$2,183</b>
+                  <b className="b2">$2,183</b>
                 </div>
               </div>
               <div className="frame-child" />
@@ -183,12 +183,12 @@ const WalletHome: FunctionComponent = () => {
                 <img
                   className="lyralogoblackicon"
                   alt=""
-                  src="../lyralogoblueicon4@2x.png"
+                  src="../asserts/lyralogoblueicon4@2x.png"
                 />
                 <b className="lyra-coin">Custom Coin</b>
                 <div className="lyr-parent">
                   <b className="lyr">1,234,525 CUS</b>
-                  <b className="b">$2,183</b>
+                  <b className="b2">$2,183</b>
                 </div>
               </div>
               <div className="frame-child" />
@@ -198,14 +198,14 @@ const WalletHome: FunctionComponent = () => {
             <img
               className="logosbitcoin-icon"
               alt=""
-              src="../logosbitcoin.svg"
+              src="../asserts/logosbitcoin.svg"
             />
             <div className="frame-container">
               <div className="lyra-coin-parent">
                 <b className="lyra-coin">BitCoin</b>
                 <div className="lyr-parent">
                   <b className="lyr">1.2345 BTC</b>
-                  <b className="b">$20,183</b>
+                  <b className="b2">$20,183</b>
                 </div>
               </div>
               <div className="frame-child" />
@@ -215,14 +215,14 @@ const WalletHome: FunctionComponent = () => {
             <img
               className="lyralogoblackicon"
               alt=""
-              src="../mask-group@2x.png"
+              src="../asserts/mask-group@2x.png"
             />
             <div className="frame-container">
               <div className="lyra-coin-parent">
                 <b className="lyra-coin">T-Shirt Blue</b>
                 <div className="lyr-parent">
                   <b className="lyr">3 Items</b>
-                  <b className="b">$20,183</b>
+                  <b className="b2">$20,183</b>
                 </div>
               </div>
               <div className="frame-child" />

@@ -31,7 +31,7 @@
   position: relative;
   font-size: var(--font-size-6xl);
   font-weight: 700;
-  font-family: var(--font-sf-pro-text);
+  font-family: var(--regular-body1);
   color: var(--white1);
   text-align: right;
   display: inline-block;
@@ -146,5 +146,5 @@
   text-align: right;
   font-size: var(--font-size-8xl);
   color: var(--white1);
-  font-family: var(--font-sf-pro-text);
+  font-family: var(--regular-body1);
 }

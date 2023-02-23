@@ -31,7 +31,7 @@
   position: relative;
   font-size: var(--font-size-6xl);
   font-weight: 700;
-  font-family: var(--font-sf-pro-text);
+  font-family: var(--regular-body1);
   color: var(--white1);
   text-align: right;
   display: inline-block;
@@ -126,11 +126,11 @@
 .nft-count,
 .nft-label {
   position: relative;
-  font-family: var(--font-sf-pro-text);
+  font-family: var(--regular-body1);
   text-align: center;
 }
 .nft-count {
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   letter-spacing: 3.5px;
   font-weight: 600;
   color: var(--white1);
@@ -185,5 +185,5 @@
   text-align: right;
   font-size: var(--font-size-8xl);
   color: var(--white1);
-  font-family: var(--font-sf-pro-text);
+  font-family: var(--regular-body1);
 }

@@ -61,9 +61,9 @@ const CreateWallet: FunctionComponent = () => {
       <TopNavigationBar title="Create Wallet" />
       <div className="illus1-parent">
         <div className="illus1">
-          <img className="illus1-child" alt="" src="../group-3.svg" />
+          <img className="illus1-child" alt="" src="../asserts/group-3.svg" />
           <div className="group-parent">
-            <img className="group-icon" alt="" src="../group-42.svg" />
+            <img className="group-icon" alt="" src="../asserts/group-42.svg" />
             <div className="create-account">
               C<span className="r">r</span>
               <span className="e">e</span>a<span className="t">t</span>
@@ -71,28 +71,52 @@ const CreateWallet: FunctionComponent = () => {
               <span className="a">A</span>
               <span className="cc">cc</span>ount
             </div>
-            <img className="fill-43-icon" alt="" src="../fill-43.svg" />
+            <img className="fill-43-icon" alt="" src="../asserts/fill-43.svg" />
             <img
               className="email-address-icon"
               alt=""
-              src="../email-address.svg"
+              src="../asserts/email-address.svg"
             />
             <img
               className="youremailgmailc-icon"
               alt=""
-              src="../youremailgmailc.svg"
+              src="../asserts/youremailgmailc.svg"
             />
-            <img className="frame-child1" alt="" src="../group-49.svg" />
-            <img className="your-text-icon" alt="" src="../your-text.svg" />
-            <img className="frame-child2" alt="" src="../group-53.svg" />
-            <img className="your-city-icon" alt="" src="../your-city.svg" />
-            <img className="frame-child3" alt="" src="../group-57.svg" />
+            <img
+              className="frame-child1"
+              alt=""
+              src="../asserts/group-49.svg"
+            />
+            <img
+              className="your-text-icon"
+              alt=""
+              src="../asserts/your-text.svg"
+            />
+            <img
+              className="frame-child2"
+              alt=""
+              src="../asserts/group-53.svg"
+            />
+            <img
+              className="your-city-icon"
+              alt=""
+              src="../asserts/your-city.svg"
+            />
+            <img
+              className="frame-child3"
+              alt=""
+              src="../asserts/group-57.svg"
+            />
             <img
               className="entry-password-icon"
               alt=""
-              src="../entry-password.svg"
+              src="../asserts/entry-password.svg"
             />
-            <img className="frame-child4" alt="" src="../group-145.svg" />
+            <img
+              className="frame-child4"
+              alt=""
+              src="../asserts/group-145.svg"
+            />
           </div>
         </div>
         <TextField

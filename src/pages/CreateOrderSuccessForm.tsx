@@ -30,7 +30,7 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
       <TopNavigationBar title="Order Created" />
       <div className="success-parent">
         <div className="success">Success!</div>
-        <img className="illus8-icon" alt="" src="../illus8.svg" />
+        <img className="illus8-icon" alt="" src="../asserts/illus8.svg" />
         <div className="you-order-tx">You order TX Hash is:</div>
         <div className="blvm6g1jjkwuz8ocens7fuuswjqdr3">{tx}</div>
         <a

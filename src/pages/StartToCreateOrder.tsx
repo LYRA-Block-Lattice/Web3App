@@ -63,26 +63,117 @@ const StartToCreateOrder: FunctionComponent = () => {
       <TopNavigationBar title="Select Catalog" />
       <div className="catalog-section-parent">
         <div className="catalog-section">
-          <Xwrapper>
-            <div style={{ zIndex: 3 }}>
-              <Xarrow
-                showXarrow={start != null && end != null}
-                start={`Sell-${start}`}
-                end={`Get-${end}`}
-              />
+          <div className="catalogselection">
+            <div className="i-want-to">I want to sell:</div>
+            <div className="tradecatalog">
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/icbaselinegeneratingtokens4.svg"
+                />
+                <div className="token-frame">
+                  <b className="token2">Token</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/mapartgallery.svg"
+                />
+                <div className="token-frame">
+                  <b className="token2">NFT</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/fluentemojihighcontrastdollarbanknote.svg"
+                />
+                <div className="token-frame">
+                  <b className="fiat2">Fiat</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/mditruckdelivery.svg"
+                />
+                <div className="token-frame">
+                  <b className="goods2">Goods</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/carbonuserservicedesk4.svg"
+                />
+                <div className="token-frame">
+                  <b className="fiat2">Service</b>
+                </div>
+              </button>
             </div>
-            <CatalogSelection
-              key="sell"
-              iWantTo="Sell"
-              tokenActionClicked={onTokenAction}
-            />
-            <div className="catalog-section-child" />
-            <CatalogSelection
-              key="get"
-              iWantTo="Get"
-              tokenActionClicked={onTokenAction}
-            />
-          </Xwrapper>
+          </div>
+          <div className="catalog-section-child" />
+          <div className="catalogselection">
+            <div className="i-want-to">I want to get:</div>
+            <div className="tradecatalog">
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/icbaselinegeneratingtokens5.svg"
+                />
+                <div className="token-frame">
+                  <b className="token2">Token</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/mapartgallery.svg"
+                />
+                <div className="token-frame">
+                  <b className="token2">NFT</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/fluentemojihighcontrastdollarbanknote.svg"
+                />
+                <div className="token-frame">
+                  <b className="fiat2">Fiat</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/mditruckdelivery1.svg"
+                />
+                <div className="token-frame">
+                  <b className="goods2">Goods</b>
+                </div>
+              </button>
+              <button className="select-token-catalog-button">
+                <img
+                  className="mapart-gallery-icon"
+                  alt=""
+                  src="../asserts/carbonuserservicedesk4.svg"
+                />
+                <div className="token-frame">
+                  <b className="fiat2">Service</b>
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
         <button
           className="prepare-sell-order-button13"

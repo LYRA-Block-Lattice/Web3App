@@ -77,11 +77,11 @@ const ViewOrdersForm: FunctionComponent = () => {
       <div className="wallet-card-container">
         <WalletCardContainer />
         <MarketToolBarContainer
-          homeIconInterlocution="../home--icon--interlocution15.svg"
-          homeIconInterlocution1="../home--icon--interlocution16.svg"
-          homeIconInterlocution2="../home--icon--interlocution17.svg"
-          homeIconInterlocution3="../home--icon--interlocution18.svg"
-          homeIconInterlocution4="../home--icon--interlocution19.svg"
+          homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
+          homeIconInterlocution1="../asserts/home--icon--interlocution16.svg"
+          homeIconInterlocution2="../asserts/home--icon--interlocution17.svg"
+          homeIconInterlocution3="../asserts/home--icon--interlocution18.svg"
+          homeIconInterlocution4="../asserts/home--icon--interlocution19.svg"
         />
         <OrderForm />
         {odrs?.map((order) => (

@@ -21,12 +21,12 @@
   align-items: flex-start;
   justify-content: center;
 }
-.nft1 {
+.nft {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
 }
-.nft-container {
+.nft-wrapper {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-400);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -38,14 +38,14 @@
   box-sizing: border-box;
   align-items: flex-end;
 }
-.catalogtab1,
-.nft-container,
-.token-container {
+.catalogtab,
+.nft-wrapper,
+.token-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.token-container {
+.token-wrapper {
   border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--color-whitesmoke-400);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -56,16 +56,15 @@
   box-sizing: border-box;
   align-items: flex-end;
 }
-.catalogtab1 {
+.catalogtab {
   background-color: var(--white1);
-  border-bottom: 1px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-400);
   overflow: hidden;
   align-items: center;
   gap: var(--gap-xs);
   text-align: center;
   font-size: var(--body-semibold-size);
   color: var(--text-primary-dark);
-  font-family: var(--regular-body1);
 }
 .icbaseline-generating-tokens-icon {
   position: relative;
@@ -96,7 +95,7 @@
 .open {
   position: relative;
   font-size: var(--caption-size);
-  font-family: var(--font-calibri);
+  font-family: var(--regular-body1);
   color: var(--white1);
   text-align: center;
 }
@@ -164,6 +163,7 @@
 }
 .the-first-dao {
   font-size: var(--caption-size);
+  font-family: var(--font-source-sans-pro);
 }
 .a-big-seller-parent,
 .parent {
@@ -234,7 +234,7 @@
   box-sizing: border-box;
   gap: var(--gap-lg);
   text-align: right;
-  font-size: var(--font-size-5xl);
+  font-size: var(--font-size-4xl);
   color: var(--black-0000001001);
-  font-family: var(--font-calibri);
+  font-family: var(--regular-body1);
 }

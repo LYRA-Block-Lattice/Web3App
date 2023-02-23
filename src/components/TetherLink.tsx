@@ -8,7 +8,7 @@ const TetherLink: FunctionComponent = () => {
       <div className="sell-parent">
         <b className="sell">Sell</b>
         <b className="sell">BTC</b>
-        <img className="arrow-icon" alt="" src="../arrow-2.svg" />
+        <img className="arrow-icon" alt="" src="../asserts/arrow-2.svg" />
         <b className="tetherusdt2">tether/USDT</b>
       </div>
       <div className="details-section">
@@ -23,7 +23,7 @@ const TetherLink: FunctionComponent = () => {
           <div className="sell">3.2</div>
         </div>
         <div className="block1">
-          <div className="price1">Price</div>
+          <div className="price">Price</div>
         </div>
         <div className="block2">
           <b className="sell">10,323</b>

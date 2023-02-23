@@ -8,7 +8,7 @@ const ItemContainer: FunctionComponent = () => {
         <img
           className="lyralogoblueicon1"
           alt=""
-          src="../lyralogoblueicon@2x.png"
+          src="../asserts/lyralogoblueicon@2x.png"
         />
       </div>
       <div className="content">
@@ -16,10 +16,14 @@ const ItemContainer: FunctionComponent = () => {
           <div className="put-your-product">
             put your product name here or go!
           </div>
-          <img className="press-area-icon" alt="" src="../press-area.svg" />
+          <img
+            className="press-area-icon"
+            alt=""
+            src="../asserts/press-area.svg"
+          />
         </div>
-        <div className="price">
-          <div className="div15">60$</div>
+        <div className="price1">
+          <div className="div18">60$</div>
         </div>
       </div>
     </div>

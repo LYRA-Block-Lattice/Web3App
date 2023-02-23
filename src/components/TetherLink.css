@@ -34,7 +34,7 @@
 .block4 {
   align-items: flex-end;
 }
-.price1 {
+.price {
   position: relative;
   display: inline-block;
   width: 66px;
@@ -54,6 +54,7 @@
   align-items: flex-end;
   font-size: var(--font-size-7xl);
   color: var(--color-forestgreen);
+  font-family: var(--regular-body1);
 }
 .details-section-child {
   position: relative;
@@ -74,6 +75,7 @@
   align-items: center;
   gap: var(--gap-sm);
   font-size: var(--caption-size);
+  font-family: var(--font-source-sans-pro);
 }
 .title-section {
   cursor: pointer;
@@ -86,5 +88,5 @@
   text-align: right;
   font-size: var(--font-size-3xl);
   color: var(--black-0000001001);
-  font-family: var(--font-calibri);
+  font-family: var(--regular-body1);
 }

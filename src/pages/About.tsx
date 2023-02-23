@@ -25,7 +25,7 @@ const About: FunctionComponent = () => {
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
       <div className="lyralogo-parent">
-        <img className="lyralogo-icon" alt="" src="../lyralogo.svg" />
+        <img className="lyralogo-icon" alt="" src="../asserts/lyralogo.svg" />
         <b className="lyra-web3-app">Lyra Web3 App</b>
         <div className="web3-ecommerce-on">
           Web3 eCommerce on Lyra blockchain with KYC-less secured transaction
