@@ -144,6 +144,9 @@ const WalletHome: FunctionComponent = () => {
         <WalletToolBar />
         <div className="coinlisting">
           <div className="catalogtab">
+            <div className="token-wrapper">
+              <b className="nft">Token</b>
+            </div>
             <div className="nft-wrapper">
               <b className="nft">NFT</b>
             </div>
@@ -155,9 +158,6 @@ const WalletHome: FunctionComponent = () => {
             </div>
             <div className="nft-wrapper">
               <b className="nft">Service</b>
-            </div>
-            <div className="token-wrapper">
-              <b className="nft">Token</b>
             </div>
           </div>
           <div className="tokendisplayitem">
@@ -230,6 +230,7 @@ const WalletHome: FunctionComponent = () => {
           </div>
         </div>
       </div>
+      {showTokens()}
       <BottomNavigationBar />
     </div>
     // {isSideMenuPopupOpen && (
