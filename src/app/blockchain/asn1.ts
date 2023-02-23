@@ -53,7 +53,7 @@ function getBigIntAbsoluteValue(x: bigint): bigint {
   const negative = isBigIntNegative(x);
   if (negative) {
     // Compute the 2's complement of x, which is equivalent to negating x
-    const twoComplement = ~x + 1n;
+    const twoComplement = ~x + BigInt(1);
 
     // Convert the 2's complement to a non-negative BigInt using asUintN()
     return BigInt.asUintN(bitLength(x), twoComplement);
