@@ -23,7 +23,7 @@ import {
   MultiBlockAPIResult,
   SimpleJsonAPIResult
 } from "../blockchain/blocks/meta";
-import { IDao } from "../blockchain/blocks/block";
+
 import { NotUndefined } from "@redux-saga/types";
 
 let connection: HubConnection | undefined = undefined;

@@ -15,6 +15,7 @@ const SellFlow: FunctionComponent = () => {
   const data = decodeURIComponent(searchParams.get("data")!);
   const obj = JSON.parse(data);
   console.log("order is", obj);
+  const fees = JSON.parse(decodeURIComponent(searchParams.get("fees")!));
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
     if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
@@ -77,11 +78,7 @@ const SellFlow: FunctionComponent = () => {
         </div>
       </div>
       <div className="ordercollateral">{obj.collateral} LYR</div>
-      <div className="returncollateral">
-        {obj.collateral - obj.daofee - obj.netfee} LYR
-      </div>
-      <div className="ordercollateral">1024 LYR</div>
-      <div className="returncollateral">1000 LYR</div>
+      <div className="returncollateral">{obj.collateral - fees.total} LYR</div>
       <div className="prepare-sell-order-button-parent">
         <button
           className="prepare-sell-order-button1"
@@ -89,7 +86,10 @@ const SellFlow: FunctionComponent = () => {
         >
           <div className="primary-button1">Back</div>
         </button>
-        <button className="prepare-sell-order-button2">
+        <button
+          className="prepare-sell-order-button2"
+          onClick={onPrepareSellOrderButtonClick}
+        >
           <div className="primary-button2">Place sell order</div>
         </button>
       </div>

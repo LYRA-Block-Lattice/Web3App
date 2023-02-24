@@ -8,9 +8,11 @@ import {
   NonFungibleTokenTypes,
   HoldTypes,
   UniOrderStatus,
-  UniTradeStatus
+  UniTradeStatus,
+  ProfitingType
 } from "./meta";
 import stringify from "json-stable-stringify";
+import { number } from "yargs";
 
 export class LyraGlobal {
   static readonly DatabaseVersion = 11;
@@ -341,6 +343,8 @@ export class UniTrade {
 }
 
 export interface IBrokerAccount {
+  AccountID: string;
+  TimeStamp: Date;
   Name: string;
   OwnerAccountId: string;
   RelatedTx: string;
@@ -349,7 +353,14 @@ export interface IBrokerAccount {
 export interface IDaoTreasure {
   [key: string]: number;
 }
-export interface IDao extends IBrokerAccount {
+
+export interface IProfiting extends IBrokerAccount {
+  PType: ProfitingType;
+  ShareRito: number;
+  Seats: number;
+}
+
+export interface IDao extends IProfiting {
   SellerFeeRatio: number;
   BuyerFeeRatio: number;
   SellerPar: number;

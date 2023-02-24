@@ -528,6 +528,14 @@ export enum APIResultCodes {
   DuplicateBlock
 }
 
+export enum ProfitingType {
+  Node,
+  Oracle,
+  Merchant,
+  Yield,
+  Orgnization
+}
+
 export class APIResult {
   public resultCode!: APIResultCodes;
   public resultMessage!: string;

@@ -216,7 +216,10 @@ export class BlockchainAPI {
   };
 
   static searchDao = (q: string) =>
-    this.fetchJson<MultiBlockAPIResult>(`${this.Block_API_v1}/FindDaos?q=${q}`);
+    this.fetchJson2(
+      MultiBlockAPIResult,
+      `${this.Block_API_v1}/FindDaos?q=${q}`
+    );
 
   // Get a Tx block by AccountId
   static GetLastBlock = (accountId: string) =>
@@ -239,14 +242,6 @@ export class BlockchainAPI {
   // Dealer API
   static getPrices = async (): Promise<SimpleJsonAPIResult> =>
     this.fetchJson2(SimpleJsonAPIResult, `${this.Dealer_API}/GetPrices`);
-
-  // static getPrices2 = async <T extends SimpleJsonAPIResult>(): Promise<T> => {
-  //   const url = `${this.Dealer_API}/GetPrices`;
-  //   const response = await ky.get(url);
-  //   const data = await response.json();
-  //   const x = plainToClass(T, data);
-  //   return x;
-  // };
 
   static fetchOrders = (catalog: string | undefined) =>
     this.fetchJson<IOrdersResult>(

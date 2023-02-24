@@ -18,7 +18,7 @@ import {
 } from "../app/selectors";
 
 import * as actionTypes from "../app/actionTypes";
-import { IDao } from "../app/blockchain/blocks/block";
+import { IDao, TransactionBlock } from "../app/blockchain/blocks/block";
 
 interface IToken {
   token: string;
@@ -53,10 +53,11 @@ const SellTokenToToken: FunctionComponent = () => {
   const [limitmin, setLimitmin] = useState<number>(0);
   const [limitmax, setLimitmax] = useState<number>(0);
 
-  const [daos, setDaos] = useState<IDao[]>([]);
   const [dao, setDao] = useState<IDao | null>(null);
   const [val, setVal] = useState<IToken>();
   const [totallyr, setTotalLYR] = useState<number>(0);
+  const [daoFeeLyr, setDaoFeeLyr] = useState<number>(0);
+  const [netFeeLyr, setNetFeeLyr] = useState<number>(0);
 
   const onSellChange = useCallback(
     (value: any) => {
@@ -84,6 +85,18 @@ const SellTokenToToken: FunctionComponent = () => {
       }
     } else setPriceDollar(0);
   }, [price, toget]);
+
+  useEffect(() => {
+    if (eqprice > 0 && notify.prices != undefined) {
+      var ticker = toget;
+      const quote = notify.prices.find((a) => a.ticker == "LYR");
+      if (quote === undefined) setEQDollar(0);
+      else {
+        let priced = eqprice * quote.price;
+        setEQDollar(priced);
+      }
+    } else setEQDollar(0);
+  }, [eqprice]);
 
   const openGeneralPopup = useCallback(() => {
     if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
@@ -116,6 +129,8 @@ const SellTokenToToken: FunctionComponent = () => {
 
   const onTotal = (total: number, daofee: number, netfee: number) => {
     setTotalLYR(total);
+    setDaoFeeLyr(daofee);
+    setNetFeeLyr(netfee);
   };
 
   const onReviewTheOrderClick = useCallback(() => {
@@ -126,7 +141,7 @@ const SellTokenToToken: FunctionComponent = () => {
       count: amount,
       collateral: totallyr,
       secret: undefined,
-      //daoid: dao?.daoId,
+      daoid: dao?.AccountID,
       dealerid: market.dealerId,
       limitmin: limitmin,
       limitmax: limitmax,
@@ -135,7 +150,15 @@ const SellTokenToToken: FunctionComponent = () => {
       // netfee: netfeelyr,
       payby: ["Default"]
     };
-    navigate("/sellflow?data=" + encodeURIComponent(JSON.stringify(obj)));
+    var fees = {
+      total: daoFeeLyr + netFeeLyr
+    };
+    navigate(
+      "/sellflow?data=" +
+        encodeURIComponent(JSON.stringify(obj)) +
+        "&fees=" +
+        encodeURIComponent(JSON.stringify(fees))
+    );
   }, [
     navigate,
     tosell,
@@ -270,7 +293,7 @@ const SellTokenToToken: FunctionComponent = () => {
           <Autocomplete
             sx={{ width: 320 }}
             disablePortal
-            options={daos}
+            options={market.daos}
             onInputChange={onDaoSearchChange}
             onChange={(event, value) => setDao(value)}
             isOptionEqualToValue={(option, value) => option.Name === value.Name}
@@ -291,7 +314,7 @@ const SellTokenToToken: FunctionComponent = () => {
           <CollateralCalculation
             selling={true}
             eqprice={eqprice}
-            eqdollar={pricedollar}
+            eqdollar={eqdollar}
             amount={amount}
             dao={dao}
             onTotalChange={onTotal}
