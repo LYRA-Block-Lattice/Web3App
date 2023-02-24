@@ -61,118 +61,15 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   }, [orderStatusBackgroundColor]);
 
   return (
-    <div className="ordercard1">
-      <div className="order-brief-section1">
-        <button className="banner-image1" onClick={toggle}>
-          <div className="order-banner1">
-            <div className="order-image1">
-              <img
-                className="icbaseline-generating-tokens-icon1"
-                alt=""
-                src={offeringIcon}
-              />
-              <img
-                className="order-image-item"
-                alt=""
-                src="../asserts/arrow-1.svg"
-              />
-              <img
-                className="icbaseline-generating-tokens-icon1"
-                alt=""
-                src={bidingIcon}
-              />
-            </div>
-            <div className="order-status1" style={orderStatusStyle}>
-              <b className="open1">
-                {UniOrderStatus[orderStatus ?? UniOrderStatus.Closed]}
-              </b>
-            </div>
-          </div>
-        </button>
-        <Link
-          className="title-section1"
-          to={`/assertdetailview?orderId=${orderId}`}
-        >
-          <div className="sell-parent">
-            <b className="sell">Sell</b>
-            <b className="sell">{offering}</b>
-            <img className="arrow-icon" alt="" src="../asserts/arrow-2.svg" />
-            <b className="tetherusdt3">{biding}</b>
-          </div>
-          <div>{time.DateTime}</div>
-          <div className="details-section1">
-            <div className="block31">
-              <div className="sell">Amount</div>
-              <div className="sell">Limit Min</div>
-              <div className="sell">Limit Max</div>
-            </div>
-            <div className="block41">
-              <div className="sell">{amount}</div>
-              <div className="sell">{limitMin}</div>
-              <div className="sell">{limitMax}</div>
-            </div>
-            <div className="block11">
-              <div className="price4">Price</div>
-            </div>
-            <div className="block21">
-              <b className="sell">{price}</b>
-            </div>
-            <div className="details-section-item" />
-          </div>
-        </Link>
-      </div>
-      <div className="trades-section1">
-        <div className="width-controller1" />
-      </div>
-      <div className="userprofilesection">
-        <img
-          className="userprofilesection-child"
-          alt=""
-          src="../asserts/ellipse-1@2x.png"
-        />
-        <div className="a-big-seller-parent">
-          <b className="sell">{sellerName}</b>
-          <div className="the-first-dao">{daoName}</div>
-        </div>
-        <div className="parent">
-          <b className="sell">{sellerRatings}</b>
-          <div className="the-first-dao">{sellerTrades}</div>
-        </div>
-      </div>
-      <div>
-        <div>
-          {showTradeTable ? (
-            <TableComponent key={orderId} data={trades} />
-          ) : null}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default MarketOrder;
-import { FunctionComponent } from "react";
-import { Link } from "react-router-dom";
-import "./MarketOrder.css";
-
-type MarketOrderType = {
-  /** Action props */
-  onBannerImage4Click?: () => void;
-};
-
-const MarketOrder: FunctionComponent<MarketOrderType> = ({
-  onBannerImage4Click
-}) => {
-  return (
     <div className="ordercard6">
       <div className="order-brief-section6">
-        <button className="banner-image6" onClick={onBannerImage4Click}>
+        <button className="banner-image6" onClick={toggle}>
           <div className="order-banner6">
             <div className="order-image6">
               <img
                 className="icbaseline-generating-tokens-icon5"
                 alt=""
-                src="../asserts/icbaselinegeneratingtokens6.svg"
+                src={offeringIcon}
               />
               <img
                 className="order-image-child2"
@@ -182,24 +79,29 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
               <img
                 className="icbaseline-generating-tokens-icon5"
                 alt=""
-                src="../asserts/carbonuserservicedesk6.svg"
+                src={bidingIcon}
               />
             </div>
-            <div className="order-status6">
-              <b className="open4">Open</b>
+            <div className="order-status6" style={orderStatusStyle}>
+              <b className="open4">
+                {UniOrderStatus[orderStatus ?? UniOrderStatus.Closed]}
+              </b>
             </div>
           </div>
         </button>
-        <Link className="title-section6" to="/assertdetailview">
+        <Link
+          className="title-section1"
+          to={`/assertdetailview?orderId=${orderId}`}
+        >
           <div className="sell-container">
             <b className="sell2">Sell</b>
-            <b className="sell2">BTC</b>
+            <b className="sell2">{offering}</b>
             <img
               className="frame-child6"
               alt=""
               src="../asserts/arrow-22.svg"
             />
-            <b className="tetherusdt7">tether/USDT</b>
+            <b className="tetherusdt7">{biding}</b>
           </div>
           <div className="details-section6">
             <div className="block34">
@@ -208,15 +110,15 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
               <div className="sell2">Limit Max</div>
             </div>
             <div className="block44">
-              <div className="sell2">1113.2</div>
-              <div className="sell2">1.2</div>
-              <div className="sell2">3.2</div>
+              <div className="sell2">{amount}</div>
+              <div className="sell2">{limitMin}</div>
+              <div className="sell2">{limitMax}</div>
             </div>
             <div className="block16">
               <div className="price5">Price</div>
             </div>
             <div className="block26">
-              <b className="sell2">10,323</b>
+              <b className="sell2">{price}</b>
             </div>
             <div className="details-section-child4" />
           </div>
@@ -232,12 +134,17 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           src="../asserts/ellipse-12@2x.png"
         />
         <div className="a-big-seller-group">
-          <b className="sell2">A big seller</b>
-          <div className="the-first-dao1">The First DAO</div>
+          <b className="sell2">{sellerName}</b>
+          <div className="the-first-dao1">{daoName}</div>
         </div>
         <div className="container">
-          <b className="sell2">98%</b>
-          <div className="the-first-dao1">1024 Trades</div>
+          <b className="sell2">{sellerRatings}</b>
+          <div className="the-first-dao1">{sellerTrades}</div>
+        </div>
+        <div>
+          {showTradeTable ? (
+            <TableComponent key={orderId} data={trades} />
+          ) : null}
         </div>
       </div>
     </div>

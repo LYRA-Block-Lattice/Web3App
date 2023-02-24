@@ -49,11 +49,11 @@ const MiscComponents: FunctionComponent = () => {
           <ProductContainer openGeneralPopup={openGeneralPopup} />
           <ProductContainer openGeneralPopup={openGeneralPopup1} />
         </div>
-        <OrderCard onBannerImageClick={onBannerImageClick} />
+        {/* <OrderCard />
         <TradeCard />
         <SendCard txType="Send" />
         <ReceiveCard txType="Receive" />
-        <MarketOrder onBannerImage4Click={onBannerImage4Click} />
+        <MarketOrder /> */}
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

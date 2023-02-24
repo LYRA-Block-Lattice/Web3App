@@ -26,6 +26,10 @@ const ViewTradesForm: FunctionComponent = () => {
     });
   }, []);
 
+  const onBannerImageClick = useCallback(() => {
+    navigate("/orderdetails");
+  }, []);
+
   return (
     <div className="viewtradesform main-content">
       <TopNavigationBar title="View Trades" />
