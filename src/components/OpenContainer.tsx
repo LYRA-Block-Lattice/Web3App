@@ -28,7 +28,7 @@ const OpenContainer: FunctionComponent<OpenContainerType> = ({
       <div className="order-banner2">
         <div className="order-image2" style={orderImageStyle}>
           <img
-            className="icbaseline-generating-tokens-icon3"
+            className="icbaseline-generating-tokens-icon2"
             alt=""
             src={tokenImageUrl}
           />
@@ -38,9 +38,9 @@ const OpenContainer: FunctionComponent<OpenContainerType> = ({
             src="../asserts/arrow-1.svg"
           />
           <img
-            className="icbaseline-generating-tokens-icon3"
+            className="icbaseline-generating-tokens-icon2"
             alt=""
-            src="../asserts/carbonuserservicedesk4.svg"
+            src="../asserts/carbonuserservicedesk2.svg"
           />
         </div>
         <div className="order-status2">

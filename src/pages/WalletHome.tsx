@@ -72,7 +72,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$2,183</b>
                 </div>
               </div>
-              <div className="line-div" />
+              <div className="frame-child" />
             </div>
           </div>
           <div className="tokendisplayitem1">
@@ -89,7 +89,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$2,183</b>
                 </div>
               </div>
-              <div className="line-div" />
+              <div className="frame-child" />
             </div>
           </div>
           <div className="tokendisplayitem2">
@@ -106,7 +106,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$20,183</b>
                 </div>
               </div>
-              <div className="line-div" />
+              <div className="frame-child" />
             </div>
           </div>
           <div className="tokendisplayitem2">
@@ -123,7 +123,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$20,183</b>
                 </div>
               </div>
-              <div className="line-div" />
+              <div className="frame-child" />
             </div>
           </div>
         </div>

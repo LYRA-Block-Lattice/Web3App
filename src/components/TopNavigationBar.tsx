@@ -19,7 +19,7 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
   return (
     <div className="topnavigationbar">
       <button className="navbackbutton" onClick={onNavBackButtonClick}>
-        <img className="iconleft" alt="" src="../asserts/iconleft1.svg" />
+        <img className="iconleft" alt="" src="../asserts/iconleft.svg" />
       </button>
       <button className="title5" onClick={onTitleClick}>
         {title}
@@ -28,7 +28,7 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
         <img
           className="icround-plus-icon"
           alt=""
-          src="../asserts/icroundplus6.svg"
+          src="../asserts/icroundplus3.svg"
         />
       </button>
     </div>

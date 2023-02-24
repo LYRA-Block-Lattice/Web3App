@@ -1,20 +1,4 @@
-.token-container {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-7xs) 0 var(--padding-10xs);
-  background-color: var(--color-whitesmoke-400);
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  width: 70px;
-  height: 26px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: flex-end;
-  justify-content: center;
-}
-.nft {
+.token {
   position: relative;
   font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
@@ -24,11 +8,28 @@
   text-align: center;
 }
 .catalogtab,
-.nft-wrapper {
-  overflow: hidden;
+.nft-wrapper,
+.token-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.token-wrapper {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-7xs) 0 var(--padding-10xs);
+  background-color: var(--color-whitesmoke-400);
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 70px;
+  height: 26px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+.catalogtab,
+.nft-wrapper {
+  overflow: hidden;
 }
 .nft-wrapper {
   cursor: pointer;

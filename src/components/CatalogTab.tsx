@@ -19,20 +19,20 @@ const CatalogTab: FunctionComponent<CatalogTabType> = ({
 }) => {
   return (
     <div className="catalogtab">
-      <button className="token-container" onClick={onFrameButtonClick}>
-        <b className="nft">Token</b>
+      <button className="token-wrapper" onClick={onFrameButtonClick}>
+        <b className="token">Token</b>
       </button>
       <button className="nft-wrapper" onClick={onFrameButton1Click}>
-        <b className="nft">NFT</b>
+        <b className="token">NFT</b>
       </button>
       <button className="nft-wrapper" onClick={onFrameButton2Click}>
-        <b className="nft">Fiat</b>
+        <b className="token">Fiat</b>
       </button>
       <button className="nft-wrapper" onClick={onFrameButton3Click}>
-        <b className="nft">Goods</b>
+        <b className="token">Goods</b>
       </button>
       <button className="nft-wrapper" onClick={onFrameButton4Click}>
-        <b className="nft">Service</b>
+        <b className="token">Service</b>
       </button>
     </div>
   );
