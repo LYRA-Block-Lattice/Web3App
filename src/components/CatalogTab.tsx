@@ -21,13 +21,21 @@ const TabHeader: FunctionComponent<TabHeaderType> = ({
     };
   }, [cat, selected]);
 
+  const selectTokenTextStyle: CSS.Properties = useMemo(() => {
+    return {
+      color: selected ? "#FFFFFF" : "#000000"
+    };
+  }, [cat, selected]);
+
   return (
     <button
       className="token-wrapper"
       style={selectTokenButtonStyle}
       onClick={() => onSelect(cat)}
     >
-      <b className="token">{cat}</b>
+      <b className="token" style={selectTokenTextStyle}>
+        {cat}
+      </b>
     </button>
   );
 };

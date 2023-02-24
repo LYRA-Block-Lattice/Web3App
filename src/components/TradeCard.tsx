@@ -45,9 +45,6 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
     }
   }, []);
 
-const TradeCard: FunctionComponent<TradeCardType> = ({
-  onBannerImage1Click,
-}) => {
   return (
     <div className="ordercard1">
       <div className="order-brief-section1">
@@ -111,21 +108,23 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
         <div className="width-controller1" />
       </div>
       <div className="itemactions1">
-      {tradeStatus != "Closed" && (
-        <button className="delist-button1">
-          <div className="mini-button4">Cancel</div>
-        </button>
-        <button className="delist-button1">
-          <div className="mini-button4">Close</div>
-        </button>
-        <button className="delist-button1">
-          <div className="mini-button4">Complain</div>
-        </button>
-                )}
-                {tradeStatus === "Closed" && (
-        <button className="delist-button1">
-          <div className="mini-button4">Comment</div>
-        </button>
+        {tradeStatus != "Closed" && (
+          <>
+            <button className="delist-button1">
+              <div className="mini-button4">Cancel</div>
+            </button>
+            <button className="delist-button1">
+              <div className="mini-button4">Close</div>
+            </button>
+            <button className="delist-button1">
+              <div className="mini-button4">Complain</div>
+            </button>
+          </>
+        )}
+        {tradeStatus === "Closed" && (
+          <button className="delist-button1">
+            <div className="mini-button4">Comment</div>
+          </button>
         )}
       </div>
     </div>

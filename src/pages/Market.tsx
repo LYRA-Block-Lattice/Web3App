@@ -59,7 +59,7 @@ const Market: FunctionComponent = () => {
           />
         </div>
         <div className="tradableorderssection">
-          <CatalogTab onSelect={(cat) => setCat(cat)} />
+          <CatalogTab selcat={cat} onSelect={(cat) => setCat(cat)} />
           <DisplaySellItems cat={cat} />
         </div>
       </div>

@@ -30,9 +30,9 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
   const [totaldollar, setTotalDollar] = useState<number>(0);
 
   useEffect(() => {
-    console.log(
-      `CollateralCalculation:useEffect ${eqprice} ${eqdollar} ${amount} ${dao?.Name}`
-    );
+    // console.log(
+    //   `CollateralCalculation:useEffect ${eqprice} ${eqdollar} ${amount} ${dao?.Name}`
+    // );
     if (eqdollar > 0 && amount > 0 && dao != undefined && dao != null) {
       if (selling) {
         setCollateralDollar((eqdollar * amount * dao.SellerPar) / 100);

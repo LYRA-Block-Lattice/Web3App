@@ -148,7 +148,7 @@ const AssertDetailView: FunctionComponent = () => {
   };
 
   return (
-    <div className="assertdetailview">
+    <div className="assertdetailview main-content">
       <TopNavigationBar title="Assert Details" />
       {isLoading && (
         <div className="overlay">
