@@ -11,12 +11,12 @@
   display: flex;
   align-items: center;
 }
-.b4,
+.b3,
 .lyr,
 .lyra-coin {
   position: relative;
 }
-.b4 {
+.b3 {
   font-size: var(--caption-size);
   color: var(--text-secondary1);
 }

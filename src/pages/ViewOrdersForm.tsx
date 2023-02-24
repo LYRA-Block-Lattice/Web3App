@@ -2,7 +2,7 @@ import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import WalletCardContainer from "../components/WalletCardContainer";
 import MarketToolBarContainer from "../components/MarketToolBarContainer";
-import OrderForm from "../components/OrderForm";
+import OrderCard from "../components/OrderCard";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ViewOrdersForm.css";
 
@@ -31,7 +31,7 @@ const ViewOrdersForm: FunctionComponent = () => {
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="wallet-card-container">
+      <div className="wallet-card-group">
         <WalletCardContainer />
         <MarketToolBarContainer
           homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
@@ -40,7 +40,7 @@ const ViewOrdersForm: FunctionComponent = () => {
           homeIconInterlocution3="../asserts/home--icon--interlocution18.svg"
           homeIconInterlocution4="../asserts/home--icon--interlocution19.svg"
         />
-        <OrderForm />
+        <OrderCard onBannerImageClick={onBannerImageClick} />
       </div>
       <BottomNavigationBar />
     </div>

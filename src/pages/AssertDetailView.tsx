@@ -119,8 +119,8 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="priceandvaluelabel">
               <div className="meka-legends">0.0325</div>
               <div className="tetherusdt-parent">
-                <div className="tetherusdt">tether/USDT</div>
-                <div className="div2">$86.20</div>
+                <div className="tethereth">tether/USDT</div>
+                <div className="div4">$86.20</div>
               </div>
             </div>
           </div>
@@ -131,8 +131,8 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="priceandvaluelabel1">
               <div className="meka-legends">100 - 200</div>
               <div className="tetherusdt-parent">
-                <div className="tetherusdt">tether/ETH</div>
-                <div className="div2">$40 ~ 84.20</div>
+                <div className="tethereth">tether/ETH</div>
+                <div className="div4">$40 ~ 84.20</div>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-parent1">
+            <div className="frame-container">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
@@ -149,12 +149,12 @@ const AssertDetailView: FunctionComponent = () => {
                 />
                 <div className="tethereth-group">
                   <div className="tethereth1">tether/ETH</div>
-                  <div className="tetherusdt">100 tether/USDT</div>
-                  <div className="tetherusdt">$ 10.3</div>
+                  <div className="tethereth">100 tether/USDT</div>
+                  <div className="tethereth">$ 10.3</div>
                 </div>
               </div>
               <div className="limitadjustsection">
-                <div className="tetherusdt">Min</div>
+                <div className="tethereth">Min</div>
                 <Box className="slidercontinuous">
                   <Slider
                     color="primary"

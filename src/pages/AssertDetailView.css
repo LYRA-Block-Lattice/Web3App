@@ -141,14 +141,11 @@
   align-self: stretch;
   padding: 0 var(--padding-4xs);
 }
-.div2,
-.tetherusdt {
+.div4 {
   position: relative;
+  font-size: var(--uppercase-small-size);
   letter-spacing: 0.41px;
   line-height: 18px;
-}
-.div2 {
-  font-size: var(--uppercase-small-size);
   font-weight: 500;
   color: var(--color-dimgray-100);
 }
@@ -160,7 +157,8 @@
   font-size: var(--font-size-3xl);
 }
 .priceandbuyregion,
-.priceandvaluelabel {
+.priceandvaluelabel,
+.pricelabel1 {
   align-self: stretch;
   background-color: var(--white1);
   display: flex;
@@ -174,26 +172,29 @@
   font-size: var(--font-size-9xl);
   color: var(--black-0000001001);
 }
+.priceandbuyregion,
+.pricelabel1 {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 .priceandbuyregion {
   border-radius: var(--br-xs);
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
   gap: var(--gap-md);
 }
-.priceandvaluelabel1,
 .pricelabel1 {
-  align-self: stretch;
   overflow: hidden;
   flex-direction: row;
 }
-.pricelabel1 {
-  background-color: var(--white1);
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+.tethereth {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
 }
 .priceandvaluelabel1 {
+  align-self: stretch;
+  overflow: hidden;
+  flex-direction: row;
   padding: 0 var(--padding-7xs);
   align-items: center;
   justify-content: space-between;
@@ -270,7 +271,7 @@
   font-size: var(--font-size-3xl);
   color: var(--color-dimgray-300);
 }
-.frame-parent1,
+.frame-container,
 .pricelabel-parent {
   display: flex;
   flex-direction: column;
@@ -278,7 +279,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-parent1 {
+.frame-container {
   width: 380px;
   padding: 0 var(--padding-7xs);
   gap: var(--gap-2xs);

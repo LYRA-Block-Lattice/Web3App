@@ -66,12 +66,12 @@ const WalletHome: FunctionComponent = () => {
             tokenDollar="$2,183"
           />
           <div className="tokendisplayitem">
-            <div className="frame-container">
+            <div className="frame-group">
               <div className="lyralogoblueicon-parent">
                 <img
                   className="lyralogoblueicon"
                   alt=""
-                  src="../asserts/lyralogoblueicon4@2x.png"
+                  src="../asserts/lyralogoblueicon@2x.png"
                 />
                 <b className="custom-coin">Custom Coin</b>
                 <div className="cus-parent">
@@ -79,7 +79,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b2">$2,183</b>
                 </div>
               </div>
-              <div className="frame-child" />
+              <div className="frame-item" />
             </div>
           </div>
           <TokenDisplayItem

@@ -23,7 +23,7 @@
   height: 24px;
   flex-shrink: 0;
 }
-.text11 {
+.text13 {
   position: relative;
   font-size: var(--uppercase-small-size);
   line-height: 14px;
@@ -44,7 +44,7 @@
   justify-content: center;
   gap: var(--gap-5xs);
 }
-.text13 {
+.text15 {
   position: relative;
   font-size: var(--uppercase-small-size);
   line-height: 10px;
