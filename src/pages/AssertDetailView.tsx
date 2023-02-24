@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
+import CollateralCalculation from "../components/CollateralCalculation";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -155,7 +156,7 @@ const AssertDetailView: FunctionComponent = () => {
         </div>
       )}
       <div className="assertdetailview-parent">
-        <div className="collateralsection">
+        <div className="assertdetailview1">
           <div className="asserttitleregion">
             <div className="assertauthorsection">
               <div className="a-legend-nft">
@@ -300,7 +301,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-parent4">
+            <div className="frame-parent1">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
@@ -356,7 +357,7 @@ const AssertDetailView: FunctionComponent = () => {
               onTotalChange={onTotal}
             />
             <button
-              className="prepare-sell-order-button6"
+              className="prepare-sell-order-button4"
               onClick={onMakeOfferButtonClick}
             >
               <img

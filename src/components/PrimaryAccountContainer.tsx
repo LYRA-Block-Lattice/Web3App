@@ -33,7 +33,7 @@ const PrimaryAccountContainer: FunctionComponent<
           <div className="rectangle2" />
         </div>
       </div>
-      <div className="frame-parent5">
+      <div className="frame-parent2">
         <div className="balance-display-zone-parent">
           <a className="balance-display-zone">
             <button

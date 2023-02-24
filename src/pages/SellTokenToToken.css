@@ -66,77 +66,16 @@
   flex-direction: column;
   font-size: var(--caption-size);
 }
-.collateral-worth-label8,
-.collateral-worth-label9,
 .limitoftrade {
+  width: 320px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.limitoftrade {
-  width: 320px;
   padding: var(--padding-4xs) 0;
   box-sizing: border-box;
-  font-size: var(--body-m-size);
-}
-.collateral-worth-label8,
-.collateral-worth-label9 {
-  width: 300px;
-}
-.collateral-worth-label9 {
-  align-items: flex-start;
-  justify-content: flex-end;
-  font-size: var(--uppercase-small-size);
-}
-.collateralsection1 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.collateralcalculation-item {
-  position: relative;
-  border-top: 1px solid var(--black-0000001001);
-  box-sizing: border-box;
-  width: 299px;
-  height: 1px;
-  flex-shrink: 0;
-}
-.collateral-worth-label14 {
-  width: 300px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
-.div14 {
-  position: relative;
-  font-size: var(--uppercase-small-size);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-}
-.collateral-worth-label15,
-.collateralcalculation1 {
-  width: 300px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-}
-.collateralcalculation1 {
-  border-radius: var(--br-2xs);
-  background-color: var(--color-gray-200);
-  width: 320px;
-  flex-direction: column;
-  padding: var(--padding-4xs);
-  box-sizing: border-box;
-  justify-content: center;
-  gap: var(--gap-2xs);
-  font-size: var(--body-semibold-size);
+  font-size: var(--body-m-size);
 }
 .primary-button5 {
   position: relative;
