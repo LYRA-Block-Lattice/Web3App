@@ -31,7 +31,7 @@ const ViewOrdersForm: FunctionComponent = () => {
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="wallet-card-group">
+      <div className="wallet-card-container">
         <WalletCardContainer />
         <MarketToolBarContainer
           homeIconInterlocution="../asserts/home--icon--interlocution15.svg"

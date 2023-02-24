@@ -10,81 +10,77 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
   onBannerImageClick,
 }) => {
   return (
-    <div className="ordercard2">
-      <div className="order-brief-section2">
-        <button className="banner-image2" onClick={onBannerImageClick}>
-          <div className="order-banner2">
-            <div className="order-image2">
+    <div className="ordercard">
+      <div className="order-brief-section">
+        <button className="banner-image" onClick={onBannerImageClick}>
+          <div className="order-banner">
+            <div className="order-image">
               <img
-                className="icbaseline-generating-tokens-icon3"
+                className="icbaseline-generating-tokens-icon"
                 alt=""
-                src="../asserts/icbaselinegeneratingtokens4.svg"
+                src="../asserts/icbaselinegeneratingtokens1.svg"
               />
               <img
-                className="order-image-inner"
+                className="order-image-child"
                 alt=""
-                src="../asserts/arrow-12.svg"
+                src="../asserts/arrow-11.svg"
               />
               <img
-                className="icbaseline-generating-tokens-icon3"
+                className="icbaseline-generating-tokens-icon"
                 alt=""
-                src="../asserts/carbonuserservicedesk4.svg"
+                src="../asserts/carbonuserservicedesk1.svg"
               />
             </div>
-            <div className="order-status2">
-              <b className="open2">Open</b>
+            <div className="order-status">
+              <b className="open">Open</b>
             </div>
           </div>
         </button>
-        <a className="title-section2">
-          <div className="sell-group">
-            <b className="sold">Sell</b>
-            <b className="sold">BTC</b>
-            <img
-              className="frame-child4"
-              alt=""
-              src="../asserts/arrow-22.svg"
-            />
-            <b className="tetherusdt4">tether/USDT</b>
+        <a className="title-section">
+          <div className="sell-parent">
+            <b className="sell">Sell</b>
+            <b className="sell">BTC</b>
+            <img className="arrow-icon" alt="" src="../asserts/arrow-21.svg" />
+            <b className="tetherusdt2">tether/USDT</b>
           </div>
-          <div className="title-section-item" />
-          <div className="am-container">
-            <div className="sold">12/29/2022 10:25:37 AM</div>
+          <div className="title-section-child" />
+          <div className="am-wrapper">
+            <div className="sell">12/29/2022 10:25:37 AM</div>
           </div>
-          <div className="details-section2">
-            <div className="block12">
-              <div className="sold">Price</div>
-              <div className="sold">Limit Min</div>
-              <div className="sold">Sold</div>
+          <div className="details-section">
+            <div className="block1">
+              <div className="sell">Price</div>
+              <div className="sell">Limit Min</div>
+              <div className="sell">Sold</div>
             </div>
-            <div className="block22">
-              <div className="sold">10,323</div>
-              <div className="sold">3.2</div>
-              <div className="sold">123</div>
+            <div className="block2">
+              <div className="sell">10,323</div>
+              <div className="sell">3.2</div>
+              <div className="sell">123</div>
             </div>
-            <div className="details-section-inner" />
-            <div className="block32">
-              <div className="sold">Amount</div>
-              <div className="sold">Limit Max</div>
-              <div className="sold">Shelf</div>
+            <div className="details-section-child" />
+            <div className="block3">
+              <div className="sell">Amount</div>
+              <div className="sell">Limit Max</div>
+              <div className="sell">Shelf</div>
             </div>
-            <div className="block22">
-              <div className="sold">1113.2</div>
-              <div className="sold">3.2</div>
-              <div className="sold">123</div>
+            <div className="block2">
+              <div className="sell">1113.2</div>
+              <div className="sell">3.2</div>
+              <div className="sell">123</div>
             </div>
           </div>
         </a>
       </div>
-      <div className="trades-section2">
-        <div className="width-controller2" />
+      <div className="trades-section">
+        <div className="width-controller" />
       </div>
-      <div className="itemactions1">
-        <button className="delist-button1">
-          <div className="mini-button6">Delist</div>
+      <div className="itemactions">
+        <button className="delist-button">
+          <div className="mini-button2">Delist</div>
         </button>
-        <button className="delist-button1">
-          <div className="mini-button6">Close</div>
+        <button className="delist-button">
+          <div className="mini-button2">Close</div>
         </button>
       </div>
     </div>

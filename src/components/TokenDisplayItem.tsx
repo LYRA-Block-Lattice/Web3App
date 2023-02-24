@@ -49,7 +49,7 @@ const TokenDisplayItem: FunctionComponent<TokenDisplayItemType> = ({
             <b className="b3">{tokenDollar}</b>
           </div>
         </div>
-        <div className="line-div" />
+        <div className="frame-child5" />
       </div>
     </div>
   );

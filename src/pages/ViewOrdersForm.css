@@ -1,12 +1,12 @@
 .viewordersform,
-.wallet-card-group {
+.wallet-card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }
-.wallet-card-group {
+.wallet-card-container {
   flex: 1;
 }
 .viewordersform {

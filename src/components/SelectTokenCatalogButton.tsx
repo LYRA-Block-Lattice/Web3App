@@ -11,7 +11,7 @@ const SelectTokenCatalogButton: FunctionComponent<
 > = ({ imgurl, cat }) => {
   return (
     <button className="select-token-catalog-button">
-      <img className="icbaseline-generating-tokens-icon2" alt="" src={imgurl} />
+      <img className="icbaseline-generating-tokens-icon3" alt="" src={imgurl} />
       <div className="token-container">
         <b className="token1">{cat}</b>
       </div>

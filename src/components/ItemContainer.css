@@ -40,18 +40,18 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.div16 {
+.div7 {
   position: relative;
   line-height: 24px;
   font-weight: 600;
 }
 .content,
 .nft-showing-item,
-.price2 {
+.price {
   display: flex;
   justify-content: flex-start;
 }
-.price2 {
+.price {
   align-self: stretch;
   flex-direction: row;
   align-items: center;

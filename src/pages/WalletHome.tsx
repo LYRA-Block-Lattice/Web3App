@@ -48,7 +48,7 @@ const WalletHome: FunctionComponent = () => {
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="wallet-card-parent">
+      <div className="wallet-card-group">
         <PrimaryAccountContainer />
         <WalletToolBar />
         <div className="coinlisting">
@@ -66,20 +66,20 @@ const WalletHome: FunctionComponent = () => {
             tokenDollar="$2,183"
           />
           <div className="tokendisplayitem">
-            <div className="frame-group">
+            <div className="frame-container">
               <div className="lyralogoblueicon-parent">
                 <img
                   className="lyralogoblueicon"
                   alt=""
-                  src="../asserts/lyralogoblueicon@2x.png"
+                  src="../asserts/lyralogoblueicon4@2x.png"
                 />
                 <b className="custom-coin">Custom Coin</b>
                 <div className="cus-parent">
                   <b className="cus">1,234,525 CUS</b>
-                  <b className="b2">$2,183</b>
+                  <b className="b">$2,183</b>
                 </div>
               </div>
-              <div className="frame-item" />
+              <div className="frame-child" />
             </div>
           </div>
           <TokenDisplayItem

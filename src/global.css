@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 body {
@@ -14,10 +14,10 @@ body {
   /* fonts */
   --regular-body1: "Open Sans";
   --font-source-sans-pro: "Source Sans Pro";
-  --base-1-semibold: Inter;
-  --font-montserrat: Montserrat;
   --font-roboto: Roboto;
   --uppercase-small: Poppins;
+  --base-1-semibold: Inter;
+  --font-montserrat: Montserrat;
 
   /* font sizes */
   --uppercase-small-size: 10px;
@@ -37,39 +37,39 @@ body {
   --white1: #fff;
   --subtitle-text: #888;
   --color-gray-200: rgba(0, 0, 0, 0.05);
+  --color-gray-300: rgba(0, 0, 0, 0.32);
   --text-secondary1: rgba(0, 0, 0, 0.54);
-  --color-gray-400: rgba(0, 0, 0, 0.32);
   --selectable1: rgba(255, 255, 255, 0);
+  --primary1: #0ebd8d;
   --primary-text1: #434343;
   --text-primary-dark1: #424242;
   --color-darkslategray-300: #383838;
   --color-darkslategray-400: #292c33;
   --default-black: #272c34;
-  --primary1: #0ebd8d;
   --black-0000001001: #000;
+  --color-darkgray: #979797;
+  --light: #f9f9f9;
+  --color-whitesmoke-200: #f5f4f5;
+  --color-whitesmoke-300: #ececec;
+  --color-whitesmoke-400: rgba(238, 238, 238, 0.26);
+  --info1: #2196f3;
+  --buy1: #7ed321;
+  --color-silver-100: rgba(209, 190, 190, 0.47);
   --color-gainsboro-100: #e3e4e5;
   --color-gainsboro-200: #dfe0e5;
   --color-gainsboro-300: #e0e0e0;
   --color-gainsboro-400: #dfdfdf;
   --color-gainsboro-500: rgba(217, 217, 217, 0);
-  --color-forestgreen: #008d30;
-  --info1: #2196f3;
-  --light: #f9f9f9;
-  --color-whitesmoke-200: #f5f4f5;
-  --color-whitesmoke-300: #ececec;
-  --color-whitesmoke-400: rgba(238, 238, 238, 0.26);
-  --color-lightyellow: #f6ffde;
-  --color-mediumslateblue: #766ae7;
   --secondary1: #fc7c00;
-  --color-silver-100: rgba(209, 190, 190, 0.47);
+  --color-forestgreen: #008d30;
+  --sell1: #fa7268;
   --color-dimgray-100: #717171;
   --text-dark-60: #686777;
   --color-dimgray-300: #656565;
-  --tertiary: #1ec8a5;
-  --color-darkgray: #979797;
-  --buy1: #7ed321;
-  --sell1: #fa7268;
   --accent-strong-blue: #554af0;
+  --color-mediumslateblue: #766ae7;
+  --color-lightyellow: #f6ffde;
+  --tertiary: #1ec8a5;
 
   /* Gaps */
   --gap-6xs: 1px;
@@ -112,8 +112,8 @@ body {
   --padding-9xl: 84px;
 
   /* border radiuses */
-  --br-5xs: 2px;
-  --br-4xs: 2.5px;
+  --br-5xs: 2.5px;
+  --br-4xs: 2px;
   --br-3xs: 5px;
   --br-2xs: 8px;
   --br-xs: 10px;

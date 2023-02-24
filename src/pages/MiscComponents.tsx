@@ -34,6 +34,10 @@ const MiscComponents: FunctionComponent = () => {
     //TODO: toggle the bellow table
   }, []);
 
+  const onBannerImage1Click = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   const onBannerImage4Click = useCallback(() => {
     //TODO: toggle the bellow table
   }, []);
@@ -50,7 +54,7 @@ const MiscComponents: FunctionComponent = () => {
           <ProductContainer openGeneralPopup={openGeneralPopup1} />
         </div>
         <OrderCard onBannerImageClick={onBannerImageClick} />
-        <TradeCard />
+        <TradeCard onBannerImage1Click={onBannerImage1Click} />
         <SendCard txType="Send" />
         <ReceiveCard txType="Receive" />
         <MarketOrder onBannerImage4Click={onBannerImage4Click} />

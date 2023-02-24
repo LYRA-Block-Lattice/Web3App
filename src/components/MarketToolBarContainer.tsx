@@ -18,46 +18,46 @@ const MarketToolBarContainer: FunctionComponent<MarketToolBarContainerType> = ({
 }) => {
   return (
     <div className="markettoolbar">
-      <div className="swap-button-parent">
-        <button className="swap-button">
+      <div className="swap-button-group">
+        <button className="dex-button">
           <img
-            className="home-icon-interlocution"
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution}
           />
-          <div className="ranking">Market</div>
+          <div className="ranking5">Market</div>
         </button>
-        <button className="swap-button">
+        <button className="dex-button">
           <img
-            className="home-icon-interlocution"
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution1}
           />
-          <div className="ranking">New Sell</div>
+          <div className="ranking5">New Sell</div>
         </button>
-        <button className="swap-button">
+        <button className="dex-button">
           <img
-            className="home-icon-interlocution"
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution2}
           />
-          <div className="ranking">Orders</div>
+          <div className="ranking5">Orders</div>
         </button>
-        <button className="swap-button">
+        <button className="dex-button">
           <img
-            className="home-icon-interlocution"
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution3}
           />
-          <div className="ranking">Trades</div>
+          <div className="ranking5">Trades</div>
         </button>
-        <button className="swap-button">
+        <button className="dex-button">
           <img
-            className="home-icon-interlocution"
+            className="home-icon-interlocution5"
             alt=""
             src={homeIconInterlocution4}
           />
-          <div className="ranking4">ODR</div>
+          <div className="ranking9">ODR</div>
         </button>
       </div>
     </div>
