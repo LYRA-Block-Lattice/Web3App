@@ -23,11 +23,11 @@ const TabHeader: FunctionComponent<TabHeaderType> = ({
 
   return (
     <button
-      className="token-container"
+      className="token-wrapper"
       style={selectTokenButtonStyle}
       onClick={() => onSelect(cat)}
     >
-      <b className="nft">{cat}</b>
+      <b className="token">{cat}</b>
     </button>
   );
 };

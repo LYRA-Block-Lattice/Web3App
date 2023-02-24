@@ -1,4 +1,4 @@
-.frame-child,
+.group-icon,
 .illus1-child {
   position: absolute;
   max-width: 100%;
@@ -15,7 +15,7 @@
   opacity: 0.08;
   mix-blend-mode: normal;
 }
-.frame-child {
+.group-icon {
   height: 88.36%;
   width: 98.35%;
   top: 0.17%;
@@ -68,7 +68,7 @@
   width: 24.55px;
   height: 2.45px;
 }
-.frame-item {
+.frame-child1 {
   position: absolute;
   height: 8.4%;
   width: 24.79%;
@@ -85,7 +85,7 @@
   width: 11.05px;
   height: 1.83px;
 }
-.frame-inner {
+.frame-child2 {
   position: absolute;
   height: 8.33%;
   width: 24.79%;
@@ -102,7 +102,7 @@
   width: 11.21px;
   height: 2.44px;
 }
-.group-icon {
+.frame-child3 {
   position: absolute;
   height: 8.11%;
   width: 24.79%;
@@ -119,12 +119,12 @@
   width: 19.2px;
   height: 2.44px;
 }
-.frame-child1,
+.frame-child4,
 .group-parent {
   position: absolute;
   overflow: hidden;
 }
-.frame-child1 {
+.frame-child4 {
   height: 61.15%;
   width: 70.96%;
   top: 38.6%;
@@ -159,7 +159,7 @@
   align-items: center;
   justify-content: flex-start;
 }
-.primary-button1 {
+.primary-button7 {
   position: relative;
   font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
@@ -169,7 +169,7 @@
   color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button3 {
+.prepare-sell-order-button14 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -184,7 +184,7 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button3:hover {
+.prepare-sell-order-button14:hover {
   background-color: var(--color-mediumslateblue);
 }
 .mini-button {
@@ -197,7 +197,7 @@
   color: var(--color-darkslategray-300);
   text-align: center;
 }
-.prepare-sell-order-button4 {
+.prepare-sell-order-button15 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);

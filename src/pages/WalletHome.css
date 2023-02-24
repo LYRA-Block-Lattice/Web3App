@@ -6,9 +6,10 @@
   object-fit: cover;
 }
 .lyra-coin {
+  align-self: stretch;
   flex: 1;
-  display: inline-block;
-  height: 24px;
+  display: flex;
+  align-items: center;
 }
 .b2,
 .lyr,
@@ -38,7 +39,7 @@
   align-items: center;
   gap: var(--gap-xs);
 }
-.line-div {
+.frame-child {
   position: relative;
   border-top: 1px solid var(--color-gainsboro-200);
   box-sizing: border-box;

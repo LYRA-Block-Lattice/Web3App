@@ -364,7 +364,7 @@ const AssertDetailView: FunctionComponent = () => {
                 alt=""
                 src="../asserts/evapricetagsoutline.svg"
               />
-              <div className="primary-button7">Make offer</div>
+              <div className="primary-button4">Make offer</div>
             </button>
           </div>
         </div>

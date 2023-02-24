@@ -84,13 +84,13 @@ const SellFlow: FunctionComponent = () => {
       <div className="returncollateral">1000 LYR</div>
       <div className="prepare-sell-order-button-parent">
         <button
-          className="prepare-sell-order-button8"
+          className="prepare-sell-order-button1"
           onClick={onPrepareSellOrderButtonClick}
         >
-          <div className="primary-button4">Back</div>
+          <div className="primary-button1">Back</div>
         </button>
-        <button className="prepare-sell-order-button9">
-          <div className="primary-button5">Place sell order</div>
+        <button className="prepare-sell-order-button2">
+          <div className="primary-button2">Place sell order</div>
         </button>
       </div>
       <div className="group8">

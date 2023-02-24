@@ -1,10 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
-import StartToCreateOrder from "./pages/StartToCreateOrder";
-import CreateNFTForm from "./pages/CreateNFTForm";
-import CreateWallet from "./pages/CreateWallet";
-import OpenWallet from "./pages/OpenWallet";
 import ScanToPay from "./pages/ScanToPay";
 import About from "./pages/About";
 import UserProfile from "./pages/UserProfile";
@@ -20,6 +16,10 @@ import SellTokenToToken from "./pages/SellTokenToToken";
 import ViewTradesForm from "./pages/ViewTradesForm";
 import ViewOrdersForm from "./pages/ViewOrdersForm";
 import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
+import CreateNFTForm from "./pages/CreateNFTForm";
+import StartToCreateOrder from "./pages/StartToCreateOrder";
+import CreateWallet from "./pages/CreateWallet";
+import OpenWallet from "./pages/OpenWallet";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
 
@@ -41,22 +41,6 @@ function App() {
 
     switch (pathname) {
       case "/":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/starttocreateorder":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createnftform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createwallet":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/openwallet":
         title = "";
         metaDescription = "";
         break;
@@ -120,6 +104,22 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/createnftform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/starttocreateorder":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/createwallet":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/openwallet":
+        title = "";
+        metaDescription = "";
+        break;
     }
 
     if (title) {
@@ -139,14 +139,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Market />} />
-
-      <Route path="/starttocreateorder" element={<StartToCreateOrder />} />
-
-      <Route path="/createnftform" element={<CreateNFTForm />} />
-
-      <Route path="/createwallet" element={<CreateWallet />} />
-
-      <Route path="/openwallet" element={<OpenWallet />} />
 
       <Route path="/scantopay" element={<ScanToPay />} />
 
@@ -182,6 +174,14 @@ function App() {
         path="/createordersuccessform"
         element={<CreateOrderSuccessForm />}
       />
+
+      <Route path="/createnftform" element={<CreateNFTForm />} />
+
+      <Route path="/starttocreateorder" element={<StartToCreateOrder />} />
+
+      <Route path="/createwallet" element={<CreateWallet />} />
+
+      <Route path="/openwallet" element={<OpenWallet />} />
     </Routes>
   );
 }

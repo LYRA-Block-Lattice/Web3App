@@ -28,9 +28,9 @@ const SelectTokenCatalogButton: FunctionComponent<
       ref={xref}
       id={`${act}-${cat}`}
     >
-      <img className="icbaseline-generating-tokens-icon2" alt="" src={imgurl} />
-      <div className="token-wrapper">
-        <b className="token">{cat}</b>
+      <img className="icbaseline-generating-tokens-icon3" alt="" src={imgurl} />
+      <div className="token-container">
+        <b className="token1">{cat}</b>
       </div>
     </button>
   );

@@ -62,7 +62,7 @@ const Market: FunctionComponent = () => {
                     <img
                       className="icbaseline-generating-tokens-icon"
                       alt=""
-                      src="../asserts/icbaselinegeneratingtokens2.svg"
+                      src="../asserts/icbaselinegeneratingtokens.svg"
                     />
                     <img
                       className="order-image-child"
@@ -72,7 +72,7 @@ const Market: FunctionComponent = () => {
                     <img
                       className="icbaseline-generating-tokens-icon"
                       alt=""
-                      src="../asserts/carbonuserservicedesk2.svg"
+                      src="../asserts/carbonuserservicedesk.svg"
                     />
                   </div>
                   <div className="order-status">
@@ -109,7 +109,7 @@ const Market: FunctionComponent = () => {
                     <img
                       className="icbaseline-generating-tokens-icon"
                       alt=""
-                      src="../asserts/icbaselinegeneratingtokens2.svg"
+                      src="../asserts/icbaselinegeneratingtokens.svg"
                     />
                     <img
                       className="order-image-child"
@@ -119,7 +119,7 @@ const Market: FunctionComponent = () => {
                     <img
                       className="icbaseline-generating-tokens-icon"
                       alt=""
-                      src="../asserts/carbonuserservicedesk3.svg"
+                      src="../asserts/carbonuserservicedesk1.svg"
                     />
                   </div>
                   <div className="order-status">
