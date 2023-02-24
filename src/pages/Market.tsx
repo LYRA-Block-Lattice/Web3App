@@ -24,30 +24,6 @@ const Market: FunctionComponent = () => {
     navigate("/starttocreateorder");
   }, [navigate]);
 
-  const onFrameButtonClick = useCallback(() => {
-    setCat("Token");
-  }, []);
-
-  const onFrameButton1Click = useCallback(() => {
-    //TODO: sel nft
-    setCat("NFT");
-  }, []);
-
-  const onFrameButton2Click = useCallback(() => {
-    //TODO: sel fiat
-    setCat("Fiat");
-  }, []);
-
-  const onFrameButton3Click = useCallback(() => {
-    //TODO: sel goods
-    setCat("Goods");
-  }, []);
-
-  const onFrameButton4Click = useCallback(() => {
-    //TODO: sel services
-    setCat("Service");
-  }, []);
-
   const onSwapButton1Click = useCallback(() => {
     navigate("/viewordersform");
   }, [navigate]);
@@ -76,13 +52,7 @@ const Market: FunctionComponent = () => {
           />
         </div>
         <div className="tradableorderssection">
-          <CatalogTab
-            onFrameButtonClick={onFrameButtonClick}
-            onFrameButton1Click={onFrameButton1Click}
-            onFrameButton2Click={onFrameButton2Click}
-            onFrameButton3Click={onFrameButton3Click}
-            onFrameButton4Click={onFrameButton4Click}
-          />
+          <CatalogTab onSelect={(cat) => setCat(cat)} />
           <DisplaySellItems cat={cat} />
           <div className="ordercard">
             <div className="order-brief-section">

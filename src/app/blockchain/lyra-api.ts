@@ -195,11 +195,11 @@ export class LyraApi {
     precision: number,
     supply: number,
     isFinalSupply: boolean,
-    owner: string | null, // shop name
-    address: string | null, // shop URL
-    currency: string | null, // USD
+    owner: string | undefined, // shop name
+    address: string | undefined, // shop URL
+    currency: string | undefined, // USD
     contractType: ContractTypes, // reward or discount or custom
-    tags: Record<string, string> | null
+    tags: Record<string, string> | undefined
   ) {
     try {
       var ret = await BlockchainAPI.GetLastBlock(this.accountId);
@@ -225,13 +225,13 @@ export class LyraApi {
       gensBlock.Owner = owner;
       gensBlock.Address = address;
       gensBlock.Currency = currency;
-      gensBlock.Icon = null;
-      gensBlock.Image = null;
-      gensBlock.Custom1 = null;
-      gensBlock.Custom2 = null;
-      gensBlock.Custom3 = null;
+      gensBlock.Icon = undefined;
+      gensBlock.Image = undefined;
+      gensBlock.Custom1 = undefined;
+      gensBlock.Custom2 = undefined;
+      gensBlock.Custom3 = undefined;
       gensBlock.Tags = tags;
-      gensBlock.SourceHash = null;
+      gensBlock.SourceHash = undefined;
 
       gensBlock.Balances[ticker] = supply * LyraGlobal.BALANCERATIO;
 
@@ -252,7 +252,7 @@ export class LyraApi {
     description: string,
     supply: number,
     metadataUri: string,
-    owner: string | null
+    owner: string | undefined
   ) {
     try {
       var ret = await BlockchainAPI.GetLastBlock(this.accountId);
@@ -277,15 +277,15 @@ export class LyraApi {
       gensBlock.NonFungibleType = NonFungibleTokenTypes.Collectible;
       gensBlock.NonFungibleKey = "";
       gensBlock.Owner = owner;
-      gensBlock.Address = null;
-      gensBlock.Currency = null;
-      gensBlock.Icon = null;
-      gensBlock.Image = null;
+      gensBlock.Address = undefined;
+      gensBlock.Currency = undefined;
+      gensBlock.Icon = undefined;
+      gensBlock.Image = undefined;
       gensBlock.Custom1 = name;
       gensBlock.Custom2 = metadataUri;
-      gensBlock.Custom3 = null;
-      gensBlock.Tags = null;
-      gensBlock.SourceHash = null;
+      gensBlock.Custom3 = undefined;
+      gensBlock.Tags = undefined;
+      gensBlock.SourceHash = undefined;
 
       gensBlock.Balances[ticker] = supply * LyraGlobal.BALANCERATIO;
 
@@ -308,7 +308,7 @@ export class LyraApi {
     supply: number,
     metadataUri: string,
     descSignature: string,
-    owner: string | null
+    owner: string | undefined
   ): Promise<AuthorizationAPIResult> {
     try {
       var ret = await BlockchainAPI.GetLastBlock(this.accountId);
@@ -345,15 +345,15 @@ export class LyraApi {
       gensBlock.NonFungibleType = NonFungibleTokenTypes.TradeOnly;
       gensBlock.NonFungibleKey = "";
       gensBlock.Owner = owner;
-      gensBlock.Address = null;
-      gensBlock.Currency = null;
-      gensBlock.Icon = null;
-      gensBlock.Image = null;
+      gensBlock.Address = undefined;
+      gensBlock.Currency = undefined;
+      gensBlock.Icon = undefined;
+      gensBlock.Image = undefined;
       gensBlock.Custom1 = name;
       gensBlock.Custom2 = metadataUri;
       gensBlock.Custom3 = descSignature;
-      gensBlock.Tags = null;
-      gensBlock.SourceHash = null;
+      gensBlock.Tags = undefined;
+      gensBlock.SourceHash = undefined;
 
       gensBlock.Balances[ticker] = supply * LyraGlobal.BALANCERATIO;
 

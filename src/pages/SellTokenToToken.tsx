@@ -202,7 +202,12 @@ const SellTokenToToken: FunctionComponent = () => {
               margin="none"
             />
             <div className="worth-in-dollar-100-wrapper">
-              <div className="worth-in-dollar">Worth in dollar: $100</div>
+              <div className="worth-in-dollar">
+                Worth in dollar: ${" "}
+                {pricedollar.toLocaleString(undefined, {
+                  maximumFractionDigits: 2
+                })}
+              </div>
             </div>
           </div>
           <div className="sellatprice-parent">
@@ -218,7 +223,12 @@ const SellTokenToToken: FunctionComponent = () => {
               margin="none"
             />
             <div className="worth-in-dollar-100-wrapper">
-              <div className="worth-in-dollar">Worth in dollar: $100</div>
+              <div className="worth-in-dollar">
+                Worth in dollar: ${" "}
+                {eqdollar.toLocaleString(undefined, {
+                  maximumFractionDigits: 2
+                })}
+              </div>
             </div>
           </div>
           <TextField

@@ -1,39 +1,59 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback, useMemo, useState } from "react";
+import CSS, { Property } from "csstype";
 import "./CatalogTab.css";
+
+const cats = ["Token", "NFT", "Fiat", "Goods", "Service"];
+
+type TabHeaderType = {
+  cat: string;
+  selected: boolean;
+  onSelect: (cat: string) => void;
+};
+
+const TabHeader: FunctionComponent<TabHeaderType> = ({
+  cat,
+  selected,
+  onSelect
+}) => {
+  const selectTokenButtonStyle: CSS.Properties = useMemo(() => {
+    return {
+      backgroundColor: selected ? "#0EBD8D" : "#EEEEEE"
+    };
+  }, [cat, selected]);
+
+  return (
+    <button
+      className="token-container"
+      style={selectTokenButtonStyle}
+      onClick={() => onSelect(cat)}
+    >
+      <b className="nft">{cat}</b>
+    </button>
+  );
+};
 
 type CatalogTabType = {
   /** Action props */
-  onFrameButtonClick?: () => void;
-  onFrameButton1Click?: () => void;
-  onFrameButton2Click?: () => void;
-  onFrameButton3Click?: () => void;
-  onFrameButton4Click?: () => void;
+  selcat?: string;
+  onSelect: (cat: string) => void;
 };
 
 const CatalogTab: FunctionComponent<CatalogTabType> = ({
-  onFrameButtonClick,
-  onFrameButton1Click,
-  onFrameButton2Click,
-  onFrameButton3Click,
-  onFrameButton4Click,
+  selcat,
+  onSelect
 }) => {
+  const onSelectCat = useCallback(
+    (cat: string) => {
+      onSelect(cat);
+    },
+    [selcat]
+  );
+
   return (
     <div className="catalogtab">
-      <button className="token-container" onClick={onFrameButtonClick}>
-        <b className="nft">Token</b>
-      </button>
-      <button className="nft-wrapper" onClick={onFrameButton1Click}>
-        <b className="nft">NFT</b>
-      </button>
-      <button className="nft-wrapper" onClick={onFrameButton2Click}>
-        <b className="nft">Fiat</b>
-      </button>
-      <button className="nft-wrapper" onClick={onFrameButton3Click}>
-        <b className="nft">Goods</b>
-      </button>
-      <button className="nft-wrapper" onClick={onFrameButton4Click}>
-        <b className="nft">Service</b>
-      </button>
+      {cats.map((cat) => (
+        <TabHeader cat={cat} selected={selcat === cat} onSelect={onSelectCat} />
+      ))}
     </div>
   );
 };

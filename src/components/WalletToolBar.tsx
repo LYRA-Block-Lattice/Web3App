@@ -3,9 +3,14 @@ import { useNavigate } from "react-router-dom";
 import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
 import "./WalletToolBar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getAuthSelector } from "../app/selectors";
+import * as actionTypes from "../app/actionTypes";
 
 const WalletToolBar: FunctionComponent = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const auth = useSelector(getAuthSelector);
   const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
 
   const onSwapButtonClick = useCallback(() => {
@@ -14,6 +19,15 @@ const WalletToolBar: FunctionComponent = () => {
 
   const onSendButtonClick = useCallback(() => {
     navigate("/sendtokenform");
+  }, [navigate]);
+
+  const onReceiveButtonClick = useCallback(() => {
+    if (!auth.hasKey) navigate("/openwallet");
+    else
+      dispatch({
+        type: actionTypes.WALLET_RECEIVE,
+        payload: auth.accountId
+      });
   }, [navigate]);
 
   const openSideMenuPopup = useCallback(() => {
@@ -53,7 +67,7 @@ const WalletToolBar: FunctionComponent = () => {
               />
               <div className="ranking5">Send</div>
             </button>
-            <button className="send-button">
+            <button className="send-button" onClick={onReceiveButtonClick}>
               <img
                 className="home-icon-interlocution5"
                 alt=""

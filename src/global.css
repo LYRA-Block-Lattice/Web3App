@@ -130,6 +130,7 @@ body {
 }
 .main-content {
   padding-top: 56px !important; /* replace with the height of your sticky header */
+  padding-bottom: 96px !important; /* replace with the height of your sticky footer */
   height: 100% !important;
   /* other styles for main content */
 }

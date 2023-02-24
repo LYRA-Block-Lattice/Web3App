@@ -31,7 +31,7 @@ export class Block {
   TimeStamp: string;
   Version: number;
   BlockType: BlockTypes;
-  PreviousHash: string | null;
+  PreviousHash: string | undefined;
   ServiceHash!: string;
   Tags: any;
 
@@ -39,8 +39,8 @@ export class Block {
     this.TimeStamp = new Date().toISOString();
     this.Version = LyraGlobal.DatabaseVersion;
     this.BlockType = this.GetBlockType();
-    this.PreviousHash = null;
-    this.Tags = null;
+    this.PreviousHash = undefined;
+    this.Tags = undefined;
     if (blockData === undefined) {
       this.Height = 1;
     } else {
@@ -132,17 +132,18 @@ export class TransactionBlock extends Block {
 
   constructor(blockData: string | undefined) {
     super(blockData);
-    this.NonFungibleToken = null;
+    this.NonFungibleToken = undefined;
     if (blockData === undefined) {
       this.Balances = {};
 
-      this.VoteFor = null;
+      this.VoteFor = undefined;
     } else {
       const decodedBlockData = JSON.parse(blockData);
       this.AccountID = decodedBlockData.AccountID;
       this.Balances = decodedBlockData.Balances;
 
-      this.VoteFor = decodedBlockData.VoteFor;
+      if (decodedBlockData.VoteFor != null)
+        this.VoteFor = decodedBlockData.VoteFor;
     }
   }
 
@@ -180,7 +181,7 @@ export class SendTransferBlock extends TransactionBlock {
 }
 
 export class ReceiveTransferBlock extends TransactionBlock {
-  SourceHash!: string | null;
+  SourceHash!: string | undefined;
 
   constructor(blockData: string | undefined) {
     super(blockData);
@@ -236,14 +237,14 @@ export class TokenGenesisBlock extends ReceiveTransferBlock {
   IsNonFungible!: boolean;
   NonFungibleType!: NonFungibleTokenTypes;
   NonFungibleKey!: string;
-  Owner!: string | null;
-  Address!: string | null;
-  Currency!: string | null;
-  Icon!: string | null;
-  Image!: string | null;
-  Custom1!: string | null;
-  Custom2!: string | null;
-  Custom3!: string | null;
+  Owner!: string | undefined;
+  Address!: string | undefined;
+  Currency!: string | undefined;
+  Icon!: string | undefined;
+  Image!: string | undefined;
+  Custom1!: string | undefined;
+  Custom2!: string | undefined;
+  Custom3!: string | undefined;
 
   constructor(blockData: string) {
     super(blockData);

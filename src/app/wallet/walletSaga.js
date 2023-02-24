@@ -125,88 +125,6 @@ function* send(action) {
     });
   }
 }
-/*
-function* createWS(accountId) {
-  var url = "wss://testnet.lyra.live/api/v1/socket";
-  const network = process.env.REACT_APP_NETWORK_ID;
-  if (network === "mainnet") url = "wss://mainnet.lyra.live/api/v1/socket";
-  if (network === "devnet") url = "wss://devnet.lyra.live/api/v1/socket";
-  console.log(`creating ws for ${network} using url ${url}`);
-
-  const requestTimeoutMs = 30000;
-
-  const ws = new JsonRpcWebsocket(url, requestTimeoutMs, (error) => {
-    console.log("json ws websocket error", error);
-    // reconnect
-    //dispatch({ type: actionTypes.WSRPC_CLOSED, payload: error.message });
-  });
-
-  try {
-    yield ws.open();
-  } catch (error) {
-    console.log("error ws.open");
-  }
-
-  if (ws === null)
-    // race condition
-    return;
-
-  ws.on("Notify", (news) => {
-    console.log("on notify: " + news.catalog);
-    switch (news.catalog) {
-      case "Receiving":
-        dispatch({
-          type: actionTypes.WSRPC_SERVER_NOTIFY_RECV,
-          payload: news.content
-        });
-        break;
-      case "Settlement":
-        dispatch({
-          type: actionTypes.WSRPC_SERVER_NOTIFY_SETTLEMENT,
-          payload: news.content
-        });
-        break;
-      default:
-        break;
-    }
-    console.log("Got news notify", news);
-  });
-
-  ws.on("Sign", (hash, msg, accountId) => {
-    console.log("Signing " + hash + " of " + msg + " for " + accountId);
-
-    try {
-      const userToken = JSON.parse(sessionStorage.getItem("token"));
-      var signt = LyraCrypto.Sign(msg, userToken.pvt);
-      console.log("Signature", signt);
-
-      return ["der", signt];
-    } catch (err) {
-      console.log("Error sign message", err);
-      return ["err", err.toString()];
-    }
-  });
-
-  try {
-    const response = yield ws.call("Status", ["3.6.6.0", network]);
-    yield put({ type: actionTypes.WSRPC_STATUS_SUCCESS, payload: response });
-
-    // we do all event by the events api
-    //yield ws.call("Monitor", [accountId]);
-
-    // and balance
-    // const balanceResp = yield ws.call("Balance", [accountId]);
-    // yield put({
-    //   type: actionTypes.WALLET_BALANCE,
-    //   payload: balanceResp.result
-    // });
-  } catch (error) {
-    yield put({ type: actionTypes.WSRPC_STATUS_FAILED, payload: error });
-  }
-
-  return ws;
-  //yield put({ type: actionTypes.WSRPC_CREATED });
-}*/
 
 function* dexSignIn(action) {
   try {
@@ -257,11 +175,11 @@ function* mintToken(action) {
       8,
       action.payload.supply,
       true,
-      null,
-      null,
-      null,
+      undefined,
+      undefined,
+      undefined,
       ContractTypes.Cryptocurrency,
-      null
+      undefined
     );
     yield put({
       type: actionTypes.WALLET_RECEIVE,
