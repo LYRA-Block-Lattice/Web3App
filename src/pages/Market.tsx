@@ -1,7 +1,7 @@
 import { FunctionComponent, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import TopNavigationBar from "../components/TopNavigationBar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
 import DisplaySellItems from "../dup/DisplaySellItems";
 import BottomNavigationBar from "../components/BottomNavigationBar";
@@ -14,9 +14,16 @@ import { useNavigate } from "react-router";
 
 const Market: FunctionComponent = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
   const auth = useSelector(getAuthSelector);
   const [cat, setCat] = useState("");
+
+  useEffect(() => {
+    dispatch({
+      type: "MARKET_GET_DEALER"
+    });
+  }, [dispatch]);
 
   const onNewSell = useCallback(() => {
     //if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");

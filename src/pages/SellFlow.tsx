@@ -82,7 +82,7 @@ const SellFlow: FunctionComponent = () => {
       <div className="prepare-sell-order-button-parent">
         <button
           className="prepare-sell-order-button1"
-          onClick={onPrepareSellOrderButtonClick}
+          onClick={() => navigate(-1)}
         >
           <div className="primary-button1">Back</div>
         </button>
