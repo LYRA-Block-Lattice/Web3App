@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect, useState, useCallback } from "react";
+import ReactLoading from "react-loading";
 import { Box, Slider } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
 import CollateralCalculation from "../components/CollateralCalculation";
@@ -25,7 +26,6 @@ import {
   TokenGenesisBlock
 } from "../app/blockchain/blocks/block";
 import { NftMetadata } from "../app/blockchain/blocks/meta";
-import CollateralCalculation from "../components/CollateralCalculation";
 
 interface IDealerUser {
   UserName: string;
@@ -152,7 +152,15 @@ const AssertDetailView: FunctionComponent = () => {
       <TopNavigationBar title="Assert Details" />
       {isLoading && (
         <div className="overlay">
-          <p>Loading...</p>
+          <div className="center">
+            <h1>Loading...</h1>
+            <ReactLoading
+              type="spinningBubbles"
+              color="#ffffff"
+              height={100}
+              width={100}
+            />
+          </div>
         </div>
       )}
       <div className="assertdetailview-parent">

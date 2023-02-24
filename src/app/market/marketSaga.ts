@@ -4,18 +4,39 @@ import {
   take,
   takeLatest,
   takeEvery,
-  getContext
+  getContext,
+  ChannelTakeEffect
 } from "redux-saga/effects";
-import { eventChannel } from "redux-saga";
+import { EventChannel, eventChannel } from "redux-saga";
 import { HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
 import { LyraCrypto } from "../blockchain/lyra-crypto";
 import * as actionTypes from "../actionTypes";
-import { BlockchainAPI } from "../blockchain/blockchain-api";
+import {
+  BlockchainAPI,
+  IDealerInfo,
+  IDealerOrder,
+  IOrdersResult,
+  IOwnerOrder,
+  IOwnerTrade
+} from "../blockchain/blockchain-api";
+import {
+  MultiBlockAPIResult,
+  SimpleJsonAPIResult
+} from "../blockchain/blocks/meta";
+import { IDao } from "../blockchain/blocks/block";
+import { NotUndefined } from "@redux-saga/types";
 
-let connection;
+let connection: HubConnection | undefined = undefined;
 
-function* getOrders(action) {
-  const orders = yield BlockchainAPI.fetchOrders(action.payload.cat);
+interface IAction {
+  type: string;
+  payload: any;
+}
+
+function* getOrders(action: IAction) {
+  const orders: IOrdersResult = yield BlockchainAPI.fetchOrders(
+    action.payload.cat
+  );
   yield put({
     type: actionTypes.MARKET_GET_ORDERS_SUCCESS,
     payload: {
@@ -25,8 +46,8 @@ function* getOrders(action) {
   });
 }
 
-function* getOwnOrders(action) {
-  const orders = yield BlockchainAPI.fetchOrdersByOwner(
+function* getOwnOrders(action: IAction) {
+  const orders: IOwnerOrder[] = yield BlockchainAPI.fetchOrdersByOwner(
     action.payload.accountId
   );
   yield put({
@@ -35,8 +56,8 @@ function* getOwnOrders(action) {
   });
 }
 
-function* getOwnTrades(action) {
-  const trades = yield BlockchainAPI.fetchTradesByOwner(
+function* getOwnTrades(action: IAction) {
+  const trades: IOwnerTrade[] = yield BlockchainAPI.fetchTradesByOwner(
     action.payload.accountId
   );
   yield put({
@@ -45,16 +66,18 @@ function* getOwnTrades(action) {
   });
 }
 
-function* getOrderById(action) {
-  const order = yield BlockchainAPI.fetchOrderById(action.payload.orderId);
+function* getOrderById(action: IAction) {
+  const order: IDealerOrder = yield BlockchainAPI.fetchOrderById(
+    action.payload.orderId
+  );
   yield put({
     type: actionTypes.MARKET_GET_ORDER_BY_ID_SUCCESS,
     payload: order
   });
 }
 
-function* getDealer(action) {
-  const brief = yield BlockchainAPI.fetchDealer();
+function* getDealer(action: IAction) {
+  const brief: IDealerInfo = yield BlockchainAPI.fetchDealer();
   yield put({
     type: actionTypes.MARKET_GET_DEALER_OK,
     payload: {
@@ -65,8 +88,8 @@ function* getDealer(action) {
   });
 }
 
-function* getPrices(action) {
-  const quoteRet = yield BlockchainAPI.getPrices();
+function* getPrices(action: IAction) {
+  const quoteRet: SimpleJsonAPIResult = yield BlockchainAPI.getPrices();
   if (quoteRet.resultCode === 0) {
     yield put({
       type: actionTypes.MARKET_GET_PRICES_SUCCESS,
@@ -79,15 +102,18 @@ function* getPrices(action) {
   }
 }
 
-function* findDao(action) {
-  const dao = yield BlockchainAPI.searchDao(action.payload);
+function* findDao(action: IAction) {
+  const ret: MultiBlockAPIResult = yield BlockchainAPI.searchDao(
+    action.payload
+  );
+  const daos = ret.getDaos();
   yield put({
     type: actionTypes.BLOCKCHAIN_FIND_DAO_OK,
-    payload: dao
+    payload: daos
   });
 }
 
-function* setupDealerEvents(action) {
+function* setupDealerEvents(action: IAction) {
   const url = `https://dealer${process.env.REACT_APP_NETWORK_ID}.lyra.live/hub`;
   console.log(
     `"Setup dealer events SignalR for account ${action.payload.AccountId} with... `,
@@ -116,8 +142,8 @@ function* setupDealerEvents(action) {
 
       yield connection.start();
 
-      const userToken = JSON.parse(sessionStorage.getItem("token"));
-      var ret = yield BlockchainAPI.lastServiceHash();
+      const userToken = JSON.parse(sessionStorage.getItem("token")!);
+      var ret: string = yield BlockchainAPI.lastServiceHash();
       var signt = LyraCrypto.Sign(ret, userToken.pvt);
 
       yield connection.send("Join", {
@@ -141,11 +167,11 @@ function* setupDealerEvents(action) {
 
 // this function creates an event channel from a given event hub
 // Setup subscription to incoming `OnEvent` events
-function createDealerEventsChannel(hubConnection) {
+function createDealerEventsChannel(hubConnection: HubConnection) {
   // `eventChannel` takes a subscriber function
   // the subscriber function takes an `emit` argument to put messages onto the channel
   return eventChannel((emit) => {
-    const dealerEventHandler = (event) => {
+    const dealerEventHandler = (event: any) => {
       // puts event payload into the channel
       // this allows a Saga to take this payload from the returned channel
       emit(event);
@@ -165,21 +191,24 @@ function createDealerEventsChannel(hubConnection) {
     // the subscriber must return an unsubscribe function
     // this will be invoked when the saga calls `channel.close` method
     const unsubscribe = () => {
-      hubConnection.close();
+      hubConnection.stop();
     };
 
     return unsubscribe;
   });
 }
 
-function* setup(action) {
+function* setup(action: IAction) {
   connection = yield setupDealerEvents(action);
   if (connection) {
-    const channel = yield call(createDealerEventsChannel, connection);
+    const channel: EventChannel<NotUndefined> = yield call(
+      createDealerEventsChannel,
+      connection
+    );
     try {
       while (true) {
         // take(END) will cause the saga to terminate by jumping to the finally block
-        let event = yield take(channel);
+        let event: ChannelTakeEffect<{} | null> = yield take(channel);
         yield put({ type: actionTypes.BLOCKCHAIN_EVENT, payload: event });
       }
     } finally {

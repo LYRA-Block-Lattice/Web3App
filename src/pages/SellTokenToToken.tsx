@@ -20,12 +20,6 @@ import {
 import * as actionTypes from "../app/actionTypes";
 import { IDao } from "../app/blockchain/blocks/block";
 
-interface customWindow extends Window {
-  rrComponent?: any;
-  rrProxy?: any;
-}
-declare const window: customWindow;
-
 interface IToken {
   token: string;
   domain: string;
@@ -59,6 +53,7 @@ const SellTokenToToken: FunctionComponent = () => {
   const [limitmin, setLimitmin] = useState<number>(0);
   const [limitmax, setLimitmax] = useState<number>(0);
 
+  const [daos, setDaos] = useState<IDao[]>([]);
   const [dao, setDao] = useState<IDao | null>(null);
   const [val, setVal] = useState<IToken>();
   const [totallyr, setTotalLYR] = useState<number>(0);
@@ -200,6 +195,7 @@ const SellTokenToToken: FunctionComponent = () => {
               placeholder="1.0"
               size="medium"
               margin="none"
+              onChange={(e) => setPrice(+e.target.value)}
             />
             <div className="worth-in-dollar-100-wrapper">
               <div className="worth-in-dollar">
@@ -221,6 +217,7 @@ const SellTokenToToken: FunctionComponent = () => {
               placeholder="1.0"
               size="medium"
               margin="none"
+              onChange={(e) => setEQPrice(+e.target.value)}
             />
             <div className="worth-in-dollar-100-wrapper">
               <div className="worth-in-dollar">
@@ -241,6 +238,7 @@ const SellTokenToToken: FunctionComponent = () => {
             placeholder="10"
             size="medium"
             margin="none"
+            onChange={(e) => setAmount(+e.target.value)}
           />
           <div className="limitoftrade">
             <TextField
@@ -272,7 +270,7 @@ const SellTokenToToken: FunctionComponent = () => {
           <Autocomplete
             sx={{ width: 320 }}
             disablePortal
-            options={market.daos}
+            options={daos}
             onInputChange={onDaoSearchChange}
             onChange={(event, value) => setDao(value)}
             isOptionEqualToValue={(option, value) => option.Name === value.Name}

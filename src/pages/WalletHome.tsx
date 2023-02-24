@@ -63,12 +63,12 @@ const CoinItem: FunctionComponent<CoinItemType> = ({ coins }) => {
               return (
                 <TokenDisplayItem
                   key={a.Ticker}
-                  coinIcon="../asserts/lyralogoblackicon@2x.png"
-                  coinName={a.Name ?? a.Ticker}
-                  amountText={a.Balance?.toLocaleString(undefined, {
+                  tokenIcon="../asserts/lyralogoblackicon@2x.png"
+                  tokenName={a.Name ?? a.Ticker}
+                  tokenAmount={a.Balance?.toLocaleString(undefined, {
                     maximumFractionDigits: 2
                   })}
-                  amountWorth={getWorth(a)}
+                  tokenDollar={getWorth(a)}
                 />
               );
           }

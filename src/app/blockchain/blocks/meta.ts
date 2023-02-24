@@ -1,3 +1,5 @@
+import { Block } from "./block";
+
 export interface Amounts {
   [key: string]: number;
 }
@@ -539,9 +541,22 @@ export class BlockAPIResult extends APIResult {
   public ResultBlockType!: BlockTypes;
 }
 
+export class MultiBlockAPIResult extends APIResult {
+  public blockDatas!: string[];
+  public ResultBlockTypes!: BlockTypes[];
+
+  getDaos(): Block[] {
+    const blocks: Block[] = [];
+    for (let i = 0; i < this.blockDatas.length; i++) {
+      blocks.push(JSON.parse(this.blockDatas[i]));
+    }
+    return blocks;
+  }
+}
+
 export class SimpleJsonAPIResult extends APIResult {
   public jsonString!: string;
-  public get data(): any {
+  public getdata(): any {
     return JSON.parse(this.jsonString);
   }
 }

@@ -1,10 +1,88 @@
+import { plainToClass } from "class-transformer";
 import {
   APIResult,
   AuthorizationAPIResult,
   BlockAPIResult,
+  MultiBlockAPIResult,
+  NftMetadata,
   SimpleJsonAPIResult
 } from "./blocks/meta";
 import ky from "ky-universal";
+import { Block, IDao, IUniOrder, TokenGenesisBlock } from "./blocks/block";
+
+export interface IOrdersResult {
+  OverStats: { _id: number; Count: number }[];
+  OwnerStats: {
+    _id: {
+      Owner: string;
+      State: number;
+      Name: string;
+      Avatar: string;
+    };
+    Count: number;
+  }[];
+  Daos: IDao[]; // could be a more specific type if we know the shape of the data
+  Orders: any[]; // could be a more specific type if we know the shape of the data
+}
+
+export interface IOwnerOrder {
+  daoid: string;
+  orderid: string;
+  status: string;
+  offering: string;
+  biding: string;
+  amount: number;
+  price: number;
+  limitmin: number;
+  limitmax: number;
+  time: string;
+  sold: number;
+  shelf: number;
+}
+
+export interface IOwnerTrade {
+  dir: string;
+  tradeId: string;
+  status: string;
+  offering: string;
+  biding: string;
+  amount: number;
+  price: number;
+  time: string;
+}
+
+export interface IDealerOrder {
+  OrderId: string;
+  Blocks: {
+    Order: IUniOrder;
+    Offgen: TokenGenesisBlock;
+    Bidgen: TokenGenesisBlock;
+    Dao: IDao;
+  };
+  Users: {
+    Seller: {
+      UserName: string;
+      AccountId: string;
+      AvatarId: string;
+    };
+    Author: {
+      UserName: string;
+      AccountId: string;
+      AvatarId: string;
+    };
+  };
+  Meta: NftMetadata;
+}
+
+export interface IDealerInfo {
+  Version: string;
+  Name: string;
+  AccountId: string;
+  ServiceId: string;
+  TelegramBotUsername: string;
+}
+
+type Constructor<T> = new () => T;
 
 export class BlockchainAPI {
   static networkid: string = "devnet";
@@ -32,6 +110,17 @@ export class BlockchainAPI {
       default:
         return "https://localhost:5201/showblock/" + id;
     }
+  };
+
+  static fetchJson2 = async <T>(
+    resultType: Constructor<T>,
+    url: string,
+    options: RequestInit = {}
+  ): Promise<T> => {
+    const response = await ky.get(url, options);
+    const data = await response.json();
+    const result = plainToClass(resultType, data);
+    return result;
   };
 
   static async fetchJson<T>(
@@ -127,7 +216,7 @@ export class BlockchainAPI {
   };
 
   static searchDao = (q: string) =>
-    this.fetchJson<any>(`${this.Block_API_v1}/FindDaos?q=${q}`);
+    this.fetchJson<MultiBlockAPIResult>(`${this.Block_API_v1}/FindDaos?q=${q}`);
 
   // Get a Tx block by AccountId
   static GetLastBlock = (accountId: string) =>
@@ -148,21 +237,37 @@ export class BlockchainAPI {
     this.fetchJson<any>(`${this.Block_API_v2}/Balance?accountId=${accountId}`);
 
   // Dealer API
-  static getPrices = () =>
-    this.fetchJson<SimpleJsonAPIResult>(`${this.Dealer_API}/GetPrices`);
+  static getPrices = async (): Promise<SimpleJsonAPIResult> =>
+    this.fetchJson2(SimpleJsonAPIResult, `${this.Dealer_API}/GetPrices`);
+
+  // static getPrices2 = async <T extends SimpleJsonAPIResult>(): Promise<T> => {
+  //   const url = `${this.Dealer_API}/GetPrices`;
+  //   const response = await ky.get(url);
+  //   const data = await response.json();
+  //   const x = plainToClass(T, data);
+  //   return x;
+  // };
+
   static fetchOrders = (catalog: string | undefined) =>
-    this.fetchJson<any>(`${this.Dealer_API}/Orders?catalog=${catalog}`);
+    this.fetchJson<IOrdersResult>(
+      `${this.Dealer_API}/Orders?catalog=${catalog}`
+    );
 
   static fetchOrderById = (orderId: string) =>
-    this.fetchJson<any>(`${this.Dealer_API}/Order?orderId=${orderId}`);
+    this.fetchJson<IDealerOrder>(`${this.Dealer_API}/Order?orderId=${orderId}`);
 
   static fetchOrdersByOwner = (owner: string) =>
-    this.fetchJson<any>(`${this.Dealer_API}/OrdersByOwner?ownerId=${owner}`);
+    this.fetchJson<IOwnerOrder[]>(
+      `${this.Dealer_API}/OrdersByOwner?ownerId=${owner}`
+    );
 
   static fetchTradesByOwner = (owner: string) =>
-    this.fetchJson<any>(`${this.Dealer_API}/TradesByOwner?ownerId=${owner}`);
+    this.fetchJson<IOwnerTrade[]>(
+      `${this.Dealer_API}/TradesByOwner?ownerId=${owner}`
+    );
 
-  static fetchDealer = () => this.fetchJson<any>(`${this.Dealer_API}/Dealer`);
+  static fetchDealer = () =>
+    this.fetchJson<IDealerInfo>(`${this.Dealer_API}/Dealer`);
   static uploadFile = (formData: FormData) =>
     this.postJson<any>(
       `${this.Dealer_API}/UploadFile`,

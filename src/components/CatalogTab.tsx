@@ -52,7 +52,12 @@ const CatalogTab: FunctionComponent<CatalogTabType> = ({
   return (
     <div className="catalogtab">
       {cats.map((cat) => (
-        <TabHeader cat={cat} selected={selcat === cat} onSelect={onSelectCat} />
+        <TabHeader
+          key={cat}
+          cat={cat}
+          selected={selcat === cat}
+          onSelect={onSelectCat}
+        />
       ))}
     </div>
   );
