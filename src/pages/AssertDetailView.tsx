@@ -1,6 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
 import { Box, Slider } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
+import CollateralCalculation from "../components/CollateralCalculation";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./AssertDetailView.css";
 
@@ -26,7 +27,7 @@ const AssertDetailView: FunctionComponent = () => {
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
       <div className="assertdetailview-parent">
-        <div className="collateralsection">
+        <div className="assertdetailview1">
           <div className="asserttitleregion">
             <div className="assertauthorsection">
               <div className="a-legend-nft">A legend NFT author</div>
@@ -139,7 +140,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-parent4">
+            <div className="frame-parent1">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
@@ -169,45 +170,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">Collateral and Fees</div>
             </div>
-            <div className="collateralcalculation">
-              <div className="collateralsection">
-                <div className="collateral-worth-label">
-                  <div className="tetherusdt">Collateral value: 120%</div>
-                  <div className="tetherusdt">1234 LYR</div>
-                </div>
-                <div className="collateral-worth-label1">
-                  <div className="tetherusdt">$ 103</div>
-                </div>
-              </div>
-              <div className="collateralsection">
-                <div className="collateral-worth-label">
-                  <div className="tetherusdt">DAO fee: 1%</div>
-                  <div className="tetherusdt">1234 LYR</div>
-                </div>
-                <div className="collateral-worth-label1">
-                  <div className="tetherusdt">$ 103</div>
-                </div>
-              </div>
-              <div className="collateralsection">
-                <div className="collateral-worth-label">
-                  <div className="tetherusdt">Network fee: 0.2%</div>
-                  <div className="tetherusdt">1234 LYR</div>
-                </div>
-                <div className="collateral-worth-label1">
-                  <div className="tetherusdt">$ 103</div>
-                </div>
-              </div>
-              <div className="collateralcalculation-child" />
-              <div className="collateralsection">
-                <div className="collateral-worth-label6">
-                  <div className="tetherusdt">1234 LYR</div>
-                </div>
-                <div className="collateral-worth-label7">
-                  <div className="tetherusdt">Total:</div>
-                  <div className="div9">$ 103</div>
-                </div>
-              </div>
-            </div>
+            <CollateralCalculation />
             <button className="prepare-sell-order-button4">
               <img
                 className="material-symbolsshare-icon"

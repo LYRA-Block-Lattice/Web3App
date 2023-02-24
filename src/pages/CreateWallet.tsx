@@ -37,7 +37,7 @@ const CreateWallet: FunctionComponent = () => {
         <div className="illus1">
           <img className="illus1-child" alt="" src="../asserts/group-3.svg" />
           <div className="group-parent">
-            <img className="group-icon" alt="" src="../asserts/group-42.svg" />
+            <img className="frame-item" alt="" src="../asserts/group-42.svg" />
             <div className="create-account">
               C<span className="r">r</span>
               <span className="e">e</span>a<span className="t">t</span>
@@ -56,28 +56,20 @@ const CreateWallet: FunctionComponent = () => {
               alt=""
               src="../asserts/youremailgmailc.svg"
             />
-            <img
-              className="frame-child1"
-              alt=""
-              src="../asserts/group-49.svg"
-            />
+            <img className="frame-inner" alt="" src="../asserts/group-49.svg" />
             <img
               className="your-text-icon"
               alt=""
               src="../asserts/your-text.svg"
             />
-            <img
-              className="frame-child2"
-              alt=""
-              src="../asserts/group-53.svg"
-            />
+            <img className="group-icon" alt="" src="../asserts/group-53.svg" />
             <img
               className="your-city-icon"
               alt=""
               src="../asserts/your-city.svg"
             />
             <img
-              className="frame-child3"
+              className="frame-child1"
               alt=""
               src="../asserts/group-57.svg"
             />
@@ -87,7 +79,7 @@ const CreateWallet: FunctionComponent = () => {
               src="../asserts/entry-password.svg"
             />
             <img
-              className="frame-child4"
+              className="frame-child2"
               alt=""
               src="../asserts/group-145.svg"
             />

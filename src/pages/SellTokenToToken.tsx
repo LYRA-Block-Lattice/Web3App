@@ -3,6 +3,7 @@ import { Autocomplete, TextField } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
+import CollateralCalculation from "../components/CollateralCalculation";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SellTokenToToken.css";
 
@@ -171,45 +172,7 @@ const SellTokenToToken: FunctionComponent = () => {
             )}
             size="medium"
           />
-          <div className="collateralcalculation1">
-            <div className="collateralsection1">
-              <div className="collateral-worth-label8">
-                <div className="worth-in-dollar">Collateral value: 120%</div>
-                <div className="worth-in-dollar">1234 LYR</div>
-              </div>
-              <div className="collateral-worth-label9">
-                <div className="worth-in-dollar">$ 103</div>
-              </div>
-            </div>
-            <div className="collateralsection1">
-              <div className="collateral-worth-label8">
-                <div className="worth-in-dollar">DAO fee: 1%</div>
-                <div className="worth-in-dollar">1234 LYR</div>
-              </div>
-              <div className="collateral-worth-label9">
-                <div className="worth-in-dollar">$ 103</div>
-              </div>
-            </div>
-            <div className="collateralsection1">
-              <div className="collateral-worth-label8">
-                <div className="worth-in-dollar">Network fee: 0.2%</div>
-                <div className="worth-in-dollar">1234 LYR</div>
-              </div>
-              <div className="collateral-worth-label9">
-                <div className="worth-in-dollar">$ 103</div>
-              </div>
-            </div>
-            <div className="collateralcalculation-item" />
-            <div className="collateralsection1">
-              <div className="collateral-worth-label14">
-                <div className="worth-in-dollar">1234 LYR</div>
-              </div>
-              <div className="collateral-worth-label15">
-                <div className="worth-in-dollar">Total:</div>
-                <div className="div14">$ 103</div>
-              </div>
-            </div>
-          </div>
+          <CollateralCalculation />
           <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
             <div className="primary-button5">Review the Order</div>
           </button>

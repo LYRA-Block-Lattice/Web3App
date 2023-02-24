@@ -1,31 +1,31 @@
-.lyralogoblueicon {
+.lyralogoblackicon {
   position: relative;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
   object-fit: cover;
 }
-.custom-coin {
+.lyra-coin {
   align-self: stretch;
   flex: 1;
   display: flex;
   align-items: center;
 }
-.b2,
-.cus,
-.custom-coin {
+.b4,
+.lyr,
+.lyra-coin {
   position: relative;
 }
-.b2 {
+.b4 {
   font-size: var(--caption-size);
   color: var(--text-secondary1);
 }
-.cus-parent,
-.lyralogoblueicon-parent {
+.lyr-parent,
+.lyra-coin-parent {
   display: flex;
   justify-content: flex-start;
 }
-.cus-parent {
+.lyr-parent {
   flex-direction: column;
   align-items: flex-end;
   gap: var(--gap-4xs);
@@ -33,13 +33,13 @@
   font-size: var(--font-size-3xl);
   color: var(--default-black);
 }
-.lyralogoblueicon-parent {
+.lyra-coin-parent {
   align-self: stretch;
   flex-direction: row;
   align-items: center;
   gap: var(--gap-xs);
 }
-.frame-child {
+.line-div {
   position: relative;
   border-top: 1px solid var(--color-gainsboro-200);
   box-sizing: border-box;
@@ -47,7 +47,7 @@
   height: 1px;
   flex-shrink: 0;
 }
-.frame-container {
+.frame-parent3 {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -55,45 +55,16 @@
   justify-content: flex-start;
   gap: var(--gap-2xs);
 }
-.tokendisplayitem {
+.tokendisplayitem1 {
   align-self: stretch;
+  background-color: var(--white1);
   overflow: hidden;
   display: flex;
   flex-direction: row;
   padding: var(--padding-7xs);
   align-items: center;
   justify-content: center;
-}
-.coinlisting {
-  background-color: var(--white1);
-  width: 396px;
-  padding: 0 var(--padding-4xs) var(--padding-4xs);
-  box-sizing: border-box;
-  align-items: flex-start;
-  gap: var(--gap-md);
-}
-.coinlisting,
-.wallet-card-parent,
-.wallethome {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.wallet-card-parent {
-  flex: 1;
-  width: 396px;
-  align-items: flex-start;
-  gap: var(--gap-md);
-}
-.wallethome {
-  position: relative;
-  background-color: var(--white1);
-  width: 100%;
-  height: 917px;
-  padding: 0 var(--padding-2xs);
-  box-sizing: border-box;
-  align-items: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-xs);
   text-align: left;
   font-size: var(--font-size-4xl);
   color: var(--black-0000001001);

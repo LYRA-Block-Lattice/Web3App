@@ -88,6 +88,7 @@
   max-height: 100%;
   object-fit: cover;
 }
+.assertstatssection,
 .icoutline-remove-red-eye-parent {
   background-color: var(--white1);
   overflow: hidden;
@@ -99,12 +100,15 @@
 }
 .assertstatssection {
   border-radius: var(--br-xs) var(--br-xs) 0 0;
-  background-color: var(--white1);
   padding: var(--padding-4xs);
-  align-items: center;
   gap: var(--gap-3xl);
 }
-.assertstatssection,
+.assertdetailview1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 .descriptiondetails,
 .descriptiontitle,
 .pricelabel {
@@ -266,7 +270,7 @@
   font-size: var(--font-size-3xl);
   color: var(--color-dimgray-300);
 }
-.frame-parent4,
+.frame-parent1,
 .pricelabel-parent {
   display: flex;
   flex-direction: column;
@@ -274,7 +278,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-parent4 {
+.frame-parent1 {
   width: 380px;
   padding: 0 var(--padding-7xs);
   gap: var(--gap-2xs);
@@ -286,69 +290,6 @@
   width: 400px;
   padding: 0 var(--padding-4xs);
   gap: var(--gap-md);
-}
-.collateral-worth-label,
-.collateral-worth-label1 {
-  width: 300px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.collateral-worth-label1 {
-  align-items: flex-start;
-  justify-content: flex-end;
-  font-size: var(--uppercase-small-size);
-}
-.collateralsection {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.collateralcalculation-child {
-  position: relative;
-  border-top: 1px solid var(--black-0000001001);
-  box-sizing: border-box;
-  width: 299px;
-  height: 1px;
-  flex-shrink: 0;
-}
-.collateral-worth-label6 {
-  width: 300px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-}
-.div9 {
-  position: relative;
-  font-size: var(--uppercase-small-size);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-}
-.collateral-worth-label7,
-.collateralcalculation {
-  width: 300px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.collateralcalculation {
-  border-radius: var(--br-2xs);
-  background-color: var(--color-gray-200);
-  width: 320px;
-  flex-direction: column;
-  padding: var(--padding-4xs);
-  box-sizing: border-box;
-  justify-content: center;
-  gap: var(--gap-2xs);
-  font-size: var(--body-semibold-size);
-  color: var(--black-0000001001);
 }
 .primary-button4 {
   position: relative;

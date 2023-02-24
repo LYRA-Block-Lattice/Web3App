@@ -3,6 +3,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import WalletToolBar from "../components/WalletToolBar";
 import CatalogTab from "../components/CatalogTab";
+import TokenDisplayItem from "../components/TokenDisplayItem";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./WalletHome.css";
 
@@ -58,74 +59,44 @@ const WalletHome: FunctionComponent = () => {
             onFrameButton3Click={onFrameButton3Click}
             onFrameButton4Click={onFrameButton4Click}
           />
+          <TokenDisplayItem
+            tokenIcon="../asserts/lyralogoblackicon@2x.png"
+            tokenName="Lyra Coin"
+            tokenAmount="1,234,525 LYR"
+            tokenDollar="$2,183"
+          />
           <div className="tokendisplayitem">
-            <img
-              className="lyralogoblackicon"
-              alt=""
-              src="../asserts/lyralogoblackicon@2x.png"
-            />
             <div className="frame-container">
-              <div className="lyra-coin-parent">
-                <b className="lyra-coin">Lyra Coin</b>
-                <div className="lyr-parent">
-                  <b className="lyr">1,234,525 LYR</b>
-                  <b className="b2">$2,183</b>
-                </div>
-              </div>
-              <div className="frame-child" />
-            </div>
-          </div>
-          <div className="tokendisplayitem1">
-            <div className="frame-container">
-              <div className="lyra-coin-parent">
+              <div className="lyralogoblueicon-parent">
                 <img
-                  className="lyralogoblackicon"
+                  className="lyralogoblueicon"
                   alt=""
                   src="../asserts/lyralogoblueicon4@2x.png"
                 />
-                <b className="lyra-coin">Custom Coin</b>
-                <div className="lyr-parent">
-                  <b className="lyr">1,234,525 CUS</b>
+                <b className="custom-coin">Custom Coin</b>
+                <div className="cus-parent">
+                  <b className="cus">1,234,525 CUS</b>
                   <b className="b2">$2,183</b>
                 </div>
               </div>
               <div className="frame-child" />
             </div>
           </div>
-          <div className="tokendisplayitem2">
-            <img
-              className="logosbitcoin-icon"
-              alt=""
-              src="../asserts/logosbitcoin.svg"
-            />
-            <div className="frame-container">
-              <div className="lyra-coin-parent">
-                <b className="lyra-coin">BitCoin</b>
-                <div className="lyr-parent">
-                  <b className="lyr">1.2345 BTC</b>
-                  <b className="b2">$20,183</b>
-                </div>
-              </div>
-              <div className="frame-child" />
-            </div>
-          </div>
-          <div className="tokendisplayitem2">
-            <img
-              className="lyralogoblackicon"
-              alt=""
-              src="../asserts/mask-group@2x.png"
-            />
-            <div className="frame-container">
-              <div className="lyra-coin-parent">
-                <b className="lyra-coin">T-Shirt Blue</b>
-                <div className="lyr-parent">
-                  <b className="lyr">3 Items</b>
-                  <b className="b2">$20,183</b>
-                </div>
-              </div>
-              <div className="frame-child" />
-            </div>
-          </div>
+          <TokenDisplayItem
+            tokenIcon="../asserts/logosbitcoin.svg"
+            tokenName="BitCoin"
+            tokenAmount="1.2345 BTC"
+            tokenDollar="$20,183"
+            tokenDisplayItemBackgroundColor="unset"
+            lyraLogoBlackIconObjectFit="unset"
+          />
+          <TokenDisplayItem
+            tokenIcon="../asserts/mask-group@2x.png"
+            tokenName="T-Shirt Blue"
+            tokenAmount="3 Items"
+            tokenDollar="$20,183"
+            tokenDisplayItemBackgroundColor="unset"
+          />
         </div>
       </div>
       <BottomNavigationBar />
