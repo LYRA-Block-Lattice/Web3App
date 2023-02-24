@@ -269,8 +269,8 @@ const AssertDetailView: FunctionComponent = () => {
                 {info?.Blocks.Order.Order.price}
               </div>
               <div className="tetherusdt-parent">
-                <div className="tethereth">{info?.Blocks.Bidgen.Ticker}</div>
-                <div className="div4">
+                <div className="tetherusdt">{info?.Blocks.Bidgen.Ticker}</div>
+                <div className="div2">
                   ${" "}
                   {pricedollar.toLocaleString(undefined, {
                     maximumFractionDigits: 2
@@ -290,8 +290,8 @@ const AssertDetailView: FunctionComponent = () => {
                 {info?.Blocks.Order.Order.limitMax}
               </div>
               <div className="tetherusdt-parent">
-                <div className="tethereth">{info?.Blocks.Offgen.Ticker}</div>
-                <div className="div4">
+                <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
+                <div className="div2">
                   {" "}
                   ${" "}
                   {avalibleMinDollar.toLocaleString(undefined, {
@@ -309,7 +309,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-container">
+            <div className="frame-parent1">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
@@ -321,13 +321,13 @@ const AssertDetailView: FunctionComponent = () => {
                 />
                 <div className="tethereth-group">
                   <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
-                  <div className="tethereth">
+                  <div className="tetherusdt">
                     {bidAmount.toLocaleString(undefined, {
                       maximumFractionDigits: 8
                     })}{" "}
                     {info?.Blocks.Bidgen.Ticker}
                   </div>
-                  <div className="tethereth">
+                  <div className="tetherusdt">
                     ${" "}
                     {offerDollar.toLocaleString(undefined, {
                       maximumFractionDigits: 2
@@ -336,7 +336,7 @@ const AssertDetailView: FunctionComponent = () => {
                 </div>
               </div>
               <div className="limitadjustsection">
-                <div className="tethereth">Min</div>
+                <div className="tetherusdt">Min</div>
                 <Box className="slidercontinuous">
                   <Slider
                     color="primary"

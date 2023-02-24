@@ -1,11 +1,11 @@
-.home-icon-interlocution {
+.home-icon-interlocution5 {
   position: relative;
   width: 40px;
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.ranking {
+.ranking5 {
   position: relative;
   font-size: var(--caption-size);
   line-height: 18px;
@@ -13,7 +13,7 @@
   color: var(--black-0000001001);
   text-align: left;
 }
-.swap-button {
+.dex-button {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
 }
-.ranking4 {
+.ranking9 {
   position: relative;
   font-size: var(--regular-body1-size);
   line-height: 18px;
@@ -37,12 +37,12 @@
   text-align: left;
 }
 .markettoolbar,
-.swap-button-parent {
+.swap-button-group {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.swap-button-parent {
+.swap-button-group {
   align-self: stretch;
   flex-direction: row;
   padding: var(--padding-7xs) 0;

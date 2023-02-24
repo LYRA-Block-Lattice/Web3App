@@ -62,7 +62,7 @@ const UserProfile: FunctionComponent = () => {
         </div>
         <div className="form1">
           <div className="form-card-title">
-            <div className="text10">CardTitle</div>
+            <div className="text">CardTitle</div>
           </div>
           <div className="card">
             <div className="form-item-select">
@@ -78,7 +78,7 @@ const UserProfile: FunctionComponent = () => {
         </div>
         <div className="form1">
           <div className="form-card-title">
-            <div className="text10">CardTitle</div>
+            <div className="text">CardTitle</div>
           </div>
           <div className="card">
             <div className="form-item-select">
@@ -94,11 +94,11 @@ const UserProfile: FunctionComponent = () => {
         </div>
         <div className="form1">
           <div className="form-card-title">
-            <div className="text10">邮寄地址</div>
+            <div className="text">邮寄地址</div>
           </div>
           <div className="list">
             <div className="item4">
-              <div className="text-parent">
+              <div className="frame-parent">
                 <div className="placeholder-parent">
                   <i className="placeholder5">张俊</i>
                   <div className="placeholder6">13988781732</div>
@@ -118,7 +118,7 @@ const UserProfile: FunctionComponent = () => {
               <div className="line" />
             </div>
             <div className="item4">
-              <div className="text-parent">
+              <div className="frame-parent">
                 <div className="placeholder-parent">
                   <i className="placeholder5">孙悦婷</i>
                   <div className="placeholder6">13988781732</div>

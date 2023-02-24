@@ -73,7 +73,7 @@ const ViewOrdersForm: FunctionComponent = () => {
   return (
     <div className="viewordersform main-content">
       <TopNavigationBar title="My Orders" />
-      <div className="wallet-card-group">
+      <div className="wallet-card-container">
         <WalletCardContainer />
         <MarketToolBarContainer
           homeIconInterlocution="../asserts/home--icon--interlocution15.svg"

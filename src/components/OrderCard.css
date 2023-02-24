@@ -1,17 +1,17 @@
-.icbaseline-generating-tokens-icon3 {
+.icbaseline-generating-tokens-icon {
   position: relative;
   width: 32px;
   height: 32px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.order-image-inner {
+.order-image-child {
   position: relative;
   width: 19.5px;
   height: 7.36px;
   flex-shrink: 0;
 }
-.order-image2 {
+.order-image {
   border-radius: var(--br-xs) var(--br-xs) 0 0;
   background-color: var(--sell1);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
@@ -24,14 +24,14 @@
   justify-content: center;
   gap: var(--gap-3xs);
 }
-.open2 {
+.open {
   position: relative;
   font-size: var(--caption-size);
   font-family: var(--regular-body1);
   color: var(--white1);
   text-align: center;
 }
-.order-status2 {
+.order-status {
   align-self: stretch;
   border-radius: 0 0 var(--br-xs) var(--br-xs);
   background-color: var(--info1);
@@ -41,31 +41,34 @@
   align-items: center;
   justify-content: center;
 }
-.banner-image2,
-.order-banner2 {
+.banner-image,
+.order-banner {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
-.banner-image2 {
+.banner-image {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
 }
-.frame-child4 {
+.arrow-icon,
+.sell {
   position: relative;
+}
+.arrow-icon {
   width: 12.5px;
   height: 7.36px;
   flex-shrink: 0;
 }
-.tetherusdt4 {
+.tetherusdt2 {
   position: relative;
   text-align: left;
 }
-.sell-group {
+.sell-parent {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,7 +77,7 @@
   font-size: var(--font-size-3xl);
   font-family: var(--regular-body1);
 }
-.title-section-item {
+.title-section-child {
   position: relative;
   border-top: 1px solid var(--text-secondary1);
   box-sizing: border-box;
@@ -82,71 +85,69 @@
   height: 1px;
   flex-shrink: 0;
 }
-.am-container {
+.am-wrapper,
+.block1,
+.block2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.am-wrapper {
   align-self: stretch;
   background-color: var(--white1);
   overflow: hidden;
-  display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
   text-align: left;
 }
-.sold {
-  position: relative;
-}
-.block12,
-.block22 {
-  display: flex;
+.block1,
+.block2 {
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
-.block22 {
+.block2 {
   overflow: hidden;
   align-items: flex-end;
 }
-.details-section-inner {
+.details-section-child {
   position: relative;
   width: 4px;
   height: 15px;
   flex-shrink: 0;
   overflow: hidden;
 }
-.block32 {
+.block3 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.details-section2,
-.title-section2 {
+.details-section,
+.title-section {
   display: flex;
   justify-content: flex-start;
   gap: var(--gap-2xs);
 }
-.details-section2 {
+.details-section {
   align-self: stretch;
   overflow: hidden;
   flex-direction: row;
   align-items: center;
 }
-.title-section2 {
+.title-section {
   text-decoration: none;
   border-radius: var(--br-3xs) var(--br-3xs) 0 0;
   flex-direction: column;
   align-items: flex-start;
   color: inherit;
 }
-.order-brief-section2 {
+.order-brief-section {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   gap: var(--gap-lg);
 }
-.width-controller2 {
+.width-controller {
   position: relative;
   border-top: 1px solid var(--white1);
   box-sizing: border-box;
@@ -154,7 +155,7 @@
   height: 1px;
   flex-shrink: 0;
 }
-.trades-section2 {
+.trades-section {
   align-self: stretch;
   height: 0;
   flex-shrink: 0;
@@ -164,7 +165,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.mini-button6 {
+.mini-button2 {
   position: relative;
   font-size: var(--caption-size);
   letter-spacing: 0.41px;
@@ -174,12 +175,12 @@
   color: var(--color-darkslategray-300);
   text-align: center;
 }
-.delist-button1,
-.itemactions1 {
+.delist-button,
+.itemactions {
   display: flex;
   flex-direction: row;
 }
-.delist-button1 {
+.delist-button {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
@@ -191,14 +192,14 @@
   align-items: center;
   justify-content: center;
 }
-.itemactions1 {
+.itemactions {
   align-self: stretch;
   padding: var(--padding-7xs) var(--padding-7xs) 0;
   align-items: flex-end;
   justify-content: flex-end;
   gap: var(--gap-md);
 }
-.ordercard2 {
+.ordercard {
   border-radius: var(--br-xs);
   background-color: var(--white1);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);

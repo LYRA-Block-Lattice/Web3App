@@ -61,85 +61,85 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
   }, [orderStatusBackgroundColor]);
 
   return (
-    <div className="ordercard6">
-      <div className="order-brief-section6">
-        <button className="banner-image6" onClick={toggle}>
-          <div className="order-banner6">
-            <div className="order-image6">
+    <div className="ordercard4">
+      <div className="order-brief-section4">
+        <button className="banner-image4" onClick={toggle}>
+          <div className="order-banner4">
+            <div className="order-image4">
               <img
-                className="icbaseline-generating-tokens-icon5"
+                className="icbaseline-generating-tokens-icon2"
                 alt=""
                 src={offeringIcon}
               />
               <img
-                className="order-image-child2"
+                className="order-image-inner"
                 alt=""
-                src="../asserts/arrow-12.svg"
+                src="../asserts/arrow-11.svg"
               />
               <img
-                className="icbaseline-generating-tokens-icon5"
+                className="icbaseline-generating-tokens-icon2"
                 alt=""
                 src={bidingIcon}
               />
             </div>
-            <div className="order-status6" style={orderStatusStyle}>
-              <b className="open4">
+            <div className="order-status4" style={orderStatusStyle}>
+              <b className="open2">
                 {UniOrderStatus[orderStatus ?? UniOrderStatus.Closed]}
               </b>
             </div>
           </div>
         </button>
         <Link
-          className="title-section1"
+          className="title-section4"
           to={`/assertdetailview?orderId=${orderId}`}
         >
-          <div className="sell-container">
-            <b className="sell2">Sell</b>
-            <b className="sell2">{offering}</b>
+          <div className="sell-group">
+            <b className="a-big-seller">Sell</b>
+            <b className="a-big-seller">{offering}</b>
             <img
-              className="frame-child6"
+              className="frame-child4"
               alt=""
-              src="../asserts/arrow-22.svg"
+              src="../asserts/arrow-21.svg"
             />
-            <b className="tetherusdt7">{biding}</b>
+            <b className="tetherusdt5">{biding}</b>
           </div>
-          <div className="details-section6">
-            <div className="block34">
-              <div className="sell2">Amount</div>
-              <div className="sell2">Limit Min</div>
-              <div className="sell2">Limit Max</div>
+          <div className="details-section4">
+            <div className="block32">
+              <div className="a-big-seller">Amount</div>
+              <div className="a-big-seller">Limit Min</div>
+              <div className="a-big-seller">Limit Max</div>
             </div>
-            <div className="block44">
-              <div className="sell2">{amount}</div>
-              <div className="sell2">{limitMin}</div>
-              <div className="sell2">{limitMax}</div>
+            <div className="block42">
+              <div className="a-big-seller">{amount}</div>
+              <div className="a-big-seller">{limitMin}</div>
+              <div className="a-big-seller">{limitMax}</div>
             </div>
-            <div className="block16">
-              <div className="price5">Price</div>
+            <div className="block14">
+              <div className="price3">Price</div>
             </div>
-            <div className="block26">
-              <b className="sell2">{price}</b>
+            <div className="block24">
+              <b className="a-big-seller">{price}</b>
             </div>
-            <div className="details-section-child4" />
+            <div className="details-section-child2" />
           </div>
         </Link>
       </div>
-      <div className="trades-section6">
-        <div className="width-controller6" />
+      <div className="trades-section4">
+        <div className="width-controller4" />
       </div>
-      <div className="userprofilesection1">
+      <div className="userprofilesection">
         <img
-          className="userprofilesection-item"
+          className="userprofilesection-child"
           alt=""
-          src="../asserts/ellipse-12@2x.png"
+          src="../asserts/ellipse-1@2x.png"
         />
-        <div className="a-big-seller-group">
-          <b className="sell2">{sellerName}</b>
-          <div className="the-first-dao1">{daoName}</div>
+        <div className="a-big-seller-parent">
+          <b className="a-big-seller">{sellerName}</b>
+          <div className="the-first-dao">{daoName}</div>
         </div>
-        <div className="container">
-          <b className="sell2">{sellerRatings}</b>
-          <div className="the-first-dao1">{sellerTrades}</div>
+        <div className="parent">
+          <b className="a-big-seller">{sellerRatings}</b>
+          <div className="the-first-dao">{sellerTrades}</div>
         </div>
         <div>
           {showTradeTable ? (

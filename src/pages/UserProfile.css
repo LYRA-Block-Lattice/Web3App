@@ -93,7 +93,7 @@
   align-items: flex-start;
   font-size: var(--body-semibold-size);
 }
-.text10 {
+.text {
   flex: 1;
   position: relative;
   line-height: 16px;
@@ -175,10 +175,13 @@
   font-size: var(--caption-size);
   color: var(--primary1);
 }
-.item4,
-.text-parent {
+.frame-parent,
+.item4 {
   align-self: stretch;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .item4 {
   flex-direction: column;
@@ -186,11 +189,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-sm);
-}
-.text-parent {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 }
 .iconadd-one {
   position: relative;

@@ -45,86 +45,87 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
     }
   }, []);
 
+const TradeCard: FunctionComponent<TradeCardType> = ({
+  onBannerImage1Click,
+}) => {
   return (
-    <div className="ordercard3">
-      <div className="order-brief-section3">
-        <button className="banner-image3" onClick={onBannerImageClick}>
-          <div className="order-banner3">
-            <div className="order-image3">
+    <div className="ordercard1">
+      <div className="order-brief-section1">
+        <button className="banner-image1" onClick={onBannerImageClick}>
+          <div className="order-banner1">
+            <div className="order-image1">
               <img
-                className="icbaseline-generating-tokens-icon4"
+                className="icbaseline-generating-tokens-icon1"
                 alt=""
                 src={bidingImg}
               />
               <img
-                className="order-image-child1"
+                className="order-image-item"
                 alt=""
-                src="../asserts/arrow-12.svg"
+                src="../asserts/arrow-11.svg"
               />
               <img
-                className="icbaseline-generating-tokens-icon4"
+                className="icbaseline-generating-tokens-icon1"
                 alt=""
                 src={offeringImg}
               />
             </div>
-            <div className="order-status3">
-              <b className="open3">{tradeStatus}</b>
+            <div className="order-status1">
+              <b className="open1">{tradeStatus}</b>
             </div>
           </div>
         </button>
-        <a className="title-section3">
-          <div className="trade-group">
-            <b className="trade1">{dir}</b>
-            <b className="trade1">{biding}</b>
+        <a className="title-section1">
+          <div className="trade-parent">
+            <b className="trade">{dir}</b>
+            <b className="trade">{biding}</b>
             <img
-              className="frame-child5"
+              className="frame-child3"
               alt=""
-              src="../asserts/arrow-22.svg"
+              src="../asserts/arrow-21.svg"
             />
-            <b className="tetherusdt5">{offering}</b>
+            <b className="tetherusdt3">{offering}</b>
           </div>
-          <div className="title-section-inner" />
-          <div className="am-frame">
-            <div className="trade1">{time}</div>
+          <div className="title-section-item" />
+          <div className="am-container">
+            <div className="trade">{time}</div>
           </div>
-          <div className="details-section3">
-            <div className="block13">
-              <div className="trade1">Price</div>
+          <div className="details-section1">
+            <div className="block11">
+              <div className="trade">Price</div>
             </div>
-            <div className="block23">
-              <div className="trade1">{price}</div>
+            <div className="block21">
+              <div className="trade">{price}</div>
             </div>
-            <div className="details-section-child1" />
-            <div className="block33">
-              <div className="trade1">Amount</div>
+            <div className="details-section-item" />
+            <div className="block31">
+              <div className="trade">Amount</div>
             </div>
-            <div className="block23">
-              <div className="trade1">{amount}</div>
+            <div className="block21">
+              <div className="trade">{amount}</div>
             </div>
           </div>
         </a>
       </div>
-      <div className="trades-section3">
-        <div className="width-controller3" />
+      <div className="trades-section1">
+        <div className="width-controller1" />
       </div>
-      <div className="itemactions2">
-        {tradeStatus != "Closed" && (
-          <div>
-            <button className="delist-button">
-              <div className="mini-button2">Cancel</div>
-            </button>
-            <button className="delist-button">
-              <div className="mini-button2">Close</div>
-            </button>
-            <button className="delist-button">
-              <div className="mini-button2">Complain</div>
-            </button>
-          </div>
-        )}
-        {tradeStatus === "Closed" && (
-          <button className="delist-button">
-            <div className="mini-button2">Comment</div>
-          </button>
+      <div className="itemactions1">
+      {tradeStatus != "Closed" && (
+        <button className="delist-button1">
+          <div className="mini-button4">Cancel</div>
+        </button>
+        <button className="delist-button1">
+          <div className="mini-button4">Close</div>
+        </button>
+        <button className="delist-button1">
+          <div className="mini-button4">Complain</div>
+        </button>
+                )}
+                {tradeStatus === "Closed" && (
+        <button className="delist-button1">
+          <div className="mini-button4">Comment</div>
+        </button>
         )}
       </div>
     </div>

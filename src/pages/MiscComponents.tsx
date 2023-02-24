@@ -34,6 +34,10 @@ const MiscComponents: FunctionComponent = () => {
     //TODO: toggle the bellow table
   }, []);
 
+  const onBannerImage1Click = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   const onBannerImage4Click = useCallback(() => {
     //TODO: toggle the bellow table
   }, []);

@@ -106,72 +106,68 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
   }, [daoId, orderId]);
 
   return (
-    <div className="ordercard2">
-      <div className="order-brief-section2">
-        <button className="banner-image2" onClick={toggle}>
-          <div className="order-banner2">
-            <div className="order-image2">
+    <div className="ordercard">
+      <div className="order-brief-section">
+        <button className="banner-image" onClick={toggle}>
+          <div className="order-banner">
+            <div className="order-image">
               <img
-                className="icbaseline-generating-tokens-icon3"
+                className="icbaseline-generating-tokens-icon"
                 alt=""
                 src={offeringImg}
               />
               <img
-                className="order-image-inner"
+                className="order-image-child"
                 alt=""
-                src="../asserts/arrow-12.svg"
+                src="../asserts/arrow-11.svg"
               />
               <img
-                className="icbaseline-generating-tokens-icon3"
+                className="icbaseline-generating-tokens-icon"
                 alt=""
                 src={bidingImg}
               />
             </div>
-            <div className="order-status2" style={orderStatusStyle}>
-              <b className="open2">{orderStatus}</b>
+            <div className="order-status" style={orderStatusStyle}>
+              <b className="open">{orderStatus}</b>
             </div>
           </div>
         </button>
         <a
-          className="title-section2"
+          className="title-section"
           target="_blank"
           href={BlockchainAPI.getBlockExplorerUrl(orderId)}
         >
-          <div className="sell-group">
-            <b className="sold">Sell</b>
-            <b className="sold">{offering}</b>
-            <img
-              className="frame-child4"
-              alt=""
-              src="../asserts/arrow-22.svg"
-            />
-            <b className="tetherusdt4">{biding}</b>
+          <div className="sell-parent">
+            <b className="sell">Sell</b>
+            <b className="sell">{offering}</b>
+            <img className="arrow-icon" alt="" src="../asserts/arrow-21.svg" />
+            <b className="tetherusdt2">{biding}</b>
           </div>
-          <div className="title-section-item" />
-          <div className="am-container">
-            <div className="sold">{time}</div>
+          <div className="title-section-child" />
+          <div className="am-wrapper">
+            <div className="sell">{time}</div>
           </div>
-          <div className="details-section2">
-            <div className="block12">
-              <div className="sold">Price</div>
-              <div className="sold">Limit Min</div>
-              <div className="sold">Sold</div>
+          <div className="details-section">
+            <div className="block1">
+              <div className="sell">Price</div>
+              <div className="sell">Limit Min</div>
+              <div className="sell">Sold</div>
             </div>
-            <div className="block22">
-              <div className="sold">{price}</div>
-              <div className="sold">{limitMin}</div>
-              <div className="sold">{sold}</div>
+            <div className="block2">
+              <div className="sell">{price}</div>
+              <div className="sell">{limitMin}</div>
+              <div className="sell">{sold}</div>
             </div>
-            <div className="details-section-inner" />
-            <div className="block32">
-              <div className="sold">Amount</div>
-              <div className="sold">Limit Max</div>
-              <div className="sold">Shelf</div>
+            <div className="details-section-child" />
+            <div className="block3">
+              <div className="sell">Amount</div>
+              <div className="sell">Limit Max</div>
+              <div className="sell">Shelf</div>
             </div>
-            <div className="block22">
-              <div className="sold">{amount}</div>
-              <div className="sold">{limitMax}</div>
-              <div className="sold">{shelf}</div>
+            <div className="block2">
+              <div className="sell">{amount}</div>
+              <div className="sell">{limitMax}</div>
+              <div className="sell">{shelf}</div>
             </div>
           </div>
         </a>
@@ -183,18 +179,18 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
           </div>
         </div>
       ) : null}
-      <div className="trades-section2">
-        <div className="width-controller2" />
+      <div className="trades-section">
+        <div className="width-controller" />
       </div>
-      <div className="itemactions1">
+      <div className="itemactions">
         {orderStatus === "Partial" ? (
-          <button className="delist-button1" onClick={onDelist}>
-            <div className="mini-button6">Delist</div>
+          <button className="delist-button" onClick={onDelist}>
+            <div className="mini-button2">Delist</div>
           </button>
         ) : null}
         {orderStatus === "Delist" ? (
-          <button className="delist-button1" onClick={onCloseOrder}>
-            <div className="mini-button6">Close</div>
+          <button className="delist-button" onClick={onCloseOrder}>
+            <div className="mini-button2">Close</div>
           </button>
         ) : null}
       </div>
