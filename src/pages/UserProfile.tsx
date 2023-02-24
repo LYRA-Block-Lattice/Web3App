@@ -1,6 +1,5 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
-import PhoneContainer from "../components/PhoneContainer";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./UserProfile.css";
 
@@ -61,21 +60,48 @@ const UserProfile: FunctionComponent = () => {
             <img className="iconright" alt="" src="../asserts/iconright.svg" />
           </div>
         </div>
-        <PhoneContainer contactInfo="Phone" contactPhone="177*********98" />
-        <PhoneContainer
-          contactInfo="Email"
-          contactPhone="KUA92390897@163.com"
-        />
-        <div className="card1">
-          <div className="wrapper">
-            <div className="div">邮寄地址</div>
+        <div className="form1">
+          <div className="form-card-title">
+            <div className="text10">CardTitle</div>
+          </div>
+          <div className="card">
+            <div className="form-item-select">
+              <div className="label4">Phone</div>
+              <div className="placeholder">177*********98</div>
+              <img
+                className="iconright"
+                alt=""
+                src="../asserts/iconright.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="form1">
+          <div className="form-card-title">
+            <div className="text10">CardTitle</div>
+          </div>
+          <div className="card">
+            <div className="form-item-select">
+              <div className="label4">Email</div>
+              <div className="placeholder">KUA92390897@163.com</div>
+              <img
+                className="iconright"
+                alt=""
+                src="../asserts/iconright.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="form1">
+          <div className="form-card-title">
+            <div className="text10">邮寄地址</div>
           </div>
           <div className="list">
             <div className="item4">
-              <div className="frame-parent">
+              <div className="text-parent">
                 <div className="placeholder-parent">
-                  <i className="placeholder3">张俊</i>
-                  <div className="placeholder4">13988781732</div>
+                  <i className="placeholder5">张俊</i>
+                  <div className="placeholder6">13988781732</div>
                 </div>
                 <div className="button-group">
                   <div className="button">
@@ -92,10 +118,10 @@ const UserProfile: FunctionComponent = () => {
               <div className="line" />
             </div>
             <div className="item4">
-              <div className="frame-parent">
+              <div className="text-parent">
                 <div className="placeholder-parent">
-                  <i className="placeholder3">孙悦婷</i>
-                  <div className="placeholder4">13988781732</div>
+                  <i className="placeholder5">孙悦婷</i>
+                  <div className="placeholder6">13988781732</div>
                 </div>
                 <div className="button-group">
                   <div className="button">

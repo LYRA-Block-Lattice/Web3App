@@ -91,26 +91,54 @@
   flex-direction: column;
   padding: var(--padding-5xs) 0;
   align-items: flex-start;
+  font-size: var(--body-semibold-size);
 }
-.div {
+.text10 {
   flex: 1;
   position: relative;
   line-height: 16px;
 }
-.wrapper {
-  align-self: stretch;
+.form-card-title,
+.label4 {
   display: flex;
+  align-items: center;
+}
+.form-card-title {
+  align-self: stretch;
   flex-direction: row;
   padding: var(--padding-5xs) var(--padding-md);
-  align-items: center;
   justify-content: flex-start;
 }
-.placeholder3 {
+.label4 {
+  position: relative;
+  line-height: 24px;
+  width: 100px;
+  flex-shrink: 0;
+}
+.form-item-select,
+.form1 {
+  align-self: stretch;
+  display: flex;
+  justify-content: flex-start;
+}
+.form-item-select {
+  background-color: var(--selectable1);
+  flex-direction: row;
+  padding: var(--padding-2xs) var(--padding-2xs) var(--padding-2xs)
+    var(--padding-md);
+  align-items: center;
+  gap: var(--gap-sm);
+}
+.form1 {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.placeholder5 {
   position: relative;
   line-height: 24px;
   font-weight: 300;
 }
-.placeholder4 {
+.placeholder6 {
   position: relative;
   font-size: var(--caption-size);
   line-height: 16px;
@@ -147,13 +175,10 @@
   font-size: var(--caption-size);
   color: var(--primary1);
 }
-.frame-parent,
-.item4 {
+.item4,
+.text-parent {
   align-self: stretch;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 }
 .item4 {
   flex-direction: column;
@@ -161,6 +186,11 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-sm);
+}
+.text-parent {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .iconadd-one {
   position: relative;
@@ -187,6 +217,13 @@
   text-align: center;
   color: var(--primary1);
 }
+.form,
+.list,
+.userprofile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 .list {
   align-self: stretch;
   border-radius: var(--br-2xs);
@@ -196,19 +233,6 @@
   align-items: flex-start;
   font-size: var(--body-semibold-size);
   color: var(--primary-text1);
-}
-.card1,
-.form,
-.list,
-.userprofile {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.card1 {
-  align-self: stretch;
-  align-items: flex-start;
-  font-size: var(--caption-size);
 }
 .form,
 .userprofile {
@@ -232,7 +256,7 @@
   align-items: center;
   gap: var(--gap-lg);
   text-align: left;
-  font-size: var(--body-semibold-size);
+  font-size: var(--caption-size);
   color: var(--subtitle-text);
   font-family: var(--regular-body1);
 }

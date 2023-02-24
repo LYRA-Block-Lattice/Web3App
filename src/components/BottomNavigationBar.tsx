@@ -22,7 +22,7 @@ const BottomNavigationBar: FunctionComponent = () => {
             alt=""
             src="../asserts/box-alt-light.svg"
           />
-          <div className="text11">Market</div>
+          <div className="text13">Market</div>
         </button>
         <button className="tabbar-item">
           <img
@@ -30,7 +30,7 @@ const BottomNavigationBar: FunctionComponent = () => {
             alt=""
             src="../asserts/molecule-light.svg"
           />
-          <div className="text11">DAO</div>
+          <div className="text13">DAO</div>
         </button>
         <button className="tabbar-item" onClick={gotoWallet}>
           <img
@@ -38,7 +38,7 @@ const BottomNavigationBar: FunctionComponent = () => {
             alt=""
             src="../asserts/wallet-light.svg"
           />
-          <div className="text13">Wallet</div>
+          <div className="text15">Wallet</div>
         </button>
         <button className="tabbar-item">
           <img
@@ -46,7 +46,7 @@ const BottomNavigationBar: FunctionComponent = () => {
             alt=""
             src="../asserts/user-alt-light.svg"
           />
-          <div className="text11">Me</div>
+          <div className="text13">Me</div>
         </button>
       </div>
     </div>

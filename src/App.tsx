@@ -3,9 +3,7 @@ import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
 import ScanToPay from "./pages/ScanToPay";
 import About from "./pages/About";
-import UserProfile from "./pages/UserProfile";
 import SellFlow from "./pages/SellFlow";
-import MiscComponents from "./pages/MiscComponents";
 import SendTokenForm from "./pages/SendTokenForm";
 import WalletHome from "./pages/WalletHome";
 import AssertDetailView from "./pages/AssertDetailView";
@@ -13,13 +11,15 @@ import MintFiatToken from "./pages/MintFiatToken";
 import CreateTokenForm from "./pages/CreateTokenForm";
 import CreateTOTForm from "./pages/CreateTOTForm";
 import SellTokenToToken from "./pages/SellTokenToToken";
-import ViewTradesForm from "./pages/ViewTradesForm";
-import ViewOrdersForm from "./pages/ViewOrdersForm";
 import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
 import CreateNFTForm from "./pages/CreateNFTForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
+import MiscComponents from "./pages/MiscComponents";
+import ViewOrdersForm from "./pages/ViewOrdersForm";
+import UserProfile from "./pages/UserProfile";
+import ViewTradesForm from "./pages/ViewTradesForm";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
 
@@ -52,15 +52,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/userprofile":
-        title = "";
-        metaDescription = "";
-        break;
       case "/sellflow":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/misccomponents":
         title = "";
         metaDescription = "";
         break;
@@ -92,14 +84,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/viewtradesform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/viewordersform":
-        title = "";
-        metaDescription = "";
-        break;
       case "/createordersuccessform":
         title = "";
         metaDescription = "";
@@ -117,6 +101,22 @@ function App() {
         metaDescription = "";
         break;
       case "/openwallet":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/misccomponents":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/viewordersform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/userprofile":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/viewtradesform":
         title = "";
         metaDescription = "";
         break;
@@ -144,11 +144,7 @@ function App() {
 
       <Route path="/about" element={<About />} />
 
-      <Route path="/userprofile" element={<UserProfile />} />
-
       <Route path="/sellflow" element={<SellFlow />} />
-
-      <Route path="/misccomponents" element={<MiscComponents />} />
 
       <Route path="/sendtokenform" element={<SendTokenForm />} />
 
@@ -166,10 +162,6 @@ function App() {
 
       <Route path="/selltokentotoken" element={<SellTokenToToken />} />
 
-      <Route path="/viewtradesform" element={<ViewTradesForm />} />
-
-      <Route path="/viewordersform" element={<ViewOrdersForm />} />
-
       <Route
         path="/createordersuccessform"
         element={<CreateOrderSuccessForm />}
@@ -182,6 +174,14 @@ function App() {
       <Route path="/createwallet" element={<CreateWallet />} />
 
       <Route path="/openwallet" element={<OpenWallet />} />
+
+      <Route path="/misccomponents" element={<MiscComponents />} />
+
+      <Route path="/viewordersform" element={<ViewOrdersForm />} />
+
+      <Route path="/userprofile" element={<UserProfile />} />
+
+      <Route path="/viewtradesform" element={<ViewTradesForm />} />
     </Routes>
   );
 }

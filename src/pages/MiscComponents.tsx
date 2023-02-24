@@ -3,6 +3,11 @@ import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
 import ItemContainer from "../components/ItemContainer";
 import ProductContainer from "../components/ProductContainer";
+import OrderCard from "../components/OrderCard";
+import TradeCard from "../components/TradeCard";
+import SendCard from "../components/SendCard";
+import ReceiveCard from "../components/ReceiveCard";
+import MarketOrder from "../components/MarketOrder";
 import "./MiscComponents.css";
 
 const MiscComponents: FunctionComponent = () => {
@@ -25,6 +30,14 @@ const MiscComponents: FunctionComponent = () => {
     setGeneralPopup1Open(false);
   }, []);
 
+  const onBannerImageClick = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
+  const onBannerImage4Click = useCallback(() => {
+    //TODO: toggle the bellow table
+  }, []);
+
   return (
     <>
       <div className="misccomponents">
@@ -36,6 +49,11 @@ const MiscComponents: FunctionComponent = () => {
           <ProductContainer openGeneralPopup={openGeneralPopup} />
           <ProductContainer openGeneralPopup={openGeneralPopup1} />
         </div>
+        <OrderCard onBannerImageClick={onBannerImageClick} />
+        <TradeCard />
+        <SendCard txType="Send" />
+        <ReceiveCard txType="Receive" />
+        <MarketOrder onBannerImage4Click={onBannerImage4Click} />
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

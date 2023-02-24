@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 body {
@@ -15,9 +15,9 @@ body {
   --regular-body1: "Open Sans";
   --font-source-sans-pro: "Source Sans Pro";
   --base-1-semibold: Inter;
+  --font-montserrat: Montserrat;
   --font-roboto: Roboto;
   --uppercase-small: Poppins;
-  --font-montserrat: Montserrat;
 
   /* font sizes */
   --uppercase-small-size: 10px;
@@ -41,7 +41,7 @@ body {
   --color-gray-400: rgba(0, 0, 0, 0.32);
   --selectable1: rgba(255, 255, 255, 0);
   --primary-text1: #434343;
-  --text-primary-dark: #424242;
+  --text-primary-dark1: #424242;
   --color-darkslategray-300: #383838;
   --color-darkslategray-400: #292c33;
   --default-black: #272c34;
@@ -60,16 +60,16 @@ body {
   --color-whitesmoke-400: rgba(238, 238, 238, 0.26);
   --color-lightyellow: #f6ffde;
   --color-mediumslateblue: #766ae7;
+  --secondary1: #fc7c00;
+  --color-silver-100: rgba(209, 190, 190, 0.47);
   --color-dimgray-100: #717171;
   --text-dark-60: #686777;
   --color-dimgray-300: #656565;
-  --accent-strong-blue: #554af0;
-  --secondary1: #fc7c00;
-  --color-silver-100: rgba(209, 190, 190, 0.47);
   --tertiary: #1ec8a5;
   --color-darkgray: #979797;
-  --buy2: #7ed321;
+  --buy1: #7ed321;
   --sell1: #fa7268;
+  --accent-strong-blue: #554af0;
 
   /* Gaps */
   --gap-6xs: 1px;

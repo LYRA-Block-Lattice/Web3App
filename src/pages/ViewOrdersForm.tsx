@@ -4,7 +4,7 @@ import PrimaryAccountContainer from "../components/PrimaryAccountContainer";
 import WalletCardContainer from "../components/WalletCardContainer";
 import MarketToolBarContainer from "../components/MarketToolBarContainer";
 import { useSelector, useDispatch } from "react-redux";
-import OrderForm from "../components/OrderForm";
+import OrderCard from "../components/OrderCard";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ViewOrdersForm.css";
 import { MARKET_GET_OWN_ORDERS } from "../app/actionTypes";
@@ -74,7 +74,7 @@ const ViewOrdersForm: FunctionComponent = () => {
   return (
     <div className="viewordersform main-content">
       <TopNavigationBar title="My Orders" />
-      <div className="wallet-card-container">
+      <div className="wallet-card-group">
         <WalletCardContainer />
         <MarketToolBarContainer
           homeIconInterlocution="../asserts/home--icon--interlocution15.svg"
@@ -83,7 +83,7 @@ const ViewOrdersForm: FunctionComponent = () => {
           homeIconInterlocution3="../asserts/home--icon--interlocution18.svg"
           homeIconInterlocution4="../asserts/home--icon--interlocution19.svg"
         />
-        <OrderForm />
+        <OrderCard onBannerImageClick={onBannerImageClick} />
         {odrs?.map((order) => (
           <OrderCard
             key={order.orderid!}

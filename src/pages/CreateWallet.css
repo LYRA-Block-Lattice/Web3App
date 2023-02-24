@@ -1,4 +1,4 @@
-.frame-item,
+.frame-inner,
 .illus1-child {
   position: absolute;
   max-width: 100%;
@@ -15,7 +15,7 @@
   opacity: 0.08;
   mix-blend-mode: normal;
 }
-.frame-item {
+.frame-inner {
   height: 88.36%;
   width: 98.35%;
   top: 0.17%;
@@ -68,7 +68,7 @@
   width: 24.55px;
   height: 2.45px;
 }
-.frame-inner {
+.group-icon {
   position: absolute;
   height: 8.4%;
   width: 24.79%;
@@ -85,7 +85,7 @@
   width: 11.05px;
   height: 1.83px;
 }
-.group-icon {
+.frame-child1 {
   position: absolute;
   height: 8.33%;
   width: 24.79%;
@@ -102,7 +102,7 @@
   width: 11.21px;
   height: 2.44px;
 }
-.frame-child1 {
+.frame-child2 {
   position: absolute;
   height: 8.11%;
   width: 24.79%;
@@ -119,12 +119,12 @@
   width: 19.2px;
   height: 2.44px;
 }
-.frame-child2,
+.frame-child3,
 .group-parent {
   position: absolute;
   overflow: hidden;
 }
-.frame-child2 {
+.frame-child3 {
   height: 61.15%;
   width: 70.96%;
   top: 38.6%;

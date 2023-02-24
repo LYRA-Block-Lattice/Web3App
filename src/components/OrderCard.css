@@ -1,4 +1,4 @@
-.icbaseline-generating-tokens-icon2 {
+.icbaseline-generating-tokens-icon3 {
   position: relative;
   width: 32px;
   height: 32px;
@@ -27,8 +27,8 @@
 .open2 {
   position: relative;
   font-size: var(--caption-size);
-  font-family: var(--font-roboto);
-  color: var(--white);
+  font-family: var(--regular-body1);
+  color: var(--white1);
   text-align: center;
 }
 .order-status2 {
@@ -55,7 +55,7 @@
   padding: 0;
   background-color: transparent;
 }
-.frame-child5 {
+.frame-child4 {
   position: relative;
   width: 12.5px;
   height: 7.36px;
@@ -71,11 +71,12 @@
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-xs);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-3xl);
+  font-family: var(--regular-body1);
 }
 .title-section-item {
   position: relative;
-  border-top: 1px solid var(--text-secondary);
+  border-top: 1px solid var(--text-secondary1);
   box-sizing: border-box;
   width: 128px;
   height: 1px;
@@ -83,7 +84,7 @@
 }
 .am-container {
   align-self: stretch;
-  background-color: var(--white);
+  background-color: var(--white1);
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -147,7 +148,7 @@
 }
 .width-controller2 {
   position: relative;
-  border-top: 1px solid var(--white);
+  border-top: 1px solid var(--white1);
   box-sizing: border-box;
   width: 365px;
   height: 1px;
@@ -155,6 +156,7 @@
 }
 .trades-section2 {
   align-self: stretch;
+  height: 0;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
@@ -168,7 +170,7 @@
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
-  font-family: var(--caption);
+  font-family: var(--regular-body1);
   color: var(--color-darkslategray-300);
   text-align: center;
 }
@@ -198,7 +200,7 @@
 }
 .ordercard2 {
   border-radius: var(--br-xs);
-  background-color: var(--white);
+  background-color: var(--white1);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-darkgray);
   display: flex;
@@ -208,6 +210,6 @@
   justify-content: flex-start;
   text-align: right;
   font-size: var(--caption-size);
-  color: var(--black);
-  font-family: var(--font-roboto);
+  color: var(--black-0000001001);
+  font-family: var(--font-source-sans-pro);
 }

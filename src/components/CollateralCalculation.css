@@ -34,13 +34,13 @@
   align-items: flex-start;
   justify-content: flex-end;
 }
-.div14,
+.div15,
 .total {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
 }
-.div14 {
+.div15 {
   font-size: var(--uppercase-small-size);
 }
 .collateral-worth-label7,
