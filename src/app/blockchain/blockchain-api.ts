@@ -290,15 +290,15 @@ export class BlockchainAPI {
     imgUrl: string
   ) => {
     const data = {
-      [accountId]: accountId,
-      [signature]: signature,
-      signatureType: "p1393",
+      accountId: accountId,
+      signature: signature,
       name: name,
       description: description,
       imgUrl: imgUrl
     };
 
-    return this.postJson<any>(
+    // just to get a url. so use ImageUploadResult as a hack
+    return this.postJson<ImageUploadResult>(
       `${this.Start_API}/CreateMetaHosted`,
       JSON.stringify(data)
     );

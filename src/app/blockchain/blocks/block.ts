@@ -238,7 +238,7 @@ export class TokenGenesisBlock extends ReceiveTransferBlock {
   IsFinalSupply!: boolean;
   IsNonFungible!: boolean;
   NonFungibleType!: NonFungibleTokenTypes;
-  NonFungibleKey!: string;
+  NonFungibleKey!: string | undefined;
   Owner!: string | undefined;
   Address!: string | undefined;
   Currency!: string | undefined;

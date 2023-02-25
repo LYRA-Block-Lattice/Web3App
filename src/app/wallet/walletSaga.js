@@ -207,7 +207,7 @@ function* mintNFT(action) {
       throw new Error("Invalid account id");
     }
 
-    const balanceResp = yield wallet.MintNFT(
+    const balanceResp = yield wallet.mintNFT(
       action.payload.name,
       action.payload.description,
       action.payload.supply,

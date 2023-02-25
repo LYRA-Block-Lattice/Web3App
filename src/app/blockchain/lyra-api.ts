@@ -278,7 +278,8 @@ export class LyraApi {
       gensBlock.Precision = 0;
       gensBlock.IsFinalSupply = true;
       gensBlock.NonFungibleType = NonFungibleTokenTypes.Collectible;
-      gensBlock.NonFungibleKey = "";
+      gensBlock.NonFungibleKey = undefined;
+      gensBlock.IsNonFungible = true;
       gensBlock.Owner = owner;
       gensBlock.Address = undefined;
       gensBlock.Currency = undefined;

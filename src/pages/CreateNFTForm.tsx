@@ -60,68 +60,69 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
 
   // get file data from form file input
   // redux can't handle big binary data. so upload file to server first
-  const handleFileChange = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const file = event.target.files![0];
-    const data = await readFileData(event);
+  const handleFileChange = useCallback(
+    async (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files![0];
+      const data = await readFileData(event);
 
-    // first sha256 the file
-    const hash = await sha256(data);
+      // first sha256 the file
+      const hash = await sha256(data);
 
-    // sign the hash with lyraCrypto
-    const userToken = JSON.parse(sessionStorage.getItem("token")!);
-    const signt = LyraCrypto.Sign(hash, userToken.pvt);
+      // sign the hash with lyraCrypto
+      const userToken = JSON.parse(sessionStorage.getItem("token")!);
+      const signt = LyraCrypto.Sign(hash, userToken.pvt);
 
-    //console.log(`hash: ${hash} signt: ${signt} by ${userToken.pvt}`);
+      //console.log(`hash: ${hash} signt: ${signt} by ${userToken.pvt}`);
 
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("accountId", app.wallet.accountId as string);
-    formData.append("signature", signt);
-    formData.append("signatureType", "p1393");
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("accountId", app.wallet.accountId as string);
+      formData.append("signature", signt);
+      formData.append("signatureType", "p1393");
 
-    try {
-      const response = await BlockchainAPI.uploadFile(formData);
-      console.log(response);
-      setImgsrc(response.url);
+      try {
+        const response = await BlockchainAPI.uploadFile(formData);
+        console.log(response);
+        setImgsrc(response.url);
 
-      // then we create a metadata url
-      var metaret = await createMetaData();
-      setMetaUrl(metaret.url);
-    } catch (error) {
-      console.log(error);
-      dumpHttpError(error);
-    }
-  };
+        // then we create a metadata url
+        var metaret = await createMetaData(response.url);
+        setMetaUrl(metaret.url);
+      } catch (error) {
+        console.log(error);
+        dumpHttpError(error);
+      }
+    },
+    [imgsrc, metaUrl]
+  );
 
-  const createMetaData = async () => {
-    var lsb = await BlockchainAPI.lastServiceHash();
+  const createMetaData = useCallback(
+    async (imgUrl: string) => {
+      var lsb = await BlockchainAPI.lastServiceHash();
 
-    var input = `${app.wallet.accountId as string}:${lsb.data}:${imgsrc}`;
+      var input = `${app.wallet.accountId as string}:${lsb}:${imgUrl}`;
 
-    const userToken = JSON.parse(sessionStorage.getItem("token")!);
-    const apisign = LyraCrypto.Sign(input, userToken.pvt);
-    // log input
-    console.log(`input: ${input} apisign: ${apisign} by ${userToken.pvt}`);
+      const userToken = JSON.parse(sessionStorage.getItem("token")!);
+      const apisign = LyraCrypto.Sign(input, userToken.pvt);
+      // log input
+      console.log(`input: ${input} apisign: ${apisign} by ${userToken.pvt}`);
 
-    var ret = await BlockchainAPI.createNFTMeta(
-      app.wallet.accountId as string,
-      apisign,
-      name,
-      desc,
-      imgsrc
-    );
+      var ret = await BlockchainAPI.createNFTMeta(
+        app.wallet.accountId as string,
+        apisign,
+        name,
+        desc,
+        imgUrl
+      );
 
-    console.log(ret);
-    return ret;
-  };
+      console.log(ret);
+      return ret;
+    },
+    [name, desc, imgsrc]
+  );
 
   const onMintClick = useCallback(async () => {
     console.log("mint NFT.");
-    // create metadata
-    var ret = await createMetaData();
-
     // mint NFT
     dispatch({
       type: WALLET_MINT_NFT,
@@ -130,7 +131,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         name: name,
         description: desc,
         supply: supply,
-        metadataUrl: ret.url
+        metadataUrl: metaUrl
       }
     });
   }, [name, desc, metaUrl, supply, imgsrc]);
