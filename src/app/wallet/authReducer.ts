@@ -24,11 +24,6 @@ const authReducer = (state = initState, action: any) => {
         ...state,
         hasKey: false
       };
-    case actionTypes.STORE_INIT_DONE:
-      return {
-        ...state,
-        accountId: action.payload?.accountId
-      };
     default: {
       return state;
     }

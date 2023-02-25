@@ -21,7 +21,7 @@ type TokenMintProps = {
 const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
   const [name, setName] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
-  const [url, setUrl] = useState<string>("");
+  const [metaUrl, setMetaUrl] = useState<string>("");
   const [supply, setSupply] = useState<number>(1);
 
   const [imgsrc, setImgsrc] = useState("../asserts/frame-627115@2x.png");
@@ -85,68 +85,17 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
       const response = await BlockchainAPI.uploadFile(formData);
       console.log(response);
       setImgsrc(response.url);
+
+      // then we create a metadata url
+      var metaret = await createMetaData();
+      setMetaUrl(metaret.url);
     } catch (error) {
       console.log(error);
       dumpHttpError(error);
     }
   };
 
-  // const handleSubmit = async (event) => {
-  //   setStatus(""); // Reset status
-  //   event.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("avatar", file);
-  //   formData.append("name", name);
-  //   const resp = await axios.post(UPLOAD_ENDPOINT, formData, {
-  //     headers: {
-  //       "content-type": "multipart/form-data",
-  //       Authorization: `Bearer ${userInfo.token}`
-  //     }
-  //   });
-  //   setStatus(resp.status === 200 ? "Thank you!" : "Error.");
-  // };
-
-  const changeHandler = (event: any) => {
-    console.log(event.target.files);
-    console.log("Uploading file...");
-    // readFileData(event)
-    //   .then((value) => {
-    //     console.log(value);
-    //     var data = new Uint8Array(value);
-    //     console.log(data);
-    //     window.rrProxy.ReactRazor.Pages.Home.Interop.UploadFileAsync(window.rrComponent, event.target.files[0].name, event.target.files[0].type, data)
-    //       .then(function (response) {
-    //         return JSON.parse(response);
-    //       })
-    //       .then(function (result) {
-    //         if (result.ret == "Success") {
-    //           // we got image url. so we create metadata for it.
-    //           window.rrProxy.ReactRazor.Pages.Home.Interop.CreateNFTMetaDataAsync(window.rrComponent, name, desc, result.result)
-    //             .then(function (response) {
-    //               return JSON.parse(response);
-    //             })
-    //             .then(function (result) {
-    //               if (result.ret == "Success") {
-    //                 setUrl(result.result);
-    //               }
-    //               else {
-    //                 window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(window.rrComponent, "Error", result.msg);
-    //               }
-    //             })
-    //         }
-    //         else {
-    //           window.rrProxy.ReactRazor.Pages.Home.Interop.AlertAsync(window.rrComponent, "Warning", result.msg);
-    //         }
-    //       });
-    //   })
-    //   .catch((err) => {
-    //     console.log("file upload error! " + err)
-    //   });
-  };
-
-  const onMintClick = useCallback(async () => {
-    console.log("mint NFT.");
-    // create metadata
+  const createMetaData = async () => {
     var lsb = await BlockchainAPI.lastServiceHash();
 
     var input = `${app.wallet.accountId as string}:${lsb.data}:${imgsrc}`;
@@ -165,7 +114,13 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
     );
 
     console.log(ret);
-    setUrl(ret.url);
+    return ret;
+  };
+
+  const onMintClick = useCallback(async () => {
+    console.log("mint NFT.");
+    // create metadata
+    var ret = await createMetaData();
 
     // mint NFT
     dispatch({
@@ -178,7 +133,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         metadataUrl: ret.url
       }
     });
-  }, [name, desc, url, supply, imgsrc]);
+  }, [name, desc, metaUrl, supply, imgsrc]);
 
   return (
     <div className="createnftform">
@@ -215,13 +170,14 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         placeholder="https://..."
         size="medium"
         margin="none"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
+        value={metaUrl}
+        onChange={(e) => setMetaUrl(e.target.value)}
       />
       <div className="or">or</div>
       <input
         className="select-nft-image"
         type="file"
+        placeholder="Select NFT Image"
         onChange={handleFileChange}
       />
       <button className="prepare-sell-order-button12" onClick={onMintClick}>

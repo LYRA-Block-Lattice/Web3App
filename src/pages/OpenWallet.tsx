@@ -31,6 +31,7 @@ const OpenWallet: FunctionComponent = () => {
   const names = useSelector(getWalletNamesSelector);
   const dispatch = useDispatch();
   const auth = useSelector(getAuthSelector);
+  const app = useSelector((state: any) => state.app);
 
   const handleChange = (event: SelectChangeEvent) => {
     setIndex(+event.target.value);
@@ -51,14 +52,13 @@ const OpenWallet: FunctionComponent = () => {
   }, [names, name, index, password, dispatch]);
 
   const onSignUpClick = useCallback(() => {
-    navigate("/create-wallet");
+    navigate("/createwallet");
   }, [navigate]);
 
   useEffect(() => {
-    if (auth.accountId != undefined && names && names.length > 0)
-      setIndex(names.findIndex((a) => a == auth.walletName));
-    else navigate("/create-wallet");
-  }, [dispatch, auth.accountId, names]);
+    if (!app.existing) navigate("/createwallet");
+    else setIndex(names.findIndex((a) => a == auth.walletName));
+  }, [dispatch, app, auth, names]);
 
   const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)

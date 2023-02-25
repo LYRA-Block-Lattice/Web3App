@@ -106,7 +106,7 @@ const walletReducer = (state = initState, action: IAction): IWalletState => {
     case actionTypes.STORE_INIT_DONE:
       return {
         ...state,
-        existing: action.payload !== undefined && action.payload !== null,
+        existing: action.payload?.wallets?.length > 0,
         names: action.payload?.wallets.map((a: any) => a.name),
         name: action.payload?.name,
         network: action.payload?.network,

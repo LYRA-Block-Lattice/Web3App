@@ -91,12 +91,19 @@ const WalletHome: FunctionComponent = () => {
   const [bidcnt, setBidcnt] = useState(0);
 
   useEffect(() => {
-    dispatch({ type: actionTypes.SIGNALR_CONNECT });
-    dispatch({ type: actionTypes.WALLET_GET_BALANCE });
+    // check if user has wallet. if none, redirect to create wallet page
+    if (app.wallet?.accountId) {
+      dispatch({ type: actionTypes.SIGNALR_CONNECT });
+      dispatch({ type: actionTypes.WALLET_GET_BALANCE });
+    } else if (app.existing) {
+      navigate("/openwallet");
+    } else {
+      navigate("/createwallet");
+    }
   }, [dispatch]);
 
   const ofCatalog = (selcat: string, list: IBalance[]) => {
-    console.log("ofCatalog", selcat);
+    //console.log("ofCatalog", selcat);
     if (selcat === "") return list;
     else if (selcat === "Token")
       return list.filter(

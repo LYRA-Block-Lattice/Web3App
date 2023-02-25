@@ -26,7 +26,7 @@ const CreateWallet: FunctionComponent = () => {
   const [pvk, setPvk] = useState("");
 
   const onOpenWalletLinkClick = useCallback(() => {
-    navigate("/open-wallet");
+    navigate("/openwallet");
   }, [navigate]);
 
   const onNavBackButtonClick = useCallback(() => {
@@ -196,7 +196,10 @@ const CreateWallet: FunctionComponent = () => {
         >
           <div className="primary-button7">Create</div>
         </button>
-        <button className="prepare-sell-order-button15">
+        <button
+          className="prepare-sell-order-button15"
+          onClick={onOpenWalletLinkClick}
+        >
           <div className="mini-button">Open</div>
         </button>
       </div>
