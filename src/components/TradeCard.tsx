@@ -75,13 +75,13 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
         <a className="title-section1">
           <div className="trade-parent">
             <b className="trade">{dir}</b>
-            <b className="trade">{biding}</b>
+            <b className="trade">{dir == "Buy" ? biding : offering}</b>
             <img
               className="frame-child3"
               alt=""
               src="../asserts/arrow-22.svg"
             />
-            <b className="tetherusdt3">{offering}</b>
+            <b className="tetherusdt3">{dir == "Buy" ? offering : biding}</b>
           </div>
           <div className="title-section-item" />
           <div className="am-container">
@@ -126,6 +126,16 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
             <div className="mini-button4">Comment</div>
           </button>
         )}
+        <a
+          href={BlockchainAPI.getBlockExplorerUrl(tradeId)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="no-decoration"
+        >
+          <button className="delist-button1">
+            <div className="mini-button4">View Block</div>
+          </button>
+        </a>
       </div>
     </div>
   );

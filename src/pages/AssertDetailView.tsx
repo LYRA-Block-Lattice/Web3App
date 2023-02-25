@@ -314,6 +314,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="frame-parent1">
               <div className="selectedamount-parent">
                 <input
+                  placeholder="Amount to buy"
                   className="selectedamount"
                   type="number"
                   value={buyAmount}

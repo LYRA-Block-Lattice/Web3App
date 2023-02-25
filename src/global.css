@@ -134,3 +134,15 @@ body {
   height: 100% !important;
   /* other styles for main content */
 }
+.no-decoration {
+  text-decoration: none;
+  color: inherit;
+}
+.ar {
+  text-align: right;
+  width: 100%;
+  overflow: auto;
+}
+.arb {
+  float: right;
+}

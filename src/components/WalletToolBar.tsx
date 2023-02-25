@@ -57,7 +57,7 @@ const WalletToolBar: FunctionComponent = () => {
                 alt=""
                 src="../asserts/home--icon--interlocution6.svg"
               />
-              <div className="ranking5">Swap</div>
+              <div className="ranking5">Mint</div>
             </button>
             <button className="send-button" onClick={onSendButtonClick}>
               <img

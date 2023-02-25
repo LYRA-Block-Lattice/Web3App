@@ -86,7 +86,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
           //   </ListSubheader>
           // }
         >
-          <ListItemButton>
+          {/* <ListItemButton>
             <ListItemIcon>
               <SendIcon sx={{ color: "white" }} />
             </ListItemIcon>
@@ -114,7 +114,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                 <ListItemText primary="Starred" />
               </ListItemButton>
             </List>
-          </Collapse>
+          </Collapse> */}
           {auth?.hasKey && (
             <React.Fragment>
               <Divider sx={{ color: "white" }} />
@@ -130,7 +130,7 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
             <ListItemIcon>
               <DraftsIcon sx={{ color: "white" }} />
             </ListItemIcon>
-            <Link to="/about">
+            <Link to="/about" className="no-decoration">
               <ListItemText primary="About" />
             </Link>
           </ListItemButton>

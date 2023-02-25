@@ -6,6 +6,7 @@ import TableComponent, {
   TableComponentProps
 } from "../components/TableComponent";
 import { UniOrderStatus } from "../app/blockchain/blocks/meta";
+import { BlockchainAPI } from "../app/blockchain/blockchain-api";
 
 type MarketOrderType = {
   orderId: string;
@@ -141,6 +142,18 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           <b className="a-big-seller">{sellerRatings}</b>
           <div className="the-first-dao">{sellerTrades}</div>
         </div>
+      </div>
+      <div className="ar">
+        <a
+          href={BlockchainAPI.getBlockExplorerUrl(orderId)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="no-decoration arb"
+        >
+          <button className="delist-button1">
+            <div className="mini-button4">View on Block Explorer</div>
+          </button>
+        </a>
       </div>
       <div>
         {showTradeTable ? <TableComponent key={orderId} data={trades} /> : null}

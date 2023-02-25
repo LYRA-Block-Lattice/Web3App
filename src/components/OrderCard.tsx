@@ -193,6 +193,16 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
             <div className="mini-button2">Close</div>
           </button>
         ) : null}
+        <a
+          href={BlockchainAPI.getBlockExplorerUrl(orderId)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="no-decoration"
+        >
+          <button className="delist-button">
+            <div className="mini-button2">View Block</div>
+          </button>
+        </a>
       </div>
     </div>
   );

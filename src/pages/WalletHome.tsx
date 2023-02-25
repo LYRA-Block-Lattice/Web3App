@@ -37,10 +37,13 @@ const CoinItem: FunctionComponent<CoinItemType> = ({ coins }) => {
   const notify = useSelector(getNotifySelector);
 
   function getWorth(token: IBalance): string {
+    if (notify.prices === undefined) return "";
+
     var ticker = token.Ticker;
     if (ticker.startsWith("tether/")) ticker = ticker.replace("tether/", "");
     if (ticker.startsWith("fiat/"))
       ticker = ticker.replace("fiat/", "").toLowerCase();
+
     const price = notify.prices?.find((a) => a.ticker == ticker)?.price;
     if (price === undefined) return "";
     return (
