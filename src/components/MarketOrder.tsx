@@ -141,11 +141,9 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           <b className="a-big-seller">{sellerRatings}</b>
           <div className="the-first-dao">{sellerTrades}</div>
         </div>
-        <div>
-          {showTradeTable ? (
-            <TableComponent key={orderId} data={trades} />
-          ) : null}
-        </div>
+      </div>
+      <div>
+        {showTradeTable ? <TableComponent key={orderId} data={trades} /> : null}
       </div>
     </div>
   );

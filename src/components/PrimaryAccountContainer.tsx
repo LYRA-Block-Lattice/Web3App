@@ -19,7 +19,7 @@ const PrimaryAccountContainer: FunctionComponent<
   const [bidcnt, setBidcnt] = useState(0);
 
   const onBalanceDisplayZoneClick = useCallback(() => {
-    navigate("/wallethome");
+    if (!auth.hasKey) navigate("/openwallet?ret=/");
   }, [navigate]);
 
   const scanToPay = useCallback(() => {

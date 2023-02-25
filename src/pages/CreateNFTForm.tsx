@@ -8,6 +8,9 @@ import { LyraCrypto } from "../app/blockchain/lyra-crypto";
 import axios from "axios";
 import base58 from "bs58";
 import { BlockchainAPI } from "../app/blockchain/blockchain-api";
+import { HTTPError } from "ky-universal";
+import { LyraApi } from "../app/blockchain/lyra-api";
+import { dumpHttpError, extractStreamData } from "../app/utils";
 
 type TokenMintProps = {
   onClose?: (ticker?: string) => void;
@@ -84,6 +87,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
       setImgsrc(response.url);
     } catch (error) {
       console.log(error);
+      dumpHttpError(error);
     }
   };
 

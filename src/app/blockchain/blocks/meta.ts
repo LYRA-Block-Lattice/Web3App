@@ -546,12 +546,12 @@ export class AuthorizationAPIResult extends APIResult {
 
 export class BlockAPIResult extends APIResult {
   public blockData!: string;
-  public ResultBlockType!: BlockTypes;
+  public resultBlockType!: BlockTypes;
 }
 
 export class MultiBlockAPIResult extends APIResult {
   public blockDatas!: string[];
-  public ResultBlockTypes!: BlockTypes[];
+  public resultBlockTypes!: BlockTypes[];
 
   getDaos(): Block[] {
     const blocks: Block[] = [];
@@ -567,6 +567,11 @@ export class SimpleJsonAPIResult extends APIResult {
   public getdata(): any {
     return JSON.parse(this.jsonString);
   }
+}
+
+export class ImageUploadResult extends APIResult {
+  hash!: string;
+  url!: string;
 }
 
 export class LyraContractABI {

@@ -26,6 +26,7 @@ import stringify from "json-stable-stringify";
 import { LyraCrypto } from "./lyra-crypto";
 import { BlockchainAPI } from "./blockchain-api";
 import { HTTPError } from "ky-universal";
+import { dumpHttpError, extractStreamData } from "../utils";
 
 export class LyraApi {
   private network: string;
@@ -54,17 +55,6 @@ export class LyraApi {
 
   sign(data: string) {
     return LyraCrypto.Sign(data, this.prvKey);
-  }
-
-  async extractStreamData(stream: ReadableStream): Promise<string> {
-    const reader = stream.getReader();
-    let data = "";
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      if (value) data += new TextDecoder().decode(value);
-    }
-    return data;
   }
 
   async sendEx(
@@ -97,11 +87,7 @@ export class LyraApi {
       return sendRet;
     } catch (error) {
       console.log("send error", error);
-      if (error instanceof HTTPError) {
-        console.log("http error", error.response);
-        const streamData = await this.extractStreamData(error.response.body!);
-        console.log("Stream data:", streamData);
-      }
+      dumpHttpError(error);
       throw error;
     }
   }

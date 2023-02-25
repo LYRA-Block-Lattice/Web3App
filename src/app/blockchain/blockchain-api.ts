@@ -3,6 +3,7 @@ import {
   APIResult,
   AuthorizationAPIResult,
   BlockAPIResult,
+  ImageUploadResult,
   MultiBlockAPIResult,
   NftMetadata,
   SimpleJsonAPIResult
@@ -93,12 +94,13 @@ export class BlockchainAPI {
   static Start_API: string;
 
   static setNetworkId = (id: string | undefined) => {
-    BlockchainAPI.networkid = id || "devnet";
+    console.log("setNetworkId", id);
+    this.networkid = id || "devnet";
 
-    BlockchainAPI.Block_API_v1 = `https://${this.networkid}.lyra.live/api/node`;
-    BlockchainAPI.Block_API_v2 = `https://${this.networkid}.lyra.live/api/EC`;
-    BlockchainAPI.Dealer_API = `https://dealer${this.networkid}.lyra.live/api/dealer`;
-    BlockchainAPI.Start_API = `https://start${this.networkid}.lyra.live/svc`;
+    this.Block_API_v1 = `https://${this.networkid}.lyra.live/api/node`;
+    this.Block_API_v2 = `https://${this.networkid}.lyra.live/api/EC`;
+    this.Dealer_API = `https://dealer${this.networkid}.lyra.live/api/dealer`;
+    this.Start_API = `https://start${this.networkid}.lyra.live/svc`;
   };
 
   static getBlockExplorerUrl = (id: string) => {
@@ -263,17 +265,21 @@ export class BlockchainAPI {
 
   static fetchDealer = () =>
     this.fetchJson<IDealerInfo>(`${this.Dealer_API}/Dealer`);
-  static uploadFile = (formData: FormData) =>
-    this.postJson<any>(
-      `${this.Dealer_API}/UploadFile`,
-      JSON.stringify(formData),
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      }
-    );
+
+  static uploadFile = async (theForm: FormData): Promise<ImageUploadResult> => {
+    const url = `${this.Dealer_API}/UploadFile`;
+    console.log("uploading file to " + url);
+    const ret = await ky.post(url, {
+      body: theForm,
+      headers: {},
+      timeout: 300000 // 5 minutes
+    });
+    const jsonString = await ret.text();
+    const data = JSON.parse(jsonString) as ImageUploadResult;
+    return data;
+    // const result = plainToClass(ImageUploadResult, ret.text());
+    // return result;
+  };
 
   // Starter API
   static createNFTMeta = (

@@ -57,6 +57,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:debug": "concurrently \"npm start\" \"chrome.exe --remote-debugging-port=9222\"",
     "build": "react-scripts build",
     "build:testnet": "env-cmd -f .env.testnet npm run build",
     "test": "react-scripts test",
