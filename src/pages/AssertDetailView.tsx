@@ -290,7 +290,9 @@ const AssertDetailView: FunctionComponent = () => {
                 {info?.Blocks.Order.Order.limitMax}
               </div>
               <div className="tetherusdt-parent">
-                <div className="tetherusdt">{info?.Blocks.Offgen.Ticker}</div>
+                <div className="tetherusdt">
+                  {info?.Blocks.Offgen.Custom1 ?? info?.Blocks.Offgen.Ticker}
+                </div>
                 <div className="div2">
                   {" "}
                   ${" "}
@@ -320,7 +322,9 @@ const AssertDetailView: FunctionComponent = () => {
                   onChange={(e) => setBuyAmount(Number(e.target.value))}
                 />
                 <div className="tethereth-group">
-                  <div className="tethereth1">{info?.Blocks.Offgen.Ticker}</div>
+                  <div className="tethereth1">
+                    {info?.Blocks.Offgen.Custom1 ?? info?.Blocks.Offgen.Ticker}
+                  </div>
                   <div className="tetherusdt">
                     {bidAmount.toLocaleString(undefined, {
                       maximumFractionDigits: 8
