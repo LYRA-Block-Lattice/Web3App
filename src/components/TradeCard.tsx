@@ -18,17 +18,17 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
               <img
                 className="icbaseline-generating-tokens-icon1"
                 alt=""
-                src="../asserts/icbaselinegeneratingtokens1.svg"
+                src="../asserts/icbaselinegeneratingtokens2.svg"
               />
               <img
                 className="order-image-item"
                 alt=""
-                src="../asserts/arrow-11.svg"
+                src="../asserts/arrow-12.svg"
               />
               <img
                 className="icbaseline-generating-tokens-icon1"
                 alt=""
-                src="../asserts/carbonuserservicedesk1.svg"
+                src="../asserts/carbonuserservicedesk2.svg"
               />
             </div>
             <div className="order-status1">
@@ -43,7 +43,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
             <img
               className="frame-child3"
               alt=""
-              src="../asserts/arrow-21.svg"
+              src="../asserts/arrow-22.svg"
             />
             <b className="tetherusdt3">tether/USDT</b>
           </div>

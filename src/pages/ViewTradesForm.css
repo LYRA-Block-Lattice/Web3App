@@ -1,12 +1,12 @@
 .viewtradesform,
-.wallet-card-parent {
+.wallet-card-group {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-lg);
 }
-.wallet-card-parent {
+.wallet-card-group {
   flex: 1;
 }
 .viewtradesform {

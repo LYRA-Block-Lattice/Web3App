@@ -18,17 +18,17 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
               <img
                 className="icbaseline-generating-tokens-icon"
                 alt=""
-                src="../asserts/icbaselinegeneratingtokens1.svg"
+                src="../asserts/icbaselinegeneratingtokens2.svg"
               />
               <img
                 className="order-image-child"
                 alt=""
-                src="../asserts/arrow-11.svg"
+                src="../asserts/arrow-12.svg"
               />
               <img
                 className="icbaseline-generating-tokens-icon"
                 alt=""
-                src="../asserts/carbonuserservicedesk1.svg"
+                src="../asserts/carbonuserservicedesk2.svg"
               />
             </div>
             <div className="order-status">
@@ -40,7 +40,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
           <div className="sell-parent">
             <b className="sell">Sell</b>
             <b className="sell">BTC</b>
-            <img className="arrow-icon" alt="" src="../asserts/arrow-21.svg" />
+            <img className="arrow-icon" alt="" src="../asserts/arrow-22.svg" />
             <b className="tetherusdt2">tether/USDT</b>
           </div>
           <div className="title-section-child" />

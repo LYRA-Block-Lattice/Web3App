@@ -1,9 +1,11 @@
 .misccomponents,
 .nft-showing-item-parent {
   display: flex;
+  justify-content: flex-start;
+}
+.nft-showing-item-parent {
   flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;
   gap: var(--gap-5xl);
 }
 .misccomponents {

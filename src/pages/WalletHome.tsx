@@ -48,7 +48,7 @@ const WalletHome: FunctionComponent = () => {
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="wallet-card-group">
+      <div className="wallet-card-parent">
         <PrimaryAccountContainer />
         <WalletToolBar />
         <div className="coinlisting">

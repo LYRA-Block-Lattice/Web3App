@@ -136,7 +136,7 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
             </div>
           </div>
-          <div className="pricelabel-parent">
+          <div className="my-offer-section">
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
@@ -166,21 +166,21 @@ const AssertDetailView: FunctionComponent = () => {
               </div>
             </div>
           </div>
-          <div className="makeofferbutton">
-            <div className="pricelabel1">
-              <div className="meka-legends">Collateral and Fees</div>
-            </div>
-            <CollateralCalculation />
-            <button className="prepare-sell-order-button4">
-              <img
-                className="material-symbolsshare-icon"
-                alt=""
-                src="../asserts/evapricetagsoutline.svg"
-              />
-              <div className="primary-button4">Make offer</div>
-            </button>
-          </div>
         </div>
+        <div className="makeofferbutton">
+          <div className="pricelabel1">
+            <div className="meka-legends">Collateral and Fees</div>
+          </div>
+          <CollateralCalculation />
+        </div>
+        <button className="prepare-sell-order-button4">
+          <img
+            className="material-symbolsshare-icon"
+            alt=""
+            src="../asserts/evapricetagsoutline.svg"
+          />
+          <div className="primary-button4">Make offer</div>
+        </button>
         <div className="descriptiontitle">
           <img
             className="material-symbolsshare-icon"
@@ -196,8 +196,8 @@ const AssertDetailView: FunctionComponent = () => {
             which has a total staking of 30,000,000 LYR.
           </div>
         </div>
+        <BottomNavigationBar />
       </div>
-      <BottomNavigationBar />
     </div>
   );
 };

@@ -19,17 +19,17 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
               <img
                 className="icbaseline-generating-tokens-icon2"
                 alt=""
-                src="../asserts/icbaselinegeneratingtokens3.svg"
+                src="../asserts/icbaselinegeneratingtokens4.svg"
               />
               <img
                 className="order-image-inner"
                 alt=""
-                src="../asserts/arrow-11.svg"
+                src="../asserts/arrow-12.svg"
               />
               <img
                 className="icbaseline-generating-tokens-icon2"
                 alt=""
-                src="../asserts/carbonuserservicedesk3.svg"
+                src="../asserts/carbonuserservicedesk4.svg"
               />
             </div>
             <div className="order-status4">
@@ -44,7 +44,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
             <img
               className="frame-child4"
               alt=""
-              src="../asserts/arrow-21.svg"
+              src="../asserts/arrow-22.svg"
             />
             <b className="tetherusdt5">tether/USDT</b>
           </div>
@@ -76,7 +76,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
         <img
           className="userprofilesection-child"
           alt=""
-          src="../asserts/ellipse-1@2x.png"
+          src="../asserts/ellipse-12@2x.png"
         />
         <div className="a-big-seller-parent">
           <b className="a-big-seller">A big seller</b>
