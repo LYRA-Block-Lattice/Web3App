@@ -1,12 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
-import ViewTradesForm from "./pages/ViewTradesForm";
-import MiscComponents from "./pages/MiscComponents";
 import ScanToPay from "./pages/ScanToPay";
 import About from "./pages/About";
 import UserProfile from "./pages/UserProfile";
 import SellFlow from "./pages/SellFlow";
+import MiscComponents from "./pages/MiscComponents";
 import SendTokenForm from "./pages/SendTokenForm";
 import WalletHome from "./pages/WalletHome";
 import AssertDetailView from "./pages/AssertDetailView";
@@ -14,6 +13,7 @@ import MintFiatToken from "./pages/MintFiatToken";
 import CreateTokenForm from "./pages/CreateTokenForm";
 import CreateTOTForm from "./pages/CreateTOTForm";
 import SellTokenToToken from "./pages/SellTokenToToken";
+import ViewTradesForm from "./pages/ViewTradesForm";
 import ViewOrdersForm from "./pages/ViewOrdersForm";
 import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
 import CreateNFTForm from "./pages/CreateNFTForm";
@@ -44,14 +44,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/viewtradesform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/misccomponents":
-        title = "";
-        metaDescription = "";
-        break;
       case "/scantopay":
         title = "";
         metaDescription = "";
@@ -65,6 +57,10 @@ function App() {
         metaDescription = "";
         break;
       case "/sellflow":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/misccomponents":
         title = "";
         metaDescription = "";
         break;
@@ -93,6 +89,10 @@ function App() {
         metaDescription = "";
         break;
       case "/selltokentotoken":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/viewtradesform":
         title = "";
         metaDescription = "";
         break;
@@ -140,10 +140,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Market />} />
 
-      <Route path="/viewtradesform" element={<ViewTradesForm />} />
-
-      <Route path="/misccomponents" element={<MiscComponents />} />
-
       <Route path="/scantopay" element={<ScanToPay />} />
 
       <Route path="/about" element={<About />} />
@@ -151,6 +147,8 @@ function App() {
       <Route path="/userprofile" element={<UserProfile />} />
 
       <Route path="/sellflow" element={<SellFlow />} />
+
+      <Route path="/misccomponents" element={<MiscComponents />} />
 
       <Route path="/sendtokenform" element={<SendTokenForm />} />
 
@@ -167,6 +165,8 @@ function App() {
       <Route path="/createtotform" element={<CreateTOTForm />} />
 
       <Route path="/selltokentotoken" element={<SellTokenToToken />} />
+
+      <Route path="/viewtradesform" element={<ViewTradesForm />} />
 
       <Route path="/viewordersform" element={<ViewOrdersForm />} />
 

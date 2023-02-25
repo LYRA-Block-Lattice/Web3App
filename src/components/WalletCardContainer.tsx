@@ -3,26 +3,26 @@ import "./WalletCardContainer.css";
 
 const WalletCardContainer: FunctionComponent = () => {
   return (
-    <div className="wallet-card">
-      <div className="wallet-card-inner">
-        <div className="rectangle-wrapper">
-          <div className="rectangle2" />
+    <div className="wallet-card1">
+      <div className="wallet-card-child">
+        <div className="rectangle-container">
+          <div className="rectangle3" />
         </div>
       </div>
-      <div className="wallet-card-child">
-        <div className="balance-display-zone-parent">
-          <a className="balance-display-zone">
-            <button className="wallet-name-label">My Primary Account</button>
-            <div className="balance-display-zone-child" />
-            <b className="usdtbalance">1,025,000</b>
-            <b className="lyrlabel">LYR</b>
-            <div className="balance-display-zone-item" />
+      <div className="wallet-card-inner1">
+        <div className="balance-display-zone-group">
+          <a className="balance-display-zone1">
+            <button className="wallet-name-label1">My Primary Account</button>
+            <div className="balance-display-zone-inner" />
+            <b className="usdtbalance2">1,025,000</b>
+            <b className="lyrlabel1">LYR</b>
+            <div className="rectangle-div" />
           </a>
-          <div className="qrcode-button-wrapper">
-            <button className="qrcode-button">
-              <div className="qrcode-button-round" />
+          <div className="qrcode-button-container">
+            <button className="qrcode-button1">
+              <div className="qrcode-button-round1" />
               <img
-                className="qrcode-icon"
+                className="qrcode-icon1"
                 alt=""
                 src="../asserts/qrcode-icon.svg"
               />

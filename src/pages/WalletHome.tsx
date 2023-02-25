@@ -150,7 +150,7 @@ const WalletHome: FunctionComponent = () => {
   return (
     <div className="wallethome main-content">
       <TopNavigationBar title="My Wallet" />
-      <div className="wallet-card-group">
+      <div className="wallet-card-parent">
         <PrimaryAccountContainer />
         <WalletToolBar />
         <div className="coinlisting">

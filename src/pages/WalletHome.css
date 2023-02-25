@@ -74,13 +74,13 @@
   gap: var(--gap-md);
 }
 .coinlisting,
-.wallet-card-group,
+.wallet-card-parent,
 .wallethome {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.wallet-card-group {
+.wallet-card-parent {
   flex: 1;
   width: 396px;
   align-items: flex-start;

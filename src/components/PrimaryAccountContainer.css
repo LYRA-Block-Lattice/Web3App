@@ -1,29 +1,29 @@
-.rectangle3 {
+.rectangle2 {
   flex: 1;
   position: relative;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-4xs);
   background-color: var(--secondary1);
   width: 5px;
 }
-.rectangle-container,
-.wallet-card-inner1 {
+.rectangle-wrapper,
+.wallet-card-inner {
   align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.rectangle-container {
+.rectangle-wrapper {
   overflow: hidden;
   flex-direction: column;
 }
-.wallet-card-inner1 {
+.wallet-card-inner {
   width: 18px;
   flex-shrink: 0;
   flex-direction: row;
   padding: var(--padding-7xs) 0;
   box-sizing: border-box;
 }
-.wallet-name-label1 {
+.wallet-name-label {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -37,7 +37,7 @@
   display: inline-block;
   width: 206px;
 }
-.balance-display-zone-inner {
+.balance-display-zone-child {
   position: relative;
   border-top: 1px solid var(--info1);
   box-sizing: border-box;
@@ -45,27 +45,25 @@
   height: 1px;
   flex-shrink: 0;
 }
-.usdtbalance1 {
+.lyrlabel,
+.usdtbalance {
   position: relative;
   letter-spacing: 0.3px;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
 }
-.rectangle-div {
+.lyrlabel {
+  font-size: var(--uppercase-small-size);
+  color: var(--secondary1);
+  text-align: left;
+}
+.balance-display-zone-item {
   position: relative;
   background-color: var(--color-gainsboro-500);
   width: 22px;
   height: 2px;
   flex-shrink: 0;
 }
-.usdtlabel {
-  position: relative;
-  font-size: var(--uppercase-small-size);
-  letter-spacing: 0.3px;
-  color: var(--secondary1);
-  text-align: left;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.24);
-}
-.balance-display-zone1 {
+.balance-display-zone {
   text-decoration: none;
   align-self: stretch;
   flex: 1;
@@ -78,7 +76,7 @@
   gap: var(--gap-4xs);
   color: inherit;
 }
-.qrcode-button-round1 {
+.qrcode-button-round {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -91,14 +89,14 @@
   opacity: 0.5;
   mix-blend-mode: normal;
 }
-.qrcode-icon1 {
+.qrcode-icon {
   position: absolute;
   top: 14.33px;
   right: 14.07px;
   width: 29px;
   height: 29px;
 }
-.qrcode-button1 {
+.qrcode-button {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -109,20 +107,20 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.balance-display-zone-group,
-.qrcode-button-container {
+.balance-display-zone-parent,
+.qrcode-button-wrapper {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-end;
 }
-.qrcode-button-container {
+.qrcode-button-wrapper {
   overflow: hidden;
   padding: var(--padding-7xs) var(--padding-7xs) var(--padding-4xs)
     var(--padding-4xs);
 }
-.balance-display-zone-group {
+.balance-display-zone-parent {
   flex: 1;
 }
 .nft-count,
@@ -165,7 +163,7 @@
   gap: var(--gap-3xl);
 }
 .frame-parent2,
-.wallet-card1 {
+.wallet-card {
   align-self: stretch;
   display: flex;
   align-items: flex-start;
@@ -175,7 +173,7 @@
   flex: 1;
   flex-direction: column;
 }
-.wallet-card1 {
+.wallet-card {
   border-radius: var(--br-xs);
   background-color: var(--primary1);
   height: 217px;

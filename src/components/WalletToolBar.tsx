@@ -42,46 +42,46 @@ const WalletToolBar: FunctionComponent = () => {
     <>
       <div className="iconssection-wrapper">
         <div className="iconssection">
-          <div className="swap-button-parent">
-            <button className="swap-button" onClick={onSwapButtonClick}>
+          <div className="swap-button-group">
+            <button className="send-button" onClick={onSwapButtonClick}>
               <img
-                className="home-icon-interlocution"
+                className="home-icon-interlocution5"
                 alt=""
                 src="../asserts/home--icon--interlocution5.svg"
               />
-              <div className="ranking">Market</div>
+              <div className="ranking5">Market</div>
             </button>
-            <button className="swap-button">
+            <button className="send-button">
               <img
-                className="home-icon-interlocution"
+                className="home-icon-interlocution5"
                 alt=""
                 src="../asserts/home--icon--interlocution6.svg"
               />
-              <div className="ranking">Swap</div>
+              <div className="ranking5">Swap</div>
             </button>
-            <button className="swap-button" onClick={onSendButtonClick}>
+            <button className="send-button" onClick={onSendButtonClick}>
               <img
-                className="home-icon-interlocution"
+                className="home-icon-interlocution5"
                 alt=""
                 src="../asserts/home--icon--interlocution7.svg"
               />
-              <div className="ranking">Send</div>
+              <div className="ranking5">Send</div>
             </button>
-            <button className="swap-button" onClick={onReceiveButtonClick}>
+            <button className="send-button" onClick={onReceiveButtonClick}>
               <img
-                className="home-icon-interlocution"
+                className="home-icon-interlocution5"
                 alt=""
                 src="../asserts/home--icon--interlocution8.svg"
               />
-              <div className="ranking">Receive</div>
+              <div className="ranking5">Receive</div>
             </button>
-            <button className="swap-button" onClick={openSideMenuPopup}>
+            <button className="send-button" onClick={openSideMenuPopup}>
               <img
-                className="home-icon-interlocution"
+                className="home-icon-interlocution5"
                 alt=""
                 src="../asserts/home--icon--interlocution9.svg"
               />
-              <div className="ranking">More...</div>
+              <div className="ranking5">More...</div>
             </button>
           </div>
         </div>

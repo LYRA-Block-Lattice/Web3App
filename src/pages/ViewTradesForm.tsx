@@ -33,7 +33,7 @@ const ViewTradesForm: FunctionComponent = () => {
   return (
     <div className="viewtradesform main-content">
       <TopNavigationBar title="View Trades" />
-      <div className="wallet-card-parent">
+      <div className="wallet-card-group">
         <WalletCardContainer />
         <MarketToolBarContainer
           homeIconInterlocution="../asserts/home--icon--interlocution10.svg"
