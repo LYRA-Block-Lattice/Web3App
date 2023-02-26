@@ -27,6 +27,14 @@ interface IToken {
   name: string;
 }
 
+const minterUrls: Record<string, string> = {
+  Token: "/mint-token",
+  Fiat: "/mint-fiat",
+  NFT: "/mint-nft",
+  TOT: "/mint-tot",
+  Service: "/mint-service-token"
+};
+
 const SellTokenToToken: FunctionComponent = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -100,7 +108,7 @@ const SellTokenToToken: FunctionComponent = () => {
 
   const openGeneralPopup = useCallback(() => {
     if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
-    else setGeneralPopupOpen(true);
+    else navigate(minterUrls[catsell]);
   }, []);
 
   const closeGeneralPopup = useCallback(

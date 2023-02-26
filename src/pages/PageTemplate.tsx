@@ -3,28 +3,30 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./PageTemplate.css";
 
-const PageTemplate: FunctionComponent = () => {
-  const onNavBackButtonClick = useCallback(() => {
-    //TODO: nav back. none for home (wallet, market, profile, etc.)
-  }, []);
+interface TemplateArgs {
+  title?: string;
+  onNavBackButtonClick?: () => void;
+  onTitleClick?: () => void;
+  onContextMenuButtonClick?: () => void;
+  children?: React.ReactNode | React.ReactNode[];
+}
 
-  const onTitleClick = useCallback(() => {
-    //TODO: scroll top
-  }, []);
-
-  const onContextMenuButtonClick = useCallback(() => {
-    //TODO: context menu
-  }, []);
-
+const PageTemplate: FunctionComponent<TemplateArgs> = ({
+  title,
+  onNavBackButtonClick,
+  onTitleClick,
+  onContextMenuButtonClick,
+  children
+}) => {
   return (
-    <div className="pagetemplate">
+    <div className="pagetemplate main-content">
       <TopNavigationBar
-        title="Page Template"
+        title={title ?? "Page Template"}
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <div className="pagecontent" />
+      <div className="pagecontent">{children}</div>
       <BottomNavigationBar textColor="#434343" />
     </div>
   );

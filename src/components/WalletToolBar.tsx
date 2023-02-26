@@ -13,10 +13,6 @@ const WalletToolBar: FunctionComponent = () => {
   const auth = useSelector(getAuthSelector);
   const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
 
-  const onSwapButtonClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onSendButtonClick = useCallback(() => {
     navigate("/sendtokenform");
   }, [navigate]);
@@ -43,7 +39,7 @@ const WalletToolBar: FunctionComponent = () => {
       <div className="iconssection-wrapper">
         <div className="iconssection">
           <div className="swap-button-group">
-            <button className="send-button" onClick={onSwapButtonClick}>
+            <button className="send-button" onClick={() => navigate("/")}>
               <img
                 className="home-icon-interlocution5"
                 alt=""
@@ -51,7 +47,7 @@ const WalletToolBar: FunctionComponent = () => {
               />
               <div className="ranking5">Market</div>
             </button>
-            <button className="send-button">
+            <button className="send-button" onClick={() => navigate("/mint")}>
               <img
                 className="home-icon-interlocution5"
                 alt=""
@@ -59,7 +55,10 @@ const WalletToolBar: FunctionComponent = () => {
               />
               <div className="ranking5">Mint</div>
             </button>
-            <button className="send-button" onClick={onSendButtonClick}>
+            <button
+              className="send-button"
+              onClick={() => navigate("/sendtokenform")}
+            >
               <img
                 className="home-icon-interlocution5"
                 alt=""

@@ -19,12 +19,12 @@ export const dumpHttpError = async (error: any): Promise<void> => {
     const streamData = await extractStreamData(error.response.body!);
     console.log("Stream data:", streamData);
     console.log("Request headers:");
-    for (const [name, value] of error.request.headers.entries()) {
+    error.request.headers.forEach((value: string, name: string) => {
       console.log(`${name}: ${value}`);
-    }
+    });
     console.log("Response headers:");
-    for (const [name, value] of error.response.headers.entries()) {
+    error.response.headers.forEach((value: string, name: string) => {
       console.log(`${name}: ${value}`);
-    }
+    });
   }
 };

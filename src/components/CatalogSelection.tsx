@@ -11,7 +11,7 @@ import "./CatalogSelection.css";
 type CatalogSelectionType = {
   sellText?: string;
   cat?: string;
-  tokenActionClicked: (
+  tokenActionClicked?: (
     action: string | undefined,
     tokenName: string | undefined,
     xref: LegacyRef<HTMLButtonElement> | undefined
@@ -75,7 +75,7 @@ const CatalogSelection: FunctionComponent<CatalogSelectionType> = ({
           .map((a) => (a.disabled = true));
         return [...prev];
       });
-      tokenActionClicked(action, tokenName, ele?.xref);
+      if (tokenActionClicked) tokenActionClicked(action, tokenName, ele?.xref);
     },
     [buttons]
   );

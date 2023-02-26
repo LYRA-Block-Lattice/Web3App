@@ -23,6 +23,11 @@ import CreateTOTForm from "./pages/CreateTOTForm";
 import CreateNFTForm from "./pages/CreateNFTForm";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
+import MintFiatDialog from "./components/MintFiatDialog";
+import CreateTokenDialog from "./components/CreateTokenDialog";
+import CreateNFTDialog from "./components/CreateNFTDialog";
+import CreateTOTDialog from "./components/CreateTOTDialog";
+import CatalogSelection from "./components/CatalogSelection";
 
 function App() {
   const router = useSelector(getRouterSelector);
@@ -182,7 +187,45 @@ function App() {
 
       <Route path="/openwallet" element={<OpenWallet />} />
 
-      <Route path="/mint-fiat-token" element={<MintFiatToken />} />
+      <Route
+        path="/mint-token"
+        element={
+          <PageTemplate children={<CreateTokenDialog />} title="Mint Token" />
+        }
+      />
+      <Route
+        path="/mint-nft"
+        element={
+          <PageTemplate children={<CreateNFTDialog />} title="Mint NFT" />
+        }
+      />
+      <Route
+        path="/mint-fiat"
+        element={
+          <PageTemplate children={<MintFiatDialog />} title="Mint Fiat" />
+        }
+      />
+      <Route
+        path="/mint-tot"
+        element={
+          <PageTemplate children={<CreateTOTDialog />} title="Mint TOT" />
+        }
+      />
+      <Route
+        path="/mint-service"
+        element={
+          <PageTemplate children={<CreateTOTDialog />} title="Mint Service" />
+        }
+      />
+      <Route
+        path="/mint"
+        element={
+          <PageTemplate
+            children={[<CatalogSelection />, <h1>Hey, what's up!</h1>]}
+            title="What to mint"
+          />
+        }
+      />
 
       <Route path="/createtokenform" element={<CreateTokenForm />} />
 
