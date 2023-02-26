@@ -9,7 +9,7 @@ const PrimaryAccountContainer: FunctionComponent = () => {
           <div className="rectangle2" />
         </div>
       </div>
-      <div className="frame-parent2">
+      <div className="frame-parent3">
         <div className="balance-display-zone-parent">
           <a className="balance-display-zone">
             <button className="wallet-name-label">My Primary Account</button>

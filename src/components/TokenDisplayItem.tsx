@@ -41,7 +41,7 @@ const TokenDisplayItem: FunctionComponent<TokenDisplayItemType> = ({
         src={tokenIcon}
         style={lyraLogoBlackIconStyle}
       />
-      <div className="frame-parent3">
+      <div className="frame-parent4">
         <div className="lyra-coin-parent">
           <b className="lyra-coin">{tokenName}</b>
           <div className="lyr-parent">

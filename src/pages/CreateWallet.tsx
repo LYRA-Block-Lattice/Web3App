@@ -154,10 +154,10 @@ const CreateWallet: FunctionComponent = () => {
             margin="none"
           />
         </div>
-        <button className="prepare-sell-order-button14">
+        <button className="prepare-sell-order-button8">
           <div className="primary-button7">Create</div>
         </button>
-        <button className="prepare-sell-order-button15">
+        <button className="prepare-sell-order-button9">
           <div className="mini-button">Open</div>
         </button>
       </div>

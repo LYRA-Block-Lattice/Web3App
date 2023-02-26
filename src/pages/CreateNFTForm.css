@@ -18,7 +18,7 @@
 }
 .or {
   position: relative;
-  font-size: var(--body-m-size);
+  font-size: var(--body-m1-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -40,7 +40,7 @@
 }
 .secondary-button4 {
   position: relative;
-  font-size: var(--body-m-size);
+  font-size: var(--body-m1-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -49,13 +49,13 @@
   text-align: center;
 }
 .createnftform,
-.prepare-sell-order-button12 {
+.prepare-sell-order-button17 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button12 {
+.prepare-sell-order-button17 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);

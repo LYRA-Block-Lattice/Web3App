@@ -86,13 +86,10 @@
   flex-shrink: 0;
 }
 .am-wrapper,
-.block1 {
-  align-items: flex-start;
-}
-.am-wrapper,
 .block1,
 .block2 {
   display: flex;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 .am-wrapper {
@@ -203,6 +200,9 @@
   gap: var(--gap-md);
 }
 .ordercard {
+  position: absolute;
+  top: 451px;
+  left: -1px;
   border-radius: var(--br-xs);
   background-color: var(--white1);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);

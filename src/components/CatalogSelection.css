@@ -24,7 +24,7 @@
 .catalogselection {
   gap: var(--gap-6xs);
   text-align: center;
-  font-size: var(--body-m-size);
+  font-size: var(--body-m1-size);
   color: var(--black-0000001001);
   font-family: var(--regular-body1);
 }

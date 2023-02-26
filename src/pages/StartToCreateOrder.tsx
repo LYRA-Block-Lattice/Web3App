@@ -47,7 +47,7 @@ const StartToCreateOrder: FunctionComponent = () => {
           />
         </div>
         <button
-          className="prepare-sell-order-button13"
+          className="prepare-sell-order-button7"
           onClick={onPrepareSellOrderButtonClick}
         >
           <div className="primary-button6">Specify Token</div>

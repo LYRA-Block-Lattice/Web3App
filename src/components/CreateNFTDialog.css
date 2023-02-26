@@ -1,0 +1,79 @@
+.create-nft1 {
+  position: relative;
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  display: inline-block;
+  width: 296px;
+}
+.nft-name1 {
+  border: 0;
+  background-color: transparent;
+}
+.createnftdialog-child {
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.or1 {
+  position: relative;
+  font-size: var(--body-m1-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  width: 31px;
+}
+.select-nft-image1 {
+  border-radius: var(--br-2xs);
+  background-color: var(--color-lightyellow);
+  width: 297px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-4xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.secondary-button7 {
+  position: relative;
+  font-size: var(--body-m1-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--regular-body1);
+  color: var(--white1);
+  text-align: center;
+}
+.createnftdialog,
+.prepare-sell-order-button21 {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.prepare-sell-order-button21 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-4xl);
+  background-color: var(--secondary1);
+  border-radius: var(--br-lg);
+  height: 40px;
+  flex-shrink: 0;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.createnftdialog {
+  background-color: var(--white1);
+  flex-direction: column;
+  padding: var(--padding-4xs);
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+  text-align: left;
+  font-size: var(--font-size-8xl);
+  color: var(--black-0000001001);
+  font-family: var(--regular-body1);
+}

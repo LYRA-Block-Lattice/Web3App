@@ -66,7 +66,7 @@ const WalletHome: FunctionComponent = () => {
             tokenDollar="$2,183"
           />
           <div className="tokendisplayitem">
-            <div className="frame-container">
+            <div className="frame-parent1">
               <div className="lyralogoblueicon-parent">
                 <img
                   className="lyralogoblueicon"

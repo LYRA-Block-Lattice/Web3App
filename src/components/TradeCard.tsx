@@ -18,12 +18,12 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
               <img
                 className="icbaseline-generating-tokens-icon1"
                 alt=""
-                src="../asserts/icbaselinegeneratingtokens2.svg"
+                src="../asserts/icbaselinegeneratingtokens3.svg"
               />
               <img
                 className="order-image-item"
                 alt=""
-                src="../asserts/arrow-12.svg"
+                src="../asserts/arrow-1.svg"
               />
               <img
                 className="icbaseline-generating-tokens-icon1"
@@ -40,11 +40,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
           <div className="trade-parent">
             <b className="trade">Trade</b>
             <b className="trade">BTC</b>
-            <img
-              className="frame-child3"
-              alt=""
-              src="../asserts/arrow-22.svg"
-            />
+            <img className="frame-child3" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt3">tether/USDT</b>
           </div>
           <div className="title-section-item" />

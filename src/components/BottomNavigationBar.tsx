@@ -1,7 +1,21 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useMemo } from "react";
+import CSS, { Property } from "csstype";
 import "./BottomNavigationBar.css";
 
-const BottomNavigationBar: FunctionComponent = () => {
+type BottomNavigationBarType = {
+  /** Style props */
+  textColor?: Property.Color;
+};
+
+const BottomNavigationBar: FunctionComponent<BottomNavigationBarType> = ({
+  textColor,
+}) => {
+  const textStyle: CSS.Properties = useMemo(() => {
+    return {
+      color: textColor,
+    };
+  }, [textColor]);
+
   return (
     <div className="bottomtabbar">
       <div className="home-indicator">
@@ -30,7 +44,9 @@ const BottomNavigationBar: FunctionComponent = () => {
             alt=""
             src="../asserts/wallet-light.svg"
           />
-          <div className="text15">Wallet</div>
+          <div className="text15" style={textStyle}>
+            Wallet
+          </div>
         </button>
         <button className="tabbar-item">
           <img

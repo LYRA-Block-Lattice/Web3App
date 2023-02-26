@@ -96,8 +96,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
-.icoutline-remove-red-eye-parent {
   gap: var(--gap-xs);
 }
 .assertstatssection {
@@ -240,11 +238,9 @@
 .selectedamount-parent,
 .tethereth-group {
   display: flex;
-  justify-content: center;
-}
-.tethereth-group {
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center;
 }
 .selectedamount-parent {
   align-self: stretch;
@@ -275,23 +271,16 @@
   color: var(--color-dimgray-300);
 }
 .buysection,
-.frame-parent1 {
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.buysection,
-.frame-parent1,
+.frame-parent2,
 .makeofferbutton,
 .my-offer-section {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
-.my-offer-section {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-parent1 {
+.frame-parent2 {
   width: 380px;
   padding: 0 var(--padding-7xs);
   gap: var(--gap-2xs);
@@ -300,9 +289,7 @@
   color: var(--color-dimgray-100);
 }
 .buysection,
-.makeofferbutton {
-  width: 400px;
-}
+.makeofferbutton,
 .my-offer-section {
   width: 400px;
   padding: 0 var(--padding-4xs);
