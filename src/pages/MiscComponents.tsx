@@ -60,11 +60,11 @@ const MiscComponents: FunctionComponent = () => {
             <ProductContainer openGeneralPopup={openGeneralPopup} />
             <ProductContainer openGeneralPopup={openGeneralPopup1} />
           </div>
-          <OrderCard onBannerImageClick={onBannerImageClick} />
-          <TradeCard onBannerImage1Click={onBannerImage1Click} />
+          {/* <OrderCard />
+          <TradeCard />
           <SendCard txType="Send" />
           <ReceiveCard txType="Receive" />
-          <MarketOrder onBannerImage4Click={onBannerImage4Click} />
+          <MarketOrder /> */}
         </div>
         <div className="mintfiatdialog-parent">
           <MintFiatDialog />
