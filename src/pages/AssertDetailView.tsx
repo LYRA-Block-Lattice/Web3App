@@ -177,7 +177,7 @@ const AssertDetailView: FunctionComponent = () => {
           <img
             className="material-symbolsshare-icon"
             alt=""
-            src="../asserts/evapricetagsoutline.svg"
+            src="../asserts/evapricetagsoutline1.svg"
           />
           <div className="primary-button4">Make offer</div>
         </button>

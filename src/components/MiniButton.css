@@ -1,0 +1,25 @@
+.mini-button8 {
+  position: relative;
+  font-size: var(--caption-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-weight: 500;
+  font-family: var(--regular-body1);
+  color: var(--color-darkslategray-300);
+  text-align: center;
+}
+.prepare-sell-order-button28 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-xl);
+  background-color: var(--color-whitesmoke-300);
+  border-radius: var(--br-lg);
+  height: 24px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
