@@ -184,10 +184,10 @@ const SellTokenToToken: FunctionComponent = () => {
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
             <button
-              className="prepare-sell-order-button9"
+              className="prepare-sell-order-button5"
               onClick={openGeneralPopup}
             >
-              <div className="utility-button1">Mint</div>
+              <div className="utility-button">Mint</div>
             </button>
           </div>
           <SearchTokenInput

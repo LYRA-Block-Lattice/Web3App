@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
 import ScanToPay from "./pages/ScanToPay";
+import PageTemplate from "./pages/PageTemplate";
 import About from "./pages/About";
 import UserProfile from "./pages/UserProfile";
 import SellFlow from "./pages/SellFlow";
@@ -9,17 +10,17 @@ import MiscComponents from "./pages/MiscComponents";
 import SendTokenForm from "./pages/SendTokenForm";
 import WalletHome from "./pages/WalletHome";
 import AssertDetailView from "./pages/AssertDetailView";
-import MintFiatToken from "./pages/MintFiatToken";
-import CreateTokenForm from "./pages/CreateTokenForm";
-import CreateTOTForm from "./pages/CreateTOTForm";
 import SellTokenToToken from "./pages/SellTokenToToken";
 import ViewTradesForm from "./pages/ViewTradesForm";
 import ViewOrdersForm from "./pages/ViewOrdersForm";
 import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
-import CreateNFTForm from "./pages/CreateNFTForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
+import MintFiatToken from "./pages/MintFiatToken";
+import CreateTokenForm from "./pages/CreateTokenForm";
+import CreateTOTForm from "./pages/CreateTOTForm";
+import CreateNFTForm from "./pages/CreateNFTForm";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
 
@@ -45,6 +46,10 @@ function App() {
         metaDescription = "";
         break;
       case "/scantopay":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/pagetemplate":
         title = "";
         metaDescription = "";
         break;
@@ -76,18 +81,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/mint-fiat-token":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createtokenform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createtotform":
-        title = "";
-        metaDescription = "";
-        break;
       case "/selltokentotoken":
         title = "";
         metaDescription = "";
@@ -104,10 +97,6 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/createnftform":
-        title = "";
-        metaDescription = "";
-        break;
       case "/starttocreateorder":
         title = "";
         metaDescription = "";
@@ -117,6 +106,22 @@ function App() {
         metaDescription = "";
         break;
       case "/openwallet":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/mint-fiat-token":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/createtokenform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/createtotform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/createnftform":
         title = "";
         metaDescription = "";
         break;
@@ -142,6 +147,8 @@ function App() {
 
       <Route path="/scantopay" element={<ScanToPay />} />
 
+      <Route path="/pagetemplate" element={<PageTemplate />} />
+
       <Route path="/about" element={<About />} />
 
       <Route path="/userprofile" element={<UserProfile />} />
@@ -158,12 +165,6 @@ function App() {
 
       <Route path="/assertdetailview" element={<AssertDetailView />} />
 
-      <Route path="/mint-fiat-token" element={<MintFiatToken />} />
-
-      <Route path="/createtokenform" element={<CreateTokenForm />} />
-
-      <Route path="/createtotform" element={<CreateTOTForm />} />
-
       <Route path="/selltokentotoken" element={<SellTokenToToken />} />
 
       <Route path="/viewtradesform" element={<ViewTradesForm />} />
@@ -175,13 +176,19 @@ function App() {
         element={<CreateOrderSuccessForm />}
       />
 
-      <Route path="/createnftform" element={<CreateNFTForm />} />
-
       <Route path="/starttocreateorder" element={<StartToCreateOrder />} />
 
       <Route path="/createwallet" element={<CreateWallet />} />
 
       <Route path="/openwallet" element={<OpenWallet />} />
+
+      <Route path="/mint-fiat-token" element={<MintFiatToken />} />
+
+      <Route path="/createtokenform" element={<CreateTokenForm />} />
+
+      <Route path="/createtotform" element={<CreateTOTForm />} />
+
+      <Route path="/createnftform" element={<CreateNFTForm />} />
     </Routes>
   );
 }

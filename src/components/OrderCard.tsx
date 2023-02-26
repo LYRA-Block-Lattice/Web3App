@@ -119,7 +119,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
               <img
                 className="order-image-child"
                 alt=""
-                src="../asserts/arrow-12.svg"
+                src="../asserts/arrow-1.svg"
               />
               <img
                 className="icbaseline-generating-tokens-icon"
@@ -140,7 +140,7 @@ const OrderCard: FunctionComponent<OrderCardType> = ({
           <div className="sell-parent">
             <b className="sell">Sell</b>
             <b className="sell">{offering}</b>
-            <img className="arrow-icon" alt="" src="../asserts/arrow-22.svg" />
+            <img className="arrow-icon" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt2">{biding}</b>
           </div>
           <div className="title-section-child" />

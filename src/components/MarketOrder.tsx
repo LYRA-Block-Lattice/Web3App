@@ -75,7 +75,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
               <img
                 className="order-image-inner"
                 alt=""
-                src="../asserts/arrow-12.svg"
+                src="../asserts/arrow-1.svg"
               />
               <img
                 className="icbaseline-generating-tokens-icon2"
@@ -97,11 +97,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           <div className="sell-group">
             <b className="a-big-seller">Sell</b>
             <b className="a-big-seller">{offering}</b>
-            <img
-              className="frame-child4"
-              alt=""
-              src="../asserts/arrow-22.svg"
-            />
+            <img className="frame-child4" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt5">{biding}</b>
           </div>
           <div className="details-section4">
@@ -132,7 +128,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
         <img
           className="userprofilesection-child"
           alt=""
-          src="../asserts/ellipse-12@2x.png"
+          src="../asserts/ellipse-1@2x.png"
         />
         <div className="a-big-seller-parent">
           <b className="a-big-seller">{sellerName}</b>

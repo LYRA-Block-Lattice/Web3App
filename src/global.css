@@ -24,7 +24,7 @@ body {
   --caption-size: 12px;
   --regular-body1-size: 13px;
   --body-semibold-size: 14px;
-  --body-m-size: 15px;
+  --body-m1-size: 15px;
   --font-size-3xl: 16px;
   --font-size-4xl: 18px;
   --font-size-5xl: 18.7px;
@@ -32,6 +32,7 @@ body {
   --font-size-7xl: 22px;
   --font-size-8xl: 24px;
   --font-size-9xl: 30px;
+  --font-size-10xl: 32px;
 
   /* Colors */
   --white1: #fff;
@@ -60,6 +61,8 @@ body {
   --color-whitesmoke-400: rgba(238, 238, 238, 0.26);
   --color-lightyellow: #f6ffde;
   --color-mediumslateblue: #766ae7;
+  --secondary1: #fc7c00;
+  --tertiary1: #1ec8a5;
   --color-darkgray: #979797;
   --buy1: #7ed321;
   --sell1: #fa7268;
@@ -67,9 +70,7 @@ body {
   --text-dark-60: #686777;
   --color-dimgray-300: #656565;
   --accent-strong-blue: #554af0;
-  --secondary1: #fc7c00;
   --color-silver-100: rgba(209, 190, 190, 0.47);
-  --tertiary: #1ec8a5;
 
   /* Gaps */
   --gap-6xs: 1px;
@@ -86,6 +87,7 @@ body {
   --gap-3xl: 20px;
   --gap-4xl: 24px;
   --gap-5xl: 26px;
+  --gap-6xl: 32px;
 
   /* Paddings */
   --padding-10xs: 2px;

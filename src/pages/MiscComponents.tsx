@@ -8,6 +8,12 @@ import TradeCard from "../components/TradeCard";
 import SendCard from "../components/SendCard";
 import ReceiveCard from "../components/ReceiveCard";
 import MarketOrder from "../components/MarketOrder";
+import MintFiatDialog from "../components/MintFiatDialog";
+import CreateTokenDialog from "../components/CreateTokenDialog";
+import SignTradeSecretDialog from "../components/SignTradeSecretDialog";
+import CreateNFTDialog from "../components/CreateNFTDialog";
+import CreateTOTDialog from "../components/CreateTOTDialog";
+import StepProgressReportDialog from "../components/StepProgressReportDialog";
 import "./MiscComponents.css";
 
 const MiscComponents: FunctionComponent = () => {
@@ -45,19 +51,29 @@ const MiscComponents: FunctionComponent = () => {
   return (
     <>
       <div className="misccomponents">
-        <div className="nft-showing-item-parent">
-          <ItemContainer />
-          <ItemContainer />
+        <div className="frame-group">
+          <div className="nft-showing-item-parent">
+            <ItemContainer />
+            <ItemContainer />
+          </div>
+          <div className="nft-showing-item-group">
+            <ProductContainer openGeneralPopup={openGeneralPopup} />
+            <ProductContainer openGeneralPopup={openGeneralPopup1} />
+          </div>
+          <OrderCard onBannerImageClick={onBannerImageClick} />
+          <TradeCard onBannerImage1Click={onBannerImage1Click} />
+          <SendCard txType="Send" />
+          <ReceiveCard txType="Receive" />
+          <MarketOrder onBannerImage4Click={onBannerImage4Click} />
         </div>
-        <div className="nft-showing-item-parent">
-          <ProductContainer openGeneralPopup={openGeneralPopup} />
-          <ProductContainer openGeneralPopup={openGeneralPopup1} />
+        <div className="mintfiatdialog-parent">
+          <MintFiatDialog />
+          <CreateTokenDialog />
+          <SignTradeSecretDialog />
+          <CreateNFTDialog />
+          <CreateTOTDialog />
+          <StepProgressReportDialog />
         </div>
-        {/* <OrderCard />
-        <TradeCard />
-        <SendCard txType="Send" />
-        <ReceiveCard txType="Receive" />
-        <MarketOrder /> */}
       </div>
       {isGeneralPopupOpen && (
         <PortalPopup

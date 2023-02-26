@@ -27,7 +27,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-7xl) var(--padding-5xl);
-  background-color: var(--tertiary);
+  background-color: var(--tertiary1);
   border-radius: var(--br-2xs);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
   width: 80px;

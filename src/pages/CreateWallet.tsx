@@ -190,14 +190,11 @@ const CreateWallet: FunctionComponent = () => {
             onChange={(e) => setPvk(e.target.value)}
           />
         </div>
-        <button
-          className="prepare-sell-order-button14"
-          onClick={onWalletCreate}
-        >
+        <button className="prepare-sell-order-button8" onClick={onWalletCreate}>
           <div className="primary-button7">Create</div>
         </button>
         <button
-          className="prepare-sell-order-button15"
+          className="prepare-sell-order-button9"
           onClick={onOpenWalletLinkClick}
         >
           <div className="mini-button">Open</div>
