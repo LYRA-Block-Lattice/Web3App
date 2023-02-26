@@ -1,30 +1,22 @@
-.nft-showing-item-group,
+.frame-group,
+.mintfiatdialog-parent,
+.misccomponents,
 .nft-showing-item-parent {
-  position: absolute;
-  top: 0;
-  left: 17px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-5xl);
 }
-.nft-showing-item-group {
-  top: 240px;
-}
-.frame-group {
-  position: relative;
-  width: 384px;
-  height: 1118px;
-  flex-shrink: 0;
+.frame-group,
+.mintfiatdialog-parent,
+.misccomponents {
+  flex-direction: column;
+  gap: var(--gap-md);
 }
 .mintfiatdialog-parent,
 .misccomponents {
-  display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-md);
 }
 .misccomponents {
   position: relative;

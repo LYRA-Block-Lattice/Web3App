@@ -56,7 +56,7 @@ const MiscComponents: FunctionComponent = () => {
             <ItemContainer />
             <ItemContainer />
           </div>
-          <div className="nft-showing-item-group">
+          <div className="nft-showing-item-parent">
             <ProductContainer openGeneralPopup={openGeneralPopup} />
             <ProductContainer openGeneralPopup={openGeneralPopup1} />
           </div>

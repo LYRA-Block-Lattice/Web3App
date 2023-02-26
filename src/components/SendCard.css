@@ -147,9 +147,6 @@
   overflow: hidden;
 }
 .ordercard2 {
-  position: absolute;
-  top: 735px;
-  left: -1px;
   border-radius: var(--br-xs);
   background-color: var(--white1);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
