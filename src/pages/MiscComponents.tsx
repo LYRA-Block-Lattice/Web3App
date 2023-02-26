@@ -14,6 +14,11 @@ import SignTradeSecretDialog from "../components/SignTradeSecretDialog";
 import CreateNFTDialog from "../components/CreateNFTDialog";
 import CreateTOTDialog from "../components/CreateTOTDialog";
 import StepProgressReportDialog from "../components/StepProgressReportDialog";
+import PrimaryButton from "../components/PrimaryButton";
+import SecondaryButton from "../components/SecondaryButton";
+import UtilityButton from "../components/UtilityButton";
+import MiniButton from "../components/MiniButton";
+import PrimaryIconButton from "../components/PrimaryIconButton";
 import "./MiscComponents.css";
 
 const MiscComponents: FunctionComponent = () => {
@@ -73,6 +78,13 @@ const MiscComponents: FunctionComponent = () => {
           <CreateNFTDialog />
           <CreateTOTDialog />
           <StepProgressReportDialog />
+        </div>
+        <div className="prepare-sell-order-button-group">
+          <PrimaryButton />
+          <SecondaryButton />
+          <UtilityButton />
+          <MiniButton />
+          <PrimaryIconButton icon="../asserts/evapricetagsoutline.svg" />
         </div>
       </div>
       {isGeneralPopupOpen && (
