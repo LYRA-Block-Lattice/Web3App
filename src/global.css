@@ -148,3 +148,6 @@ body {
 .arb {
   float: right;
 }
+.button-disabled {
+  background-color: #ccc !important;
+}

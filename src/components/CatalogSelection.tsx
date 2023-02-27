@@ -77,7 +77,7 @@ const CatalogSelection: FunctionComponent<CatalogSelectionType> = ({
       });
       if (tokenActionClicked) tokenActionClicked(action, tokenName, ele?.xref);
     },
-    [buttons]
+    [tokenActionClicked, buttons]
   );
 
   return (

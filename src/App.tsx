@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
 import ScanToPay from "./pages/ScanToPay";
@@ -28,12 +28,15 @@ import CreateTokenDialog from "./components/CreateTokenDialog";
 import CreateNFTDialog from "./components/CreateNFTDialog";
 import CreateTOTDialog from "./components/CreateTOTDialog";
 import CatalogSelection from "./components/CatalogSelection";
+import PrimaryButton from "./components/PrimaryButton";
+import { StartMint } from "./dup/StartMint";
 
 function App() {
   const router = useSelector(getRouterSelector);
   const action = router.action;
   const location = router.location;
   const pathname = location!.pathname;
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (action !== "POP") {
@@ -217,15 +220,7 @@ function App() {
           <PageTemplate children={<CreateTOTDialog />} title="Mint Service" />
         }
       />
-      <Route
-        path="/mint"
-        element={
-          <PageTemplate
-            children={[<CatalogSelection />, <h1>Hey, what's up!</h1>]}
-            title="What to mint"
-          />
-        }
-      />
+      <Route path="/mint" element={<StartMint />} />
 
       <Route path="/createtokenform" element={<CreateTokenForm />} />
 
