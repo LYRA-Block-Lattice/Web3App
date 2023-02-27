@@ -1,10 +1,40 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback, useState } from "react";
 import { TextField } from "@mui/material";
 import "./CreateTokenDialog.css";
+import { useDispatch, useSelector } from "react-redux";
+import * as actionTypes from "../app/actionTypes";
+import { getAppSelector } from "../app/selectors";
 
-const CreateTokenDialog: FunctionComponent = () => {
+interface NeedRunTask {
+  onStart?: () => void;
+}
+
+const CreateTokenDialog: FunctionComponent<NeedRunTask> = (props) => {
+  const dispatch = useDispatch();
+  const app = useSelector(getAppSelector);
+
+  const [name, setName] = useState<string>("");
+  const [desc, setDesc] = useState<string>("");
+  const [domain, setDomain] = useState<string>("");
+  const [supply, setSupply] = useState<number>(0);
+
+  const onMintClick = useCallback(() => {
+    console.log("mint token.");
+    if (props.onStart) props.onStart();
+    // dispatch({
+    //   type: actionTypes.WALLET_MINT_TOKEN,
+    //   payload: {
+    //     accountId: app.wallet.accountId,
+    //     name: name,
+    //     desc: desc,
+    //     domain: domain,
+    //     supply: supply,
+    //     tag: "mint " + name
+    //   }
+    // });
+  }, [name, desc, domain, supply]);
   return (
-    <form className="createtokendialog">
+    <div className="createtokendialog">
       <div className="mint-token1">Mint Token</div>
       <TextField
         className="token-name1"
@@ -15,6 +45,7 @@ const CreateTokenDialog: FunctionComponent = () => {
         label="Token Name"
         size="medium"
         margin="none"
+        onChange={(e) => setName(e.target.value)}
       />
       <TextField
         className="token-name1"
@@ -25,6 +56,7 @@ const CreateTokenDialog: FunctionComponent = () => {
         label="Domain Name"
         size="medium"
         margin="none"
+        onChange={(e) => setDomain(e.target.value)}
       />
       <TextField
         sx={{ width: 301 }}
@@ -35,6 +67,7 @@ const CreateTokenDialog: FunctionComponent = () => {
         label="Description"
         placeholder="Textarea placeholder"
         margin="none"
+        onChange={(e) => setDesc(e.target.value)}
       />
       <TextField
         className="token-name1"
@@ -46,11 +79,12 @@ const CreateTokenDialog: FunctionComponent = () => {
         placeholder="1"
         size="medium"
         margin="none"
+        onChange={(e) => setSupply(+e.target.value)}
       />
-      <button className="prepare-sell-order-button19">
+      <button className="prepare-sell-order-button19" onClick={onMintClick}>
         <div className="secondary-button6">Mint Token</div>
       </button>
-    </form>
+    </div>
   );
 };
 

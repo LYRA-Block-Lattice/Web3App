@@ -4,7 +4,7 @@ import "./MintFiatDialog.css";
 
 const MintFiatDialog: FunctionComponent = () => {
   return (
-    <form className="mintfiatdialog">
+    <div className="mintfiatdialog">
       <div className="print-fiat-for1">Print Fiat for free</div>
       <Autocomplete
         sx={{ width: 301 }}
@@ -36,7 +36,7 @@ const MintFiatDialog: FunctionComponent = () => {
       <button className="prepare-sell-order-button18">
         <div className="secondary-button5">Print</div>
       </button>
-    </form>
+    </div>
   );
 };
 

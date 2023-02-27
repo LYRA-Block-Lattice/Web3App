@@ -5,14 +5,14 @@ import {
   MenuItem,
   FormHelperText,
   Select,
-  TextField,
+  TextField
 } from "@mui/material";
 import "./CreateTOTDialog.css";
 
 const CreateTOTDialog: FunctionComponent = () => {
   return (
     <div className="createtotdialog">
-      <form className="createtottosellform1">
+      <div className="createtottosellform1">
         <div className="create-and-sell1">Create and Sell [TOT/SKU]</div>
         <FormControl sx={{ width: 301 }} variant="outlined">
           <InputLabel color="primary">Select Type of TOT</InputLabel>
@@ -65,7 +65,7 @@ const CreateTOTDialog: FunctionComponent = () => {
         <button className="prepare-sell-order-button23">
           <div className="secondary-button8">Create TOT</div>
         </button>
-      </form>
+      </div>
     </div>
   );
 };

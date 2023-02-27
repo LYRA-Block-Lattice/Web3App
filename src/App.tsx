@@ -30,6 +30,7 @@ import CreateTOTDialog from "./components/CreateTOTDialog";
 import CatalogSelection from "./components/CatalogSelection";
 import PrimaryButton from "./components/PrimaryButton";
 import { StartMint } from "./dup/StartMint";
+import MinterToken from "./dup/MinterToken";
 
 function App() {
   const router = useSelector(getRouterSelector);
@@ -190,16 +191,13 @@ function App() {
 
       <Route path="/openwallet" element={<OpenWallet />} />
 
-      <Route
-        path="/mint-token"
-        element={
-          <PageTemplate children={<CreateTokenDialog />} title="Mint Token" />
-        }
-      />
+      <Route path="/mint-token" element={<MinterToken />} />
       <Route
         path="/mint-nft"
         element={
-          <PageTemplate children={<CreateNFTDialog />} title="Mint NFT" />
+          <PageTemplate title="Mint NFT">
+            <CreateNFTDialog />
+          </PageTemplate>
         }
       />
       <Route

@@ -51,7 +51,7 @@ const MintFiatToken: FunctionComponent<TokenMintProps> = (props) => {
   );
 
   return (
-    <form className="mint-fiat-token">
+    <div className="mint-fiat-token">
       <div className="print-fiat-for">Print Fiat for free</div>
       <Autocomplete
         sx={{ width: 301 }}
@@ -86,7 +86,7 @@ const MintFiatToken: FunctionComponent<TokenMintProps> = (props) => {
       <button className="prepare-sell-order-button12" onClick={onMintClick}>
         <div className="secondary-button1">Print</div>
       </button>
-    </form>
+    </div>
   );
 };
 

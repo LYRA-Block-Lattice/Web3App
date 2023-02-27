@@ -2,6 +2,7 @@ import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./PageTemplate.css";
+import React from "react";
 
 interface TemplateArgs {
   title?: string;
@@ -32,4 +33,4 @@ const PageTemplate: FunctionComponent<TemplateArgs> = ({
   );
 };
 
-export default PageTemplate;
+export default React.memo(PageTemplate);

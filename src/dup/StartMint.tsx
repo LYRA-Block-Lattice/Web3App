@@ -9,20 +9,19 @@ export const StartMint = () => {
   const [cat, setCat] = useState<string | undefined>(undefined);
 
   return (
-    <PageTemplate
-      children={[
-        <CatalogSelection
-          sellText="mint"
-          tokenActionClicked={(act, token, xref) => setCat(token)}
-        />,
-        <PrimaryButton
-          disabled={cat === undefined}
-          onClick={() => navigate(`/mint-${cat?.toLowerCase()}`)}
-        >
-          Start to Mint {cat}
-        </PrimaryButton>
-      ]}
-      title="What to mint"
-    />
+    <PageTemplate title="What to mint">
+      <CatalogSelection
+        sellText="mint"
+        key="mint-x"
+        tokenActionClicked={(act, token, xref) => setCat(token)}
+      />
+      <PrimaryButton
+        key="mint-y"
+        disabled={cat === undefined}
+        onClick={() => navigate(`/mint-${cat?.toLowerCase()}`)}
+      >
+        Start to Mint {cat}
+      </PrimaryButton>
+    </PageTemplate>
   );
 };

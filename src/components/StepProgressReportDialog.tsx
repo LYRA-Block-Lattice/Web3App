@@ -2,6 +2,8 @@ import { FunctionComponent } from "react";
 import "./StepProgressReportDialog.css";
 
 const StepProgressReportDialog: FunctionComponent = () => {
+  console.log("render StepProgressReportDialog");
+
   return (
     <div className="stepprogressreportdialog">
       <div className="step-1-upload">Step 1: Upload Image...</div>
