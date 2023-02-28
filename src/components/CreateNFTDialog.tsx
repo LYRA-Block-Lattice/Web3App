@@ -6,6 +6,7 @@ import { dumpHttpError, LongRunTask, NeedRunTask } from "../app/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector } from "../app/selectors";
 import base58 from "bs58";
+import { getWallet } from "../app/wallet/walletSaga";
 
 const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
   const [name, setName] = useState<string>("");
@@ -127,33 +128,7 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
       if (props.onStart) {
         const ret = props.onStart({ evt: event }, promises);
         console.log(ret);
-        //setMetaUrl(ret.url);
       }
-    },
-    [name, desc, imgsrc]
-  );
-
-  const createMetaData = useCallback(
-    async (imgUrl: string) => {
-      var lsb = await BlockchainAPI.lastServiceHash();
-
-      var input = `${app.wallet.accountId as string}:${lsb}:${imgUrl}`;
-
-      const userToken = JSON.parse(sessionStorage.getItem("token")!);
-      const apisign = LyraCrypto.Sign(input, userToken.pvt);
-      // log input
-      console.log(`input: ${input} apisign: ${apisign} by ${userToken.pvt}`);
-
-      var ret = await BlockchainAPI.createNFTMeta(
-        app.wallet.accountId as string,
-        apisign,
-        name,
-        desc,
-        imgUrl
-      );
-
-      console.log(ret);
-      return ret;
     },
     [name, desc, imgsrc]
   );
@@ -161,16 +136,43 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
   const onMintClick = useCallback(async () => {
     console.log("mint NFT.");
     // mint NFT
-    // dispatch({
-    //   type: WALLET_MINT_NFT,
-    //   payload: {
-    //     accountId: app.wallet.accountId as string,
-    //     name: name,
-    //     description: desc,
-    //     supply: supply,
-    //     metadataUrl: metaUrl
-    //   }
-    // });
+    const promises: LongRunTask[] = [
+      {
+        promise: (input) =>
+          new Promise(async (resolve, reject) => {
+            const wallet = getWallet();
+
+            const balanceResp = await wallet.mintNFT(
+              input.name,
+              input.desc,
+              input.supply,
+              input.metaUrl,
+              app.wallet.accountId
+            );
+            if (balanceResp.resultCode == 0) {
+              resolve({ ...input, balanceResp: balanceResp });
+            } else {
+              reject({ ...input, balanceResp: balanceResp });
+            }
+          }),
+        callback: null,
+        name: "Mint NFT",
+        description: "Send block to Lyra consensus network."
+      }
+    ];
+    if (props.onStart) {
+      const ret = props.onStart(
+        {
+          name: name,
+          desc: desc,
+          metaUrl: metaUrl,
+          supply: supply,
+          imgsrc: imgsrc
+        },
+        promises
+      );
+      console.log(ret);
+    }
   }, [name, desc, metaUrl, supply, imgsrc]);
 
   return (
