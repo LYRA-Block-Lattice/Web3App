@@ -13,6 +13,8 @@ import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./StartToCreateOrder.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
+import { useSelector } from "react-redux";
+import { getAuthSelector } from "../app/selectors";
 
 const boxStyle = {
   border: "grey solid 2px",
@@ -29,6 +31,8 @@ const typeMap: { [index: string]: any } = {
 };
 
 const StartToCreateOrder: FunctionComponent = () => {
+  const auth = useSelector(getAuthSelector);
+
   const [start, setStart] = useState<string | undefined>();
   const [end, setEnd] = useState<string | undefined>();
   const [isDisabled, setDisabled] = useState<boolean>(true);
@@ -42,7 +46,11 @@ const StartToCreateOrder: FunctionComponent = () => {
   }, [start, end]);
 
   const onPrepareSellOrderButtonClick = useCallback(() => {
-    navigate(`/selltokentotoken?sell=${typeMap[start!]}&get=${typeMap[end!]}`);
+    if (auth.hasKey)
+      navigate(
+        `/selltokentotoken?sell=${typeMap[start!]}&get=${typeMap[end!]}`
+      );
+    else navigate("/openwallet");
   }, [navigate, start, end]);
 
   const onTokenAction = (

@@ -60,18 +60,6 @@ const OpenWallet: FunctionComponent = () => {
     else setIndex(names.findIndex((a) => a == auth.walletName));
   }, [dispatch, app, auth, names]);
 
-  const onNavBackButtonClick = useCallback(() => {
-    //TODO: nav back. none for home (wallet, market, profile, etc.)
-  }, []);
-
-  const onTitleClick = useCallback(() => {
-    //TODO: scroll top
-  }, []);
-
-  const onContextMenuButtonClick = useCallback(() => {
-    //TODO: context menu
-  }, []);
-
   return (
     <div className="openwallet">
       <TopNavigationBar title="Open Wallet" />
@@ -127,7 +115,7 @@ const OpenWallet: FunctionComponent = () => {
         <button className="prepare-sell-order-button10" onClick={onOpenWallet}>
           <div className="primary-button8">Open</div>
         </button>
-        <button className="prepare-sell-order-button11">
+        <button className="prepare-sell-order-button11" onClick={onSignUpClick}>
           <div className="mini-button1">Create</div>
         </button>
         <button className="forgot-password-copy">Forgot password?</button>

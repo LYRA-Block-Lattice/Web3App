@@ -6,12 +6,15 @@ import "./SendTokenForm.css";
 import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
 import { useDispatch, useSelector } from "react-redux";
 import { WALLET_SEND } from "../app/actionTypes";
-import { getAppSelector } from "../app/selectors";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
+import { useNavigate } from "react-router";
 
 const SendTokenForm: FunctionComponent = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
 
   const [val, setVal] = useState<IToken>({
     token: "LYR",
@@ -20,6 +23,10 @@ const SendTokenForm: FunctionComponent = () => {
   const [sel, setSel] = useState("LYR");
   const [dst, setDst] = useState("");
   const [amount, setAmount] = useState(0);
+
+  useEffect(() => {
+    if (!auth.hasKey) navigate("/openwallet");
+  }, [auth.hasKey, navigate]);
 
   const onSelectChange = useCallback(
     (name: string | undefined, ticker: string | undefined) => {

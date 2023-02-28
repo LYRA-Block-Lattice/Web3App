@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { getAuthSelector } from "../app/selectors";
 import CatalogSelection from "../components/CatalogSelection";
 import PrimaryButton from "../components/PrimaryButton";
 import PageTemplate from "../pages/PageTemplate";
 
 export const StartMint = () => {
   const navigate = useNavigate();
+  const auth = useSelector(getAuthSelector);
   const [cat, setCat] = useState<string | undefined>(undefined);
 
   return (
@@ -18,7 +21,11 @@ export const StartMint = () => {
       <PrimaryButton
         key="mint-y"
         disabled={cat === undefined}
-        onClick={() => navigate(`/mint-${cat?.toLowerCase()}`)}
+        onClick={() =>
+          auth.hasKey
+            ? navigate(`/mint-${cat?.toLowerCase()}`)
+            : navigate("/openwallet")
+        }
       >
         Start to Mint {cat}
       </PrimaryButton>

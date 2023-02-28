@@ -6,14 +6,13 @@ import { BlockchainAPI } from "../blockchain/blockchain-api";
 import * as actionTypes from "../actionTypes";
 import persist from "../lyra/persist";
 import * as Dex from "../lyra/dexapi";
-import { ContractTypes } from "../blockchain";
+import { ContractTypes, LyraCrypto } from "../blockchain";
 import { UniOrder } from "../blockchain/blocks/block";
 import { getHoldType } from "../blockchain/blocks/meta";
 
 export function getWallet() {
   const userToken = JSON.parse(sessionStorage.getItem("token"));
-  const wallet = new LyraApi(BlockchainAPI.networkid, userToken.pvt);
-  return wallet;
+  return new LyraApi(BlockchainAPI.networkid, userToken.pvt);
 }
 
 function* getBalance(action) {
