@@ -38,6 +38,7 @@ const MinterToken = (props: Props) => {
             input={input}
             promises={promises}
             batchName={`Mint ${props.cat}`}
+            onContinue={() => setPoped(false)}
           />
         }
         popped={poped}

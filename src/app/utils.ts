@@ -48,9 +48,7 @@ export function BatchRunLongRunTask(
     .reduce((chain, { promise, callback, name, description }, index) => {
       return chain
         .then((result) => {
-          console.log(
-            `Promise "${name}" started, previous result is ${result}`
-          );
+          console.log(`Promise "${name}" start, previous result is ${result}`);
           // Call progress callback with current index and total number of Promises
           if (progressCallback) {
             progressCallback(index + 1, promises.length);
@@ -59,7 +57,6 @@ export function BatchRunLongRunTask(
           if (callback) {
             callback(result);
           }
-          console.log(`Promise "${name}" resolved`);
           return promise(result);
         })
         .catch((error) => {

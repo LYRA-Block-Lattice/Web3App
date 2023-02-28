@@ -53,60 +53,84 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
     async (event: React.ChangeEvent<HTMLInputElement>) => {
       const promises: LongRunTask[] = [
         {
-          promise: (input) => {
-            //const file = input.target.files![0];
-            return readFileData(input);
-          },
+          promise: (input) =>
+            new Promise(async (resolve, reject) => {
+              //const file = input.target.files![0];
+              const data = await readFileData(input.evt);
+              const hash = await sha256(data);
+
+              console.log("sha256 hash input: " + hash);
+              // sign the hash with lyraCrypto
+              const userToken = JSON.parse(sessionStorage.getItem("token")!);
+              const signt = LyraCrypto.Sign(hash, userToken.pvt);
+              resolve({
+                ...input,
+                file: input.evt.target.files![0],
+                hash: hash,
+                signature: signt
+              });
+            }),
           callback: null,
           name: "Get File",
           description: "Read file from disk."
         },
         {
-          promise: (input) => sha256(input),
+          promise: (input) =>
+            new Promise(async (resolve, reject) => {
+              console.log(`hash: ${input.hash} signt: ${input.signature}`);
+
+              const formData = new FormData();
+              formData.append("file", input.file);
+              formData.append("accountId", app.wallet.accountId as string);
+              formData.append("signature", input.signature);
+              const uploadRet = await BlockchainAPI.uploadFile(formData);
+              setImgsrc(uploadRet.url);
+              resolve({ ...input, imgUrl: uploadRet.url });
+            }),
           callback: null,
-          name: "Calculate Hash",
-          description: "Calculate Hash of the file to make sure it is unique."
+          name: "Upload image file",
+          description: "Upload image file to Lyra Web3 network."
         },
         {
           promise: (input) =>
-            new Promise((resolve, reject): any => {
-              console.log("sha256 hash input: " + input);
-              throw new Error("test error");
-              // sign the hash with lyraCrypto
+            new Promise(async (resolve, reject) => {
+              var lsb = await BlockchainAPI.lastServiceHash();
+
+              var msg = `${app.wallet.accountId as string}:${lsb}:${
+                input.imgUrl
+              }`;
+
               const userToken = JSON.parse(sessionStorage.getItem("token")!);
-              const signt = LyraCrypto.Sign(input, userToken.pvt);
-              resolve(signt);
+              const apisign = LyraCrypto.Sign(msg, userToken.pvt);
+              // log input
+              console.log(
+                `input: ${input} apisign: ${apisign} by ${userToken.pvt}`
+              );
+
+              var ret = await BlockchainAPI.createNFTMeta(
+                app.wallet.accountId as string,
+                apisign,
+                name,
+                desc,
+                input.imgUrl
+              );
+
+              setMetaUrl(ret.url);
+              resolve({ ...input, metaUrl: ret.url });
             }),
           callback: null,
-          name: "Sign the file",
-          description: "Sign the hash of file by my private key."
+          name: "Create Metadata",
+          description: "Create metadata file on Lyra Web3 network."
         }
       ];
 
-      if (props.onStart) props.onStart(event, promises);
-
-      //console.log(`hash: ${hash} signt: ${signt} by ${userToken.pvt}`);
-
-      // const formData = new FormData();
-      // formData.append("file", file);
-      // formData.append("accountId", app.wallet.accountId as string);
-      // formData.append("signature", signt);
-      // formData.append("signatureType", "p1393");
-
-      // try {
-      //   const response = await BlockchainAPI.uploadFile(formData);
-      //   console.log(response);
-      //   setImgsrc(response.url);
-
-      //   // then we create a metadata url
-      //   var metaret = await createMetaData(response.url);
-      //   setMetaUrl(metaret.url);
-      // } catch (error) {
-      //   console.log(error);
-      //   dumpHttpError(error);
-      // }
+      if (props.onStart) {
+        const ret = props.onStart({ evt: event }, promises);
+        console.log(ret);
+        //setMetaUrl(ret.url);
+      }
     },
-    [imgsrc, metaUrl]
+    [name, desc, imgsrc]
   );
 
   const createMetaData = useCallback(

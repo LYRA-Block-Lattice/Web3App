@@ -8,6 +8,9 @@ interface LongRunTaskListProps {
   batchName: string;
   input: any;
   promises: LongRunTask[];
+  onContinue: () => void;
+  onResult?: (result: any) => void;
+  onError?: (error: any) => void;
 }
 
 const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
@@ -27,11 +30,13 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
       .then((result) => {
         console.log("BatchRunLongRunTask result", result);
         setSuccess(true);
+        if (arg.onResult) arg.onResult(result);
       })
       .catch((error) => {
         console.log("BatchRunLongRunTask error", error);
         setSuccess(false);
         setErrmsg(error.toString());
+        if (arg.onError) arg.onError(error);
       });
   }, [arg]);
 
@@ -44,11 +49,12 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
   const getStatus = (index: number) => {
     //console.log("getStatus", index, step, success);
     if (success === undefined && index + 1 < step) return " ✅";
-    if (success === undefined && index + 1 == step) return ", pending";
+    if (success === undefined && index + 1 >= step) return ", pending";
     if (success != undefined && index + 1 < step) return " ✅";
 
     if (success === false && index + 1 === step) return " ❌";
-    return "❌";
+    if (success === true && index + 1 === step) return " ✅";
+    return ", abort";
   };
 
   return (
@@ -81,7 +87,7 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
           <div className="error-message-goes">{errmsg}</div>
         </>
       )}
-      <button className="prepare-sell-order-button24">
+      <button className="prepare-sell-order-button24" onClick={arg.onContinue}>
         <div className="secondary-button9">Continue</div>
       </button>
     </div>
