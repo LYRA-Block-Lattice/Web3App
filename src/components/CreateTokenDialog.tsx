@@ -4,9 +4,12 @@ import "./CreateTokenDialog.css";
 import { useDispatch, useSelector } from "react-redux";
 import * as actionTypes from "../app/actionTypes";
 import { getAppSelector } from "../app/selectors";
+import { LongRunTask } from "../app/utils";
+import { getWallet } from "../app/wallet/walletSaga";
+import { ContractTypes } from "../app/blockchain";
 
 interface NeedRunTask {
-  onStart?: () => void;
+  onStart?: (promises: LongRunTask[]) => void;
 }
 
 const CreateTokenDialog: FunctionComponent<NeedRunTask> = (props) => {
@@ -20,7 +23,33 @@ const CreateTokenDialog: FunctionComponent<NeedRunTask> = (props) => {
 
   const onMintClick = useCallback(() => {
     console.log("mint token.");
-    if (props.onStart) props.onStart();
+
+    const promises: LongRunTask[] = [
+      {
+        promise: () => {
+          const wallet = getWallet();
+
+          return wallet.mintToken(
+            name,
+            domain,
+            desc,
+            8,
+            supply,
+            true,
+            undefined,
+            undefined,
+            undefined,
+            ContractTypes.Cryptocurrency,
+            undefined
+          );
+        },
+        callback: null,
+        name: "Promise 1",
+        description: "Wait 1 second"
+      }
+    ];
+
+    if (props.onStart) props.onStart(promises);
     // dispatch({
     //   type: actionTypes.WALLET_MINT_TOKEN,
     //   payload: {

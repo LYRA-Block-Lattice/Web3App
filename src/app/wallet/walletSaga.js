@@ -10,7 +10,7 @@ import { ContractTypes } from "../blockchain";
 import { UniOrder } from "../blockchain/blocks/block";
 import { getHoldType } from "../blockchain/blocks/meta";
 
-function getWallet() {
+export function getWallet() {
   const userToken = JSON.parse(sessionStorage.getItem("token"));
   const wallet = new LyraApi(BlockchainAPI.networkid, userToken.pvt);
   return wallet;
