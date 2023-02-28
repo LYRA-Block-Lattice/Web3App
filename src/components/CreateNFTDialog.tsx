@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useState } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { TextField } from "@mui/material";
 import "./CreateNFTDialog.css";
 import { BlockchainAPI, LyraCrypto } from "../app/blockchain";
@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector } from "../app/selectors";
 import base58 from "bs58";
 import { getWallet } from "../app/wallet/walletSaga";
+import PrimaryButton from "./PrimaryButton";
 
 const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
   const [name, setName] = useState<string>("");
@@ -18,6 +19,16 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
 
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
+
+  const [mintEnabled, setMintEnabled] = useState(false);
+
+  useEffect(() => {
+    if (name.length > 0 && desc.length > 0 && metaUrl.length > 0) {
+      setMintEnabled(true);
+    } else {
+      setMintEnabled(false);
+    }
+  }, [name, desc, metaUrl]);
 
   function readFileData(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files![0];
@@ -152,7 +163,7 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
             if (balanceResp.resultCode == 0) {
               resolve({ ...input, balanceResp: balanceResp });
             } else {
-              reject({ ...input, balanceResp: balanceResp });
+              reject(balanceResp.resultMessage);
             }
           }),
         callback: null,
@@ -220,9 +231,9 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
         placeholder="Select NFT Image"
         onChange={handleFileChange}
       />
-      <button className="prepare-sell-order-button21" onClick={onMintClick}>
-        <div className="secondary-button7">Create NFT</div>
-      </button>
+      <PrimaryButton onClick={onMintClick} disabled={!mintEnabled}>
+        Create NFT
+      </PrimaryButton>
     </div>
   );
 };
