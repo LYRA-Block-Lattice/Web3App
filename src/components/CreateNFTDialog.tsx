@@ -71,10 +71,11 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
           promise: (input) =>
             new Promise((resolve, reject): any => {
               console.log("sha256 hash input: " + input);
+              throw new Error("test error");
               // sign the hash with lyraCrypto
               const userToken = JSON.parse(sessionStorage.getItem("token")!);
               const signt = LyraCrypto.Sign(input, userToken.pvt);
-              return signt;
+              resolve(signt);
             }),
           callback: null,
           name: "Sign the file",

@@ -43,33 +43,36 @@ export function BatchRunLongRunTask(
   input: any,
   promises: LongRunTask[],
   progressCallback: ((index: number, total: number) => void) | null = null
-): Promise<void> {
-  return promises.reduce(
-    (chain, { promise, callback, name, description }, index) => {
-      return (
-        chain
-          //.then(() => promise() as Promise<any>)
-          .then((result) => {
-            // Call progress callback with current index and total number of Promises
-            if (progressCallback) {
-              progressCallback(index + 1, promises.length);
-            }
-            // Call callback function with result if provided
-            if (callback) {
-              callback(result);
-            }
-            console.log(`Promise "${name}" resolved`);
-            return promise(result);
-          })
-          .catch((error) => {
-            // Handle error and reject the chain
-            console.error(`Error in Promise "${name}": ${error}`);
-            return Promise.reject(error);
-          })
-      );
-    },
-    Promise.resolve(input) as Promise<any>
-  );
+): Promise<any> {
+  return promises
+    .reduce((chain, { promise, callback, name, description }, index) => {
+      return chain
+        .then((result) => {
+          console.log(
+            `Promise "${name}" started, previous result is ${result}`
+          );
+          // Call progress callback with current index and total number of Promises
+          if (progressCallback) {
+            progressCallback(index + 1, promises.length);
+          }
+          // Call callback function with result if provided
+          if (callback) {
+            callback(result);
+          }
+          console.log(`Promise "${name}" resolved`);
+          return promise(result);
+        })
+        .catch((error) => {
+          // Handle error and reject the chain
+          console.error(`Error in Promise "${name}": ${error}`);
+          return Promise.reject(error);
+        });
+    }, Promise.resolve(input))
+    .then((result) => {
+      console.log("All promises resolved. final result is ", result);
+      // Return the final result of the last promise in the chain
+      return result;
+    });
 }
 
 const promises: LongRunTask[] = [

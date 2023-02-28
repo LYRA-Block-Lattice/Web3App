@@ -33,7 +33,7 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
         setSuccess(false);
         setErrmsg(error.toString());
       });
-  }, []);
+  }, [arg]);
 
   useEffect(() => {
     if (success != undefined) {
@@ -42,10 +42,12 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
   }, [success]);
 
   const getStatus = (index: number) => {
-    console.log("getStatus", index, step, success);
+    //console.log("getStatus", index, step, success);
     if (success === undefined && index + 1 < step) return " ✅";
     if (success === undefined && index + 1 == step) return ", pending";
-    if (success != undefined && index + 1 <= step - 1) return " ✅";
+    if (success != undefined && index + 1 < step) return " ✅";
+
+    if (success === false && index + 1 === step) return " ❌";
     return "❌";
   };
 
