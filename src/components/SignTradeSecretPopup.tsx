@@ -1,13 +1,15 @@
-import { FunctionComponent, useEffect } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import "./SignTradeSecretPopup.css";
 
 type SignTradeSecretPopupType = {
-  onClose?: () => void;
+  onClose?: (secret: string) => void;
 };
 
 const SignTradeSecretPopup: FunctionComponent<SignTradeSecretPopupType> = ({
-  onClose,
+  onClose
 }) => {
+  const [secret, setSecret] = useState<string>("");
+
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
       "[data-animate-on-scroll]"
@@ -23,7 +25,7 @@ const SignTradeSecretPopup: FunctionComponent<SignTradeSecretPopupType> = ({
         }
       },
       {
-        threshold: 0.15,
+        threshold: 0.15
       }
     );
 
@@ -46,13 +48,17 @@ const SignTradeSecretPopup: FunctionComponent<SignTradeSecretPopupType> = ({
         blockchain needed is a digital signature of the trade secret.
       </div>
       <textarea
+        onChange={(e) => setSecret(e.target.value)}
         className="tot-description"
         placeholder={`Please pay to my bank account number:
 
 Bank of America
 1234 1234 1234 1234`}
       />
-      <button className="prepare-sell-order-button16" onClick={onClose}>
+      <button
+        className="prepare-sell-order-button16"
+        onClick={() => onClose!(secret)}
+      >
         <div className="utility-button2">Sign and return</div>
       </button>
     </div>
