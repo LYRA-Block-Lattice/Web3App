@@ -4,13 +4,9 @@ import "./CreateTokenDialog.css";
 import { useDispatch, useSelector } from "react-redux";
 import * as actionTypes from "../app/actionTypes";
 import { getAppSelector } from "../app/selectors";
-import { LongRunTask } from "../app/utils";
+import { LongRunTask, NeedRunTask } from "../app/utils";
 import { getWallet } from "../app/wallet/walletSaga";
 import { ContractTypes } from "../app/blockchain";
-
-interface NeedRunTask {
-  onStart?: (promises: LongRunTask[]) => void;
-}
 
 const CreateTokenDialog: FunctionComponent<NeedRunTask> = (props) => {
   const dispatch = useDispatch();
@@ -44,12 +40,12 @@ const CreateTokenDialog: FunctionComponent<NeedRunTask> = (props) => {
           );
         },
         callback: null,
-        name: "Promise 1",
-        description: "Wait 1 second"
+        name: "Mint Token " + name,
+        description: "Submit genesis block to Lyra Blockchain."
       }
     ];
 
-    if (props.onStart) props.onStart(promises);
+    if (props.onStart) props.onStart(null, promises);
     // dispatch({
     //   type: actionTypes.WALLET_MINT_TOKEN,
     //   payload: {

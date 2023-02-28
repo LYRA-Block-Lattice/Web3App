@@ -8,8 +8,9 @@ import {
   TextField
 } from "@mui/material";
 import "./CreateTOTDialog.css";
+import { NeedRunTask } from "../app/utils";
 
-const CreateTOTDialog: FunctionComponent = () => {
+const CreateTOTDialog: FunctionComponent<NeedRunTask> = (props) => {
   return (
     <div className="createtotdialog">
       <div className="createtottosellform1">

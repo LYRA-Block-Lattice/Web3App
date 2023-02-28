@@ -6,6 +6,7 @@ import "./StepProgressReportDialog.css";
 
 interface LongRunTaskListProps {
   batchName: string;
+  input: any;
   promises: LongRunTask[];
 }
 
@@ -19,12 +20,16 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
 
   useEffect(() => {
     setRunning(true);
-    BatchRunLongRunTask(arg.promises, (index, total) => {
+    BatchRunLongRunTask(arg.input, arg.promises, (index, total) => {
       console.log(`Completed ${index} of ${total} promises`);
       setStep(index);
     })
-      .then(() => setSuccess(true))
+      .then((result) => {
+        console.log("BatchRunLongRunTask result", result);
+        setSuccess(true);
+      })
       .catch((error) => {
+        console.log("BatchRunLongRunTask error", error);
         setSuccess(false);
         setErrmsg(error.toString());
       });
@@ -36,13 +41,21 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
     }
   }, [success]);
 
+  const getStatus = (index: number) => {
+    console.log("getStatus", index, step, success);
+    if (success === undefined && index + 1 < step) return " ✅";
+    if (success === undefined && index + 1 == step) return ", pending";
+    if (success != undefined && index + 1 <= step - 1) return " ✅";
+    return "❌";
+  };
+
   return (
     <div className="stepprogressreportdialog">
       {arg.promises.map((promise, index) => {
         return (
           <div key={index} className="step-1-upload">
-            Step {index + 1}: {promise.name}, {promise.description}{" "}
-            {step > index ? "✅" : "pending"}
+            Step {index + 1}: {promise.name}
+            {getStatus(index)}
           </div>
         );
       })}

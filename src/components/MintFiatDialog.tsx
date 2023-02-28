@@ -1,8 +1,9 @@
 import { FunctionComponent } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import "./MintFiatDialog.css";
+import { NeedRunTask } from "../app/utils";
 
-const MintFiatDialog: FunctionComponent = () => {
+const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
   return (
     <div className="mintfiatdialog">
       <div className="print-fiat-for1">Print Fiat for free</div>

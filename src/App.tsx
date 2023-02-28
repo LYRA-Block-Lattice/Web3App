@@ -191,33 +191,11 @@ function App() {
 
       <Route path="/openwallet" element={<OpenWallet />} />
 
-      <Route path="/mint-token" element={<MinterToken />} />
-      <Route
-        path="/mint-nft"
-        element={
-          <PageTemplate title="Mint NFT">
-            <CreateNFTDialog />
-          </PageTemplate>
-        }
-      />
-      <Route
-        path="/mint-fiat"
-        element={
-          <PageTemplate children={<MintFiatDialog />} title="Mint Fiat" />
-        }
-      />
-      <Route
-        path="/mint-tot"
-        element={
-          <PageTemplate children={<CreateTOTDialog />} title="Mint TOT" />
-        }
-      />
-      <Route
-        path="/mint-service"
-        element={
-          <PageTemplate children={<CreateTOTDialog />} title="Mint Service" />
-        }
-      />
+      <Route path="/mint-token" element={<MinterToken cat="Token" />} />
+      <Route path="/mint-nft" element={<MinterToken cat="NFT" />} />
+      <Route path="/mint-fiat" element={<MinterToken cat="Fiat" />} />
+      <Route path="/mint-goods" element={<MinterToken cat="Goods" />} />
+      <Route path="/mint-service" element={<MinterToken cat="Service" />} />
       <Route path="/mint" element={<StartMint />} />
 
       <Route path="/createtokenform" element={<CreateTokenForm />} />

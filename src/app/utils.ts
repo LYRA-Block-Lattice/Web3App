@@ -30,39 +30,46 @@ export const dumpHttpError = async (error: any): Promise<void> => {
   }
 };
 
+export type AnyPromise = Promise<any>;
 export interface LongRunTask {
-  promise: () => Promise<APIResult>;
-  callback: ((result: APIResult) => void) | null;
+  promise: (input: any) => AnyPromise;
+  callback: ((result: any) => void) | null;
   name: string;
   description: string;
+  initialInput?: any;
 }
 
 export function BatchRunLongRunTask(
+  input: any,
   promises: LongRunTask[],
   progressCallback: ((index: number, total: number) => void) | null = null
 ): Promise<void> {
-  return promises
-    .reduce((chain, { promise, callback, name, description }, index) => {
-      return chain
-        .then(() => promise() as Promise<APIResult>)
-        .then((result) => {
-          // Call progress callback with current index and total number of Promises
-          if (progressCallback) {
-            progressCallback(index + 1, promises.length);
-          }
-          // Call callback function with result if provided
-          if (callback) {
-            callback(result);
-          }
-          return result;
-        })
-        .catch((error) => {
-          // Handle error and reject the chain
-          console.error(`Error in Promise "${name}": ${error}`);
-          return Promise.reject(error);
-        });
-    }, Promise.resolve() as Promise<unknown>)
-    .then(() => {}) as Promise<void>;
+  return promises.reduce(
+    (chain, { promise, callback, name, description }, index) => {
+      return (
+        chain
+          //.then(() => promise() as Promise<any>)
+          .then((result) => {
+            // Call progress callback with current index and total number of Promises
+            if (progressCallback) {
+              progressCallback(index + 1, promises.length);
+            }
+            // Call callback function with result if provided
+            if (callback) {
+              callback(result);
+            }
+            console.log(`Promise "${name}" resolved`);
+            return promise(result);
+          })
+          .catch((error) => {
+            // Handle error and reject the chain
+            console.error(`Error in Promise "${name}": ${error}`);
+            return Promise.reject(error);
+          })
+      );
+    },
+    Promise.resolve(input) as Promise<any>
+  );
 }
 
 const promises: LongRunTask[] = [
@@ -91,6 +98,10 @@ const promises: LongRunTask[] = [
     description: "Wait 2 seconds and reject with an error"
   }
 ];
+
+export interface NeedRunTask {
+  onStart?: (init: any, promises: LongRunTask[]) => void;
+}
 
 // BatchRunLongRunTask(promises, (index, total) => {
 //   console.log(`Completed ${index} of ${total} promises`);
