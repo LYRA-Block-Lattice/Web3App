@@ -1,24 +1,55 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
+import { APIResult } from "../app/blockchain/blocks/meta";
+import { BatchRunLongRunTask, LongRunTask } from "../app/utils";
 import "./StepProgressReportDialog.css";
 
-const StepProgressReportDialog: FunctionComponent = () => {
-  console.log("render StepProgressReportDialog");
+interface LongRunTaskListProps {
+  batchName: string;
+  promises: LongRunTask[];
+}
+
+const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
+  arg
+) => {
+  const [success, setSuccess] = useState<boolean>(false);
+  const [errmsg, setErrmsg] = useState("");
+
+  useEffect(() => {
+    BatchRunLongRunTask(arg.promises, (index, total) => {
+      console.log(`Completed ${index} of ${total} promises`);
+    })
+      .then(() => setSuccess(true))
+      .catch((error) => {
+        setSuccess(false);
+        setErrmsg(error.toString());
+      });
+  }, []);
 
   return (
     <div className="stepprogressreportdialog">
-      <div className="step-1-upload">Step 1: Upload Image...</div>
-      <div className="step-1-upload">Step 2: Create Metadata...</div>
-      <div className="step-1-upload">Step 3: Minting...</div>
-      <img className="vector-icon9" alt="" src="../asserts/vector8.svg" />
-      <div className="ops-something-wrong">Ops, something wrong!</div>
-      <div className="error-message-goes">
-        Error message goes here to help user understand what’s going on.
-      </div>
-      <img className="vector-icon10" alt="" src="../asserts/vector9.svg" />
-      <div className="ops-something-wrong">Congratulations!</div>
-      <div className="error-message-goes">
-        Notify message goes here to help user understand what’s going on.
-      </div>
+      {arg.promises.map((promise, index) => {
+        return (
+          <div key={index} className="step-1-upload">
+            Step {index + 1}: {promise.name}, {promise.description}
+          </div>
+        );
+      })}
+      {!success ? (
+        <>
+          {" "}
+          <img className="vector-icon9" alt="" src="../asserts/vector8.svg" />
+          <div className="ops-something-wrong">Ops, something wrong!</div>
+          <div className="error-message-goes">{errmsg}</div>
+        </>
+      ) : (
+        <>
+          <img className="vector-icon10" alt="" src="../asserts/vector9.svg" />
+          <div className="ops-something-wrong">Congratulations!</div>
+          <div className="error-message-goes">
+            {arg.batchName} successfully completed!
+          </div>
+        </>
+      )}
       <button className="prepare-sell-order-button24">
         <div className="secondary-button9">Continue</div>
       </button>

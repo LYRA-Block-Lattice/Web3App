@@ -15,10 +15,10 @@ import PrimaryButton from "../components/PrimaryButton";
 import StepProgressReportDialog from "../components/StepProgressReportDialog";
 import PageTemplate from "../pages/PageTemplate";
 import { useDispatch } from "react-redux";
-import { LongRunTask } from "./TaskRunner";
+import { LongRunTaskx } from "./TaskRunner";
 
 interface BatchRunnerProps {
-  tasks: LongRunTask[];
+  tasks: LongRunTaskx[];
   onFinished: (success: boolean, payload: any) => void;
   onError: (error: any) => void;
 }
@@ -42,7 +42,7 @@ export const BatchRunner: FunctionComponent<BatchRunnerProps> = (
           placement="Centered"
           onOutsideClick={() => closeGeneralPopup(null)}
         >
-          <StepProgressReportDialog />
+          {/* <StepProgressReportDialog /> */}
         </PortalPopup>
       )}
     </>

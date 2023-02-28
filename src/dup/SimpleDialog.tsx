@@ -35,7 +35,7 @@ function SimpleDialog(props: SimpleDialogProps) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Set backup account</DialogTitle>
+      <DialogTitle>Running the task</DialogTitle>
       <List sx={{ pt: 0 }}>
         <ListItem disableGutters>{children}</ListItem>
       </List>

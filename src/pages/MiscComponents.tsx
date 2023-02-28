@@ -77,7 +77,7 @@ const MiscComponents: FunctionComponent = () => {
           <SignTradeSecretDialog />
           <CreateNFTDialog />
           <CreateTOTDialog />
-          <StepProgressReportDialog />
+          {/* <StepProgressReportDialog /> */}
         </div>
         <div className="prepare-sell-order-button-group">
           <PrimaryButton />

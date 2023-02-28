@@ -3,7 +3,7 @@ import { FunctionComponent, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
-export interface LongRunTask {
+export interface LongRunTaskx {
   name: string;
   action: AnyAction;
   successAction: {};
@@ -12,8 +12,8 @@ export interface LongRunTask {
   payload: any;
 }
 
-export const TaskRunner: FunctionComponent<LongRunTask> = (
-  props: LongRunTask
+export const TaskRunner: FunctionComponent<LongRunTaskx> = (
+  props: LongRunTaskx
 ) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
