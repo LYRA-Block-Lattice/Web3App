@@ -77,6 +77,8 @@ export class LyraApi {
         const sendBlock = new SendTransferBlock(lastBlock.blockData);
         const amountsArray: [string, bigint][] = Object.entries(amounts);
         amountsArray.forEach(([key, value]) => {
+          if (sendBlock.Balances[key] <= toBalanceBigInt(value))
+            throw new Error(`Insufficient balance for token ${key}.`);
           sendBlock.Balances[key] =
             sendBlock.Balances[key] - toBalanceBigInt(value);
         });

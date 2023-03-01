@@ -14,6 +14,7 @@ import {
 
 const stringify = require("../../my-json-stringify");
 
+const maxInt64 = BigInt("9223372036854775807");
 export const toBalanceBigInt = (balance: bigint): bigint =>
   balance * 100000000n;
 export class LyraGlobal {
@@ -163,6 +164,16 @@ export class TransactionBlock extends Block {
   }
 
   toJson(wallet: LyraApi, sb: CurrentServiceBlock): string {
+    // check balances to make sure they are valid
+    for (const key in this.Balances) {
+      if (this.Balances[key] < 0) {
+        throw new Error("Balance is negative.");
+      }
+      if (this.Balances[key] > maxInt64) {
+        throw new Error("Balance is too big.");
+      }
+    }
+
     this.AccountID = wallet.accountId;
     // setup service block related fields
     this.FeeCode = sb.FeeTicker;
