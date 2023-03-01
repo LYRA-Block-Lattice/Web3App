@@ -31,6 +31,7 @@ import CatalogSelection from "./components/CatalogSelection";
 import PrimaryButton from "./components/PrimaryButton";
 import { StartMint } from "./dup/StartMint";
 import MinterToken from "./dup/MinterToken";
+import SellFlowWithPopup from "./dup/SellFlowWithPopup";
 
 function App() {
   const router = useSelector(getRouterSelector);
@@ -197,6 +198,7 @@ function App() {
       <Route path="/mint-goods" element={<MinterToken cat="Goods" />} />
       <Route path="/mint-service" element={<MinterToken cat="Service" />} />
       <Route path="/mint" element={<StartMint />} />
+      <Route path="/sellflow2" element={<SellFlowWithPopup />} />
 
       <Route path="/createtokenform" element={<CreateTokenForm />} />
 

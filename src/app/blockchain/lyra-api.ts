@@ -6,6 +6,7 @@ import {
   OpenWithReceiveTransferBlock,
   ReceiveTransferBlock,
   SendTransferBlock,
+  toBalanceBigInt,
   TokenGenesisBlock,
   UniOrder,
   UniTrade
@@ -21,7 +22,7 @@ import {
   NonFungibleTokenTypes,
   Tags
 } from "./blocks/meta";
-import stringify from "json-stable-stringify";
+const stringify = require("../my-json-stringify");
 
 import { LyraCrypto } from "./lyra-crypto";
 import { BlockchainAPI } from "./blockchain-api";
@@ -59,41 +60,47 @@ export class LyraApi {
 
   async sendEx(
     destinationAccountId: string,
-    amounts: { [key: string]: number },
+    amounts: Amounts,
     tags: { [key: string]: string } | null
   ): Promise<AuthorizationAPIResult> {
-    // function body
-    try {
-      var ret = await BlockchainAPI.GetLastBlock(this.accountId);
-      if (ret.resultCode != 0) {
-        throw new Error("GetLastBlock failed: " + ret.resultCode);
+    return new Promise<AuthorizationAPIResult>(async (resolve, reject) => {
+      try {
+        const lastBlock = await BlockchainAPI.GetLastBlock(this.accountId);
+        if (lastBlock.resultCode !== 0) {
+          const errorMessage = `GetLastBlock failed with code ${lastBlock.resultCode}`;
+          throw new Error(errorMessage);
+        }
+
+        const lastServiceBlock = await BlockchainAPI.getLastServiceBlock();
+        const serviceBlockData = JSON.parse(lastServiceBlock.blockData);
+
+        const sendBlock = new SendTransferBlock(lastBlock.blockData);
+        const amountsArray: [string, bigint][] = Object.entries(amounts);
+        amountsArray.forEach(([key, value]) => {
+          sendBlock.Balances[key] =
+            sendBlock.Balances[key] - toBalanceBigInt(value);
+        });
+
+        sendBlock.DestinationAccountId = destinationAccountId;
+        sendBlock.Tags = tags;
+
+        const finalJson = sendBlock.toJson(this, serviceBlockData);
+        const sendResult = await BlockchainAPI.sendTransfer(finalJson);
+
+        resolve(sendResult);
+      } catch (error) {
+        console.error(error);
+        const errorMessage = `sendEx failed with error: ${error}`;
+        dumpHttpError(error);
+        //console.error(errorMessage);
+        //throw new Error(errorMessage);
+        reject(new Error(errorMessage));
       }
-      var lsb = await BlockchainAPI.getLastServiceBlock();
-      var sb = JSON.parse(lsb.blockData);
-
-      var sendBlock = new SendTransferBlock(ret.blockData);
-      const amountsArray: [string, number][] = Object.entries(amounts);
-      amountsArray.forEach(([key, value]) => {
-        sendBlock.Balances[key] -= value * LyraGlobal.BALANCERATIO;
-      });
-      sendBlock.DestinationAccountId = destinationAccountId;
-      sendBlock.Tags = tags;
-
-      const finalJson = sendBlock.toJson(this, sb);
-      //console.log("sendBlock", finalJson);
-
-      var sendRet = await BlockchainAPI.sendTransfer(finalJson);
-      //console.log("sendRet", sendRet);
-      return sendRet;
-    } catch (error) {
-      console.log("send error", error);
-      dumpHttpError(error);
-      throw error;
-    }
+    });
   }
 
   async send(amount: number, destAddr: string, token: string) {
-    return await this.sendEx(destAddr, { [token]: amount }, null);
+    return await this.sendEx(destAddr, { [token]: BigInt(amount) }, null);
   }
 
   async receive() {
@@ -123,8 +130,8 @@ export class LyraApi {
           changesArray.forEach(([key, value]) => {
             if (key != undefined) {
               if (receiveBlock.Balances.hasOwnProperty(key))
-                receiveBlock.Balances[key] += value * 100000000;
-              else receiveBlock.Balances[key] = value * 100000000;
+                receiveBlock.Balances[key] += BigInt(value * 100000000);
+              else receiveBlock.Balances[key] = BigInt(value * 100000000);
             }
           });
 
@@ -236,7 +243,7 @@ export class LyraApi {
       gensBlock.Tags = tags;
       gensBlock.SourceHash = undefined;
 
-      gensBlock.Balances[ticker] = supply * LyraGlobal.BALANCERATIO;
+      gensBlock.Balances[ticker] = BigInt(supply * LyraGlobal.BALANCERATIO);
 
       const finalJson = gensBlock.toJson(this, sb);
       console.log("sendBlock", finalJson);
@@ -291,7 +298,7 @@ export class LyraApi {
       gensBlock.Tags = undefined;
       gensBlock.SourceHash = undefined;
 
-      gensBlock.Balances[ticker] = supply * LyraGlobal.BALANCERATIO;
+      gensBlock.Balances[ticker] = BigInt(supply * LyraGlobal.BALANCERATIO);
 
       const finalJson = gensBlock.toJson(this, sb);
       console.log("sendBlock", finalJson);
@@ -359,7 +366,7 @@ export class LyraApi {
       gensBlock.Tags = undefined;
       gensBlock.SourceHash = undefined;
 
-      gensBlock.Balances[ticker] = supply * LyraGlobal.BALANCERATIO;
+      gensBlock.Balances[ticker] = BigInt(supply * LyraGlobal.BALANCERATIO);
 
       const finalJson = gensBlock.toJson(this, sb);
       console.log("sendBlock", finalJson);
@@ -396,7 +403,7 @@ export class LyraApi {
         svcReq: BrokerActions.BRK_FIAT_CRACT,
         targetAccountId: LyraGlobal.GUILDACCOUNTID,
         amounts: {
-          [LyraGlobal.OFFICIALTICKERCODE]: 1
+          [LyraGlobal.OFFICIALTICKERCODE]: toBalanceBigInt(1n)
         },
         objArgument: {
           symbol: symbol
@@ -420,7 +427,7 @@ export class LyraApi {
       svcReq: BrokerActions.BRK_FIAT_PRINT,
       targetAccountId: LyraGlobal.GUILDACCOUNTID,
       amounts: {
-        [LyraGlobal.OFFICIALTICKERCODE]: 1
+        [LyraGlobal.OFFICIALTICKERCODE]: toBalanceBigInt(1n)
       },
       objArgument: {
         symbol: symbol,
@@ -428,7 +435,7 @@ export class LyraApi {
       }
     };
 
-    const result2 = await this.serviceRequestAsync(printMoney);
+    const result2 = this.serviceRequestAsync(printMoney);
     return result2;
   }
 
@@ -442,18 +449,20 @@ export class LyraApi {
     if (order.offering == LyraGlobal.OFFICIALTICKERCODE) {
       //amounts.set(order.offering, amounts.get(order.offering) + order.amount);
       amounts = {
-        [LyraGlobal.OFFICIALTICKERCODE]:
+        [LyraGlobal.OFFICIALTICKERCODE]: BigInt(
           order.amount + LyraGlobal.GetListingFeeFor() + order.cltamt
+        )
       };
     } else {
       //amounts.set(order.offering, order.amount);
       amounts = {
-        [LyraGlobal.OFFICIALTICKERCODE]:
-          LyraGlobal.GetListingFeeFor() + order.cltamt,
-        [order.offering]: order.amount
+        [LyraGlobal.OFFICIALTICKERCODE]: BigInt(
+          LyraGlobal.GetListingFeeFor() + order.cltamt
+        ),
+        [order.offering]: BigInt(order.amount)
       };
     }
-    return await this.sendEx(order.daoId, amounts, tags);
+    return this.sendEx(order.daoId, amounts, tags);
   }
 
   async createTrade(trade: UniTrade): Promise<AuthorizationAPIResult> {
@@ -466,16 +475,16 @@ export class LyraApi {
     if (trade.biding == LyraGlobal.OFFICIALTICKERCODE) {
       //amounts.set(order.offering, amounts.get(order.offering) + order.amount);
       amounts = {
-        [LyraGlobal.OFFICIALTICKERCODE]: trade.pay + trade.cltamt
+        [LyraGlobal.OFFICIALTICKERCODE]: BigInt(trade.pay + trade.cltamt)
       };
     } else {
       //amounts.set(order.offering, order.amount);
       amounts = {
-        [LyraGlobal.OFFICIALTICKERCODE]: trade.cltamt,
-        [trade.biding]: trade.pay
+        [LyraGlobal.OFFICIALTICKERCODE]: BigInt(trade.cltamt),
+        [trade.biding]: BigInt(trade.pay)
       };
     }
-    return await this.sendEx(trade.daoId, amounts, tags);
+    return this.sendEx(trade.daoId, amounts, tags);
   }
 
   async DelistUniOrder(
@@ -489,10 +498,10 @@ export class LyraApi {
     };
 
     let amounts: Amounts = {
-      [LyraGlobal.OFFICIALTICKERCODE]: 1
+      [LyraGlobal.OFFICIALTICKERCODE]: toBalanceBigInt(1n)
     };
 
-    return await this.sendEx(daoId, amounts, tags);
+    return this.sendEx(daoId, amounts, tags);
   }
 
   async CloseUniOrder(
@@ -506,9 +515,9 @@ export class LyraApi {
     };
 
     let amounts: Amounts = {
-      [LyraGlobal.OFFICIALTICKERCODE]: 1
+      [LyraGlobal.OFFICIALTICKERCODE]: toBalanceBigInt(1n)
     };
 
-    return await this.sendEx(daoId, amounts, tags);
+    return this.sendEx(daoId, amounts, tags);
   }
 }

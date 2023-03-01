@@ -2,10 +2,14 @@ import { FunctionComponent, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { WALLET_CREATE_ORDER } from "../app/actionTypes";
+import { UniOrder } from "../app/blockchain/blocks/block";
+import { getHoldType } from "../app/blockchain/blocks/meta";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
+import { LongRunTask, NeedRunTask } from "../app/utils";
+import { getWallet } from "../app/wallet/walletSaga";
 import "./SellFlow.css";
 
-const SellFlow: FunctionComponent = () => {
+const SellFlow: FunctionComponent<NeedRunTask> = (props) => {
   const dispatch = useDispatch();
   const app = useSelector(getAppSelector);
   const auth = useSelector(getAuthSelector);
@@ -20,15 +24,64 @@ const SellFlow: FunctionComponent = () => {
   const onPrepareSellOrderButtonClick = useCallback(() => {
     if (!auth.hasKey) navigate("/openwallet?ret=/starttocreateorder");
     else {
-      dispatch({
-        type: WALLET_CREATE_ORDER,
-        payload: {
-          accountId: app.wallet.accountId,
-          order: obj
+      console.log("printing fiat...");
+      const promises: LongRunTask[] = [
+        {
+          promise: (input) =>
+            new Promise(async (resolve, reject) => {
+              const wallet = getWallet();
+              const obj = input.order;
+
+              var order = new UniOrder();
+              order.daoId = obj.daoid;
+              order.dealerId = obj.dealerid;
+              order.offerby = getHoldType(obj.selltoken);
+              order.offering = obj.selltoken;
+              order.bidby = getHoldType(obj.gettoken);
+              order.biding = obj.gettoken;
+              order.amount = obj.count;
+              order.price = obj.price;
+              order.eqprice = obj.eqprice;
+              order.limitMax = obj.limitmax;
+              order.limitMin = obj.limitmin;
+              order.payBy = obj.payby;
+              order.cltamt = obj.collateral;
+
+              try {
+                const balanceResp = await wallet.createOrder(order);
+                console.log("createOrder", balanceResp);
+                if (balanceResp.resultCode == 0) {
+                  resolve({ ...input, balanceResp: balanceResp });
+                } else {
+                  reject(balanceResp.resultMessage);
+                }
+              } catch (e) {
+                reject(e);
+              }
+            }),
+          callback: null,
+          name: "Create Sell Order",
+          description: "Send block to Lyra consensus network."
         }
-      });
+      ];
+      if (props.onStart) {
+        const ret = props.onStart(
+          {
+            order: obj
+          },
+          promises
+        );
+        console.log(ret);
+      }
+      // dispatch({
+      //   type: WALLET_CREATE_ORDER,
+      //   payload: {
+      //     accountId: app.wallet.accountId,
+      //     order: obj
+      //   }
+      // });
     }
-  }, [navigate]);
+  }, [navigate, dispatch, auth.hasKey, app.wallet.accountId, obj, props]);
   return (
     <div className="sellflow">
       <div className="group">

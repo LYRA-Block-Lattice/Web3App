@@ -11,9 +11,11 @@ import {
   UniTradeStatus,
   ProfitingType
 } from "./meta";
-import stringify from "json-stable-stringify";
-import { number } from "yargs";
 
+const stringify = require("../../my-json-stringify");
+
+export const toBalanceBigInt = (balance: bigint): bigint =>
+  balance * 100000000n;
 export class LyraGlobal {
   static readonly DatabaseVersion = 11;
   static readonly BALANCERATIO = 100000000;
@@ -64,7 +66,7 @@ export class Block {
     // hack: to compatible with Newtonsoft.Json
     //json = json.replace(',"Fee":1,', ',"Fee":1.0,');
     //console.log("original block:", sendBlock);
-    console.log("json to hash:", json);
+    //console.log("json to hash:", json);
 
     var hash = LyraCrypto.Hash(json);
     const signature = wallet.sign(hash);
@@ -74,7 +76,14 @@ export class Block {
       Signature: signature,
       Hash: hash
     };
-    var finalJson = JSON.stringify(finalBlock);
+    //var finalJson = JSON.stringify(finalBlock);
+    const finalJson = JSON.stringify(finalBlock, (key, value) => {
+      if (typeof value === "bigint") {
+        return value.toString();
+      }
+      return value;
+    });
+    console.log("final block:", finalJson);
     return finalJson;
   }
 }
@@ -124,7 +133,7 @@ export class CurrentServiceBlock extends SignedBlock {
 export class TransactionBlock extends Block {
   AccountID!: string;
   Balances: {
-    [key: string]: number;
+    [key: string]: bigint;
   };
   Fee!: number;
   FeeCode!: string;
@@ -142,7 +151,11 @@ export class TransactionBlock extends Block {
     } else {
       const decodedBlockData = JSON.parse(blockData);
       this.AccountID = decodedBlockData.AccountID;
-      this.Balances = decodedBlockData.Balances;
+
+      this.Balances = {};
+      for (const key in decodedBlockData.Balances) {
+        this.Balances[key] = BigInt(decodedBlockData.Balances[key]);
+      }
 
       if (decodedBlockData.VoteFor != null)
         this.VoteFor = decodedBlockData.VoteFor;
@@ -177,7 +190,8 @@ export class SendTransferBlock extends TransactionBlock {
     // setup service block related fields
     this.Fee = sb.TransferFee;
     this.FeeType = AuthorizationFeeTypes.Regular;
-    this.Balances[sb.FeeTicker] -= sb.TransferFee * LyraGlobal.BALANCERATIO;
+    this.Balances[sb.FeeTicker] =
+      this.Balances[sb.FeeTicker] - toBalanceBigInt(BigInt(sb.TransferFee));
     return super.toJson(wallet, sb);
   }
 }
@@ -266,8 +280,9 @@ export class TokenGenesisBlock extends ReceiveTransferBlock {
     //console.log("sb: ", sb);
     this.Fee = sb.TokenGenerationFee;
     this.FeeType = AuthorizationFeeTypes.Regular;
-    this.Balances[sb.FeeTicker] -=
-      sb.TokenGenerationFee * LyraGlobal.BALANCERATIO;
+    this.Balances[sb.FeeTicker] -= BigInt(
+      sb.TokenGenerationFee * LyraGlobal.BALANCERATIO
+    );
     return super.toJson(wallet, sb);
   }
 }

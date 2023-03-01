@@ -162,7 +162,7 @@ const SellTokenToToken: FunctionComponent = () => {
       total: daoFeeLyr + netFeeLyr
     };
     navigate(
-      "/sellflow?data=" +
+      "/sellflow2?data=" +
         encodeURIComponent(JSON.stringify(obj)) +
         "&fees=" +
         encodeURIComponent(JSON.stringify(fees))
