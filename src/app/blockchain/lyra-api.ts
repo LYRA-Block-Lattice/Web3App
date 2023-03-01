@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import moment from "moment";
 import {
   LyraGlobal,
+  numberToBalanceBigInt,
   OpenWithReceiveTransferBlock,
   ReceiveTransferBlock,
   SendTransferBlock,
@@ -75,12 +76,12 @@ export class LyraApi {
         const serviceBlockData = JSON.parse(lastServiceBlock.blockData);
 
         const sendBlock = new SendTransferBlock(lastBlock.blockData);
-        const amountsArray: [string, bigint][] = Object.entries(amounts);
+        const amountsArray: [string, number][] = Object.entries(amounts);
         amountsArray.forEach(([key, value]) => {
-          if (sendBlock.Balances[key] <= toBalanceBigInt(value))
+          if (sendBlock.Balances[key] < numberToBalanceBigInt(value))
             throw new Error(`Insufficient balance for token ${key}.`);
           sendBlock.Balances[key] =
-            sendBlock.Balances[key] - toBalanceBigInt(value);
+            sendBlock.Balances[key] - numberToBalanceBigInt(value);
         });
 
         sendBlock.DestinationAccountId = destinationAccountId;
@@ -102,7 +103,7 @@ export class LyraApi {
   }
 
   async send(amount: number, destAddr: string, token: string) {
-    return await this.sendEx(destAddr, { [token]: BigInt(amount) }, null);
+    return await this.sendEx(destAddr, { [token]: amount }, null);
   }
 
   async receive() {
@@ -405,7 +406,7 @@ export class LyraApi {
         svcReq: BrokerActions.BRK_FIAT_CRACT,
         targetAccountId: LyraGlobal.GUILDACCOUNTID,
         amounts: {
-          [LyraGlobal.OFFICIALTICKERCODE]: toBalanceBigInt(1n)
+          [LyraGlobal.OFFICIALTICKERCODE]: 1
         },
         objArgument: {
           symbol: symbol
@@ -429,7 +430,7 @@ export class LyraApi {
       svcReq: BrokerActions.BRK_FIAT_PRINT,
       targetAccountId: LyraGlobal.GUILDACCOUNTID,
       amounts: {
-        [LyraGlobal.OFFICIALTICKERCODE]: toBalanceBigInt(1n)
+        [LyraGlobal.OFFICIALTICKERCODE]: 1
       },
       objArgument: {
         symbol: symbol,
@@ -451,17 +452,15 @@ export class LyraApi {
     if (order.offering == LyraGlobal.OFFICIALTICKERCODE) {
       //amounts.set(order.offering, amounts.get(order.offering) + order.amount);
       amounts = {
-        [LyraGlobal.OFFICIALTICKERCODE]: BigInt(
+        [LyraGlobal.OFFICIALTICKERCODE]:
           order.amount + LyraGlobal.GetListingFeeFor() + order.cltamt
-        )
       };
     } else {
       //amounts.set(order.offering, order.amount);
       amounts = {
-        [LyraGlobal.OFFICIALTICKERCODE]: BigInt(
-          LyraGlobal.GetListingFeeFor() + order.cltamt
-        ),
-        [order.offering]: BigInt(order.amount)
+        [LyraGlobal.OFFICIALTICKERCODE]:
+          LyraGlobal.GetListingFeeFor() + order.cltamt,
+        [order.offering]: order.amount
       };
     }
     return this.sendEx(order.daoId, amounts, tags);
@@ -477,13 +476,13 @@ export class LyraApi {
     if (trade.biding == LyraGlobal.OFFICIALTICKERCODE) {
       //amounts.set(order.offering, amounts.get(order.offering) + order.amount);
       amounts = {
-        [LyraGlobal.OFFICIALTICKERCODE]: BigInt(trade.pay + trade.cltamt)
+        [LyraGlobal.OFFICIALTICKERCODE]: trade.pay + trade.cltamt
       };
     } else {
       //amounts.set(order.offering, order.amount);
       amounts = {
-        [LyraGlobal.OFFICIALTICKERCODE]: BigInt(trade.cltamt),
-        [trade.biding]: BigInt(trade.pay)
+        [LyraGlobal.OFFICIALTICKERCODE]: trade.cltamt,
+        [trade.biding]: trade.pay
       };
     }
     return this.sendEx(trade.daoId, amounts, tags);
@@ -500,7 +499,7 @@ export class LyraApi {
     };
 
     let amounts: Amounts = {
-      [LyraGlobal.OFFICIALTICKERCODE]: toBalanceBigInt(1n)
+      [LyraGlobal.OFFICIALTICKERCODE]: 1
     };
 
     return this.sendEx(daoId, amounts, tags);
@@ -517,7 +516,7 @@ export class LyraApi {
     };
 
     let amounts: Amounts = {
-      [LyraGlobal.OFFICIALTICKERCODE]: toBalanceBigInt(1n)
+      [LyraGlobal.OFFICIALTICKERCODE]: 1
     };
 
     return this.sendEx(daoId, amounts, tags);

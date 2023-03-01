@@ -1,9 +1,9 @@
 "use strict";
 
-jsonStringify = function (obj) {
+var jsonStringify = function (obj) {
   return JSON.stringify(obj, (key, value) => {
     if (typeof value === "bigint") {
-      return value.toString();
+      return Number(value);
     }
     return value;
   });

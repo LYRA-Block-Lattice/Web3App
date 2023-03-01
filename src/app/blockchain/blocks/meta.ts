@@ -1,7 +1,7 @@
 import { Block } from "./block";
 
 export interface Amounts {
-  [key: string]: bigint;
+  [key: string]: number;
 }
 
 export interface Tags {
@@ -577,7 +577,7 @@ export class ImageUploadResult extends APIResult {
 export class LyraContractABI {
   svcReq!: string;
   targetAccountId!: string;
-  amounts!: { [key: string]: bigint };
+  amounts!: { [key: string]: number };
   objArgument: any;
 }
 

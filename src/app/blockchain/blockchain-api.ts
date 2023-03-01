@@ -139,6 +139,7 @@ export class BlockchainAPI {
     json: string,
     options?: RequestInit
   ): Promise<T> {
+    console.log("Posting to ", url);
     const response = await ky.post(url, {
       method: "POST",
       headers: {

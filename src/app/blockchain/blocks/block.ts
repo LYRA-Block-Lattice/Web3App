@@ -17,6 +17,9 @@ const stringify = require("../../my-json-stringify");
 const maxInt64 = BigInt("9223372036854775807");
 export const toBalanceBigInt = (balance: bigint): bigint =>
   balance * 100000000n;
+export const numberToBalanceBigInt = (value: number): bigint =>
+  BigInt(Math.round(value * 100000000)) as bigint;
+
 export class LyraGlobal {
   static readonly DatabaseVersion = 11;
   static readonly BALANCERATIO = 100000000;
@@ -67,7 +70,7 @@ export class Block {
     // hack: to compatible with Newtonsoft.Json
     //json = json.replace(',"Fee":1,', ',"Fee":1.0,');
     //console.log("original block:", sendBlock);
-    //console.log("json to hash:", json);
+    console.log("json to hash:", json);
 
     var hash = LyraCrypto.Hash(json);
     const signature = wallet.sign(hash);
@@ -80,7 +83,7 @@ export class Block {
     //var finalJson = JSON.stringify(finalBlock);
     const finalJson = JSON.stringify(finalBlock, (key, value) => {
       if (typeof value === "bigint") {
-        return value.toString();
+        return Number(value);
       }
       return value;
     });
