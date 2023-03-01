@@ -28,7 +28,7 @@ const MinterToken = (props: Props) => {
     setPoped(true);
   }, []);
 
-  console.log("render MinterToken");
+  console.log("render Minter Token");
 
   return (
     <PageTemplate title={`Mint ${props.cat}`}>
