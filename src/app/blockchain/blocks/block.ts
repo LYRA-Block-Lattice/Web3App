@@ -13,6 +13,7 @@ import {
 } from "./meta";
 
 const stringify = require("../../my-json-stringify");
+var JSONbig = require("json-bigint");
 
 const maxInt64 = BigInt("9223372036854775807");
 export const toBalanceBigInt = (balance: bigint): bigint =>
@@ -81,12 +82,7 @@ export class Block {
       Hash: hash
     };
     //var finalJson = JSON.stringify(finalBlock);
-    const finalJson = JSON.stringify(finalBlock, (key, value) => {
-      if (typeof value === "bigint") {
-        return Number(value);
-      }
-      return value;
-    });
+    const finalJson = JSONbig.stringify(finalBlock);
     console.log("final block:", finalJson);
     return finalJson;
   }

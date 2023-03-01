@@ -1,12 +1,9 @@
 "use strict";
 
+var JSONbig = require("json-bigint");
+
 var jsonStringify = function (obj) {
-  return JSON.stringify(obj, (key, value) => {
-    if (typeof value === "bigint") {
-      return Number(value);
-    }
-    return value;
-  });
+  return JSONbig.stringify(obj);
 };
 
 var isArray = require("isarray");

@@ -2,6 +2,8 @@ import { FunctionComponent, useEffect, useState } from "react";
 import { IDao, LyraGlobal } from "../app/blockchain/blocks/block";
 import "./CollateralCalculation.css";
 
+const rounded = (value: number) => Math.round(value * 1e8) / 1e8;
+
 type CollateralCalculationType = {
   selling: boolean;
   eqprice: number;
@@ -35,19 +37,25 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
     // );
     if (eqdollar > 0 && amount > 0 && dao != undefined && dao != null) {
       if (selling) {
-        setCollateralDollar((eqdollar * amount * dao.SellerPar) / 100);
-        setCollateralLYR((eqprice * amount * dao.SellerPar) / 100);
-        setDaoFeeLYR(eqprice * amount * dao.SellerFeeRatio);
-        setDaoFeeDollar(eqdollar * amount * dao.SellerFeeRatio);
+        setCollateralDollar(rounded((eqdollar * amount * dao.SellerPar) / 100));
+        setCollateralLYR(rounded((eqprice * amount * dao.SellerPar) / 100));
+        setDaoFeeLYR(rounded(eqprice * amount * dao.SellerFeeRatio));
+        setDaoFeeDollar(rounded(eqdollar * amount * dao.SellerFeeRatio));
         setNetFeeLYR(eqprice * amount * LyraGlobal.OfferingNetworkFeeRatio);
-        setNetFeeDollar(eqdollar * amount * LyraGlobal.OfferingNetworkFeeRatio);
+        setNetFeeDollar(
+          rounded(eqdollar * amount * LyraGlobal.OfferingNetworkFeeRatio)
+        );
       } else {
-        setCollateralDollar((eqdollar * amount * dao.BuyerPar) / 100);
-        setCollateralLYR((eqprice * amount * dao.BuyerPar) / 100);
-        setDaoFeeLYR(eqprice * amount * dao.BuyerFeeRatio);
-        setDaoFeeDollar(eqdollar * amount * dao.BuyerFeeRatio);
-        setNetFeeLYR(eqprice * amount * LyraGlobal.BidingNetworkFeeRatio);
-        setNetFeeDollar(eqdollar * amount * LyraGlobal.BidingNetworkFeeRatio);
+        setCollateralDollar(rounded((eqdollar * amount * dao.BuyerPar) / 100));
+        setCollateralLYR(rounded((eqprice * amount * dao.BuyerPar) / 100));
+        setDaoFeeLYR(rounded(eqprice * amount * dao.BuyerFeeRatio));
+        setDaoFeeDollar(rounded(eqdollar * amount * dao.BuyerFeeRatio));
+        setNetFeeLYR(
+          rounded(eqprice * amount * LyraGlobal.BidingNetworkFeeRatio)
+        );
+        setNetFeeDollar(
+          rounded(eqdollar * amount * LyraGlobal.BidingNetworkFeeRatio)
+        );
       }
     } else {
       setCollateralDollar(0);
