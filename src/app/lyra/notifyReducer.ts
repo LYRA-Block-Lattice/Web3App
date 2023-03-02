@@ -34,7 +34,8 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
   }
 
   switch (action.type) {
-    case actionTypes.BLOCKCHAIN_EVENT:
+    case actionTypes.DEALER_EVENT:
+      console.log("DEALER_EVENT", action.payload);
       if (action.payload.evtType === 1) {
         const { ChangeType, about } = JSON.parse(action.payload.json);
         return {
@@ -53,6 +54,7 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
           prices: quote.Prices
         };
       } else {
+        console.log("Unknown dealer event type", action.payload);
         return state;
       }
     case actionTypes.MARKET_GET_PRICES_SUCCESS:

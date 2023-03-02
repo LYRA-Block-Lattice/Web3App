@@ -37,7 +37,7 @@ const CoinItem: FunctionComponent<CoinItemType> = ({ coins }) => {
   const notify = useSelector(getNotifySelector);
 
   function getWorth(token: IBalance): string {
-    if (notify.prices === undefined) return "";
+    if (notify.prices === undefined || !Array.isArray(notify.error)) return "";
 
     var ticker = token.Ticker;
     if (ticker.startsWith("tether/")) ticker = ticker.replace("tether/", "");
@@ -96,7 +96,6 @@ const WalletHome: FunctionComponent = () => {
   useEffect(() => {
     // check if user has wallet. if none, redirect to create wallet page
     if (app.wallet?.accountId) {
-      dispatch({ type: actionTypes.SIGNALR_CONNECT });
       dispatch({ type: actionTypes.WALLET_GET_BALANCE });
     } else if (app.existing) {
       navigate("/openwallet");

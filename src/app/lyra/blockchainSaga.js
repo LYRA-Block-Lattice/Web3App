@@ -1,37 +1,59 @@
-import { HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
-import { put, takeLatest, takeEvery, getContext } from "redux-saga/effects";
+import { eventChannel } from "redux-saga";
+import { call, put, takeEvery, take, race } from "redux-saga/effects";
+import { HubConnectionBuilder } from "@microsoft/signalr";
 import * as actionTypes from "../actionTypes";
+/*
+function createSignalRChannel(connection) {
+  return eventChannel((emit) => {
+    const onEvent = (message) => {
+      //console.log("SignalR OnEvent", message);
+      emit({ type: actionTypes.BLOCKCHAIN_EVENT, payload: message });
+    };
+    connection.on("OnEvent", onEvent);
 
-let connection;
+    const unsubscribe = () => {
+      connection.off("OnEvent", onEvent);
+    };
 
-function* Setup(action) {}
+    return unsubscribe;
+  });
+}
 
-export default function* blockchainSaga() {
-  console.log("blockchainSaga is running.");
-  /*
+function* watchSignalR(connection) {
+  const channel = yield call(createSignalRChannel, connection);
+  while (true) {
+    const action = yield take(channel);
+    yield put(action);
+  }
+}
+
+function* setupSignalR() {
+  console.log("Setup Lyra blockchain events SignalR");
   const url = `https://${process.env.REACT_APP_NETWORK_ID}.lyra.live/events`;
   console.log("Setup Lyra blockchain events SignalR with... ", url);
-  if (connection === undefined) {
-    try {
-      connection = new HubConnectionBuilder()
-        .withUrl(url)
-        // .withUrl(url, {
-        //   transport: signalR.HttpTransportType.WebSockets,
-        //   skipNegotiation: true
-        // })
-        .withAutomaticReconnect()
-        .build();
+  try {
+    const connection = new HubConnectionBuilder()
+      .withUrl(url)
+      .withAutomaticReconnect()
+      .build();
 
-      yield connection.start();
-      connection.on("OnEvent", async (message) => {
-        console.log("SignalR OnEvent", message);
-        await put({ type: actionTypes.BLOCKCHAIN_EVENT, payload: message });
-      });
-    } catch (error) {
-      console.log("SignalR error", error);
-      connection = undefined;
+    yield connection.start();
+
+    const { cancel } = yield race({
+      task: call(watchSignalR, connection),
+      cancel: take(actionTypes.SIGNALR_DISCONNECT)
+    });
+
+    if (cancel) {
+      console.log("SignalR channel cancelled.");
+      yield call(() => connection.stop());
     }
-  }*/
-
-  yield takeEvery(actionTypes.SIGNALR_CONNECT, Setup);
+  } catch (error) {
+    console.log("SignalR error", error);
+  }
+}
+*/
+export default function* blockchainSaga() {
+  //console.log("blockchainSaga is running.");
+  //yield takeEvery(actionTypes.SIGNALR_CONNECT, setupSignalR);
 }

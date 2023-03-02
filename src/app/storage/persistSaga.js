@@ -16,6 +16,7 @@ function* checkWalletExists() {
   // whatever, get prices quote
   yield put({ type: actionTypes.MARKET_GET_PRICES });
   yield put({ type: actionTypes.STORE_INIT_DONE, payload: data });
+  yield put({ type: actionTypes.SIGNALR_CONNECT });
 }
 
 function* createWallet(action) {
