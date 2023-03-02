@@ -1,7 +1,10 @@
-import { FunctionComponent, useMemo } from "react";
+import { FunctionComponent, useMemo, useState } from "react";
 import CSS, { Property } from "csstype";
 import { useNavigate } from "react-router";
 import "./BottomNavigationBar.css";
+import Badge from "@mui/material/Badge";
+import { useSelector } from "react-redux";
+import { getNotifySelector } from "../app/selectors";
 
 type BottomNavigationBarType = {
   /** Style props */
@@ -11,6 +14,8 @@ type BottomNavigationBarType = {
 const BottomNavigationBar: FunctionComponent<BottomNavigationBarType> = ({
   textColor
 }) => {
+  const notify = useSelector(getNotifySelector);
+
   const textStyle: CSS.Properties = useMemo(() => {
     return {
       color: textColor
@@ -47,11 +52,13 @@ const BottomNavigationBar: FunctionComponent<BottomNavigationBarType> = ({
           <div className="text13">DAO</div>
         </button>
         <button className="tabbar-item" onClick={gotoWallet}>
-          <img
-            className="box-alt-light-icon"
-            alt=""
-            src="../asserts/wallet-light.svg"
-          />
+          <Badge badgeContent={notify.event.unrecvcnt} color="primary">
+            <img
+              className="box-alt-light-icon"
+              alt=""
+              src="../asserts/wallet-light.svg"
+            />
+          </Badge>
           <div className="text15" style={textStyle}>
             Wallet
           </div>

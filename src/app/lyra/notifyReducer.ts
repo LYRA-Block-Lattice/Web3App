@@ -5,6 +5,7 @@ export interface ITxEvent {
   change: String; // like Received, Sent, etc.
   msg: String;
   time: number;
+  unrecvcnt: number;
 }
 
 export interface IPriceQuote {
@@ -23,7 +24,8 @@ const initState: IAppNotifyState = {
   event: {
     change: "None",
     msg: "Start",
-    time: new Date().getTime()
+    time: new Date().getTime(),
+    unrecvcnt: 0
   },
   prices: null
 };
@@ -43,7 +45,9 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
           event: {
             change: ChangeType,
             msg: `${ChangeType} to my ${about}`,
-            time: new Date().getTime()
+            time: new Date().getTime(),
+            unrecvcnt:
+              state.event.unrecvcnt + (ChangeType === "Receive" ? 1 : 0)
           }
         };
       } else if (action.payload.evtType === 3) {
