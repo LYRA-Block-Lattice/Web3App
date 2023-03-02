@@ -9,16 +9,23 @@ import { IBalance } from "../app/wallet/walletReducer";
 import { getWallet } from "../app/wallet/walletSaga";
 import { BlockchainAPI } from "../app/blockchain";
 import { ReceiveTransferBlock } from "../app/blockchain/blocks/block";
+import { FindTokenList } from "../app/blockchain/blockchain-api";
 
 const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
   const app = useSelector(getAppSelector);
   const dispatch = useDispatch();
   const [name, setName] = useState<string>("");
   const [supply, setSupply] = useState<number>(0);
-  const [options, setOptions] = useState<IBalance[]>([]);
+  const [options, setOptions] = useState<FindTokenList>([]);
 
   function getTokens() {
-    setOptions(app.wallet.balances.filter((a) => a.Domain == "fiat"));
+    BlockchainAPI.findTokens("", "fiat")
+      .then((ret) => {
+        setOptions(ret);
+      })
+      .catch((e) => {
+        console.log("error", e);
+      });
   }
 
   useEffect(() => {
@@ -84,7 +91,7 @@ const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
             }
           }),
         callback: null,
-        name: "Print Fiat",
+        name: "Mint Fiat",
         description: "Send block to Lyra consensus network."
       },
       {
@@ -168,7 +175,7 @@ const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
         disablePortal
         options={options}
         onInputChange={onGetTokenInputChange}
-        getOptionLabel={(option) => option.Ticker}
+        getOptionLabel={(option) => option.token}
         renderInput={(params: any) => (
           <TextField
             {...params}

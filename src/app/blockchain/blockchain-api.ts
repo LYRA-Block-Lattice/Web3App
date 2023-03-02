@@ -11,6 +11,14 @@ import {
 import ky from "ky-universal";
 import { Block, IDao, IUniOrder, TokenGenesisBlock } from "./blocks/block";
 
+export type FindToken = {
+  token: string;
+  domain: string;
+  isTOT: boolean;
+  name: string;
+};
+
+export type FindTokenList = FindToken[];
 export interface IOrdersResult {
   OverStats: { _id: number; Count: number }[];
   OwnerStats: {
@@ -184,6 +192,11 @@ export class BlockchainAPI {
   static getUnreceived = (accountId: string) =>
     this.fetchJson<any>(
       `${this.Block_API_v1}/LookForNewTransfer2?AccountId=${accountId}`
+    );
+
+  static findTokens = (keyword: string, cat: string) =>
+    this.fetchJson<FindTokenList>(
+      `${this.Block_API_v1}/FindTokens?q=${keyword}&cat=${cat}`
     );
 
   static getBlockBySourceHash = (hash: string) =>
