@@ -100,7 +100,7 @@ const promises: LongRunTask[] = [
 ];
 
 export interface NeedRunTask {
-  onStart?: (init: any, promises: LongRunTask[]) => void;
+  onStart?: (taskName: string, init: any, promises: LongRunTask[]) => void;
 }
 
 // BatchRunLongRunTask(promises, (index, total) => {

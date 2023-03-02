@@ -62,7 +62,7 @@ export class LyraApi {
   async sendEx(
     destinationAccountId: string,
     amounts: Amounts,
-    tags: { [key: string]: string } | null
+    tags: { [key: string]: string } | undefined
   ): Promise<AuthorizationAPIResult> {
     return new Promise<AuthorizationAPIResult>(async (resolve, reject) => {
       try {
@@ -103,7 +103,7 @@ export class LyraApi {
   }
 
   async send(amount: number, destAddr: string, token: string) {
-    return await this.sendEx(destAddr, { [token]: amount }, null);
+    return await this.sendEx(destAddr, { [token]: amount }, undefined);
   }
 
   async receive() {
@@ -384,11 +384,12 @@ export class LyraApi {
   }
 
   async serviceRequestAsync(
+    type: string,
     arg: LyraContractABI
   ): Promise<AuthorizationAPIResult> {
     const tags: { [key: string]: string } = {
       [LyraGlobal.REQSERVICETAG]: arg.svcReq,
-      objType: arg.objArgument.constructor.name,
+      objType: type,
       data: JSON.stringify(arg.objArgument)
     };
 
@@ -413,7 +414,7 @@ export class LyraApi {
         }
       };
 
-      const result = await this.serviceRequestAsync(crwlt);
+      const result = await this.serviceRequestAsync("FiatCreateWallet", crwlt);
       return result;
     }
 
@@ -438,7 +439,7 @@ export class LyraApi {
       }
     };
 
-    const result2 = this.serviceRequestAsync(printMoney);
+    const result2 = this.serviceRequestAsync("FiatPrintMoney", printMoney);
     return result2;
   }
 

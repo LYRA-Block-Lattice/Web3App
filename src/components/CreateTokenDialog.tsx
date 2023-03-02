@@ -45,7 +45,7 @@ const CreateTokenDialog: FunctionComponent<NeedRunTask> = (props) => {
       }
     ];
 
-    if (props.onStart) props.onStart(null, promises);
+    if (props.onStart) props.onStart("Mint Token", null, promises);
     // dispatch({
     //   type: actionTypes.WALLET_MINT_TOKEN,
     //   payload: {

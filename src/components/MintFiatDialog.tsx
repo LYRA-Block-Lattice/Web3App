@@ -7,6 +7,8 @@ import { getAppSelector } from "../app/selectors";
 import PrimaryButton from "./PrimaryButton";
 import { IBalance } from "../app/wallet/walletReducer";
 import { getWallet } from "../app/wallet/walletSaga";
+import { BlockchainAPI } from "../app/blockchain";
+import { ReceiveTransferBlock } from "../app/blockchain/blocks/block";
 
 const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
   const app = useSelector(getAppSelector);
@@ -29,6 +31,46 @@ const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
       {
         promise: (input) =>
           new Promise(async (resolve, reject) => {
+            // find it
+            try {
+              const wallet = getWallet();
+
+              const findRet = await BlockchainAPI.findFiatWallet(
+                input.accountId,
+                input.ticker
+              );
+              if (findRet.resultCode != 0) {
+                // not exists. create it
+                const createRet = await wallet.createFiatWalletAsync(
+                  input.ticker
+                );
+                if (createRet.resultCode != 0) {
+                  reject(
+                    "Unable to create Fiat wallet: " + createRet.resultMessage
+                  );
+                }
+              }
+
+              const balanceResp = await wallet.printFiat(
+                input.ticker,
+                input.amount
+              );
+              if (balanceResp.resultCode == 0) {
+                resolve({ ...input, balanceResp: balanceResp });
+              } else {
+                reject(balanceResp.resultMessage);
+              }
+            } catch (e) {
+              reject(e);
+            }
+          }),
+        callback: null,
+        name: "Create Fiat wallet if not exist",
+        description: "Send block to Lyra consensus network."
+      },
+      {
+        promise: (input) =>
+          new Promise(async (resolve, reject) => {
             const wallet = getWallet();
 
             const balanceResp = await wallet.printFiat(
@@ -44,10 +86,52 @@ const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
         callback: null,
         name: "Print Fiat",
         description: "Send block to Lyra consensus network."
+      },
+      {
+        promise: (input) =>
+          new Promise((resolve, reject) => {
+            console.log("tx hash is: ", input.balanceResp.txHash);
+            let timeElapsed = 0;
+            const intervalId = setInterval(() => {
+              timeElapsed += 5;
+              if (timeElapsed >= 15) {
+                clearInterval(intervalId);
+                reject(new Error("Check result timeout."));
+              }
+
+              BlockchainAPI.getBlockBySourceHash(input.balanceResp.txHash)
+                .then((resp) => {
+                  if (resp.resultCode == 0) {
+                    const recvBlock = resp.getBlock() as ReceiveTransferBlock;
+                    console.log("get block by source hash", recvBlock);
+                    // parse this Tags: {"managed":"RefundReceive","auth":"AccountDoesNotExist"}
+                    if (
+                      recvBlock.Tags &&
+                      recvBlock.Tags["managed"] == "RefundReceive"
+                    ) {
+                      reject(recvBlock.Tags["auth"]);
+                    } else if (
+                      recvBlock.Tags &&
+                      recvBlock.Tags["managed"] == "NormalReceive"
+                    ) {
+                      clearInterval(intervalId);
+                      resolve(recvBlock.Tags["auth"]);
+                    }
+                  }
+                })
+                .catch((err) => {
+                  console.log("get block by source hash error", err);
+                });
+            }, 5000);
+          }),
+        callback: null,
+        name: "Check Mint Result",
+        description: "Check Mint Result"
       }
     ];
     if (props.onStart) {
       const ret = props.onStart(
+        "Print Fiat",
         {
           ticker: name,
           amount: supply

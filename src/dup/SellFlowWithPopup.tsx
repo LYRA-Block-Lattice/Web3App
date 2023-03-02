@@ -15,15 +15,20 @@ import SellFlow from "../pages/SellFlow";
 import PopupTemplate from "./PopupTemplate";
 
 const SellFlowWithPopup: FunctionComponent = () => {
+  const [title, setTitle] = useState<string>("Task");
   const [poped, setPoped] = useState<boolean>(false);
   const [input, setInput] = useState<any>(undefined);
   const [promises, setPromises] = useState<LongRunTask[]>([]);
 
-  const popProgress = useCallback((init: any, promises: LongRunTask[]) => {
-    setInput(init);
-    setPromises(promises);
-    setPoped(true);
-  }, []);
+  const popProgress = useCallback(
+    (taskName: string, init: any, promises: LongRunTask[]) => {
+      setTitle(taskName);
+      setInput(init);
+      setPromises(promises);
+      setPoped(true);
+    },
+    []
+  );
 
   return (
     <PopupTemplate
@@ -31,7 +36,7 @@ const SellFlowWithPopup: FunctionComponent = () => {
         <StepProgressReportDialog
           input={input}
           promises={promises}
-          batchName={`Sell Order Workflow`}
+          batchName={title}
           onContinue={() => setPoped(false)}
         />
       }

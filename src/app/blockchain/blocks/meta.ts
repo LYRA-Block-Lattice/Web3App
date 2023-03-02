@@ -1,4 +1,5 @@
 import { Block } from "./block";
+var JSONbig = require("json-bigint");
 
 export interface Amounts {
   [key: string]: number;
@@ -547,6 +548,10 @@ export class AuthorizationAPIResult extends APIResult {
 export class BlockAPIResult extends APIResult {
   public blockData!: string;
   public resultBlockType!: BlockTypes;
+
+  getBlock(): Block {
+    return JSONbig.parse(this.blockData);
+  }
 }
 
 export class MultiBlockAPIResult extends APIResult {

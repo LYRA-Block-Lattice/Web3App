@@ -92,6 +92,7 @@ const CreateTOTDialog: FunctionComponent<NeedRunTask> = (props) => {
     ];
     if (props.onStart) {
       const ret = props.onStart(
+        "Mint trade only token",
         {
           type: holdTypes[tott],
           name: name,

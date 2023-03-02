@@ -66,6 +66,7 @@ const SellFlow: FunctionComponent<NeedRunTask> = (props) => {
       ];
       if (props.onStart) {
         const ret = props.onStart(
+          "Create Sell Order",
           {
             order: obj
           },

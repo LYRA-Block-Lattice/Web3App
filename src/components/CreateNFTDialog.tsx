@@ -137,7 +137,7 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
       ];
 
       if (props.onStart) {
-        const ret = props.onStart({ evt: event }, promises);
+        const ret = props.onStart("Create Metadata", { evt: event }, promises);
         console.log(ret);
       }
     },
@@ -173,6 +173,7 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
     ];
     if (props.onStart) {
       const ret = props.onStart(
+        "Mint NFT",
         {
           name: name,
           desc: desc,

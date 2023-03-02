@@ -18,15 +18,20 @@ interface Props {
 }
 
 const MinterToken = (props: Props) => {
+  const [title, setTitle] = useState<string>("Task");
   const [poped, setPoped] = useState<boolean>(false);
   const [input, setInput] = useState<any>(undefined);
   const [promises, setPromises] = useState<LongRunTask[]>([]);
 
-  const popProgress = useCallback((init: any, promises: LongRunTask[]) => {
-    setInput(init);
-    setPromises(promises);
-    setPoped(true);
-  }, []);
+  const popProgress = useCallback(
+    (taskName: string, init: any, promises: LongRunTask[]) => {
+      setTitle(taskName);
+      setInput(init);
+      setPromises(promises);
+      setPoped(true);
+    },
+    []
+  );
 
   console.log("render Minter Token");
 
@@ -37,7 +42,7 @@ const MinterToken = (props: Props) => {
           <StepProgressReportDialog
             input={input}
             promises={promises}
-            batchName={`Mint ${props.cat}`}
+            batchName={title}
             onContinue={() => setPoped(false)}
           />
         }

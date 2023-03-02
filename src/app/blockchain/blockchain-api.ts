@@ -186,8 +186,15 @@ export class BlockchainAPI {
       `${this.Block_API_v1}/LookForNewTransfer2?AccountId=${accountId}`
     );
 
+  static getBlockBySourceHash = (hash: string) =>
+    this.fetchJson2(
+      BlockAPIResult,
+      `${this.Block_API_v1}/GetBlockBySourceHash?Hash=${hash}`
+    );
+
   static findFiatWallet = (owner: string, symbol: string) =>
-    this.fetchJson<any>(
+    this.fetchJson2(
+      BlockAPIResult,
       `${this.Block_API_v1}/FindFiatWallet?owner=${owner}&symbol=${symbol}`
     );
 

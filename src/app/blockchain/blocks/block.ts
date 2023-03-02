@@ -35,6 +35,10 @@ export class LyraGlobal {
   static GetListingFeeFor = () => 100;
 }
 
+export interface BlockTags {
+  [key: string]: string;
+}
+
 export class Block {
   Height: number;
   TimeStamp: string;
@@ -42,7 +46,7 @@ export class Block {
   BlockType: BlockTypes;
   PreviousHash: string | undefined;
   ServiceHash!: string;
-  Tags: any;
+  Tags: BlockTags | undefined;
 
   constructor(blockData: string | undefined) {
     this.TimeStamp = new Date().toISOString();
@@ -149,7 +153,7 @@ export class TransactionBlock extends Block {
 
       this.VoteFor = undefined;
     } else {
-      const decodedBlockData = JSON.parse(blockData);
+      const decodedBlockData = JSONbig.parse(blockData);
       this.AccountID = decodedBlockData.AccountID;
 
       this.Balances = {};
