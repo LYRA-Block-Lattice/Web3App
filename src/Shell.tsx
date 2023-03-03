@@ -11,9 +11,8 @@ const Shell: FunctionComponent = () => {
 
   useEffect(() => {
     if (notify.error != null) {
-      toast.error(notify.error, {
-        onClose: () => dispatch({ type: "ERROR_CLEAR" })
-      });
+      toast.error(notify.error);
+      dispatch({ type: "ERROR_CLEAR" });
     }
   }, [notify.error]);
 

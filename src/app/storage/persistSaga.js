@@ -131,7 +131,10 @@ function* openWallet(action) {
     const prvKey = decData.toString(CryptoJS.enc.Utf8);
 
     if (!LyraCrypto.isPrivateKeyValid(prvKey)) {
-      throw new Error("private key is invalid.");
+      yield put({
+        type: actionTypes.ERROR,
+        payload: { error: "Password is not correct." }
+      });
     } else {
       yield put({
         type: actionTypes.WALLET_OPEN_DONE,

@@ -113,8 +113,10 @@ const OpenWallet: FunctionComponent = () => {
             label="Wallet Name"
             onChange={handleChange}
           >
-            {names?.map((option) => (
-              <MenuItem value={option}>{option}</MenuItem>
+            {names?.map((option, index) => (
+              <MenuItem key={index} value={option}>
+                {option}
+              </MenuItem>
             ))}
           </Select>
           <FormHelperText />
