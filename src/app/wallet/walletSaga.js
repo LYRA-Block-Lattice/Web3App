@@ -7,7 +7,7 @@ import * as actionTypes from "../actionTypes";
 import persist from "../lyra/persist";
 import * as Dex from "../lyra/dexapi";
 import { ContractTypes, LyraCrypto } from "../blockchain";
-import { UniOrder } from "../blockchain/blocks/block";
+import { ReceiveTransferBlock, UniOrder } from "../blockchain/blocks/block";
 import { getHoldType } from "../blockchain/blocks/meta";
 
 export function getWallet() {
@@ -74,7 +74,9 @@ function* receive(action) {
       throw new Error("Invalid account id");
     }
 
-    const balanceResp = yield wallet.receive();
+    const balanceResp = yield wallet.receive((block) => {
+      console.log("receive block generated.");
+    });
     yield put({
       type: actionTypes.WALLET_GET_BALANCE,
       payload: balanceResp.result

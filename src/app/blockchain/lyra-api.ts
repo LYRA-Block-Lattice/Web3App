@@ -106,7 +106,7 @@ export class LyraApi {
     return await this.sendEx(destAddr, { [token]: amount }, undefined);
   }
 
-  async receive() {
+  async receive(onNewBlock: (block: ReceiveTransferBlock) => void) {
     while (true) {
       try {
         var unrecv = await BlockchainAPI.getUnreceived(this.accountId);
@@ -147,6 +147,7 @@ export class LyraApi {
 
           if (recvret.resultCode == 0) {
             // continue to receive next block.
+            onNewBlock(receiveBlock);
           } else {
             return recvret;
           }

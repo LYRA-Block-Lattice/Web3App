@@ -4,13 +4,15 @@ import SideMenuPopup from "../components/SideMenuPopup";
 import PortalDrawer from "../components/PortalDrawer";
 import "./WalletToolBar.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getAuthSelector } from "../app/selectors";
+import { getAuthSelector, getNotifySelector } from "../app/selectors";
 import * as actionTypes from "../app/actionTypes";
+import Badge from "@mui/material/Badge";
 
 const WalletToolBar: FunctionComponent = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const auth = useSelector(getAuthSelector);
+  const notify = useSelector(getNotifySelector);
   const [isSideMenuPopupOpen, setSideMenuPopupOpen] = useState(false);
 
   const onSendButtonClick = useCallback(() => {
@@ -66,14 +68,21 @@ const WalletToolBar: FunctionComponent = () => {
               />
               <div className="ranking5">Send</div>
             </button>
-            <button className="send-button" onClick={onReceiveButtonClick}>
-              <img
-                className="home-icon-interlocution5"
-                alt=""
-                src="../asserts/home--icon--interlocution8.svg"
-              />
-              <div className="ranking5">Receive</div>
-            </button>
+            <Badge
+              color="primary"
+              variant="dot"
+              badgeContent={notify.event.unrecvcnt}
+            >
+              <button className="send-button" onClick={onReceiveButtonClick}>
+                <img
+                  className="home-icon-interlocution5"
+                  alt=""
+                  src="../asserts/home--icon--interlocution8.svg"
+                />
+                <div className="ranking5">Receive</div>
+              </button>
+            </Badge>
+
             <button className="send-button" onClick={openSideMenuPopup}>
               <img
                 className="home-icon-interlocution5"

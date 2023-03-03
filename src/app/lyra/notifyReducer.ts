@@ -43,14 +43,20 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
         const { ChangeType, about, PeerAccountId } = JSON.parse(
           action.payload.json
         );
+
+        var urcv = 0;
+        if (ChangeType === "SendToMe") {
+          urcv = 1;
+        } else if (ChangeType === "MeReceive") {
+          urcv = -1;
+        }
         return {
           ...state,
           event: {
             change: ChangeType,
             msg: `${humanize(ChangeType)}, peer: ${shorten(PeerAccountId)}`,
             time: new Date().getTime(),
-            unrecvcnt:
-              state.event.unrecvcnt + (ChangeType === "SendToMe" ? 1 : 0)
+            unrecvcnt: state.event.unrecvcnt + urcv
           }
         };
       } else if (action.payload.evtType === 3) {
@@ -64,6 +70,15 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
         console.log("Unknown dealer event type", action.payload);
         return state;
       }
+    case actionTypes.WALLET_RECEIVED_BLOCK:
+      return {
+        ...state,
+        event: {
+          ...state.event,
+          unrecvcnt:
+            state.event.unrecvcnt - 1 < 0 ? 0 : state.event.unrecvcnt - 1
+        }
+      };
     case actionTypes.MARKET_GET_PRICES_SUCCESS:
       return {
         ...state,
