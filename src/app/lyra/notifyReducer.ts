@@ -83,14 +83,16 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
             state.event.unrecvcnt - 1 < 0 ? 0 : state.event.unrecvcnt - 1
         }
       };
-    case actionTypes.WALLET_UNKNOWN_UNRECV:
-      return {
-        ...state,
-        event: {
-          ...state.event,
-          unrecvcnt: 2000
-        }
-      };
+    case actionTypes.WALLET_UNKNOWN_UNRECV: // user just switched UI
+      if (state.event.unrecvcnt === 0)
+        return {
+          ...state,
+          event: {
+            ...state.event,
+            unrecvcnt: 2000
+          }
+        };
+      else return state;
     case actionTypes.WALLET_UNKNOWN_UNRECV_CLEAR:
       return {
         ...state,

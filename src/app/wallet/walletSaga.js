@@ -42,14 +42,6 @@ function* getBalance(action) {
           // TODO: set unreceived args
         }
       });
-
-      // get unreceived info
-      const unrecv = yield BlockchainAPI.getUnreceived(wds.accountId);
-      if (unrecv.resultCode == 0) {
-        yield put({
-          type: actionTypes.WALLET_UNKNOWN_UNRECV
-        });
-      }
     } catch (error) {
       yield put({
         type: actionTypes.WALLET_BALANCE,
@@ -63,7 +55,15 @@ function* getBalance(action) {
         }
       });
 
-      throw error;
+      //throw error;
+    }
+
+    // get unreceived info
+    const unrecv = yield BlockchainAPI.getUnreceived(wds.accountId);
+    if (unrecv.resultCode == 0) {
+      yield put({
+        type: actionTypes.WALLET_UNKNOWN_UNRECV
+      });
     }
   } catch (error) {
     yield put({

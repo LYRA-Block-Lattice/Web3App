@@ -6,6 +6,7 @@ import CryptoJS from "crypto-js";
 
 import * as actionTypes from "../actionTypes";
 import persist from "../lyra/persist";
+import { BlockchainAPI } from "../blockchain";
 
 function* checkWalletExists() {
   const data = yield persist.checkData();
@@ -60,6 +61,11 @@ function* createWallet(action) {
   }
   yield persist.setData(wds);
   yield put({ type: actionTypes.WALLET_CREATE_DONE, payload: wds });
+
+  // if testnet/devnet, we start the wallet by send test tokens
+  if (process.env.REACT_APP_NETWORK_ID !== "mainnet") {
+    yield BlockchainAPI.startWallet(w.accountId, "1");
+  }
 
   yield put(push("/"));
 }

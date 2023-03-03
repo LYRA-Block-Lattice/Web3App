@@ -265,6 +265,12 @@ export class BlockchainAPI {
     this.fetchJson<any>(`${this.Block_API_v2}/Balance?accountId=${accountId}`);
 
   // Dealer API
+  static startWallet = (accountId: string, signature: string) =>
+    this.fetchJson2(
+      APIResult,
+      `${this.Dealer_API}/WalletCreated?accountId=${accountId}&signature=${signature}`
+    );
+
   static getPrices = async (): Promise<SimpleJsonAPIResult> =>
     this.fetchJson2(SimpleJsonAPIResult, `${this.Dealer_API}/GetPrices`);
 

@@ -143,14 +143,16 @@ function* setupDealerEvents(action: IAction) {
       yield connection.start();
 
       const userToken = JSON.parse(sessionStorage.getItem("token")!);
-      var ret: string = yield BlockchainAPI.lastServiceHash();
-      var signt = LyraCrypto.Sign(ret, userToken.pvt);
+      if (userToken?.pvt) {
+        var ret: string = yield BlockchainAPI.lastServiceHash();
+        var signt = LyraCrypto.Sign(ret, userToken.pvt);
 
-      yield connection.send("Join", {
-        UserAccountID: action.payload.accountId,
-        Signature: signt,
-        SignType: "p1393"
-      });
+        yield connection.send("Join", {
+          UserAccountID: action.payload.accountId,
+          Signature: signt,
+          SignType: "p1393"
+        });
+      }
 
       // connection.on("OnEvent", async (message) => {
       //   console.log("Dealer SignalR OnEvent", message);
