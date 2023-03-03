@@ -30,6 +30,24 @@ export const dumpHttpError = async (error: any): Promise<void> => {
   }
 };
 
+export function humanize(str: string): string {
+  const result = str.replace(/([A-Z])/g, " $1");
+  return result.charAt(0).toUpperCase() + result.slice(1);
+}
+
+export function shorten(str: string, maxLength: number = 15): string {
+  if (str.length <= maxLength) {
+    return str;
+  } else {
+    const ellipsis = "...";
+    const prefixLength = Math.ceil((maxLength - ellipsis.length) / 2);
+    const suffixLength = Math.floor((maxLength - ellipsis.length) / 2);
+    const prefix = str.slice(0, prefixLength);
+    const suffix = str.slice(-suffixLength);
+    return prefix + ellipsis + suffix;
+  }
+}
+
 export type AnyPromise = Promise<any>;
 export interface LongRunTask {
   promise: (input: any) => AnyPromise;

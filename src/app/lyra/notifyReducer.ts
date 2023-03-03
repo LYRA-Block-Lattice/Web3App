@@ -1,4 +1,5 @@
 import * as actionTypes from "../actionTypes";
+import { humanize, shorten } from "../utils";
 import { IAction } from "../wallet/walletReducer";
 
 export interface ITxEvent {
@@ -39,15 +40,17 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
     case actionTypes.DEALER_EVENT:
       console.log("DEALER_EVENT", action.payload);
       if (action.payload.evtType === 1) {
-        const { ChangeType, about } = JSON.parse(action.payload.json);
+        const { ChangeType, about, PeerAccountId } = JSON.parse(
+          action.payload.json
+        );
         return {
           ...state,
           event: {
             change: ChangeType,
-            msg: `${ChangeType} to my ${about}`,
+            msg: `${humanize(ChangeType)}, peer: ${shorten(PeerAccountId)}`,
             time: new Date().getTime(),
             unrecvcnt:
-              state.event.unrecvcnt + (ChangeType === "Receive" ? 1 : 0)
+              state.event.unrecvcnt + (ChangeType === "SendToMe" ? 1 : 0)
           }
         };
       } else if (action.payload.evtType === 3) {

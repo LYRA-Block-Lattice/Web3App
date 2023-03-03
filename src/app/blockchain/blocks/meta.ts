@@ -537,6 +537,16 @@ export enum ProfitingType {
   Orgnization
 }
 
+export enum AccountChangeTypes {
+  Genesis,
+  SendToMe,
+  ReceiveFromMe,
+  MeSend,
+  MeReceive,
+  MyContract,
+  OtherContract
+}
+
 export class APIResult {
   public resultCode!: APIResultCodes;
   public resultMessage!: string;
