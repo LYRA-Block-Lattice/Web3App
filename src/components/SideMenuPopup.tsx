@@ -26,6 +26,7 @@ type SideMenuPopupType = {
 
 const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const app = useSelector(getAppSelector);
   const auth = useSelector(getAuthSelector);
 
@@ -33,6 +34,10 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
 
   const closeWallet = useCallback(() => {
     dispatch({ type: actionTypes.WALLET_CLOSE });
+  }, []);
+
+  const openWallet = useCallback(() => {
+    navigate("/openwallet");
   }, []);
 
   const handleClick = () => {
@@ -123,6 +128,17 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                   <SendIcon sx={{ color: "white" }} />
                 </ListItemIcon>
                 <ListItemText primary="Close Wallet" />
+              </ListItemButton>
+            </React.Fragment>
+          )}
+          {!auth?.hasKey && (
+            <React.Fragment>
+              <Divider sx={{ color: "white" }} />
+              <ListItemButton onClick={openWallet}>
+                <ListItemIcon>
+                  <SendIcon sx={{ color: "white" }} />
+                </ListItemIcon>
+                <ListItemText primary="Open Wallet" />
               </ListItemButton>
             </React.Fragment>
           )}

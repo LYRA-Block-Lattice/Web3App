@@ -28,18 +28,18 @@ export interface ITxInfo {
 }
 export interface IWalletState {
   wallet: IWalletInfo;
-  network: String;
+  network: string;
   existing: Boolean;
   pending: Boolean;
-  name: String;
-  names: String[];
+  name: string;
+  names: string[];
   opening: Boolean;
-  password: String;
+  password: string;
   tx: ITxInfo;
 }
 
 export interface IAction {
-  type: String;
+  type: string;
   payload: any;
 }
 

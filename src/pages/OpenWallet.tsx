@@ -1,4 +1,10 @@
-import { FunctionComponent, useCallback, useEffect, useState } from "react";
+import {
+  FunctionComponent,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState
+} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   FormControl,
@@ -20,36 +26,62 @@ import "./OpenWallet.css";
 
 import * as actionTypes from "../app/actionTypes";
 import { getAuthSelector, getWalletNamesSelector } from "../app/selectors";
+import PrimaryButton from "../components/PrimaryButton";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const OpenWallet: FunctionComponent = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams({});
 
   const [name, setName] = useState("");
-  const [index, setIndex] = useState<number>(0);
   const [password, setPassword] = useState("");
+  const [busy, setBusy] = useState(true);
+
   const names = useSelector(getWalletNamesSelector);
   const dispatch = useDispatch();
   const auth = useSelector(getAuthSelector);
   const app = useSelector((state: any) => state.app);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setIndex(+event.target.value);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
   };
+
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
+
+  useEffect(() => {
+    if (name != "" && password != "") {
+      setBusy(false);
+    } else {
+      setBusy(true);
+    }
+  }, [name, password]);
+
+  const handleChange = useCallback(
+    (event: SelectChangeEvent) => {
+      setName(event.target.value as string);
+    },
+    [names]
+  );
 
   const onOpenWallet = useCallback(() => {
     console.log("names is " + names);
-    console.log("selected name is " + names[index]);
+    console.log("selected name is " + name);
 
     dispatch({
       type: actionTypes.WALLET_OPEN,
       payload: {
-        name: names[index],
+        name: name,
         password: password,
         ret: searchParams.get("ret")
       }
     });
-  }, [names, name, index, password, dispatch]);
+  }, [names, name, password, dispatch]);
 
   const onSignUpClick = useCallback(() => {
     navigate("/createwallet");
@@ -57,7 +89,6 @@ const OpenWallet: FunctionComponent = () => {
 
   useEffect(() => {
     if (!app.existing) navigate("/createwallet");
-    else setIndex(names.findIndex((a) => a == auth.walletName));
   }, [dispatch, app, auth, names]);
 
   return (
@@ -76,16 +107,14 @@ const OpenWallet: FunctionComponent = () => {
         >
           <InputLabel color="primary">Wallet Name</InputLabel>
           <Select
+            value={name}
             color="primary"
             size="medium"
             label="Wallet Name"
             onChange={handleChange}
-            value={index.toString()}
           >
-            {names?.map((name: any, index: any) => (
-              <MenuItem key={index} value={index}>
-                {name}
-              </MenuItem>
+            {names?.map((option) => (
+              <MenuItem value={option}>{option}</MenuItem>
             ))}
           </Select>
           <FormHelperText />
@@ -95,12 +124,15 @@ const OpenWallet: FunctionComponent = () => {
           sx={{ width: 330 }}
           color="primary"
           variant="standard"
-          type="password"
+          type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton aria-label="toggle password visibility">
-                  <Icon>visibility</Icon>
+                <IconButton
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>
             )
@@ -112,9 +144,9 @@ const OpenWallet: FunctionComponent = () => {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="prepare-sell-order-button10" onClick={onOpenWallet}>
-          <div className="primary-button8">Open</div>
-        </button>
+        <PrimaryButton disabled={busy} onClick={onOpenWallet}>
+          Open
+        </PrimaryButton>
         <button className="prepare-sell-order-button11" onClick={onSignUpClick}>
           <div className="mini-button1">Create</div>
         </button>

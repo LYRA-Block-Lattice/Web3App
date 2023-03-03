@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useState } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   TextField,
@@ -14,6 +14,9 @@ import BottomNavigationBar from "../components/BottomNavigationBar";
 import * as actionTypes from "../app/actionTypes";
 import "./CreateWallet.css";
 import { useNavigate } from "react-router";
+import PrimaryAccountCard from "../components/PrimaryAccountCard";
+import PrimaryButton from "../components/PrimaryButton";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const CreateWallet: FunctionComponent = () => {
   const navigate = useNavigate();
@@ -22,21 +25,48 @@ const CreateWallet: FunctionComponent = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-  const [chkkey, setChkkey] = useState("");
+
   const [pvk, setPvk] = useState("");
+
+  const [checked, setChecked] = useState(false);
+  const [busy, setBusy] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
+
+  useEffect(() => {
+    if (
+      name != "" &&
+      password != "" &&
+      password2 != "" &&
+      password === password2
+    ) {
+      setBusy(false);
+    } else {
+      setBusy(true);
+    }
+  }, [name, password, password2]);
 
   const onOpenWalletLinkClick = useCallback(() => {
     navigate("/openwallet");
   }, [navigate]);
 
-  const onNavBackButtonClick = useCallback(() => {
-    //TODO: nav back. none for home (wallet, market, profile, etc.)
-  }, []);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
 
   const onWalletCreate = useCallback(() => {
     // check if password and password2 equal
     if (name != "" && password === password2) {
-      if (chkkey === "on" && pvk !== "") {
+      if (checked && pvk !== "") {
         dispatch({
           type: actionTypes.WALLET_RESTORE,
           payload: {
@@ -53,8 +83,18 @@ const CreateWallet: FunctionComponent = () => {
             password: password
           }
         });
+
+      // Wait for one second (1000ms)
+      setBusy(true);
+      setTimeout(() => {
+        // Navigate to a new page
+        navigate("/openwallet");
+
+        // Re-enable the button
+        setBusy(false);
+      }, 1000);
     }
-  }, [dispatch, name, password, password2, chkkey, pvk]);
+  }, [dispatch, name, password, password2, checked, pvk]);
 
   return (
     <div className="createwallet">
@@ -128,12 +168,15 @@ const CreateWallet: FunctionComponent = () => {
           sx={{ width: 343 }}
           color="primary"
           variant="standard"
-          type="password"
+          type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton aria-label="toggle password visibility">
-                  <Icon>visibility</Icon>
+                <IconButton
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>
             )
@@ -149,12 +192,15 @@ const CreateWallet: FunctionComponent = () => {
           sx={{ width: 343 }}
           color="primary"
           variant="standard"
-          type="password"
+          type={showPassword ? "text" : "password"}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton aria-label="toggle password visibility">
-                  <Icon>visibility</Icon>
+                <IconButton
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                >
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>
             )
@@ -173,26 +219,29 @@ const CreateWallet: FunctionComponent = () => {
               <Checkbox
                 color="primary"
                 size="medium"
-                onChange={(e) => setChkkey(e.target.value)}
+                checked={checked}
+                onChange={handleChange}
               />
             }
           />
-          <TextField
-            className="wallet-name"
-            sx={{ width: 343 }}
-            color="primary"
-            variant="standard"
-            type="text"
-            label="Private Key"
-            placeholder="Placeholder"
-            size="medium"
-            margin="none"
-            onChange={(e) => setPvk(e.target.value)}
-          />
+          {checked && (
+            <TextField
+              className="wallet-name"
+              sx={{ width: 343 }}
+              color="primary"
+              variant="standard"
+              type="text"
+              label="Private Key"
+              placeholder="Placeholder"
+              size="medium"
+              margin="none"
+              onChange={(e) => setPvk(e.target.value)}
+            />
+          )}
         </div>
-        <button className="prepare-sell-order-button8" onClick={onWalletCreate}>
-          <div className="primary-button7">Create</div>
-        </button>
+        <PrimaryButton disabled={busy} onClick={onWalletCreate}>
+          Create
+        </PrimaryButton>
         <button
           className="prepare-sell-order-button9"
           onClick={onOpenWalletLinkClick}
