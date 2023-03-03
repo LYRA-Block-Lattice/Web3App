@@ -127,7 +127,7 @@ export class LyraApi {
           receiveBlock.SourceHash = unrecv.sourceHash;
 
           const changesArray: [string, number][] = Object.entries(
-            unrecv.transfer.changes
+            unrecv.transfer.changes!
           );
           //console.log("changesArray", changesArray);
           changesArray.forEach(([key, value]) => {

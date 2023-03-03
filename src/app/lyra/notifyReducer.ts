@@ -50,6 +50,9 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
         } else if (ChangeType === "MeReceive") {
           urcv = -1;
         }
+        if (state.event.unrecvcnt === 0 && urcv === -1) {
+          urcv = 0; // don't show -1 when 0
+        }
         var padmsg = PeerAccountId ? `, peer: ${shorten(PeerAccountId)}` : "";
         return {
           ...state,
@@ -78,6 +81,22 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
           ...state.event,
           unrecvcnt:
             state.event.unrecvcnt - 1 < 0 ? 0 : state.event.unrecvcnt - 1
+        }
+      };
+    case actionTypes.WALLET_UNKNOWN_UNRECV:
+      return {
+        ...state,
+        event: {
+          ...state.event,
+          unrecvcnt: 2000
+        }
+      };
+    case actionTypes.WALLET_UNKNOWN_UNRECV_CLEAR:
+      return {
+        ...state,
+        event: {
+          ...state.event,
+          unrecvcnt: 0
         }
       };
     case actionTypes.MARKET_GET_PRICES_SUCCESS:

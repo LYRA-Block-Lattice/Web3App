@@ -42,6 +42,14 @@ function* getBalance(action) {
           // TODO: set unreceived args
         }
       });
+
+      // get unreceived info
+      const unrecv = yield BlockchainAPI.getUnreceived(wds.accountId);
+      if (unrecv.resultCode == 0) {
+        yield put({
+          type: actionTypes.WALLET_UNKNOWN_UNRECV
+        });
+      }
     } catch (error) {
       yield put({
         type: actionTypes.WALLET_BALANCE,
@@ -76,6 +84,9 @@ function* receive(action) {
 
     const balanceResp = yield wallet.receive((block) => {
       console.log("receive block generated.");
+    });
+    yield put({
+      type: actionTypes.WALLET_UNKNOWN_UNRECV_CLEAR
     });
     yield put({
       type: actionTypes.WALLET_GET_BALANCE,

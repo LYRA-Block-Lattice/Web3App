@@ -584,6 +584,18 @@ export class SimpleJsonAPIResult extends APIResult {
   }
 }
 
+export class BalanceChanges {
+  changes?: { [key: string]: number };
+  feeAmount?: number;
+  feeCode?: string;
+}
+
+export class NewTransferAPIResult2 extends APIResult {
+  public sourceHash!: string;
+  public transfer!: BalanceChanges;
+  public nonFungibleToken?: {};
+}
+
 export class ImageUploadResult extends APIResult {
   hash!: string;
   url!: string;

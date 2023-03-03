@@ -71,6 +71,7 @@ const WalletToolBar: FunctionComponent = () => {
             <Badge
               color="primary"
               variant="dot"
+              overlap="circular"
               badgeContent={notify.event.unrecvcnt}
             >
               <button className="send-button" onClick={onReceiveButtonClick}>

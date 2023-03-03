@@ -5,6 +5,7 @@ import {
   BlockAPIResult,
   ImageUploadResult,
   MultiBlockAPIResult,
+  NewTransferAPIResult2,
   NftMetadata,
   SimpleJsonAPIResult
 } from "./blocks/meta";
@@ -190,7 +191,8 @@ export class BlockchainAPI {
     );
 
   static getUnreceived = (accountId: string) =>
-    this.fetchJson<any>(
+    this.fetchJson2(
+      NewTransferAPIResult2,
       `${this.Block_API_v1}/LookForNewTransfer2?AccountId=${accountId}`
     );
 

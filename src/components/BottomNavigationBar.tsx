@@ -52,7 +52,12 @@ const BottomNavigationBar: FunctionComponent<BottomNavigationBarType> = ({
           <div className="text13">DAO</div>
         </button>
         <button className="tabbar-item" onClick={gotoWallet}>
-          <Badge badgeContent={notify.event.unrecvcnt} color="primary">
+          <Badge
+            badgeContent={
+              notify.event.unrecvcnt > 999 ? "?" : notify.event.unrecvcnt
+            }
+            color="primary"
+          >
             <img
               className="box-alt-light-icon"
               alt=""
