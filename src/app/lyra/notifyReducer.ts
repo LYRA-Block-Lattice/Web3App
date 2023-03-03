@@ -50,11 +50,12 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
         } else if (ChangeType === "MeReceive") {
           urcv = -1;
         }
+        var padmsg = PeerAccountId ? `, peer: ${shorten(PeerAccountId)}` : "";
         return {
           ...state,
           event: {
             change: ChangeType,
-            msg: `${humanize(ChangeType)}, peer: ${shorten(PeerAccountId)}`,
+            msg: `${humanize(ChangeType)}${padmsg}`,
             time: new Date().getTime(),
             unrecvcnt: state.event.unrecvcnt + urcv
           }

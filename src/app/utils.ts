@@ -36,7 +36,7 @@ export function humanize(str: string): string {
 }
 
 export function shorten(str: string, maxLength: number = 15): string {
-  if (str.length <= maxLength) {
+  if (str === null || str === undefined || str.length <= maxLength) {
     return str;
   } else {
     const ellipsis = "...";
