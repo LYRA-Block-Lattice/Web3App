@@ -115,10 +115,13 @@ function* findDao(action: IAction) {
 
 function* setupDealerEvents(action: IAction) {
   const url = `https://dealer${process.env.REACT_APP_NETWORK_ID}.lyra.live/hub`;
-  console.log(
-    `"Setup dealer events SignalR for account ${action.payload.accountId} with... `,
-    url
-  );
+  if (action.payload?.accountId)
+    console.log(
+      `"Setup dealer events SignalR for account ${action.payload.accountId} with... `,
+      url
+    );
+  else
+    console.log(`"Setup dealer events SignalR without accountId with... `, url);
 
   if (connection) {
     try {
@@ -225,7 +228,7 @@ export default function* marketSaga() {
   // get price quote on startup
 
   // every time the user open wallet, we need to setup the SignalR connection
-  yield takeEvery(actionTypes.STORE_INIT_DONE, setup);
+  yield takeEvery(actionTypes.DEALER_INIT, setup);
 
   yield takeEvery(actionTypes.MARKET_GET_PRICES, getPrices);
   yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);

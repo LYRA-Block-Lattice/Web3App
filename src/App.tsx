@@ -32,6 +32,7 @@ import PrimaryButton from "./components/PrimaryButton";
 import { StartMint } from "./dup/StartMint";
 import MinterToken from "./dup/MinterToken";
 import SellFlowWithPopup from "./dup/SellFlowWithPopup";
+import BackupPrivateKey from "./dup/BackupPrivateKey";
 
 function App() {
   const router = useSelector(getRouterSelector);
@@ -205,6 +206,14 @@ function App() {
       <Route path="/createtotform" element={<CreateTOTForm />} />
 
       <Route path="/createnftform" element={<CreateNFTForm />} />
+      <Route
+        path="/backuptofile"
+        element={
+          <PageTemplate title="Backup Wallet">
+            <BackupPrivateKey />
+          </PageTemplate>
+        }
+      />
     </Routes>
   );
 }

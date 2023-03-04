@@ -17,7 +17,12 @@ function* checkWalletExists() {
   // whatever, get prices quote
   yield put({ type: actionTypes.MARKET_GET_PRICES });
   yield put({ type: actionTypes.STORE_INIT_DONE, payload: data });
-  yield put({ type: actionTypes.SIGNALR_CONNECT });
+  yield put({
+    type: actionTypes.DEALER_INIT,
+    payload: {
+      accountId: data?.accountId
+    }
+  });
 }
 
 function* createWallet(action) {
@@ -164,6 +169,13 @@ function* openWallet(action) {
         "token",
         JSON.stringify({ pass: action.payload.password, pvt: prvKey })
       );
+
+      yield put({
+        type: actionTypes.DEALER_INIT,
+        payload: {
+          accountId: exitsWallet.accountId
+        }
+      });
 
       yield put(push(action.payload.ret ?? "/"));
     }

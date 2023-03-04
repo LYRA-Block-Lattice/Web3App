@@ -83,14 +83,11 @@ export const MARKET_UPLOAD_FILE_SUCCESS = "MARKET_UPLOAD_FILE_SUCCESS";
 export const BLOCKCHAIN_FIND_DAO = "BLOCKCHAIN_FIND_DAO";
 export const BLOCKCHAIN_FIND_DAO_OK = "BLOCKCHAIN_FIND_DAO_OK";
 
-// signalR
-export const SIGNALR_CONNECT = "SIGNALR_CONNECT";
-export const SIGNALR_DISCONNECT = "SIGNALR_DISCONNECT";
-
 // events from blockchain
 export const BLOCKCHAIN_EVENT = "BLOCKCHAIN_EVENT";
 
 // Dealer
+export const DEALER_INIT = "DEALER_INIT";
 export const DEALER_EVENT = "DEALER_EVENT";
 export const DEALER_JOIN = "DEALER_JOIN"; // join dealer room
 

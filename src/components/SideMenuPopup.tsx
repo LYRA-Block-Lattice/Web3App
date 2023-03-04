@@ -129,6 +129,12 @@ const SideMenuPopup: FunctionComponent<SideMenuPopupType> = ({ onClose }) => {
                 </ListItemIcon>
                 <ListItemText primary="Close Wallet" />
               </ListItemButton>
+              <ListItemButton onClick={() => navigate("/backuptofile")}>
+                <ListItemIcon>
+                  <SendIcon sx={{ color: "white" }} />
+                </ListItemIcon>
+                <ListItemText primary="Backup wallet" />
+              </ListItemButton>
             </React.Fragment>
           )}
           {!auth?.hasKey && (
