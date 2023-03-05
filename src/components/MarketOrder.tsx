@@ -55,9 +55,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
               <div className="a-big-seller">1.2</div>
               <div className="a-big-seller">3.2</div>
             </div>
-            <div className="block14">
-              <div className="price3">Price</div>
-            </div>
+            <div className="a-big-seller">Price</div>
             <div className="block24">
               <b className="a-big-seller">10,323</b>
             </div>
