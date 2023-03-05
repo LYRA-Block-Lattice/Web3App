@@ -1,7 +1,7 @@
 .rectangle {
   top: 0;
   left: 0;
-  border-radius: var(--br-4xl);
+  border-radius: var(--br-5xl);
   background-color: var(--white1);
   border: 1.5px solid var(--color-darkslategray-400);
   box-sizing: border-box;
@@ -31,7 +31,7 @@
 .vector-icon {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-6xs);
   width: 125.5px;
   height: 63.5px;
 }
@@ -58,7 +58,7 @@
 .vector-icon1 {
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-6xs);
   width: 201.5px;
   height: 101.5px;
 }
@@ -89,7 +89,7 @@
 }
 .vector-icon2 {
   left: 0;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-6xs);
   width: 102px;
   height: 51px;
 }
@@ -132,7 +132,7 @@
 .rectangle1 {
   top: 0;
   left: 0;
-  border-radius: var(--br-4xl);
+  border-radius: var(--br-5xl);
   background-color: var(--white1);
   border: 1.5px solid var(--color-darkslategray-400);
   box-sizing: border-box;
@@ -209,11 +209,11 @@
   color: var(--black-0000001001);
   text-align: center;
 }
-.prepare-sell-order-button1 {
+.buttons1 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
-  background-color: var(--color-gainsboro-200);
+  background-color: var(--color-gainsboro-300);
   border-radius: var(--br-lg);
   height: 50px;
   overflow: hidden;
@@ -223,8 +223,8 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button1:hover,
-.prepare-sell-order-button2:hover {
+.buttons1:hover,
+.buttons2:hover {
   background-color: var(--color-mediumslateblue);
 }
 .primary-button2 {
@@ -237,14 +237,14 @@
   color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button-parent,
-.prepare-sell-order-button2 {
+.buttons-parent,
+.buttons2 {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button2 {
+.buttons2 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -254,7 +254,7 @@
   overflow: hidden;
   box-sizing: border-box;
 }
-.prepare-sell-order-button-parent {
+.buttons-parent {
   position: absolute;
   top: 839px;
   left: 61px;
@@ -264,7 +264,7 @@
   position: absolute;
   top: -0.75px;
   left: -0.75px;
-  border-radius: var(--br-5xs);
+  border-radius: var(--br-6xs);
   width: 105.5px;
   height: 53.5px;
 }

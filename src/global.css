@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,400;0,500;0,600;0,700;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
@@ -14,9 +14,9 @@ body {
   /* fonts */
   --regular-body1: "Open Sans";
   --font-source-sans-pro: "Source Sans Pro";
+  --uppercase-small: Poppins;
   --base-1-semibold: Inter;
   --font-roboto: Roboto;
-  --uppercase-small: Poppins;
   --font-montserrat: Montserrat;
 
   /* font sizes */
@@ -37,9 +37,10 @@ body {
   /* Colors */
   --white1: #fff;
   --subtitle-text: #888;
-  --color-gray-200: rgba(0, 0, 0, 0.05);
+  --color-gray-200: #04021d;
+  --color-gray-300: rgba(0, 0, 0, 0.05);
   --text-secondary1: rgba(0, 0, 0, 0.54);
-  --color-gray-400: rgba(0, 0, 0, 0.32);
+  --color-gray-500: rgba(0, 0, 0, 0.32);
   --selectable1: rgba(255, 255, 255, 0);
   --primary-text1: #434343;
   --text-primary-dark1: #424242;
@@ -49,27 +50,29 @@ body {
   --primary1: #0ebd8d;
   --black-0000001001: #000;
   --color-gainsboro-100: #e3e4e5;
-  --color-gainsboro-200: #dfe0e5;
-  --color-gainsboro-300: #e0e0e0;
-  --color-gainsboro-400: #dfdfdf;
-  --color-gainsboro-500: rgba(217, 217, 217, 0);
+  --button-secondary-active: #e2e3e4;
+  --color-gainsboro-300: #dfe0e5;
+  --color-gainsboro-400: #e0e0e0;
+  --color-gainsboro-500: #dfdfdf;
+  --color-gainsboro-600: rgba(217, 217, 217, 0);
   --color-forestgreen: #008d30;
   --info1: #2196f3;
-  --light: #f9f9f9;
+  --color-whitesmoke-100: #f8f8fa;
   --color-whitesmoke-200: #f5f4f5;
   --color-whitesmoke-300: #ececec;
   --color-whitesmoke-400: rgba(238, 238, 238, 0.26);
   --color-lightyellow: #f6ffde;
-  --color-mediumslateblue: #766ae7;
-  --tertiary1: #1ec8a5;
   --secondary1: #fc7c00;
-  --color-darkgray: #979797;
-  --buy1: #7ed321;
-  --sell1: #fa7268;
+  --tertiary1: #1ec8a5;
+  --color-blueviolet: #554af0;
+  --accent-strong-blue-60: #9992f6;
   --color-dimgray-100: #717171;
   --text-dark-60: #686777;
   --color-dimgray-300: #656565;
-  --accent-strong-blue: #554af0;
+  --color-mediumslateblue: #766ae7;
+  --color-darkgray: #979797;
+  --buy1: #7ed321;
+  --sell1: #fa7268;
   --color-silver-100: rgba(209, 190, 190, 0.47);
 
   /* Gaps */
@@ -114,8 +117,9 @@ body {
   --padding-9xl: 84px;
 
   /* border radiuses */
-  --br-5xs: 2px;
-  --br-4xs: 2.5px;
+  --br-6xs: 2px;
+  --br-5xs: 2.5px;
+  --br-4xs: 4px;
   --br-3xs: 5px;
   --br-2xs: 8px;
   --br-xs: 10px;
@@ -124,10 +128,12 @@ body {
   --br-lg: 25px;
   --br-xl: 26px;
   --br-2xl: 32.5px;
-  --br-3xl: 100px;
-  --br-4xl: 10000px;
+  --br-3xl: 48px;
+  --br-4xl: 100px;
+  --br-5xl: 10000px;
 
   /* Effects */
+  --borders-05-dp-top: 0px 0.5px 0px #e2e3e4 inset;
   --inner-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
 }
 .main-content {

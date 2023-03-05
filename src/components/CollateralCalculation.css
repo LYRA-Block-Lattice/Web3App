@@ -34,13 +34,13 @@
   align-items: flex-start;
   justify-content: flex-end;
 }
-.div22,
+.div25,
 .total {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
 }
-.div22 {
+.div25 {
   font-size: var(--uppercase-small-size);
 }
 .collateral-worth-label7,
@@ -54,7 +54,7 @@
 }
 .collateralcalculation {
   border-radius: var(--br-2xs);
-  background-color: var(--color-gray-200);
+  background-color: var(--color-gray-300);
   width: 320px;
   flex-direction: column;
   padding: var(--padding-4xs);

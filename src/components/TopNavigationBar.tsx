@@ -5,6 +5,8 @@ import "./TopNavigationBar.css";
 
 type TopNavigationBarType = {
   title?: string;
+  iconleft?: string;
+  icroundPlus?: string;
 
   /** Action props */
   onNavBackButtonClick?: () => void;

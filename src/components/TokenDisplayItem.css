@@ -39,15 +39,15 @@
   align-items: center;
   gap: var(--gap-xs);
 }
-.frame-child5 {
+.frame-child7 {
   position: relative;
-  border-top: 1px solid var(--color-gainsboro-200);
+  border-top: 1px solid var(--color-gainsboro-300);
   box-sizing: border-box;
   width: 156px;
   height: 1px;
   flex-shrink: 0;
 }
-.frame-parent4 {
+.frame-parent5 {
   flex: 1;
   display: flex;
   flex-direction: column;

@@ -9,7 +9,7 @@ const PrimaryIconButton: FunctionComponent<PrimaryIconButtonType> = ({
   icon,
 }) => {
   return (
-    <button className="prepare-sell-order-button29">
+    <button className="buttons24">
       <img className="evapricetags-outline-icon1" alt="" src={icon} />
       <div className="primary-button10">Primary Button</div>
     </button>

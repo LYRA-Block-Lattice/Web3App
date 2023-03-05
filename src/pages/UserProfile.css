@@ -175,7 +175,7 @@
   font-size: var(--caption-size);
   color: var(--primary1);
 }
-.frame-parent,
+.frame-group,
 .item4 {
   align-self: stretch;
   display: flex;
@@ -246,7 +246,7 @@
 }
 .userprofile {
   position: relative;
-  background-color: var(--light);
+  background-color: var(--white1);
   width: 100%;
   height: 926px;
   overflow: hidden;

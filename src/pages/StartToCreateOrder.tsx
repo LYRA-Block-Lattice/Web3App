@@ -94,7 +94,7 @@ const StartToCreateOrder: FunctionComponent = () => {
         </div>
 
         <button
-          className="prepare-sell-order-button7"
+          className="buttons7"
           disabled={isDisabled}
           onClick={onPrepareSellOrderButtonClick}
         >

@@ -14,7 +14,7 @@
   border: 0;
   background-color: transparent;
 }
-.secondary-button1 {
+.secondary-button {
   position: relative;
   font-size: var(--body-m1-size);
   letter-spacing: 0.41px;
@@ -25,13 +25,13 @@
   text-align: center;
 }
 .mint-fiat-token,
-.prepare-sell-order-button12 {
+.prepare-sell-order-button {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
   align-items: center;
 }
-.prepare-sell-order-button12 {
+.prepare-sell-order-button {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);

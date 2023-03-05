@@ -1,0 +1,216 @@
+.tip-icon {
+  position: relative;
+  width: 9.8px;
+  height: 8px;
+  flex-shrink: 0;
+  display: none;
+}
+.chat-message-receive,
+.peersection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.chat-message-receive {
+  width: 174px;
+}
+.peersection {
+  align-self: stretch;
+}
+.tip-icon1 {
+  position: relative;
+  width: 9.8px;
+  height: 8px;
+  flex-shrink: 0;
+}
+.dealersection {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.today {
+  position: relative;
+  line-height: 20px;
+  font-weight: 500;
+}
+.chat-datetag {
+  border-radius: var(--br-4xl);
+  background-color: var(--color-whitesmoke-100);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-10xs) var(--padding-5xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.chat-message-send,
+.usersection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.chat-message-send {
+  width: 174px;
+}
+.usersection {
+  align-self: stretch;
+}
+.tip-icon3 {
+  position: relative;
+  width: 9.8px;
+  height: 5.79px;
+  flex-shrink: 0;
+}
+.chat-message-send1,
+.direct-chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.chat-message-send1 {
+  width: 216px;
+  align-items: flex-end;
+}
+.direct-chat {
+  align-self: stretch;
+  background-color: var(--white1);
+  overflow: hidden;
+  padding: var(--padding-2xs) var(--padding-md);
+  align-items: center;
+  gap: var(--gap-lg);
+}
+.group-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke-100);
+  box-shadow: var(--borders-05-dp-top);
+}
+.iconlylightpaperclip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.iconlylightpaperclip-wrapper {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+.frame-child,
+.frame-item {
+  border-radius: var(--br-3xl);
+}
+.frame-child {
+  border: 0.5px solid var(--button-secondary-active);
+  font-family: var(--uppercase-small);
+  font-size: var(--font-size-3xl);
+  background-color: var(--white1);
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-5xs) var(--padding-5xs)
+    var(--padding-md);
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-item {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 38px;
+  height: 38px;
+}
+.frame-container {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 46px;
+  height: 48px;
+  flex-shrink: 0;
+}
+.frame-parent,
+.frame-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.frame-parent {
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 0 var(--padding-2xs) 0 0;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-wrapper {
+  height: 55.81%;
+  bottom: 44.19%;
+}
+.home-indicator-iphone-x,
+.rectangle-parent {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.rectangle-parent {
+  height: 100%;
+  top: 0;
+}
+.home-indicator-iphone-x {
+  max-width: 100%;
+  overflow: hidden;
+  height: 34px;
+  display: none;
+}
+.chat-input-message-field {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 187.5px);
+  width: 375px;
+  height: 86px;
+}
+.chat-input-message-field-wrapper {
+  position: relative;
+  width: 375px;
+  height: 86px;
+  flex-shrink: 0;
+}
+.chatpage {
+  position: relative;
+  background-color: var(--white1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-2xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-lg);
+  text-align: center;
+  font-size: var(--caption-size);
+  color: var(--text-dark-60);
+  font-family: var(--uppercase-small);
+}

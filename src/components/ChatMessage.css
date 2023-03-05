@@ -1,0 +1,36 @@
+.user-name {
+  align-self: stretch;
+  position: relative;
+  line-height: 20px;
+  font-weight: 500;
+  display: none;
+}
+.div8,
+.lorem-ipsum-dolor {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-3xl);
+  line-height: 24px;
+  color: var(--color-gray-200);
+}
+.div8 {
+  font-size: var(--uppercase-small-size);
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--text-dark-60);
+  text-align: right;
+}
+.user-name-parent {
+  align-self: stretch;
+  border-radius: var(--br-sm) var(--br-sm) var(--br-sm) var(--br-4xs);
+  background-color: var(--color-whitesmoke-100);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-4xs) var(--padding-2xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--caption-size);
+  color: var(--color-blueviolet);
+  font-family: var(--uppercase-small);
+}

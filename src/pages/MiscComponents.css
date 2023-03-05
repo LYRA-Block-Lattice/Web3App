@@ -1,5 +1,3 @@
-.frame-group,
-.mintfiatdialog-parent,
 .nft-showing-item-parent {
   display: flex;
   flex-direction: row;
@@ -7,22 +5,27 @@
   justify-content: flex-start;
   gap: var(--gap-5xl);
 }
-.frame-group,
-.mintfiatdialog-parent {
+.buttons-group,
+.frame-div,
+.mintfiatdialog-parent,
+.misccomponents {
+  display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: var(--gap-md);
 }
-.mintfiatdialog-parent {
+.buttons-group,
+.mintfiatdialog-parent,
+.misccomponents {
   flex-direction: row;
 }
-.misccomponents,
-.prepare-sell-order-button-group {
+.buttons-group,
+.misccomponents {
   overflow: hidden;
-  display: flex;
   flex-direction: column;
   padding: var(--padding-2xs);
   align-items: center;
-  justify-content: flex-start;
   gap: var(--gap-lg);
 }
 .misccomponents {

@@ -56,10 +56,10 @@ Bank of America
 1234 1234 1234 1234`}
       />
       <button
-        className="prepare-sell-order-button16"
+        className="prepare-sell-order-button4"
         onClick={() => onClose!(secret)}
       >
-        <div className="utility-button2">Sign and return</div>
+        <div className="utility-button1">Sign and return</div>
       </button>
     </div>
   );

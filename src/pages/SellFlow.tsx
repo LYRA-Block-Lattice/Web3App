@@ -133,17 +133,11 @@ const SellFlow: FunctionComponent<NeedRunTask> = (props) => {
       </div>
       <div className="ordercollateral">{obj.collateral} LYR</div>
       <div className="returncollateral">{obj.collateral - fees.total} LYR</div>
-      <div className="prepare-sell-order-button-parent">
-        <button
-          className="prepare-sell-order-button1"
-          onClick={() => navigate(-1)}
-        >
+      <div className="buttons-parent">
+        <button className="buttons1" onClick={() => navigate(-1)}>
           <div className="primary-button1">Back</div>
         </button>
-        <button
-          className="prepare-sell-order-button2"
-          onClick={onPrepareSellOrderButtonClick}
-        >
+        <button className="buttons2" onClick={onPrepareSellOrderButtonClick}>
           <div className="primary-button2">Place sell order</div>
         </button>
       </div>

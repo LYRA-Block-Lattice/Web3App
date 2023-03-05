@@ -56,7 +56,7 @@
   background-color: transparent;
   border-radius: var(--br-xs);
 }
-.frame-child4 {
+.frame-child6 {
   position: relative;
   width: 12.5px;
   height: 7.36px;
@@ -184,7 +184,7 @@
   font-family: var(--font-source-sans-pro);
 }
 .a-big-seller-parent,
-.parent {
+.container {
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -195,7 +195,7 @@
   padding: var(--padding-8xs) var(--padding-9xl) var(--padding-8xs) 0;
   align-items: flex-start;
 }
-.parent {
+.container {
   padding: var(--padding-8xs) var(--padding-4xs);
   align-items: flex-end;
 }

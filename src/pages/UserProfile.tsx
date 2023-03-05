@@ -98,7 +98,7 @@ const UserProfile: FunctionComponent = () => {
           </div>
           <div className="list">
             <div className="item4">
-              <div className="frame-parent">
+              <div className="frame-group">
                 <div className="placeholder-parent">
                   <i className="placeholder5">张俊</i>
                   <div className="placeholder6">13988781732</div>
@@ -118,7 +118,7 @@ const UserProfile: FunctionComponent = () => {
               <div className="line" />
             </div>
             <div className="item4">
-              <div className="frame-parent">
+              <div className="frame-group">
                 <div className="placeholder-parent">
                   <i className="placeholder5">孙悦婷</i>
                   <div className="placeholder6">13988781732</div>

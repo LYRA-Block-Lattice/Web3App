@@ -3,7 +3,7 @@ import "./MiniButton.css";
 
 const MiniButton: FunctionComponent = () => {
   return (
-    <button className="prepare-sell-order-button28">
+    <button className="buttons23">
       <div className="mini-button8">Mini Button</div>
     </button>
   );

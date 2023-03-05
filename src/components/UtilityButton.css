@@ -1,4 +1,4 @@
-.utility-button5 {
+.utility-button6 {
   position: relative;
   font-size: var(--font-size-3xl);
   letter-spacing: 0.41px;
@@ -8,7 +8,7 @@
   color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button27 {
+.buttons22 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);

@@ -72,9 +72,9 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
 
       {success != undefined && success && (
         <>
-          <img className="vector-icon10" alt="" src="../asserts/vector9.svg" />
-          <div className="ops-something-wrong">Congratulations!</div>
-          <div className="error-message-goes">
+          <img className="vector-icon9" alt="" src="../asserts/vector8.svg" />
+          <div className="congratulations">Congratulations!</div>
+          <div className="notify-message-goes">
             {arg.batchName} successfully completed!
           </div>
         </>
@@ -82,12 +82,12 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
       {success != undefined && !success && (
         <>
           {" "}
-          <img className="vector-icon9" alt="" src="../asserts/vector8.svg" />
-          <div className="ops-something-wrong">Ops, something wrong!</div>
-          <div className="error-message-goes">{errmsg}</div>
+          <img className="vector-icon10" alt="" src="../asserts/vector9.svg" />
+          <div className="congratulations">Ops, something wrong!</div>
+          <div className="notify-message-goes">{errmsg}</div>
         </>
       )}
-      <button className="prepare-sell-order-button24" onClick={arg.onContinue}>
+      <button className="buttons19" onClick={arg.onContinue}>
         <div className="secondary-button9">Continue</div>
       </button>
     </div>

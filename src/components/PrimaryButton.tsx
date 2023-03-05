@@ -25,9 +25,7 @@ const PrimaryButton: FunctionComponent<PrimaryButtonProps> = ({
 }) => {
   return (
     <button
-      className={`prepare-sell-order-button25  ${
-        disabled ? "button-disabled" : ""
-      } ${className}`}
+      className={`buttons20  ${disabled ? "button-disabled" : ""} ${className}`}
       {...rest}
     >
       <div className="primary-button9">{children}</div>

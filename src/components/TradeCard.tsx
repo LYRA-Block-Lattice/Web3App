@@ -76,7 +76,7 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
           <div className="trade-parent">
             <b className="trade">{dir}</b>
             <b className="trade">{dir == "Buy" ? biding : offering}</b>
-            <img className="frame-child3" alt="" src="../asserts/arrow-2.svg" />
+            <img className="frame-child5" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt3">{dir == "Buy" ? offering : biding}</b>
           </div>
           <div className="title-section-item" />

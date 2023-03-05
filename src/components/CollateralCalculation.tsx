@@ -165,7 +165,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
         </div>
         <div className="collateral-worth-label7">
           <div className="total">Total:</div>
-          <div className="div22">
+          <div className="div25">
             {" "}
             ${" "}
             {totaldollar.toLocaleString(undefined, {

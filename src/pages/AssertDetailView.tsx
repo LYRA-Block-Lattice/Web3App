@@ -311,7 +311,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-parent2">
+            <div className="frame-parent3">
               <div className="selectedamount-parent">
                 <input
                   placeholder="Amount to buy"
@@ -371,10 +371,7 @@ const AssertDetailView: FunctionComponent = () => {
             onTotalChange={onTotal}
           />
         </div>
-        <button
-          className="prepare-sell-order-button4"
-          onClick={onMakeOfferButtonClick}
-        >
+        <button className="buttons4" onClick={onMakeOfferButtonClick}>
           <img
             className="material-symbolsshare-icon"
             alt=""
