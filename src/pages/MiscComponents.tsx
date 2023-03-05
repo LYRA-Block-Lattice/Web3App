@@ -56,7 +56,7 @@ const MiscComponents: FunctionComponent = () => {
   return (
     <>
       <div className="misccomponents">
-        <div className="frame-group">
+        <div className="frame-div">
           <div className="nft-showing-item-parent">
             <ItemContainer />
             <ItemContainer />
@@ -79,7 +79,7 @@ const MiscComponents: FunctionComponent = () => {
           <CreateTOTDialog />
           <StepProgressReportDialog />
         </div>
-        <div className="prepare-sell-order-button-group">
+        <div className="buttons-group">
           <PrimaryButton />
           <SecondaryButton />
           <UtilityButton />

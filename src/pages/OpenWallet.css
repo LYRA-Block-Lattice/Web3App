@@ -22,7 +22,7 @@
   color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button10 {
+.buttons10 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -37,7 +37,7 @@
   align-items: center;
   justify-content: center;
 }
-.prepare-sell-order-button10:hover {
+.buttons10:hover {
   background-color: var(--color-mediumslateblue);
 }
 .mini-button1 {
@@ -50,7 +50,7 @@
   color: var(--color-darkslategray-300);
   text-align: center;
 }
-.prepare-sell-order-button11 {
+.buttons11 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);

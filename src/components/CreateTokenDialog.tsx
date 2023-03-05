@@ -47,7 +47,7 @@ const CreateTokenDialog: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <button className="prepare-sell-order-button19">
+      <button className="buttons14">
         <div className="secondary-button6">Mint Token</div>
       </button>
     </form>

@@ -24,6 +24,8 @@ const SendTokenForm: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
+        iconleft="../asserts/iconleft.svg"
+        icroundPlus="../asserts/icroundplus6.svg"
       />
       <div className="tokentosell-parent">
         <Autocomplete
@@ -65,7 +67,7 @@ const SendTokenForm: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className="prepare-sell-order-button3">
+        <button className="buttons3">
           <div className="primary-button3">Send</div>
         </button>
       </div>

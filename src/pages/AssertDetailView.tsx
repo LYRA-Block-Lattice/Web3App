@@ -25,6 +25,8 @@ const AssertDetailView: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
+        iconleft="../asserts/iconleft1.svg"
+        icroundPlus="../asserts/icroundplus8.svg"
       />
       <div className="assertdetailview-parent">
         <div className="assertdetailview1">
@@ -140,7 +142,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-parent2">
+            <div className="frame-parent3">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
@@ -173,7 +175,7 @@ const AssertDetailView: FunctionComponent = () => {
           </div>
           <CollateralCalculation />
         </div>
-        <button className="prepare-sell-order-button4">
+        <button className="buttons4">
           <img
             className="material-symbolsshare-icon"
             alt=""

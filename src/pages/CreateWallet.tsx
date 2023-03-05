@@ -32,12 +32,14 @@ const CreateWallet: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
+        iconleft="../asserts/iconleft.svg"
+        icroundPlus="../asserts/icroundplus14.svg"
       />
       <div className="illus1-parent">
         <div className="illus1">
           <img className="illus1-child" alt="" src="../asserts/group-3.svg" />
           <div className="group-parent">
-            <img className="frame-item" alt="" src="../asserts/group-42.svg" />
+            <img className="group-icon" alt="" src="../asserts/group-42.svg" />
             <div className="create-account">
               C<span className="r">r</span>
               <span className="e">e</span>a<span className="t">t</span>
@@ -56,20 +58,28 @@ const CreateWallet: FunctionComponent = () => {
               alt=""
               src="../asserts/youremailgmailc.svg"
             />
-            <img className="frame-inner" alt="" src="../asserts/group-49.svg" />
+            <img
+              className="frame-child1"
+              alt=""
+              src="../asserts/group-49.svg"
+            />
             <img
               className="your-text-icon"
               alt=""
               src="../asserts/your-text.svg"
             />
-            <img className="group-icon" alt="" src="../asserts/group-53.svg" />
+            <img
+              className="frame-child2"
+              alt=""
+              src="../asserts/group-53.svg"
+            />
             <img
               className="your-city-icon"
               alt=""
               src="../asserts/your-city.svg"
             />
             <img
-              className="frame-child1"
+              className="frame-child3"
               alt=""
               src="../asserts/group-57.svg"
             />
@@ -79,7 +89,7 @@ const CreateWallet: FunctionComponent = () => {
               src="../asserts/entry-password.svg"
             />
             <img
-              className="frame-child2"
+              className="frame-child4"
               alt=""
               src="../asserts/group-145.svg"
             />
@@ -154,10 +164,10 @@ const CreateWallet: FunctionComponent = () => {
             margin="none"
           />
         </div>
-        <button className="prepare-sell-order-button8">
+        <button className="buttons8">
           <div className="primary-button7">Create</div>
         </button>
-        <button className="prepare-sell-order-button9">
+        <button className="buttons9">
           <div className="mini-button">Open</div>
         </button>
       </div>

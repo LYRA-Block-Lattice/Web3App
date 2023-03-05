@@ -41,7 +41,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           <div className="sell-group">
             <b className="a-big-seller">Sell</b>
             <b className="a-big-seller">BTC</b>
-            <img className="frame-child4" alt="" src="../asserts/arrow-2.svg" />
+            <img className="frame-child6" alt="" src="../asserts/arrow-2.svg" />
             <b className="tetherusdt5">tether/USDT</b>
           </div>
           <div className="details-section4">
@@ -78,7 +78,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
           <b className="a-big-seller">A big seller</b>
           <div className="the-first-dao">The First DAO</div>
         </div>
-        <div className="parent">
+        <div className="container">
           <b className="a-big-seller">98%</b>
           <div className="the-first-dao">1024 Trades</div>
         </div>

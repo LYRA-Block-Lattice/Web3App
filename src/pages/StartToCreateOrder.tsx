@@ -20,7 +20,7 @@ const StartToCreateOrder: FunctionComponent = () => {
     //TODO: context menu
   }, []);
 
-  const onPrepareSellOrderButtonClick = useCallback(() => {
+  const onButtonsClick = useCallback(() => {
     navigate("/selltokentotoken");
   }, [navigate]);
 
@@ -31,6 +31,8 @@ const StartToCreateOrder: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
+        iconleft="../asserts/iconleft1.svg"
+        icroundPlus="../asserts/icroundplus13.svg"
       />
       <div className="catalog-section-parent">
         <div className="catalog-section">
@@ -46,10 +48,7 @@ const StartToCreateOrder: FunctionComponent = () => {
             cat="Service"
           />
         </div>
-        <button
-          className="prepare-sell-order-button7"
-          onClick={onPrepareSellOrderButtonClick}
-        >
+        <button className="buttons7" onClick={onButtonsClick}>
           <div className="primary-button6">Specify Token</div>
         </button>
       </div>

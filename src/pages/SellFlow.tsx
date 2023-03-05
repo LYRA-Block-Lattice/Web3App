@@ -48,11 +48,11 @@ const SellFlow: FunctionComponent = () => {
       </div>
       <div className="ordercollateral">1024 LYR</div>
       <div className="returncollateral">1000 LYR</div>
-      <div className="prepare-sell-order-button-parent">
-        <button className="prepare-sell-order-button1">
+      <div className="buttons-parent">
+        <button className="buttons1">
           <div className="primary-button1">Back</div>
         </button>
-        <button className="prepare-sell-order-button2">
+        <button className="buttons2">
           <div className="primary-button2">Place sell order</div>
         </button>
       </div>

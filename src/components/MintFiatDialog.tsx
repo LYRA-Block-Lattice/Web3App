@@ -33,7 +33,7 @@ const MintFiatDialog: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <button className="prepare-sell-order-button18">
+      <button className="buttons13">
         <div className="secondary-button5">Print</div>
       </button>
     </form>

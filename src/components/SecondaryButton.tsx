@@ -3,7 +3,7 @@ import "./SecondaryButton.css";
 
 const SecondaryButton: FunctionComponent = () => {
   return (
-    <button className="prepare-sell-order-button26">
+    <button className="buttons21">
       <div className="secondary-button10">Secondary Button</div>
     </button>
   );

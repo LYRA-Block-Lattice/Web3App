@@ -1,7 +1,7 @@
 .rectangle2 {
   flex: 1;
   position: relative;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   background-color: var(--secondary1);
   width: 5px;
 }
@@ -58,7 +58,7 @@
 }
 .balance-display-zone-item {
   position: relative;
-  background-color: var(--color-gainsboro-500);
+  background-color: var(--color-gainsboro-600);
   width: 22px;
   height: 2px;
   flex-shrink: 0;
@@ -162,14 +162,14 @@
   justify-content: flex-end;
   gap: var(--gap-3xl);
 }
-.frame-parent3,
+.frame-parent4,
 .wallet-card {
   align-self: stretch;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-parent3 {
+.frame-parent4 {
   flex: 1;
   flex-direction: column;
 }

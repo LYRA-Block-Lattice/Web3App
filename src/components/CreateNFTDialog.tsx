@@ -43,7 +43,7 @@ const CreateNFTDialog: FunctionComponent = () => {
       />
       <div className="or1">or</div>
       <input className="select-nft-image1" type="file" />
-      <button className="prepare-sell-order-button21">
+      <button className="buttons16">
         <div className="secondary-button7">Create NFT</div>
       </button>
     </div>

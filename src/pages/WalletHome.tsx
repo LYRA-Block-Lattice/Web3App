@@ -47,6 +47,8 @@ const WalletHome: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
+        iconleft="../asserts/iconleft.svg"
+        icroundPlus="../asserts/icroundplus.svg"
       />
       <div className="wallet-card-parent">
         <PrimaryAccountContainer />
@@ -66,7 +68,7 @@ const WalletHome: FunctionComponent = () => {
             tokenDollar="$2,183"
           />
           <div className="tokendisplayitem">
-            <div className="frame-parent1">
+            <div className="frame-parent2">
               <div className="lyralogoblueicon-parent">
                 <img
                   className="lyralogoblueicon"
@@ -79,7 +81,7 @@ const WalletHome: FunctionComponent = () => {
                   <b className="b">$2,183</b>
                 </div>
               </div>
-              <div className="frame-child" />
+              <div className="frame-inner" />
             </div>
           </div>
           <TokenDisplayItem

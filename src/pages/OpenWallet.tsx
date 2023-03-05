@@ -35,6 +35,8 @@ const OpenWallet: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
+        iconleft="../asserts/iconleft.svg"
+        icroundPlus="../asserts/icroundplus15.svg"
       />
       <div className="illus5-copy-parent">
         <img
@@ -75,10 +77,10 @@ const OpenWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className="prepare-sell-order-button10">
+        <button className="buttons10">
           <div className="primary-button8">Open</div>
         </button>
-        <button className="prepare-sell-order-button11">
+        <button className="buttons11">
           <div className="mini-button1">Create</div>
         </button>
         <button className="forgot-password-copy">Forgot password?</button>

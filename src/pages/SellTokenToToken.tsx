@@ -42,15 +42,14 @@ const SellTokenToToken: FunctionComponent = () => {
           onNavBackButtonClick={onNavBackButtonClick}
           onTitleClick={onTitleClick}
           onContextMenuButtonClick={onContextMenuButtonClick}
+          iconleft="../asserts/iconleft.svg"
+          icroundPlus="../asserts/icroundplus2.svg"
         />
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
-            <button
-              className="prepare-sell-order-button5"
-              onClick={openGeneralPopup}
-            >
-              <div className="utility-button">Mint</div>
+            <button className="buttons5" onClick={openGeneralPopup}>
+              <div className="utility-button2">Mint</div>
             </button>
           </div>
           <Autocomplete

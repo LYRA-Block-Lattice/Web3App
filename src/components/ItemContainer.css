@@ -40,7 +40,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.div7 {
+.div10 {
   position: relative;
   line-height: 24px;
   font-weight: 600;
@@ -56,7 +56,7 @@
   flex-direction: row;
   align-items: center;
   font-size: var(--body-semibold-size);
-  color: var(--accent-strong-blue);
+  color: var(--color-blueviolet);
 }
 .content,
 .nft-showing-item {

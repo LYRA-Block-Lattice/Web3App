@@ -23,7 +23,7 @@ const ItemContainer: FunctionComponent = () => {
           />
         </div>
         <div className="price">
-          <div className="div7">60$</div>
+          <div className="div10">60$</div>
         </div>
       </div>
     </div>

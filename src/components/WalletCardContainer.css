@@ -1,7 +1,7 @@
 .rectangle3 {
   flex: 1;
   position: relative;
-  border-radius: var(--br-4xs);
+  border-radius: var(--br-5xs);
   background-color: var(--secondary1);
   width: 5px;
 }
@@ -58,7 +58,7 @@
 }
 .rectangle-div {
   position: relative;
-  background-color: var(--color-gainsboro-500);
+  background-color: var(--color-gainsboro-600);
   width: 22px;
   height: 2px;
   flex-shrink: 0;

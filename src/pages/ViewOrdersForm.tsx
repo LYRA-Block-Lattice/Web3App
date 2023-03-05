@@ -30,6 +30,8 @@ const ViewOrdersForm: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
+        iconleft="../asserts/iconleft.svg"
+        icroundPlus="../asserts/icroundplus10.svg"
       />
       <div className="wallet-card-container">
         <WalletCardContainer />

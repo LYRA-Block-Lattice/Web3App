@@ -55,11 +55,11 @@
   padding: 0;
   background-color: transparent;
 }
-.frame-child3,
+.frame-child5,
 .trade {
   position: relative;
 }
-.frame-child3 {
+.frame-child5 {
   width: 12.5px;
   height: 7.36px;
   flex-shrink: 0;

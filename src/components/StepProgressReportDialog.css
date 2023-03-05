@@ -7,12 +7,12 @@
 }
 .vector-icon9 {
   position: relative;
-  width: 66px;
-  height: 66px;
+  width: 72px;
+  height: 72px;
   flex-shrink: 0;
 }
-.error-message-goes,
-.ops-something-wrong {
+.congratulations,
+.notify-message-goes {
   position: relative;
   font-size: var(--font-size-10xl);
   letter-spacing: 0.41px;
@@ -21,14 +21,14 @@
   display: inline-block;
   width: 327px;
 }
-.error-message-goes {
+.notify-message-goes {
   font-size: var(--font-size-4xl);
   line-height: 22px;
 }
 .vector-icon10 {
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: 66px;
+  height: 66px;
   flex-shrink: 0;
 }
 .secondary-button9 {
@@ -41,7 +41,7 @@
   color: var(--white1);
   text-align: center;
 }
-.prepare-sell-order-button24 {
+.buttons19 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);

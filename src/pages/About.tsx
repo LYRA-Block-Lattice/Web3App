@@ -23,6 +23,8 @@ const About: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
+        iconleft="../asserts/iconleft.svg"
+        icroundPlus="../asserts/icroundplus4.svg"
       />
       <div className="lyralogo-parent">
         <img className="lyralogo-icon" alt="" src="../asserts/lyralogo.svg" />

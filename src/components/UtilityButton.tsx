@@ -3,8 +3,8 @@ import "./UtilityButton.css";
 
 const UtilityButton: FunctionComponent = () => {
   return (
-    <button className="prepare-sell-order-button27">
-      <div className="utility-button5">Utility Button</div>
+    <button className="buttons22">
+      <div className="utility-button6">Utility Button</div>
     </button>
   );
 };
