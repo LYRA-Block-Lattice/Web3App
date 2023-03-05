@@ -4,8 +4,14 @@ import ChatTitleAction from "../components/ChatTitleAction";
 import ChatMessage from "../components/ChatMessage";
 import ChatSentMessage from "../components/ChatSentMessage";
 import "./ChatPage.css";
+import { useParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
+import { shorten } from "../app/utils";
 
 const ChatPage: FunctionComponent = () => {
+  // get query string args
+  const [searchParams, setSearchParams] = useSearchParams({});
+
   const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
   }, []);
@@ -19,14 +25,17 @@ const ChatPage: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className="chatpage">
+    <div className="chatpage main-content">
       <TopNavigationBar
         title="Chat"
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
       />
-      <ChatTitleAction pinnedMessage="Await Buyer to pay" />
+      <ChatTitleAction
+        tradeId={searchParams.get("tradeId")!}
+        pinnedMessage="Await Buyer to pay"
+      />
       <div className="direct-chat">
         <div className="peersection">
           <div className="chat-message-receive">

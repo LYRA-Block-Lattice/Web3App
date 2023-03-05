@@ -35,6 +35,10 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
     navigate("/tradedetails?tradeId=" + tradeId);
   }, [navigate]);
 
+  const onChatClick = useCallback(() => {
+    navigate("/chatpage?tradeId=" + tradeId);
+  }, [navigate]);
+
   useEffect(() => {
     if (orderRef.current) {
       if (dir === "Sell") {
@@ -104,6 +108,9 @@ const TradeCard: FunctionComponent<TradeCardType> = ({
         <div className="width-controller1" />
       </div>
       <div className="itemactions1">
+        <button className="delist-button1" onClick={onChatClick}>
+          <div className="mini-button4">Chat</div>
+        </button>
         {tradeStatus != "Closed" && (
           <>
             <button className="delist-button1">
