@@ -5,8 +5,6 @@ import "./TopNavigationBar.css";
 
 type TopNavigationBarType = {
   title?: string;
-  iconleft?: string;
-  icroundPlus?: string;
 
   /** Action props */
   onNavBackButtonClick?: () => void;
@@ -52,7 +50,7 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
         <img
           className="icround-plus-icon"
           alt=""
-          src="../asserts/icroundplus4.svg"
+          src="../asserts/icroundplus5.svg"
         />
       </button>
     </div>

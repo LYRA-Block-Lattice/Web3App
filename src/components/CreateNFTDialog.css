@@ -48,13 +48,13 @@
   color: var(--white1);
   text-align: center;
 }
-.buttons16,
+.buttons15,
 .createnftdialog {
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-.buttons16 {
+.buttons15 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);
