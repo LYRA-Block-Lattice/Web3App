@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import UtilityButton from "../components/UtilityButton";
 import "./ChatTitleAction.css";
 
 type ChatTitleActionType = {
@@ -18,9 +19,7 @@ const ChatTitleAction: FunctionComponent<ChatTitleActionType> = ({
         <div className="pinnedmessage">
           <div className="div7">$ 30,000</div>
         </div>
-        <button className="buttons12">
-          <div className="utility-button3">I’ve paid</div>
-        </button>
+        <UtilityButton text="I’ve paid" />
       </div>
     </div>
   );

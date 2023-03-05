@@ -23,8 +23,6 @@ const ScanToPay: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft.svg"
-        icroundPlus="../asserts/icroundplus2.svg"
       />
       <div className="scan-to-pay-me-parent">
         <div className="scan-to-pay">Scan to pay me</div>

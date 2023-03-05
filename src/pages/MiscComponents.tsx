@@ -82,7 +82,7 @@ const MiscComponents: FunctionComponent = () => {
         <div className="buttons-group">
           <PrimaryButton />
           <SecondaryButton />
-          <UtilityButton />
+          <UtilityButton text="Utility Button" />
           <MiniButton />
           <PrimaryIconButton icon="../asserts/evapricetagsoutline.svg" />
         </div>

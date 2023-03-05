@@ -42,8 +42,6 @@ const SellTokenToToken: FunctionComponent = () => {
           onNavBackButtonClick={onNavBackButtonClick}
           onTitleClick={onTitleClick}
           onContextMenuButtonClick={onContextMenuButtonClick}
-          iconleft="../asserts/iconleft.svg"
-          icroundPlus="../asserts/icroundplus2.svg"
         />
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">

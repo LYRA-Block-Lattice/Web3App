@@ -54,8 +54,6 @@ const Market: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft.svg"
-        icroundPlus="../asserts/icroundplus.svg"
       />
       <div className="orderandcatalog">
         <MarketToolBarContainer

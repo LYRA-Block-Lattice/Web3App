@@ -31,8 +31,6 @@ const StartToCreateOrder: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft1.svg"
-        icroundPlus="../asserts/icroundplus13.svg"
       />
       <div className="catalog-section-parent">
         <div className="catalog-section">

@@ -25,8 +25,6 @@ const AssertDetailView: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft1.svg"
-        icroundPlus="../asserts/icroundplus8.svg"
       />
       <div className="assertdetailview-parent">
         <div className="assertdetailview1">

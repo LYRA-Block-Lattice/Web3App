@@ -30,8 +30,6 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft1.svg"
-        icroundPlus="../asserts/icroundplus12.svg"
       />
       <div className="success-parent">
         <div className="success">Success!</div>

@@ -32,8 +32,6 @@ const CreateWallet: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft.svg"
-        icroundPlus="../asserts/icroundplus14.svg"
       />
       <div className="illus1-parent">
         <div className="illus1">

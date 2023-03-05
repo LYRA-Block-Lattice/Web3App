@@ -47,8 +47,6 @@ const WalletHome: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft.svg"
-        icroundPlus="../asserts/icroundplus.svg"
       />
       <div className="wallet-card-parent">
         <PrimaryAccountContainer />

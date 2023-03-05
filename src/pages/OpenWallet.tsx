@@ -35,8 +35,6 @@ const OpenWallet: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft.svg"
-        icroundPlus="../asserts/icroundplus15.svg"
       />
       <div className="illus5-copy-parent">
         <img

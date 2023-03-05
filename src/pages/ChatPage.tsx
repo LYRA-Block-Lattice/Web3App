@@ -25,8 +25,6 @@ const ChatPage: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft1.svg"
-        icroundPlus="../asserts/icroundplus1.svg"
       />
       <ChatTitleAction pinnedMessage="Await Buyer to pay" />
       <div className="direct-chat">

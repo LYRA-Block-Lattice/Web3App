@@ -1,10 +1,14 @@
 import { FunctionComponent } from "react";
 import "./UtilityButton.css";
 
-const UtilityButton: FunctionComponent = () => {
+type UtilityButtonType = {
+  text?: string;
+};
+
+const UtilityButton: FunctionComponent<UtilityButtonType> = ({ text }) => {
   return (
-    <button className="buttons22">
-      <div className="utility-button6">Utility Button</div>
+    <button className="buttons21">
+      <div className="utility-button5">{text}</div>
     </button>
   );
 };

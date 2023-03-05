@@ -24,8 +24,6 @@ const SendTokenForm: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft.svg"
-        icroundPlus="../asserts/icroundplus6.svg"
       />
       <div className="tokentosell-parent">
         <Autocomplete

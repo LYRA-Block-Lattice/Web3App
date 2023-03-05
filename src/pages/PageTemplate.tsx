@@ -23,8 +23,6 @@ const PageTemplate: FunctionComponent = () => {
         onNavBackButtonClick={onNavBackButtonClick}
         onTitleClick={onTitleClick}
         onContextMenuButtonClick={onContextMenuButtonClick}
-        iconleft="../asserts/iconleft.svg"
-        icroundPlus="../asserts/icroundplus.svg"
       />
       <div className="pagecontent" />
       <BottomNavigationBar textColor="#434343" />
