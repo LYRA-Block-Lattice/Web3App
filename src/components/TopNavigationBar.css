@@ -48,7 +48,7 @@
   flex-shrink: 0;
 }
 .topnavigationbar {
-  background-color: var(--white1);
+  background-color: var(--white);
   width: 375px;
   display: flex;
   flex-direction: row;

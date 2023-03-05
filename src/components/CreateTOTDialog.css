@@ -21,7 +21,7 @@
   line-height: 18px;
   font-weight: 500;
   font-family: var(--regular-body1);
-  color: var(--white1);
+  color: var(--white);
   text-align: center;
 }
 .buttons16 {
@@ -29,7 +29,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--tertiary1);
-  border-radius: var(--br-lg);
+  border-radius: var(--br-xl);
   height: 30px;
   flex-shrink: 0;
   overflow: hidden;
@@ -56,7 +56,7 @@
 .secondary-button8 {
   font-size: var(--body-m1-size);
   font-weight: 500;
-  color: var(--white1);
+  color: var(--white);
   text-align: center;
 }
 .buttons17 {
@@ -64,7 +64,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);
   background-color: var(--secondary1);
-  border-radius: var(--br-lg);
+  border-radius: var(--br-xl);
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;
@@ -76,7 +76,7 @@
 }
 .createtotdialog,
 .createtottosellform1 {
-  background-color: var(--white1);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   align-items: center;

@@ -29,13 +29,13 @@
   color: var(--accent-strong-blue-60);
 }
 .lorem-ipsum-dolor-sit-amet-co-parent {
-  border-radius: var(--br-sm) var(--br-sm) var(--br-4xs) var(--br-sm);
+  border-radius: var(--br-md) var(--br-md) var(--br-3xs) var(--br-md);
   background-color: var(--color-blueviolet);
   flex-direction: column;
   padding: var(--padding-4xs) var(--padding-2xs);
   align-items: flex-start;
   text-align: left;
   font-size: var(--font-size-3xl);
-  color: var(--color-whitesmoke-100);
+  color: var(--background-extra-white);
   font-family: var(--uppercase-small);
 }

@@ -29,7 +29,7 @@
   justify-content: flex-start;
   gap: 9px;
   font-size: var(--font-size-5xl);
-  color: var(--white1);
+  color: var(--white);
 }
 .administration-1-icon {
   position: absolute;
@@ -73,7 +73,7 @@
 }
 .nav-item {
   align-self: stretch;
-  border-radius: var(--br-2xs);
+  border-radius: var(--br-xs);
   display: flex;
   flex-direction: row;
   padding: var(--padding-2xs);
@@ -107,7 +107,7 @@
 }
 .sidemenupopup {
   position: relative;
-  border-radius: var(--br-xl) 0 0 var(--br-xl);
+  border-radius: var(--br-2xl) 0 0 var(--br-2xl);
   background-color: var(--black-0000001001);
   overflow: hidden;
   padding: 26px;

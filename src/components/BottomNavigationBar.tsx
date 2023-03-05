@@ -18,8 +18,8 @@ const BottomNavigationBar: FunctionComponent<BottomNavigationBarType> = ({
 
   return (
     <div className="bottomtabbar">
-      <div className="home-indicator">
-        <div className="home-indicator1" />
+      <div className="home-indicator2">
+        <div className="home-indicator3" />
       </div>
       <div className="tabbar">
         <button className="tabbar-item">

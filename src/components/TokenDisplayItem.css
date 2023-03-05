@@ -57,7 +57,7 @@
 }
 .tokendisplayitem1 {
   align-self: stretch;
-  background-color: var(--white1);
+  background-color: var(--white);
   overflow: hidden;
   display: flex;
   flex-direction: row;

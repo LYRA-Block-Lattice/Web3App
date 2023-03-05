@@ -35,7 +35,7 @@ body {
   --font-size-10xl: 32px;
 
   /* Colors */
-  --white1: #fff;
+  --white: #fff;
   --subtitle-text: #888;
   --color-gray-200: #04021d;
   --color-gray-300: rgba(0, 0, 0, 0.05);
@@ -57,7 +57,7 @@ body {
   --color-gainsboro-600: rgba(217, 217, 217, 0);
   --color-forestgreen: #008d30;
   --info1: #2196f3;
-  --color-whitesmoke-100: #f8f8fa;
+  --background-extra-white: #f8f8fa;
   --color-whitesmoke-200: #f5f4f5;
   --color-whitesmoke-300: #ececec;
   --color-whitesmoke-400: rgba(238, 238, 238, 0.26);
@@ -117,22 +117,20 @@ body {
   --padding-9xl: 84px;
 
   /* border radiuses */
-  --br-6xs: 2px;
-  --br-5xs: 2.5px;
-  --br-4xs: 4px;
-  --br-3xs: 5px;
-  --br-2xs: 8px;
-  --br-xs: 10px;
-  --br-sm: 12px;
-  --br-md: 16px;
-  --br-lg: 25px;
-  --br-xl: 26px;
-  --br-2xl: 32.5px;
-  --br-3xl: 48px;
+  --br-5xs: 2px;
+  --br-4xs: 2.5px;
+  --br-3xs: 4px;
+  --br-2xs: 5px;
+  --br-xs: 8px;
+  --br-sm: 10px;
+  --br-md: 12px;
+  --br-lg: 16px;
+  --br-xl: 25px;
+  --br-2xl: 26px;
+  --br-3xl: 32.5px;
   --br-4xl: 100px;
   --br-5xl: 10000px;
 
   /* Effects */
-  --borders-05-dp-top: 0px 0.5px 0px #e2e3e4 inset;
   --inner-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05) inset;
 }

@@ -70,36 +70,31 @@ const ChatPage: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <div className="chat-input-message-field-wrapper">
-        <div className="chat-input-message-field">
-          <div className="rectangle-parent">
-            <div className="group-child" />
-            <div className="frame-wrapper">
-              <div className="frame-parent">
-                <button className="iconlylightpaperclip-wrapper">
-                  <img
-                    className="iconlylightpaperclip"
-                    alt=""
-                    src="../asserts/iconlylightpaperclip.svg"
-                  />
-                </button>
-                <input className="frame-child" type="text" />
-                <button className="frame-container">
-                  <img
-                    className="frame-item"
-                    alt=""
-                    src="../asserts/frame-8344.svg"
-                  />
-                </button>
-              </div>
+      <div className="peersection">
+        <div className="peersection">
+          <div className="frame-wrapper">
+            <div className="frame-parent">
+              <button className="iconlylightpaperclip-wrapper">
+                <img
+                  className="iconlylightpaperclip"
+                  alt=""
+                  src="../asserts/iconlylightpaperclip.svg"
+                />
+              </button>
+              <input className="frame-child" type="text" />
+              <button className="frame-container">
+                <img
+                  className="frame-item"
+                  alt=""
+                  src="../asserts/frame-8344.svg"
+                />
+              </button>
             </div>
           </div>
-          <img
-            className="home-indicator-iphone-x"
-            alt=""
-            src="../asserts/home-indicator--iphone-x.svg"
-          />
         </div>
+      </div>
+      <div className="home-indicator">
+        <div className="home-indicator1" />
       </div>
     </div>
   );

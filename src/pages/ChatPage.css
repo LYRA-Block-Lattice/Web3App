@@ -38,7 +38,7 @@
 }
 .chat-datetag {
   border-radius: var(--br-4xl);
-  background-color: var(--color-whitesmoke-100);
+  background-color: var(--background-extra-white);
   display: flex;
   flex-direction: row;
   padding: var(--padding-10xs) var(--padding-5xs);
@@ -76,22 +76,11 @@
 }
 .direct-chat {
   align-self: stretch;
-  background-color: var(--white1);
+  background-color: var(--white);
   overflow: hidden;
   padding: var(--padding-2xs) var(--padding-md);
   align-items: center;
   gap: var(--gap-lg);
-}
-.group-child {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: var(--color-whitesmoke-100);
-  box-shadow: var(--borders-05-dp-top);
 }
 .iconlylightpaperclip {
   position: absolute;
@@ -111,16 +100,13 @@
   height: 48px;
   flex-shrink: 0;
 }
-.frame-child,
-.frame-item {
-  border-radius: var(--br-3xl);
-}
 .frame-child {
   border: 0.5px solid var(--button-secondary-active);
   font-family: var(--uppercase-small);
   font-size: var(--font-size-3xl);
-  background-color: var(--white1);
+  background-color: var(--white);
   flex: 1;
+  border-radius: var(--br-md);
   display: flex;
   flex-direction: row;
   padding: var(--padding-5xs) var(--padding-5xs) var(--padding-5xs)
@@ -132,6 +118,7 @@
   position: absolute;
   top: 5px;
   left: 4px;
+  border-radius: 48px;
   width: 38px;
   height: 38px;
 }
@@ -145,17 +132,12 @@
   height: 48px;
   flex-shrink: 0;
 }
-.frame-parent,
-.frame-wrapper {
+.frame-parent {
   position: absolute;
   width: 100%;
-  top: 0;
+  top: calc(50% - 44px);
   right: 0;
   left: 0;
-}
-.frame-parent {
-  height: 100%;
-  bottom: 0;
   display: flex;
   flex-direction: row;
   padding: 0 var(--padding-2xs) 0 0;
@@ -164,43 +146,32 @@
   justify-content: flex-start;
 }
 .frame-wrapper {
-  height: 55.81%;
-  bottom: 44.19%;
+  align-self: stretch;
+  position: relative;
+  height: 88px;
+  flex-shrink: 0;
 }
-.home-indicator-iphone-x,
-.rectangle-parent {
+.home-indicator1 {
   position: absolute;
-  width: 100%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.rectangle-parent {
-  height: 100%;
-  top: 0;
-}
-.home-indicator-iphone-x {
-  max-width: 100%;
-  overflow: hidden;
-  height: 34px;
+  bottom: 8px;
+  left: calc(50% - 67px);
+  border-radius: var(--br-4xl);
+  background-color: var(--black-0000001001);
+  width: 134px;
+  height: 5px;
   display: none;
 }
-.chat-input-message-field {
-  position: absolute;
-  bottom: 0;
-  left: calc(50% - 187.5px);
-  width: 375px;
-  height: 86px;
-}
-.chat-input-message-field-wrapper {
+.chatpage,
+.home-indicator {
   position: relative;
+  background-color: var(--white);
+}
+.home-indicator {
   width: 375px;
-  height: 86px;
+  height: 34px;
   flex-shrink: 0;
 }
 .chatpage {
-  position: relative;
-  background-color: var(--white1);
   width: 100%;
   display: flex;
   flex-direction: column;
