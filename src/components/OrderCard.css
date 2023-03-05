@@ -12,7 +12,7 @@
   flex-shrink: 0;
 }
 .order-image {
-  border-radius: var(--br-xs) var(--br-xs) 0 0;
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
   background-color: var(--sell1);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
   width: 110px;
@@ -28,12 +28,12 @@
   position: relative;
   font-size: var(--caption-size);
   font-family: var(--regular-body1);
-  color: var(--white1);
+  color: var(--white);
   text-align: center;
 }
 .order-status {
   align-self: stretch;
-  border-radius: 0 0 var(--br-xs) var(--br-xs);
+  border-radius: 0 0 var(--br-sm) var(--br-sm);
   background-color: var(--info1);
   display: flex;
   flex-direction: row;
@@ -94,7 +94,7 @@
 }
 .am-wrapper {
   align-self: stretch;
-  background-color: var(--white1);
+  background-color: var(--white);
   overflow: hidden;
   flex-direction: row;
   text-align: left;
@@ -135,7 +135,7 @@
 }
 .title-section {
   text-decoration: none;
-  border-radius: var(--br-3xs) var(--br-3xs) 0 0;
+  border-radius: var(--br-2xs) var(--br-2xs) 0 0;
   flex-direction: column;
   align-items: flex-start;
   color: inherit;
@@ -149,7 +149,7 @@
 }
 .width-controller {
   position: relative;
-  border-top: 1px solid var(--white1);
+  border-top: 1px solid var(--white);
   box-sizing: border-box;
   width: 365px;
   height: 1px;
@@ -185,7 +185,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--color-whitesmoke-300);
-  border-radius: var(--br-lg);
+  border-radius: var(--br-xl);
   height: 24px;
   overflow: hidden;
   box-sizing: border-box;
@@ -200,8 +200,8 @@
   gap: var(--gap-md);
 }
 .ordercard {
-  border-radius: var(--br-xs);
-  background-color: var(--white1);
+  border-radius: var(--br-sm);
+  background-color: var(--white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-darkgray);
   display: flex;

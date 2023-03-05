@@ -6,8 +6,8 @@
   object-fit: cover;
 }
 .lyralogoblueicon-wrapper {
-  border-radius: var(--br-xs);
-  background-color: var(--white1);
+  border-radius: var(--br-sm);
+  background-color: var(--white);
   width: 162px;
   height: 162px;
   flex-shrink: 0;

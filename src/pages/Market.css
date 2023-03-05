@@ -16,7 +16,7 @@
   justify-content: flex-start;
 }
 .searchsection {
-  background-color: var(--white1);
+  background-color: var(--white);
   width: 360px;
   align-items: flex-start;
   justify-content: center;
@@ -31,13 +31,13 @@
 }
 .tradableorderssection {
   align-self: stretch;
-  border-radius: 0 0 var(--br-xs) var(--br-xs);
+  border-radius: 0 0 var(--br-sm) var(--br-sm);
   padding: 14px var(--padding-4xs);
   gap: var(--gap-md);
 }
 .market,
 .orderandcatalog {
-  background-color: var(--white1);
+  background-color: var(--white);
 }
 .orderandcatalog {
   flex: 1;

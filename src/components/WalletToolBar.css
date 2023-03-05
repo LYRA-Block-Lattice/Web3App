@@ -23,8 +23,8 @@
   cursor: pointer;
   border: 0;
   padding: 0;
-  background-color: var(--white1);
-  border-radius: var(--br-xs);
+  background-color: var(--white);
+  border-radius: var(--br-sm);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 60px;
   height: 60px;
@@ -44,7 +44,7 @@
   flex-direction: column;
 }
 .iconssection {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-sm);
   padding: var(--padding-7xs) var(--padding-4xs);
   align-items: center;
   justify-content: center;

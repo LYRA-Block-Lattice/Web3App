@@ -1,4 +1,4 @@
-.home-indicator1 {
+.home-indicator3 {
   position: absolute;
   bottom: 8px;
   left: calc(50% - 67px);
@@ -8,13 +8,13 @@
   height: 5px;
   display: none;
 }
-.home-indicator {
+.home-indicator2 {
   position: absolute;
   width: 100%;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--white1);
+  background-color: var(--white);
   height: 34px;
 }
 .box-alt-light-icon {
@@ -58,7 +58,7 @@
   right: 0;
   bottom: 34px;
   left: 0;
-  background-color: var(--white1);
+  background-color: var(--white);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) inset;
   height: 56px;
   display: flex;
