@@ -1,10 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import Market from "./pages/Market";
-import MintFiatToken from "./pages/MintFiatToken";
-import CreateTokenForm from "./pages/CreateTokenForm";
-import CreateTOTForm from "./pages/CreateTOTForm";
-import CreateNFTForm from "./pages/CreateNFTForm";
 import ChatPage from "./pages/ChatPage";
 import ScanToPay from "./pages/ScanToPay";
 import PageTemplate from "./pages/PageTemplate";
@@ -22,6 +18,10 @@ import CreateOrderSuccessForm from "./pages/CreateOrderSuccessForm";
 import StartToCreateOrder from "./pages/StartToCreateOrder";
 import CreateWallet from "./pages/CreateWallet";
 import OpenWallet from "./pages/OpenWallet";
+import MintFiatToken from "./pages/MintFiatToken";
+import CreateTokenForm from "./pages/CreateTokenForm";
+import CreateTOTForm from "./pages/CreateTOTForm";
+import CreateNFTForm from "./pages/CreateNFTForm";
 import { useEffect } from "react";
 import { getRouterSelector } from "./app/selectors";
 import MintFiatDialog from "./components/MintFiatDialog";
@@ -54,22 +54,6 @@ function App() {
 
     switch (pathname) {
       case "/":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/mint-fiat-token":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createtokenform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createtotform":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/createnftform":
         title = "";
         metaDescription = "";
         break;
@@ -141,6 +125,22 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/mint-fiat-token":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/createtokenform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/createtotform":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/createnftform":
+        title = "";
+        metaDescription = "";
+        break;
     }
 
     if (title) {
@@ -160,14 +160,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Market />} />
-
-      <Route path="/mint-fiat-token" element={<MintFiatToken />} />
-
-      <Route path="/createtokenform" element={<CreateTokenForm />} />
-
-      <Route path="/createtotform" element={<CreateTOTForm />} />
-
-      <Route path="/createnftform" element={<CreateNFTForm />} />
 
       <Route path="/chatpage" element={<ChatPage />} />
 

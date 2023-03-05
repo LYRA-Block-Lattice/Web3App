@@ -1,11 +1,11 @@
 .to-sell-token,
-.utility-button2 {
+.utility-button {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
 }
-.utility-button2 {
+.utility-button {
   font-size: var(--font-size-3xl);
   font-family: var(--regular-body1);
   color: var(--white1);

@@ -62,14 +62,14 @@ body {
   --color-whitesmoke-300: #ececec;
   --color-whitesmoke-400: rgba(238, 238, 238, 0.26);
   --color-lightyellow: #f6ffde;
-  --secondary1: #fc7c00;
-  --tertiary1: #1ec8a5;
   --color-blueviolet: #554af0;
   --accent-strong-blue-60: #9992f6;
   --color-dimgray-100: #717171;
   --text-dark-60: #686777;
   --color-dimgray-300: #656565;
+  --tertiary1: #1ec8a5;
   --color-mediumslateblue: #766ae7;
+  --secondary1: #fc7c00;
   --color-darkgray: #979797;
   --buy1: #7ed321;
   --sell1: #fa7268;

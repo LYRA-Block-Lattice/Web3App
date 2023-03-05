@@ -111,9 +111,7 @@ const MarketOrder: FunctionComponent<MarketOrderType> = ({
               <div className="a-big-seller">{limitMin}</div>
               <div className="a-big-seller">{limitMax}</div>
             </div>
-            <div className="block14">
-              <div className="price3">Price</div>
-            </div>
+            <div className="a-big-seller">Price</div>
             <div className="block24">
               <b className="a-big-seller">{price}</b>
             </div>

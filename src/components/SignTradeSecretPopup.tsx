@@ -59,7 +59,7 @@ Bank of America
         className="prepare-sell-order-button4"
         onClick={() => onClose!(secret)}
       >
-        <div className="utility-button1">Sign and return</div>
+        <div className="utility-button2">Sign and return</div>
       </button>
     </div>
   );
