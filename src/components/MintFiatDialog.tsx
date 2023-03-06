@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import SecondaryButton from "../components/SecondaryButton";
 import "./MintFiatDialog.css";
 import { LongRunTask, NeedRunTask } from "../app/utils";
 import { useDispatch, useSelector } from "react-redux";
@@ -200,7 +201,7 @@ const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
         margin="none"
         onChange={(e) => setSupply(+e.target.value)}
       />
-      <PrimaryButton onClick={onMintClick}>Print</PrimaryButton>
+      <SecondaryButton secondaryButton="Print" onClick={onMintClick} />
     </div>
   );
 };

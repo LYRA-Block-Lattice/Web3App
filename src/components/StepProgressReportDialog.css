@@ -31,31 +31,6 @@
   height: 66px;
   flex-shrink: 0;
 }
-.secondary-button4 {
-  position: relative;
-  font-size: var(--body-m1-size);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--white);
-  text-align: center;
-}
-.buttons8 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-4xl);
-  background-color: var(--secondary1);
-  border-radius: var(--br-lg);
-  height: 40px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-}
 .stepprogressreportdialog {
   background-color: var(--white);
   overflow: hidden;

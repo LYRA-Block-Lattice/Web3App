@@ -13,8 +13,8 @@ const SecondaryButton: FunctionComponent<SecondaryButtonType> = ({
   secondaryButton,
 }) => {
   return (
-    <button className="buttons10" onClick={onButtonsClick}>
-      <div className="secondary-button5">{secondaryButton}</div>
+    <button className="buttons3" onClick={onButtonsClick}>
+      <div className="secondary-button">{secondaryButton}</div>
     </button>
   );
 };

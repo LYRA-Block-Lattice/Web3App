@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { TextField } from "@mui/material";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateNFTDialog.css";
 import { BlockchainAPI, LyraCrypto } from "../app/blockchain";
 import { dumpHttpError, LongRunTask, NeedRunTask } from "../app/utils";
@@ -232,9 +233,9 @@ const CreateNFTDialog: FunctionComponent<NeedRunTask> = (props) => {
         placeholder="Select NFT Image"
         onChange={handleFileChange}
       />
-      <PrimaryButton onClick={onMintClick} disabled={!mintEnabled}>
+      <SecondaryButton onClick={onMintClick} disabled={!mintEnabled}>
         Create NFT
-      </PrimaryButton>
+      </SecondaryButton>
     </div>
   );
 };

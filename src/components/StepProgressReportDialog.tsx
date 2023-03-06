@@ -2,6 +2,7 @@ import { CircularProgress } from "@mui/material";
 import { FunctionComponent, useEffect, useState } from "react";
 import { APIResult } from "../app/blockchain/blocks/meta";
 import { BatchRunLongRunTask, LongRunTask } from "../app/utils";
+import SecondaryButton from "../components/SecondaryButton";
 import "./StepProgressReportDialog.css";
 
 interface LongRunTaskListProps {
@@ -87,9 +88,7 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
           <div className="notify-message-goes">{errmsg}</div>
         </>
       )}
-      <button className="buttons8" onClick={arg.onContinue}>
-        <div className="secondary-button4">Continue</div>
-      </button>
+      <SecondaryButton secondaryButton="Continue" onClick={arg.onContinue} />
     </div>
   );
 };

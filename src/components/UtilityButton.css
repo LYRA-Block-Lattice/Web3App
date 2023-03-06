@@ -1,4 +1,4 @@
-.utility-button2 {
+.utility-button {
   position: relative;
   font-size: var(--font-size-3xl);
   letter-spacing: 0.41px;
@@ -8,7 +8,7 @@
   color: var(--white);
   text-align: center;
 }
-.buttons11 {
+.buttons4 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);

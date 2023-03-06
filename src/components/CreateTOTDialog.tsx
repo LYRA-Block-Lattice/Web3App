@@ -7,6 +7,8 @@ import {
   Select,
   TextField
 } from "@mui/material";
+import UtilityButton from "../components/UtilityButton";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateTOTDialog.css";
 import { LongRunTask, NeedRunTask } from "../app/utils";
 import { useSelector, useDispatch } from "react-redux";
@@ -171,15 +173,14 @@ const CreateTOTDialog: FunctionComponent<NeedRunTask> = (props) => {
           margin="none"
           onChange={(e) => setSupply(+e.target.value)}
         />
-        <button className="buttons6" onClick={openSignTradeSecretPopup}>
-          <div className="utility-button1">Sign trade secret</div>
-        </button>
+        <UtilityButton
+          utilityButton="Sign trade secret"
+          onClick={openSignTradeSecretPopup}
+        />
         <div className="note-i-need1">
           Note: I need to send trade secret privately to buyer(s).
         </div>
-        <button className="buttons7" onClick={onMintClick}>
-          <div className="secondary-button3">Create TOT</div>
-        </button>
+        <SecondaryButton secondaryButton="Create TOT" onClick={onMintClick} />
       </div>
       {isSignTradeSecretPopupOpen && (
         <PortalPopup

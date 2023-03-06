@@ -7,7 +7,7 @@ type MiniButtonType = {
 
 const MiniButton: FunctionComponent<MiniButtonType> = ({ miniButton }) => {
   return (
-    <button className="buttons12">
+    <button className="buttons5">
       <div className="mini-button6">{miniButton}</div>
     </button>
   );
