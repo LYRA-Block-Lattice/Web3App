@@ -58,5 +58,5 @@
   text-align: left;
   font-size: var(--font-size-3xl);
   color: var(--background-extra-white);
-  font-family: var(--uppercase-small);
+  font-family: var(--body-secondary1);
 }

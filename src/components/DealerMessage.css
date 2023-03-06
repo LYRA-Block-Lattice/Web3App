@@ -18,7 +18,7 @@
   font-size: var(--uppercase-small-size);
   line-height: 16px;
   font-weight: 500;
-  color: var(--text-dark-60);
+  color: var(--text-dark-601);
 }
 .user-name-group {
   align-self: stretch;
@@ -29,8 +29,27 @@
   padding: var(--padding-4xs) var(--padding-2xs);
   align-items: center;
   justify-content: flex-start;
+}
+.tip-icon1 {
+  position: relative;
+  width: 9.8px;
+  height: 8px;
+  flex-shrink: 0;
+  display: none;
+}
+.chat-message-receive1,
+.dealersection {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.dealersection {
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   color: var(--color-blueviolet);
-  font-family: var(--uppercase-small);
+  font-family: var(--body-secondary1);
 }

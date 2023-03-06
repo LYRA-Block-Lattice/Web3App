@@ -64,7 +64,7 @@
 }
 .sellatprice-parent {
   flex-direction: column;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
 }
 .limitoftrade {
   width: 320px;

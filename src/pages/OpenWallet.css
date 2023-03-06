@@ -42,7 +42,7 @@
 }
 .mini-button1 {
   position: relative;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
@@ -71,7 +71,7 @@
   padding: 0;
   background-color: transparent;
   position: relative;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;

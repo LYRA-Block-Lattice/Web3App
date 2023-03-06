@@ -72,6 +72,6 @@
   gap: var(--gap-sm);
   text-align: left;
   font-size: var(--uppercase-small-size);
-  color: var(--text-dark-60);
-  font-family: var(--uppercase-small);
+  color: var(--text-dark-601);
+  font-family: var(--body-secondary1);
 }

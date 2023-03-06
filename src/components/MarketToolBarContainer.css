@@ -7,7 +7,7 @@
 }
 .ranking {
   position: relative;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   line-height: 18px;
   font-family: var(--regular-body1);
   color: var(--black-0000001001);
