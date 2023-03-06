@@ -140,7 +140,7 @@
 }
 .placeholder6 {
   position: relative;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   line-height: 16px;
   color: var(--subtitle-text);
 }
@@ -172,7 +172,7 @@
   justify-content: flex-start;
   gap: var(--gap-3xs);
   text-align: center;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   color: var(--primary1);
 }
 .frame-group,
@@ -254,7 +254,7 @@
   align-items: center;
   gap: var(--gap-lg);
   text-align: left;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   color: var(--subtitle-text);
   font-family: var(--regular-body1);
 }

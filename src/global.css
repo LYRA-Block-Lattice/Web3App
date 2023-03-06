@@ -14,14 +14,14 @@ body {
   /* fonts */
   --regular-body1: "Open Sans";
   --font-source-sans-pro: "Source Sans Pro";
-  --uppercase-small: Poppins;
+  --body-secondary1: Poppins;
   --base-1-semibold: Inter;
   --font-roboto: Roboto;
   --font-montserrat: Montserrat;
 
   /* font sizes */
   --uppercase-small-size: 10px;
-  --caption-size: 12px;
+  --body-secondary1-size: 12px;
   --regular-body1-size: 13px;
   --body-semibold-size: 14px;
   --body-m1-size: 15px;
@@ -67,7 +67,7 @@ body {
   --color-blueviolet: #554af0;
   --accent-strong-blue-60: #9992f6;
   --color-dimgray-100: #717171;
-  --text-dark-60: #686777;
+  --text-dark-601: #686777;
   --color-dimgray-300: #656565;
   --color-palegoldenrod: #dbf7af;
   --color-mediumslateblue: #766ae7;

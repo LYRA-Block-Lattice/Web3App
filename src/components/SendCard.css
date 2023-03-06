@@ -19,7 +19,7 @@
 }
 .success1 {
   position: relative;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   font-family: var(--regular-body1);
   color: var(--white);
   text-align: center;
@@ -154,7 +154,7 @@
   padding: var(--padding-4xs);
   gap: var(--gap-5xs);
   text-align: right;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   color: var(--black-0000001001);
   font-family: var(--font-source-sans-pro);
 }

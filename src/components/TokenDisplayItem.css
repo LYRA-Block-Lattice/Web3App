@@ -17,7 +17,7 @@
   position: relative;
 }
 .b3 {
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   color: var(--text-secondary1);
 }
 .lyr-parent,

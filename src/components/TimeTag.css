@@ -1,0 +1,18 @@
+.today {
+  position: relative;
+  line-height: 20px;
+  font-weight: 500;
+}
+.chat-datetag {
+  border-radius: var(--br-3xl);
+  background-color: var(--background-extra-white);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-10xs) var(--padding-5xs);
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: var(--body-secondary1-size);
+  color: var(--text-dark-601);
+  font-family: var(--body-secondary1);
+}

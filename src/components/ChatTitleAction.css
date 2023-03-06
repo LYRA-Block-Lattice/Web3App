@@ -39,7 +39,7 @@
   justify-content: flex-start;
   gap: var(--gap-sm);
   text-align: left;
-  font-size: var(--caption-size);
+  font-size: var(--body-secondary1-size);
   color: var(--black-0000001001);
-  font-family: var(--uppercase-small);
+  font-family: var(--body-secondary1);
 }

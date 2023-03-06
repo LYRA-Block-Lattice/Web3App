@@ -3,6 +3,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import ChatTitleAction from "../components/ChatTitleAction";
 import PeerMessage from "../components/PeerMessage";
 import DealerMessage from "../components/DealerMessage";
+import TimeTag from "../components/TimeTag";
 import MyInputMessage from "../components/MyInputMessage";
 import "./ChatPage.css";
 
@@ -34,19 +35,12 @@ const ChatPage: FunctionComponent = () => {
           content="Lorem ipsum dolor"
           time="18:24"
         />
-        <div className="dealersection">
-          <div className="chat-message-receive">
-            <DealerMessage
-              title="User Name"
-              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. "
-              time="18:24"
-            />
-            <img className="tip-icon" alt="" src="../asserts/tip.svg" />
-          </div>
-        </div>
-        <div className="chat-datetag">
-          <div className="today">Today</div>
-        </div>
+        <DealerMessage
+          title="User Name"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. "
+          time="18:24"
+        />
+        <TimeTag tag="Today" />
         <MyInputMessage content="Lorem ipsum dolor" />
         <MyInputMessage content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. " />
       </div>
