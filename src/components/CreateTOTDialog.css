@@ -14,65 +14,16 @@
   border: 0;
   background-color: transparent;
 }
-.utility-button1 {
-  position: relative;
-  font-size: var(--body-semibold-size);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--white);
-  text-align: center;
-}
-.buttons6 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-xl);
-  background-color: var(--tertiary1);
-  border-radius: var(--br-lg);
-  height: 30px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-}
-.note-i-need1,
-.secondary-button3 {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-family: var(--regular-body1);
-}
 .note-i-need1 {
+  position: relative;
   font-size: var(--body-semibold-size);
+  letter-spacing: 0.41px;
+  line-height: 18px;
+  font-family: var(--regular-body1);
   color: var(--black-0000001001);
   text-align: left;
   display: inline-block;
   width: 292px;
-}
-.secondary-button3 {
-  font-size: var(--body-m1-size);
-  font-weight: 500;
-  color: var(--white);
-  text-align: center;
-}
-.buttons7 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-4xl);
-  background-color: var(--secondary1);
-  border-radius: var(--br-lg);
-  height: 40px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
 }
 .createtotdialog,
 .createtottosellform1 {

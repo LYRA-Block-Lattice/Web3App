@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect } from "react";
+import UtilityButton from "../components/UtilityButton";
 import "./SignTradeSecretDialog.css";
 
 type SignTradeSecretDialogType = {
@@ -52,9 +53,7 @@ const SignTradeSecretDialog: FunctionComponent<SignTradeSecretDialogType> = ({
 Bank of America
 1234 1234 1234 1234`}
       />
-      <button className="buttons4">
-        <div className="utility-button">Sign and return</div>
-      </button>
+      <UtilityButton utilityButton="Sign and return" />
     </div>
   );
 };

@@ -24,7 +24,7 @@ const PrimaryButton: FunctionComponent<PrimaryButtonType> = ({
   }, [buttonsFlexShrink]);
 
   return (
-    <button className="buttons9" onClick={onButtonsClick} style={buttonsStyle}>
+    <button className="buttons2" onClick={onButtonsClick} style={buttonsStyle}>
       <div className="primary-button2">{primaryButton}</div>
     </button>
   );

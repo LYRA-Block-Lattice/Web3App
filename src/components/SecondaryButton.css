@@ -1,4 +1,4 @@
-.secondary-button5 {
+.secondary-button {
   position: relative;
   font-size: var(--font-size-4xl);
   letter-spacing: 0.41px;
@@ -8,7 +8,7 @@
   color: var(--white);
   text-align: center;
 }
-.buttons10 {
+.buttons3 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);

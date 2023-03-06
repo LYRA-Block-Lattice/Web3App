@@ -7,6 +7,8 @@ import {
   Select,
   TextField,
 } from "@mui/material";
+import UtilityButton from "../components/UtilityButton";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateTOTDialog.css";
 
 const CreateTOTDialog: FunctionComponent = () => {
@@ -56,15 +58,11 @@ const CreateTOTDialog: FunctionComponent = () => {
           size="medium"
           margin="none"
         />
-        <button className="buttons6">
-          <div className="utility-button1">Sign trade secret</div>
-        </button>
+        <UtilityButton utilityButton="Sign trade secret" />
         <div className="note-i-need1">
           Note: I need to send trade secret privately to buyer(s).
         </div>
-        <button className="buttons7">
-          <div className="secondary-button3">Create TOT</div>
-        </button>
+        <SecondaryButton secondaryButton="Create TOT" />
       </form>
     </div>
   );

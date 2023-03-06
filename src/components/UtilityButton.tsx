@@ -13,8 +13,8 @@ const UtilityButton: FunctionComponent<UtilityButtonType> = ({
   utilityButton,
 }) => {
   return (
-    <button className="buttons11" onClick={openGeneralPopup}>
-      <div className="utility-button2">{utilityButton}</div>
+    <button className="buttons4" onClick={openGeneralPopup}>
+      <div className="utility-button">{utilityButton}</div>
     </button>
   );
 };

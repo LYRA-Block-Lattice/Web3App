@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import { TextField } from "@mui/material";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateTokenDialog.css";
 
 const CreateTokenDialog: FunctionComponent = () => {
@@ -47,9 +48,7 @@ const CreateTokenDialog: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <button className="buttons3">
-        <div className="secondary-button1">Mint Token</div>
-      </button>
+      <SecondaryButton secondaryButton="Mint Token" />
     </form>
   );
 };

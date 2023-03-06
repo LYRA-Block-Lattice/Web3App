@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import SecondaryButton from "../components/SecondaryButton";
 import "./StepProgressReportDialog.css";
 
 const StepProgressReportDialog: FunctionComponent = () => {
@@ -17,9 +18,7 @@ const StepProgressReportDialog: FunctionComponent = () => {
       <div className="notify-message-goes">
         Error message goes here to help user understand what’s going on.
       </div>
-      <button className="buttons8">
-        <div className="secondary-button4">Continue</div>
-      </button>
+      <SecondaryButton secondaryButton="Continue" />
     </div>
   );
 };

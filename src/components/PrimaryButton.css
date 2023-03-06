@@ -8,7 +8,7 @@
   color: var(--white);
   text-align: center;
 }
-.buttons9 {
+.buttons2 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -23,6 +23,6 @@
   align-items: center;
   justify-content: center;
 }
-.buttons9:hover {
+.buttons2:hover {
   background-color: var(--color-mediumslateblue);
 }

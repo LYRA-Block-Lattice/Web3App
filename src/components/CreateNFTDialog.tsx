@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import { TextField } from "@mui/material";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateNFTDialog.css";
 
 const CreateNFTDialog: FunctionComponent = () => {
@@ -43,9 +44,7 @@ const CreateNFTDialog: FunctionComponent = () => {
       />
       <div className="or1">or</div>
       <input className="select-nft-image1" type="file" />
-      <button className="buttons5">
-        <div className="secondary-button2">Create NFT</div>
-      </button>
+      <SecondaryButton secondaryButton="Create NFT" />
     </div>
   );
 };

@@ -15,7 +15,7 @@
   color: var(--white);
   text-align: center;
 }
-.buttons13 {
+.buttons6 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -31,6 +31,6 @@
   justify-content: center;
   gap: var(--gap-md);
 }
-.buttons13:hover {
+.buttons6:hover {
   background-color: var(--color-mediumslateblue);
 }
