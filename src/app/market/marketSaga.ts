@@ -30,6 +30,9 @@ import { push } from "redux-first-history";
 import { RootState } from "../store";
 import { getAuthSelector } from "../selectors";
 import { IAuthState } from "../wallet/authReducer";
+import ChatMessage from "../../components/ChatMessage";
+import { DealChatMessage } from "../blockchain/blocks/dealerMsgs";
+import { getWallet } from "../wallet/walletSaga";
 
 let dealerConnection: HubConnection | null = null;
 
@@ -139,6 +142,22 @@ function* joinRoom(action: IAction) {
   } else {
     console.log("No private key to join room");
     yield put(push("/openwallet"));
+  }
+}
+
+function* chat(action: IAction) {
+  var chatmsg = new DealChatMessage(undefined);
+  chatmsg.Text = action.payload.message;
+  chatmsg.AccountId = action.payload.accountId;
+  chatmsg.TradeId = action.payload.tradeId;
+
+  const wallet = getWallet();
+  const msg = chatmsg.toSigned(wallet);
+
+  if (dealerConnection != null) {
+    yield dealerConnection.send("Chat", msg);
+  } else {
+    console.log("No dealer connection to chat");
   }
 }
 
@@ -289,6 +308,7 @@ export default function* marketSaga() {
   // every time the user open wallet, we need to setup the SignalR connection
   yield takeEvery(actionTypes.DEALER_INIT, setup);
   yield takeEvery(actionTypes.DEALER_CLOSE, closeDealerConnection);
+  yield takeEvery(actionTypes.DEALER_SEND_MESSAGE, chat);
 
   yield takeEvery(actionTypes.MARKET_GET_PRICES, getPrices);
   yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);

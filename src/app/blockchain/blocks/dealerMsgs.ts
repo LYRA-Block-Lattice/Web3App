@@ -25,7 +25,7 @@ export class DealMessage {
     }
   }
 
-  toJson(wallet: LyraApi): string {
+  toSigned(wallet: LyraApi): {} {
     var json = stringify(this);
     console.log("json to hash:", json);
 
@@ -37,10 +37,7 @@ export class DealMessage {
       Signature: signature,
       Hash: hash
     };
-    //var finalJson = JSON.stringify(finalBlock);
-    const finalJson = JSONbig.stringify(finalBlock);
-    console.log("final block:", finalJson);
-    return finalJson;
+    return finalBlock;
   }
 }
 
@@ -55,6 +52,20 @@ export class SignedMessage extends DealMessage {
       const decodedBlockData = JSON.parse(messageData);
       this.Hash = decodedBlockData.Hash;
       this.Signature = decodedBlockData.Signature;
+    }
+  }
+}
+
+export class DealChatMessage extends DealMessage {
+  Text: string;
+
+  constructor(messageData: string | undefined) {
+    super(messageData);
+    if (messageData === undefined) {
+      this.Text = "";
+    } else {
+      const decodedBlockData = JSON.parse(messageData);
+      this.Text = decodedBlockData.Text;
     }
   }
 }

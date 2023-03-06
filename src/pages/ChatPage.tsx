@@ -70,7 +70,7 @@ const ChatPage: FunctionComponent = () => {
       />
       <ChatTitleAction
         tradeId={searchParams.get("tradeId")!}
-        pinnedMessage={chat?.Pinned.text}
+        pinnedMessage={chat?.Pinned}
       />
       <div className="direct-chat">
         <PeerMessage
