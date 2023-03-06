@@ -182,7 +182,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         placeholder="Select NFT Image"
         onChange={handleFileChange}
       />
-      <SecondaryButton secondaryButton="Create NFT" onClick={onMintClick} />
+      <SecondaryButton onClick={onMintClick}>Create NFT</SecondaryButton>
     </div>
   );
 };

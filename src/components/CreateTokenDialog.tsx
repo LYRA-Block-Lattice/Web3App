@@ -107,8 +107,8 @@ const CreateTokenDialog: FunctionComponent<NeedRunTask> = (props) => {
         margin="none"
         onChange={(e) => setSupply(+e.target.value)}
       />
-      <SecondaryButton secondaryButton="Mint Token" onClick={onMintClick} />
-    </form>
+      <SecondaryButton onClick={onMintClick}>Mint Token</SecondaryButton>
+    </div>
   );
 };
 

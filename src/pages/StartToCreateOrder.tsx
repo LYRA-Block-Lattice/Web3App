@@ -94,10 +94,11 @@ const StartToCreateOrder: FunctionComponent = () => {
           </Xwrapper>
         </div>
         <PrimaryButton
-          primaryButton="Specify Token"
           disabled={isDisabled}
           onClick={onPrepareSellOrderButtonClick}
-        />
+        >
+          Specify Token
+        </PrimaryButton>
       </div>
       <BottomNavigationBar />
     </div>

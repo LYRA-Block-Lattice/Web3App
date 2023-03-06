@@ -28,7 +28,6 @@ import "./OpenWallet.css";
 
 import * as actionTypes from "../app/actionTypes";
 import { getAuthSelector, getWalletNamesSelector } from "../app/selectors";
-import PrimaryButton from "../components/PrimaryButton";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const OpenWallet: FunctionComponent = () => {
@@ -151,7 +150,7 @@ const OpenWallet: FunctionComponent = () => {
         <PrimaryButton disabled={busy} onClick={onOpenWallet}>
           Open
         </PrimaryButton>
-        <MiniButton miniButton="Create" onClick={onSignUpClick} />
+        <MiniButton onClick={onSignUpClick}>Create</MiniButton>
         <button className="forgot-password-copy">Forgot password?</button>
       </div>
       <BottomNavigationBar />

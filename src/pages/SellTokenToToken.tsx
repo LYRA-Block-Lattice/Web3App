@@ -193,7 +193,7 @@ const SellTokenToToken: FunctionComponent = () => {
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
-            <UtilityButton openGeneralPopup={openGeneralPopup} />
+            <UtilityButton onClick={openGeneralPopup}>Mint</UtilityButton>
           </div>
           <SearchTokenInput
             key="tosell"
@@ -324,10 +324,9 @@ const SellTokenToToken: FunctionComponent = () => {
             dao={dao}
             onTotalChange={onTotal}
           />
-          <PrimaryButton
-            primaryButton="Review the Order"
-            onButtonsClick={onReviewTheOrderClick}
-          />
+          <PrimaryButton onClick={onReviewTheOrderClick}>
+            Review the Order
+          </PrimaryButton>
         </div>
         <BottomNavigationBar />
       </div>

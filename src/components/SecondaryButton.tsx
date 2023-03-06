@@ -1,17 +1,34 @@
-import { FunctionComponent } from "react";
+import {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  FunctionComponent,
+  HTMLProps,
+  ReactNode
+} from "react";
 import "./SecondaryButton.css";
 
-type SecondaryButtonType = {
-  /** Action props */
-  onButtonsClick?: () => void;
-};
+interface SecondaryButtonType
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  children?: ReactNode;
+  className?: string;
+  disabled?: boolean;
+}
 
 const SecondaryButton: FunctionComponent<SecondaryButtonType> = ({
-  onButtonsClick,
+  children,
+  className,
+  disabled,
+  ...rest
 }) => {
   return (
-    <button className="buttons3" onClick={onButtonsClick}>
-      <div className="secondary-button">Secondary Button</div>
+    <button
+      className={`buttons3  ${disabled ? "button-disabled" : ""} ${className}`}
+      {...rest}
+    >
+      <div className="secondary-button">{children}</div>
     </button>
   );
 };

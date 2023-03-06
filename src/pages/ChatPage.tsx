@@ -37,13 +37,12 @@ const ChatPage: FunctionComponent = () => {
   useEffect(() => {
     // join chat room
 
-    
     dispatch({
       type: DEALER_JOIN_ROOM,
       payload: {
         accountId: auth.accountId,
-        tradeId: searchParams.get("tradeId")!,
-        signature: 
+        tradeId: searchParams.get("tradeId")!
+        //signature:
       }
     });
   }, []);

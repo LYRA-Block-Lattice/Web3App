@@ -173,14 +173,13 @@ const CreateTOTDialog: FunctionComponent<NeedRunTask> = (props) => {
           margin="none"
           onChange={(e) => setSupply(+e.target.value)}
         />
-        <UtilityButton
-          utilityButton="Sign trade secret"
-          onClick={openSignTradeSecretPopup}
-        />
+        <UtilityButton onClick={openSignTradeSecretPopup}>
+          Sign trade secret
+        </UtilityButton>
         <div className="note-i-need1">
           Note: I need to send trade secret privately to buyer(s).
         </div>
-        <SecondaryButton secondaryButton="Create TOT" onClick={onMintClick} />
+        <SecondaryButton onClick={onMintClick}>Create TOT</SecondaryButton>
       </div>
       {isSignTradeSecretPopupOpen && (
         <PortalPopup

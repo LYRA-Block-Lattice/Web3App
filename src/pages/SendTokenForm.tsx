@@ -99,7 +99,7 @@ const SendTokenForm: FunctionComponent = () => {
           required
           onChange={(e) => setAmount(+e.target.value)}
         />
-        <PrimaryButton primaryButton="Send" onClick={doSend} />
+        <PrimaryButton onClick={doSend}>Send</PrimaryButton>
       </div>
       <BottomNavigationBar />
     </div>

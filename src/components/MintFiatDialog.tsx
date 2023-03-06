@@ -201,7 +201,7 @@ const MintFiatDialog: FunctionComponent<NeedRunTask> = (props) => {
         margin="none"
         onChange={(e) => setSupply(+e.target.value)}
       />
-      <SecondaryButton secondaryButton="Print" onClick={onMintClick} />
+      <SecondaryButton onClick={onMintClick}>Print</SecondaryButton>
     </div>
   );
 };

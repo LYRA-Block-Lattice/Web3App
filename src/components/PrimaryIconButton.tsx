@@ -1,17 +1,37 @@
-import { FunctionComponent } from "react";
+import {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  FunctionComponent,
+  HTMLProps,
+  ReactNode
+} from "react";
 import "./PrimaryIconButton.css";
 
-type PrimaryIconButtonType = {
+interface PrimaryIconButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   icon?: string;
-};
+  children?: ReactNode;
+  className?: string;
+  disabled?: boolean;
+}
 
-const PrimaryIconButton: FunctionComponent<PrimaryIconButtonType> = ({
+const PrimaryIconButton: FunctionComponent<PrimaryIconButtonProps> = ({
   icon,
+  children,
+  className,
+  disabled,
+  ...rest
 }) => {
   return (
-    <button className="buttons6">
+    <button
+      className={`buttons6  ${disabled ? "button-disabled" : ""} ${className}`}
+      {...rest}
+    >
       <img className="evapricetags-outline-icon1" alt="" src={icon} />
-      <div className="primary-button3">Primary Button</div>
+      <div className="primary-button3">{children}</div>
     </button>
   );
 };

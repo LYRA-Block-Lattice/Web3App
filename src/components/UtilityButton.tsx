@@ -1,17 +1,34 @@
-import { FunctionComponent } from "react";
+import {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  FunctionComponent,
+  HTMLProps,
+  ReactNode
+} from "react";
 import "./UtilityButton.css";
 
-type UtilityButtonType = {
-  /** Action props */
-  openGeneralPopup?: () => void;
-};
+interface UtilityButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  children?: ReactNode;
+  className?: string;
+  disabled?: boolean;
+}
 
-const UtilityButton: FunctionComponent<UtilityButtonType> = ({
-  openGeneralPopup,
+const UtilityButton: FunctionComponent<UtilityButtonProps> = ({
+  children,
+  className,
+  disabled,
+  ...rest
 }) => {
   return (
-    <button className="buttons4" onClick={openGeneralPopup}>
-      <div className="utility-button">Utility Button</div>
+    <button
+      className={`buttons4  ${disabled ? "button-disabled" : ""} ${className}`}
+      {...rest}
+    >
+      <div className="utility-button">{children}</div>
     </button>
   );
 };

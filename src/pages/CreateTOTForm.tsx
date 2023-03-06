@@ -128,12 +128,12 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
             margin="none"
             onChange={(e) => setSupply(+e.target.value)}
           />
-          <UtilityButton openGeneralPopup={openSignTradeSecretPopup} />
+          <UtilityButton onClick={openSignTradeSecretPopup} />
           <div className="note-i-need">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <SecondaryButton secondaryButton="Create TOT" onClick={onMintClick}/>
-        </form>
+          <SecondaryButton onClick={onMintClick}>Create TOT</SecondaryButton>
+        </div>
       </div>
       {isSignTradeSecretPopupOpen && (
         <PortalPopup

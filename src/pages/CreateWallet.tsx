@@ -17,7 +17,6 @@ import * as actionTypes from "../app/actionTypes";
 import "./CreateWallet.css";
 import { useNavigate } from "react-router";
 import PrimaryAccountCard from "../components/PrimaryAccountCard";
-import PrimaryButton from "../components/PrimaryButton";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const CreateWallet: FunctionComponent = () => {
@@ -249,8 +248,8 @@ const CreateWallet: FunctionComponent = () => {
             />
           )}
         </div>
-        <PrimaryButton primaryButton="Create" onClick={onWalletCreate} />
-        <MiniButton miniButton="Open" onClick={onOpenWalletLinkClick} />
+        <PrimaryButton onClick={onWalletCreate}>Create</PrimaryButton>
+        <MiniButton onClick={onOpenWalletLinkClick}>Open</MiniButton>
       </div>
       <BottomNavigationBar />
     </div>
