@@ -31,7 +31,7 @@
   height: 66px;
   flex-shrink: 0;
 }
-.secondary-button9 {
+.secondary-button4 {
   position: relative;
   font-size: var(--body-m1-size);
   letter-spacing: 0.41px;
@@ -41,7 +41,7 @@
   color: var(--white);
   text-align: center;
 }
-.buttons18 {
+.buttons8 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);

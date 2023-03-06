@@ -1,4 +1,4 @@
-.mini-button8 {
+.mini-button6 {
   position: relative;
   font-size: var(--body-secondary1-size);
   letter-spacing: 0.41px;
@@ -8,7 +8,7 @@
   color: var(--color-darkslategray-300);
   text-align: center;
 }
-.buttons22 {
+.buttons12 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);

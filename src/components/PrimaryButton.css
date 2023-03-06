@@ -1,4 +1,4 @@
-.primary-button9 {
+.primary-button2 {
   position: relative;
   font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
@@ -8,7 +8,7 @@
   color: var(--white);
   text-align: center;
 }
-.buttons19 {
+.buttons9 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -23,6 +23,6 @@
   align-items: center;
   justify-content: center;
 }
-.buttons19:hover {
+.buttons9:hover {
   background-color: var(--color-mediumslateblue);
 }

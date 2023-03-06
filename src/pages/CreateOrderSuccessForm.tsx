@@ -1,6 +1,7 @@
 import { FunctionComponent, useCallback } from "react";
-import TopNavigationBar from "../components/TopNavigationBar";
 import { useNavigate } from "react-router-dom";
+import TopNavigationBar from "../components/TopNavigationBar";
+import SecondaryButton from "../components/SecondaryButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./CreateOrderSuccessForm.css";
 
@@ -45,9 +46,10 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
         >
           View on block explorer
         </a>
-        <button className="buttons6" onClick={onButtonsClick}>
-          <div className="secondary-button4">View my orders</div>
-        </button>
+        <SecondaryButton
+          onButtonsClick={onButtonsClick}
+          secondaryButton="View my orders"
+        />
       </div>
       <BottomNavigationBar />
     </div>

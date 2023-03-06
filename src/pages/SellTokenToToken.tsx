@@ -1,9 +1,11 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import { Autocomplete, TextField } from "@mui/material";
-import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
+import TopNavigationBar from "../components/TopNavigationBar";
+import UtilityButton from "../components/UtilityButton";
 import CollateralCalculation from "../components/CollateralCalculation";
+import PrimaryButton from "../components/PrimaryButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SellTokenToToken.css";
 
@@ -46,9 +48,10 @@ const SellTokenToToken: FunctionComponent = () => {
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
-            <button className="buttons5" onClick={openGeneralPopup}>
-              <div className="utility-button2">Mint</div>
-            </button>
+            <UtilityButton
+              openGeneralPopup={openGeneralPopup}
+              utilityButton="Mint"
+            />
           </div>
           <Autocomplete
             sx={{ width: 320 }}
@@ -170,9 +173,10 @@ const SellTokenToToken: FunctionComponent = () => {
             size="medium"
           />
           <CollateralCalculation />
-          <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
-            <div className="primary-button5">Review the Order</div>
-          </button>
+          <PrimaryButton
+            primaryButton="Review the Order"
+            onButtonsClick={onReviewTheOrderClick}
+          />
         </div>
         <BottomNavigationBar />
       </div>

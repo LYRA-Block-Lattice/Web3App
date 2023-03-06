@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import SecondaryButton from "../components/SecondaryButton";
 import "./MintFiatToken.css";
 
 const MintFiatToken: FunctionComponent = () => {
@@ -33,9 +34,7 @@ const MintFiatToken: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <button className="prepare-sell-order-button">
-        <div className="secondary-button">Print</div>
-      </button>
+      <SecondaryButton secondaryButton="Print" />
     </form>
   );
 };

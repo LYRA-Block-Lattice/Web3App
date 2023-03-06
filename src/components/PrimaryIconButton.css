@@ -5,7 +5,7 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.primary-button10 {
+.primary-button3 {
   position: relative;
   font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
@@ -15,7 +15,7 @@
   color: var(--white);
   text-align: center;
 }
-.buttons23 {
+.buttons13 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -31,6 +31,6 @@
   justify-content: center;
   gap: var(--gap-md);
 }
-.buttons23:hover {
+.buttons13:hover {
   background-color: var(--color-mediumslateblue);
 }

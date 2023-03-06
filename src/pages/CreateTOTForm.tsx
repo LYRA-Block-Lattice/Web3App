@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import SignTradeSecretPopup from "../components/SignTradeSecretPopup";
 import PortalPopup from "../components/PortalPopup";
+import UtilityButton from "../components/UtilityButton";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateTOTForm.css";
 
 const CreateTOTForm: FunctionComponent = () => {
@@ -70,18 +72,14 @@ const CreateTOTForm: FunctionComponent = () => {
             size="medium"
             margin="none"
           />
-          <button
-            className="prepare-sell-order-button2"
-            onClick={openSignTradeSecretPopup}
-          >
-            <div className="utility-button">Sign trade secret</div>
-          </button>
+          <UtilityButton
+            openGeneralPopup={openSignTradeSecretPopup}
+            utilityButton="Sign trade secret"
+          />
           <div className="note-i-need">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <button className="prepare-sell-order-button3">
-            <div className="secondary-button2">Create TOT</div>
-          </button>
+          <SecondaryButton secondaryButton="Create TOT" />
         </form>
       </div>
       {isSignTradeSecretPopupOpen && (

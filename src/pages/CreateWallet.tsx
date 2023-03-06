@@ -9,6 +9,8 @@ import {
   Checkbox,
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryButton from "../components/PrimaryButton";
+import MiniButton from "../components/MiniButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./CreateWallet.css";
 
@@ -162,12 +164,8 @@ const CreateWallet: FunctionComponent = () => {
             margin="none"
           />
         </div>
-        <button className="buttons8">
-          <div className="primary-button7">Create</div>
-        </button>
-        <button className="buttons9">
-          <div className="mini-button">Open</div>
-        </button>
+        <PrimaryButton primaryButton="Create" />
+        <MiniButton miniButton="Open" />
       </div>
       <BottomNavigationBar />
     </div>

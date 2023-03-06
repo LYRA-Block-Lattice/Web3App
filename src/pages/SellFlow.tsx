@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import PrimaryButton from "../components/PrimaryButton";
 import "./SellFlow.css";
 
 const SellFlow: FunctionComponent = () => {
@@ -49,12 +50,13 @@ const SellFlow: FunctionComponent = () => {
       <div className="ordercollateral">1024 LYR</div>
       <div className="returncollateral">1000 LYR</div>
       <div className="buttons-parent">
-        <button className="buttons1">
-          <div className="primary-button1">Back</div>
+        <button className="buttons">
+          <div className="primary-button">Back</div>
         </button>
-        <button className="buttons2">
-          <div className="primary-button2">Place sell order</div>
-        </button>
+        <PrimaryButton
+          primaryButton="Place sell order"
+          buttonsFlexShrink="unset"
+        />
       </div>
       <div className="group7">
         <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />

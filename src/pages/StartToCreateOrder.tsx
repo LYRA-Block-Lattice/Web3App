@@ -1,7 +1,8 @@
 import { FunctionComponent, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import TopNavigationBar from "../components/TopNavigationBar";
 import CatalogSelection from "../components/CatalogSelection";
-import { useNavigate } from "react-router-dom";
+import PrimaryButton from "../components/PrimaryButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./StartToCreateOrder.css";
 
@@ -46,9 +47,10 @@ const StartToCreateOrder: FunctionComponent = () => {
             cat="Service"
           />
         </div>
-        <button className="buttons7" onClick={onButtonsClick}>
-          <div className="primary-button6">Specify Token</div>
-        </button>
+        <PrimaryButton
+          primaryButton="Specify Token"
+          onButtonsClick={onButtonsClick}
+        />
       </div>
       <BottomNavigationBar />
     </div>

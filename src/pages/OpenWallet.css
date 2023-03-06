@@ -4,73 +4,18 @@
   height: 252px;
   flex-shrink: 0;
 }
-.password,
 .wallet-name1 {
   position: relative;
 }
+.forgot-password-copy,
 .password {
   border: 0;
   background-color: transparent;
-}
-.primary-button8 {
   position: relative;
-  font-size: var(--font-size-6xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--white);
-  text-align: center;
-}
-.buttons10 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-6xl);
-  background-color: var(--primary1);
-  border-radius: var(--br-lg);
-  height: 50px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-}
-.buttons10:hover {
-  background-color: var(--color-mediumslateblue);
-}
-.mini-button1 {
-  position: relative;
-  font-size: var(--body-secondary1-size);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--color-darkslategray-300);
-  text-align: center;
-}
-.buttons11 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-xl);
-  background-color: var(--color-whitesmoke-300);
-  border-radius: var(--br-lg);
-  height: 24px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
 }
 .forgot-password-copy {
   cursor: pointer;
-  border: 0;
   padding: 0;
-  background-color: transparent;
-  position: relative;
   font-size: var(--body-secondary1-size);
   letter-spacing: 0.41px;
   line-height: 18px;

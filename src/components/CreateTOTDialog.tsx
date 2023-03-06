@@ -56,14 +56,14 @@ const CreateTOTDialog: FunctionComponent = () => {
           size="medium"
           margin="none"
         />
-        <button className="buttons16">
-          <div className="utility-button4">Sign trade secret</div>
+        <button className="buttons6">
+          <div className="utility-button1">Sign trade secret</div>
         </button>
         <div className="note-i-need1">
           Note: I need to send trade secret privately to buyer(s).
         </div>
-        <button className="buttons17">
-          <div className="secondary-button8">Create TOT</div>
+        <button className="buttons7">
+          <div className="secondary-button3">Create TOT</div>
         </button>
       </form>
     </div>

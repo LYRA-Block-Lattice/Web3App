@@ -1,35 +1,14 @@
-.to-sell-token,
-.utility-button2 {
+.to-sell-token {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
 }
-.utility-button2 {
-  font-size: var(--font-size-3xl);
-  font-family: var(--regular-body1);
-  color: var(--white);
-  text-align: center;
-}
-.buttons5,
 .to-sell-token-parent {
+  width: 320px;
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.buttons5 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-xl);
-  background-color: var(--tertiary1);
-  border-radius: var(--br-lg);
-  height: 30px;
-  overflow: hidden;
-  box-sizing: border-box;
-  justify-content: flex-start;
-}
-.to-sell-token-parent {
-  width: 320px;
   justify-content: space-between;
 }
 .to-get-fiat {
@@ -66,53 +45,25 @@
   flex-direction: column;
   font-size: var(--body-secondary1-size);
 }
+.limitoftrade,
+.priceandcollateralform,
+.selltokentotoken {
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
 .limitoftrade {
   width: 320px;
-  overflow: hidden;
-  display: flex;
   flex-direction: row;
   padding: var(--padding-4xs) 0;
-  box-sizing: border-box;
-  align-items: center;
   justify-content: space-between;
   font-size: var(--body-m1-size);
-}
-.primary-button5 {
-  position: relative;
-  font-size: var(--font-size-6xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--white);
-  text-align: center;
-}
-.reviewtheorder {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-6xl);
-  background-color: var(--primary1);
-  border-radius: var(--br-lg);
-  height: 50px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-}
-.reviewtheorder:disabled {
-  background-color: var(--color-gainsboro-500);
 }
 .priceandcollateralform,
 .selltokentotoken {
   background-color: var(--white);
-  overflow: hidden;
-  display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  align-items: center;
   justify-content: flex-start;
 }
 .priceandcollateralform {

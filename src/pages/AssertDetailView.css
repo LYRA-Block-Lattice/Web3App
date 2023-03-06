@@ -309,7 +309,7 @@
   justify-content: center;
   gap: var(--gap-lg);
 }
-.primary-button4 {
+.primary-button1 {
   position: relative;
   font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
@@ -319,7 +319,7 @@
   color: var(--white);
   text-align: center;
 }
-.buttons4 {
+.buttons1 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -336,7 +336,7 @@
   justify-content: center;
   gap: var(--gap-md);
 }
-.buttons4:hover {
+.buttons1:hover {
   background-color: var(--color-mediumslateblue);
 }
 .this-order-is {

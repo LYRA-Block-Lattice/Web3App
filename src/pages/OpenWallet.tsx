@@ -12,6 +12,8 @@ import {
   IconButton,
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryButton from "../components/PrimaryButton";
+import MiniButton from "../components/MiniButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./OpenWallet.css";
 
@@ -75,12 +77,8 @@ const OpenWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <button className="buttons10">
-          <div className="primary-button8">Open</div>
-        </button>
-        <button className="buttons11">
-          <div className="mini-button1">Create</div>
-        </button>
+        <PrimaryButton primaryButton="Open" />
+        <MiniButton miniButton="Create" />
         <button className="forgot-password-copy">Forgot password?</button>
       </div>
       <BottomNavigationBar />

@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryButton from "../components/PrimaryButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ScanToPay.css";
 
@@ -31,9 +32,7 @@ const ScanToPay: FunctionComponent = () => {
         <button className="lv3nd5bii1ahj7x5axdq2oradop1cd">
           LV3nD5Bii1aHj7x5AXDq2oraDoP1cd9UF5p7uuqHYFnC1tfUX4mtWXa98uYYxZ3pf7aCTdvvqiNpop1WsakaooQzFjCMhc
         </button>
-        <button className="buttons">
-          <div className="primary-button">Scan to pay</div>
-        </button>
+        <PrimaryButton primaryButton="Scan to pay" />
       </div>
       <BottomNavigationBar />
     </div>

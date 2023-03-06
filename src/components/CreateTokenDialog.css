@@ -14,7 +14,7 @@
   border: 0;
   background-color: transparent;
 }
-.secondary-button6 {
+.secondary-button1 {
   position: relative;
   font-size: var(--body-m1-size);
   letter-spacing: 0.41px;
@@ -24,13 +24,13 @@
   color: var(--white);
   text-align: center;
 }
-.buttons13,
+.buttons3,
 .createtokendialog {
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-.buttons13 {
+.buttons3 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);

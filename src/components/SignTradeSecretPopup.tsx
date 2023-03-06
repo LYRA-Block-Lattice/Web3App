@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect } from "react";
+import UtilityButton from "../components/UtilityButton";
 import "./SignTradeSecretPopup.css";
 
 type SignTradeSecretPopupType = {
@@ -52,9 +53,10 @@ const SignTradeSecretPopup: FunctionComponent<SignTradeSecretPopupType> = ({
 Bank of America
 1234 1234 1234 1234`}
       />
-      <button className="prepare-sell-order-button4" onClick={onClose}>
-        <div className="utility-button1">Sign and return</div>
-      </button>
+      <UtilityButton
+        openGeneralPopup={onClose}
+        utilityButton="Sign and return"
+      />
     </div>
   );
 };

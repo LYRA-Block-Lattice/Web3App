@@ -1,10 +1,14 @@
 import { FunctionComponent } from "react";
 import "./MiniButton.css";
 
-const MiniButton: FunctionComponent = () => {
+type MiniButtonType = {
+  miniButton?: string;
+};
+
+const MiniButton: FunctionComponent<MiniButtonType> = ({ miniButton }) => {
   return (
-    <button className="buttons22">
-      <div className="mini-button8">Mini Button</div>
+    <button className="buttons12">
+      <div className="mini-button6">{miniButton}</div>
     </button>
   );
 };
