@@ -17,7 +17,7 @@ var JSONbig = require("json-bigint");
 
 const maxInt64 = BigInt("9223372036854775807");
 export const toBalanceBigInt = (balance: bigint): bigint =>
-  balance * 100000000n;
+  balance * BigInt(100000000);
 export const numberToBalanceBigInt = (value: number): bigint =>
   BigInt(Math.round(value * 100000000)) as bigint;
 
