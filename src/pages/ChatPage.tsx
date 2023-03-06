@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import ChatTitleAction from "../components/ChatTitleAction";
 import PeerMessage from "../components/PeerMessage";
@@ -9,8 +9,16 @@ import "./ChatPage.css";
 import { useParams } from "react-router";
 import { useSearchParams } from "react-router-dom";
 import { shorten } from "../app/utils";
+import { useDispatch, useSelector } from "react-redux";
+import { DEALER_JOIN_ROOM, DEALER_SEND_MESSAGE } from "../app/actionTypes";
+import { getAuthSelector } from "../app/selectors";
 
 const ChatPage: FunctionComponent = () => {
+  const dispatch = useDispatch();
+  const auth = useSelector(getAuthSelector);
+
+  const [input, setInput] = useState("");
+
   // get query string args
   const [searchParams, setSearchParams] = useSearchParams({});
 
@@ -24,6 +32,31 @@ const ChatPage: FunctionComponent = () => {
 
   const onContextMenuButtonClick = useCallback(() => {
     //TODO: context menu
+  }, []);
+
+  useEffect(() => {
+    // join chat room
+
+    
+    dispatch({
+      type: DEALER_JOIN_ROOM,
+      payload: {
+        accountId: auth.accountId,
+        tradeId: searchParams.get("tradeId")!,
+        signature: 
+      }
+    });
+  }, []);
+
+  const onSendClick = useCallback(() => {
+    dispatch({
+      type: DEALER_SEND_MESSAGE,
+      payload: {
+        accountId: auth.accountId,
+        tradeId: searchParams.get("tradeId")!,
+        message: input
+      }
+    });
   }, []);
 
   return (
@@ -62,8 +95,12 @@ const ChatPage: FunctionComponent = () => {
               src="../asserts/iconlylightpaperclip.svg"
             />
           </button>
-          <input className="frame-child" type="text" />
-          <button className="frame-wrapper">
+          <input
+            className="frame-child"
+            type="text"
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <button className="frame-wrapper" onClick={onSendClick}>
             <img
               className="frame-item"
               alt=""
