@@ -80,10 +80,10 @@ const MiscComponents: FunctionComponent = () => {
           {/* <StepProgressReportDialog /> */}
         </div>
         <div className="buttons-group">
-          <PrimaryButton />
-          <SecondaryButton />
-          <UtilityButton text="Utility Button" />
-          <MiniButton />
+          <PrimaryButton primaryButton="Primary Button" />
+          <SecondaryButton secondaryButton="Secondary Button" />
+          <UtilityButton utilityButton="Utility Button" />
+          <MiniButton miniButton="Mini Button" />
           <PrimaryIconButton icon="../asserts/evapricetagsoutline.svg" />
         </div>
       </div>

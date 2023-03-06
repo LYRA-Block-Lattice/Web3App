@@ -1,10 +1,12 @@
 import { FunctionComponent, useCallback, useState, useEffect } from "react";
 import { Autocomplete, TextField } from "@mui/material";
-import TopNavigationBar from "../components/TopNavigationBar";
 import GeneralPopup from "../components/GeneralPopup";
 import PortalPopup from "../components/PortalPopup";
+import TopNavigationBar from "../components/TopNavigationBar";
+import UtilityButton from "../components/UtilityButton";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import CollateralCalculation from "../components/CollateralCalculation";
+import PrimaryButton from "../components/PrimaryButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SellTokenToToken.css";
 import SearchTokenInput from "../dup/SearchTokenInput";
@@ -191,9 +193,10 @@ const SellTokenToToken: FunctionComponent = () => {
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
-            <button className="buttons5" onClick={openGeneralPopup}>
-              <div className="utility-button2">Mint</div>
-            </button>
+            <UtilityButton
+              openGeneralPopup={openGeneralPopup}
+              utilityButton="Mint"
+            />
           </div>
           <SearchTokenInput
             key="tosell"
@@ -324,9 +327,10 @@ const SellTokenToToken: FunctionComponent = () => {
             dao={dao}
             onTotalChange={onTotal}
           />
-          <button className="reviewtheorder" onClick={onReviewTheOrderClick}>
-            <div className="primary-button5">Review the Order</div>
-          </button>
+          <PrimaryButton
+            primaryButton="Review the Order"
+            onButtonsClick={onReviewTheOrderClick}
+          />
         </div>
         <BottomNavigationBar />
       </div>

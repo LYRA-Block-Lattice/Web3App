@@ -371,13 +371,13 @@ const AssertDetailView: FunctionComponent = () => {
             onTotalChange={onTotal}
           />
         </div>
-        <button className="buttons4" onClick={onMakeOfferButtonClick}>
+        <button className="buttons1" onClick={onMakeOfferButtonClick}>
           <img
             className="material-symbolsshare-icon"
             alt=""
             src="../asserts/evapricetagsoutline1.svg"
           />
-          <div className="primary-button4">Make offer</div>
+          <div className="primary-button1">Make offer</div>
         </button>
         <div className="descriptiontitle">
           <img

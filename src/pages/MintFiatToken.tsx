@@ -1,5 +1,6 @@
 import { FunctionComponent, useState, useCallback, useEffect } from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import SecondaryButton from "../components/SecondaryButton";
 import "./MintFiatToken.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector } from "../app/selectors";
@@ -83,10 +84,8 @@ const MintFiatToken: FunctionComponent<TokenMintProps> = (props) => {
         margin="none"
         onChange={(e) => setSupply(+e.target.value)}
       />
-      <button className="prepare-sell-order-button" onClick={onMintClick}>
-        <div className="secondary-button">Print</div>
-      </button>
-    </div>
+      <SecondaryButton secondaryButton="Print" onClick={onMintClick} />
+    </form>
   );
 };
 

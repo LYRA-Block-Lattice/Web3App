@@ -52,8 +52,8 @@ const SignTradeSecretDialog: FunctionComponent<SignTradeSecretDialogType> = ({
 Bank of America
 1234 1234 1234 1234`}
       />
-      <button className="buttons14">
-        <div className="utility-button3">Sign and return</div>
+      <button className="buttons4">
+        <div className="utility-button">Sign and return</div>
       </button>
     </div>
   );

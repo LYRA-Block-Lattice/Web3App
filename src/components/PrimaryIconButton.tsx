@@ -9,9 +9,9 @@ const PrimaryIconButton: FunctionComponent<PrimaryIconButtonType> = ({
   icon,
 }) => {
   return (
-    <button className="buttons23">
+    <button className="buttons13">
       <img className="evapricetags-outline-icon1" alt="" src={icon} />
-      <div className="primary-button10">Primary Button</div>
+      <div className="primary-button3">Primary Button</div>
     </button>
   );
 };

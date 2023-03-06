@@ -25,10 +25,12 @@ const PrimaryButton: FunctionComponent<PrimaryButtonProps> = ({
 }) => {
   return (
     <button
-      className={`buttons19  ${disabled ? "button-disabled" : ""} ${className}`}
+      className={`buttons9  ${disabled ? "button-disabled" : ""} ${className}`}
       {...rest}
     >
       <div className="primary-button9">{children}</div>
+    <button className="buttons9" onClick={onButtonsClick} style={buttonsStyle}>
+      <div className="primary-button2">{primaryButton}</div>
     </button>
   );
 };

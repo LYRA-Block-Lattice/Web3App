@@ -87,8 +87,8 @@ const StepProgressReportDialog: FunctionComponent<LongRunTaskListProps> = (
           <div className="notify-message-goes">{errmsg}</div>
         </>
       )}
-      <button className="buttons18" onClick={arg.onContinue}>
-        <div className="secondary-button9">Continue</div>
+      <button className="buttons8" onClick={arg.onContinue}>
+        <div className="secondary-button4">Continue</div>
       </button>
     </div>
   );

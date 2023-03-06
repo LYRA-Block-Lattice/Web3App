@@ -1,4 +1,5 @@
 import { FunctionComponent, useEffect, useState } from "react";
+import UtilityButton from "../components/UtilityButton";
 import "./SignTradeSecretPopup.css";
 
 type SignTradeSecretPopupType = {

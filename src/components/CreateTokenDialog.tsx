@@ -106,8 +106,8 @@ const CreateTokenDialog: FunctionComponent<NeedRunTask> = (props) => {
         margin="none"
         onChange={(e) => setSupply(+e.target.value)}
       />
-      <button className="buttons13" onClick={onMintClick}>
-        <div className="secondary-button6">Mint Token</div>
+      <button className="buttons3" onClick={onMintClick}>
+        <div className="secondary-button1">Mint Token</div>
       </button>
     </div>
   );

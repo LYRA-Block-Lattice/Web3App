@@ -1,10 +1,20 @@
 import { FunctionComponent } from "react";
 import "./SecondaryButton.css";
 
-const SecondaryButton: FunctionComponent = () => {
+type SecondaryButtonType = {
+  secondaryButton?: string;
+
+  /** Action props */
+  onButtonsClick?: () => void;
+};
+
+const SecondaryButton: FunctionComponent<SecondaryButtonType> = ({
+  onButtonsClick,
+  secondaryButton,
+}) => {
   return (
-    <button className="buttons20">
-      <div className="secondary-button10">Secondary Button</div>
+    <button className="buttons10" onClick={onButtonsClick}>
+      <div className="secondary-button5">{secondaryButton}</div>
     </button>
   );
 };

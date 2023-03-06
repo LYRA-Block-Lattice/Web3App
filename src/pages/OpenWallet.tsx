@@ -20,6 +20,8 @@ import {
   SelectChangeEvent
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryButton from "../components/PrimaryButton";
+import MiniButton from "../components/MiniButton";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./OpenWallet.css";
@@ -149,9 +151,7 @@ const OpenWallet: FunctionComponent = () => {
         <PrimaryButton disabled={busy} onClick={onOpenWallet}>
           Open
         </PrimaryButton>
-        <button className="prepare-sell-order-button11" onClick={onSignUpClick}>
-          <div className="mini-button1">Create</div>
-        </button>
+        <MiniButton miniButton="Create" onClick={onSignUpClick} />
         <button className="forgot-password-copy">Forgot password?</button>
       </div>
       <BottomNavigationBar />

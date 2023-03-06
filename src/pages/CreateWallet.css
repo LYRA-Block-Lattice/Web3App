@@ -153,72 +153,17 @@
   background-color: transparent;
   position: relative;
 }
-.checkboxrestoreprivatekey-parent {
+.checkboxrestoreprivatekey-parent,
+.createwallet,
+.illus1-parent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
-.primary-button7 {
-  position: relative;
-  font-size: var(--font-size-6xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--white);
-  text-align: center;
-}
-.buttons8 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-6xl);
-  background-color: var(--primary1);
-  border-radius: var(--br-lg);
-  height: 50px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
-}
-.buttons8:hover {
-  background-color: var(--color-mediumslateblue);
-}
-.mini-button {
-  position: relative;
-  font-size: var(--body-secondary1-size);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--color-darkslategray-300);
-  text-align: center;
-}
-.buttons9,
 .createwallet,
 .illus1-parent {
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-.buttons9 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-xl);
-  background-color: var(--color-whitesmoke-300);
-  border-radius: var(--br-lg);
-  height: 24px;
-  flex-shrink: 0;
-  overflow: hidden;
-  flex-direction: row;
-  box-sizing: border-box;
-}
-.createwallet,
-.illus1-parent {
-  flex-direction: column;
 }
 .illus1-parent {
   flex: 1;

@@ -14,50 +14,25 @@
   flex-shrink: 0;
 }
 .you-order-tx {
+  display: inline-block;
+  width: 292px;
+}
+.blvm6g1jjkwuz8ocens7fuuswjqdr3,
+.view-on-block,
+.you-order-tx {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
-  display: inline-block;
-  width: 292px;
 }
 .blvm6g1jjkwuz8ocens7fuuswjqdr3 {
   font-size: var(--body-secondary1-size);
   font-weight: 100;
-}
-.blvm6g1jjkwuz8ocens7fuuswjqdr3,
-.secondary-button4,
-.view-on-block {
-  position: relative;
-  letter-spacing: 0.41px;
-  line-height: 18px;
 }
 .view-on-block {
   text-decoration: underline;
   color: inherit;
   display: inline-block;
   width: 292px;
-}
-.secondary-button4 {
-  font-size: var(--font-size-4xl);
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--white);
-  text-align: center;
-}
-.buttons6 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-4xl);
-  background-color: var(--secondary1);
-  border-radius: var(--br-lg);
-  height: 40px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
 }
 .createordersuccessform,
 .success-parent {

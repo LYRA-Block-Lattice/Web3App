@@ -6,9 +6,10 @@ import {
   useState,
   useEffect
 } from "react";
+import { useNavigate } from "react-router-dom";
 import TopNavigationBar from "../components/TopNavigationBar";
 import CatalogSelection from "../components/CatalogSelection";
-import { useNavigate } from "react-router-dom";
+import PrimaryButton from "../components/PrimaryButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./StartToCreateOrder.css";
 import Xarrow, { Xwrapper } from "react-xarrows";
@@ -92,14 +93,11 @@ const StartToCreateOrder: FunctionComponent = () => {
             />
           </Xwrapper>
         </div>
-
-        <button
-          className="buttons7"
+        <PrimaryButton
+          primaryButton="Specify Token"
           disabled={isDisabled}
           onClick={onPrepareSellOrderButtonClick}
-        >
-          <div className="primary-button6">Specify Token</div>
-        </button>
+        />
       </div>
       <BottomNavigationBar />
     </div>

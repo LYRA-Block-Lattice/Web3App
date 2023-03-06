@@ -2,13 +2,19 @@ import { FunctionComponent } from "react";
 import "./UtilityButton.css";
 
 type UtilityButtonType = {
-  text?: string;
+  utilityButton?: string;
+
+  /** Action props */
+  openGeneralPopup?: () => void;
 };
 
-const UtilityButton: FunctionComponent<UtilityButtonType> = ({ text }) => {
+const UtilityButton: FunctionComponent<UtilityButtonType> = ({
+  openGeneralPopup,
+  utilityButton,
+}) => {
   return (
-    <button className="buttons21">
-      <div className="utility-button5">{text}</div>
+    <button className="buttons11" onClick={openGeneralPopup}>
+      <div className="utility-button2">{utilityButton}</div>
     </button>
   );
 };

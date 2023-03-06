@@ -7,6 +7,7 @@ import { getHoldType } from "../app/blockchain/blocks/meta";
 import { getAppSelector, getAuthSelector } from "../app/selectors";
 import { LongRunTask, NeedRunTask } from "../app/utils";
 import { getWallet } from "../app/wallet/walletSaga";
+import PrimaryButton from "../components/PrimaryButton";
 import "./SellFlow.css";
 
 const SellFlow: FunctionComponent<NeedRunTask> = (props) => {
@@ -134,12 +135,14 @@ const SellFlow: FunctionComponent<NeedRunTask> = (props) => {
       <div className="ordercollateral">{obj.collateral} LYR</div>
       <div className="returncollateral">{obj.collateral - fees.total} LYR</div>
       <div className="buttons-parent">
-        <button className="buttons1" onClick={() => navigate(-1)}>
-          <div className="primary-button1">Back</div>
+        <button className="buttons" onClick={() => navigate(-1)}>
+          <div className="primary-button">Back</div>
         </button>
-        <button className="buttons2" onClick={onPrepareSellOrderButtonClick}>
-          <div className="primary-button2">Place sell order</div>
-        </button>
+        <PrimaryButton
+          primaryButton="Place sell order"
+          buttonsFlexShrink="unset"
+          onClick={onPrepareSellOrderButtonClick}
+        />
       </div>
       <div className="group7">
         <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />

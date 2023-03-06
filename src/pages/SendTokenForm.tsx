@@ -1,6 +1,7 @@
 import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryButton from "../components/PrimaryButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./SendTokenForm.css";
 import SearchTokenInput, { IToken } from "../dup/SearchTokenInput";
@@ -98,9 +99,7 @@ const SendTokenForm: FunctionComponent = () => {
           required
           onChange={(e) => setAmount(+e.target.value)}
         />
-        <button className="buttons3" onClick={doSend}>
-          <div className="primary-button3">Send</div>
-        </button>
+        <PrimaryButton primaryButton="Send" onClick={doSend} />
       </div>
       <BottomNavigationBar />
     </div>

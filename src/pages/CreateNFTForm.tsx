@@ -1,5 +1,6 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import { TextField } from "@mui/material";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateNFTForm.css";
 import { useDispatch, useSelector } from "react-redux";
 import { MARKET_UPLOAD_FILE, WALLET_MINT_NFT } from "../app/actionTypes";
@@ -181,9 +182,7 @@ const CreateNFTForm: FunctionComponent<TokenMintProps> = (props) => {
         placeholder="Select NFT Image"
         onChange={handleFileChange}
       />
-      <button className="prepare-sell-order-button5" onClick={onMintClick}>
-        <div className="secondary-button3">Create NFT</div>
-      </button>
+      <SecondaryButton secondaryButton="Create NFT" onClick={onMintClick} />
     </div>
   );
 };

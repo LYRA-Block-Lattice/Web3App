@@ -2,6 +2,7 @@ import { FunctionComponent, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { getAuthSelector } from "../app/selectors";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryButton from "../components/PrimaryButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import "./ScanToPay.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -34,9 +35,7 @@ const ScanToPay: FunctionComponent = () => {
         >
           {auth.accountId}
         </button>
-        <button className="buttons" onClick={onScan}>
-          <div className="primary-button">Scan to pay</div>
-        </button>
+        <PrimaryButton primaryButton="Scan to pay" onClick={onScan} />
       </div>
       <BottomNavigationBar />
     </div>

@@ -10,6 +10,8 @@ import {
   Checkbox
 } from "@mui/material";
 import TopNavigationBar from "../components/TopNavigationBar";
+import PrimaryButton from "../components/PrimaryButton";
+import MiniButton from "../components/MiniButton";
 import BottomNavigationBar from "../components/BottomNavigationBar";
 import * as actionTypes from "../app/actionTypes";
 import "./CreateWallet.css";
@@ -247,12 +249,8 @@ const CreateWallet: FunctionComponent = () => {
             />
           )}
         </div>
-        <button className="prepare-sell-order-button8" onClick={onWalletCreate}>
-          <div className="primary-button7">Create</div>
-        </button>
-        <button className="buttons9" onClick={onOpenWalletLinkClick}>
-          <div className="mini-button">Open</div>
-        </button>
+        <PrimaryButton primaryButton="Create" onClick={onWalletCreate} />
+        <MiniButton miniButton="Open" onClick={onOpenWalletLinkClick} />
       </div>
       <BottomNavigationBar />
     </div>

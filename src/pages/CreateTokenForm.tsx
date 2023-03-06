@@ -1,5 +1,6 @@
 import { FunctionComponent, useCallback, useState } from "react";
 import { TextField } from "@mui/material";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateTokenForm.css";
 import { useDispatch, useSelector } from "react-redux";
 import * as actionTypes from "../app/actionTypes";
@@ -83,10 +84,8 @@ const CreateTokenForm: FunctionComponent<TokenMintProps> = (props) => {
         margin="none"
         onChange={(e) => setSupply(+e.target.value)}
       />
-      <button className="prepare-sell-order-button1" onClick={onMintClick}>
-        <div className="secondary-button1">Mint Token</div>
-      </button>
-    </div>
+      <SecondaryButton secondaryButton="Mint Token" onClick={onMintClick}/>
+    </form>
   );
 };
 

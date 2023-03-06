@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import SignTradeSecretPopup from "../components/SignTradeSecretPopup";
 import PortalPopup from "../components/PortalPopup";
+import UtilityButton from "../components/UtilityButton";
+import SecondaryButton from "../components/SecondaryButton";
 import "./CreateTOTForm.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getAppSelector } from "../app/selectors";
@@ -126,19 +128,15 @@ const CreateTOTForm: FunctionComponent<TokenMintProps> = (props) => {
             margin="none"
             onChange={(e) => setSupply(+e.target.value)}
           />
-          <button
-            className="prepare-sell-order-button2"
-            onClick={openSignTradeSecretPopup}
-          >
-            <div className="utility-button">Sign trade secret</div>
-          </button>
+          <UtilityButton
+            openGeneralPopup={openSignTradeSecretPopup}
+            utilityButton="Sign trade secret"
+          />
           <div className="note-i-need">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <button className="prepare-sell-order-button3" onClick={onMintClick}>
-            <div className="secondary-button2">Create TOT</div>
-          </button>
-        </div>
+          <SecondaryButton secondaryButton="Create TOT" onClick={onMintClick}/>
+        </form>
       </div>
       {isSignTradeSecretPopupOpen && (
         <PortalPopup

@@ -199,7 +199,7 @@
   top: 699px;
   left: 224px;
 }
-.primary-button1 {
+.primary-button {
   position: relative;
   font-size: var(--font-size-6xl);
   letter-spacing: 0.41px;
@@ -209,7 +209,14 @@
   color: var(--black-0000001001);
   text-align: center;
 }
-.buttons1 {
+.buttons,
+.buttons-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.buttons {
   cursor: pointer;
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
@@ -217,42 +224,10 @@
   border-radius: var(--br-lg);
   height: 50px;
   overflow: hidden;
-  display: flex;
-  flex-direction: row;
   box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
 }
-.buttons1:hover,
-.buttons2:hover {
+.buttons:hover {
   background-color: var(--color-mediumslateblue);
-}
-.primary-button2 {
-  position: relative;
-  font-size: var(--font-size-6xl);
-  letter-spacing: 0.41px;
-  line-height: 18px;
-  font-weight: 500;
-  font-family: var(--regular-body1);
-  color: var(--white);
-  text-align: center;
-}
-.buttons-parent,
-.buttons2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.buttons2 {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-4xs) var(--padding-6xl);
-  background-color: var(--primary1);
-  border-radius: var(--br-lg);
-  height: 50px;
-  overflow: hidden;
-  box-sizing: border-box;
 }
 .buttons-parent {
   position: absolute;
