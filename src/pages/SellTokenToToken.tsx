@@ -193,10 +193,7 @@ const SellTokenToToken: FunctionComponent = () => {
         <div className="priceandcollateralform">
           <div className="to-sell-token-parent">
             <div className="to-sell-token">To Sell Token</div>
-            <UtilityButton
-              openGeneralPopup={openGeneralPopup}
-              utilityButton="Mint"
-            />
+            <UtilityButton openGeneralPopup={openGeneralPopup} />
           </div>
           <SearchTokenInput
             key="tosell"

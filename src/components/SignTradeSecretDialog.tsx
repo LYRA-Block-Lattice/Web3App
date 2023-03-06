@@ -53,7 +53,7 @@ const SignTradeSecretDialog: FunctionComponent<SignTradeSecretDialogType> = ({
 Bank of America
 1234 1234 1234 1234`}
       />
-      <UtilityButton utilityButton="Sign and return" />
+      <UtilityButton />
     </div>
   );
 };

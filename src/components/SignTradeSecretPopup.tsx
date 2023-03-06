@@ -56,12 +56,10 @@ const SignTradeSecretPopup: FunctionComponent<SignTradeSecretPopupType> = ({
 Bank of America
 1234 1234 1234 1234`}
       />
-      <button
-        className="prepare-sell-order-button4"
+      <UtilityButton
+        openGeneralPopup={onClose}
         onClick={() => onClose!(secret)}
-      >
-        <div className="utility-button1">Sign and return</div>
-      </button>
+      />
     </div>
   );
 };
