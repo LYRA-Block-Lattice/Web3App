@@ -45,7 +45,7 @@
 .market {
   position: relative;
   width: 100%;
-  height: 902px;
+  height: 924px;
   padding: 0 var(--padding-2xs);
   box-sizing: border-box;
   gap: var(--gap-lg);

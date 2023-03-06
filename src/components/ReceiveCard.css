@@ -76,10 +76,13 @@
   flex-shrink: 0;
 }
 .am-wrapper1,
+.block13 {
+  align-items: flex-start;
+}
+.am-wrapper1,
 .block13,
 .block23 {
   display: flex;
-  align-items: flex-start;
   justify-content: flex-start;
 }
 .am-wrapper1 {

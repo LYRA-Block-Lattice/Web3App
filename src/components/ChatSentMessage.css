@@ -21,15 +21,17 @@
 .parent {
   align-self: stretch;
   display: flex;
+  justify-content: flex-end;
+}
+.parent {
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
   text-align: right;
   font-size: var(--uppercase-small-size);
   color: var(--accent-strong-blue-60);
 }
 .lorem-ipsum-dolor-sit-amet-co-parent {
-  border-radius: var(--br-md) var(--br-md) var(--br-3xs) var(--br-md);
+  border-radius: var(--br-md) var(--br-md) 0 var(--br-md);
   background-color: var(--color-blueviolet);
   flex-direction: column;
   padding: var(--padding-4xs) var(--padding-2xs);

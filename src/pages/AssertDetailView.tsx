@@ -140,7 +140,7 @@ const AssertDetailView: FunctionComponent = () => {
             <div className="pricelabel1">
               <div className="meka-legends">My Offer</div>
             </div>
-            <div className="frame-parent3">
+            <div className="frame-parent2">
               <div className="selectedamount-parent">
                 <input
                   className="selectedamount"
