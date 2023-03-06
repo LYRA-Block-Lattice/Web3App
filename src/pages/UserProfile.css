@@ -86,7 +86,7 @@
   gap: var(--gap-md);
 }
 .card {
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   background-color: var(--white);
   flex-direction: column;
   padding: var(--padding-5xs) 0;
@@ -161,7 +161,7 @@
   flex-direction: row;
 }
 .button {
-  border-radius: var(--br-md);
+  border-radius: var(--br-sm);
   overflow: hidden;
   padding: var(--padding-8xs) var(--padding-2xs);
   align-items: center;
@@ -204,7 +204,7 @@
   justify-content: center;
 }
 .button4 {
-  border-radius: var(--br-lg);
+  border-radius: var(--br-md);
   overflow: hidden;
   padding: var(--padding-8xs) var(--padding-md);
   gap: var(--gap-3xs);
@@ -224,7 +224,7 @@
 }
 .list {
   align-self: stretch;
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   background-color: var(--white);
   overflow: hidden;
   padding: var(--padding-5xs) 0;
@@ -234,7 +234,7 @@
 }
 .form,
 .userprofile {
-  border-radius: var(--br-lg);
+  border-radius: var(--br-md);
   box-sizing: border-box;
 }
 .form {

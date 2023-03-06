@@ -1,0 +1,62 @@
+.lorem-ipsum-dolor2 {
+  align-self: stretch;
+  position: relative;
+  line-height: 24px;
+}
+.div10 {
+  position: relative;
+  line-height: 16px;
+  font-weight: 500;
+  display: inline-block;
+  width: 192px;
+  flex-shrink: 0;
+}
+.iconlylightchat-message-read {
+  position: relative;
+  width: 24px;
+  height: 12px;
+  flex-shrink: 0;
+}
+.lorem-ipsum-dolor-sit-amet-co-parent,
+.parent {
+  align-self: stretch;
+  display: flex;
+  justify-content: flex-end;
+}
+.parent {
+  flex-direction: row;
+  align-items: center;
+  text-align: right;
+  font-size: var(--uppercase-small-size);
+  color: var(--accent-strong-blue-60);
+}
+.lorem-ipsum-dolor-sit-amet-co-parent {
+  border-radius: var(--br-sm) var(--br-sm) 0 var(--br-sm);
+  background-color: var(--color-blueviolet);
+  flex-direction: column;
+  padding: var(--padding-4xs) var(--padding-2xs);
+  align-items: flex-start;
+}
+.tip-icon2 {
+  position: relative;
+  width: 9.8px;
+  height: 5.79px;
+  flex-shrink: 0;
+}
+.chat-message-send,
+.usersection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.chat-message-send {
+  width: 174px;
+}
+.usersection {
+  align-self: stretch;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--background-extra-white);
+  font-family: var(--uppercase-small);
+}

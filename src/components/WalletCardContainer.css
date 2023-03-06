@@ -84,7 +84,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-radius: var(--br-3xl);
+  border-radius: var(--br-2xl);
   background-color: var(--color-silver-100);
   opacity: 0.5;
   mix-blend-mode: normal;
@@ -135,7 +135,7 @@
   flex-direction: column;
 }
 .wallet-card1 {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--primary1);
   height: 94px;
   flex-shrink: 0;

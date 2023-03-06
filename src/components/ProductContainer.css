@@ -13,7 +13,7 @@
   flex-shrink: 0;
 }
 .lyralogoblueicon-container {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--white);
   width: 162px;
   height: 162px;

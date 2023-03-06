@@ -3,31 +3,17 @@
   width: 9.8px;
   height: 8px;
   flex-shrink: 0;
+  display: none;
 }
 .chat-message-receive,
-.peersection {
+.dealersection {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.chat-message-receive {
-  width: 174px;
-}
-.peersection {
-  align-self: stretch;
-}
-.tip-icon1 {
-  position: relative;
-  width: 9.8px;
-  height: 8px;
-  flex-shrink: 0;
-  display: none;
-}
 .dealersection {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -36,48 +22,24 @@
   line-height: 20px;
   font-weight: 500;
 }
-.chat-datetag {
-  border-radius: var(--br-4xl);
-  background-color: var(--background-extra-white);
+.chat-datetag,
+.direct-chat {
   display: flex;
+  justify-content: flex-start;
+}
+.chat-datetag {
+  border-radius: var(--br-3xl);
+  background-color: var(--background-extra-white);
   flex-direction: row;
   padding: var(--padding-10xs) var(--padding-5xs);
   align-items: flex-start;
-  justify-content: flex-start;
-}
-.tip-icon2 {
-  position: relative;
-  width: 9.8px;
-  height: 5.79px;
-  flex-shrink: 0;
-}
-.chat-message-send {
-  width: 174px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-.usersection {
-  align-self: stretch;
-  align-items: flex-end;
-}
-.chat-message-send1,
-.direct-chat,
-.usersection {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.chat-message-send1 {
-  width: 216px;
-  align-items: flex-end;
 }
 .direct-chat {
   align-self: stretch;
   flex: 1;
   background-color: var(--white);
   overflow: hidden;
+  flex-direction: column;
   padding: var(--padding-2xs) var(--padding-md);
   align-items: center;
   gap: var(--gap-lg);
@@ -106,7 +68,7 @@
   font-size: var(--font-size-3xl);
   background-color: var(--white);
   flex: 1;
-  border-radius: var(--br-md);
+  border-radius: var(--br-sm);
   display: flex;
   flex-direction: row;
   padding: var(--padding-5xs) var(--padding-5xs) var(--padding-5xs)
@@ -144,7 +106,7 @@
   position: absolute;
   bottom: 8px;
   left: calc(50% - 67px);
-  border-radius: var(--br-4xl);
+  border-radius: var(--br-3xl);
   background-color: var(--black-0000001001);
   width: 134px;
   height: 5px;

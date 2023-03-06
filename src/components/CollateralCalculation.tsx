@@ -38,7 +38,7 @@ const CollateralCalculation: FunctionComponent = () => {
         </div>
         <div className="collateral-worth-label7">
           <div className="total">Total:</div>
-          <div className="div25">$ 103</div>
+          <div className="div26">$ 103</div>
         </div>
       </div>
     </div>

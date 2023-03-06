@@ -14,7 +14,7 @@
   border: 0;
   background-color: transparent;
 }
-.utility-button1 {
+.utility-button {
   position: relative;
   font-size: var(--body-semibold-size);
   letter-spacing: 0.41px;
@@ -29,7 +29,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--tertiary1);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 30px;
   flex-shrink: 0;
   overflow: hidden;
@@ -40,7 +40,7 @@
   justify-content: center;
 }
 .note-i-need,
-.secondary-button3 {
+.secondary-button2 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
@@ -53,7 +53,7 @@
   display: inline-block;
   width: 292px;
 }
-.secondary-button3 {
+.secondary-button2 {
   font-size: var(--body-m1-size);
   font-weight: 500;
   color: var(--white);
@@ -64,7 +64,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);
   background-color: var(--secondary1);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;

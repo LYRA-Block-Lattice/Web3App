@@ -2,7 +2,7 @@
   position: absolute;
   bottom: 8px;
   left: calc(50% - 67px);
-  border-radius: var(--br-4xl);
+  border-radius: var(--br-3xl);
   background-color: var(--black-0000001001);
   width: 134px;
   height: 5px;

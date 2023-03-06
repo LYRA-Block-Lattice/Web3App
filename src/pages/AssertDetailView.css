@@ -66,7 +66,7 @@
   justify-content: flex-start;
 }
 .asserttitleregion {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   flex-direction: column;
   padding: var(--padding-4xs);
   align-items: flex-start;
@@ -96,12 +96,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
-.icoutline-remove-red-eye-parent {
   gap: var(--gap-xs);
 }
 .assertstatssection {
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  border-radius: var(--br-xs) var(--br-xs) 0 0;
   padding: var(--padding-4xs);
   gap: var(--gap-3xl);
 }
@@ -121,7 +119,7 @@
 }
 .descriptiontitle {
   align-self: stretch;
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--color-gainsboro-400);
   padding: var(--padding-xs) var(--padding-md);
   align-items: center;
@@ -177,7 +175,7 @@
   color: var(--black-0000001001);
 }
 .priceandbuyregion {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -222,7 +220,7 @@
   font-family: var(--regular-body1);
   font-size: 1.5em;
   flex: 1;
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   overflow: hidden;
   flex-direction: row;
   padding: var(--padding-4xs);
@@ -240,11 +238,9 @@
 .selectedamount-parent,
 .tethereth-group {
   display: flex;
-  justify-content: center;
-}
-.tethereth-group {
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center;
 }
 .selectedamount-parent {
   align-self: stretch;
@@ -275,19 +271,12 @@
   color: var(--color-dimgray-300);
 }
 .buysection,
-.frame-parent2 {
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.buysection,
 .frame-parent2,
 .makeofferbutton,
 .my-offer-section {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
-.my-offer-section {
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -300,9 +289,7 @@
   color: var(--color-dimgray-100);
 }
 .buysection,
-.makeofferbutton {
-  width: 400px;
-}
+.makeofferbutton,
 .my-offer-section {
   width: 400px;
   padding: 0 var(--padding-4xs);
@@ -338,7 +325,7 @@
   padding: var(--padding-4xs) var(--padding-6xl);
   background-color: var(--primary1);
   align-self: stretch;
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
   overflow: hidden;

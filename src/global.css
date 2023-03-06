@@ -62,14 +62,15 @@ body {
   --color-whitesmoke-300: #ececec;
   --color-whitesmoke-400: rgba(238, 238, 238, 0.26);
   --color-lightyellow: #f6ffde;
+  --secondary1: #fc7c00;
+  --tertiary1: #1ec8a5;
   --color-blueviolet: #554af0;
   --accent-strong-blue-60: #9992f6;
   --color-dimgray-100: #717171;
   --text-dark-60: #686777;
   --color-dimgray-300: #656565;
-  --tertiary1: #1ec8a5;
+  --color-palegoldenrod: #dbf7af;
   --color-mediumslateblue: #766ae7;
-  --secondary1: #fc7c00;
   --color-darkgray: #979797;
   --buy1: #7ed321;
   --sell1: #fa7268;
@@ -119,17 +120,16 @@ body {
   /* border radiuses */
   --br-5xs: 2px;
   --br-4xs: 2.5px;
-  --br-3xs: 4px;
-  --br-2xs: 5px;
-  --br-xs: 8px;
-  --br-sm: 10px;
-  --br-md: 12px;
-  --br-lg: 16px;
-  --br-xl: 25px;
-  --br-2xl: 26px;
-  --br-3xl: 32.5px;
-  --br-4xl: 100px;
-  --br-5xl: 10000px;
+  --br-3xs: 5px;
+  --br-2xs: 8px;
+  --br-xs: 10px;
+  --br-sm: 12px;
+  --br-md: 16px;
+  --br-lg: 25px;
+  --br-xl: 26px;
+  --br-2xl: 32.5px;
+  --br-3xl: 100px;
+  --br-4xl: 10000px;
 
   /* Effects */
   --inner-shadow: 0px -1px 0px rgba(0, 0, 0, 0.05) inset;

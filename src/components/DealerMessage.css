@@ -1,0 +1,36 @@
+.user-name1 {
+  line-height: 20px;
+  font-weight: 500;
+}
+.div9,
+.lorem-ipsum-dolor1,
+.user-name1 {
+  align-self: stretch;
+  position: relative;
+}
+.lorem-ipsum-dolor1 {
+  font-size: var(--font-size-3xl);
+  line-height: 24px;
+  color: var(--color-gray-200);
+  text-align: left;
+}
+.div9 {
+  font-size: var(--uppercase-small-size);
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--text-dark-60);
+}
+.user-name-group {
+  align-self: stretch;
+  border-radius: var(--br-sm);
+  background-color: var(--color-palegoldenrod);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-4xs) var(--padding-2xs);
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: var(--caption-size);
+  color: var(--color-blueviolet);
+  font-family: var(--uppercase-small);
+}

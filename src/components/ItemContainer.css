@@ -6,7 +6,7 @@
   object-fit: cover;
 }
 .lyralogoblueicon-wrapper {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--white);
   width: 162px;
   height: 162px;
@@ -40,7 +40,7 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
-.div10 {
+.div11 {
   position: relative;
   line-height: 24px;
   font-weight: 600;
