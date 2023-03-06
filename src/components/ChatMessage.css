@@ -1,14 +1,14 @@
 .user-name {
-  align-self: stretch;
-  position: relative;
   line-height: 20px;
   font-weight: 500;
-  display: none;
 }
 .div8,
-.lorem-ipsum-dolor {
+.lorem-ipsum-dolor,
+.user-name {
   align-self: stretch;
   position: relative;
+}
+.lorem-ipsum-dolor {
   font-size: var(--font-size-3xl);
   line-height: 24px;
   color: var(--color-gray-200);

@@ -64,7 +64,7 @@ const ChatPage: FunctionComponent = () => {
               time="18:24"
               iconRead="../asserts/iconlylightchat-message-read.svg"
             />
-            <img className="tip-icon" alt="" src="../asserts/tip2.svg" />
+            <img className="tip-icon2" alt="" src="../asserts/tip2.svg" />
           </div>
         </div>
         <div className="usersection">
@@ -75,35 +75,31 @@ const ChatPage: FunctionComponent = () => {
               iconRead="../asserts/iconlylightchat-message-read.svg"
               frame11BorderRadius="var(--br-sm) var(--br-4xs) 0px var(--br-sm)"
             />
-            <img className="tip-icon3" alt="" src="../asserts/tip2.svg" />
+            <img className="tip-icon2" alt="" src="../asserts/tip2.svg" />
           </div>
         </div>
       </div>
-      <div className="peersection">
-        <div className="peersection">
-          <div className="frame-wrapper">
-            <div className="frame-parent">
-              <button className="iconlylightpaperclip-wrapper">
-                <img
-                  className="iconlylightpaperclip"
-                  alt=""
-                  src="../asserts/iconlylightpaperclip.svg"
-                />
-              </button>
-              <input className="frame-child" type="text" />
-              <button className="frame-container">
-                <img
-                  className="frame-item"
-                  alt=""
-                  src="../asserts/frame-8344.svg"
-                />
-              </button>
-            </div>
-          </div>
+      <div className="chat-input-message-field">
+        <div className="frame-parent">
+          <button className="iconlylightpaperclip-wrapper">
+            <img
+              className="iconlylightpaperclip"
+              alt=""
+              src="../asserts/iconlylightpaperclip.svg"
+            />
+          </button>
+          <input className="frame-child" type="text" />
+          <button className="frame-wrapper">
+            <img
+              className="frame-item"
+              alt=""
+              src="../asserts/frame-8344.svg"
+            />
+          </button>
         </div>
-      </div>
-      <div className="home-indicator">
-        <div className="home-indicator1" />
+        <div className="home-indicator">
+          <div className="home-indicator1" />
+        </div>
       </div>
     </div>
   );

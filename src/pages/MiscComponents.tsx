@@ -56,7 +56,7 @@ const MiscComponents: FunctionComponent = () => {
   return (
     <>
       <div className="misccomponents">
-        <div className="frame-div">
+        <div className="frame-container">
           <div className="nft-showing-item-parent">
             <ItemContainer />
             <ItemContainer />

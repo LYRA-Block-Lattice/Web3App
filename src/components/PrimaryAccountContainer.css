@@ -162,14 +162,14 @@
   justify-content: flex-end;
   gap: var(--gap-3xl);
 }
-.frame-parent4,
+.frame-parent3,
 .wallet-card {
   align-self: stretch;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-parent4 {
+.frame-parent3 {
   flex: 1;
   flex-direction: column;
 }

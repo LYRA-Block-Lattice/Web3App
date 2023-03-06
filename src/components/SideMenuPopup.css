@@ -86,18 +86,18 @@
 }
 .administration,
 .component-2variant3,
-.frame-parent1,
+.frame-div,
 .sidemenupopup {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.frame-parent1,
+.frame-div,
 .sidemenupopup {
   box-sizing: border-box;
 }
-.frame-parent1 {
+.frame-div {
   align-self: stretch;
   height: 744px;
   flex-shrink: 0;
