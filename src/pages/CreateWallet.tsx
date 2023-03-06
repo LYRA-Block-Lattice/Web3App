@@ -247,10 +247,10 @@ const CreateWallet: FunctionComponent = () => {
             />
           )}
         </div>
-        <button className="prepare-sell-order-button8">
+        <button className="prepare-sell-order-button8" onClick={onWalletCreate}>
           <div className="primary-button7">Create</div>
         </button>
-        <button className="buttons9">
+        <button className="buttons9" onClick={onOpenWalletLinkClick}>
           <div className="mini-button">Open</div>
         </button>
       </div>
