@@ -31,7 +31,7 @@
 }
 .tradableorderssection {
   align-self: stretch;
-  border-radius: 0 0 var(--br-sm) var(--br-sm);
+  border-radius: 0 0 var(--br-xs) var(--br-xs);
   padding: 14px var(--padding-4xs);
   gap: var(--gap-md);
 }

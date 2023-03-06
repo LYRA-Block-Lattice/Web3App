@@ -174,7 +174,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
   background-color: var(--primary1);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
   overflow: hidden;
@@ -209,7 +209,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--color-whitesmoke-300);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 24px;
   flex-shrink: 0;
   overflow: hidden;

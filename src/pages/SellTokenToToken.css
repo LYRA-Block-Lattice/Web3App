@@ -1,11 +1,11 @@
 .to-sell-token,
-.utility-button {
+.utility-button2 {
   position: relative;
   letter-spacing: 0.41px;
   line-height: 18px;
   font-weight: 500;
 }
-.utility-button {
+.utility-button2 {
   font-size: var(--font-size-3xl);
   font-family: var(--regular-body1);
   color: var(--white);
@@ -22,7 +22,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--tertiary1);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 30px;
   overflow: hidden;
   box-sizing: border-box;
@@ -92,7 +92,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-6xl);
   background-color: var(--primary1);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 50px;
   flex-shrink: 0;
   overflow: hidden;

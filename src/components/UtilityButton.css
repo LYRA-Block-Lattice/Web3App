@@ -13,7 +13,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--tertiary1);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 30px;
   flex-shrink: 0;
   overflow: hidden;

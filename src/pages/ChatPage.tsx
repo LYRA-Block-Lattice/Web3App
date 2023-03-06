@@ -1,8 +1,9 @@
 import { FunctionComponent, useCallback } from "react";
 import TopNavigationBar from "../components/TopNavigationBar";
 import ChatTitleAction from "../components/ChatTitleAction";
-import ChatMessage from "../components/ChatMessage";
-import ChatSentMessage from "../components/ChatSentMessage";
+import PeerMessage from "../components/PeerMessage";
+import DealerMessage from "../components/DealerMessage";
+import MyInputMessage from "../components/MyInputMessage";
 import "./ChatPage.css";
 import { useParams } from "react-router";
 import { useSearchParams } from "react-router-dom";
@@ -37,47 +38,26 @@ const ChatPage: FunctionComponent = () => {
         pinnedMessage="Await Buyer to pay"
       />
       <div className="direct-chat">
-        <div className="peersection">
-          <div className="chat-message-receive">
-            <ChatMessage message="Lorem ipsum dolor" time="18:24" />
-            <img className="tip-icon" alt="" src="../asserts/tip.svg" />
-          </div>
-        </div>
+        <PeerMessage
+          userName="User Name"
+          content="Lorem ipsum dolor"
+          time="18:24"
+        />
         <div className="dealersection">
-          <div className="peersection">
-            <ChatMessage
-              message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. "
+          <div className="chat-message-receive">
+            <DealerMessage
+              title="User Name"
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. "
               time="18:24"
-              msgBgColor="#dbf7af"
-              frame10BorderRadius="var(--br-4xs) var(--br-sm) var(--br-sm) 0px"
             />
-            <img className="tip-icon1" alt="" src="../asserts/tip.svg" />
+            <img className="tip-icon" alt="" src="../asserts/tip.svg" />
           </div>
         </div>
         <div className="chat-datetag">
           <div className="today">Today</div>
         </div>
-        <div className="usersection">
-          <div className="chat-message-send">
-            <ChatSentMessage
-              message="Lorem ipsum dolor"
-              time="18:24"
-              iconRead="../asserts/iconlylightchat-message-read.svg"
-            />
-            <img className="tip-icon2" alt="" src="../asserts/tip2.svg" />
-          </div>
-        </div>
-        <div className="usersection">
-          <div className="chat-message-send1">
-            <ChatSentMessage
-              message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. "
-              time="18:24"
-              iconRead="../asserts/iconlylightchat-message-read.svg"
-              frame11BorderRadius="var(--br-sm) var(--br-4xs) 0px var(--br-sm)"
-            />
-            <img className="tip-icon2" alt="" src="../asserts/tip2.svg" />
-          </div>
-        </div>
+        <MyInputMessage content="Lorem ipsum dolor" />
+        <MyInputMessage content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. " />
       </div>
       <div className="chat-input-message-field">
         <div className="frame-parent">

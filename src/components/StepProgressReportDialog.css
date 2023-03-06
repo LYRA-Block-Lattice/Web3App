@@ -46,7 +46,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-4xl);
   background-color: var(--secondary1);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 40px;
   flex-shrink: 0;
   overflow: hidden;

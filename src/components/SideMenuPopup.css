@@ -73,7 +73,7 @@
 }
 .nav-item {
   align-self: stretch;
-  border-radius: var(--br-xs);
+  border-radius: var(--br-2xs);
   display: flex;
   flex-direction: row;
   padding: var(--padding-2xs);
@@ -107,7 +107,7 @@
 }
 .sidemenupopup {
   position: relative;
-  border-radius: var(--br-2xl) 0 0 var(--br-2xl);
+  border-radius: var(--br-xl) 0 0 var(--br-xl);
   background-color: var(--black-0000001001);
   overflow: hidden;
   padding: 26px;

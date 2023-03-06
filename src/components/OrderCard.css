@@ -12,7 +12,7 @@
   flex-shrink: 0;
 }
 .order-image {
-  border-radius: var(--br-sm) var(--br-sm) 0 0;
+  border-radius: var(--br-xs) var(--br-xs) 0 0;
   background-color: var(--sell1);
   box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
   width: 110px;
@@ -33,7 +33,7 @@
 }
 .order-status {
   align-self: stretch;
-  border-radius: 0 0 var(--br-sm) var(--br-sm);
+  border-radius: 0 0 var(--br-xs) var(--br-xs);
   background-color: var(--info1);
   display: flex;
   flex-direction: row;
@@ -86,13 +86,10 @@
   flex-shrink: 0;
 }
 .am-wrapper,
-.block1 {
-  align-items: flex-start;
-}
-.am-wrapper,
 .block1,
 .block2 {
   display: flex;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 .am-wrapper {
@@ -138,7 +135,7 @@
 }
 .title-section {
   text-decoration: none;
-  border-radius: var(--br-2xs) var(--br-2xs) 0 0;
+  border-radius: var(--br-3xs) var(--br-3xs) 0 0;
   flex-direction: column;
   align-items: flex-start;
   color: inherit;
@@ -188,7 +185,7 @@
   border: 0;
   padding: var(--padding-4xs) var(--padding-xl);
   background-color: var(--color-whitesmoke-300);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-lg);
   height: 24px;
   overflow: hidden;
   box-sizing: border-box;
@@ -203,7 +200,7 @@
   gap: var(--gap-md);
 }
 .ordercard {
-  border-radius: var(--br-sm);
+  border-radius: var(--br-xs);
   background-color: var(--white);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--color-darkgray);

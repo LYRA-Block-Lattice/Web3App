@@ -41,7 +41,7 @@ const CreateOrderSuccessForm: FunctionComponent = () => {
           View on block explorer
         </a>
         <button className="buttons6" onClick={onButtonsClick}>
-          <div className="secondary-button">View my orders</div>
+          <div className="secondary-button4">View my orders</div>
         </button>
       </div>
       <BottomNavigationBar />

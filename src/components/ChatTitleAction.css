@@ -30,7 +30,7 @@
   font-size: var(--font-size-3xl);
 }
 .chattitleaction {
-  border-radius: var(--br-md);
+  border-radius: var(--br-sm);
   background-color: var(--background-extra-white);
   overflow: hidden;
   flex-direction: column;
