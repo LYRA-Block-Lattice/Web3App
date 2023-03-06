@@ -7,7 +7,7 @@ type SignTradeSecretDialogType = {
 };
 
 const SignTradeSecretDialog: FunctionComponent<SignTradeSecretDialogType> = ({
-  onClose,
+  onClose
 }) => {
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
@@ -24,7 +24,7 @@ const SignTradeSecretDialog: FunctionComponent<SignTradeSecretDialogType> = ({
         }
       },
       {
-        threshold: 0.15,
+        threshold: 0.15
       }
     );
 

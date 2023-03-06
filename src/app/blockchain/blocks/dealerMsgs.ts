@@ -58,3 +58,31 @@ export class SignedMessage extends DealMessage {
     }
   }
 }
+
+export enum PinnedMode {
+  Notify,
+  Wait,
+  Action
+}
+export enum DisputeLevels {
+  None,
+  Peer,
+  DAO,
+  LyraCouncil
+}
+
+export class PinnedMessage {
+  mode!: PinnedMode;
+  tradeId!: string;
+  text!: string;
+  level!: DisputeLevels;
+}
+
+export class ChatMessages {
+  DealerId!: string;
+  Pinned!: PinnedMessage;
+  History!: DealMessage[];
+}
+export interface ChatDictionary {
+  [key: string]: ChatMessages;
+}

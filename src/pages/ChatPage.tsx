@@ -11,16 +11,16 @@ import { useSearchParams } from "react-router-dom";
 import { shorten } from "../app/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { DEALER_JOIN_ROOM, DEALER_SEND_MESSAGE } from "../app/actionTypes";
-import { getAuthSelector } from "../app/selectors";
+import { getAuthSelector, getChatSelector } from "../app/selectors";
 
 const ChatPage: FunctionComponent = () => {
   const dispatch = useDispatch();
   const auth = useSelector(getAuthSelector);
+  const searchParams = new URLSearchParams(window.location.search);
+  const tradeId = searchParams.get("tradeId");
+  const chat = useSelector(getChatSelector(tradeId!));
 
   const [input, setInput] = useState("");
-
-  // get query string args
-  const [searchParams, setSearchParams] = useSearchParams({});
 
   const onNavBackButtonClick = useCallback(() => {
     //TODO: nav back. none for home (wallet, market, profile, etc.)
@@ -36,16 +36,18 @@ const ChatPage: FunctionComponent = () => {
 
   useEffect(() => {
     // join chat room
-
-    dispatch({
-      type: DEALER_JOIN_ROOM,
-      payload: {
-        accountId: auth.accountId,
-        tradeId: searchParams.get("tradeId")!
-        //signature:
-      }
-    });
-  }, []);
+    const id = searchParams.get("tradeId");
+    if (id) {
+      dispatch({
+        type: DEALER_JOIN_ROOM,
+        payload: {
+          accountId: auth.accountId,
+          tradeId: id
+          //signature:
+        }
+      });
+    }
+  }, [dispatch]);
 
   const onSendClick = useCallback(() => {
     dispatch({
@@ -68,7 +70,7 @@ const ChatPage: FunctionComponent = () => {
       />
       <ChatTitleAction
         tradeId={searchParams.get("tradeId")!}
-        pinnedMessage="Await Buyer to pay"
+        pinnedMessage={chat?.Pinned.text}
       />
       <div className="direct-chat">
         <PeerMessage

@@ -5,7 +5,8 @@ import {
   takeLatest,
   takeEvery,
   getContext,
-  ChannelTakeEffect
+  ChannelTakeEffect,
+  select
 } from "redux-saga/effects";
 import { EventChannel, eventChannel } from "redux-saga";
 import { HubConnection, HubConnectionBuilder } from "@microsoft/signalr";
@@ -25,8 +26,12 @@ import {
 } from "../blockchain/blocks/meta";
 
 import { NotUndefined } from "@redux-saga/types";
+import { push } from "redux-first-history";
+import { RootState } from "../store";
+import { getAuthSelector } from "../selectors";
+import { IAuthState } from "../wallet/authReducer";
 
-let connection: HubConnection | undefined = undefined;
+let dealerConnection: HubConnection | null = null;
 
 interface IAction {
   type: string;
@@ -113,6 +118,44 @@ function* findDao(action: IAction) {
   });
 }
 
+function* joinRoom(action: IAction) {
+  const timestamp = Date.now();
+  const msg = `${action.payload.tradeId}:${timestamp}`;
+  const userToken = JSON.parse(sessionStorage.getItem("token")!);
+  if (userToken?.pvt) {
+    var signt = LyraCrypto.Sign(msg, userToken.pvt);
+
+    //const auth: IAuthState = yield select(getAuthSelector);
+    if (dealerConnection != null) {
+      yield dealerConnection.send("JoinRoom", {
+        UserAccountID: action.payload.accountId,
+        TradeID: action.payload.tradeId,
+        Signature: signt,
+        TimeStamp: timestamp
+      });
+    } else {
+      console.log("No dealer connection to join room");
+    }
+  } else {
+    console.log("No private key to join room");
+    yield put(push("/openwallet"));
+  }
+}
+
+function* closeDealerConnection(action: IAction) {
+  if (dealerConnection != null) {
+    try {
+      dealerConnection.stop();
+      dealerConnection = null;
+    } catch (error) {
+      console.log("SignalR error", error);
+    }
+    yield put({
+      type: actionTypes.DEALER_CLOSED_OK
+    });
+  }
+}
+
 function* setupDealerEvents(action: IAction) {
   const url = `https://dealer${process.env.REACT_APP_NETWORK_ID}.lyra.live/hub`;
   if (action.payload?.accountId)
@@ -123,51 +166,57 @@ function* setupDealerEvents(action: IAction) {
   else
     console.log(`"Setup dealer events SignalR without accountId with... `, url);
 
-  if (connection) {
+  const auth: IAuthState = yield select(getAuthSelector);
+  if (dealerConnection) {
     try {
-      connection.stop();
+      dealerConnection.stop();
+      dealerConnection = null;
     } catch (error) {
       console.log("SignalR error", error);
     }
-    connection = undefined;
+
+    yield put({
+      type: actionTypes.DEALER_CLOSED_OK
+    });
   }
 
-  if (connection === undefined) {
-    try {
-      connection = new HubConnectionBuilder()
-        .withUrl(url)
-        // .withUrl(url, {
-        //   transport: signalR.HttpTransportType.WebSockets,
-        //   skipNegotiation: true
-        // })
-        .withAutomaticReconnect()
-        .build();
+  try {
+    dealerConnection = new HubConnectionBuilder()
+      .withUrl(url)
+      // .withUrl(url, {
+      //   transport: signalR.HttpTransportType.WebSockets,
+      //   skipNegotiation: true
+      // })
+      .withAutomaticReconnect()
+      .build();
 
-      yield connection.start();
+    yield dealerConnection.start();
 
-      const userToken = JSON.parse(sessionStorage.getItem("token")!);
-      if (userToken?.pvt) {
-        var ret: string = yield BlockchainAPI.lastServiceHash();
-        var signt = LyraCrypto.Sign(ret, userToken.pvt);
+    const userToken = JSON.parse(sessionStorage.getItem("token")!);
+    if (userToken?.pvt) {
+      var ret: string = yield BlockchainAPI.lastServiceHash();
+      var signt = LyraCrypto.Sign(ret, userToken.pvt);
 
-        yield connection.send("Join", {
-          UserAccountID: action.payload.accountId,
-          Signature: signt,
-          SignType: "p1393"
-        });
-      }
+      yield dealerConnection.send("Join", {
+        UserAccountID: action.payload.accountId,
+        Signature: signt
+      });
 
-      // connection.on("OnEvent", async (message) => {
-      //   console.log("Dealer SignalR OnEvent", message);
-      //   await put({ type: actionTypes.BLOCKCHAIN_EVENT, payload: message });
-      // });
-    } catch (error) {
-      console.log("SignalR error", error);
-      connection = undefined;
+      yield put({
+        type: actionTypes.DEALER_INIT_OK
+      });
     }
-  }
 
-  return connection;
+    // connection.on("OnEvent", async (message) => {
+    //   console.log("Dealer SignalR OnEvent", message);
+    //   await put({ type: actionTypes.BLOCKCHAIN_EVENT, payload: message });
+    // });
+
+    return dealerConnection;
+  } catch (error) {
+    console.log("SignalR error", error);
+    return null;
+  }
 }
 
 // this function creates an event channel from a given event hub
@@ -189,8 +238,18 @@ function createDealerEventsChannel(hubConnection: HubConnection) {
 
     // setup the subscription
     hubConnection.on("OnEvent", async (message) => {
-      console.log("Dealer SignalR OnEvent", message);
-      dealerEventHandler(message);
+      //console.log("Dealer SignalR OnEvent", message);
+      dealerEventHandler({ on: "event", msg: message });
+    });
+
+    hubConnection.on("OnChat", async (message) => {
+      //console.log("Dealer SignalR OnChat", message);
+      dealerEventHandler({ on: "chat", msg: message });
+    });
+
+    hubConnection.on("OnPinned", async (message) => {
+      //console.log("Dealer SignalR OnPinned", message);
+      dealerEventHandler({ on: "pinned", msg: message });
     });
 
     // the subscriber must return an unsubscribe function
@@ -205,7 +264,7 @@ function createDealerEventsChannel(hubConnection: HubConnection) {
 
 function* setup(action: IAction) {
   console.log("Dealer events SignalR setup: ", action);
-  connection = yield setupDealerEvents(action);
+  const connection: HubConnection = yield setupDealerEvents(action);
   if (connection) {
     const channel: EventChannel<NotUndefined> = yield call(
       createDealerEventsChannel,
@@ -229,6 +288,7 @@ export default function* marketSaga() {
 
   // every time the user open wallet, we need to setup the SignalR connection
   yield takeEvery(actionTypes.DEALER_INIT, setup);
+  yield takeEvery(actionTypes.DEALER_CLOSE, closeDealerConnection);
 
   yield takeEvery(actionTypes.MARKET_GET_PRICES, getPrices);
   yield takeEvery(actionTypes.MARKET_GET_ORDERS, getOrders);
@@ -237,4 +297,5 @@ export default function* marketSaga() {
   yield takeEvery(actionTypes.MARKET_GET_ORDER_BY_ID, getOrderById);
   yield takeEvery(actionTypes.BLOCKCHAIN_FIND_DAO, findDao);
   yield takeEvery(actionTypes.MARKET_GET_DEALER, getDealer);
+  yield takeEvery(actionTypes.DEALER_JOIN_ROOM, joinRoom);
 }

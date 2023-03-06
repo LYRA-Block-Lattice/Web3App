@@ -88,6 +88,9 @@ export const BLOCKCHAIN_EVENT = "BLOCKCHAIN_EVENT";
 
 // Dealer
 export const DEALER_INIT = "DEALER_INIT";
+export const DEALER_INIT_OK = "DEALER_INIT_OK";
+export const DEALER_CLOSE = "DEALER_CLOSE";
+export const DEALER_CLOSED_OK = "DEALER_CLOSED_OK";
 export const DEALER_EVENT = "DEALER_EVENT";
 export const DEALER_JOIN_ROOM = "DEALER_JOIN_ROOM"; // join dealer room
 export const DEALER_SEND_MESSAGE = "DEALER_SEND_MESSAGE";

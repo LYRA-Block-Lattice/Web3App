@@ -25,6 +25,11 @@ export const getAppSelector = createSelector(getApp, (app) => app);
 const getNotify = (state: RootState) => state.notify;
 // export it as a selector
 export const getNotifySelector = createSelector(getNotify, (notify) => notify);
+export const getChatSelector = (tradeId: string) => (store: RootState) => {
+  const chats = store.notify.chats;
+  if (chats && tradeId in chats) return chats[tradeId];
+  else return null;
+};
 
 // get market state
 const getMarket = (state: RootState) => state.market;

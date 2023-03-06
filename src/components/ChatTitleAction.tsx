@@ -15,11 +15,11 @@ const ChatTitleAction: FunctionComponent<ChatTitleActionType> = ({
 }) => {
   return (
     <div className="chattitleaction">
-      <a className="tradeidsection" href="https://some.link">
-        Trade ID:{" "}
-        <a href={BlockchainAPI.getBlockExplorerUrl(tradeId)}>
-          {shorten(tradeId)}
-        </a>
+      <a
+        className="tradeidsection"
+        href={BlockchainAPI.getBlockExplorerUrl(tradeId)}
+      >
+        Trade ID: {shorten(tradeId)}
       </a>
       <b className="await-buyer-to">{pinnedMessage}</b>
       <div className="actionsection">
