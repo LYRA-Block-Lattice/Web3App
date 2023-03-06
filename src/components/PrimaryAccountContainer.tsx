@@ -59,7 +59,11 @@ const PrimaryAccountContainer: FunctionComponent<
             <b className="lyrlabel">USDT</b>
           </a>
           <div className="qrcode-button-wrapper">
-            <button className="qrcode-button" onClick={scanToPay}>
+            <button
+              className="qrcode-button"
+              title="Scan to pay"
+              onClick={scanToPay}
+            >
               <div className="qrcode-button-round" />
               <img
                 className="qrcode-icon"

@@ -46,7 +46,11 @@ const TopNavigationBar: FunctionComponent<TopNavigationBarType> = ({
       <button className="title5" onClick={onTitleClick1}>
         {title}
       </button>
-      <button className="contextmenubutton" onClick={onContextMenuButtonClick1}>
+      <button
+        className="contextmenubutton"
+        title="Context Menu"
+        onClick={onContextMenuButtonClick1}
+      >
         <img
           className="icround-plus-icon"
           alt=""

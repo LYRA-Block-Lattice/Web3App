@@ -87,7 +87,7 @@ const ChatPage: FunctionComponent = () => {
       </div>
       <div className="chat-input-message-field">
         <div className="frame-parent">
-          <button className="iconlylightpaperclip-wrapper">
+          <button className="iconlylightpaperclip-wrapper" title="attach">
             <img
               className="iconlylightpaperclip"
               alt=""
@@ -97,9 +97,10 @@ const ChatPage: FunctionComponent = () => {
           <input
             className="frame-child"
             type="text"
+            title="type your message"
             onChange={(e) => setInput(e.target.value)}
           />
-          <button className="frame-wrapper" onClick={onSendClick}>
+          <button className="frame-wrapper" title="Send" onClick={onSendClick}>
             <img
               className="frame-item"
               alt=""

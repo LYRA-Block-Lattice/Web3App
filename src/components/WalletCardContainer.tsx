@@ -1,10 +1,19 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { getAppSelector } from "../app/selectors";
+import { useNavigate } from "react-router";
+import { getAppSelector, getAuthSelector } from "../app/selectors";
 import "./WalletCardContainer.css";
 
 const WalletCardContainer: FunctionComponent = () => {
+  const navigate = useNavigate();
   const app = useSelector(getAppSelector);
+  const auth = useSelector(getAuthSelector);
+
+  const scanToPay = useCallback(() => {
+    if (!auth.accountId) navigate("/openwallet?ret=/scantopay");
+    else navigate("/scantopay");
+  }, [navigate]);
+
   return (
     <div className="wallet-card1">
       <div className="wallet-card-child">
@@ -26,7 +35,11 @@ const WalletCardContainer: FunctionComponent = () => {
             <div className="rectangle-div" />
           </a>
           <div className="qrcode-button-container">
-            <button className="qrcode-button1">
+            <button
+              title="Show QR-Code"
+              className="qrcode-button1"
+              onClick={scanToPay}
+            >
               <div className="qrcode-button-round1" />
               <img
                 className="qrcode-icon1"

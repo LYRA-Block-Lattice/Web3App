@@ -44,7 +44,11 @@ const WalletCard: FunctionComponent = () => {
             <b className="usdtlabel">USDT</b>
           </a>
           <div className="qrcode-button-frame">
-            <button className="qrcode-button2" onClick={scanToPay}>
+            <button
+              title="Scan to pay"
+              className="qrcode-button2"
+              onClick={scanToPay}
+            >
               <div className="qrcode-button-round2" />
               <img
                 className="qrcode-icon2"
