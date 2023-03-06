@@ -47,10 +47,7 @@ const StartToCreateOrder: FunctionComponent = () => {
             cat="Service"
           />
         </div>
-        <PrimaryButton
-          primaryButton="Specify Token"
-          onButtonsClick={onButtonsClick}
-        />
+        <PrimaryButton onButtonsClick={onButtonsClick} />
       </div>
       <BottomNavigationBar />
     </div>

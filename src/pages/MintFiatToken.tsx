@@ -34,7 +34,7 @@ const MintFiatToken: FunctionComponent = () => {
         size="medium"
         margin="none"
       />
-      <SecondaryButton secondaryButton="Print" />
+      <SecondaryButton />
     </form>
   );
 };

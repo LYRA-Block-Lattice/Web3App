@@ -58,11 +58,11 @@ const CreateTOTDialog: FunctionComponent = () => {
           size="medium"
           margin="none"
         />
-        <UtilityButton utilityButton="Sign trade secret" />
+        <UtilityButton />
         <div className="note-i-need1">
           Note: I need to send trade secret privately to buyer(s).
         </div>
-        <SecondaryButton secondaryButton="Create TOT" />
+        <SecondaryButton />
       </form>
     </div>
   );

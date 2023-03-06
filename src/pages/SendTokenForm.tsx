@@ -66,7 +66,7 @@ const SendTokenForm: FunctionComponent = () => {
           margin="none"
           required
         />
-        <PrimaryButton primaryButton="Send" />
+        <PrimaryButton />
       </div>
       <BottomNavigationBar />
     </div>

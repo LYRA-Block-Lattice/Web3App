@@ -53,10 +53,7 @@ const SellFlow: FunctionComponent = () => {
         <button className="buttons">
           <div className="primary-button">Back</div>
         </button>
-        <PrimaryButton
-          primaryButton="Place sell order"
-          buttonsFlexShrink="unset"
-        />
+        <PrimaryButton />
       </div>
       <div className="group7">
         <img className="vector-icon5" alt="" src="../asserts/vector5.svg" />

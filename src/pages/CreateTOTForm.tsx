@@ -72,14 +72,11 @@ const CreateTOTForm: FunctionComponent = () => {
             size="medium"
             margin="none"
           />
-          <UtilityButton
-            openGeneralPopup={openSignTradeSecretPopup}
-            utilityButton="Sign trade secret"
-          />
+          <UtilityButton openGeneralPopup={openSignTradeSecretPopup} />
           <div className="note-i-need">
             Note: I need to send trade secret privately to buyer(s).
           </div>
-          <SecondaryButton secondaryButton="Create TOT" />
+          <SecondaryButton />
         </form>
       </div>
       {isSignTradeSecretPopupOpen && (

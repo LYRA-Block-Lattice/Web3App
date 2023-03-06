@@ -164,8 +164,8 @@ const CreateWallet: FunctionComponent = () => {
             margin="none"
           />
         </div>
-        <PrimaryButton primaryButton="Create" />
-        <MiniButton miniButton="Open" />
+        <PrimaryButton />
+        <MiniButton />
       </div>
       <BottomNavigationBar />
     </div>

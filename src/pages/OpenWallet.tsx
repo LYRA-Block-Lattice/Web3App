@@ -77,8 +77,8 @@ const OpenWallet: FunctionComponent = () => {
           margin="none"
           required
         />
-        <PrimaryButton primaryButton="Open" />
-        <MiniButton miniButton="Create" />
+        <PrimaryButton />
+        <MiniButton />
         <button className="forgot-password-copy">Forgot password?</button>
       </div>
       <BottomNavigationBar />

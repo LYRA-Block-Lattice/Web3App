@@ -18,7 +18,7 @@ const StepProgressReportDialog: FunctionComponent = () => {
       <div className="notify-message-goes">
         Error message goes here to help user understand what’s going on.
       </div>
-      <SecondaryButton secondaryButton="Continue" />
+      <SecondaryButton />
     </div>
   );
 };

@@ -19,7 +19,7 @@ const ChatTitleAction: FunctionComponent<ChatTitleActionType> = ({
         <div className="pinnedmessage">
           <div className="div7">$ 30,000</div>
         </div>
-        <UtilityButton utilityButton="I’ve paid" />
+        <UtilityButton />
       </div>
     </div>
   );
