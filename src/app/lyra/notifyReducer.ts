@@ -1,7 +1,7 @@
 import * as actionTypes from "../actionTypes";
 import {
   ChatDictionary,
-  ChatMessages,
+  DealChatMessage,
   PinnedMessage
 } from "../blockchain/blocks/dealerMsgs";
 import { humanize, shorten } from "../utils";
@@ -80,10 +80,10 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
           return state;
         }
       } else if (on === "chat") {
-        console.log("chat", msg);
+        console.log("chat msg", msg);
         return state;
       } else if (on === "pinned") {
-        console.log("pinned", msg);
+        console.log("pinned msg", msg);
         const pinned = msg as PinnedMessage;
         return {
           ...state,
@@ -96,6 +96,22 @@ const notifyReducer = (state = initState, action: IAction): IAppNotifyState => {
           }
         };
       } else return state;
+    case actionTypes.DEALER_JOIN_ROOM_OK:
+      return {
+        ...state,
+        chats: {
+          ...state.chats,
+          [action.payload.tradeId]: {
+            History: action.payload.ret.history.map((hist: any) => {
+              if (hist.msgType === 1) {
+                return new DealChatMessage(hist.json);
+              } else return null;
+            }),
+
+            Roles: action.payload.ret.roles
+          }
+        }
+      };
     case actionTypes.WALLET_RECEIVED_BLOCK:
       return {
         ...state,
