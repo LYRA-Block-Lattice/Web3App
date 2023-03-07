@@ -12,6 +12,7 @@ import { shorten } from "../app/utils";
 import { useDispatch, useSelector } from "react-redux";
 import { DEALER_JOIN_ROOM, DEALER_SEND_MESSAGE } from "../app/actionTypes";
 import { getAuthSelector, getChatSelector } from "../app/selectors";
+import { DealChatMessage } from "../app/blockchain/blocks/dealerMsgs";
 
 const ChatPage: FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ const ChatPage: FunctionComponent = () => {
         message: input
       }
     });
-  }, []);
+  }, [searchParams, input, dispatch]);
 
   return (
     <div className="chatpage main-content">
@@ -73,7 +74,24 @@ const ChatPage: FunctionComponent = () => {
         pinnedMessage={chat?.Pinned}
       />
       <div className="direct-chat">
-        <PeerMessage
+        {chat?.History?.map((msg, index) => {
+          if (msg instanceof DealChatMessage) {
+            const chatmsg = msg as DealChatMessage;
+            return (
+              <PeerMessage
+                key={index}
+                content={chatmsg.Text}
+                time={chatmsg.TimeStamp}
+              />
+            );
+          }
+        }) ?? (
+          <>
+            <div>No chats</div>
+          </>
+        )}
+
+        {/* <PeerMessage
           userName="User Name"
           content="Lorem ipsum dolor"
           time="18:24"
@@ -85,7 +103,7 @@ const ChatPage: FunctionComponent = () => {
         />
         <TimeTag tag="Today" />
         <MyInputMessage content="Lorem ipsum dolor" />
-        <MyInputMessage content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. " />
+        <MyInputMessage content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla quam eu faci lisis mollis. " /> */}
       </div>
       <div className="chat-input-message-field">
         <div className="frame-parent">

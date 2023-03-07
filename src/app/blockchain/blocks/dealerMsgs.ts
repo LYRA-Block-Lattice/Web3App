@@ -1,5 +1,6 @@
 import { LyraApi } from "../lyra-api";
 import { LyraCrypto } from "../lyra-crypto";
+import { APIResult } from "./meta";
 
 const stringify = require("../../my-json-stringify");
 var JSONbig = require("json-bigint");
@@ -93,7 +94,16 @@ export class ChatMessages {
   DealerId!: string;
   Pinned!: PinnedMessage;
   History!: DealMessage[];
+  Roles!: StringDictionary;
 }
 export interface ChatDictionary {
   [key: string]: ChatMessages;
+}
+
+interface StringDictionary {
+  [key: string]: string;
+}
+export class JoinRoomResult extends APIResult {
+  history!: ChatMessages;
+  roles!: StringDictionary;
 }

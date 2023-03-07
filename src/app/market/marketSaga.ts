@@ -31,7 +31,10 @@ import { RootState } from "../store";
 import { getAuthSelector } from "../selectors";
 import { IAuthState } from "../wallet/authReducer";
 import ChatMessage from "../../components/ChatMessage";
-import { DealChatMessage } from "../blockchain/blocks/dealerMsgs";
+import {
+  DealChatMessage,
+  JoinRoomResult
+} from "../blockchain/blocks/dealerMsgs";
 import { getWallet } from "../wallet/walletSaga";
 
 let dealerConnection: HubConnection | null = null;
@@ -130,12 +133,27 @@ function* joinRoom(action: IAction) {
 
     //const auth: IAuthState = yield select(getAuthSelector);
     if (dealerConnection != null) {
-      yield dealerConnection.send("JoinRoom", {
+      const ret: JoinRoomResult = yield dealerConnection.invoke("JoinRoom", {
         UserAccountID: action.payload.accountId,
         TradeID: action.payload.tradeId,
         Signature: signt,
         TimeStamp: timestamp
       });
+      console.log("JoinRoom ret:", ret);
+      if (ret.resultCode === 0) {
+        yield put({
+          type: actionTypes.DEALER_JOIN_ROOM_OK,
+          payload: {
+            tradeId: action.payload.tradeId,
+            ret: ret
+          }
+        });
+      } else {
+        yield put({
+          type: actionTypes.ERROR,
+          payload: { error: "Can't join dealer's room for trade." }
+        });
+      }
     } else {
       console.log("No dealer connection to join room");
     }
