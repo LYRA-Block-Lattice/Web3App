@@ -194,7 +194,7 @@ function* closeDealerConnection(action: IAction) {
 }
 
 function* setupDealerEvents(action: IAction) {
-  const url = `https://dealer${process.env.REACT_APP_NETWORK_ID}.lyra.live/hub`;
+  const url = `https://dealer${process.env.REACT_APP_NETWORK_ID === "mainnet" ? "" : process.env.REACT_APP_NETWORK_ID}.lyra.live/hub`;
   if (action.payload?.accountId)
     console.log(
       `"Setup dealer events SignalR for account ${action.payload.accountId} with... `,
@@ -205,6 +205,7 @@ function* setupDealerEvents(action: IAction) {
 
   const auth: IAuthState = yield select(getAuthSelector);
   if (dealerConnection) {
+    console.log("close existing dealer connection.");
     try {
       dealerConnection.stop();
       dealerConnection = null;
@@ -217,7 +218,7 @@ function* setupDealerEvents(action: IAction) {
     });
   }
 
-  try {
+  try {    
     dealerConnection = new HubConnectionBuilder()
       .withUrl(url)
       // .withUrl(url, {
@@ -231,6 +232,7 @@ function* setupDealerEvents(action: IAction) {
 
     const userToken = JSON.parse(sessionStorage.getItem("token")!);
     if (userToken?.pvt) {
+      console.log("create dealer connection...");
       var ret: string = yield BlockchainAPI.lastServiceHash();
       var signt = LyraCrypto.Sign(ret, userToken.pvt);
 
@@ -242,6 +244,10 @@ function* setupDealerEvents(action: IAction) {
       yield put({
         type: actionTypes.DEALER_INIT_OK
       });
+    }
+    else
+    {
+      console.log("dealer was not connected. wallet not open.");
     }
 
     // connection.on("OnEvent", async (message) => {
