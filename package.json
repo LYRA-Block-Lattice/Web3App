@@ -61,6 +61,8 @@
     "build": "react-scripts build",
     "build:testnet": "env-cmd -f .env.testnet npm run build",
     "postbuild:testnet": "xcopy /s /y build \\\\192.168.3.60\\Sites\\web3testnet.lyra.live",
+    "build:mainnet": "env-cmd -f .env.mainnet npm run build",
+    "postbuild:mainnet": "xcopy /s /y build \\\\192.168.3.60\\Sites\\web3.lyra.live",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test2": "jest"
