@@ -108,8 +108,8 @@ export class BlockchainAPI {
 
     this.Block_API_v1 = `https://${this.networkid}.lyra.live/api/node`;
     this.Block_API_v2 = `https://${this.networkid}.lyra.live/api/EC`;
-    this.Dealer_API = `https://dealer${this.networkid}.lyra.live/api/dealer`;
-    this.Start_API = `https://start${this.networkid}.lyra.live/svc`;
+    this.Dealer_API = `https://dealer${this.networkid === "mainnet" ? "" : this.networkid}.lyra.live/api/dealer`;
+    this.Start_API = `https://start${this.networkid === "mainnet" ? "" : this.networkid}.lyra.live/svc`;
   };
 
   static getBlockExplorerUrl = (id: string) => {
