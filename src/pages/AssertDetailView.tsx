@@ -75,22 +75,24 @@ const AssertDetailView: FunctionComponent = () => {
   useEffect(() => {
     const orderId = searchParams.get("orderId");
     if (orderId) {
-      try {
-        const fetchit = async () => {
+      const fetchit = async () => {
+        try {
           const response = await BlockchainAPI.fetchOrderById(orderId);
+
           setInfo(response as IAssertInfo);
           setBuyAmount(response.Blocks.Order.Order.limitMin);
           setIsLoading(false);
-        };
-        fetchit();
-      } catch (error) {
-        console.error(error);
-      }
+        } catch (error) {
+          console.log("error fetchOrderById for ", orderId);
+          console.error(error);
+        }
+      };
+      fetchit();
     }
   }, [dispatch, searchParams]);
 
   useEffect(() => {
-    if (info && notify.prices) {
+    if (info && Array.isArray(notify.prices)) {
       let pricedollar =
         info.Blocks.Order.Order.eqprice *
         notify.prices.find((a) => a.ticker == "LYR")!.price;
@@ -168,7 +170,7 @@ const AssertDetailView: FunctionComponent = () => {
           <div className="asserttitleregion">
             <div className="assertauthorsection">
               <div className="a-legend-nft">
-                Author: {info?.Users.Author.UserName}
+                Author: {info?.Users?.Author?.UserName ?? "Anonymous"}
               </div>
               <div className="material-symbolsshare-parent">
                 <img
@@ -190,7 +192,7 @@ const AssertDetailView: FunctionComponent = () => {
             </div>
             <div className="assertownersection">
               <div className="meka-legends">
-                Owner: {info?.Users.Seller.UserName}
+                Owner: {info?.Users.Seller?.UserName ?? "Anonymous"}
               </div>
             </div>
           </div>
@@ -209,7 +211,7 @@ const AssertDetailView: FunctionComponent = () => {
                 src={info?.Meta?.image}
               />
             )}
-            {info?.Meta?.image || <h1>{info?.Blocks.Offgen.Ticker}</h1>}
+            {!info?.Meta?.image && <h1>{info?.Blocks.Offgen.Ticker}</h1>}
           </div>
           <div className="assertstatssection">
             <div className="icoutline-remove-red-eye-parent">
@@ -340,21 +342,26 @@ const AssertDetailView: FunctionComponent = () => {
                   </div>
                 </div>
               </div>
-              <div className="limitadjustsection">
-                <div className="tetherusdt">Min</div>
-                <Box className="slidercontinuous">
-                  <Slider
-                    color="primary"
-                    orientation="horizontal"
-                    step={info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0}
-                    min={info?.Blocks.Order.Order.limitMin ?? 0}
-                    max={info?.Blocks.Order.Order.limitMax ?? 0}
-                    onChange={(e, v) => setBuyAmount(v as number)}
-                    value={buyAmount ?? 0}
-                  />
-                </Box>
-                <div className="max">Max</div>
-              </div>
+              {(info?.Blocks.Order.Order.limitMin ?? 0) <
+                (info?.Blocks.Order.Order.limitMax ?? 0) && (
+                <div className="limitadjustsection">
+                  <div className="tetherusdt">Min</div>
+                  <Box className="slidercontinuous">
+                    <Slider
+                      color="primary"
+                      orientation="horizontal"
+                      step={
+                        info ? 10 ** (-1 * info.Blocks.Offgen.Precision) : 0
+                      }
+                      min={info?.Blocks.Order.Order.limitMin ?? 0}
+                      max={info?.Blocks.Order.Order.limitMax ?? 0}
+                      onChange={(e, v) => setBuyAmount(v as number)}
+                      value={buyAmount ?? 0}
+                    />
+                  </Box>
+                  <div className="max">Max</div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -389,9 +396,10 @@ const AssertDetailView: FunctionComponent = () => {
         </div>
         <div className="descriptiondetails1">
           <div className="this-order-is">
-            This order is protected by staking of 100,000 LYR, or $1,000 in USD,
-            from the seller. This order is regulated by the DAO “A good shop”
-            which has a total staking of 30,000,000 LYR.
+            This order is protected by staking of{" "}
+            {info?.Blocks.Order.Order.cltamt} LYR, or $? in USD, from the
+            seller. This order is regulated by the DAO “{info?.Blocks.Dao.Name}”
+            which has a total staking of ? LYR.
           </div>
         </div>
         <BottomNavigationBar />

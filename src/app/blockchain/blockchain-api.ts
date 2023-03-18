@@ -138,10 +138,16 @@ export class BlockchainAPI {
     url: string,
     options: RequestInit = {}
   ): Promise<T> {
-    const response = await ky.get(url, options);
+    // 设置默认超时为30秒（30000毫秒）
+    const defaultTimeout = { timeout: 30000 };
+  
+    // 使用传入的options与默认超时合并，调用者的设置优先
+    const mergedOptions = { ...defaultTimeout, ...options };
+  
+    const response = await ky.get(url, mergedOptions);
     const data = await response.json();
     return data as T;
-  }
+  }  
 
   static async postJson<T>(
     url: string,

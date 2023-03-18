@@ -65,7 +65,7 @@ const CollateralCalculation: FunctionComponent<CollateralCalculationType> = ({
       setNetFeeLYR(0);
       setNetFeeDollar(0);
     }
-  }, [eqprice, eqdollar, amount, dao]);
+  }, [eqprice, eqdollar, amount, dao, selling]);
 
   useEffect(() => {
     setTotalLYR(collaterallyr + daofeelyr + netfeelyr);

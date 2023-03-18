@@ -82,22 +82,24 @@ const SellTokenToToken: FunctionComponent = () => {
   );
 
   useEffect(() => {
-    if (price > 0 && notify.prices != undefined && toget != undefined) {
+    if (price > 0 && Array.isArray(notify.prices) && toget != undefined) {
       var ticker = toget;
       if (ticker.startsWith("tether/")) ticker = ticker.replace("tether/", "");
       if (ticker.startsWith("fiat/"))
         ticker = ticker.replace("fiat/", "").toLowerCase();
-      const quote = notify.prices.find((a) => a.ticker == ticker);
-      if (quote === undefined) setPriceDollar(0);
-      else {
-        let priced = price * quote.price;
-        setPriceDollar(priced);
-      }
-    } else setPriceDollar(0);
+        const quote = notify.prices.find((a) => a.ticker == ticker);
+        if (quote === undefined) setPriceDollar(0);
+        else {
+          let priced = price * quote.price;
+          setPriceDollar(priced);
+          return;
+        }
+    } 
+    setPriceDollar(0);
   }, [price, toget]);
 
   useEffect(() => {
-    if (eqprice > 0 && notify.prices != undefined) {
+    if (eqprice > 0 && Array.isArray(notify.prices)) {
       var ticker = toget;
       const quote = notify.prices.find((a) => a.ticker == "LYR");
       if (quote === undefined) setEQDollar(0);
