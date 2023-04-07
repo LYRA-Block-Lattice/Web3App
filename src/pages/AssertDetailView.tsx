@@ -93,14 +93,15 @@ const AssertDetailView: FunctionComponent = () => {
 
   useEffect(() => {
     if (info && Array.isArray(notify.prices)) {
-      let pricedollar =
-        info.Blocks.Order.Order.eqprice *
-        notify.prices.find((a) => a.ticker == "LYR")!.price;
-      setPriceDollar(pricedollar);
-      setAvalibleMinDollar(pricedollar * info.Blocks.Order.Order.limitMin);
-      setAvalibleMaxDollar(pricedollar * info.Blocks.Order.Order.limitMax);
-      setBidAmount(buyAmount * info.Blocks.Order.Order.price);
-      setOfferDollar(pricedollar * buyAmount);
+      const lyrPrice = notify.prices.find((a) => a.ticker == "LYR");
+      if (lyrPrice != undefined) {
+        let pricedollar = info.Blocks.Order.Order.eqprice * lyrPrice.price;
+        setPriceDollar(pricedollar);
+        setAvalibleMinDollar(pricedollar * info.Blocks.Order.Order.limitMin);
+        setAvalibleMaxDollar(pricedollar * info.Blocks.Order.Order.limitMax);
+        setBidAmount(buyAmount * info.Blocks.Order.Order.price);
+        setOfferDollar(pricedollar * buyAmount);
+      }
     }
   }, [info, notify, buyAmount]);
 
@@ -402,8 +403,8 @@ const AssertDetailView: FunctionComponent = () => {
             which has a total staking of ? LYR.
           </div>
         </div>
-        <BottomNavigationBar />
       </div>
+      <BottomNavigationBar />
     </div>
   );
 };

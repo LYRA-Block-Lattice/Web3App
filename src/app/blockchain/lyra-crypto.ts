@@ -1,21 +1,21 @@
 // change require to import
-var KJUR = require("jsrsasign");
-import * as bs58 from "bs58";
-import { convertDerToP1393, decodeASN1Sequence } from "./asn1";
-import * as asn1lib from "asn1js";
+var KJUR = require('jsrsasign');
+import * as bs58 from 'bs58';
+import {TextEncoder} from 'web-encoding';
+import {convertDerToP1393} from './asn1';
+import * as asn1lib from 'asn1js';
 
 export class LyraCrypto {
   private static fromHexString(hexString: string) {
     var mt = hexString.match(/.{1,2}/g);
-    if (mt !== null)
-      return new Uint8Array(mt.map((byte) => parseInt(byte, 16)));
-    else throw new Error("no match found.");
+    if (mt !== null) return new Uint8Array(mt.map(byte => parseInt(byte, 16)));
+    else throw new Error('no match found.');
   }
 
   private static toHexString(bytes: Uint8Array) {
     return bytes.reduce(
-      (str, byte) => str + byte.toString(16).padStart(2, "0"),
-      ""
+      (str, byte) => str + byte.toString(16).padStart(2, '0'),
+      '',
     );
   }
 
@@ -45,7 +45,7 @@ export class LyraCrypto {
 
   private static lyraEncPub(hex: string) {
     const result = this.lyraEnc(hex.substring(2)); //'04', means 'not compressed'
-    const tag = "L";
+    const tag = 'L';
     return tag.concat(result);
   }
 
@@ -53,7 +53,7 @@ export class LyraCrypto {
     const pubKey = accountId.substring(1);
     const decStr = this.lyraDec(pubKey);
     if (decStr === undefined) return undefined;
-    return "04" + decStr;
+    return '04' + decStr;
   }
 
   private static lyraEnc(hex: string) {
@@ -84,7 +84,7 @@ export class LyraCrypto {
   // input: hex string, output: hex string
   static sha256(hexString: string) {
     // SJCL(Stanford JavaScript Crypto Library) provider sample
-    const md = new KJUR.crypto.MessageDigest({ alg: "sha256", prov: "sjcl" }); // sjcl supports sha256 only
+    const md = new KJUR.crypto.MessageDigest({alg: 'sha256', prov: 'sjcl'}); // sjcl supports sha256 only
     return md.digestHex(hexString);
   }
 
@@ -92,7 +92,7 @@ export class LyraCrypto {
   static async sha256alt(input: string): Promise<string> {
     const encoder = new TextEncoder();
     const data = encoder.encode(input);
-    const hash = await crypto.subtle.digest("SHA-256", data);
+    const hash = await KJUR.crypto.subtle.digest('SHA-256', data);
     return bs58.encode(new Uint8Array(hash));
     // return Array.from(new Uint8Array(hash))
     //   .map((b) => b.toString(16).padStart(2, "0"))
@@ -111,23 +111,23 @@ export class LyraCrypto {
   }
 
   static stringToUnicode(str: string): string {
-    let unicode = "";
+    let unicode = '';
     for (let i = 0; i < str.length; i++) {
       const charCode = str.charCodeAt(i);
       const hexCode = charCode.toString(16).toUpperCase();
-      const paddedHexCode = hexCode.padStart(4, "0");
+      const paddedHexCode = hexCode.padStart(4, '0');
       unicode += `\\u${paddedHexCode}`;
     }
     return unicode;
   }
 
   static stringToHex(str: string): string {
-    let hex = "";
+    let hex = '';
     for (let i = 0; i < str.length; i++) {
       const charCode = str.charCodeAt(i);
       const hexCode = charCode.toString(16).toUpperCase();
       hex += hexCode;
-      hex += "00";
+      hex += '00';
     }
     return hex;
   }
@@ -176,12 +176,12 @@ export class LyraCrypto {
 
     var sequence2 = new asn1lib.Sequence({
       value: [
-        new asn1lib.Integer({ isHexOnly: true, valueHex: r }),
+        new asn1lib.Integer({isHexOnly: true, valueHex: r}),
         new asn1lib.Integer({
           isHexOnly: true,
-          valueHex: s
-        })
-      ]
+          valueHex: s,
+        }),
+      ],
     });
 
     const buff = sequence2.toBER();
@@ -189,7 +189,7 @@ export class LyraCrypto {
   }
 
   static isAccountIdValid(accountId: string) {
-    if (accountId.length < 10 || accountId.substring(0, 1) !== "L")
+    if (accountId.length < 10 || accountId.substring(0, 1) !== 'L')
       return false;
     const decStr = this.lyraDecAccountId(accountId);
     return decStr !== undefined;
@@ -200,18 +200,18 @@ export class LyraCrypto {
   }
 
   static GenerateWallet() {
-    const ec = new KJUR.crypto.ECDSA({ curve: "secp256r1" });
+    const ec = new KJUR.crypto.ECDSA({curve: 'secp256r1'});
     const keypair = ec.generateKeyPairHex();
     var pvtHex = keypair.ecprvhex;
     var prvKey = LyraCrypto.lyraEncPvt(pvtHex);
     var actId = LyraCrypto.lyraEncPub(LyraCrypto.prvToPub(pvtHex));
-    return { privateKey: prvKey, accountId: actId };
+    return {privateKey: prvKey, accountId: actId};
   }
 
   static Sign(msg: string, privateKey: string) {
     const prvkey = this.lyraDec(privateKey);
-    const sig = new KJUR.crypto.Signature({ alg: "SHA256withECDSA" });
-    sig.init({ d: prvkey, curve: "secp256r1" });
+    const sig = new KJUR.crypto.Signature({alg: 'SHA256withECDSA'});
+    sig.init({d: prvkey, curve: 'secp256r1'});
     const buff = this.toHexString(this.toUTF8Array(msg));
     sig.updateHex(buff);
     const sigValueHex = sig.sign();
@@ -225,8 +225,8 @@ export class LyraCrypto {
     //const sigbuff2 = this.convertDerToP1393(sigbuff);
 
     // test
-    const sigbuff3 = this.convertP1393ToDer(sigbuff);
-    const sigbuff3x = this.fromHexString(sigValueHex);
+    //const sigbuff3 = this.convertP1393ToDer(sigbuff);
+    //const sigbuff3x = this.fromHexString(sigValueHex);
     //console.log("sigbuff3: ", sigbuff3);
     //console.log("sigbuff3x: ", sigbuff3x);
 
@@ -246,10 +246,10 @@ export class LyraCrypto {
     const signstr = this.toHexString(sigder);
 
     const sig = new KJUR.crypto.Signature({
-      alg: "SHA256withECDSA"
+      alg: 'SHA256withECDSA',
     });
     const pubkey = this.lyraDecAccountId(accountId);
-    sig.init({ xy: pubkey, curve: "secp256r1" });
+    sig.init({xy: pubkey, curve: 'secp256r1'});
     const buff = this.toHexString(this.toUTF8Array(msg));
     sig.updateHex(buff);
     return sig.verify(signstr);
@@ -258,7 +258,7 @@ export class LyraCrypto {
   static GetAccountIdFromPrivateKey(privateKey: string) {
     const pvkDec: string | undefined = LyraCrypto.lyraDec(privateKey);
     if (pvkDec === undefined) {
-      console.log("not lyra private key");
+      console.log('not lyra private key');
       return undefined;
     }
     const pubkey: string = LyraCrypto.prvToPub(pvkDec);
@@ -267,8 +267,8 @@ export class LyraCrypto {
   }
 
   private static prvToPub(prvkey: string) {
-    const sig = new KJUR.crypto.Signature({ alg: "SHA256withECDSA" });
-    sig.init({ d: prvkey, curve: "secp256r1" });
+    const sig = new KJUR.crypto.Signature({alg: 'SHA256withECDSA'});
+    sig.init({d: prvkey, curve: 'secp256r1'});
     const biPrv = new KJUR.BigInteger(prvkey, 16);
     const pvv = sig.prvKey;
     const g = pvv.ecparams.G;
@@ -277,9 +277,9 @@ export class LyraCrypto {
     const biY = epPub.getY().toBigInteger();
 
     const charlen = pvv.ecparams.keylen / 4;
-    const hX = ("0000000000" + biX.toString(16)).slice(-charlen);
-    const hY = ("0000000000" + biY.toString(16)).slice(-charlen);
-    const hPub = "04" + hX + hY;
+    const hX = ('0000000000' + biX.toString(16)).slice(-charlen);
+    const hY = ('0000000000' + biY.toString(16)).slice(-charlen);
+    const hPub = '04' + hX + hY;
     return hPub;
   }
 
@@ -294,7 +294,7 @@ export class LyraCrypto {
         utf8.push(
           0xe0 | (charcode >> 12),
           0x80 | ((charcode >> 6) & 0x3f),
-          0x80 | (charcode & 0x3f)
+          0x80 | (charcode & 0x3f),
         );
       }
       // surrogate pair
@@ -309,7 +309,7 @@ export class LyraCrypto {
           0xf0 | (charcode >> 18),
           0x80 | ((charcode >> 12) & 0x3f),
           0x80 | ((charcode >> 6) & 0x3f),
-          0x80 | (charcode & 0x3f)
+          0x80 | (charcode & 0x3f),
         );
       }
     }
